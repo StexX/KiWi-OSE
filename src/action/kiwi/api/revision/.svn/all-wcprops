@@ -1,0 +1,209 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/revision
+END
+KiWiUpdateServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/revision/KiWiUpdateServiceLocal.java
+END
+UpdateTaggingServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/action/kiwi/api/revision/UpdateTaggingServiceRemote.java
+END
+UpdateConfigurationServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/revision/UpdateConfigurationServiceRemote.java
+END
+UpdateMetadataServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/action/kiwi/api/revision/UpdateMetadataServiceLocal.java
+END
+UpdateRulesServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/action/kiwi/api/revision/UpdateRulesServiceRemote.java
+END
+CIVersionServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/revision/CIVersionServiceRemote.java
+END
+RenameContentItemService.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/2296/KiWi/trunk/src/action/kiwi/api/revision/RenameContentItemService.java
+END
+RenameContentItemServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/action/kiwi/api/revision/RenameContentItemServiceLocal.java
+END
+UpdateConfigurationServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/revision/UpdateConfigurationServiceLocal.java
+END
+KiWiUpdateServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/revision/KiWiUpdateServiceRemote.java
+END
+UpdateMetadataService.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/3785/KiWi/trunk/src/action/kiwi/api/revision/UpdateMetadataService.java
+END
+DeleteContentItemServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/action/kiwi/api/revision/DeleteContentItemServiceRemote.java
+END
+RevisionService.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/4304/KiWi/trunk/src/action/kiwi/api/revision/RevisionService.java
+END
+UpdateTextContentServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/action/kiwi/api/revision/UpdateTextContentServiceRemote.java
+END
+UpdateMediaContentService.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/2296/KiWi/trunk/src/action/kiwi/api/revision/UpdateMediaContentService.java
+END
+RevisionServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/action/kiwi/api/revision/RevisionServiceLocal.java
+END
+RenameContentItemServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/action/kiwi/api/revision/RenameContentItemServiceRemote.java
+END
+RevisionBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/revision/RevisionBean.java
+END
+UpdateTaggingService.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/2296/KiWi/trunk/src/action/kiwi/api/revision/UpdateTaggingService.java
+END
+UpdateConfigurationService.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/revision/UpdateConfigurationService.java
+END
+CIVersionServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/revision/CIVersionServiceLocal.java
+END
+UpdateRulesService.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/2296/KiWi/trunk/src/action/kiwi/api/revision/UpdateRulesService.java
+END
+UpdateRulesServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/action/kiwi/api/revision/UpdateRulesServiceLocal.java
+END
+UpdateMetadataServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/action/kiwi/api/revision/UpdateMetadataServiceRemote.java
+END
+CIVersionService.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/revision/CIVersionService.java
+END
+UpdateTaggingServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/action/kiwi/api/revision/UpdateTaggingServiceLocal.java
+END
+RevisionServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/action/kiwi/api/revision/RevisionServiceRemote.java
+END
+UpdateMediaContentServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/action/kiwi/api/revision/UpdateMediaContentServiceRemote.java
+END
+KiWiUpdateService.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/revision/KiWiUpdateService.java
+END
+UpdateTextContentServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/action/kiwi/api/revision/UpdateTextContentServiceLocal.java
+END
+DeleteContentItemServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/action/kiwi/api/revision/DeleteContentItemServiceLocal.java
+END
+UpdateMediaContentServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/action/kiwi/api/revision/UpdateMediaContentServiceLocal.java
+END
+DeleteContentItemService.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/2296/KiWi/trunk/src/action/kiwi/api/revision/DeleteContentItemService.java
+END
+UpdateTextContentService.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/2451/KiWi/trunk/src/action/kiwi/api/revision/UpdateTextContentService.java
+END

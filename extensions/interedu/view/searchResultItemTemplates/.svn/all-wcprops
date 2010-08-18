@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/2478/KiWi/trunk/extensions/interedu/view/searchResultItemTemplates
+END
+compactsearchresultItem.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/kiwi/!svn/ver/2478/KiWi/trunk/extensions/interedu/view/searchResultItemTemplates/compactsearchresultItem.xhtml
+END
+imageresultItem.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/2478/KiWi/trunk/extensions/interedu/view/searchResultItemTemplates/imageresultItem.xhtml
+END
+defaultsearchresultItem.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/kiwi/!svn/ver/2478/KiWi/trunk/extensions/interedu/view/searchResultItemTemplates/defaultsearchresultItem.xhtml
+END

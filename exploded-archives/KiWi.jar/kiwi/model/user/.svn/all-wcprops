@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/model/user
+END
+Role.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/model/user/Role.class
+END
+User.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/model/user/User.class
+END
+Group.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/model/user/Group.class
+END
+PermissionOwner.class
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/model/user/PermissionOwner.class
+END

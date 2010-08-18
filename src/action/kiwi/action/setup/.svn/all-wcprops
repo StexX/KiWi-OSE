@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/kiwi/!svn/ver/5557/KiWi/trunk/src/action/kiwi/action/setup
+END
+SetupOntologiesAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5088/KiWi/trunk/src/action/kiwi/action/setup/SetupOntologiesAction.java
+END
+SetupUserAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/src/action/kiwi/action/setup/SetupUserAction.java
+END
+SetupDataAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5557/KiWi/trunk/src/action/kiwi/action/setup/SetupDataAction.java
+END
+AsynchronousOntologyLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/src/action/kiwi/action/setup/AsynchronousOntologyLoader.java
+END

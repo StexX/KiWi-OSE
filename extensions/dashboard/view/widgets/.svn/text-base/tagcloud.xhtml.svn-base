@@ -1,0 +1,28 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+    xmlns:c="http://java.sun.com/jstl/core"
+    xmlns:a="http://richfaces.org/a4j">
+
+    <h3>Tag Cloud</h3>
+    
+    <a:outputPanel id="tagCloud" layout="block">
+        <div>
+        
+	        <ui:repeat var="tag" value="#{tagCloudService.userTagCloud(currentUser)}" >
+	            <span style="font-size: #{tag.size}%;">
+	            <!--  TODO: the links should query for tags by that user, not for all tags in the system! -->
+	            <s:link view="/search.xhtml" value="#{tag.tagTitle}" style="color: rgb(100,#{tag.colorCode},100);">
+	                <f:param name="q" value="tag:&quot;#{tag.tagTitle}&quot;"/>
+	            </s:link>
+	            </span>
+	            <h:outputText value=", " /> 
+	        </ui:repeat>
+        </div>
+    </a:outputPanel>
+</ui:composition>

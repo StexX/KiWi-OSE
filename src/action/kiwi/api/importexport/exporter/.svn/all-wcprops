@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/kiwi/!svn/ver/5000/KiWi/trunk/src/action/kiwi/api/importexport/exporter
+END
+ExporterLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/2541/KiWi/trunk/src/action/kiwi/api/importexport/exporter/ExporterLocal.java
+END
+ExporterRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/2541/KiWi/trunk/src/action/kiwi/api/importexport/exporter/ExporterRemote.java
+END
+Exporter.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5000/KiWi/trunk/src/action/kiwi/api/importexport/exporter/Exporter.java
+END

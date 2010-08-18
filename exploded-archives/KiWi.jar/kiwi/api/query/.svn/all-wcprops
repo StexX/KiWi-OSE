@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query
+END
+QueryService.class
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/QueryService.class
+END
+QueryServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/QueryServiceLocal.class
+END
+QueryServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/QueryServiceRemote.class
+END
+KiWiQueryResult.class
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/KiWiQueryResult.class
+END

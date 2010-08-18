@@ -1,0 +1,274 @@
+10
+
+dir
+5565
+https://svn.salzburgresearch.at/svn/kiwi/KiWi/releases/0.9/exploded-archives/KiWi.war/gwt/vmt/sc/skins/Graphite/images
+https://svn.salzburgresearch.at/svn/kiwi
+
+
+
+2010-08-18T11:45:47.139629Z
+5565
+steffi
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+df910b12-e4fe-467b-9c3d-147a02c1fe00
+
+
+
+
+
+
+0
+empty
+
+ColorPicker
+dir
+
+CubeGrid
+dir
+
+DatabaseBrowser
+dir
+
+DateChooser
+dir
+
+Dialog
+dir
+
+DynamicForm
+dir
+
+ImgButton
+dir
+
+ListGrid
+dir
+
+Menu
+dir
+
+MultiUploadItem
+dir
+
+Panel
+dir
+
+Progressbar
+dir
+
+RecordEditor
+dir
+
+RichTextEditor
+dir
+
+SchemaViewer
+dir
+
+Scrollbar
+dir
+
+SectionHeader
+dir
+
+Slider
+dir
+
+Splitbar
+dir
+
+Tab
+dir
+
+TabSet
+dir
+
+TileGrid
+dir
+
+ToolStrip
+dir
+
+TransferIcons
+dir
+
+TreeGrid
+dir
+
+Window
+dir
+
+actions
+dir
+
+black.gif
+file
+
+
+
+
+2010-03-03T03:18:14.000000Z
+ccdf82f120d860bcd74839428b702657
+2010-08-18T11:45:47.139629Z
+5565
+steffi
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+49
+
+blank.gif
+file
+
+
+
+
+2010-03-03T03:18:14.000000Z
+fc94fb0c3ed8a8f909dbc7630a0987ff
+2010-08-18T11:45:47.139629Z
+5565
+steffi
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+43
+
+button
+dir
+
+controls
+dir
+
+cssButton
+dir
+
+edges
+dir
+
+headerIcons
+dir
+
+loading.gif
+file
+
+
+
+
+2010-03-03T03:18:14.000000Z
+6e6507868de6e6f19b741ecfe6aeac38
+2010-08-18T11:45:47.139629Z
+5565
+steffi
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3826
+
+pickers
+dir
+
+readme.txt
+file
+
+
+
+
+2010-03-03T03:18:14.000000Z
+2600c81a6b6fb7231b950723ac464dee
+2010-08-18T11:45:47.139629Z
+5565
+steffi
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+174
+
+shared
+dir
+

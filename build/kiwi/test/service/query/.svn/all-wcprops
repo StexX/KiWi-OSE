@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/query
+END
+QueryTests.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/query/QueryTests.xml
+END
+KWQLTest.class
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/query/KWQLTest.class
+END
+KWQLTests.xml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/query/KWQLTests.xml
+END
+KWQLParseTest.class
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/query/KWQLParseTest.class
+END
+SparqlServiceTest.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/query/SparqlServiceTest.class
+END
+KWQLServiceTest.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/query/KWQLServiceTest.class
+END
+IANTLRFrontEntImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/query/IANTLRFrontEntImpl.class
+END
+KWQLexTests.xml
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/query/KWQLexTests.xml
+END
+SparqlServiceTest$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/query/SparqlServiceTest$1.class
+END
+KWQLexTest.class
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/query/KWQLexTest.class
+END
+SparqlServiceTest$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/query/SparqlServiceTest$2.class
+END
+KWQLServiceTest$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/query/KWQLServiceTest$1.class
+END
+KWQLServiceTest$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/query/KWQLServiceTest$2.class
+END
+KWQLServiceTests.xml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/query/KWQLServiceTests.xml
+END
+KWQLParseTests.xml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/query/KWQLParseTests.xml
+END

@@ -1,0 +1,138 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                             	
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+			 	xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                template="../layout/template-kunstwerke.xhtml">
+                	  
+	 <ui:define name="navigation">
+			<c:if test="#{identity.loggedIn}">
+				<ui:include src="./menuLoggedIn.xhtml" />
+			</c:if>
+			<c:if test="#{!identity.loggedIn}">
+				<ui:include src="./menuNotLoggedIn.xhtml" />
+			</c:if>
+	 </ui:define>
+
+	 <ui:define name="body">
+          
+			<!-- begin: Kunstwerke Gallerie: -->
+			<div id="kunstwerke">
+				<table>
+					<tr>
+						<td class="capKomBorderGall gallElement">
+							<div class="kunstwerk">
+								<a href="../kunstwerke/kunstwerke4_2.seam" title="Details zu Kunstwerk 1">
+									<img src="../images/artworks/artwork1_thumb.jpg" title="Kunstwerk 1" alt="Kunstwerk 1" />
+								</a>
+							</div>
+							<div class="bewertung">
+								<a href="../kunstwerke/kunstwerke4_3.seam" title="Kunstwerk 1 bewerten">
+									<img src="../images/icons/bewertung_1_25px.gif" title="Bewertung 1 Punkt" alt="Bewertung 1 Punkt" />
+								</a>
+							</div>
+						</td>
+						<td class="capKomBorderGall gallElement">
+							<div class="kunstwerk">
+								<img src="../images/artworks/artwork2_thumb.jpg" title="Kunstwerk 2" alt="Kunstwerk 2" />
+							</div>
+							<div class="bewertung">
+								<img src="../images/icons/bewertung_3_25px.gif" title="Bewertung 3 Punkte" alt="Bewertung 3 Punkte" />
+							</div>
+						</td>
+						<td class="capKomBorderGall gallElement">
+							<div class="kunstwerk">
+								<img src="../images/artworks/artwork3_thumb.jpg" title="Kunstwerk 3" alt="Kunstwerk 3" />
+							</div>
+							<div class="bewertung">
+								<img src="../images/icons/bewertung_1_25px.gif" title="Bewertung 1 Punkt" alt="Bewertung 1 Punkt" />
+							</div>
+						</td>
+						<td class="capKomBorderGall gallElement">
+							<div class="kunstwerk">
+								<img src="../images/artworks/artwork4_thumb.jpg" title="Kunstwerk 4" alt="Kunstwerk 4" />
+							</div>
+							<div class="bewertung">
+								<img src="../images/icons/bewertung_5_25px.gif" title="Bewertung 5 Punkte" alt="Bewertung 5 Punkte" />
+							</div>
+						</td>																	
+					</tr>
+					<tr>
+						<td class="capKomBorderGall gallElement">
+							<div class="kunstwerk">
+								<img src="../images/artworks/artwork5_thumb.jpg" title="Kunstwerk 5" alt="Kunstwerk 5" />
+							</div>
+							<div class="bewertung">
+								<img src="../images/icons/bewertung_5_25px.gif" title="Bewertung 5 Punkte" alt="Bewertung 5 Punkte" />
+							</div>
+						</td>
+						<td class="capKomBorderGall gallElement">
+							<div class="kunstwerk">
+								<img src="../images/artworks/artwork6_thumb.jpg" title="Kunstwerk 6" alt="Kunstwerk 6" />
+							</div>
+							<div class="bewertung">
+								<img src="../images/icons/bewertung_2_25px.gif" title="Bewertung 2 Punkte" alt="Bewertung 2 Punkte" />
+							</div>
+						</td>
+						<td class="capKomBorderGall gallElement">
+							<div class="kunstwerk">
+								<img src="../images/artworks/artwork7_thumb.jpg" title="Kunstwerk 7" alt="Kunstwerk 76" />
+							</div>
+							<div class="bewertung">
+								<img src="../images/icons/bewertung_4_25px.gif" title="Bewertung 4 Punkte" alt="Bewertung 4 Punkte" />
+							</div>
+						</td>
+						<td class="capKomBorderGall gallElement">
+							<div class="kunstwerk">
+								<img src="../images/artworks/artwork8_thumb.jpg" title="Kunstwerk 8" alt="Kunstwerk 8" />
+							</div>
+							<div class="bewertung">
+								<img src="../images/icons/bewertung_3_25px.gif" title="Bewertung 3 Punkte" alt="Bewertung 3 Punkte" />
+							</div>
+						</td>																		
+					</tr>					
+				</table>
+			</div>
+			<!-- end: Kunstwerke Gallerie -->
+			<!-- begin: buttons -->
+			<div id="navButtons">
+		    	<div class="hlist">
+		  			<ul>
+		  				<li class="button">
+		  					<a href="#" title="#{messages['artaround.cap-kom.einfacheSprache.zurueckBlaettern']}">
+		  						<!-- Profil (sichtbar nach Login) -->
+								<img src="../images/icons/zurueck75px.gif" 
+									title="#{messages['artaround.cap-kom.einfacheSprache.zurueckBlaettern']}" 
+									alt="#{messages['artaround.cap-kom.einfacheSprache.zurueckBlaettern']}"/>
+								<div class="simpleText">
+									#{messages['artaround.cap-kom.einfacheSprache.zurueckBlaettern']}
+								</div>									
+							</a>
+		  				</li>
+						<li class="button">
+							<a href="#" title="#{messages['artaround.cap-kom.einfacheSprache.weiterBlaettern']}">
+		  						<!-- Profil (sichtbar nach Login) -->
+								<img src="../images/icons/weiter75px.gif" 
+									title="#{messages['artaround.cap-kom.einfacheSprache.weiterBlaettern']}" 
+									alt="#{messages['artaround.cap-kom.einfacheSprache.weiterBlaettern']}"/>
+								<div class="simpleText">
+									#{messages['artaround.cap-kom.einfacheSprache.weiterBlaettern']}
+								</div>									
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- end: buttons -->		
+			
+	 </ui:define>   
+	 
+</ui:composition>	 

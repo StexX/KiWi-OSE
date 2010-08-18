@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/geo
+END
+GeoCodingFailedException.class
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/geo/GeoCodingFailedException.class
+END
+GeoCodingService.class
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/geo/GeoCodingService.class
+END
+GeoCodingServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/geo/GeoCodingServiceRemote.class
+END
+GeoCodingServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/geo/GeoCodingServiceLocal.class
+END
+Location.class
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/geo/Location.class
+END

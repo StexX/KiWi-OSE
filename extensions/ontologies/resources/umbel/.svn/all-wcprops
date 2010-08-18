@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/extensions/ontologies/resources/umbel
+END
+umbel.n3
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/extensions/ontologies/resources/umbel/umbel.n3
+END
+umbel_subject_concepts.n3
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/extensions/ontologies/resources/umbel/umbel_subject_concepts.n3
+END
+umbel_abstract_concepts.n3
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/extensions/ontologies/resources/umbel/umbel_abstract_concepts.n3
+END
+umbel_external_ontologies_linkage.n3
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/extensions/ontologies/resources/umbel/umbel_external_ontologies_linkage.n3
+END

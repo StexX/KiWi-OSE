@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/entity
+END
+KiWiEntityManager.class
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/entity/KiWiEntityManager.class
+END
+KiWiEntityManagerRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/entity/KiWiEntityManagerRemote.class
+END
+KiWiEntityManagerLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/entity/KiWiEntityManagerLocal.class
+END

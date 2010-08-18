@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/kiwi/!svn/ver/5220/KiWi/trunk/src/action/kiwi/api/importexport/importer
+END
+RDFImporterRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/2837/KiWi/trunk/src/action/kiwi/api/importexport/importer/RDFImporterRemote.java
+END
+ImporterLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/1878/KiWi/trunk/src/action/kiwi/api/importexport/importer/ImporterLocal.java
+END
+ImporterRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/1878/KiWi/trunk/src/action/kiwi/api/importexport/importer/ImporterRemote.java
+END
+RDFImporter.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5220/KiWi/trunk/src/action/kiwi/api/importexport/importer/RDFImporter.java
+END
+RDFImporterLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/2837/KiWi/trunk/src/action/kiwi/api/importexport/importer/RDFImporterLocal.java
+END
+Importer.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/3186/KiWi/trunk/src/action/kiwi/api/importexport/importer/Importer.java
+END

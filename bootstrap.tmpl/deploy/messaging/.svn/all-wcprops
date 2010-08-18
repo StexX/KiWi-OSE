@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/bootstrap.tmpl/deploy/messaging
+END
+remoting-service.xml
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/bootstrap.tmpl/deploy/messaging/remoting-service.xml
+END
+messaging-service.xml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/bootstrap.tmpl/deploy/messaging/messaging-service.xml
+END
+jms-ds.xml
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/bootstrap.tmpl/deploy/messaging/jms-ds.xml
+END
+destinations-service.xml
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/bootstrap.tmpl/deploy/messaging/destinations-service.xml
+END
+hsqldb-persistence-service.xml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/bootstrap.tmpl/deploy/messaging/hsqldb-persistence-service.xml
+END
+legacy-service.xml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/bootstrap.tmpl/deploy/messaging/legacy-service.xml
+END
+connection-factories-service.xml
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/bootstrap.tmpl/deploy/messaging/connection-factories-service.xml
+END

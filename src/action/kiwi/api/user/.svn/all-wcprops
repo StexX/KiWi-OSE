@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/kiwi/!svn/ver/5173/KiWi/trunk/src/action/kiwi/api/user
+END
+UserServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/action/kiwi/api/user/UserServiceRemote.java
+END
+FoafSslLoginServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/user/FoafSslLoginServiceRemote.java
+END
+CountryFacade.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/kiwi/!svn/ver/2960/KiWi/trunk/src/action/kiwi/api/user/CountryFacade.java
+END
+PasswordGeneratorServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/user/PasswordGeneratorServiceLocal.java
+END
+MailServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/user/MailServiceLocal.java
+END
+ProfileService.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/kiwi/!svn/ver/5173/KiWi/trunk/src/action/kiwi/api/user/ProfileService.java
+END
+UserService.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/kiwi/!svn/ver/5166/KiWi/trunk/src/action/kiwi/api/user/UserService.java
+END
+FoafSslLoginService.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5166/KiWi/trunk/src/action/kiwi/api/user/FoafSslLoginService.java
+END
+CityFacade.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/kiwi/!svn/ver/2960/KiWi/trunk/src/action/kiwi/api/user/CityFacade.java
+END
+MailServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/user/MailServiceRemote.java
+END
+PasswordGeneratorServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/user/PasswordGeneratorServiceRemote.java
+END
+UserServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/action/kiwi/api/user/UserServiceLocal.java
+END
+FoafSslLoginServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/user/FoafSslLoginServiceLocal.java
+END
+ProfileServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/user/ProfileServiceLocal.java
+END
+MailService.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/user/MailService.java
+END
+PasswordGeneratorService.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5166/KiWi/trunk/src/action/kiwi/api/user/PasswordGeneratorService.java
+END
+KiWiProfileFacade.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/5166/KiWi/trunk/src/action/kiwi/api/user/KiWiProfileFacade.java
+END
+ProfileServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/user/ProfileServiceRemote.java
+END

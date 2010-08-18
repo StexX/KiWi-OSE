@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+
+<suite name="ReasoningTests" verbose="2" parallel="false">
+    <test name="RuleTest" junit="false">
+        <classes>
+            <class name="kiwi.test.service.reasoning.ProgramTest"/>
+        </classes>
+    </test>
+    <test name="ReasoningTest" junit="false">
+        <classes>
+            <class name="kiwi.test.service.reasoning.ReasoningTest"/>
+        </classes>
+    </test>
+</suite>

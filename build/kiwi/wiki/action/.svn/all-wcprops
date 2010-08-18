@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/wiki/action
+END
+ViewAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/wiki/action/ViewAction.class
+END
+KiwilinkAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/wiki/action/KiwilinkAction.class
+END
+EditorAction$DefaultPasswordFinder.class
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/wiki/action/EditorAction$DefaultPasswordFinder.class
+END
+AnnotateAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/wiki/action/AnnotateAction.class
+END
+ContentItemAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/wiki/action/ContentItemAction.class
+END
+MetadataAction$UIMetadata.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/wiki/action/MetadataAction$UIMetadata.class
+END
+EditorAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/wiki/action/EditorAction.class
+END
+MetadataAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/wiki/action/MetadataAction.class
+END
+PermissionAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/wiki/action/PermissionAction.class
+END
+FragmentAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/wiki/action/FragmentAction.class
+END
+QueryWizardAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/wiki/action/QueryWizardAction.class
+END
+AnnotateAction$PageType.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/wiki/action/AnnotateAction$PageType.class
+END
+TaggingAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/wiki/action/TaggingAction.class
+END
+LocationFacade.class
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/wiki/action/LocationFacade.class
+END
+TagCloudAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/wiki/action/TagCloudAction.class
+END
+MetadataAction$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/wiki/action/MetadataAction$1.class
+END
+KiwirdfaAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/wiki/action/KiwirdfaAction.class
+END
+BarcodeExport.class
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/wiki/action/BarcodeExport.class
+END
+CommentAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/wiki/action/CommentAction.class
+END

@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!DOCTYPE facelet-taglib PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Facelet Taglib 1.0//EN"
+        "http://java.sun.com/dtd/facelet-taglib_1_0.dtd">
+
+<facelet-taglib>
+	<namespace>http://www.kiwi-project.eu/jsf</namespace>
+	<tag>
+		<tag-name>widget</tag-name>
+		<source>../tags/widget.xhtml</source>
+	</tag>
+	<tag>
+		<tag-name>convertEntity</tag-name>
+		<source>../tags/convertEntity.xhtml</source>
+	</tag>
+	<!--
+		a kiwi:link to directly link to a ContentItem (passed as argument)
+	-->
+	<tag>
+		<tag-name>link</tag-name>
+		<source>../tags/link.xhtml</source>
+	</tag>
+
+	<!--
+		a kiwi:watcher is basically a checkbox to put/remove a contentitem
+		to/from the current users watchlist.
+	-->
+	<tag>
+		<tag-name>watcher</tag-name>
+		<source>../tags/watcher.xhtml</source>
+	</tag>
+	<!-- Used to generate a bold h2 output text and tooltip -->
+	<tag>
+		<tag-name>bLabel</tag-name>
+		<source>../tags/bLabel.xhtml</source>
+	</tag>
+	<tag>
+		<tag-name>tagListEditor</tag-name>
+		<source>../tags/taglisteditor.xhtml</source>
+	</tag>
+   <!-- 
+   			<kiwi:mediaContent contentItem="#{currentUser.profilePhoto}" 
+				edit="true" 
+				width="400"
+				defaultImage="#{facesContext.externalContext.requestContextPath}/img/professor.png"
+				/>
+   -->
+	<tag>
+		<tag-name>mediaContent</tag-name>
+		<source>../tags/mediaContent.xhtml</source>
+   </tag>
+
+
+   <tag>
+        <tag-name>renderHtml</tag-name>
+        <source>../tags/renderHtml.xhtml</source>
+   </tag>
+   
+   <tag>
+        <tag-name>microformats</tag-name>
+        <source>../tags/microformats.xhtml</source>
+   </tag>
+   
+   <tag>
+        <tag-name>queryResultTable</tag-name>
+        <source>../tags/queryResultTable.xhtml</source>
+   </tag>
+   
+   <tag>
+        <tag-name>queryResultMap</tag-name>
+        <source>../tags/queryResultMap.xhtml</source>
+   </tag>
+	<!--
+		a kiwi:friendMaker is basically a link to add a new friend.
+	-->
+	<tag>
+		<tag-name>friendMaker</tag-name>
+		<source>../tags/friendMaker.xhtml</source>
+	</tag>   
+   
+</facelet-taglib>

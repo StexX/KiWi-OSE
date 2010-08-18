@@ -1,0 +1,507 @@
+up=\u2191
+down=\u2193
+left=\u2039
+right=\u203A
+
+# generic buttons
+btn.close=Schliessen
+btn.cancel=Abbrechen
+btn.ok=Ok
+btn.save=Speichern
+btn.submit=Abschicken
+btn.load=Laden
+btn.edit=Bearbeiten
+
+
+hdr.login=Anmelden
+hdr.logout=Abmelden
+hdr.welcome=Willkommen
+hdr.signup=Registrieren
+hdr.search=Suche
+hdr.kwqlsearch=KWQL Suche
+
+
+login.header=Bei KiWi anmelden
+login.username=Benutzername
+login.password=Passwort
+login.remember=Angemeldet bleiben
+login.registered=Noch nicht registriert?
+login.register=Zunächst registrieren.
+login.btn_login=Anmelden
+login.facebook=Mit Deinem Facebook-Konto anmelden
+login.foaf=Mit Deinem FOAF+SSL Zertifikat anmelden
+
+app.wiki.description=Seiten Durchst\u00F6bern
+app.tagit.description=Orte Durchst\u00F6bern
+app.tagit2.description=Orte Durchst\u00F6bern
+app.admin.description=KiWi Konfigurieren
+app.dashboard.description=Mein Universum
+app.inspector.description=Inspizieren und Debuggen
+app.logica.description=Logica Use Case
+app.swim.description=Mathematische Dokumente
+app.ideator.description=Verwalte Deine Ideen mit Ideator
+
+#dashboard.registeredsince=Registriert seit
+
+wiki.menu.actions=Aktionen
+wiki.menu.view=Anzeigen
+wiki.menu.edit_content=Bearbeiten
+wiki.menu.edit_metadata=Metadaten
+wiki.menu.edit_annotations=Annotationen
+wiki.menu.edit_media=Multimedia
+wiki.menu.history=Versionen
+wiki.menu.barcodeexport=2d Barcode
+wiki.menu.semForm=Apply Semantic Form
+wiki.createdon=Created on
+wiki.updateon=Last update on
+wiki.by=by
+
+#permissions
+permission.failed=Nicht angemeldet oder keine Rechte um diese Seite zu betrachten
+wiki.menu.edit_individualPermission=Rechteverwaltung
+permission.global=Globale Rechtevergabe
+permission.indiviual=Individuelle Rechtevergabe
+
+tagit2.please_select=Bitte auswählen
+tagit2.cluster_contains=Cluster enthält
+
+widget.activity.addTag=tag <a href="#{facesContext.externalContext.requestContextPath}/home.seam?kiwiid=#{activity.tag.taggingResource.resource.kiwiIdentifier}">#{activity.tag.taggingResource.title}</a> hinzugefügt durch #{activity.user.login}
+widget.activity.removeTag=tag <a href="#{facesContext.externalContext.requestContextPath}/home.seam?kiwiid=#{activity.tag.taggingResource.resource.kiwiIdentifier}">#{activity.tag.taggingResource.title}</a> entfernt durch #{activity.user.login}
+widget.activity.createContentItem=angelegt von #{activity.user.login}
+widget.activity.deleteContentItem=gelöscht von #{activity.user.login}
+widget.activity.editContentItem=geändert von #{activity.user.login}
+widget.activity.visitContentItem=besucht von #{activity.user.login}
+widget.activity.addComment=kommentiert durch #{activity.user.login}
+widget.activity.annotate=annotiert durch #{activity.user.login}
+
+
+validator.assertFalse=Validierung fehlgeschlagen
+validator.assertTrue=Validierung fehlgeschlagen
+validator.future=muss einem zuk\u00FCnfitigen Datum entsprechen
+validator.length=die L\u00E4nge muss zwischen {min} und {max} liegen
+validator.max=muss kleiner oder gleich {value} sein
+validator.min=muss gr\u00F6\u00DFer oder gleich {value} sein
+validator.notNull=darf nicht leer sein
+validator.past=muss einem vergangenen Datum entsprechen
+validator.pattern=muss dem regul\u00E4ren Ausdruck "{regex}" entsprechen
+validator.range=muss im Wertebereich von {min} bis {max} liegen
+validator.size=die Gr\u00F6\u00DFe muss zwischen {min} und {max} liegen
+validator.email=muss einer wohlgeformten E-Mailadresse entsprechen
+
+org.jboss.seam.loginFailed=Anmeldung fehlgeschlagen
+org.jboss.seam.loginSuccessful=Willkommen, #0
+
+org.jboss.seam.TransactionFailed=Transaktion fehlgeschlagen
+org.jboss.seam.NoConversation=Der Vorgang wurde bereits beendet, verarbeitet eine andere Abfrage oder ergab eine Zeit\u00FCberschreitung
+org.jboss.seam.IllegalNavigation=Unzul\u00E4ssige Navigation
+org.jboss.seam.ProcessEnded=Prozess #0 wurde bereits beendet
+org.jboss.seam.ProcessNotFound=Prozess #0 nicht gefunden
+org.jboss.seam.TaskEnded=Funktion #0 wurde bereits beendet
+org.jboss.seam.TaskNotFound=Funktion #0 nicht gefunden
+org.jboss.seam.NotLoggedIn=Bitte melden Sie sich zun\u00E4chst an
+
+javax.faces.component.UIInput.CONVERSION=Wert konnte nicht in den erwarteten Typ umgewandelt werden
+javax.faces.component.UIInput.REQUIRED=Wert erforderlich
+javax.faces.component.UIInput.UPDATE=ein Fehler ist bei der Verarbeitung der von Ihnen gesendeten Daten aufgetreten
+javax.faces.component.UISelectOne.INVALID=Wert ung\u00FCltig
+javax.faces.component.UISelectMany.INVALID=Wert ung\u00FCltig
+
+javax.faces.converter.BigDecimalConverter.DECIMAL = ''{0}'' muss eine Dezimalzahl sein.
+javax.faces.converter.BigDecimalConverter.DECIMAL_detail = ''{0}'' muss eine Dezimalzahl aus keinem oder mehr Zeichen gefolgt von einem optionalen Punkt und den Nachkommastellen sein. Beispiel\: {1}
+javax.faces.converter.BigIntegerConverter.BIGINTEGER = ''{0}'' muss eine Zahl aus ein oder mehr Ziffern sein.
+javax.faces.converter.BigIntegerConverter.BIGINTEGER_detail = ''{0}'' muss eine Zahl aus ein oder mehr Ziffern sein. Beispiel: {1}
+javax.faces.converter.BooleanConverter.BOOLEAN = ''{0}'' muss 'true' oder 'false' sein.
+javax.faces.converter.BooleanConverter.BOOLEAN_detail = ''{0}'' muss 'true' oder 'false' sein.  Jeder Wert au\u00DFer 'true' wird als 'false' interpretiert.
+javax.faces.converter.ByteConverter.BYTE = ''{0}'' muss eine Zahl zwischen 0 und 255 sein.
+javax.faces.converter.ByteConverter.BYTE_detail = ''{0}'' muss eine Zahl zwischen 0 und 255 sein.  Beispiel: {1}
+javax.faces.converter.CharacterConverter.CHARACTER = ''{0}'' muss ein g\u00FCltiges Zeichen sein.
+javax.faces.converter.CharacterConverter.CHARACTER_detail = ''{0}'' muss ein g\u00FCltiges ASCII Zeichen sein.
+javax.faces.converter.DateTimeConverter.DATE = ''{0}'' konnte nicht als Datum erkannt werden.
+javax.faces.converter.DateTimeConverter.DATE_detail = ''{0}'' konnte nicht als Datum erkannt werden. Beispiel\: {1}
+javax.faces.converter.DateTimeConverter.TIME = ''{0}'' konnte nicht als Zeit erkannt werden.
+javax.faces.converter.DateTimeConverter.TIME_detail = ''{0}'' konnte nicht als Zeit erkannt werden. Beispiel\: {1}
+javax.faces.converter.DateTimeConverter.DATETIME = ''{0}'' konnte nicht als Datum und Zeit erkannt werden.
+javax.faces.converter.DateTimeConverter.DATETIME_detail = ''{0}'' konnte nicht als Datum und Zeit erkannt werden. Beispiel\: {1}
+javax.faces.converter.DateTimeConverter.PATTERN_TYPE = Ein 'pattern' oder 'type' Attribut muss angegeben werden um den Wert ''{0}'' zu konvertieren.
+javax.faces.converter.DoubleConverter.DOUBLE = ''{0}'' muss eine Zahl aus ein oder mehr Ziffern sein.
+javax.faces.converter.DoubleConverter.DOUBLE_detail = ''{0}'' muss eine Zahl zwischen 4.9E-324 und 1.7976931348623157E308 sein. Beispiel: {1}
+javax.faces.converter.EnumConverter.ENUM = ''{0}'' muss in eine Enumeration konvertierbar sein.
+javax.faces.converter.EnumConverter.ENUM_detail = ''{0}'' muss in eine Enumeration konvertierbar sein, welche die Konstante ''{1}'' enth\u00E4lt.
+javax.faces.converter.EnumConverter.ENUM_NO_CLASS = ''{0}'' muss in eine Enumeration konvertierbar sein, aber es wurde keine Klasse des Typs Enum bereitgestellt.
+javax.faces.converter.EnumConverter.ENUM_NO_CLASS_detail = ''{0}'' muss in eine Enumeration konvertierbar sein, aber es wurde keine Klasse des Typs Enum bereitgestellt.
+javax.faces.converter.FloatConverter.FLOAT = ''{0}'' muss eine Zahl aus ein oder mehr Ziffern sein.
+javax.faces.converter.FloatConverter.FLOAT_detail = ''{0}'' muss eine Zahl zwischen 1.4E-45 und 3.4028235E38 sein. Beispiel: {1}
+javax.faces.converter.IntegerConverter.INTEGER = ''{0}'' muss eine Zahl aus ein oder mehr Ziffern sein.
+javax.faces.converter.IntegerConverter.INTEGER_detail = ''{0}'' muss eine Zahl zwischen -2147483648 und 2147483647 sein. Beispiel: {1}
+javax.faces.converter.LongConverter.LONG = ''{0}'' muss eine Zahl aus ein oder mehr Ziffern sein.
+javax.faces.converter.LongConverter.LONG_detail = ''{0}'' muss eine Zahl zwischen -9223372036854775808 und 9223372036854775807 sein. Beispiel: {1}
+javax.faces.converter.NumberConverter.CURRENCY = ''{0}'' konnte nicht als ein Geldbetrag erkannt werden.
+javax.faces.converter.NumberConverter.CURRENCY_detail = ''{0}'' konnte nicht als ein Geldbetrag erkannt werden. Beispiel: {1}
+javax.faces.converter.NumberConverter.PERCENT = ''{0}'' konnte nicht als ein Prozentanteil erkannt werden.
+javax.faces.converter.NumberConverter.PERCENT_detail = ''{0}'' konnte nicht als ein Prozentanteil erkannt werden. Beispiel: {1}
+javax.faces.converter.NumberConverter.NUMBER = ''{0}'' ist keine Zahl.
+javax.faces.converter.NumberConverter.NUMBER_detail = ''{0}'' ist keine Zahl. Beispiel: {1}
+javax.faces.converter.NumberConverter.PATTERN = ''{0}'' ist kein Zahlmuster.
+javax.faces.converter.NumberConverter.PATTERN_detail = ''{0}'' ist kein Zahlmuster. Beispiel: {1}
+javax.faces.converter.ShortConverter.SHORT = ''{0}'' muss eine Zahl aus ein oder mehr Ziffern sein.
+javax.faces.converter.ShortConverter.SHORT_detail = ''{0}'' muss eine Zahl zwischen -32768 und 32767 sein. Beispiel: {1}
+javax.faces.converter.STRING = Konnte ''{0}'' nicht in eine Zeichenkette konvertieren.
+
+javax.faces.validator.NOT_IN_RANGE = Validierungsfehler\: Der Wert liegt nicht im erwarteten Wertebereich von {0} bis {1}.
+javax.faces.validator.DoubleRangeValidator.MAXIMUM = Validierungsfehler\: Der Wert ist gr\u00F6\u00DFer als das erlaubte Maximum von ''{0}''
+javax.faces.validator.DoubleRangeValidator.MINIMUM = Validierungsfehler: Der Wert ist kleiner als das erlaubte Minimum von ''{0}''
+javax.faces.validator.DoubleRangeValidator.NOT_IN_RANGE = Validierungsfehler: Der Wert ist nicht zwischen den erwarteten Werten von {0} und {1}
+javax.faces.validator.DoubleRangeValidator.TYPE = Validierungsfehler: Der Wert ist nicht vom korrekten Typ
+javax.faces.validator.LengthValidator.MAXIMUM = Validierungsfehler\: Der Wert ist gr\u00F6\u00DFer als das erlaubte Maximum von ''{0}''
+javax.faces.validator.LengthValidator.MINIMUM = Validierungsfehler: Der Wert ist kleiner als das erlaubte Minimum von ''{0}''
+javax.faces.validator.LongRangeValidator.MAXIMUM = Validierungsfehler\: Der Wert ist gr\u00F6\u00DFer als das erlaubte Maximum von ''{0}''
+javax.faces.validator.LongRangeValidator.MINIMUM = Validation Error: Der Wert ist kleiner als das erlaubte Minimum von ''{0}''
+javax.faces.validator.LongRangeValidator.NOT_IN_RANGE = Validierungsfehler: Der Wert ist nicht zwischen den erwarteten Werten von {0} und {1}.
+javax.faces.validator.LongRangeValidator.TYPE = Validierungsfehler: Der Wert ist nicht vom korrekten Typ.
+
+#############################################################
+# ArtAround
+# TODO: transferiere Übersetzungen nach extensions/artaround/
+#############################################################
+artaround=ArtAround
+artaround.community=Community
+artaround.topTen=Top 10
+
+artaround.site.title=ArtAround. Teile Deine Kunst mit der Welt. Das Kunstnetzwerk.
+artaround.site.titleShort=Artaround. Teile deine Kunst mit der Welt.
+artaround.dasKunstnetzwerk=... das Kunstnetzwerk
+artaround.save=Speichern
+artaround.pleaseSelect=-- bitte wählen --
+
+artaround.login=anmelden
+artaround.logout=abmelden
+artaround.welcome=Willkommen
+artaround.addFile=Datei hinzufügen
+artaround.clearAll=alles löschen
+artaround.clear=L\u00F6schen
+artaround.artworks.public=\u00D6ffentlich
+artaround.edit=\u00C4ndern
+artaround.stopProcess=anhalten
+artaround.upload=hochladen
+artaround.upload.state={_KB}KB von {KB}KB hochgeladen --- {mm}:{ss}
+artaround.price=Dein Preis
+artaround.artworks.price=Verkaufspreis
+artaround.currency=Währung
+artaround.on=am
+artaround.noImage=kein Bild vorhanden
+artaround.information=Information
+artaround.forward=Weiter
+artaround.add=hinzufügen
+
+artaround.login.insertUserData=Anmeldung an Deinem Kunstnetzwerk
+artaround.login.username=Benutzername
+artaround.login.password=Passwort
+artaround.login.rememberMe=Anmeldung merken
+artaround.login.notRegisteredYet=Noch nicht registriert?
+artaround.login.register=registrieren
+artaround.login.withFOAFSSLCertificate=mit Deinem FOAF+SSL Zertifikat
+artaround.login.registerFast=Schnellregistrierung
+artaround.login.firstname=Vorname
+artaround.shop.firstname=Vorname*
+artaround.shop.lastname=Nachname*
+artaround.shop.street=Stra\u00DFe/Hausnr.*
+artaround.shop.zipcode=PLZ*
+artaround.shop.email=E-Mail
+artaround.shop.city=Stadt*
+artaround.shop.phone=Telefon
+artaround.shop.donationtext=Spende geht an\:
+artaround.shop.select=bitte ausw\u00E4hlen ...
+artaround.shop.sendOrder=Bestellung abschicken
+artaround.shop.shoptext1=Bitte f\u00FClle zur Bestellung des Kunstwerkes das Formular aus\!
+artaround.shop.shoptext2=Deine Kontaktdaten werden vertraulich behandelt\!
+artaround.shop.shoptext3=Deine Bestellung wird nun direkt an die K\u00FCnstlerIn weitergeleitet
+artaround.shop.shoptext4=Der Verkauf und die Lieferung des Kunstwerkes wird von der K\u00FCnstlerIn selbst organisiert
+artaround.shop.shoptext5=Ein Teil des Verkaufserl\u00F6ses wird an eine wohlt\u00E4tige Einrichtung gespendet
+artaround.shop.shoptext6=Wir danken fuer dein Interesse und w\u00FCnschen dir noch weiterhin viel Spa\u00DF beim St\u00F6bern in unserer Kunst Community
+artaround.shop.shoptext7=Du kannst dich bei uns registrieren, falls du auch ein Mitglied in unserer Kunst Community werden willst
+artaround.login.lastname=Nachname
+artaround.myFoto=Mein Foto
+artaround.login.passwordValidate=Passwort wiederholen
+artaround.login.email=Email
+artaround.login.pleaseRegister=Registriere Dich für Dein Kunstnetzwerk
+artaround.login.forgotPassword=Passwort vergessen?
+
+artaround.register=registrieren
+artaround.register.registerFree=Die Registrierung ist kostenlos, jeder Künstler und jeder Kunstinteressierte kann mitmachen!
+artaround.register.registerText1=Präsentation der eigenen Kunstwerke
+artaround.register.registerText2=Auf Wunsch der KünlerIn wird der Verkauf der eigenen Kunstwerke organisiert
+artaround.register.registerText3=Lass Andere bei der Entstehung deiner Kunstwerke LIVE dabei sein - auch ONLINE
+artaround.register.registerText4=Kunst Community zum Austausch von Meinungen und Erfahrungen
+artaround.register.registerText5=Persönliches Künstlertagebuch
+artaround.register.registerText6=Spezielle grafische Benutzeroberfl\u00E4che, welche es auch kognitiv eingeschr\u00E4nkten Menschen erm\u00F6glicht, ihre Kunst zu pr\u00E4sentieren
+artaround.register.registerText7=Wer ein Kunstwerk auf der ArtAround Kunstplattform oder auf Live Events kauft hilft automatisch hilfsbedürftigen Menschen
+
+artaround.breadcrumps.home=Startseite
+artaround.breadcrumps.login=Anmeldung
+artaround.breadcrumps.register=Registrierung
+artaround.breadcrumps.myPage=meine Kunstseite
+artaround.breadcrumps.uploadMedia=Bilder hochladen
+
+artaround.myProfil=Mein Profil
+artaround.myProfil.newArtwork=Neues Kunstwerk
+artaround.myProfil.myArtworks=Meine Kunstwerke
+artaround.myProfil.myContacts=Meine Kontakte
+artaround.myProfil.myBlog=Mein Kunstblog
+artaround.myProfil.myEvents=Meine Events
+artaround.myProfil.blog.whatsOnYourMind=Was machst du gerade?
+artaround.myProfil.blog.share=Teilen
+artaround.myProfil.label.general=Allgemeine Informationen
+artaround.myProfil.label.name=Name
+artaround.myProfil.label.gender=Geschlecht
+artaround.myProfil.label.birthday=Geburtstag
+artaround.myProfil.label.street=Straße
+artaround.myProfil.city=Ort
+artaround.myProfil.label.personal=persönliche Daten
+artaround.myProfil.label.interests=Interessen
+artaround.myProfil.label.about=Schreib etwas über dich
+artaround.myProfil.label.contactInformations=Kontaktinformationen
+artaround.myProfil.label.mobile=Handy
+artaround.myProfil.label.phone=Telefon
+artaround.myProfil.label.skype=Skype
+artaround.myProfil.label.facebook=Facebook
+artaround.myProfil.label.twitter=Twitter
+
+artaround.artworks.artwork=Kunstwerk
+artaround.artworks.artworks=Kunstwerke
+artaround.artworks.showArtworks=Kunstwerke anzeigen
+artaround.artworks.lastUploaded=zuletzt hochgeladen
+artaround.artworks.lastObserved=zuletzt angesehen
+artaround.artworks.bestRated=am besten bewertet
+artaround.artworks.yourFriends=deiner Freunde
+artaround.artworks.techniques=Techniken
+artaround.artworks.facettedSearch=mehrdimensionale Suche
+artaround.artworks.lastRegistered=zuletzt registrierte
+artaround.artworks.showAll=alle anzeigen
+artaround.artworks.newRegistered=neu Registrierte
+artaround.artworks.searchByCategories=Suche nach Kategorien
+artaround.showAuthors=K\u00FCnstler anzeigen
+artaround.showFriends=Freunde anzeigen
+artaround.AuthorEvents=K\u00FCnstler Events
+artaround.ArtaroundEvents=Artaround Events
+artaround.quicklinks=Quicklinks
+artaround.myArtworks=meine Kunstwerke
+artaround.artworks.administration=Kunstwerk Administration
+artaround.artworks.deleteArtWork=Kunstwerk l\u00F6schen
+artaround.artworks.tagging=Schlagw\u00F6rter / Tags
+artaround.artworks.artworkCreation.step4=Schritt 4\: Mit dem Button 'Speichern' wird dein Kunstwerk in unsere Community aufgenommen. Du kannst das Kunstwerk ab nun unter 'Meine Kunstwerke' bearbeiten
+artaround.artworks.artworkName=Titel deines Kunstwerkes
+artaround.artworks.artworkNameShort=Titel
+artaround.artworks.technique=Technik
+artaround.artworks.artworkLocation=Standort
+artaround.artworks.location=Standort
+artaround.artworks.artworkDescription=Beschreibung
+artaround.artworks.picGallery=Hier siehst Du alle Bilder des Kunstwerks
+artaround.artworks.allPics=alle Bilder des Kunstwerks
+artaround.artworks.artGallery=Kunstgallerie
+artaround.artworks.buyArtwork=Kunstwerk erstehen
+artaround.artworks.sellingStateNo=Dieses Kunstwerk ist nicht verk\u00E4uflich
+artaround.artworks.mediaUpload=Media Upload
+artaround.artworks.artist=K\u00FCnstlerIn
+artaround.artworks.publicAccess=Kunstwerk nur für mich sichtbar machen
+artaround.artworks.artworkCreation.title=Wir helfen dir nun deine Kunstwerke Schritt f\u00FCr Schritt zu ver\u00F6ffentlichen. 
+artaround.artworks.artworkCreation.step1Legend=Hier kannst du den Namen bzw. Titel, die Maltechnik, den Standort und eine Beschreibung deines Kunstwerkes erfassen. Falls du dein Werk verkaufen m\u00F6chtest, gib auch einen Verkaufspreis an. Ein kleiner Teil des Verkaufserl\u00F6ses wird an eine karitative Einrichtung gespendet.
+artaround.artworks.artworkCreation.step1=Schritt 1\: Erfasse nun alle notwendigen Informationen rund um dein Kunstwerk 
+artaround.artworks.artworkCreation.step2=Schritt 2\: Bilddatei ausw\u00E4hlen, hinzuf\u00FCgen und hochladen. Wiederhole diesen Schritt f\u00FCr jedes weitere Bild
+artaround.artworks.artworkCreation.step2Legend=Nun kannst du beliebig viele Bilder (jpeg-Dateien) hochladen, damit deine Freunde einen guten Eindruck deines Kunstwerkes bekommen k\u00F6nnen. Das geht ganz einfach\: 
+artaround.artworks.artworkCreation.step3=Schritt 3\: Button 'Schlagw\u00F6rter / Tags' und dann passende Begriffe zu deinem Kunstwerk eingeben
+artaround.artworks.artworkCreation.step3Legend=Bevor dein Kunstwerk ver\u00F6ffentlich wird, kannst du hier passende Schlagw\u00F6rter eingeben. Dies hilft deinen Freunden das Kunstwerk einfacher zu finden.
+artaround.artworks.activatePublicAccess=Veröffentlichung
+artaround.artworks.uploadPics=Hier kannst du Bilder zu deinem Kunstwerk hochladen
+artaround.artworks.upload=Upload
+artaround.artworks.showPics=zeige Bilder
+artaround.artworks.pics=Bilder
+artaround.artworks.masterPic=Master Pic
+artaround.artworkAdministration=Kunstwerk Administration
+artaround.artworks.preview=Vorschau
+artaround.artworks.selling=Verkauf
+artaround.artwork.textDonation=Falls Dein Kunstwerk verkauft wird, gehen automatisch 5 % des Verkaufpreises an eine Organisation Deiner Wahl:
+artaround.artworks.sellArtwork=Kunstwerk verkaufen
+artaround.artworks.notPublic=Nicht ver\u00F6ffentlichen
+artaround.artworks.changeDetails=Details/Bearbeiten
+artaround.artworks.addTags=Schlagw?rter/Tags hinzuf?gen
+artaround.artworks.existingTags=Hinzugef?gte Tags
+artaround.artworks.recommendedTags=Empfohlene Tags
+artaround.artworks.newTags=Neue Tags
+artaround.artworks.details=Details
+artaround.artworkShop=Kunstwerk Shop
+artaround.fillFormular=Formular bitte ausf\u00FCllen\!
+artaround.shop.state=Staat
+artaround.shop.choosenArtwork=Gew\u00E4hltes Kunstwerk
+artaround.menutext.text1=Hier kannst du dein pers\u00F6nliches Profil anlegen und bearbeiten ...
+artaround.menutext.text2=Hier kannst du ein neues Kunstwerk anlegen und Bilder hochladen ...
+artaround.menutext.text3=Hier kannst du deine Kunstwerke beliebig oft bearbeiten ...
+artaround.menutext.text4=Hier kannst du dein pers\u00F6nlichen Blog erstellen und warten ...
+artaround.menutext.text5=Hier kannst du deine Veranstaltungen bzw. deine Kontakte eintragen ...
+artaround.menutext.profil=Hier kannst du dein pers\u00F6nliches Benutzerprofil bearbeiten\:
+artaround.generalInfo=Allgemeine Informationen
+artaround.artworks.show=anzeigen
+artaround.artworks.sort=sortieren
+artaround.artworks.startSlideshow=starte Diashow aller Bilder dieses Kunstwerkes
+
+artaround.shop.title=Hier kannst du nun dein favorisiertes Kunstwerk bestellen\:
+
+artaround.technique.title=W?hlen Sie die Technik(en) aus, die ihr Kunstwerk beschreiben
+
+artaround.error.technique=Bitte geben sie mindestens eine Technik an!
+artaround.error.technique_not_valid=ist keine g\u00FCltige Technik\!
+artaround.error.technique_already_selected=wurde bereits ausgew\u00E4hlt\!
+artaround.error.technique_select_to_add=Bitte geben sie eine Technik an, die angeh\u00E4ngt werden soll\!
+artaround.error.technique_select_to_remove=Bitte geben sie eine Technik an, die zur\u00FCckgenommen werden soll\!
+
+
+#Ideator
+#########################################################################
+ideator.templ.title=Ideator - verwalte deine Ideen
+ideator.templ.logged_in=Angemeldet als
+ideator.templ.footer=Powered by KiWi - Knowlege in a Wiki
+
+ideator.navi.home=Home
+ideator.navi.new_idea=Neue Idee
+ideator.navi.login=Anmelden
+ideator.navi.logout=Abmelden
+
+ideator.login.title=Melde dich beim Ideator an
+ideator.login.registered=Das erste mal hier?
+ideator.login.register=Registriere dich.
+ideator.login.forgotten=Passwort vergessen?
+ideator.login.forget=Dann gehts hier lang!
+ideator.login.username=Name
+ideator.login.password=Passwort
+ideator.login.remember=Angemeldet bleiben
+ideator.login.facebook=Mit deinem Facebook Account anmelden
+ideator.login.foaf=Mit deinem FOAF+SSL Zertifikat anmelden
+
+ideator.register.title=Registrieren
+ideator.register.login=Benutzername
+ideator.register.firstname=Vorname
+ideator.register.lastname=Nachname
+ideator.register.password=Passwort
+ideator.register.validate=Bestätigen
+ideator.register.email=E-Mail
+ideator.register.abteilung=Abteilungsname
+ideator.register.position=Position
+
+ideator.btn.register=Registrieren
+ideator.btn.login=Anmelden
+ideator.btn.cancel=Abbrechen
+ideator.btn.close=Schlie\u00DFen
+ideator.btn.next=weiter
+ideator.btn.finnish=fertig
+ideator.btn.add=plus
+ideator.btn.remove=zur\u00FCck
+ideator.btn.ahead=vorw\u00E4rts
+ideator.btn.back=zur\u00FCck
+ideator.btn.search=Suche
+
+ideator.newIdeaForm.title=Name der Idee
+ideator.newIdeaForm.desc=Allgemeine Beschreibung der Idee
+ideator.newIdeaForm.isDesc=Beschreibung der IST-Situation 
+ideator.newIdeaForm.shouldDesc=Beschreibung der SOLL-Situation
+ideator.newIdeaForm.anonymous=Soll die Idee anonym eingereicht werden?
+ideator.newIdeaForm.mediaContents=Wollen Sie weitere Dateien anh\u00E4ngen?
+ideator.newIdeaForm.coAuthoren=Weitere Einreicher
+
+ideator.coAuthorForm.firsName=Vorname
+ideator.coAuthorForm.lastName=Nachname
+ideator.coAuthorForm.position=Position
+ideator.coAuthorForm.email=Email
+
+ideator.search.title = Ideator Suche
+ideator.search.results = Ergebnisse
+ideator.search.orderedby = geordnet nach
+ideator.search.oftotally = von insgesamt
+ideator.search.noresults = keine Ergebnisse
+ideator.search.hasstate = mit Status
+ideator.search.taggedwith = getagged mit
+ideator.search.and = und
+ideator.search.ordering.modified = letzter \u00C4nderung
+ideator.search.ordering.ceq = Community Equity
+ideator.search.ordering.relevance = Relevanz
+ideator.search.ordering.asc = (ansteigend)
+ideator.search.ordering.desc = (absteigend)
+ideator.search.status.20 = Archiv
+ideator.search.status.0 = Neu
+ideator.search.status.1 = Evaluierung
+ideator.search.status.2 = Evaluiert
+ideator.search.status.10 = Umgesetzt
+ideator.search.facets.title = Facettierte Suche
+ideator.search.facets.tags = Tag Facetten
+ideator.search.facets.state = Status Facetten
+ideator.search.facets.none = keine
+
+ideator.error.position=Bitte geben sie mindestens eine Position an!
+ideator.error.position_not_valid=ist keine g\u00FCltige Position\!
+ideator.error.position_already_selected=wurde bereits ausgew\u00E4hlt\!
+ideator.error.position_select_to_add=Bitte geben sie eine Position an, die angeh\u00E4ngt werden soll\!
+ideator.error.position_select_to_remove=Bitte geben sie eine Position an, die zur\u00FCckgenommen werden soll\!
+
+ideator.category.title=W\u00E4hlen sie ihre Kategori(en)
+ideator.error.category=Bitte geben sie mindestens eine Kategorie an!
+ideator.error.category_not_valid=ist keine g\u00FCltige Kategorie\!
+ideator.error.category_already_selected=wurde bereits ausgew\u00E4hlt\!
+ideator.error.category_select_to_add=Bitte geben sie eine Kategorie an, die angeh\u00E4ngt werden soll\!
+ideator.error.category_select_to_remove=Bitte geben sie eine Kategorie an, die zur\u00FCckgenommen werden soll\!
+
+profile.validate.firstname=Der Vorname ist ung\u00FCltig
+profile.validate.lastname=Der Nachname ist ung\u00FCltig
+
+#CAP-KOM
+#########################################################################
+artaround.cap-kom.site.title=CAP-KOM. Community Art Portal für kognitiv beeinträchtigte Menschen.
+artaround.cap-kom.homeTitel1=Community Art Portal
+artaround.cap-kom.homeTitel2=für kognitiv beeinträchtigte Menschen
+artaround.cap-kom.einfacheSprache.mitmachen=mitmachen
+artaround.cap-kom.einfacheSprache.nichtMehrMitmachen=nicht mehr mitmachen
+artaround.cap-kom.einfacheSprache.Kunstwerke=Kunstwerke
+artaround.cap-kom.einfacheSprache.KunstwerkeVon=Kunstwerke von
+artaround.cap-kom.einfacheSprache.meineKunstwerke=meine Kunstwerke
+artaround.cap-kom.einfacheSprache.kunstwerkHochladen=Kunstwerk hochladen
+artaround.cap-kom.einfacheSprache.bereitsMitgemacht=Ja, habe bereits mitgemacht
+artaround.cap-kom.einfacheSprache.nochNichtMitgemacht=Nein, habe noch nicht mitgemacht
+artaround.cap-kom.einfacheSprache.weiter=weiter
+artaround.cap-kom.einfacheSprache.meineFreunde=meine Freunde
+artaround.cap-kom.einfacheSprache.zurueckBlaettern=zurück blättern
+artaround.cap-kom.einfacheSprache.weiterBlaettern=weiter blättern
+artaround.cap-kom.einfacheSprache.ueberMich=über mich
+artaround.cap-kom.einfacheSprache.FotoHochladen=Foto hochladen
+artaround.cap-kom.einfacheSprache.Name=Name
+artaround.cap-kom.einfacheSprache.Alter=Alter
+artaround.cap-kom.einfacheSprache.Wohnort=Wohnort
+artaround.cap-kom.einfacheSprache.Hobbies=Hobbies
+artaround.cap-kom.einfacheSprache.speichern=speichern
+artaround.cap-kom.einfacheSprache.FreundschaftBeenden=Freundschaft beenden
+artaround.cap-kom.einfacheSprache.FreundeSuchen=Freunde suchen
+artaround.cap-kom.einfacheSprache.alsFreundHinzufuegen=als Freund hinzufügen
+artaround.cap-kom.einfacheSprache.zurueckZuKunstwerke=zurück zu den Kunstwerken
+artaround.cap-kom.einfacheSprache.Bewertung5=Bewertung 5 Punkte
+artaround.cap-kom.einfacheSprache.Bewertung4=Bewertung 4 Punkte
+artaround.cap-kom.einfacheSprache.Bewertung3=Bewertung 3 Punkte
+artaround.cap-kom.einfacheSprache.Bewertung2=Bewertung 2 Punkte
+artaround.cap-kom.einfacheSprache.Bewertung1=Bewertung 1 Punkte
+artaround.cap-kom.einfacheSprache.bewertungGespeichert=Bewertung gespeichert
+artaround.cap-kom.einfacheSprache.passwort=Passwort
+artaround.cap-kom.einfacheSprache.benutzername=Benutzername
+artaround.cap-kom.einfacheSprache.drucken=Drucken
+artaround.yourFriends=deine Freunde
+artaround.delete=L\u00F6schen
+
+activity.login=#{activity.user.firstName} #{activity.user.lastName} logged in
+activity.logout=#{activity.user.firstName} #{activity.user.lastName} logged out
+activity.register=#{activity.user.firstName} #{activity.user.lastName} signed up as a new user
+activity.addTag= tagged <a href="#{facesContext.externalContext.requestContextPath}/home.seam?kiwiid=#{activity.tag.taggedResource.resource.kiwiIdentifier}">#{activity.tag.taggedResource.title}</a> with <a href="#{facesContext.externalContext.requestContextPath}/home.seam?kiwiid=#{activity.tag.taggingResource.resource.kiwiIdentifier}">#{activity.tag.taggingResource.title}</a>
+activity.removeTag=removed tag <a href="#{facesContext.externalContext.requestContextPath}/home.seam?kiwiid=#{activity.tag.taggingResource.resource.kiwiIdentifier}">#{activity.tag.taggingResource.title}</a> from <a href="#{facesContext.externalContext.requestContextPath}/home.seam?kiwiid=#{activity.tag.taggedResource.resource.kiwiIdentifier}">#{activity.tag.taggedResource.title}</a>
+activity.createContentItem=created page <a href="#{facesContext.externalContext.requestContextPath}/home.seam?kiwiid=#{activity.contentItem.resource.kiwiIdentifier}">#{activity.contentItem.title}</a>
+activity.deleteContentItem=deleted page <a href="#{facesContext.externalContext.requestContextPath}/home.seam?kiwiid=#{activity.contentItem.resource.kiwiIdentifier}">#{activity.contentItem.title}</a>
+activity.editContentItem=modified page <a href="#{facesContext.externalContext.requestContextPath}/home.seam?kiwiid=#{activity.contentItem.resource.kiwiIdentifier}">#{activity.contentItem.title}</a>
+activity.visitContentItem=viewed page <a href="#{facesContext.externalContext.requestContextPath}/home.seam?kiwiid=#{activity.contentItem.resource.kiwiIdentifier}">#{activity.contentItem.title}</a>
+activity.annotate=annotated page <a href="#{facesContext.externalContext.requestContextPath}/home.seam?kiwiid=#{activity.contentItem.resource.kiwiIdentifier}">#{activity.contentItem.title}</a>
+activity.tweet=<a href="#{facesContext.externalContext.requestContextPath}/home.seam?kiwiid=#{activity.contentItem.resource.kiwiIdentifier}">said</a> "#{activity.contentItem.title}"
+activity.addComment=commented on <a href="#{facesContext.externalContext.requestContextPath}/home.seam?kiwiid=#{activity.contentItem.resource.kiwiIdentifier}">#{activity.contentItem.title}</a> saying: <div class="activityComment">#{activity.comment.textContent.htmlContent}</div>
+activity.addFriend=established a connection with <a href="#{facesContext.externalContext.requestContextPath}/home.seam?kiwiid=#{activity.friend.resource.kiwiIdentifier}">#{activity.friend.firstName} #{activity.friend.lastName}</a>
+activity.removeFriend=removed the connection with <a href="#{facesContext.externalContext.requestContextPath}/home.seam?kiwiid=#{activity.friend.resource.kiwiIdentifier}">#{activity.friend.firstName} #{activity.friend.lastName}</a>
+activity.addGroup=created group <a href="#{facesContext.externalContext.requestContextPath}/home.seam?kiwiid=#{activity.contentItem.resource.kiwiIdentifier}">#{activity.group.name}</a>

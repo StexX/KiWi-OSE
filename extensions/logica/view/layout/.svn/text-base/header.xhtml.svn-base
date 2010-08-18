@@ -1,0 +1,28 @@
+<rich:toolBar xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j"
+	id="toolbar">
+
+
+	<!-- @newMenuItem@ -->
+	<rich:toolBarGroup location="right">
+		<h:outputText value="Welcome, #{identity.username}!"
+			rendered="#{identity.loggedIn}" />
+		<h:outputLink value="#" id="loginLinkx"
+			rendered="#{not identity.loggedIn}" >
+        	Login 
+        	<rich:componentControl for="loginPanelx" attachTo="loginLinkx" operation="show" event="onclick"/>
+    	</h:outputLink>
+			
+		<s:link action="register" value="Sign Up"
+			rendered="#{not identity.loggedIn}" id = "signUp"/>
+
+		<s:link view="/home.xhtml" action="#{identity.logout}" value="Logout"
+			rendered="#{identity.loggedIn}" />
+
+	</rich:toolBarGroup>
+</rich:toolBar>

@@ -1,0 +1,8 @@
+<div>
+    <p>
+        <span property="uri::http://www.owl-ontologies.com/Logica.owl#hasInitials">JWZ</span>
+        works 
+        <span property="uri::http://www.owl-ontologies.com/Logica.owl#hasWorkHoursPerWeek">25</span>.
+        hours per week
+    </p>
+</div>

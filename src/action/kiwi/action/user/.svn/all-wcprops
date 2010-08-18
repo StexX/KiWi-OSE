@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/kiwi/!svn/ver/5557/KiWi/trunk/src/action/kiwi/action/user
+END
+UsersWithRoles.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/4633/KiWi/trunk/src/action/kiwi/action/user/UsersWithRoles.java
+END
+LoginAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/kiwi/!svn/ver/5557/KiWi/trunk/src/action/kiwi/action/user/LoginAction.java
+END
+AssignRoleAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5557/KiWi/trunk/src/action/kiwi/action/user/AssignRoleAction.java
+END
+GrantTypePermissionAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5557/KiWi/trunk/src/action/kiwi/action/user/GrantTypePermissionAction.java
+END
+GroupsWithPermissions.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5166/KiWi/trunk/src/action/kiwi/action/user/GroupsWithPermissions.java
+END
+FoafSslLoginServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5557/KiWi/trunk/src/action/kiwi/action/user/FoafSslLoginServiceImpl.java
+END
+FacebookLoginAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5557/KiWi/trunk/src/action/kiwi/action/user/FacebookLoginAction.java
+END
+RegisterAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/5557/KiWi/trunk/src/action/kiwi/action/user/RegisterAction.java
+END
+UsersWithPermissions.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/4633/KiWi/trunk/src/action/kiwi/action/user/UsersWithPermissions.java
+END
+TypesWithPermissions.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5166/KiWi/trunk/src/action/kiwi/action/user/TypesWithPermissions.java
+END
+AdminSetupAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5557/KiWi/trunk/src/action/kiwi/action/user/AdminSetupAction.java
+END
+GroupsWithRoles.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/4645/KiWi/trunk/src/action/kiwi/action/user/GroupsWithRoles.java
+END
+GrantPermissionAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5557/KiWi/trunk/src/action/kiwi/action/user/GrantPermissionAction.java
+END

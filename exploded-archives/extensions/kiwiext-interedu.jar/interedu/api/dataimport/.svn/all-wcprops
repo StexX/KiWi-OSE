@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-interedu.jar/interedu/api/dataimport
+END
+DokumentArtResolver.class
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-interedu.jar/interedu/api/dataimport/DokumentArtResolver.class
+END
+InterEduImportService.class
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-interedu.jar/interedu/api/dataimport/InterEduImportService.class
+END
+InterEduImportServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-interedu.jar/interedu/api/dataimport/InterEduImportServiceRemote.class
+END
+ParseArtikelService.class
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-interedu.jar/interedu/api/dataimport/ParseArtikelService.class
+END
+InterEduKategorieFacade.class
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-interedu.jar/interedu/api/dataimport/InterEduKategorieFacade.class
+END
+InterEduImportServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-interedu.jar/interedu/api/dataimport/InterEduImportServiceLocal.class
+END

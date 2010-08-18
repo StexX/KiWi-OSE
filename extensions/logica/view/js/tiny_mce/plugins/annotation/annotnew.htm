@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>{#annotation_dlg.new_annot_title}</title>
+	<script type="text/javascript">window.Array = parent.window.Array; /* Array compatibility hack */</script>
+	<script type="text/javascript" src="../../tiny_mce_popup.js"></script>
+	<script type="text/javascript" src="../../utils/mctabs.js"></script>
+	<script type="text/javascript" src="../../utils/editable_selects.js"></script>
+	<script type="text/javascript" src="../../utils/form_utils.js"></script>
+	<script type="text/javascript" src="js/functional.js"></script>
+	<!--  <script type="text/javascript" src="/KiWi/seam/resource/remoting/resource/remote.js"></script>
+	<script type="text/javascript" src="/KiWi/seam/resource/remoting/interface.js?editorAction"></script>
+    --> 
+    <script type="text/javascript" src="js/seam_copy_cid.js"></script>
+	<script type="text/javascript" src="js/wdg_annottools.js"></script>
+	<script type="text/javascript" src="js/annotnew.js"></script>
+	<link href="css/annots.css" rel="stylesheet" type="text/css" />
+	<base target="_self" />
+</head>
+
+<body id="styleprops" style="display: none">
+<form onsubmit="updateAction();return false;" action="#">
+
+<div class="tabs">
+</div>
+
+<div class="panel_wrapper">
+	<div id="general_panel" class="panel current" style="height:120px;">
+
+
+	<table border="0" width="100%">
+		<tr>
+			<td><label for="text_size">{#annotation_dlg.annot_type}</label></td>
+			<td>
+				<select id="annot_types" name="annot_types"></select>
+			</td>
+		</tr>
+		<tr>
+			<td><label for="text_size">{#annotation_dlg.label}</label></td>
+			<td>
+				<input type='text' id="annot_label" name="annot_label" />
+			</td>
+		</tr>
+		<tr>
+			<td><label for="text_size">{#annotation_dlg.uri}</label></td>
+			<td>
+				<input type='text' id="annot_uri" name="annot_uri" />
+			</td>
+		</tr>
+		<tr>
+			<td><label for="text_size">{#annotation_dlg.annot_note}</label></td>
+			<td>
+				<textarea id="annot_note" name="annot_note" cols='25' rows='2'></textarea>
+			</td>
+		</tr>
+	</table>
+
+
+	</div>
+</div>
+
+
+<div class="mceActionPanel">
+	<div style="float: left">
+		<div style="float: left"><input type="submit" id="insert" name="insert" value="{#annotation_dlg.create}" /></div>
+
+		<br style="clear: both" />
+	</div>
+
+	<div style="float: right">
+		<input type="button" id="cancel" name="cancel" value="{#cancel}" onClick="tinyMCEPopup.close();" />
+	</div>
+</div>
+</form>
+
+<div style="display: none">
+	<div id="container"></div>
+</div>
+
+</body>
+</html>

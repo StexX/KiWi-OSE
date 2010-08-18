@@ -1,0 +1,51 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+                xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                template="layout/template.xhtml">
+
+ 
+ 
+    <ui:define name="body">
+
+        <h1>Configure Application Order</h1>
+
+        <rich:messages/>
+
+        <h:form>
+	        <rich:orderingList value ="#{kiwi.admin.applicationConfigurationAction.applications}"  
+	                             var = "app" 
+	                       converter = "kiwi.admin.applicationConverter"
+	                      listHeight = "300" 
+	                       listWidth = "650">
+	            <rich:column width="50">
+	            	<h:selectBooleanCheckbox value="#{app.visible}" />
+	            </rich:column>
+	            <rich:column  width="180">
+		            <f:facet name="header">
+		                <h:outputText value="Application Name" />
+		            </f:facet> 
+	                <h:outputText value="#{app.name}"/>
+	            </rich:column>
+	            <rich:column> 
+	                <f:facet name="header">
+	                    <h:outputText value="Description" />
+	                </f:facet>
+	                <h:outputText value="#{app.description}"/><br/>
+	            </rich:column>
+	        </rich:orderingList>
+	        
+	        
+	        <h:commandButton action="#{kiwi.admin.applicationConfigurationAction.commit()}" value="Save" />
+        </h:form>
+    </ui:define>         
+                
+</ui:composition>

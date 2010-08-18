@@ -1,0 +1,58 @@
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+                xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf">
+	<div id="editKat_panel" style="display:none">
+		<div class="editPanel" id="article_addTag" style="height:460px;">
+			<div class="editPanel_header">
+				<h4>Kategorien hinzuf&#xFC;gen / entfernen</h4>
+			</div>
+			<div class="editPanel_content" style="height:400px;">
+				<h3 style="width:400px">Kategorien zum hinzuf&#xFC;gen anklicken:</h3>
+				<br />
+				<div class="editPanelLeft">
+					<rich:tree value="#{interedu.treeAction.root}" var="item" switchType="ajax" >
+		  				<rich:treeNode icon="img/tree-node.png" iconLeaf="img/tree-node.png" >
+		  					<a:commandLink action="#{interedu.articleAction.addCategory(item.concept.id)}" value="#{item}" reRender="editKatPanelRight" />
+    					</rich:treeNode>
+					</rich:tree>
+				</div>
+				<s:div id="editKatPanelRight" styleClass="editPanelRight">
+					<ul style="height:auto;border:none;">
+						<ui:repeat value="#{interedu.articleAction.categories}" var="catItem">
+							<li style="margin-left:20px">
+								<h:outputText value="#{catItem.preferredLabel} " />
+								<h:commandLink action="#{interedu.articleAction.removeCategory(catItem.id)}" >
+									<img src="images/icon_bin.png" alt="entfernen" style="border:none" />
+								</h:commandLink>
+							</li>
+						</ui:repeat>
+					</ul>
+				</s:div>
+			</div>
+			<div class="editPanel_buttons">
+				<table width="100%">
+					<tr>
+						<td><a:commandButton value="&#xC4;nderungen zur&#xFC;cknehmen" onclick="closeBackground();" action="#{interedu.articleAction.setEditMode('none')}" reRender="article_categories" /></td>
+						<td align="right">
+							<a:commandButton value="&#xC4;nderungen speichern" onclick="closeBackground();" action="#{interedu.articleAction.saveCategories()}" reRender="content_middle_complete"/>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+	/* <![CDATA[ */
+	openEditPanel('editKat_panel');
+
+	/* ]]> */
+</script>
+</ui:composition>

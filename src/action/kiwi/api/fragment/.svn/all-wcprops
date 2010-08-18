@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/kiwi/!svn/ver/3130/KiWi/trunk/src/action/kiwi/api/fragment
+END
+FragmentServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/action/kiwi/api/fragment/FragmentServiceRemote.java
+END
+FragmentFacade.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/3130/KiWi/trunk/src/action/kiwi/api/fragment/FragmentFacade.java
+END
+FragmentServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/action/kiwi/api/fragment/FragmentServiceLocal.java
+END
+FragmentService.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/3130/KiWi/trunk/src/action/kiwi/api/fragment/FragmentService.java
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/kiwi/!svn/ver/4789/KiWi/trunk/extensions/semForms/META-INF
+END
+faces-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/kiwi/!svn/ver/4082/KiWi/trunk/extensions/semForms/META-INF/faces-config.xml
+END
+pages.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/kiwi/!svn/ver/4789/KiWi/trunk/extensions/semForms/META-INF/pages.xml
+END
+components.xml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/kiwi/!svn/ver/4082/KiWi/trunk/extensions/semForms/META-INF/components.xml
+END

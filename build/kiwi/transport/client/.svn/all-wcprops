@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/transport/client
+END
+WidgetConfig.class
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/transport/client/WidgetConfig.class
+END
+TransportSkosDetails$TransportLanguageDetails.class
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/transport/client/TransportSkosDetails$TransportLanguageDetails.class
+END
+TransportSkosDetails.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/transport/client/TransportSkosDetails.class
+END
+KiWiSerializableException.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/transport/client/KiWiSerializableException.class
+END
+TransportTag.class
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/transport/client/TransportTag.class
+END
+Properties.class
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/transport/client/Properties.class
+END
+TransportSkosConcept.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/transport/client/TransportSkosConcept.class
+END

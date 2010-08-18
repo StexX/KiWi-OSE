@@ -1,0 +1,31 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">	
+	
+	<head>
+	
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	    <title>#{messages['artaround.cap-kom.site.title']}</title>
+	    
+		<link href="#{facesContext.externalContext.requestContextPath}/artaround/cap-kom/css/central_draft.css" rel="stylesheet" type="text/css"/>
+		<!--[if lte IE 7]>
+		<link href="#{facesContext.externalContext.requestContextPath}/artaround/cap-kom/css/patches/patch_layout_draft.css" rel="stylesheet" type="text/css" />
+		<![endif]-->
+		<link href="#{facesContext.externalContext.requestContextPath}/artaround/cap-kom/css/capKom.css" rel="stylesheet" type="text/css"/>	
+		
+		<link href="#{facesContext.externalContext.requestContextPath}/artaround/cap-kom/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.0r4/build/fonts/fonts-min.css" />
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.0r4/build/container/assets/skins/sam/container.css" />
+		<script type="text/javascript" src="http://yui.yahooapis.com/2.8.0r4/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+		
+		<script type="text/javascript" src="http://yui.yahooapis.com/2.8.0r4/build/dragdrop/dragdrop-min.js"></script>
+		<script type="text/javascript" src="http://yui.yahooapis.com/2.8.0r4/build/container/container-min.js"></script>	
+	
+	</head>
+	
+</ui:composition>	

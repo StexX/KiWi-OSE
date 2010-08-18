@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/kiwi/!svn/ver/3724/KiWi/trunk/lib/build
+END
+reportng-0.9.8.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/kiwi/!svn/ver/2338/KiWi/trunk/lib/build/reportng-0.9.8.jar
+END
+standalone-compiler.jar
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/lib/build/standalone-compiler.jar
+END
+velocity-dep-1.4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/kiwi/!svn/ver/2338/KiWi/trunk/lib/build/velocity-dep-1.4.jar
+END
+javacc.jar
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/kiwi/!svn/ver/2200/KiWi/trunk/lib/build/javacc.jar
+END

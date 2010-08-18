@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/kiwi/!svn/ver/5557/KiWi/trunk/src/action/kiwi/service/entity
+END
+KiWiEntityConverter.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5557/KiWi/trunk/src/action/kiwi/service/entity/KiWiEntityConverter.java
+END
+KiWiInvocationHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5166/KiWi/trunk/src/action/kiwi/service/entity/KiWiInvocationHandler.java
+END
+KiWiEntityManagerImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5557/KiWi/trunk/src/action/kiwi/service/entity/KiWiEntityManagerImpl.java
+END
+KiWiQuery.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/kiwi/!svn/ver/3034/KiWi/trunk/src/action/kiwi/service/entity/KiWiQuery.java
+END
+FacadeUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/4535/KiWi/trunk/src/action/kiwi/service/entity/FacadeUtils.java
+END

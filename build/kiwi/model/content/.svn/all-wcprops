@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/content
+END
+TextContent$1$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/content/TextContent$1$1.class
+END
+Content.class
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/content/Content.class
+END
+TextContent$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/content/TextContent$1.class
+END
+ContentItem.class
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/content/ContentItem.class
+END
+TextContent.class
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/content/TextContent.class
+END
+ContentItemI.class
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/content/ContentItemI.class
+END
+TextFragment.class
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/content/TextFragment.class
+END
+TextContentSchema.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/content/TextContentSchema.xsd
+END
+MediaContent$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/content/MediaContent$1.class
+END
+MediaContent.class
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/content/MediaContent.class
+END

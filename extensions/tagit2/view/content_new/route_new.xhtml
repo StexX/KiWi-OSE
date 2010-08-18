@@ -1,0 +1,268 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+			    xmlns:a="http://richfaces.org/a4j" 
+			    xmlns:c="http://java.sun.com/jstl/core"
+			    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                xmlns:rich="http://richfaces.org/rich"
+ >
+ 
+<script type="text/javascript">
+	
+	/* <![CDATA[ */
+	
+	var newpoly;
+	var startPoint;
+	var endPoint;
+	
+	var evt1;
+	
+	
+	/* ]]> */
+</script>
+
+
+<a:form>
+<div id="RouteBox">
+
+	<div id="pointHeader">
+		<s:div id="pointHeaderTitle" style="color:#a91d1d">
+			<!-- text image -->
+			<img src="img/route/routeBig.png" />
+			<!-- text title -->
+			<span id="pointHeaderTitleText">
+				<h:inputText value="#{tagit2.newRouteAction.title}" styleClass="routeTitleInput" />
+			</span>
+		</s:div>
+		<div id="routeHeaderCloser" style="margin-left:782px;margin-top:-20px;" onclick="check(getPolyRoute());">
+		</div>
+		<div class="clear"></div>
+	</div>
+	
+	<div id="pointContentBackground">
+		<div id="RouteContent">
+		
+			<div class="routeContentLeft">
+				<rich:editor id="description_editor"
+		    						height="410"
+		    					 	width="280"
+		    						required="false"
+								 	theme="advanced"
+								 	configuration="tinymce-small"
+								 	plugins="safari,pagebreak,style,layer,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,visualchars,nonbreaking,xhtmlxtras"
+								 	value="#{tagit2.newRouteAction.description}">
+				</rich:editor>
+			</div>
+			<div class="routeContentRight">
+				<div class="routeAdditionalInfo">
+					<ul style="margin-top:0px" >
+						<li style="display:inline;padding:30px;"><a class="btns" href="#" onclick="startDrawRoute();">Route zeichnen</a></li>
+						<li style="display:inline;padding:30px;"><a class="btns" href="#" onclick="startEditRoute();">Route bearbeiten</a></li>
+						<li style="display:inline;padding:30px;"><a class="btns" href="#" onclick="quitRoute();">Route fixieren</a></li>
+					</ul>
+				</div>
+				<div class="innerMapWrap" >
+					<div id="innerMapRoute_canvas" ></div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+<a:jsFunction name="check" data="#{tagit2.newRouteAction.checkRoute()}" oncomplete="onCheck(data);">
+	<a:actionparam name="route" assignTo="#{tagit2.newRouteAction.routeString}"></a:actionparam>
+</a:jsFunction>
+<a:jsFunction name="ajaxCancelNewRoute" data="#{tagit2.newRouteAction.cancel()}" oncomplete="closeInfoWindow();closePoint()"></a:jsFunction>
+<a:jsFunction name="ajaxSaveNewRoute" data="#{tagit2.newRouteAction.save()}" oncomplete="closeInfoWindow();closePointOnLocation(startPoint.getLatLng())"></a:jsFunction>
+
+	<div id="messagePanel" class="panel">
+		<div id="messagePanelContent" class="messagePanelContent">
+		</div>
+		<div class="messagePanelButtons">
+			<table width="100%"><tr><td>
+			<a href="#" onclick="jQuery('#messagePanel').hide();ajaxCancelNewRoute();">Nicht Speichern</a>
+			</td><td align="right">
+			<a href="#" onclick="jQuery('#messagePanel').hide();ajaxSaveNewRoute();">Speichern</a>
+			</td></tr></table>
+		</div>
+	</div>
+	
+	<div id="errorPanel" class="panel">
+		<div id="errorPanelContent" class="messagePanelContent">
+		</div>
+		<div class="messagePanelButtons">
+			<table width="100%"><tr><td>
+			<a href="#" onclick="jQuery('#errorPanel').hide();ajaxCancelNewRoute();">Erstellen abbrechen</a>
+			</td><td align="right">
+			<a href="#" onclick="jQuery('#errorPanel').hide();jQuery('#back2').hide();">Fehler ausbessern</a>
+			</td></tr></table>
+		</div>
+	</div>
+	
+	<div id="back2" />
+
+</a:form>
+
+<script type='text/javascript'>
+	/* <![CDATA[ */
+	
+	var innerMap;
+	
+	function loadInnerMap() {
+		
+		innerMap = new GMap2(document.getElementById("innerMapRoute_canvas"));
+		innerMap.setUIToDefault();
+
+		innerMapCurPoint = new GLatLng(map.getCenter());
+		innerMap.setCenter(map.getCenter(),13);
+		
+		//set point
+		startPoint = new GMarker(map.getCenter(),{icon:createIcon("route_start.png"),draggable:true});
+		
+		innerMap.addOverlay(startPoint);
+		if( newpoly != null ) {
+			
+		}
+		endPoint = null;
+	}
+	
+	
+	function startDrawRoute() {
+
+		if( startPoint.draggable ) {
+			startPoint.disableDragging();
+		}
+		if( newpoly != null ) {
+			if( evt1 != null ) {
+				GEvent.removeListener(evt1);
+				evt1 = null;
+			}
+			newpoly.disableEditing();
+			newpoly.enableDrawing();
+		} else {
+			newpoly = new GPolyline();innerMap.addOverlay(newpoly);
+			newpoly.insertVertex(0,startPoint.getLatLng());
+			
+			newpoly.enableDrawing();
+			GEvent.addListener(newpoly,'lineupdated',function() {
+				if( !newpoly.getVertex(0).equals(startPoint.getLatLng()) ) {
+					startPoint.setLatLng(newpoly.getVertex(0));
+				}
+			});
+		}
+	}
+	
+	function startEditRoute() {
+		
+		if( startPoint.draggable ) {
+			startPoint.disableDragging();
+		}
+		
+		if( newpoly != null ) {
+			newpoly.disableEditing();
+			newpoly.enableEditing();
+			evt1 = GEvent.addListener(newpoly,"click",function(point){
+				for( var i= 0; i < newpoly.getVertexCount() ;i++ ) {
+					if(newpoly.getVertex(i).equals(point)) {
+						newpoly.deleteVertex(i);
+						break;
+					}
+				}
+			});
+			
+		} else {
+			alert('Zuerst Route zeichnen');
+		}
+	}
+	
+	function quitRoute() {
+		if( newpoly != null ) {
+			newpoly.disableEditing();
+			endPoint = new GMarker(newpoly.getVertex(newpoly.getVertexCount()-1), {icon:createIcon("route_end.png")});
+			innerMap.addOverlay(endPoint);
+			jQuery('.btns').attr('onclick','').click(function() {
+				return false;
+			});
+			jQuery('.btns').css('color','lightgray');
+		} else {
+			alert("Zuerst Route zeichnen");
+		}
+	}
+	
+	//--- this part is necessary for each point item
+	function openPointWindow() {
+		//margin in
+		jQuery("#point").css('margin-left','-400px');
+
+		jQuery("#back").css("background-color","#B404AE");
+		jQuery("#back").css("background-image","url(img/route/route.png)");
+		//set images (css attributes)
+		jQuery("#back").fadeIn("slow",function(){
+			jQuery("#point").fadeIn("slow",function(){
+				loadInnerMap();
+			});
+		});    
+	}
+    
+    if(openByClick) {
+    	openByClick = false;
+    	openPointWindow();
+    }
+	
+	function onCheck(data) {
+
+		if( data.type == 0 ) {
+			openErrorWindow(data.value);
+		} else  {
+			openInfoWindow(data.value);
+		}
+	}
+	
+	
+	function getPolyRoute() {
+		if( endPoint == null ) {
+			return null;
+		} else {
+			if( newpoly != null ) {
+				var ps = [newpoly.getVertexCount()];
+				for( var i = 0; i < newpoly.getVertexCount();i++ ) {
+					ps[i] = newpoly.getVertex(i);
+				}
+				return ps.join(";");
+			} else {
+				return null;
+			}
+		}
+	}
+	
+	function openInfoWindow(data) {
+		//TODO data is not yet in use for infoWindow
+		jQuery('#messagePanelContent').html("<p>Wollen sie die Route speichern?</p>");
+		jQuery('#back2').show();
+		jQuery('#messagePanel').show();
+	}
+
+	function openErrorWindow(data) {
+		jQuery('#errorPanelContent').html(data);
+		jQuery('#back2').show();
+		jQuery('#errorPanel').show();
+	}
+
+	function closeInfoWindow() {
+		jQuery('#errorPanelContent').html("");
+		jQuery('#messagePanelContent').html("");
+		jQuery('#back2').hide();
+		jQuery('.panel').hide();
+		if( newpoly != null ) {
+			innerMap.removeOverlay(newpoly);
+			newpoly = null;
+		}
+	}
+
+	/* ]]> */
+</script>
+
+</ui:composition>

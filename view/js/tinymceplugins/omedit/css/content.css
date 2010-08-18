@@ -1,0 +1,54 @@
+table.omedit-annotation > thead > tr > th {
+        font-size: smaller;
+        background-color: #EEE;
+        min-width: 100px;
+        padding: 1px;
+}
+
+table.omedit-annotation > tbody > tr > td {
+        font-size: 100%;
+}
+
+p.omedit-spacer {
+}
+
+/* The top-level table takes the whole width */
+#tinymce table.omedit-annotation {
+    width: 100%;
+}
+
+/* Nested tables are a bit smaller */
+table.omedit-annotation table.omedit-annotation {
+    margin: 3px;
+    max-width: 98%;
+}
+
+.omedit-meta {
+    background-color: #EEE;
+    font-size: smaller;
+}
+
+/* For some reason, TinyMCE converts strong to b in the editor */
+.omedit-meta > strong:after, .omedit-meta > b:after {
+    content: " = ";
+}
+
+/* Can't do that as long as @class from <span class="omdoc-meta-label"> is stripped */
+/* 
+.omedit-meta > .omedit-meta-label:after {
+    content: " = ";
+}
+*/
+
+span.omedit-mobj {
+	background-color: #EEE;
+}
+
+/* tell TinyMCE that these classes are actually there */
+.omedit-annotation {
+}
+
+.omedit-mobj {
+}
+
+

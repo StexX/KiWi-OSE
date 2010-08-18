@@ -1,0 +1,191 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/kwql
+END
+Dictionary.class
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/kwql/Dictionary.class
+END
+KwqlLinkQualifier$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/kwql/KwqlLinkQualifier$1.class
+END
+KwqlQueryServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/kwql/KwqlQueryServiceLocal.class
+END
+KwqlTagQualifier.class
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/kwql/KwqlTagQualifier.class
+END
+KwqlQueryServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/kwql/KwqlQueryServiceRemote.class
+END
+UnexpectedNodeException.class
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/kwql/UnexpectedNodeException.class
+END
+KwqlServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/kwql/KwqlServiceLocal.class
+END
+KwqlTernary$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/kwql/KwqlTernary$1.class
+END
+KwqlVariable.class
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/kwql/KwqlVariable.class
+END
+KwqlTagQualifier$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/kwql/KwqlTagQualifier$1.class
+END
+KwqlService.class
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/kwql/KwqlService.class
+END
+KwqlConstraints.class
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/kwql/KwqlConstraints.class
+END
+KwqlResourceConstraint.class
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/kwql/KwqlResourceConstraint.class
+END
+KwqlFragmentQualifier.class
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/kwql/KwqlFragmentQualifier.class
+END
+KwqlQueryService.class
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/kwql/KwqlQueryService.class
+END
+KwqlResource.class
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/kwql/KwqlResource.class
+END
+SolrBacktrackingOption.class
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/kwql/SolrBacktrackingOption.class
+END
+KiWiSOLRTuple.class
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/kwql/KiWiSOLRTuple.class
+END
+KwqlConstraints$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/kwql/KwqlConstraints$1.class
+END
+KwqlQualifierType.class
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/kwql/KwqlQualifierType.class
+END
+KwqlFragmentQualifier$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/kwql/KwqlFragmentQualifier$1.class
+END
+KwqlConstraint.class
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/kwql/KwqlConstraint.class
+END
+KwqlContentItemQualifier.class
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/kwql/KwqlContentItemQualifier.class
+END
+VariableSet.class
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/kwql/VariableSet.class
+END
+KwqlAxis.class
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/kwql/KwqlAxis.class
+END
+KwqlLinkQualifier.class
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/kwql/KwqlLinkQualifier.class
+END
+KwqlContentItemQualifier$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/kwql/KwqlContentItemQualifier$1.class
+END
+KwqlServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/kwql/KwqlServiceRemote.class
+END
+KwqlSolrQueryGenerator.class
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/kwql/KwqlSolrQueryGenerator.class
+END
+KwqlTargetVariable.class
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/kwql/KwqlTargetVariable.class
+END
+KwqlTernary.class
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/query/kwql/KwqlTernary.class
+END

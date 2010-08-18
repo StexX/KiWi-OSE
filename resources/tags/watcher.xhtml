@@ -1,0 +1,19 @@
+<ui:composition
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:c="http://java.sun.com/jstl/core"
+    xmlns:a="http://richfaces.org/a4j">
+	<a:region>
+		<a:htmlCommandLink
+			value="unwatch" 
+			rendered="#{kiwi.dashboard.watchlistAction.isWatched(contentItem)}"
+			action="#{kiwi.dashboard.watchlistAction.setWatch(contentItem, false)}" /> 
+		<a:htmlCommandLink
+			value="watch" 
+			rendered="#{!kiwi.dashboard.watchlistAction.isWatched(contentItem)}"
+			action="#{kiwi.dashboard.watchlistAction.setWatch(contentItem, true)}" /> 
+	</a:region>
+</ui:composition>

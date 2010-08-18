@@ -1,0 +1,46 @@
+# ArtAround properties file
+# created: 25.11.09
+# author: coster
+
+# Pfad zum Bilderverzeichnis:
+# hier werden die original Bilder gespeichert
+# die von einem Benutzer hochgeladen wurden
+#######################################################
+artaround.file_repository=c:/images
+
+# Pfad zum Bilder-Cache:
+# hier werden die skalierten Bilder gespeichert
+# um direkt in der Webanwendung angezeigt zu werden
+# Dieser Pfad muss auch als docBase in der server.xml 
+# eingetragen werden.
+########################################################
+artaround.file_cache=c:/images/cache
+
+# Bilder Directory am Server
+# hier muss der path in der server.xml eingetragen werden
+# <Context path="/KiWi/images" 
+#	docBase="c:/images/cache"
+#	reloadable="true">
+# </Context>
+#########################################################
+artaround.img_file_dir=/KiWi/images/cache
+
+# Bilder width und height
+###########################################
+# max size of a thumbnail picture in pixels
+artaround.image.thumbSize.x=150
+artaround.image.thumbSize.y=130
+
+# max size of a preview picture in pixels
+artaround.image.previewSize.x=400
+artaround.image.previewSize.y=330
+
+# max size of a detail picture in pixels
+artaround.image.detailSize.x=700
+artaround.image.detailSize.y=950
+
+# URL des Servers
+# TODO: dies können wir später entfernen ->
+# diesen Pfad können wir aus dem request auslesen
+##################################################
+artaround.server_url=http://localhost:8080

@@ -1,0 +1,72 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+    xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:a="http://richfaces.org/a4j">
+
+
+	<!-- EXIF metadata -->
+	<h2>EXIF Metadata</h2>
+
+	<s:div id="imageMetadataPanel">
+		<style type="text/css">
+			#imageMetadata {
+				width: 135px;
+				overflow: none;
+			}
+			
+			
+			.exifHeader {
+				padding-top: 2px;
+				font-weight: bold;
+				margin-left: -5px;
+				border-bottom: 1px solid #222222;
+			}
+			
+			.inplace{
+            	border: none;
+        	}
+        	
+	        .hover {
+	            background-color: orange;
+	        }
+		</style>
+		<h:panelGrid columns="1" id="imageMetadata">
+
+			<s:div styleClass="exifHeader"><h:outputText value="Photographer: "/></s:div>
+			<h:outputText value="#{photoAction.photo.artist}" />
+
+			<s:div styleClass="exifHeader"><h:outputText value="Camera Model: "/></s:div>
+			<h:outputText value="#{photoAction.photo.cameraModel}" />
+                        	   
+			<s:div styleClass="exifHeader"><h:outputText value="Date: "/></s:div>
+			<h:outputText value="#{photoAction.photo.date}" />
+			
+			<s:div styleClass="exifHeader"><h:outputText value="Shutter Speed: "/></s:div>
+			<h:outputText value="#{photoAction.photo.shutterSpeed}" />
+                        	   
+			<s:div styleClass="exifHeader"><h:outputText value="Aperture: "/></s:div>
+			<h:outputText value="#{photoAction.photo.aperture}" />
+                        	   
+			<s:div styleClass="exifHeader"><h:outputText value="Exposure Bias: "/></s:div>
+			<h:outputText value="#{photoAction.photo.exposureBias}" />
+      	</h:panelGrid>
+	</s:div>
+
+
+
+	<ui:include src="/panels/references.xhtml" />
+	<ui:include src="/panels/activities.xhtml" />
+	<ui:include src="/panels/semantic_recommendations.xhtml" />
+	<ui:include src="/panels/related_recommendations.xhtml" />
+	<ui:include src="/panels/multifactor_recommendations.xhtml" />
+	<ui:include src="/panels/grouped_recommendations.xhtml" />
+	<ui:include src="/panels/social_capital_recommendations.xhtml" />
+	
+</ui:composition>

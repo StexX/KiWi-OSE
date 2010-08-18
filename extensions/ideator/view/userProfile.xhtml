@@ -1,0 +1,198 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+			 	xmlns:c="http://java.sun.com/jstl/core"
+                template="layout/template_2col.xhtml">
+ 
+ 
+ <ui:define name="head_top">
+ 
+ </ui:define>   
+    
+<ui:define name="main_header">
+ 	<h2>UserProfile</h2>
+</ui:define>
+
+<ui:define name="main_header_links">
+	<li>
+		<a href="#" title="Noch Fragen?"><img src="img/header_links/question.png" /></a>
+	</li>
+	<li>
+		<a href="#"><img src="img/header_links/sound.png" /></a>
+	</li>
+</ui:define>
+
+
+       
+
+
+<ui:define name="main_content">
+ 	
+		 <div id="verto_accordion">
+			 
+			 <h2 class="current">Allgemeines</h2>
+			 <h:form>
+			 <h:messages styleClass="message"/>
+			 <div class="paneo">
+						<!--  Tab 1 Header -->
+	                    <!--  Tab 1 Content -->
+	                        <table cellpadding="5px" cellspacing="10px">
+	                            <tr>
+	                                <td valign="top" align="center">
+	                                    <fieldset class="fieldsetborder">
+	                                        <legend>
+	                                            #{messages['artaround.myProfil.label.personal']}
+	                                        </legend>
+	                                        <div class="expose">
+	                                            <div class="dialog">
+	                                                <h:panelGrid columns="2" rowClasses="prop" columnClasses="name,value">
+	                                                    
+														<h:outputText value="Firstname"/>
+														<h:inputText id="firstname" value="#{ideatorProfileAction.firstName}"/>
+														<h:outputText value="Lastname"/>
+														<h:inputText id="lastname" value="#{ideatorProfileAction.lastName}"/>					
+														<h:outputText value="Birthday: "/>
+		                    							<rich:calendar value="#{ideatorProfileAction.birthday}" locale="#{locale}" popup="true" showApplyButton="false" datePattern="dd. MMM. yyyy" cellWidth="24px" cellHeight="22px" style="width:200px"/>
+														 <h:outputText value="Gender: "/>
+		                    							<rich:inplaceSelect value="#{ideatorProfileAction.gender}" 
+		                        						defaultLabel="select ..." 
+		                        						selectWidth="200"
+		                        						showControls="true">
+						    						    <f:selectItem itemValue="male" itemLabel="male" />
+						        						<f:selectItem itemValue="female" itemLabel="female" />
+		                    							</rich:inplaceSelect>
+														 <h:outputText value="Street: "/>
+									             
+												        <!--  todo: should be autocomplete... -->
+									                    <rich:inplaceInput value="#{ideatorProfileAction.street}" 
+									                        defaultLabel="street name/number ..." 
+									                        inputWidth="200"
+									                        showControls="true"/>
+				                        
+									                    <h:outputText value="City: "/>
+									                    <!--  todo: should be autocomplete... -->
+									                    <rich:inplaceInput value="#{ideatorProfileAction.cityName}" 
+									                        defaultLabel="city name ..." 
+									                        inputWidth="200"
+									                        showControls="true"/>
+									          	       
+
+	                                                </h:panelGrid>
+	                                            </div>
+	                                        </div>
+	                                    </fieldset><!--  end persoenliche Informationen -->
+	                                    <br/>
+	                                </td>
+	                            </tr>
+	                        </table>
+	 		</div>
+
+			
+			<h2>Kontaktdaten</h2>
+			 <div class="paneo">
+						<!--  Tab 1 Header -->
+	                    <!--  Tab 1 Content -->
+	                        <table cellpadding="5px" cellspacing="10px">
+	                            <tr>
+	                                <td valign="top" align="center">
+	                                    <fieldset class="fieldsetborder">
+	                                        <legend>
+	                                            kontaktdaten
+	                                        </legend>
+	                                        <div class="expose">
+	                                            <div class="dialog">
+	                                                <h:panelGrid columns="2" rowClasses="prop" columnClasses="name,value">
+	                                                    
+								                    <h:outputText value="E-Mail: "/>
+								                    <rich:inplaceInput value="#{ideatorProfileAction.email}" defaultLabel="email address" showControls="true"/>
+								
+								                    <h:outputText value="Mobile: "/>
+								                    <rich:inplaceInput value="#{ideatorProfileAction.mobile}" defaultLabel="mobile phone number" showControls="true"/>
+								
+								                    <h:outputText value="Phone: "/>
+								                    <rich:inplaceInput value="#{ideatorProfileAction.phone}" defaultLabel="landline phone number" showControls="true"/>
+								
+								                    <h:outputText value="Skype: "/>
+								                    <rich:inplaceInput value="#{ideatorProfileAction.skypeAccount}" defaultLabel="Skype ID" showControls="true"/>
+								
+								                    <h:outputText value="Facebook: "/>
+								                    <rich:inplaceInput value="#{ideatorProfileAction.facebookAccount}" defaultLabel="Facebook ID" showControls="true"/>
+								
+								                    <h:outputText value="Twitter: "/>
+								                    <rich:inplaceInput value="#{ideatorProfileAction.twitterAccount}" defaultLabel="Twitter ID" showControls="true"/>
+															          	       
+
+	                                                </h:panelGrid>
+	                                            </div>
+	                                        </div>
+	                                    </fieldset><!--  end persoenliche Informationen -->
+	                                    <br/>
+	                                </td>
+	                            </tr>
+	                        </table>
+	 		</div>
+			
+			<h2>Job Info</h2>
+			 <div class="paneo">
+						<!--  Tab 1 Header -->
+	                    <!--  Tab 1 Content -->
+	                        <table cellpadding="5px" cellspacing="10px">
+	                            <tr>
+	                                <td valign="top" align="center">
+	                                    <fieldset class="fieldsetborder">
+	                                        <legend>
+	                                            job Info
+	                                        </legend>
+	                                        <div class="expose">
+	                                            <div class="dialog">
+	                                                <h:panelGrid columns="2" rowClasses="prop" columnClasses="register_name,register_value">
+	                                                    <h:outputLabel for="page_position_list">#{messages['ideator.register.position']}:</h:outputLabel> 
+														<s:div id="page_position_list" >
+															  <ul>
+															  	<ui:repeat value="#{positionAction.chosenConcepts}" var="pos">
+															  		<li><h:outputText value="#{pos.preferredLabel}" /></li>
+															  	</ui:repeat>
+															  </ul>
+															  <a href="#" onclick="jQuery('#position_chooser').fadeIn('fast');">Edit</a>
+														</s:div>       	       
+
+	                                                </h:panelGrid>
+	                                            </div>
+	                                        </div>
+	                                    </fieldset><!--  end persoenliche Informationen -->
+	                                    <br/>
+	                                </td>
+	                            </tr>
+	                        </table>
+	 		</div>
+			
+
+			
+			<h:commandButton value="Save" action="#{ideatorProfileAction.save()}" />
+			</h:form>
+			
+		</div>
+								
+</ui:define>
+
+<ui:define name="right_content">
+	<ui:include src="pages/box/sample.xhtml" />
+</ui:define>
+
+<ui:define name="popups">
+	<div id="position_chooser" style="display:none;">
+		<div class="background_hider" />
+		<div class="popup_600">
+			<ui:include src="pages/popup/position_chooser.xhtml" />
+		</div>
+	</div>
+</ui:define>
+
+</ui:composition>

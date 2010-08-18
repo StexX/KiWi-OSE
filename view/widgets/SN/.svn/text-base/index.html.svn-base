@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1250" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta name="google-site-verification" content="" />	
+		<title>SN Search</title>		
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.template.js"></script>
+		<script type="text/javascript" src="js/jquery.search.js"></script>
+		<script type="text/javascript" src="js/search_templates.js"></script>
+		<script type="text/javascript">
+			jQuery.noConflict();
+			jQuery(document).ready(function(){
+				var endpointUrl = "http://localhost:8080/KiWi/seam/resource/services/sn/search/query.json?";
+
+				var search = new jQuery.Search("#search_container", endpointUrl);
+				search.deploy();
+			});
+            
+            function linkTo(ecid) {
+                alert("Link to "+ecid);
+            }
+            
+		</script>	
+		<link rel="stylesheet" href="css/search.css">
+	</head>
+	<body>	
+		<div id="search_container" style="position:relative;left:50px;top:30px;"></div>
+	</body>
+</html>

@@ -1,0 +1,64 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:rich="http://richfaces.org/rich"
+  	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:kiwi="http://www.kiwi-project.eu/jsf">
+	<rich:modalPanel id="mediaUploadPanel" width="670" height="500">
+		<f:facet name="header">
+			<h:outputText value="Media upload"></h:outputText>
+		</f:facet>
+		<h:form id="mediaUploadForm">
+		  	<div style="text-align: center;">
+				<s:div id="media_content">
+				   	<s:div style="width: 96%; margin: 0 auto; text-align: center;">
+				   		<h:outputText value="No media content associated with this content item."
+				   			rendered="#{mediaAction.mediaContent == null}"
+				   			style="border:1px solid red;padding: 5px; " /> 
+						<h:outputText value="There are unsaved changes, please click on 'Save' to make them permanent." 
+				   			rendered="#{mediaAction.unsaved}"
+				   			style="border:1px solid red;padding: 5px; " />
+				    </s:div>
+				    <s:div rendered="#{mediaAction.mediaContent != null}" 
+				    	style="position:absolute;top:30px;right:10px;bottom:150px;left:10px;text-align: center;overflow:auto;">
+				    	<center>
+					    	<s:graphicImage style="padding: 3px; border: 1px solid black;"
+					    					value="#{mediaAction.mediaContent.data}" 
+					    	                fileName="#{mediaAction.mediaContent.fileName}">
+ 								<s:transformImageSize 
+				               		height="300" 
+				               		maintainRatio="true"/>
+							</s:graphicImage>
+				    	</center>
+				    </s:div>
+			    </s:div>
+			
+				<s:div id="buttons" 
+					style="position:absolute;bottom:3px;left:10px;right:10px;">
+					<rich:fileUpload 
+							fileUploadListener="#{mediaAction.listener}"
+							immediateUpload="true"
+							listHeight="60"
+							listWidth="100%"
+					        allowFlash="true">
+				        <a4j:support event="onuploadcomplete" reRender="media_content,buttons" />
+			            <f:facet name="label">
+			                <h:outputText value="{_KB}KB from {KB}KB uploaded --- {mm}:{ss}" />
+			        	</f:facet>
+				    </rich:fileUpload>
+					<s:div>
+			            <h:commandButton action="#{mediaAction.storeContentItem}" value="Save"
+			            	disabled="#{! mediaAction.unsaved}"  />
+			            <h:commandButton action="#{mediaAction.removeMedia}" value="Remove" 
+			            	rendered="#{(!mediaAction.unsaved) and (mediaAction.mediaContent != null)}" />
+			            <s:button action="#{mediaAction.cancel}" value="Cancel" />
+					</s:div>
+				</s:div>
+				
+		   </div>
+		</h:form>
+	</rich:modalPanel>
+</ui:composition>

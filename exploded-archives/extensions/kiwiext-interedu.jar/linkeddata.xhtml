@@ -1,0 +1,42 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a="http://richfaces.org/a4j" template="/layout/template-nocol.xhtml">
+
+    <ui:define name="header">
+       <!--<a:loadScript src="resource://jquery.js"/>
+       
+       <link href="stylesheet/dashboard.css" rel="stylesheet" type="text/css" />-->
+    
+    </ui:define>
+
+	<ui:define name="body">
+		<h:form id="filter" styleClass="edit">
+			<rich:simpleTogglePanel label="Filter" switchType="ajax">
+				<s:decorate template="layout/display.xhtml">
+					<ui:define name="label">Konzept</ui:define>
+					<h:inputText value="#{linkeddata.search}" />
+				</s:decorate>
+				<div class="actionButtons"><h:commandButton id="search"
+					value="Suche" action="#{linkeddata.find()}" /> <s:button
+					id="reset" value="Zurücksetzen"></s:button></div>
+			</rich:simpleTogglePanel>
+		</h:form>
+		<h:outputText value="keine Ergebnisse"
+			rendered="#{linkeddata.result==null}" />
+		<rich:dataTable value="#{linkeddata.result}" var="item"
+			rendered="#{linkeddata.result!=null}">
+			<rich:column>
+				<f:facet name="header">
+					<h:outputText value="Verwandtes Konzept" />
+				</f:facet>
+				<h:outputText value="#{item}" />
+			</rich:column>
+		</rich:dataTable>
+	</ui:define>
+</ui:composition>

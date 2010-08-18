@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/widgets/equity
+END
+CEQActivityJSON.class
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/widgets/equity/CEQActivityJSON.class
+END
+CEQChartWebService$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/widgets/equity/CEQChartWebService$1.class
+END
+CEQChartWebService.class
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/widgets/equity/CEQChartWebService.class
+END
+EquityBubble.class
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/widgets/equity/EquityBubble.class
+END
+EquityBubble$BubbleValue.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/widgets/equity/EquityBubble$BubbleValue.class
+END
+EquityBubbleWebService.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/widgets/equity/EquityBubbleWebService.class
+END

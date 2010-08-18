@@ -1,0 +1,67 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+    xmlns:c="http://java.sun.com/jstl/core"
+    xmlns:a="http://richfaces.org/a4j">
+
+    <h3>History</h3>
+    
+    <a:outputPanel id="userHistory" layout="block">
+	    <rich:tabPanel switchType="ajax">
+	        <rich:tab label="Visits">
+	            <ul>
+	               <ui:repeat value="#{kiwi.dashboard.userHistoryAction.listLastVisits()}" var="visit">
+	                   <li><kiwi:link value="#{kiwi.dashboard.userHistoryAction.ellipse(visit.contentItem.title,25)}" contentItem="#{visit.contentItem}" /></li>
+	               </ui:repeat>
+	            </ul>
+	        </rich:tab>
+	        <rich:tab label="Edits">
+                <ul>
+                   <ui:repeat value="#{kiwi.dashboard.userHistoryAction.listLastEdits()}" var="edit">
+                       <li><kiwi:link value="#{kiwi.dashboard.userHistoryAction.ellipse(edit.contentItem.title,25)}" contentItem="#{edit.contentItem}" /></li>
+                   </ui:repeat>
+                </ul>
+	        </rich:tab>
+	        <rich:tab label="Tags">
+                <ul>
+                   <ui:repeat value="#{kiwi.dashboard.userHistoryAction.listLastTags()}" var="tag">
+                       <li>
+                           <kiwi:link value="#{kiwi.dashboard.userHistoryAction.ellipse(tag.tag.taggedResource.title,10)}" contentItem="#{tag.tag.taggedResource}" />
+                           <h:outputText value=" with " />
+			               <s:link view="/search.xhtml" value="#{kiwi.dashboard.userHistoryAction.ellipse(tag.tag.taggingResource.title,10)}">
+			                    <f:param name="q" value="tag:&quot;#{tag.tag.taggingResource.title}&quot;"/>
+			               </s:link>
+                       </li>
+                   </ui:repeat>
+                </ul>
+	        </rich:tab>
+	        <rich:tab label="Comments">
+                <ul>
+                   <ui:repeat value="#{kiwi.dashboard.userHistoryAction.listLastComments()}" var="comment">
+                       <li>
+                           <kiwi:link value="#{kiwi.dashboard.userHistoryAction.ellipse(comment.contentItem.title,10)}" contentItem="#{comment.contentItem}" />
+                           <h:outputText value=" with " />
+                           <kiwi:link value="#{kiwi.dashboard.userHistoryAction.ellipse(comment.comment.title,10)}" contentItem="#{comment.comment}" />
+                       </li>
+                   </ui:repeat>
+                </ul>
+	        </rich:tab>
+	        <rich:tab label="Searches">
+                <ul>
+                   <ui:repeat value="#{kiwi.dashboard.userHistoryAction.listLastSearches()}" var="search">
+                       <li>
+                           <s:link view="/search.xhtml" value="#{kiwi.dashboard.userHistoryAction.ellipse(search.searchString,25)}">
+                                <f:param name="q" value="#{search.searchString}"/>
+                           </s:link>
+                       </li>
+                   </ui:repeat>
+                </ul>
+	        </rich:tab>
+	    </rich:tabPanel>    
+    </a:outputPanel>
+</ui:composition>

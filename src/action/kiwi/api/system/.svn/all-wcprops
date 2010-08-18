@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/system
+END
+StatusServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/3148/KiWi/trunk/src/action/kiwi/api/system/StatusServiceRemote.java
+END
+StatusServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/3148/KiWi/trunk/src/action/kiwi/api/system/StatusServiceLocal.java
+END
+StatusService.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/kiwi/!svn/ver/3281/KiWi/trunk/src/action/kiwi/api/system/StatusService.java
+END

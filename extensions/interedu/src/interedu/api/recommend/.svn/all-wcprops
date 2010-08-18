@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/2882/KiWi/trunk/extensions/interedu/src/interedu/api/recommend
+END
+KeaRecommendService.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/2519/KiWi/trunk/extensions/interedu/src/interedu/api/recommend/KeaRecommendService.java
+END
+SimpleRecommenderService.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/kiwi/!svn/ver/2882/KiWi/trunk/extensions/interedu/src/interedu/api/recommend/SimpleRecommenderService.java
+END
+KeaRecomandationException.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/kiwi/!svn/ver/2202/KiWi/trunk/extensions/interedu/src/interedu/api/recommend/KeaRecomandationException.java
+END

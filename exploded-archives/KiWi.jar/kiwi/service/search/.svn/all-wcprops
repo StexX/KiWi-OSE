@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/search
+END
+SemanticIndexingScheduleController.class
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/search/SemanticIndexingScheduleController.class
+END
+PersonalizedSearchServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/search/PersonalizedSearchServiceImpl.class
+END
+SemanticIndexingServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/search/SemanticIndexingServiceImpl.class
+END
+SolrServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/search/SolrServiceImpl.class
+END
+SemanticIndexingScheduleProcessor.class
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/search/SemanticIndexingScheduleProcessor.class
+END

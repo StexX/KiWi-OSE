@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/socialnetworking
+END
+FacebookService.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/socialnetworking/FacebookService.java
+END
+FacebookServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/socialnetworking/FacebookServiceLocal.java
+END
+TwitterServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/3180/KiWi/trunk/src/action/kiwi/api/socialnetworking/TwitterServiceLocal.java
+END
+TwitterServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/3180/KiWi/trunk/src/action/kiwi/api/socialnetworking/TwitterServiceRemote.java
+END
+FacebookServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/socialnetworking/FacebookServiceRemote.java
+END
+SocialNetworkingService.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/socialnetworking/SocialNetworkingService.java
+END
+TwitterService.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/3180/KiWi/trunk/src/action/kiwi/api/socialnetworking/TwitterService.java
+END

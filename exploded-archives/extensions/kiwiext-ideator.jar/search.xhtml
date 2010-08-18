@@ -1,0 +1,138 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+			 	xmlns:c="http://java.sun.com/jstl/core"
+                template="layout/template_2col.xhtml">
+      
+<ui:define name="html_head">
+	<link href="stylesheet/search.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="js/lib/jquery-ui-1.7.2.min.js" />
+</ui:define>
+
+<ui:define name="main_header">
+ 	<h2>#{messages['ideator.search.title']}</h2>
+</ui:define>
+
+<ui:define name="main_header_links">
+	<li>
+		<a href="#" title="Noch Fragen?"><img src="img/header_links/question.png" /></a>
+	</li>
+</ui:define>
+
+<ui:define name="main_content">
+	
+	<!-- search field -->
+	<h:form id="search_fulltext">
+		<h:inputText id="s2" value="#{ideator.searchAction.query}" />
+		<h:commandButton type="submit" value="#{messages['ideator.btn.search']}" action="#{ideator.searchAction.search}" style="font-size:14px" />
+	</h:form>
+	
+	<!-- tag facettes -->
+	<h:form>
+		<div class="search_facets">
+			<s:span styleClass="search_facets" rendered="#{ideator.searchAction.status != -1}" >
+				<h:outputText value="#{messages['ideator.search.hasstate']} #{ideator.searchAction.getStatusFacetString(ideator.searchAction.status)}" />
+				<h:commandLink action="#{ideator.searchAction.setStatus(-1)}">
+					<img src="stylesheet/images/icon_cancel.png" style="width:12px;margin-left:-3px" />
+				</h:commandLink>
+			</s:span>
+			<h:outputText value=" #{messages['ideator.search.and']} " rendered="#{ideator.searchAction.searchTags.size > 0 and ideator.searchAction.status != -1}" />
+			<h:outputText rendered="#{ideator.searchAction.searchTags.size > 0}" value="#{messages['ideator.search.taggedwith']} " />
+			<a:repeat value="#{ideator.searchAction.searchTags}" var="tag" rowKeyVar="index">
+				<h:outputText value=" #{tag}" />
+				<h:commandLink action="#{ideator.searchAction.removeTag(tag)}">
+					<img src="stylesheet/images/icon_cancel.png" style="width:12px;margin-left:-3px" />
+				</h:commandLink>
+				<h:outputText value=", " rendered="#{ideator.searchAction.searchTags.size != index+1}" />
+			</a:repeat>
+		</div>
+	</h:form>
+	
+	<!-- result list -->
+	<div class="search_size">
+		<h:form id="search_order" rendered="#{ideator.searchAction.resultCount > 0}">
+			<h:outputText value="#{messages['ideator.search.results']} #{ideator.searchAction.firstContentNumber} - #{ideator.searchAction.lastContentNumber} #{messages['ideator.search.oftotally']} #{ideator.searchAction.resultCount} #{messages['ideator.search.orderedby']} " />
+			<rich:inplaceSelect value="#{ideator.searchAction.sort}">
+				<f:selectItem itemValue="score" itemLabel="#{messages['ideator.search.ordering.relevance']}" />
+				<f:selectItem itemValue="modified" itemLabel="#{messages['ideator.search.ordering.modified']}" />
+				<f:selectItem itemValue="ceq" itemLabel="#{messages['ideator.search.ordering.ceq']}" />
+				<a:support event="onviewactivated" action="#{ideator.searchAction.search}" />
+			</rich:inplaceSelect>
+			<h:outputText value=" "/>
+			<rich:inplaceSelect value="#{ideator.searchAction.order}">
+				<f:selectItem itemValue="desc" itemLabel="#{messages['ideator.search.ordering.desc']}" />
+				<f:selectItem itemValue="asc" itemLabel="#{messages['ideator.search.ordering.asc']}" />
+				<a:support event="onviewactivated" action="#{ideator.searchAction.search}" />
+			</rich:inplaceSelect>
+		</h:form>
+		<s:span rendered="#{ideator.searchAction.resultCount == 0}">#{messages['ideator.search.noresults']}</s:span>
+	</div>
+	<div class="search_results">
+		<c:forEach items="#{ideator.searchAction.searchResults}" var="result">
+			<!-- include template to show one result item. -->
+			<ui:include src="#{ideator.layoutAction.getSearchResultItemTemplate(result.item)}">
+				<ui:param name="ci" value="#{result.item}" />
+				<ui:param name="score" value="#{result.score}" />
+				<ui:param name="preview" value="#{result.highlightPreview}"/>
+			</ui:include>
+			<br />
+		</c:forEach>
+		<script type="text/javascript">
+					/* <![CDATA[ */
+		
+					//set dragable
+					jQuery('.draggableSearchResult').draggable({helper:'clone', opacity:0.7 });
+		
+					/* ]]> */
+		</script>
+	</div>
+	<div class="search_paging">
+		<h:form rendered="#{ideator.searchAction.resultCount > 0}">
+		<span class="back">
+			<c:choose>
+			<c:when test="#{ideator.searchAction.hasPrevPage()}">
+				<h:commandLink value="#{messages['ideator.btn.back']}" action="#{ideator.searchAction.prevPage()}" />
+			</c:when>
+			<c:otherwise>
+    			<a href="#">#{messages['ideator.btn.back']}</a>
+			</c:otherwise>
+			</c:choose>
+		</span>
+		<c:forEach var="x" items="#{ideator.searchAction.pageArray}" varStatus="status">
+			<c:choose>
+				<c:when test="#{x}">
+					<span class="number selected"><a href="#">#{status.index+1}</a></span>
+				</c:when>
+				<c:otherwise>
+					<span class="number"><h:commandLink value="#{status.index+1}" action="#{ideator.searchAction.setPage(status.index)}"/></span>
+				</c:otherwise>
+			</c:choose>
+		</c:forEach>
+		<span class="next">
+			<c:choose>
+			<c:when test="#{ideator.searchAction.hasNextPage()}">
+				<h:commandLink value="#{messages['ideator.btn.ahead']}" action="#{ideator.searchAction.nextPage()}" />
+			</c:when>
+			<c:otherwise>
+    			<a href="#">#{messages['ideator.btn.ahead']}</a>
+			</c:otherwise>
+			</c:choose>
+		</span>
+		</h:form>
+	</div>
+</ui:define>
+
+<ui:define name="right_content">
+	<!-- facetted search -->
+	<ui:include src="pages/box/search.facets.xhtml" />
+	<ui:include src="pages/box/common.collector.xhtml" />
+</ui:define>
+
+</ui:composition>

@@ -1,0 +1,154 @@
+<!--
+	Copyright © Rolf Sint, Michael Schneider, Christian Osterrieder, 2010
+ */
+ -->
+
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+		    	xmlns:rich="http://richfaces.org/rich"
+		    	xmlns:a="http://richfaces.org/a4j"
+                template="../../layout/template-3col.xhtml">
+                	
+ <ui:define name="breadcrumps">
+	<ul>
+		<li class="first">				 			
+			<s:link view="/artaround/home.xhtml" value="#{messages['artaround.breadcrumps.home']}"/>
+		</li>
+		<li>				 			
+			<s:link view="/artaround/pages/frontend/artWorkDetails.xhtml" value="Kunstwerk Details"/>
+		</li>
+		<li>				 			
+			<s:link view="/artaround/pages/frontend/buyArtwork.xhtml" value="#{messages['artaround.artworkShop']}"/>
+		</li>		
+	</ul>
+ </ui:define>
+ <ui:define name="body">
+
+ <style>
+ 
+   	h3 {
+		margin-left: 17px;
+		font-size:16px;
+		color:#456;
+		font-weight:normal;
+		text-align: left;
+	}
+	
+	h4 {
+		margin-left: 17px;
+		font-size:14px;
+		color:#456;
+		font-weight:normal;
+		text-align: left;
+	}    
+	
+	#cover {
+			margin-left:10px;
+			margin-top:33px;
+	}
+	
+	#mask {
+			background:#ccc url(#{facesContext.externalContext.requestContextPath}/view/img/mask_gradient_1000.png) no-repeat;
+			background-position:-260px -79px;
+		}
+		
+	form.expose {
+			/*border:1px outset #aaa; */
+			background:#fff url(#{facesContext.externalContext.requestContextPath}/view/img/h800.png) repeat-x;
+			padding:10px;
+			margin:5px 0;
+			text-align:center;
+			width:350px;
+			-moz-border-radius:4px;
+		}
+		
+    </style>
+   
+    
+   <div id="cover">  
+    
+	   <table cellspacing="15px" cellpadding="5px">
+	   	<tr>
+		 <td valign="top">
+	   		 <fieldset class="fieldsetborder">
+				<legend>#{messages['artaround.artworkShop']}</legend>
+			    <h4>#{messages['artaround.shop.title']}</h4><br/>
+			    <h4>#{messages['artaround.artworks.price']}:  #{artWorkBean.currency} #{artWorkBean.price}</h4>
+			    <rich:messages styleClass="message"/>
+	 	     </fieldset>
+	  		  <br/>
+	   		 <fieldset class="fieldsetborder">
+				<legend>#{messages['artaround.fillFormular']}</legend>	
+				<h:form class="expose">		
+					<div class="dialog">
+		            	<s:validateAll>
+		              	 <h:panelGrid columns="2" rowClasses="prop" columnClasses="name,value">
+	               	
+		                  <h:outputLabel for="firstname">#{messages['artaround.shop.firstname']}</h:outputLabel>
+			              <h:inputText id="firstname" value="#{artWorkBean.customerFirstName}" required="true"></h:inputText>
+		                  <h:outputLabel for="lastname">#{messages['artaround.shop.lastname']}</h:outputLabel> 
+		                  <h:inputText id="lastname" value="#{artWorkBean.customerLastName}" required="true"/>
+		                  <h:outputLabel for="street">#{messages['artaround.shop.street']}</h:outputLabel> 
+		                  <h:inputText id="street" value="#{artWorkBean.customerStreet}" required="true"/>
+		                  <h:outputLabel for="zip">#{messages['artaround.shop.zipcode']}</h:outputLabel> 
+		                  <h:inputText id="zip" value="#{artWorkBean.customerZip}" required="true"/>
+		                  <h:outputLabel for="city">#{messages['artaround.shop.city']}</h:outputLabel> 
+		                  <h:inputText id="city" value="#{artWorkBean.customerCity}" required="true"/>
+		                  <h:outputLabel for="state">#{messages['artaround.shop.state']}</h:outputLabel> 
+		                  <h:inputText id="state" value="#{artWorkBean.customerState}" required="true"/>
+		                  <h:outputLabel for="email">#{messages['artaround.shop.email']}</h:outputLabel> 
+		                  <h:inputText id="email" value="#{artWorkBean.customerEmail}" required="false"/>
+		                  <h:outputLabel for="tel">#{messages['artaround.shop.phone']}</h:outputLabel> 
+		                  <h:inputText id="tel" value="#{artWorkBean.customerPhone}"  required="false"/>
+						  <h:outputLabel for="welfareOrganisation">#{messages['artaround.shop.donationtext']}</h:outputLabel>
+						  <!--  <rich:comboBox defaultLabel="#{messages['artaround.pleaseSelect']}" 
+											style="width:320px;"
+											id = "welfareOrganisation" value = "">
+								<f:selectItem itemValue="SOS Kinderdorf"/>
+					           	<f:selectItem itemValue="Licht ins Dunkel"/>
+					            <f:selectItem itemValue="Lebenshilfe"/>
+					      </rich:comboBox>	-->					  
+						  <br/><br/>
+						  <h:form>
+				    		<h:commandButton id="sendButton" value="#{messages['artaround.shop.sendOrder']}" action="#{artWorkBean.buyArtWork()}"/>
+				   		  </h:form>        
+						</h:panelGrid>
+		            </s:validateAll>		            
+		        </div>		        
+			</h:form>
+		  </fieldset>	<!--  end formular -->	
+    </td>    
+    <td valign="top">  		   
+		 <fieldset class="fieldsetborder">		 
+		 	<legend>#{messages['artaround.shop.choosenArtwork']}</legend>		 	
+				<div style="text-align:center">				
+					<img src="#{showArtWorkAction.getThumbMultimediaFilename(artWorkBean.artAroundMediaList[0])}"  alt="Kein Bild geladen" />
+				</div>							
+		 </fieldset> 
+		 <br/>
+		 <fieldset class="fieldsetborder">
+			<legend>#{messages['artaround.shop.shoptext1']}</legend> 
+				 
+			<ul>
+				<li>#{messages['artaround.shop.shoptext2']}</li>
+				<li>#{messages['artaround.shop.shoptext3']}</li>
+				<li>#{messages['artaround.shop.shoptext4']}</li>
+				<li>#{messages['artaround.shop.shoptext5']}</li>
+				<li>#{messages['artaround.shop.shoptext6']}</li>
+				<li>#{messages['artaround.shop.shoptext7']}</li>
+				
+			</ul>
+			
+		 </fieldset>		 
+		</td>   
+	   </tr> 
+	  </table>	
+	</div> <!-- end cover -->
+	</ui:define> 
+</ui:composition>
+

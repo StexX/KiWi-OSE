@@ -1,0 +1,47 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+                xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                template="layout/template.xhtml">
+
+
+
+    <ui:define name="body">
+
+        <h1>Configure the CEQ core</h1>
+
+        <p>
+        In the following, you can import CEQ data from external sources like XML files.
+        Specify the directory which contains your CEQ data base dump (in xml format).
+        </p>
+        <p>
+        Note : Manual import must be done only once.
+        </p>
+
+        <h:form>
+            <h:inputText value="#{ceqConfigAction.importDir}" size="70"/>
+            <a:commandButton action="#{ceqConfigAction.importData()}" value="import" />
+        </h:form>
+
+
+        <h:form>
+            <h:panelGrid id="panel" columns="3">
+                <h:selectBooleanCheckbox id="enableCEQ"
+                                         value="#{ceqConfigAction.isCEQCoreEnabled}"/>
+                <h:outputText value="Enable CEQ Core" />
+                <h:commandButton  value="Save" action="#{ceqConfigAction.commit()}"/>
+            </h:panelGrid>
+
+        </h:form>
+
+    </ui:define>
+
+</ui:composition>

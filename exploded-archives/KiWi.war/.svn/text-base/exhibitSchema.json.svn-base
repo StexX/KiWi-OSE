@@ -1,0 +1,26 @@
+{ properties: {
+	"kiwi:createdOn" : {
+    	valueType: "date"
+	},
+	"waysknow:starts at" : {
+    	valueType: "date"
+	},
+	"startYear" : {
+    	valueType: "number"
+	},
+	"waysknow:ends at" : {
+    	valueType: "date"
+	},
+	"endYear" : {
+    	valueType: "number"
+	},
+	"kiwi:modifiedOn" : {
+    	valueType: "date"
+	},
+	"resourceUri" : {
+    	valueType: "url"
+	},
+	"waysknow:has-result" :{
+    	valueType: "item"
+	}
+}}

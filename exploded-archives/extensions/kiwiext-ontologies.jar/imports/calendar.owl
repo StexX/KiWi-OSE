@@ -1,0 +1,74 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+<!ENTITY hgtags "http://www.holygoat.co.uk/owl/redwood/0.1/tags/">
+<!ENTITY sioc "http://rdfs.org/sioc/ns#">
+<!ENTITY foaf "http://xmlns.com/foaf/0.1/">
+<!ENTITY cont "http://www.w3.org/2000/10/swap/pim/contact#">
+<!ENTITY geo "http://www.w3.org/2003/01/geo/wgs84_pos#">
+<!ENTITY kiwi "http://www.kiwi-project.eu/kiwi/core/">
+<!ENTITY calendar "http://www.kiwi-project.eu/kiwi/calendar/">
+<!ENTITY dc "http://purl.org/dc/elements/1.1/">]>
+<rdf:RDF 
+	xmlns:rdf="&rdf;"
+	xmlns:rdfs="&rdfs;"
+	xmlns:owl="&owl;"
+	xmlns:dc="&dc;"
+	xmlns:foaf="&foaf;"
+	xmlns:kiwi="&kiwi;"
+	xmlns:geo="&geo;"
+	xmlns:cont="&cont;"
+	xmlns:hgtags="&hgtags;"
+	xmlns:sioc="&sioc;"
+	xml:base="http://users.fh-salzburg.ac.at/~fhs12575/ontology/">
+
+	<owl:Ontology rdf:about="Eventx">
+		<rdfs:comment>This ontology describes the KiWi Calendar</rdfs:comment>
+		<rdfs:label>Calendar</rdfs:label>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&calendar;Event">
+		<rdfs:label>Event</rdfs:label>
+		<rdfs:comment>An event</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="&kiwi;ContentItem"/>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&calendar;startTime">
+		<rdfs:label>Start Time</rdfs:label>
+		<rdfs:comment>StartTime</rdfs:comment>
+		<rdfs:domain rdf:resource="&calendar;Event"/>
+		<rdfs:range rdf:resource="&xsd;date"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&calendar;endTime">
+		<rdfs:label>End Time</rdfs:label>
+		<rdfs:comment>EndTime</rdfs:comment>
+		<rdfs:domain rdf:resource="&calendar;Event"/>
+		<rdfs:range rdf:resource="&xsd;date"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&calendar;summary">
+		<rdfs:label>EventName</rdfs:label>
+		<rdfs:comment>EventName</rdfs:comment>
+		<rdfs:domain rdf:resource="&calendar;Event"/>
+		<rdfs:range rdf:resource="&rdfs;Literal"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&calendar;location">
+		<rdfs:label>EventLocation</rdfs:label>
+		<rdfs:comment>EventLocation</rdfs:comment>
+		<rdfs:domain rdf:resource="&calendar;Event"/>
+		<rdfs:range rdf:resource="&rdfs;Literal"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&calendar;eventUrl">
+		<rdfs:label>EventUrl</rdfs:label>
+		<rdfs:comment>EventUrl</rdfs:comment>
+		<rdfs:domain rdf:resource="&calendar;Event"/>
+		<rdfs:range rdf:resource="&rdfs;Literal"/>
+	</owl:DatatypeProperty>
+	
+</rdf:RDF>

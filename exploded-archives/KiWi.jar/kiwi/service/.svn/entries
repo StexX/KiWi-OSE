@@ -1,0 +1,233 @@
+10
+
+dir
+5565
+https://svn.salzburgresearch.at/svn/kiwi/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service
+https://svn.salzburgresearch.at/svn/kiwi
+
+
+
+2010-08-18T11:45:47.139629Z
+5565
+steffi
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+df910b12-e4fe-467b-9c3d-147a02c1fe00
+
+
+
+
+
+
+0
+empty
+
+H2StartupService.class
+file
+
+
+
+
+2010-08-17T20:37:59.000000Z
+d4bb66a20b8095893487f8bbec18341a
+2010-08-18T11:45:47.139629Z
+5565
+steffi
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1255
+
+H2StartupServiceMBean.class
+file
+
+
+
+
+2010-08-17T20:37:59.000000Z
+6065e6bd083f4e0ae87c44d7967965d2
+2010-08-18T11:45:47.139629Z
+5565
+steffi
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+173
+
+activity
+dir
+
+admin
+dir
+
+cluster
+dir
+
+comment
+dir
+
+config
+dir
+
+content
+dir
+
+entity
+dir
+
+equity
+dir
+
+explanation
+dir
+
+extension
+dir
+
+fragment
+dir
+
+geo
+dir
+
+group
+dir
+
+history
+dir
+
+importexport
+dir
+
+informationextraction
+dir
+
+interaction
+dir
+
+kspace
+dir
+
+messages
+dir
+
+multimedia
+dir
+
+ontology
+dir
+
+personalization
+dir
+
+perspectives
+dir
+
+query
+dir
+
+rating
+dir
+
+reasoning
+dir
+
+recommendation
+dir
+
+render
+dir
+
+revision
+dir
+
+role
+dir
+
+rss
+dir
+
+search
+dir
+
+security
+dir
+
+skill
+dir
+
+socialcapital
+dir
+
+socialnetworking
+dir
+
+statistics
+dir
+
+system
+dir
+
+tagging
+dir
+
+transaction
+dir
+
+triplestore
+dir
+
+tweet
+dir
+
+user
+dir
+

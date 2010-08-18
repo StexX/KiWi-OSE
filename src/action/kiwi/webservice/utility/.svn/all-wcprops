@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/kiwi/!svn/ver/4535/KiWi/trunk/src/action/kiwi/webservice/utility
+END
+FieldBracket.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/webservice/utility/FieldBracket.java
+END
+DataDefinition.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/webservice/utility/DataDefinition.java
+END
+ContentItemHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/4535/KiWi/trunk/src/action/kiwi/webservice/utility/ContentItemHelper.java
+END
+DataAccessWebServicePropertiesHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/webservice/utility/DataAccessWebServicePropertiesHandler.java
+END
+FieldCombination.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/webservice/utility/FieldCombination.java
+END
+TemplateData.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/webservice/utility/TemplateData.java
+END
+FieldData.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/webservice/utility/FieldData.java
+END
+CheckData.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/webservice/utility/CheckData.java
+END
+TemplateCreator.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/webservice/utility/TemplateCreator.java
+END

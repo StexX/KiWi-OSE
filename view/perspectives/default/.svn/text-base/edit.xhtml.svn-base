@@ -1,0 +1,343 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+		    	xmlns:rich="http://richfaces.org/rich"
+		    	xmlns:a="http://richfaces.org/a4j"
+	            xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+	            xmlns:c="http://java.sun.com/jstl/core"
+	            template="/layout/editTemplate.xhtml">
+
+	<ui:define name="editHeader">	
+		<ui:include src="/dialogs/fragments.xhtml" />
+		<ui:include src="/dialogs/kiwirdfa.xhtml" />
+		<ui:include src="/dialogs/kiwirdfaAbout.xhtml" />
+		<ui:include src="/dialogs/kiwirdfaLink.xhtml" />
+		<ui:include src="/dialogs/kiwirdfaLinkSelect.xhtml" />
+		<ui:include src="/dialogs/kiwirdfaIteration.xhtml" />
+		<ui:include src="/dialogs/kiwirdfaIterationItem.xhtml" />
+		<ui:include src="/dialogs/addtype.xhtml" />
+
+		<a:form>
+			<!-- Querywizard Helper jsFunctions -->
+			<a:jsFunction name="wizardSetQuery"
+				oncomplete="queryWizardJSLib.showQuerywizardPanel();"
+				reRender="fmt,#{queryWizardAction.renderedSearchPageParts()}"
+				action="#{queryWizardAction.searchEngine.runSearch}">
+				<a:actionparam name="param1" assignTo="#{queryWizardAction.format}" />
+				<a:actionparam name="param2" assignTo="#{queryWizardAction.query}" />
+				<a:actionparam name="param3" assignTo="#{queryWizardAction.lang}" />
+			</a:jsFunction>
+
+			<!-- Kiwilink Helper jsFunctions -->
+			<a:jsFunction name="insertLinkHTML"
+				data="#{kiwilinkAction.replacementHTML}"
+				oncomplete="kiwilinkJSLib.kiwilinkCreate(data);"
+				reRender="linkLabel,linkTarget,linkTargetSuggest,linkPreview" />
+	
+			<a:jsFunction name="kiwilinkFormActivate"
+				action="#{kiwilinkAction.formActivate}" 
+				reRender="linkLabel,linkTarget,linkTargetSuggest,linkPreview"/>
+	
+	        <a:jsFunction name="setSelectionHTML" 
+	        	oncomplete="kiwilinkJSLib.showKiwilinkPanel();" 
+	        	reRender="kiwilinkPanel">
+	        	<a:actionparam name="param1" assignTo="#{kiwilinkAction.selectionHTML}" />
+	        </a:jsFunction>
+		</a:form>
+
+
+		<script  type="text/javascript">
+	    	kiwilinkJSLib={};
+	    	kiwilinkJSLib.showKiwilinkPanel = function(){
+				
+	    		// a4j:jsFunction on kiwilink.xhtml
+	    		kiwilinkFormActivate();
+	    		 
+	    	showKiwiDialogbox('wiki.kiwilinkPanel');
+	    	}
+	    	kiwilinkJSLib.kiwilinkCreate = function(replacement){
+	    		// var kiwilinkAction = Seam.Component.getInstance("kiwilinkAction");
+	    		kiwilinkJSLib.createLink(replacement);
+	    	}
+	
+	    	queryWizardJSLib = {};
+	    	queryWizardJSLib.showQuerywizardPanel = function(){
+				
+	    		// a4j:jsFunction on kiwilink.xhtml
+	    		// querywizardFormActivate();
+	    		showKiwiDialogbox("wiki.querywizardPanel");
+	    		// #{rich:component('querywizardPanel')}.show();
+	    	}
+	    	
+	    </script>
+	    
+	    <!--  Fragments-related things start here -->
+	    <script type="text/javascript" src="./js/tinymceplugins/fragments/functional.js"></script>
+	    <script type="text/javascript" src="./js/tinymceplugins/fragments/annotations.js"></script>
+	    
+	    <script type="text/javascript">
+	    	fragmentJSLib={};
+	    	fragmentJSLib.showFragmentsPanel = function (context, fragment) {
+	    		var argString = 
+						(context == null ? "" : context) + " " + 
+						(fragment == null ? "" : fragment);
+				
+				fragmentSet(argString);
+				#{rich:component('fragmentsPanel')}.show();
+	    	}
+	    	
+	    	fragmentJSLib.onCreateOrUpdate = function (fragmentJS) {
+				#{rich:component('fragmentsPanel')}.hide();
+				this._setFragment(fragmentJS);
+			}
+			
+			fragmentJSLib.onCancel = function () {
+	        	#{rich:component('fragmentsPanel')}.hide();
+	        	this._cancel ();
+	        }
+	
+	        fragmentJSLib.onDelete = function () {
+	        	#{rich:component('fragmentsPanel')}.hide();
+	        	this._delete ();
+	        }
+	    </script>
+	    
+	    <!--  Fragments-related things end here -->
+	    
+	    <!--  Rdfa-related things start here -->
+	    
+	    <!-- It is not really a plugin, if it needs this fixed library here, but I don't know how to do it better... (MS) -->
+	    
+	    <script type="text/javascript" src="./js/tinymceplugins/kiwirdfa/rdfa.js"></script>
+		<script type="text/javascript">
+			kiwirdfaJSLib={};
+			kiwirdfaJSLib.showKiwirdfaPanel = function(context, property) {
+				/*#{rich:element('kiwirdfaForm:rdfaProperty')}.value = property; */
+				var argString = (context == null ? "" : context )+ " " + (property == null ? "" : property );
+				kiwirdfaSetProperty (argString);
+				
+				#{rich:component('kiwirdfaPanel')}.show();
+	    	}
+
+			/* kiwirdfaJSLib.setContext = function(context) {
+				kiwirdfaSetContext(context);
+			}*/
+	
+			kiwirdfaJSLib.onCreateOrUpdate = function (property) {
+				#{rich:component('kiwirdfaPanel')}.hide();
+				this._setProperty(property);
+			}
+	
+	        kiwirdfaJSLib.onCancel = function () {
+	        	#{rich:component('kiwirdfaPanel')}.hide();
+	        	this._cancel ();
+	        }
+	
+	        kiwirdfaJSLib.onDelete = function () {
+	        	#{rich:component('kiwirdfaPanel')}.hide();
+	        	this._delete ();
+	        }
+
+	        kiwirdfaJSLib.showKiwirdfaAboutPanel = function(context, uri, relation, type) {
+				/*#{rich:element('kiwirdfaAboutForm:rdfaAboutUri')}.value = uri;*/
+				var argString = 
+						(context == null ? "" : context) + " " + 
+						(uri == null ? "" : uri )+ " " + 
+						(relation == null ? "" : relation ) + " " + 
+						(type == null ? "" : type);
+				
+				kiwirdfaSetAbout(argString);
+				#{rich:component('kiwirdfaAboutPanel')}.show();
+	    	}
+	
+			kiwirdfaJSLib.onCreateOrUpdateAbout = function (componentJS) {
+				#{rich:component('kiwirdfaAboutPanel')}.hide();
+				var args = componentJS.split(' ', 3);
+				this._setAboutProperties(args[0], args[1], args[2]);
+			}
+	
+	        kiwirdfaJSLib.onCancelAbout = function () {
+	        	#{rich:component('kiwirdfaAboutPanel')}.hide();
+	        	this._cancelAbout ();
+	        }
+	
+	        kiwirdfaJSLib.onDeleteAbout = function () {
+	        	#{rich:component('kiwirdfaAboutPanel')}.hide();
+	        	this._deleteAbout ();
+	        }
+
+	        kiwirdfaJSLib.showKiwirdfaLinkPanel = function(context, uri, relation, type, title) {
+				var argString = 
+						(context == null ? "" : context) + " " + 
+						(uri == null ? "" : uri )+ " " + 
+						(relation == null ? "" : relation ) + " " + 
+						(type == null ? "" : type) + " " +
+						(title == null ? "" : title);
+				
+				kiwirdfaSetLink(argString);
+				#{rich:component('kiwirdfaLinkPanel')}.show();
+	    	}
+
+	        kiwirdfaJSLib.showKiwirdfaLinkSelectPanel = function(context, uri, relation, type, title) {
+				var argString = 
+						(context == null ? "" : context) + " " + 
+						(uri == null ? "" : uri )+ " " + 
+						(relation == null ? "" : relation ) + " " + 
+						(type == null ? "" : type) + " " +
+						(title == null ? "" : title);
+				
+				kiwirdfaSetLinkSelect(argString);
+				#{rich:component('kiwirdfaLinkSelectPanel')}.show();
+	    	}
+	
+			kiwirdfaJSLib.onCreateOrUpdateLink = function (linkJS) {
+				#{rich:component('kiwirdfaLinkPanel')}.hide();
+				var args = linkJS.split(' ');
+				this._setLinkProperties(args[0], args[1], args[2], args.slice(3).join(" "));
+			}
+	
+	        kiwirdfaJSLib.onCancelLink = function () {
+	        	#{rich:component('kiwirdfaLinkPanel')}.hide();
+	        	this._cancelLink ();
+	        }
+	
+	        kiwirdfaJSLib.onDeleteLink = function () {
+	        	#{rich:component('kiwirdfaLinkPanel')}.hide();
+	        	this._deleteLink ();
+	        }
+
+	        kiwirdfaJSLib.onUpdateLinkSelect = function (linkJS) {
+	        	#{rich:component('kiwirdfaLinkSelectPanel')}.hide();
+				var args = linkJS.split(' ');
+				this._setLinkProperties(args[0], args[1], args[2], args.slice(3).join(" "));
+	        }
+
+	        kiwirdfaJSLib.onCancelLinkSelect = function () {
+	        	#{rich:component('kiwirdfaLinkSelectPanel')}.hide();
+	        	this._cancelLinkSelect ();
+	        }
+
+	        kiwirdfaJSLib.showKiwirdfaIterationPanel = function(context, relation) {
+				var argString = 
+						(context == null ? "" : context) + " " + 
+						(relation == null ? "" : relation );
+				
+				kiwirdfaSetIteration(argString);
+				#{rich:component('kiwirdfaIterationPanel')}.show();
+	    	}
+	
+			kiwirdfaJSLib.onCreateOrUpdateIteration = function (iterationJS) {
+				#{rich:component('kiwirdfaIterationPanel')}.hide();
+				var args = iterationJS;
+				this._setIterationProperties(args);
+			}
+	
+	        kiwirdfaJSLib.onCancelIteration = function () {
+	        	#{rich:component('kiwirdfaIterationPanel')}.hide();
+	        	this._cancelIteration ();
+	        }
+	
+	        kiwirdfaJSLib.onDeleteIteration = function () {
+	        	#{rich:component('kiwirdfaIterationPanel')}.hide();
+	        	this._deleteIteration ();
+	        }
+
+			kiwirdfaJSLib.showKiwirdfaIterationItemPanel = function(context, uri, relation, type, title) {
+				var argString = 
+						(context == null ? "" : context) + " " +
+						(uri == null ? "" : uri) + " " +
+						(relation == null ? "" : relation) + " "+
+						(type == null ? "" : type) + " " +
+						(title == null ? "" : title);
+				
+				kiwirdfaSetIterationItem(argString);
+				#{rich:component('kiwirdfaIterationItemPanel')}.show();
+			}
+
+			kiwirdfaJSLib.onCreateOrUpdateIterationItem = function (iterationItemJS) {
+				#{rich:component('kiwirdfaIterationItemPanel')}.hide();
+				var args = iterationItemJS.split(' ');
+				this._setIterationItemProperties(args[0], args[1], args[2], args.slice(3).join(" "));
+			}
+
+			kiwirdfaJSLib.onCancelIterationItem = function() {
+				#{rich:component('kiwirdfaIterationItemPanel')}.hide();
+				this._cancelIterationItem ();
+			}
+
+			kiwirdfaJSLib.onDeleteIterationItem = function() {
+				#{rich:component('kiwirdfaIterationItemPanel')}.hide();
+				this._deleteIterationItem();
+			}
+	        
+		</script>
+		
+		<!--  Rdfa-related things end here -->
+	</ui:define>
+	
+	<ui:define name="MetadataEdit">
+		<h1><rich:inplaceInput value="#{editorAction.title}" defaultLabel="click to edit title" required="true"/></h1>
+			    
+		<s:div id="pageTypes" style="padding-bottom: 5px; margin-top: 20px; border-bottom: 1px solid #ccc; margin-bottom: 10px;">
+	        <strong>Page Type(s): </strong> 
+	        <ui:repeat value="#{annotateAction.types}" var="type">
+                <s:link view="/home.xhtml" value="#{type.res.label} (#{type.res.namespacePrefix})" 
+                		rendered="#{not type.inferred}"
+                		style="font-weight: bold;"
+                		propagation="none">
+                    <f:param name="title"/>
+                    <f:param name="uri"/>
+                    <f:param name="id" />
+                    <f:param name="kiwiid" value="#{type.res.kiwiIdentifier}"/>
+                </s:link>
+                <s:link view="/home.xhtml" value="#{type.res.label} (#{type.res.namespacePrefix})"
+                		rendered="#{type.inferred}"
+                		style="font-weight: italic;"
+                		propagation="none">
+                    <f:param name="title"/>
+                    <f:param name="uri"/>
+                    <f:param name="id" />
+                    <f:param name="kiwiid" value="#{type.res.kiwiIdentifier}"/>
+                </s:link>
+	            <rich:spacer width="1px"/>
+	            <a:commandLink action="#{annotateAction.removeType(type.res)}" rendered="#{not type.inferred}" reRender="pageTypes,articlemeta">
+	                <h:graphicImage value="img/type_delete.png" style="border:0;padding:0 4px;"/>
+	            </a:commandLink>
+	            <rich:spacer width="5px"/>
+	        </ui:repeat>
+	
+	        <!-- Add Content type functionality -->
+	        <h:outputLink value="#" render="true">
+	            <h:graphicImage value="img/type_add.png" style="border:0;padding:0 4px;"/>
+	            <rich:componentControl for="addTypeDialog" operation="show" event="onclick"/>
+	        </h:outputLink>
+	    </s:div>
+	</ui:define>
+	
+	<ui:define name="ContentEdit">
+	
+		<rich:messages styleClass="message"/>
+		
+
+		<!-- autoResize = "true" -->
+		<rich:editor id="content"
+                         value    = "#{editorAction.content}"
+       	                 height   = "400"
+        	             theme    = "advanced"
+        	             customPlugins = "kiwiPlugins"
+        	             configuration = "tinymce-full"
+        	             plugins  = "safari,pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,kiwilink,kiwirdfa,querywizard,fragments" 
+                         autoResize="true"
+                         >
+		</rich:editor>
+		
+		
+		<div id='viewer-1' style='display:none;'></div>
+		
+
+
+	</ui:define>
+	
+</ui:composition>

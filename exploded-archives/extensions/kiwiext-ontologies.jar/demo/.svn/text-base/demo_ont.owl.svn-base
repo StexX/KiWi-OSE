@@ -1,0 +1,66 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+<!ENTITY hgtags "http://www.holygoat.co.uk/owl/redwood/0.1/tags/">
+<!ENTITY foaf "http://xmlns.com/foaf/0.1/">
+<!ENTITY cont "http://www.w3.org/2000/10/swap/pim/contact#">
+<!ENTITY geo "http://www.w3.org/2003/01/geo/wgs84_pos#">
+<!ENTITY kiwi "http://www.kiwi-project.eu/kiwi/core/">
+<!ENTITY demo "http://www.kiwi-demo.eu/">
+<!ENTITY dc "http://purl.org/dc/elements/1.1/">]>
+
+
+<rdf:RDF 
+	xmlns:rdf="&rdf;"
+	xmlns:rdfs="&rdfs;"
+	xmlns:owl="&owl;"
+	xmlns:dc="&dc;"
+	xmlns:foaf="&foaf;"
+	xmlns:kiwi="&kiwi;"
+	xmlns:geo="&geo;"
+	xmlns:cont="&cont;"
+	xmlns:demo="&demo;"
+	xml:base="http://users.fh-salzburg.ac.at/~fhs12575/ontology/">
+
+	<owl:Ontology rdf:about="">
+		<rdfs:comment>This ontology describes a kiwi demo ontology</rdfs:comment>
+		<rdfs:label>Demo</rdfs:label>
+		<owl:imports>
+			<owl:Ontology rdf:about="demo_ont.owl"/>
+		</owl:imports>
+	</owl:Ontology>
+		
+	<owl:Class rdf:about="&demo;Meeting">
+		<rdfs:label>Meeting</rdfs:label>
+		<rdfs:comment>Class for Meetings</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="&kiwi;ContentItem"/>
+	</owl:Class>
+			
+	<owl:DatatypeProperty rdf:about="&cont;street">
+		<rdfs:domain rdf:resource="&demo;Meeting"/>
+		<rdfs:range rdf:resource="&rdfs;Literal"/>
+		<rdfs:label>Street</rdfs:label>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cont;city">
+		<rdfs:domain rdf:resource="&demo;Meeting"/>
+		<rdfs:range rdf:resource="&rdfs;Literal"/>
+		<rdfs:label>City</rdfs:label>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cont;postalCode">
+		<rdfs:domain rdf:resource="&demo;Meeting"/>
+		<rdfs:range rdf:resource="&rdfs;Literal"/>
+		<rdfs:label>Postal Code</rdfs:label>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cont;country">
+		<rdfs:domain rdf:resource="&demo;Meeting"/>
+		<rdfs:range rdf:resource="&rdfs;Literal"/>
+		<rdfs:label>Country</rdfs:label>
+	</owl:DatatypeProperty>
+    
+  </rdf:RDF>

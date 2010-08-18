@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/kiwi/!svn/ver/5217/KiWi/trunk/docs
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/docs/README.txt
+END
+testNG.faq
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/kiwi/!svn/ver/2273/KiWi/trunk/docs/testNG.faq
+END
+webservice.txt
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/kiwi/!svn/ver/1870/KiWi/trunk/docs/webservice.txt
+END
+froscon.pdf
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/kiwi/!svn/ver/5217/KiWi/trunk/docs/froscon.pdf
+END
+D4.5_KiWi_System.odt
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/kiwi/!svn/ver/3840/KiWi/trunk/docs/D4.5_KiWi_System.odt
+END
+D4.5_KiWi_System.pdf
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/kiwi/!svn/ver/3875/KiWi/trunk/docs/D4.5_KiWi_System.pdf
+END
+D3.2_3.3_KiWi_System.odt
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/kiwi/!svn/ver/2682/KiWi/trunk/docs/D3.2_3.3_KiWi_System.odt
+END
+D3.2_3.3_KiWi_System_chapter7.odt
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/kiwi/!svn/ver/2622/KiWi/trunk/docs/D3.2_3.3_KiWi_System_chapter7.odt
+END
+CodingGuidelines.txt
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/docs/CodingGuidelines.txt
+END

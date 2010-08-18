@@ -1,0 +1,38 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+	<div id="footer">
+	        <h:form id="formFooterApplications">
+		            <ui:repeat value="#{kiwi.ui.headerAction.applications}" var="app">
+		                    <h:outputText value=" | " />
+		                    <h:commandLink action="#{kiwi.ui.headerAction.switchApplication(app)}" rendered="#{app.isVisible()}">
+		                        <h:outputText value="#{app.name}" />
+		                    </h:commandLink>
+		            </ui:repeat>
+	        </h:form>
+		Powered by <a href="http://www.kiwi-project.eu">KiWi - Knowledge in a Wiki</a> (version 0.7).
+				    <div id="user">
+	            <h:outputText value="#{messages['hdr.welcome']}, #{identity.username}!"
+	                       rendered="#{identity.loggedIn}" />
+            
+	            <s:link action="login" 
+	                     value="#{messages['hdr.login']}"
+	                  rendered="#{not identity.loggedIn}" />
+	                    
+	            <h:outputText value=" - " />
+	
+	            <s:link action="register" 
+	                     value="#{messages['hdr.signup']}"
+	                  rendered="#{not identity.loggedIn}" />
+	        
+	            <s:link action="#{identity.logout}" 
+	                     value="#{messages['hdr.logout']}"
+	                  rendered="#{identity.loggedIn}" />	    
+	
+		    </div>
+	</div>
+</ui:composition>

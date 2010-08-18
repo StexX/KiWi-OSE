@@ -1,0 +1,141 @@
+10
+
+dir
+5558
+https://svn.salzburgresearch.at/svn/kiwi/KiWi/trunk/extensions
+https://svn.salzburgresearch.at/svn/kiwi
+
+
+
+2010-08-16T15:36:05.160681Z
+5557
+steffi
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+df910b12-e4fe-467b-9c3d-147a02c1fe00
+
+Extension.txt
+file
+
+
+
+
+2010-08-17T20:18:45.000000Z
+db27ce70ae6f35d8976e75d2cbc98999
+2009-02-10T08:50:42.305200Z
+1515
+mihair
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5064
+
+README.txt
+file
+
+
+
+
+2010-08-17T20:19:01.000000Z
+e66ca8a00992dd9d943a5123983989f5
+2009-02-09T15:33:37.196598Z
+1505
+sschaffe
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2432
+
+admin
+dir
+
+artaround
+dir
+
+dashboard
+dir
+
+ideator
+dir
+
+inspector
+dir
+
+interedu
+dir
+
+logica
+dir
+
+mars
+dir
+
+ontologies
+dir
+
+semForms
+dir
+
+swim
+dir
+
+tagit2
+dir
+
+template
+dir
+
+w2k
+dir
+
+wiki
+dir
+

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-artaround.jar/artaround/action/artwork
+END
+ShowArtWorkAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-artaround.jar/artaround/action/artwork/ShowArtWorkAction.class
+END
+SortArtWorks.class
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-artaround.jar/artaround/action/artwork/SortArtWorks.class
+END
+MediaTmp.class
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-artaround.jar/artaround/action/artwork/MediaTmp.class
+END
+ArtWorkBean.class
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-artaround.jar/artaround/action/artwork/ArtWorkBean.class
+END
+ArtWorkEditAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-artaround.jar/artaround/action/artwork/ArtWorkEditAction.class
+END

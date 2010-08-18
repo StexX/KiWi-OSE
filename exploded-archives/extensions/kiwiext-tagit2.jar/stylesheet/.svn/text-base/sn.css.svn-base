@@ -1,0 +1,21 @@
+@CHARSET "UTF-8";
+
+#header {
+    background: #ffffff;
+}
+
+#mainnav {
+	position: absolute;
+	left: 300px;
+	margin-left:10px;
+	margin-top:-15px;
+	top:20px;
+}
+
+#mainnav a {
+    color: #00509F;
+}
+
+#navbar {
+    background-color: #00509F;
+}

@@ -1,0 +1,143 @@
+<rich:modalPanel
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+   	  xmlns:rich="http://richfaces.org/rich"
+ 	  xmlns:a="http://richfaces.org/a4j"
+ 	  xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+ 	  xmlns:c="http://java.sun.com/jstl/core"
+ 	  width="400"
+ 	  height="400"
+      id="fragmentsPanel">
+        <f:facet name="header">
+            <h:panelGroup>
+                <h:outputText value="Fragment Editor"></h:outputText>
+            </h:panelGroup>
+        </f:facet>
+        
+        <p style="margin-top: 20px; margin-left: 10px; margin-right: 10px;" class="help">
+        	Add tags to the fragment.
+        </p>
+        
+       	<a:region renderRegionOnly="true">
+       	    
+       	    <h:form id="fragmentForm">
+       	    	<rich:messages styleClass="message"/>
+       	    	
+       	    	<s:div id="tagcloud">
+                <h3>Existing Tags:</h3>
+                <c:forEach var="tag" items="#{fragmentAction.tagCloud}" >
+                    <!-- TODO: instead, create a "red" link that redirects the user to a page where he can associate a meaning -->
+                    <span style="font-size: #{tag.size}%;">
+                    <s:link view="/search.xhtml" value="#{tag.tag.title}" style="color: rgb(100,#{tag.colorCode},100);">
+                        <f:param name="q" value="tag:#{tag.tag.title}" />
+                    </s:link>
+                    </span>
+                    <s:span rendered="#{!tag.ownTag}">
+                        <a:commandButton action="#{fragmentAction.addTag(tag.tag)}" image="img/type_add.png" reRender="fragmentForm"/>
+                    </s:span>
+                    <s:span rendered="#{tag.ownTag}">
+                        <a:commandButton action="#{fragmentAction.removeTag(tag.tag)}" image="img/type_delete.png" reRender="fragmentForm"/>
+                    </s:span>
+                    <h:outputText value=", " /> 
+                </c:forEach>
+            </s:div>
+       	    	
+       	    <s:div id="taginput" style="margin-top: 1em;">
+                <h3>New Tags:</h3>
+                <h:inputText value="#{fragmentAction.tagLabel}" style="width: 300px" id="taglabel"/>
+                <rich:suggestionbox id="suggestionBoxId" for="taglabel" tokens=",[]"
+                        suggestionAction="#{fragmentAction.autocomplete}" 
+                        var="result"
+                        fetchValue="#{result}" 
+                        minChars="2"
+                        shadowOpacity="4"
+                        border="1"
+                        height="150"
+                        width="100"
+                        shadowDepth="3"
+                        cellpadding="2"
+                        nothingLabel="No tags found" 
+                        columnClasses="center"
+                        usingSuggestObjects="true" reRender="suggestionBoxId">
+                        
+                        <h:column>
+                            <h:outputText value="#{result}" />
+                        </h:column>
+                </rich:suggestionbox>
+                <a:commandButton id="addTagBtn" action="#{fragmentAction.addTag}" value="Add" reRender="fragmentForm">
+                </a:commandButton>
+                <a:status>
+                    <f:facet name="start">
+                        <h:graphicImage  value="#{facesContext.externalContext.requestContextPath}/img/busy-indicator.gif"/>
+                    </f:facet>
+                </a:status>
+            </s:div>
+
+			<!-- Blatantly copied and modified from the commentingPanel, not sure how to generalize something properly in JSF... -->
+			<rich:togglePanel id="comments" switchType="ajax"
+				stateOrder="closed,open">
+				<f:facet name="closed">
+					<rich:toggleControl>
+						<h2 class="commentsClosed">Comments</h2>
+					</rich:toggleControl>
+				</f:facet>
+
+				<f:facet name="open">
+					<f:subview id="commentPanel">
+						<rich:toggleControl>
+							<h2 class="commentsOpen">Comments</h2>
+						</rich:toggleControl>
+
+						<c:if
+							test="#{commentService.listComments(fragmentAction.fragment.delegate).isEmpty()}">
+							<div class="nocomments">No comments</div>
+						</c:if>
+
+						<ui:repeat var="comment"
+							value="#{commentService.listComments(fragmentAction.fragment.delegate)}">
+							<div class="comment">
+							<div class="comment-title"><h:outputText
+								value="#{comment.title}" /></div>
+							<div class="comment-meta"><h:outputText
+								value="#{comment.created}">
+								<s:convertDateTime pattern="dd/MM/yyyy" />
+							</h:outputText> <h:outputText value=" by " /> <kiwi:link
+								resource="#{comment.author.resource}"
+								value=" #{comment.author.firstName} #{comment.author.lastName}" />
+							</div>
+							<div class="comment-body"><h:outputText
+								value="#{kiwi.wiki.CommentAction.getCommentHtml(comment)}"
+								escape="false" /></div>
+							</div>
+						</ui:repeat>
+					</f:subview>
+				</f:facet>
+			</rich:togglePanel>
+
+			<!-- TODO: display and adding fragment content item comments -->
+		
+		        <div class="actionButtons center">
+		            <a:commandButton value="Create/Update" id="btnCreateFragment" 
+		            	action="#{fragmentAction.create}"
+		            	data="#{fragmentAction.fragmentJS}"
+		            	oncomplete="fragmentJSLib.onCreateOrUpdate(data)" />
+		            	
+		            <a:commandButton value="Delete" id="btnDeleteFragment" 
+		            	action="#{fragmentAction.delete}"
+		            	oncomplete="fragmentJSLib.onDelete()" />
+		            	
+		            <a:commandButton value="Cancel" id="btnCancelFragment"
+		            	action="#{fragmentAction.cancel}" 
+		            	oncomplete="fragmentJSLib.onCancel()" />
+		            	
+		            <a:jsFunction name="fragmentSet" reRender="fragmentForm">
+		        		<a:actionparam name="Param1" assignTo="#{fragmentAction.fragmentJS}"/>
+		        	</a:jsFunction>
+		        </div>
+			</h:form>
+		</a:region>
+
+</rich:modalPanel>

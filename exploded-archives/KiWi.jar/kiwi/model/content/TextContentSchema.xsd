@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://www.kiwi-project.eu/schemas/content"
+            xmlns:tns="http://www.kiwi-project.eu/schemas/content"
+            elementFormDefault="qualified">
+    <xsd:complexType name="content">
+        <xsd:choice/>
+    </xsd:complexType>
+    <xsd:complexType name="bookmarkStart">
+        <xsd:attribute name="id" type="xsd:ID"/>
+    </xsd:complexType>
+    <xsd:complexType name="bookmarkEnd">
+        <xsd:attribute name="id" type="xsd:IDREF"/>
+    </xsd:complexType>
+</xsd:schema>

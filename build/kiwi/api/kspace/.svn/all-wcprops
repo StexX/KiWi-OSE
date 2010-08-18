@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/kspace
+END
+KnowledgeSpaceService.class
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/kspace/KnowledgeSpaceService.class
+END
+KnowledgeSpaceServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/kspace/KnowledgeSpaceServiceLocal.class
+END
+KnowledgeSpaceServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/kspace/KnowledgeSpaceServiceRemote.class
+END

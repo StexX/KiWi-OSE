@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/webservice/thesaurusManagement
+END
+ThesaurusResource.class
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/webservice/thesaurusManagement/ThesaurusResource.class
+END
+ThesaurusVisualizer.class
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/webservice/thesaurusManagement/ThesaurusVisualizer.class
+END
+UpdateWebService.class
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/webservice/thesaurusManagement/UpdateWebService.class
+END
+ExtConcepts.class
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/webservice/thesaurusManagement/ExtConcepts.class
+END
+WS.class
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/webservice/thesaurusManagement/WS.class
+END
+ContentItemListWriter.class
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/webservice/thesaurusManagement/ContentItemListWriter.class
+END
+ContentItemArrayListWriter.class
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/webservice/thesaurusManagement/ContentItemArrayListWriter.class
+END
+thesaurusWebservices
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/webservice/thesaurusManagement/thesaurusWebservices
+END
+AllResource.class
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/webservice/thesaurusManagement/AllResource.class
+END
+ContentItemWriter.class
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/webservice/thesaurusManagement/ContentItemWriter.class
+END
+FreeTagWebService.class
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/webservice/thesaurusManagement/FreeTagWebService.class
+END
+KiWiResourceListWriter.class
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/webservice/thesaurusManagement/KiWiResourceListWriter.class
+END
+TemplateUpdateService.class
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/webservice/thesaurusManagement/TemplateUpdateService.class
+END
+SKOSConceptUtils.class
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/webservice/thesaurusManagement/SKOSConceptUtils.class
+END

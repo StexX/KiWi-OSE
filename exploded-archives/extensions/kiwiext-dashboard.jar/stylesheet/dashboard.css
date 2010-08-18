@@ -1,0 +1,117 @@
+.activity {
+    border-top: 1px solid #ccc;
+    margin-top: 10px;
+    padding-top: 5px;
+}
+
+.activityShare {
+    vertical-align: bottom;
+}
+
+.activityPhoto {
+    float: left;
+    height: 100%;
+    padding: 4px;
+    margin-right: 10px;
+}
+
+.activityFooter {
+    color: #999;
+    font-style: italics;
+}
+
+.activityContent {
+    color: #000000;
+}
+
+.activity a {
+	font-style: bold;
+	color: #F26421;
+	text-decoration: none;
+}
+
+.activity h4 {
+	margin-top: 0;
+	margin-bottom: 5px;
+	color: #F26421;
+	font-size: 1.2em;
+}
+
+
+.contact {
+    border-top: 1px solid #ccc;
+    margin-top: 10px;
+    padding-top: 5px;
+}
+
+.contactPhoto {
+    float: left;
+    height: 100%;
+    padding: 4px;
+    margin-right: 10px;
+}
+
+.contactContent {
+    padding: 5px;
+}
+
+.contactActions {
+    color: #ccc;
+}
+
+#addContact {
+    border-top: 1px solid #ccc;
+    margin-top: 10px;
+    padding-top: 5px;
+}	
+
+#addContact h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #F26421;
+    font-size: 1.2em;
+}
+
+#tagCloud a {
+    text-decoration: none;
+}
+
+
+#formUserProfile #userName {
+	font-size:200%;
+    font-weight:bold;
+    margin-bottom: 1em;
+}
+
+#formUserProfile h3 {
+    margin-bottom: 0;
+    padding-left: 0.5em;
+}
+
+#formUserProfile td.label {
+	width: 200px;
+	font-weight: bolder;
+}
+
+#formUserProfile td.value {
+	width: 600px;
+}
+
+#formUserProfile td {
+	padding: 2px;
+}
+
+#formUserProfile .profileSection {
+    border-top: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 0.5em;
+    padding-left: 1em;
+}
+
+#formUserProfile #profileGeneral {
+    width: 600px;
+}
+
+#formUserProfile #profileContact {
+
+}

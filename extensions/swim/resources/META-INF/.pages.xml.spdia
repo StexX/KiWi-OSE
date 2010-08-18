@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram model-entity="SeamPagesDiagram">
+ <item ID="#swim#home.xhtml" NAME="#xswim#xhome.xhtml"
+  PATH="/swim/home.xhtml" SHAPE="24,17,0,0" TYPE="page" model-entity="SeamPagesDiagramItem"/>
+ <item ID="#swim#media.xhtml" NAME="#xswim#xmedia.xhtml"
+  PATH="/swim/media.xhtml" SHAPE="24,121,0,0" TYPE="page" model-entity="SeamPagesDiagramItem">
+  <output ID="/swim/home.xhtml" NAME="output" PATH="/swim/home.xhtml"
+   TARGET="#xswim#xhome.xhtml" model-entity="SeamPagesDiagramItemOutput"/>
+ </item>
+ <item ID="#swim#edit.xhtml" NAME="#xswim#xedit.xhtml"
+  PATH="/swim/edit.xhtml" SHAPE="344,121,0,0" TYPE="page" model-entity="SeamPagesDiagramItem">
+  <output ID="/swim/home.xhtml" NAME="output" PATH="/swim/home.xhtml"
+   TARGET="#xswim#xhome.xhtml" model-entity="SeamPagesDiagramItemOutput"/>
+ </item>
+ <item ID="#swim#activities.xhtml" NAME="#xswim#xactivities.xhtml"
+  PATH="/swim/activities.xhtml" SHAPE="664,121,0,0" TYPE="page" model-entity="SeamPagesDiagramItem"/>
+ <item ID="#swim#history.xhtml" NAME="#xswim#xhistory.xhtml"
+  PATH="/swim/history.xhtml" SHAPE="24,225,0,0" TYPE="page" model-entity="SeamPagesDiagramItem"/>
+ <item ID="#swim#metadata.xhtml" NAME="#xswim#xmetadata.xhtml"
+  PATH="/swim/metadata.xhtml" SHAPE="344,225,0,0" TYPE="page" model-entity="SeamPagesDiagramItem"/>
+ <item ID="#swim#*" NAME="#xswim#x*" PATH="/swim/*" SHAPE="344,329,0,0"
+  TYPE="page" model-entity="SeamPagesDiagramItem">
+  <output ID="/swim/preview.xhtml" NAME="output"
+   PATH="/swim/preview.xhtml" TARGET="#xswim#xpreview.xhtml" model-entity="SeamPagesDiagramItemOutput"/>
+  <output ID="/swim/history.xhtml" NAME="output1"
+   PATH="/swim/history.xhtml" TARGET="#xswim#xhistory.xhtml" model-entity="SeamPagesDiagramItemOutput"/>
+ </item>
+ <item NAME="#xswim#xpreview.xhtml" PATH="/swim/preview.xhtml"
+  SHAPE="24,329,0,0" TYPE="page" model-entity="SeamPagesDiagramItem">
+  <output ID="/swim/*" NAME="output" PATH="/swim/*" TARGET="#xswim#x*" model-entity="SeamPagesDiagramItemOutput"/>
+ </item>
+</diagram>

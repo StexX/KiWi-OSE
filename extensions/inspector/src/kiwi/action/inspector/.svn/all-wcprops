@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/5166/KiWi/trunk/extensions/inspector/src/kiwi/action/inspector
+END
+PreviewAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/4860/KiWi/trunk/extensions/inspector/src/kiwi/action/inspector/PreviewAction.java
+END
+InspectorAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5166/KiWi/trunk/extensions/inspector/src/kiwi/action/inspector/InspectorAction.java
+END
+ViewRevisionsAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/4630/KiWi/trunk/extensions/inspector/src/kiwi/action/inspector/ViewRevisionsAction.java
+END
+InspectUserAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/5166/KiWi/trunk/extensions/inspector/src/kiwi/action/inspector/InspectUserAction.java
+END

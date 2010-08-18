@@ -1,0 +1,30 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                             	
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+			 	xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                template="layout/template-home.xhtml">                             		
+                             	
+		<ui:define name="navigation">
+			
+			<c:if test="#{identity.loggedIn}">
+				<ui:include src="layout/menuLoggedIn.xhtml" />
+			</c:if>
+			<c:if test="#{!identity.loggedIn}">
+				<ui:include src="layout/menuNotLoggedIn.xhtml" />
+			</c:if>
+			
+		</ui:define>
+
+	 <ui:define name="body">
+	 </ui:define>   
+	 
+</ui:composition>

@@ -1,0 +1,9 @@
+<mockup version="1.0" skin="sketch" measuredW="1104" measuredH="796">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="70" y="18" w="1024" h="768" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>www.artaround.at</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

@@ -1,0 +1,9 @@
+#symbol-palettes-container { vertical-align:top; overflow:scroll; }
+table.symbol-palette, table.symbol-palette-folded { border:thin solid grey; background-color:#CCCCFF; vertical-align:top; width:100%; }
+th.symbol-palette-header { cursor:default; border:thin solid #6666AA; background-color:#6666AA; color:#FFFFFF; font-family:sans-serif; text-align:center; padding:0.2em; }
+tr.column-labels > th { padding:0 0.4em 0 0.4em; background-color:#AAAAFF; }
+td.symbol { cursor:default; border:thin solid transparent; background-color:transparent; color:#000000; font-family:sans-serif; text-align:center; padding:0.1em; }
+th.symbol-palette-header:hover { border:thin outset #6666AA; }
+td.symbol:hover { border:thin outset #DDDDFF; background-color: #DDDDFF; }
+table.symbol-palette-folded > tbody > tr.symbol-row { display:none; }
+table.symbol-palette-folded > tbody > tr > th.symbol-palette-header:after { content: " ..."; }

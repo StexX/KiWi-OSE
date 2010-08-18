@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/kiwi/!svn/ver/5472/KiWi/trunk/src/action/kiwi/service/tagging
+END
+TaggingServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5472/KiWi/trunk/src/action/kiwi/service/tagging/TaggingServiceImpl.java
+END
+TagCloudServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/3676/KiWi/trunk/src/action/kiwi/service/tagging/TagCloudServiceImpl.java
+END
+TagRecommendationServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5076/KiWi/trunk/src/action/kiwi/service/tagging/TagRecommendationServiceImpl.java
+END

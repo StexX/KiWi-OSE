@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/kiwi/!svn/ver/3887/KiWi/trunk/view/layout/sn
+END
+footer.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/kiwi/!svn/ver/3388/KiWi/trunk/view/layout/sn/footer.xhtml
+END
+template-nocol.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/kiwi/!svn/ver/3388/KiWi/trunk/view/layout/sn/template-nocol.xhtml
+END
+header.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/kiwi/!svn/ver/3388/KiWi/trunk/view/layout/sn/header.xhtml
+END
+template-3col.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/kiwi/!svn/ver/3388/KiWi/trunk/view/layout/sn/template-3col.xhtml
+END
+template-2col.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/kiwi/!svn/ver/3388/KiWi/trunk/view/layout/sn/template-2col.xhtml
+END
+template-1col.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/kiwi/!svn/ver/3388/KiWi/trunk/view/layout/sn/template-1col.xhtml
+END
+register.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/kiwi/!svn/ver/3887/KiWi/trunk/view/layout/sn/register.xhtml
+END
+login.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/kiwi/!svn/ver/3388/KiWi/trunk/view/layout/sn/login.xhtml
+END

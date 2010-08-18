@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/kiwi/!svn/ver/5166/KiWi/trunk/src/action/kiwi/api/security
+END
+PermissionServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/4633/KiWi/trunk/src/action/kiwi/api/security/PermissionServiceRemote.java
+END
+SecurityServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/2142/KiWi/trunk/src/action/kiwi/api/security/SecurityServiceRemote.java
+END
+CryptoServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5166/KiWi/trunk/src/action/kiwi/api/security/CryptoServiceRemote.java
+END
+CryptoServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5166/KiWi/trunk/src/action/kiwi/api/security/CryptoServiceLocal.java
+END
+SecurityServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/2142/KiWi/trunk/src/action/kiwi/api/security/SecurityServiceLocal.java
+END
+PermissionService.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5166/KiWi/trunk/src/action/kiwi/api/security/PermissionService.java
+END
+PermissionServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/4633/KiWi/trunk/src/action/kiwi/api/security/PermissionServiceLocal.java
+END
+SecurityService.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/3077/KiWi/trunk/src/action/kiwi/api/security/SecurityService.java
+END
+CryptoService.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/5166/KiWi/trunk/src/action/kiwi/api/security/CryptoService.java
+END

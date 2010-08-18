@@ -1,0 +1,112 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+    xmlns:ex="http://simile.mit.edu/2006/11/exhibit#"
+    xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:a="http://richfaces.org/a4j" 
+	template="layout/template-1col.xhtml">
+
+	<ui:define name="links">
+	    <link href="#{facesContext.externalContext.requestContextPath}/seam/resource/services/widgets/exhibit/query.json?typemask=(.*)&amp;q=#{param.q}&amp;limit=100&amp;jsonpCallback=" 
+	    	  type="application/jsonp"
+	    	  ex:converter="exhibitConverter"
+	    	  rel="exhibit/data" />
+
+    	<link href="exhibitSchema.json" type="application/json" rel="exhibit/data" />
+    	
+	    <script src="http://static.simile.mit.edu/exhibit/api-2.0/exhibit-api.js"
+	    		type="text/javascript"></script>
+		<script src="http://static.simile.mit.edu/exhibit/extensions-2.0/time/time-extension.js"
+				type="text/javascript"></script>
+    	
+    	<script src="http://api.simile-widgets.org/exhibit/2.2.0/extensions/map/map-extension.js?gmapkey=#{tagit2.explorerAction.gmapkey}"></script>
+    	<script src="js/exhibit/mapfix.js" />
+    	<script>
+    	var kiwiRootPath = "#{facesContext.externalContext.requestContextPath}";
+    	// <![CDATA[
+    	 function exhibitConverter( json ) {
+    		 var hiddenProps=[
+    		         		 "kiwi:hasRatingDataFacades",
+    		                 "kiwi:Database-Primary-Key"
+    		                 ];
+
+             
+    		   var items = json.items;
+    		   // iterate through all items
+    		   for (var i = 0; item = items[i]; i++) {
+					var lat = item["geo:lat"]!=null?item["geo:lat"]:item["geo:latitude"];
+					var long = item["geo:long"]!=null?item["geo:long"]:item["geo:longitude"];		
+					if(lat!=null & long!=null)
+						item.latlong=lat + "," + long;
+					for(var j=0; prop = hiddenProps[j];j++)
+						delete item[prop];
+					if(item.resourceUri != null){
+						var link = kiwiRootPath + "/home.seam?uri=" + escape(item.resourceUri);
+						item.link="<a href='" + link + "'>" +item.label + "</a>" ;
+					}
+    		   }
+    		   return json;
+    		 }
+    	// ]]>
+    	</script>
+    	
+	</ui:define>
+
+	<ui:define name="body">
+
+	    <div id="article" class="fullwidth">
+	        <rich:messages styleClass="message" />
+
+		    <table width="100%">
+		        <tr valign="top">
+		            <td ex:role="viewPanel">
+		                <div ex:role="view"
+		                	 ex:label="Detail"></div>
+						<div ex:role="view" 
+							 ex:viewClass="Timeline" 
+							 ex:start=".kiwi:createdOn"
+							 ex:topBandUnit="month"
+							 ex:bottomBandUnit ="year"
+							 ex:end=".waysknow:ends-at"></div>
+						<div ex:role="view"
+	                         ex:viewClass="Map"
+	                         ex:latlng=".latlong"
+	                         ex:mapHeight="600"></div>
+					</td>
+		            <td width="25%">
+		            	<div ex:role="facet" 
+		            		 ex:facetClass="TextSearch"
+		            		 ex:facetLabel="Text search"></div>
+		            	<div ex:role="facet" 
+		            		 ex:expression=".type"
+		            		 ex:showMissing="false"
+							 ex:scroll="false"
+							 ex:facetLabel="Type"></div>
+		            	<div ex:role="facet" 
+		            		 ex:expression=".hgtags:taggedWithTag"
+							 ex:showMissing="false"
+							 ex:scroll="false"
+							 ex:facetLabel="UserTags"></div>
+
+						<div ex:role="facet" 
+							 ex:expression=".kiwi:Author"
+							 ex:showMissing="false"
+							 ex:scroll="false"
+							 ex:facetLabel="Autor"></div>
+						<div ex:role="facet" 
+							 ex:expression=".kiwi:language" 
+							 ex:scroll="false"
+							 ex:facetLabel="Language"></div>
+					</td>
+		        </tr>
+		    </table>
+    	</div>
+	</ui:define>
+</ui:composition>
+

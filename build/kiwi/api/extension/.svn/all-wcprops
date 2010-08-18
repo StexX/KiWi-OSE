@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/extension
+END
+ExtensionService.class
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/extension/ExtensionService.class
+END
+KiWiAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/extension/KiWiAction.class
+END
+ExtensionServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/extension/ExtensionServiceRemote.class
+END
+KiWiExtension.class
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/extension/KiWiExtension.class
+END
+KiWiApplication.class
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/extension/KiWiApplication.class
+END
+KiWiWidget.class
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/extension/KiWiWidget.class
+END
+ExtensionServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/extension/ExtensionServiceLocal.class
+END
+KiWiService.class
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/extension/KiWiService.class
+END

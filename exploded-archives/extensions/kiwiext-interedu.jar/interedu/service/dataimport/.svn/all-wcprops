@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-interedu.jar/interedu/service/dataimport
+END
+InterEduImportServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-interedu.jar/interedu/service/dataimport/InterEduImportServiceImpl.class
+END
+InterEduParseException.class
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-interedu.jar/interedu/service/dataimport/InterEduParseException.class
+END
+Artikel.class
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-interedu.jar/interedu/service/dataimport/Artikel.class
+END
+ParseArtikelServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-interedu.jar/interedu/service/dataimport/ParseArtikelServiceImpl.class
+END
+Kategorie.class
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-interedu.jar/interedu/service/dataimport/Kategorie.class
+END

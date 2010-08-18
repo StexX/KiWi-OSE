@@ -1,0 +1,85 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+		    	xmlns:rich="http://richfaces.org/rich"
+		    	xmlns:a4j="http://richfaces.org/a4j"
+	            xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+	            template="/layout/editTemplate.xhtml">
+
+
+	<ui:define name="editHeader">	
+		<ui:include src="../dialogs/kiwilink.xhtml" />
+	    <ui:include src="../dialogs/querywizard.xhtml" />
+	    <ui:include src="../dialogs/kiwirdfa.xhtml" />
+	
+		<script  type="text/javascript">
+	    	kiwilinkJSLib={};
+	    	kiwilinkJSLib.showKiwilinkPanel = function(){
+				
+	    		// a4j:jsFunction on kiwilink.xhtml
+	    		kiwilinkFormActivate();
+	    		 
+	    		#{rich:component('kiwilinkPanel')}.show();
+	    	}
+	    	kiwilinkJSLib.kiwilinkCreate = function(replacement){
+	    		// var kiwilinkAction = Seam.Component.getInstance("kiwilinkAction");
+	    		kiwilinkJSLib.createLink(replacement);
+	    	}
+	
+	    	queryWizardJSLib = {};
+	    	queryWizardJSLib.showQuerywizardPanel = function(){
+				
+	    		// a4j:jsFunction on kiwilink.xhtml
+	    		// querywizardFormActivate();
+	    		 
+	    		#{rich:component('querywizardPanel')}.show();
+	    	}
+	    	
+	    </script>
+	    
+	    <script type="text/javascript" src="./js/tinymceplugins/annotation/functional.js"></script>
+		<script type="text/javascript" src="./js/tinymceplugins/kiwirdfa/rdfa.js"></script>
+		<script type="text/javascript">
+			kiwirdfaJSLib={};
+			kiwirdfaJSLib.showKiwirdfaPanel = function(property) {
+				#{rich:element('kiwirdfaForm:rdfaProperty')}.value = property;
+				#{rich:component('kiwirdfaPanel')}.show();
+	    	}
+	
+			kiwirdfaJSLib.onCreateOrUpdate = function (property) {
+				#{rich:component('kiwirdfaPanel')}.hide();
+				this._setProperty(property);
+			}
+	
+	        kiwirdfaJSLib.onCancel = function () {
+	        	#{rich:component('kiwirdfaPanel')}.hide();
+	        	this._cancel ();
+	        }
+	
+	        kiwirdfaJSLib.onDelete = function () {
+	        	#{rich:component('kiwirdfaPanel')}.hide();
+	        	this._delete ();
+	        }
+		</script>
+	</ui:define>
+	
+	<ui:define name="ContentEdit">
+
+		<!-- autoResize = "true" -->
+		<rich:editor id="content"
+                         value    = "#{editorAction.content}"
+       	                 height   = "400"
+        	             required = "true"
+        	             theme    = "advanced"
+        	             customPlugins = "kiwiPlugins"
+        	             configuration = "tinymce-full"
+        	             plugins  = "safari,pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,kiwilink,kiwirdfa,querywizard" 
+                         autoResize="true"
+                         >
+		</rich:editor>
+		<div id='viewer-1' style='display:none;'></div>
+	</ui:define>
+	
+</ui:composition>

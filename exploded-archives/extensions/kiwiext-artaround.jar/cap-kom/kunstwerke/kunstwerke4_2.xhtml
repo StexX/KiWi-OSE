@@ -1,0 +1,99 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                             	
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+			 	xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                template="../layout/template-kunstwerke.xhtml">
+                	  
+	 <ui:define name="navigation">
+			<c:if test="#{identity.loggedIn}">
+				<ui:include src="./menuLoggedIn.xhtml" />
+			</c:if>
+			<c:if test="#{!identity.loggedIn}">
+				<ui:include src="./menuNotLoggedIn.xhtml" />
+			</c:if>
+	 </ui:define>
+
+	 <ui:define name="body">
+          
+			<!-- begin: Kunstwerk Details: -->
+			<div id="myKunstwerke">
+				<div class="subcolumns">
+					<div class="c33l">
+						<div class="subcl">						
+							<div class="myKunstwerk">
+								<img src="../images/artworks/artwork1.jpg" title="Kunstwerk 1" alt="Kunstwerk 1" />
+								<div class="simpleText">
+									"Der Berg" von Antonia Schlick
+								</div>									
+							</div>
+							<div class="bewertung">
+								<a href="../kunstwerke/kunstwerke4_3.html" title="Kunstwerk 1 bewerten">
+									<img src="../images/icons/bewertung_1_25px.gif" title="Bewertung 1 Punkt" alt="Bewertung 1 Punkt" />
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="c66r">
+						<div class="subcr">
+							<div>
+								<table class="capKomBorderProfil">
+									<tr>
+										<td class="newUserPic">
+											<img src="../images/antonia.png" title="Antonia Schlick" alt="Antonia Schlick" />
+										</td>
+										<td class="newUserDaten">
+											Antonia Schlick<br/>
+											wohnhaft in Salzburg<br/><br/>
+											Hobbies: malen, klettern
+										</td>
+									</tr>
+									<tr>
+										<td colspan="2">
+											<a href="../kunstwerke/kunstwerke4_0.html" title="Kunstwerke von Antonia Schlick">
+												<img src="../images/icons/kunstwerke75px.gif" title="Kunstwerke von Antonia Schlick" 
+																alt="Kunstwerke von Antonia Schlick" />
+												<div class="simpleText">
+													Kunstwerke von Antonia Schlick
+												</div>	
+											</a>	
+										</td>
+									</tr>
+								</table>	
+							</div>		
+						</div>
+					</div>
+				</div>					
+			</div>
+			<!-- end: Kunstwerk Details -->
+			<!-- begin: buttons -->
+			<div id="navButtons">
+		    	<div class="hlist">
+		  			<ul>
+		  				<li class="button">
+		  					<a href="./kunstwerke4_0.html" title="#{messages['artaround.cap-kom.einfacheSprache.zurueckZuKunstwerke']}">
+		  						<!-- Profil (sichtbar nach Login) -->
+								<img src="../images/icons/zurueck75px.gif" 
+									title="#{messages['artaround.cap-kom.einfacheSprache.zurueckZuKunstwerke']}" 
+									alt="#{messages['artaround.cap-kom.einfacheSprache.zurueckZuKunstwerke']}"/>
+								<div class="simpleText">
+									#{messages['artaround.cap-kom.einfacheSprache.zurueckZuKunstwerke']}
+								</div>									
+							</a>
+		  				</li>
+					</ul>
+				</div>
+			</div>
+			<!-- end: buttons -->		
+			
+	 </ui:define>   
+	 
+</ui:composition>	 

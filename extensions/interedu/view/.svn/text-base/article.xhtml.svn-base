@@ -1,0 +1,255 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+			 	xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                template="layout/template-interedu.xhtml">
+
+	<ui:define name="search">
+		<s:div id="search_complete">
+			<ui:include src="components/search.xhtml" />
+		</s:div>
+	</ui:define>
+	
+	<ui:define name="content-middle">
+		<s:div id="content_middle_complete">
+			<div id="portal_content">
+<div class="article">
+	
+	<s:div id="basic_info">
+		<s:fragment rendered="#{interedu.articleAction.editMode ne 'basic'}">
+			<ui:include src="articleComponents/basic_info.xhtml" />
+		</s:fragment>
+		
+		
+		<s:fragment rendered="#{interedu.articleAction.editMode eq 'basic'}">
+		<h:form>
+			<ui:include src="articleComponents/basic_info_edit.xhtml" />
+		</h:form>
+		</s:fragment>
+	</s:div>
+	
+
+	<s:div id="article_links">
+		<div class="article-links">
+			<h3>Links</h3>
+			<h:form>
+			<ui:repeat value="#{interedu.articleAction.getAllLinks()}" var="link">
+				<div class="article-link"><img alt="Icon Artikel-Link" src="images/icon_link.png" />
+				<a href="#{link}" target="_blank">#{link}</a>
+				<a:commandLink action="#{interedu.articleAction.startEditLink(link)}" reRender="removeLinkPanel_insertion" rendered="#{identity.loggedIn}" >
+					<img src="images/icon_edit.png" title="Link bearbeiten" alt="Link brearbeiten"/>
+				</a:commandLink>
+				</div>
+			</ui:repeat>
+			</h:form>
+
+			<h:form rendered="#{identity.loggedIn}" >
+			<div class="article-link-new showforedit">
+				<img alt="Icon Artikel-Link" src="images/icon_link.png" />
+					<a:commandLink action="#{interedu.articleAction.startAddLink()}" value=" Neuen Link eintragen" reRender="addLinkPanel_insertion" />
+			</div>
+			</h:form>
+			<div class="clearer" />
+			
+			<h:form>
+			<s:div id="addLinkPanel_insertion">
+			<s:fragment rendered="#{interedu.articleAction.editMode eq 'link'}">
+				<ui:include src="panels/addLinkPanel.xhtml" />
+			</s:fragment>
+			</s:div>
+			</h:form>
+			
+			<h:form>
+			<s:div id="removeLinkPanel_insertion">
+			<s:fragment rendered="#{interedu.articleAction.editMode eq 'link2'}">
+				<ui:include src="panels/removeLinkPanel.xhtml" />
+			</s:fragment>
+			</s:div>
+			</h:form>
+		</div>
+	</s:div>
+	
+	<s:div id="article_categories">
+		<div class="article-categories">
+		<h3>Kategorien</h3>
+		<h:form>
+		
+		<ui:repeat value="#{interedu.articleAction.article.categoryIds}" var="catId">
+			<c:set value="#{interedu.articelFacadeService.getConcept(catId)}" var="cat">
+			</c:set>
+			<div class="article-category">
+				<img alt="Icon Kategorie" src="images/icon_category.png" />
+				<h:commandLink action="#{interedu.searchAction.selectConcept(cat)}" value=" #{cat.preferredLabel}" />
+			</div>
+		</ui:repeat>
+		</h:form>
+		<h:form rendered="#{identity.loggedIn}" >
+			<div class="article-link-new showforedit" >
+							<img alt="Icon Artikel-Link" src="images/icon_link.png" />
+					<a:commandLink action="#{interedu.articleAction.startEditCategories()}" value=" Kategorien editieren" reRender="editKat_insertion" />
+			</div>
+			
+			<s:div id="editKat_insertion">
+			<s:fragment rendered="#{interedu.articleAction.editMode eq 'cat'}">
+				<ui:include src="panels/editKatPanel.xhtml" />
+			</s:fragment>
+			</s:div>
+		</h:form>
+		<div class="clearer" />
+		</div>
+	</s:div>
+
+	<s:div styleClass="article-keywords" id="article_keywords">
+		<h3>Stichworte</h3>
+			<h:form>
+			
+			<s:fragment rendered="#{!interedu.articleAction.allTags.isEmpty()}">
+			<div class="article-keyword">
+			<img alt="Icon Stichwort" src="images/icon_keyword.png" />
+			<c:forEach items="#{interedu.articleAction.allTags}" var="tag">
+					<h:commandLink action="#{interedu.searchAction.selectTag(tag.getTaggingResource().getTitle())}" value=" #{tag.getTaggingResource().getTitle()} " />
+					<h:outputText value=" "/>
+			</c:forEach>
+			</div>
+			</s:fragment>
+
+			</h:form>
+			
+			<h:form id="tagAddForm" rendered="#{identity.loggedIn}" >
+			<div class="article-link-new showforedit" >
+							<img alt="Icon Artikel-Link" src="images/icon_link.png" />
+					<a:commandLink action="#{interedu.articleAction.startAddTags()}" value=" Stichworte vergeben" reRender="editTags_insertion" />
+			</div>
+			
+			<s:div id="editTags_insertion">
+			<s:fragment rendered="#{interedu.articleAction.editMode eq 'tags'}">
+				<ui:include src="panels/editTagsPanel.xhtml" />
+			</s:fragment>
+			</s:div>
+		</h:form>
+			
+			<div class="clearer" />
+	</s:div>
+	
+	<s:div styleClass="article-relatedarticles" id="article_relatedarticles">
+		<h3>Verwandte Artikel</h3>
+			<h:form>
+			
+			<c:forEach items="#{interedu.articleAction.article.verwandteArtikel}" var="vart">
+				<div class="article-relatedarticle">
+					<img alt="Icon verwandter Artikel" src="images/icon_article.png"/>
+					<h:commandLink action="#{interedu.currentArticleSelector.selectArticle(vart)}" value=" #{vart.title}" />
+				</div>
+			</c:forEach>
+
+			</h:form>
+			
+			<h:form id="tagAddArticle" rendered="#{identity.loggedIn}" >
+			<a:queue />
+			<div class="article-link-new showforedit" >
+							<img alt="Icon Artikel-Link" src="images/icon_article.png" />
+					<a:commandLink action="#{interedu.articleAction.beginEditRelArts()}" value=" Verwandte Artikel bearbeiten" reRender="relArts_insertion" />
+			</div>
+			
+			<s:div id="relArts_insertion">
+			<s:fragment rendered="#{interedu.articleAction.editMode eq 'relArts'}">
+				<ui:include src="panels/relArtsPanel.xhtml" />
+			</s:fragment>
+			</s:div>
+		</h:form>
+			
+			<div class="clearer" />
+	</s:div>
+	
+					<div class="article-comments" id="comments">
+							<h2>Bewertungen und Kommentare</h2>
+							
+							<ui:repeat value="#{interedu.articleAction.article.intereduComments}" var="comment">
+							<div class="article-comment">
+								<div class="article-evaluation">
+									<h:outputText value="#{interedu.starService.getStarDisplay(comment)}" escape="false" />
+								</div>
+								<div class="article-comment-person"><strong>
+									<h:outputText value="#{comment.author.firstName} #{comment.author.lastName}" />
+								</strong> meint:</div>
+								<div class="article-comment-info"><h:outputText value="#{comment.author.created}" /></div>
+								<div class="clearer"/>
+								<h:outputText value="#{comment.textContent.htmlContent}" escape="false"/>
+							</div>
+							</ui:repeat>
+							
+							<s:div id="comments_insertion">
+								<s:fragment rendered="#{interedu.intereduCommentAction.active}">
+								<div class="article-comment">
+								<h:form>
+									<div style="width:100%;">
+									<br />
+									<h:outputText value="Bewertung: " />
+									<h:selectOneMenu value="#{interedu.intereduCommentAction.rating}">
+										<f:selectItem itemValue="0" itemLabel=" sehr schlecht "/>
+										<f:selectItem itemValue="1" itemLabel=" schlecht "/>
+										<f:selectItem itemValue="2" itemLabel=" mittel "/>
+										<f:selectItem itemValue="3" itemLabel=" gut "/>
+										<f:selectItem itemValue="4" itemLabel=" sehr gut "/>
+										<f:selectItem itemValue="5" itemLabel=" hervorragend "/>
+									</h:selectOneMenu>
+									<br />
+									<br />
+										<rich:editor required="false" width="550" height="40" theme="advanced"
+														configuration="tinymce-small"
+													plugins="safari,pagebreak,style,layer,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,visualchars,nonbreaking,xhtmlxtras"
+													value="#{interedu.intereduCommentAction.description}">
+										</rich:editor>
+									<br />
+									<div style="width:100%;">
+									<div style="width:50%;position:absolute;">
+										<a:commandButton action="#{interedu.intereduCommentAction.cancel()}" value="Abbrechen" reRender="comments_insertion" />
+									</div>
+									<div style="width:100%;text-align:right;">
+										<h:commandButton action="#{interedu.intereduCommentAction.save()}" value="Kommentar speichern"/>
+									</div>
+									</div>
+									</div>
+									</h:form>
+								</div>
+								</s:fragment>
+								<s:fragment rendered="#{!interedu.intereduCommentAction.active}">
+								<div class="article-comment" style="text-align:right;">
+									<a:form>
+									<a:commandButton action="#{interedu.intereduCommentAction.begin()}" value="Artikel kommentieren" reRender="comments_insertion" />
+									</a:form>
+								</div>
+								</s:fragment>
+							</s:div>
+							
+						</div>
+
+			</div>
+			</div>
+		</s:div>
+	</ui:define>
+	
+	<ui:define name="content-right">
+		<s:div id="content_right_complete">
+			<div id="portal_content_right">
+				<ui:include src="components/selector.xhtml" />
+				<ui:include src="components/quality.xhtml" />
+			</div>
+		</s:div>
+	</ui:define>
+	
+	<ui:define name="jsFunctions">
+		<a:jsFunction name="ajaxAddToSelector" action="#{interedu.artikelCollector.select()}" reRender="content_middle_complete,selector_box">
+			<a:actionparam name="currentId" assignTo="#{interedu.artikelCollector.currentId}"/>
+		</a:jsFunction>
+	</ui:define>
+	
+</ui:composition>

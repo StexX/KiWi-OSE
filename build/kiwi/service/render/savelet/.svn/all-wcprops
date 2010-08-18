@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/render/savelet
+END
+ExtractLinksSavelet.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/render/savelet/ExtractLinksSavelet.class
+END
+MediaContentSavelet.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/render/savelet/MediaContentSavelet.class
+END
+RdfaSavelet$ContentItemProvider.class
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/render/savelet/RdfaSavelet$ContentItemProvider.class
+END
+FragmentsSavelet.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/render/savelet/FragmentsSavelet.class
+END
+RdfaSavelet$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/render/savelet/RdfaSavelet$1.class
+END
+Savelet.class
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/render/savelet/Savelet.class
+END
+ComponentSavelet.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/render/savelet/ComponentSavelet.class
+END
+RdfaSavelet.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/render/savelet/RdfaSavelet.class
+END
+TextContentSavelet.class
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/render/savelet/TextContentSavelet.class
+END
+HtmlCleanerSavelet.class
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/render/savelet/HtmlCleanerSavelet.class
+END
+SourceSavelet.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/render/savelet/SourceSavelet.class
+END
+NavigationalLinksSavelet.class
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/render/savelet/NavigationalLinksSavelet.class
+END

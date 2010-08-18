@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/kiwi/!svn/ver/2829/KiWi/trunk/extensions/tagit2/src/tagit2/api/tagcloud
+END
+TagitTagCloudServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kiwi/!svn/ver/2829/KiWi/trunk/extensions/tagit2/src/tagit2/api/tagcloud/TagitTagCloudServiceRemote.java
+END
+TagitTagCloudServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/2829/KiWi/trunk/extensions/tagit2/src/tagit2/api/tagcloud/TagitTagCloudServiceLocal.java
+END
+TagitTagCloudService.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/2829/KiWi/trunk/extensions/tagit2/src/tagit2/api/tagcloud/TagitTagCloudService.java
+END

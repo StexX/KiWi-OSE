@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/kiwi/!svn/ver/5469/KiWi/trunk/src/action/kiwi/api/informationextraction
+END
+InstanceExtractor.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5023/KiWi/trunk/src/action/kiwi/api/informationextraction/InstanceExtractor.java
+END
+Extractlet.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5023/KiWi/trunk/src/action/kiwi/api/informationextraction/Extractlet.java
+END
+KiWiGATEService.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5051/KiWi/trunk/src/action/kiwi/api/informationextraction/KiWiGATEService.java
+END
+FeatureStoreService.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5023/KiWi/trunk/src/action/kiwi/api/informationextraction/FeatureStoreService.java
+END
+TermRecognitionService.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/5469/KiWi/trunk/src/action/kiwi/api/informationextraction/TermRecognitionService.java
+END
+LabelServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5271/KiWi/trunk/src/action/kiwi/api/informationextraction/LabelServiceLocal.java
+END
+InformationExtractionServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/kiwi/!svn/ver/2937/KiWi/trunk/src/action/kiwi/api/informationextraction/InformationExtractionServiceLocal.java
+END
+LabelServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5271/KiWi/trunk/src/action/kiwi/api/informationextraction/LabelServiceRemote.java
+END
+InformationExtractionServiceRemove.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/kiwi/!svn/ver/2937/KiWi/trunk/src/action/kiwi/api/informationextraction/InformationExtractionServiceRemove.java
+END
+InformationExtractionService.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5163/KiWi/trunk/src/action/kiwi/api/informationextraction/InformationExtractionService.java
+END
+KiWiGATEServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/2937/KiWi/trunk/src/action/kiwi/api/informationextraction/KiWiGATEServiceLocal.java
+END
+LabelService.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5469/KiWi/trunk/src/action/kiwi/api/informationextraction/LabelService.java
+END
+FeatureStoreServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/5023/KiWi/trunk/src/action/kiwi/api/informationextraction/FeatureStoreServiceLocal.java
+END
+TermRecognitionServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/3076/KiWi/trunk/src/action/kiwi/api/informationextraction/TermRecognitionServiceLocal.java
+END

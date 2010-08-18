@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/rating
+END
+RatingFacade.class
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/rating/RatingFacade.class
+END
+RatingService.class
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/rating/RatingService.class
+END
+RatingServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/rating/RatingServiceRemote.class
+END
+RatingDataFacade.class
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/rating/RatingDataFacade.class
+END
+RatingServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/rating/RatingServiceLocal.class
+END

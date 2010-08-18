@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/transaction
+END
+TransactionService.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/transaction/TransactionService.class
+END
+KiWiSynchronization.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/transaction/KiWiSynchronization.class
+END
+CIVersionBean.class
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/transaction/CIVersionBean.class
+END
+UpdateTransactionBean.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/transaction/UpdateTransactionBean.class
+END

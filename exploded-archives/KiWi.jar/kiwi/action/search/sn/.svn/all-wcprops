@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/action/search/sn
+END
+SNResultException.class
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/action/search/sn/SNResultException.class
+END
+SNSearchWebService$Facet.class
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/action/search/sn/SNSearchWebService$Facet.class
+END
+SNSearchWebService$Facet$Value.class
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/action/search/sn/SNSearchWebService$Facet$Value.class
+END
+SNSearchWebService.class
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/action/search/sn/SNSearchWebService.class
+END

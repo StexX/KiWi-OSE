@@ -1,0 +1,20 @@
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+                xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf">
+	<!-- include subComponents -->
+<div class="box box-qualitycampaign">
+	<h2 class="box-heading"><img alt="Qualit&#xE4;tsoffensive" src="images/icon_qualitycampaign.png"/>Qualit&#xE4;tsoffensive</h2>
+	<div class="box-content">
+		<p>Helfen Sie mit, die Qualit&#xE4;t der Materialien zu verbessern!</p>
+		<p><a href="mailto:qualitycampaign@eduhi.org?subject=Betrifft%20Artikel%20id%3A#{interedu.articleAction.article.id}">
+		Informieren Sie uns</a>, wenn der Inhalt dieses Materials problematisch ist, der Link nicht mehr funktioniert, die Beschreibung ungenau ist oder Sie Verbesserungsvorschl&#xE4;ge haben.</p>
+	</div>
+</div>
+</ui:composition>

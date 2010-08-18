@@ -1,0 +1,49 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:fb="http://www.facebook.com/2008/fbml"
+                template="../layout/template-1col.xhtml">
+
+<ui:define name="body">
+	<div id="content_overlay">
+            <ui:insert name="body_overlay"/>
+    </div>
+    <h1>Login to KiWi using Facebook</h1>
+	<rich:messages styleClass="message" />
+	
+	<h:form id="formLogin">
+        <center>
+	        <div id="loginDialog">
+
+                <img src="img/facebook-logo.png" style="float: left; margin-top: 5px; margin-right: 10px;" />
+		
+				<div class="dialog" style="padding: 5px">
+				    Hello, Facebook User
+				    <strong>
+				    <h:outputText value=" #{kiwi.user.facebookLoginAction.user.firstName}"/>
+                    <h:outputText value=" #{kiwi.user.facebookLoginAction.user.lastName}"/></strong>. 
+                    Do you want to log in using your Facebook account?
+				</div>
+		
+
+				<div class="actionButtons" style="text-align: center; padding: 5px; clear: left;">
+				    <center>
+					    <h:panelGrid columns="2">
+<!--							<h:commandButton value="Login" if="loginButton" action="#{kiwi.user.facebookLoginAction.login()}" />  -->
+			                <h:commandButton value="Login" if="loginButton" action="#{kiwi.user.facebookLoginAction.checkIfFBIDExists()}" />
+			                <h:commandButton value="Abort" action="home" />
+	                    </h:panelGrid>
+                    </center>
+				</div>
+			</div>
+	    </center>
+	    
+    </h:form>
+
+</ui:define> 
+</ui:composition>

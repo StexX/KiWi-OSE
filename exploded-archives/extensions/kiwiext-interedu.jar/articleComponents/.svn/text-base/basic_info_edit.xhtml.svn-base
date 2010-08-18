@@ -1,0 +1,74 @@
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+                xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf">
+
+	<h1 id="articleEditTitle">
+		<h:outputText value="Titel: " />
+		<h:inputText value="#{interedu.articleAction.title}"  />
+	</h1>
+	
+	<div class="article-classification-edit">
+		<div class="article-classification-subjects">
+	        <h:outputText value="Schultyp: " />
+	        <h:selectOneMenu value="#{interedu.articleAction.schultyp}">
+	        	<f:selectItem itemLabel="Ausw&#xE4;hlen..." itemValue=""/>
+  				<f:selectItem itemValue="F&#xF6;rderschule" />
+  				<f:selectItem itemValue="Grundschule" />
+  				<f:selectItem itemValue="Hauptschule" />
+  				<f:selectItem itemValue="Realschule" />
+  				<f:selectItem itemValue="Gymnasium" />
+			</h:selectOneMenu> 
+	        
+		</div>
+		<div class="article-classification-subjects" style="margin-left:30px;">
+	        <h:outputText value="Dokumentart: " />
+	        <h:selectOneMenu value="#{interedu.articleAction.dokumentArt}">
+	        	<f:selectItem itemLabel="Ausw&#xE4;hlen..." itemValue=""/>
+  				<f:selectItem itemValue="Link/Homepage" />
+  				<f:selectItem itemValue="Bild" />
+  				<f:selectItem itemValue="Unterrichtsaterial" />
+  				<f:selectItem itemValue="Artikel" />
+  				<f:selectItem itemValue="Medium" />
+  				<f:selectItem itemValue="Software" />
+  				<f:selectItem itemValue="Schule" />
+  				<f:selectItem itemValue="Event" />
+			</h:selectOneMenu> 
+	        
+		</div>
+		<div class="article-classification-levels">
+	        <h:outputText value="Schulstufe: " />
+	        <h:inputText value="#{interedu.articleAction.schulstufe}" />
+		</div>
+		<div class="clearer" />
+	</div>
+	
+	<div class="article-text">
+		<h:outputText value="Bildlink: " />
+		<h:inputText value="#{interedu.articleAction.bildlink}" />
+		<br />
+		<br />
+	<rich:editor required="false" width="550" height="40" theme="advanced"
+				configuration="tinymce-small"
+				plugins="safari,pagebreak,style,layer,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,visualchars,nonbreaking,xhtmlxtras"
+				value="#{interedu.articleAction.description}">
+	</rich:editor>
+	</div>
+	
+	<div class="article_editButton">
+		<a:commandLink action="#{interedu.articleAction.setEditMode(false)}" reRender="basic_info">
+			<img title="Bearbeiten abbrechen" alt="Bearbeiten abbrechen" src="images/icon_cancel.png"/>
+		</a:commandLink>
+		<h:outputText value="  " />
+		<a:commandLink action="#{interedu.articleAction.saveBasicEdit()}" reRender="basic_info">
+			<img title="Bearbeiten speichern" alt="Bearbeiten speichern" src="images/icon_accept.png"/>
+		</a:commandLink>
+	</div>
+	
+</ui:composition>

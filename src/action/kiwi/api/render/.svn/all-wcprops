@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/kiwi/!svn/ver/5280/KiWi/trunk/src/action/kiwi/api/render
+END
+RenderingServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/render/RenderingServiceRemote.java
+END
+StoringServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/render/StoringServiceRemote.java
+END
+RenderingService.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5280/KiWi/trunk/src/action/kiwi/api/render/RenderingService.java
+END
+StoringService.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/render/StoringService.java
+END
+StoringServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/render/StoringServiceLocal.java
+END
+RenderingServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/render/RenderingServiceLocal.java
+END

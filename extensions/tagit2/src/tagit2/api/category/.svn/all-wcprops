@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/kiwi/!svn/ver/3463/KiWi/trunk/extensions/tagit2/src/tagit2/api/category
+END
+PointWithCategoryFacade.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/3324/KiWi/trunk/extensions/tagit2/src/tagit2/api/category/PointWithCategoryFacade.java
+END
+CategoryServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/2829/KiWi/trunk/extensions/tagit2/src/tagit2/api/category/CategoryServiceRemote.java
+END
+CategoryService.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/3249/KiWi/trunk/extensions/tagit2/src/tagit2/api/category/CategoryService.java
+END
+CategoryServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/2829/KiWi/trunk/extensions/tagit2/src/tagit2/api/category/CategoryServiceLocal.java
+END
+PointOfSubcategoryFacade.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/3463/KiWi/trunk/extensions/tagit2/src/tagit2/api/category/PointOfSubcategoryFacade.java
+END

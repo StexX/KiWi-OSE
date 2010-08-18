@@ -1,0 +1,622 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY waysknow "http://www.ways2go.at/2009/waysknow.owl#" >
+    <!ENTITY wgs84_pos "http://www.w3.org/2003/01/geo/wgs84_pos#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.ways2go.at/2009/waysknow.owl#"
+     xml:base="http://www.ways2go.at/2009/waysknow.owl"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:waysknow="http://www.ways2go.at/2009/waysknow.owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:Ontology rdf:about=""/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#affiliation -->
+
+    <owl:ObjectProperty rdf:about="#affiliation">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:label xml:lang="en">affiliation</rdfs:label>
+        <rdfs:comment xml:lang="de"
+            >Arbeitsbeziehung</rdfs:comment>
+        <rdfs:range rdf:resource="#Organisation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#expertise -->
+
+    <owl:ObjectProperty rdf:about="#expertise">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:label xml:lang="en">expertise</rdfs:label>
+        <rdfs:comment xml:lang="de">Expertise</rdfs:comment>
+        <rdfs:domain rdf:resource="#SocialObject"/>
+        <rdfs:range rdf:resource="#Topic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#has-coordinator -->
+
+    <owl:ObjectProperty rdf:about="#has-coordinator">
+        <rdfs:label xml:lang="en">has coordinator</rdfs:label>
+        <rdfs:comment xml:lang="de"
+            >wird koordiniert von</rdfs:comment>
+        <rdfs:range rdf:resource="#Organisation"/>
+        <rdfs:domain rdf:resource="#ResearchProject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#has-partner -->
+
+    <owl:ObjectProperty rdf:about="#has-partner">
+        <rdfs:range rdf:resource="#Organisation"/>
+        <rdfs:domain rdf:resource="#Project"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#has-result -->
+
+    <owl:ObjectProperty rdf:about="#has-result">
+        <rdfs:label xml:lang="en">has result</rdfs:label>
+        <rdfs:comment xml:lang="de"
+            >hat als Ergebnis</rdfs:comment>
+        <rdfs:range rdf:resource="#Document"/>
+        <rdfs:domain rdf:resource="#Event"/>
+        <rdfs:range rdf:resource="#Event"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#has-team -->
+
+    <owl:ObjectProperty rdf:about="#has-team">
+        <rdfs:domain rdf:resource="#Project"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#has-temporal-part -->
+
+    <owl:ObjectProperty rdf:about="#has-temporal-part">
+        <rdfs:label xml:lang="en"
+            >has temporal part</rdfs:label>
+        <rdfs:comment xml:lang="de">hat einen Teil</rdfs:comment>
+        <rdfs:range rdf:resource="#Event"/>
+        <rdfs:domain rdf:resource="#Event"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#location -->
+
+    <owl:ObjectProperty rdf:about="#location">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:label xml:lang="en">location</rdfs:label>
+        <rdfs:comment xml:lang="de">Ort</rdfs:comment>
+        <rdfs:domain rdf:resource="#Event"/>
+        <rdfs:domain rdf:resource="#Organisation"/>
+        <rdfs:range rdf:resource="#SpatialLocation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#research-area -->
+
+    <owl:ObjectProperty rdf:about="#research-area">
+        <rdfs:range rdf:resource="#ResearchArea"/>
+        <rdfs:domain rdf:resource="#ResearchProject"/>
+        <rdfs:subPropertyOf rdf:resource="#theme"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#target-group -->
+
+    <owl:ObjectProperty rdf:about="#target-group">
+        <rdfs:range rdf:resource="#PersonalCharacteristics"/>
+        <rdfs:domain rdf:resource="#ResearchProject"/>
+        <rdfs:subPropertyOf rdf:resource="#theme"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#theme -->
+
+    <owl:ObjectProperty rdf:about="#theme">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:label xml:lang="en">theme</rdfs:label>
+        <rdfs:comment xml:lang="de">Thema</rdfs:comment>
+        <rdfs:domain rdf:resource="#Document"/>
+        <rdfs:domain rdf:resource="#Event"/>
+        <rdfs:range rdf:resource="#Topic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#time -->
+
+    <owl:ObjectProperty rdf:about="#time">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:label xml:lang="de">Zeit</rdfs:label>
+        <rdfs:label xml:lang="en">time</rdfs:label>
+        <rdfs:domain rdf:resource="#Document"/>
+        <rdfs:domain rdf:resource="#Event"/>
+        <rdfs:range rdf:resource="#TimeInterval"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#ends-at -->
+
+    <owl:DatatypeProperty rdf:about="#ends-at">
+        <rdfs:label xml:lang="en">ends at</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;date"/>
+        <rdfs:domain rdf:resource="#Event"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#starts-at -->
+
+    <owl:DatatypeProperty rdf:about="#starts-at">
+        <rdfs:label>starts at</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;date"/>
+        <rdfs:domain rdf:resource="#Event"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#AcademicOrganisation -->
+
+    <owl:Class rdf:about="#AcademicOrganisation">
+        <rdfs:label xml:lang="de"
+            >Akademische Organisation</rdfs:label>
+        <rdfs:label xml:lang="en"
+            >Acadmic Organisation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Organisation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#Company -->
+
+    <owl:Class rdf:about="#Company">
+        <rdfs:label xml:lang="de">Firma</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Organisation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#Conference -->
+
+    <owl:Class rdf:about="#Conference">
+        <rdfs:label xml:lang="en">Conference</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#Consultancy -->
+
+    <owl:Class rdf:about="#Consultancy">
+        <rdfs:label xml:lang="de">Konsulent</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Company"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#DataCollection -->
+
+    <owl:Class rdf:about="#DataCollection">
+        <rdfs:label xml:lang="de">Datenerhebung</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#District -->
+
+    <owl:Class rdf:about="#District">
+        <rdfs:label xml:lang="de">Bezirk</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#SpatialLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#Document -->
+
+    <owl:Class rdf:about="#Document">
+        <rdfs:label xml:lang="de">Dokument</rdfs:label>
+        <rdfs:label xml:lang="en">Document</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#Event -->
+
+    <owl:Class rdf:about="#Event">
+        <rdfs:label xml:lang="de">Event</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#Expert -->
+
+    <owl:Class rdf:about="#Expert">
+        <rdfs:subClassOf rdf:resource="#SocialObject"/>
+        <rdfs:comment>Experte/in</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#FederalState -->
+
+    <owl:Class rdf:about="#FederalState">
+        <rdfs:label xml:lang="de">Bundesland</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#SpatialLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#FinalReport -->
+
+    <owl:Class rdf:about="#FinalReport">
+        <rdfs:label xml:lang="de">Endbericht</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Document"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#Milestone -->
+
+    <owl:Class rdf:about="#Milestone">
+        <rdfs:label xml:lang="de">Meilenstein</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#News -->
+
+    <owl:Class rdf:about="#News">
+        <rdfs:subClassOf rdf:resource="#Document"/>
+        <rdfs:comment>News</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#Organisation -->
+
+    <owl:Class rdf:about="#Organisation">
+        <rdfs:label xml:lang="de">Organisation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#SocialObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#PersonalCharacteristics -->
+
+    <owl:Class rdf:about="#PersonalCharacteristics">
+        <rdfs:subClassOf rdf:resource="#Topic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#Place -->
+
+    <owl:Class rdf:about="#Place">
+        <rdfs:label xml:lang="de">Ort</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#SpatialLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#PointOfInterest -->
+
+    <owl:Class rdf:about="#PointOfInterest">
+        <rdfs:label xml:lang="de"
+            >Point of Interest</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#SpatialLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#Project -->
+
+    <owl:Class rdf:about="#Project">
+        <rdfs:label xml:lang="de">Projekt</rdfs:label>
+        <rdfs:label xml:lang="en">Project</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#Prototype -->
+
+    <owl:Class rdf:about="#Prototype">
+        <rdfs:label xml:lang="de">Prototyp</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Document"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#PublicEvent -->
+
+    <owl:Class rdf:about="#PublicEvent">
+        <rdfs:label xml:lang="de">Veranstaltung</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#PublicOrganisation -->
+
+    <owl:Class rdf:about="#PublicOrganisation">
+        <rdfs:label xml:lang="de"
+            >&#214;ffentliche Institution</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Organisation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#ResearchArea -->
+
+    <owl:Class rdf:about="#ResearchArea">
+        <rdfs:subClassOf rdf:resource="#Topic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#ResearchOrganisation -->
+
+    <owl:Class rdf:about="#ResearchOrganisation">
+        <rdfs:label xml:lang="de"
+            >Forschungsorganisation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Organisation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#ResearchProgramme -->
+
+    <owl:Class rdf:about="#ResearchProgramme">
+        <rdfs:label xml:lang="de"
+            >Forschungsprogramm</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#ResearchProject -->
+
+    <owl:Class rdf:about="#ResearchProject">
+        <rdfs:label xml:lang="de"
+            >Forschungsprojekt</rdfs:label>
+        <rdfs:label xml:lang="en"
+            >Research Project</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Project"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#ScientificArticle -->
+
+    <owl:Class rdf:about="#ScientificArticle">
+        <rdfs:label xml:lang="de"
+            >Wissenschaftlicher Artikel</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Document"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#SocialObject -->
+
+    <owl:Class rdf:about="#SocialObject">
+        <rdfs:label xml:lang="de">Soziales Objekt</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#SpatialLocation -->
+
+    <owl:Class rdf:about="#SpatialLocation">
+        <rdfs:label xml:lang="de">Raum</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#TimeInterval -->
+
+    <owl:Class rdf:about="#TimeInterval">
+        <rdfs:label xml:lang="de">Zeitraum</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#Topic -->
+
+    <owl:Class rdf:about="#Topic">
+        <rdfs:label xml:lang="de">Schlagwort</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#Workshop -->
+
+    <owl:Class rdf:about="#Workshop">
+        <rdfs:label xml:lang="en">Workshop</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#Year -->
+
+    <owl:Class rdf:about="#Year">
+        <rdfs:label xml:lang="de">Jahr</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#TimeInterval"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#aeltere -->
+
+    <PersonalCharacteristics rdf:about="#aeltere">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="en">&#196;ltere Personen</rdfs:label>
+    </PersonalCharacteristics>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#barrierefreieinformationssysteme -->
+
+    <owl:Thing rdf:about="#barrierefreieinformationssysteme">
+        <rdf:type rdf:resource="#ResearchArea"/>
+        <rdfs:label xml:lang="de"
+            >Barrierefreie Informationssysteme</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#gesellschaftlicheeinflussfaktoren -->
+
+    <ResearchArea rdf:about="#gesellschaftlicheeinflussfaktoren">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="de"
+            >Gesellschaftliche Einflussfaktoren</rdfs:label>
+    </ResearchArea>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#jugendliche -->
+
+    <PersonalCharacteristics rdf:about="#jugendliche">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="de">Jugendliche</rdfs:label>
+    </PersonalCharacteristics>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#kinder -->
+
+    <owl:Thing rdf:about="#kinder">
+        <rdf:type rdf:resource="#PersonalCharacteristics"/>
+        <rdfs:label xml:lang="de">Kinder</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#koerperodersinnesbehinderung -->
+
+    <owl:Thing rdf:about="#koerperodersinnesbehinderung">
+        <rdf:type rdf:resource="#PersonalCharacteristics"/>
+        <rdfs:label xml:lang="de"
+            >Personen mit K&#246;rper- oder Sinnesbehinderung</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#motivforschung -->
+
+    <ResearchArea rdf:about="#motivforschung">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="de">Motivforschung</rdfs:label>
+    </ResearchArea>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#oeffentlicherverkehr -->
+
+    <ResearchArea rdf:about="#oeffentlicherverkehr">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="de"
+            >&#214;ffentlicher Verkehr</rdfs:label>
+    </ResearchArea>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#wissensmanagement -->
+
+    <owl:Thing rdf:about="#wissensmanagement">
+        <rdf:type rdf:resource="#ResearchArea"/>
+        <rdfs:label xml:lang="de"
+            >Wissensmanagement</rdfs:label>
+    </owl:Thing>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+

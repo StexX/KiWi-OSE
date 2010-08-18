@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+<!ENTITY hgtags "http://www.holygoat.co.uk/owl/redwood/0.1/tags/">
+<!ENTITY sioc "http://rdfs.org/sioc/ns#">
+<!ENTITY scot "http://scot-project.org/scot/ns#">
+<!ENTITY foaf "http://xmlns.com/foaf/0.1/">
+<!ENTITY cont "http://www.w3.org/2000/10/swap/pim/contact#">
+<!ENTITY geo "http://www.w3.org/2003/01/geo/wgs84_pos#">
+<!ENTITY kiwi "http://www.kiwi-project.eu/kiwi/core/">
+<!ENTITY ceq  "http://www.kiwi-project.eu/kiwi/ceq/">
+<!ENTITY skos "http://www.w3.org/2004/02/skos/core#">
+<!ENTITY xsd  "http://www.w3.org/2001/XMLSchema#">
+<!ENTITY dc "http://purl.org/dc/elements/1.1/">]>
+<rdf:RDF
+    xmlns:rdf="&rdf;"
+    xmlns:rdfs="&rdfs;"
+    xmlns:owl="&owl;"
+    xmlns:dc="&dc;"
+    xmlns:foaf="&foaf;"
+    xmlns:kiwi="&kiwi;"
+    xmlns:geo="&geo;"
+    xmlns:cont="&cont;"
+    xmlns:hgtags="&hgtags;"
+    xmlns:scot="&scot;"
+    xmlns:sioc="&sioc;"
+    xmlns:skos="&skos;"
+    xmlns:ceq="&ceq;"
+    xml:base="&ceq;">
+
+    <owl:Ontology rdf:about="">
+        <rdfs:comment>This ontology describes the Community Equity (CEQ) properties of the KiWi system</rdfs:comment>
+        <rdfs:label>CEQ</rdfs:label>
+    </owl:Ontology>
+
+    <!--
+        CEQ related properties
+    -->
+
+
+    <owl:DatatypeProperty rdf:about="&ceq;iq">
+        <rdfs:label>Information Equity (IQ)</rdfs:label>
+        <rdfs:comment rdf:parseType="Literal">
+        	<div xmlns="http://www.w3.org/1999/xhtml">
+            Information equity for a content item. The information equity captures the social activities
+            around an information and dynamically calculates a numeric value that represents the 
+            importance, relevance and quality of the information. The activities captured includes:
+            <ul>
+              <li>how many times users have viewed the information</li>
+              <li>how many times this information has been downloaded by users</li>
+              <li>how many times this information was reused by an individual</li>
+              <li>user feedback (ratings, comments, ...)</li>
+            </ul>
+            </div>
+        </rdfs:comment>
+        <rdfs:domain rdf:resource="&kiwi;ContentItem"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="&ceq;pq">
+        <rdfs:label>Participation Equity (PQ)</rdfs:label>
+        <rdfs:comment>Participation equity for a user (PQ). The 
+        participation equity is the sum of all social activities of a person, e.g. view/download of 
+        information, ratings provided, comments provided, etc.</rdfs:comment>
+        <rdfs:domain rdf:resource="&kiwi;User"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="&ceq;cq">
+        <rdfs:label>Contribution Equity (CQ)</rdfs:label>
+        <rdfs:comment>Contribution Equity for a user (CQ). The contribution equity is the sum of all 
+        information equity of content items created by a user.</rdfs:comment>
+        <rdfs:domain rdf:resource="&kiwi;User"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+     <owl:DatatypeProperty rdf:about="&ceq;peq">
+        <rdfs:label>Personal Equity (PEQ)</rdfs:label>
+        <rdfs:comment>Personal Equity for a user. The personal equity is the sum of CQ and PQ and
+        represents the overall community equity value of a person.</rdfs:comment>
+        <rdfs:domain rdf:resource="&kiwi;User"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="&ceq;ceq">
+        <rdfs:label>Community Equity (CEQ)</rdfs:label>
+        <rdfs:comment>Community Equity for a content item.</rdfs:comment>
+        <rdfs:domain rdf:resource="&kiwi;ContentItem"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="&ceq;tq">
+        <rdfs:label>Tag Equity (TQ)</rdfs:label>
+        <rdfs:comment>Tag Equity of a tag. The tag equity is the sum of
+        all information equities of content items tagged with this tag.</rdfs:comment>
+        <rdfs:domain rdf:resource="&kiwi;Tag"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+
+
+
+</rdf:RDF>

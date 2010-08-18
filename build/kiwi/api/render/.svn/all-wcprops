@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/render
+END
+StoringService.class
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/render/StoringService.class
+END
+RenderingService.class
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/render/RenderingService.class
+END
+StoringServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/render/StoringServiceRemote.class
+END
+RenderingServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/render/RenderingServiceRemote.class
+END
+RenderingServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/render/RenderingServiceLocal.class
+END
+StoringServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/render/StoringServiceLocal.class
+END

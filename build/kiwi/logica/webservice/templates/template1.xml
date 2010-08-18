@@ -1,0 +1,9 @@
+<div>
+    <p>
+        <span property="uri::http://xmlns.com/foaf/0.1/name">Jonathan Doe</span>
+        has the email address 
+        <span property="uri::http://xmlns.com/foaf/0.1/mbox">jonathan.doe@gmail.com</span>.
+        and the gender
+        <span property="uri::http://xmlns.com/foaf/0.1/gender">male</span>.
+    </p>
+</div>

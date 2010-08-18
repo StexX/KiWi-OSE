@@ -1,0 +1,4 @@
+There are two kinds of widgets in KiWi at the moment:
+- jQuery widgets: these are plugins for jQuery that can be attached to a block element in the HTML code; an example
+  of how this works is given in the recommendations/ folder (Javascript widget and HTML test file)
+- XHTML widgets: these are fragments that are included using ui:include; they have been moved to the ../panels folder

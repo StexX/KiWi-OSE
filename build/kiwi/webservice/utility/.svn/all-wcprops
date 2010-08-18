@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/webservice/utility
+END
+DataAccessWebServicePropertiesHandler.class
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/webservice/utility/DataAccessWebServicePropertiesHandler.class
+END
+ContentItemHelper.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/webservice/utility/ContentItemHelper.class
+END
+DataDefinition.class
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/webservice/utility/DataDefinition.class
+END
+FieldBracket.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/webservice/utility/FieldBracket.class
+END
+CheckData.class
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/webservice/utility/CheckData.class
+END
+TemplateCreator.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/webservice/utility/TemplateCreator.class
+END
+FieldData.class
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/webservice/utility/FieldData.class
+END
+TemplateData.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/webservice/utility/TemplateData.class
+END
+FieldCombination.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/webservice/utility/FieldCombination.class
+END

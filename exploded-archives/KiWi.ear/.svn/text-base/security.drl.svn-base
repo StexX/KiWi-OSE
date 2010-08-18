@@ -1,0 +1,16 @@
+package Permissions;
+
+import java.security.Principal;
+
+import org.jboss.seam.security.permission.PermissionCheck;
+import org.jboss.seam.security.Role;
+
+rule CreateUser
+  no-loop
+  activation-group "permissions"
+when
+  check: PermissionCheck(target == "seam.user", action == "create", granted == false)
+  Role(name == "admin")
+then
+  check.grant();
+end

@@ -1,0 +1,27 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+    xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:a="http://richfaces.org/a4j">
+		<div class="searchResultItem">
+		<!-- set facade -->
+		<c:set value="#{interedu.articelFacadeService.getArtikelFacade(ci)}" var="art"></c:set>
+			<table width="100%"><tr>
+			<td align="left">
+			<h2>
+			<!--<h:selectBooleanCheckbox  value="#{interedu.artikelCollector.isSelected(art)}" readonly="true" >
+    			<a:support event="onchange" action="#{interedu.artikelCollector.setSelected(art)}" reRender="taggingPanel" ></a:support>
+    		</h:selectBooleanCheckbox>-->
+			<kiwi:link value=" #{ci.title}" contentItem="#{ci}"/></h2>
+			<!--<h:outputText value="#{interedu.articelFacadeService.getRenderedDescription(art)}" escape="false" />-->
+			</td>
+			<td align="right">
+		   <img src="img/status#{art.state}.png" alt="ampel" border="0"/>
+		   </td>
+		   </tr></table>
+		</div>
+</ui:composition>

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/info/kwarc/swim/service/transform
+END
+identity.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/info/kwarc/swim/service/transform/identity.xsl
+END
+XSLTFunctions.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/info/kwarc/swim/service/transform/XSLTFunctions.class
+END
+metadata.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/info/kwarc/swim/service/transform/metadata.xsl
+END
+html2omdoc.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/info/kwarc/swim/service/transform/html2omdoc.xsl
+END
+omdoc2html.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/info/kwarc/swim/service/transform/omdoc2html.xsl
+END
+TransformingServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/info/kwarc/swim/service/transform/TransformingServiceImpl.class
+END
+URIResolver.class
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/info/kwarc/swim/service/transform/URIResolver.class
+END
+Parsers.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/info/kwarc/swim/service/transform/Parsers.class
+END

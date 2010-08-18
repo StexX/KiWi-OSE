@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+<head>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>(a)SlideShow jQuery Plugin - Demo - Multi Slideshow with Auto Play</title>		
+    <link href="../js/jquery.aslideshow/shadow/styles.css" media="screen" rel="stylesheet" type="text/css" />	
+    <link href="../style.css" media="screen" rel="stylesheet" type="text/css" />	
+	<script type="text/javascript" src="../js/jquery.js"></script>	
+	<script type="text/javascript" src="../js/jquery.aslideshow.pack.js"></script>
+
+    <script type="text/javascript" src="http://scripts.hohli.com/brush/shCore.js"></script>
+	<script type="text/javascript" src="http://scripts.hohli.com/brush/shBrushJScript.js"></script>
+	<script type="text/javascript" src="http://scripts.hohli.com/brush/shBrushXml.js"></script>
+	<link type="text/css" rel="stylesheet" href="http://scripts.hohli.com/brush/styles/shCore.css"/>
+	<link type="text/css" rel="stylesheet" href="http://scripts.hohli.com/brush/styles/shThemeDefault.css"/>
+	<script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = 'http://scripts.hohli.com/brush/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+</head>
+
+<body>
+
+<h2>Multi Slideshow with Auto Play</h2>
+<div>
+    <table class="demo" width="960px">
+        <tr>
+            <td>
+                <img src="img/image_0.jpg" alt="Camomile"/>
+                <img src="img/image_1.jpg" alt="Bumblebees"/>
+                <img src="img/image_2.jpg" alt="Wood Toothpicks"/>
+            </td>
+            <td>
+                <img src="img/image_0.jpg" alt="Camomile"/>
+                <img src="img/image_1.jpg" alt="Bumblebees"/>
+                <img src="img/image_2.jpg" alt="Wood Toothpicks"/>
+            </td>
+            <td>
+                <img src="img/image_0.jpg" alt="Camomile"/>
+                <img src="img/image_1.jpg" alt="Bumblebees"/>
+                <img src="img/image_2.jpg" alt="Wood Toothpicks"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="img/image_0.jpg" alt="Camomile"/>
+                <img src="img/image_1.jpg" alt="Bumblebees"/>
+                <img src="img/image_2.jpg" alt="Wood Toothpicks"/>
+            </td>
+            <td>
+                <img src="img/image_0.jpg" alt="Camomile"/>
+                <img src="img/image_1.jpg" alt="Bumblebees"/>
+                <img src="img/image_2.jpg" alt="Wood Toothpicks"/>
+            </td>
+            <td>
+                <img src="img/image_0.jpg" alt="Camomile"/>
+                <img src="img/image_1.jpg" alt="Bumblebees"/>
+                <img src="img/image_2.jpg" alt="Wood Toothpicks"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="img/image_0.jpg" alt="Camomile"/>
+                <img src="img/image_1.jpg" alt="Bumblebees"/>
+                <img src="img/image_2.jpg" alt="Wood Toothpicks"/>
+            </td>
+            <td>
+                <img src="img/image_0.jpg" alt="Camomile"/>
+                <img src="img/image_1.jpg" alt="Bumblebees"/>
+                <img src="img/image_2.jpg" alt="Wood Toothpicks"/>
+            </td>
+            <td>
+                <img src="img/image_0.jpg" alt="Camomile"/>
+                <img src="img/image_1.jpg" alt="Bumblebees"/>
+                <img src="img/image_2.jpg" alt="Wood Toothpicks"/>
+            </td>
+        </tr>
+    </table>
+</div>
+<h2>Source</h2>
+<div>
+    <b>HTML</b>:
+<pre class="brush:xml;">
+&lt;table class=&quot;demo&quot; width=&quot;960px&quot;&gt;
+    &lt;tr&gt;
+        &lt;td&gt;
+            &lt;img src=&quot;img/image_0.jpg&quot; alt=&quot;Camomile&quot;/&gt;
+            &lt;img src=&quot;img/image_1.jpg&quot; alt=&quot;Bumblebees&quot;/&gt;
+            &lt;img src=&quot;img/image_2.jpg&quot; alt=&quot;Wood Toothpicks&quot;/&gt;
+        &lt;/td&gt;
+        &lt;td&gt;..&lt;/td&gt;
+        &lt;td&gt;..&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;..&lt;/td&gt;
+        &lt;td&gt;..&lt;/td&gt;
+        &lt;td&gt;..&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;..&lt;/td&gt;
+        &lt;td&gt;..&lt;/td&gt;
+        &lt;td&gt;..&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+    <b>JavaScript</b>:
+<pre class="brush:jscript;">
+&lt;script type=&quot;text/javascript&quot;&gt;
+//&lt;![CDATA[
+$(document).ready(function(){
+
+    $('.demo td:odd').slideshow({
+        title:false,
+        panel:false,
+        playframe:false
+    }).playSlide();
+
+    $('.demo td:even').slideshow({
+        index:1,
+        title:false,
+        panel:false,
+        play:true,
+        playframe:false
+    });
+});
+//]]&gt;
+&lt;/script&gt;
+</pre>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function(){    
+    $('.demo td:odd').slideshow({
+        title:false,
+        panel:false,
+        playframe:false
+    }).playSlide();
+    
+    $('.demo td:even').slideshow({
+        index:1,
+        title:false,
+        panel:false,
+        play:true,
+        playframe:false
+    });
+});
+//]]>
+</script>
+</body>
+</html>

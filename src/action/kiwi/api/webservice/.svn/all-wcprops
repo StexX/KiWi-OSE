@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/webservice
+END
+DataAccessServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/webservice/DataAccessServiceRemote.java
+END
+DataAccessService.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/webservice/DataAccessService.java
+END
+DataAccessServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/webservice/DataAccessServiceLocal.java
+END

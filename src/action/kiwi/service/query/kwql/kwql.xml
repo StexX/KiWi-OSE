@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<KWQLConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<resource name="ci">
+		<nestingLevel>0</nestingLevel>
+		<qualifierTypes>
+			<name>lastEdited</name>
+			<name>title</name>
+			<name>numberEd</name>
+			<name>author</name>
+			<name>created</name>
+			<name>descendant</name>
+			<name>child</name>
+			<name>URI</name>
+			<name>agree</name>
+			<name>disagree</name>
+			<name>text</name>
+		</qualifierTypes>
+	</resource>
+	<resource name="fragment">
+		<nestingLevel>1</nestingLevel>
+		<qualifierTypes>
+			<name>author</name>
+			<name>created</name>
+			<name>descendant</name>
+			<name>child</name>
+			<name>URI</name>
+			<name>agree</name>
+			<name>disagree</name>
+			<name>text</name>
+		</qualifierTypes>
+	</resource>
+	<resource name="link">
+		<nestingLevel>2</nestingLevel>
+		<qualifierTypes>
+			<name>target</name>
+			<name>origin</name>
+			<name>anchorText</name>
+		</qualifierTypes>
+	</resource>
+	<resource name="tag">
+		<nestingLevel>3</nestingLevel>
+		<qualifierTypes>
+			<name>name</name>
+			<name>URI</name>
+			<name>disagree</name>
+			<name>author</name>
+			<name>created</name>
+		</qualifierTypes>
+	</resource>
+	<qualifier name="lastEdited">
+		<singular>true</singular>
+		<valueType>date</valueType>
+	</qualifier>
+	<qualifier name="title">
+		<singular>true</singular>
+		<valueType>string</valueType>
+	</qualifier>
+	<qualifier name="numberEd">
+		<singular>true</singular>
+		<valueType>INTEGER</valueType>
+	</qualifier>
+	<qualifier name="author">
+		<singular>false</singular>
+		<valueType>string</valueType>
+	</qualifier>
+	<qualifier name="created">
+		<singular>true</singular>
+		<valueType>date</valueType>
+	</qualifier>
+	<qualifier name="descendant">
+		<singular>false</singular>
+		<valueType>resource</valueType>
+	</qualifier>
+	<qualifier name="child">
+		<singular>false</singular>
+		<valueType>resource</valueType>
+	</qualifier>
+	<qualifier name="URI">
+		<singular>true</singular>
+		<valueType>string</valueType>
+	</qualifier>
+	<qualifier name="agree">
+		<singular>false</singular>
+		<valueType>string</valueType>
+	</qualifier>
+	<qualifier name="disagree">
+		<singular>false</singular>
+		<valueType>string</valueType>
+	</qualifier>
+	<qualifier name="text">
+		<singular>true</singular>
+		<valueType>string</valueType>
+	</qualifier>
+	<qualifier name="target">
+		<singular>true</singular>
+		<valueType>resource</valueType>
+	</qualifier>
+	<qualifier name="origin">
+		<singular>true</singular>
+		<valueType>resource</valueType>
+	</qualifier>
+	<qualifier name="anchorText">
+		<singular>true</singular>
+		<valueType>string</valueType>
+	</qualifier>
+	<qualifier name="name">
+		<singular>true</singular>
+		<valueType>string</valueType>
+	</qualifier>
+</KWQLConfiguration>

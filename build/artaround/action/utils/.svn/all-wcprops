@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/artaround/action/utils
+END
+ImageScaleService.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/artaround/action/utils/ImageScaleService.class
+END
+PropertiesReader.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/artaround/action/utils/PropertiesReader.class
+END
+FileService.class
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/artaround/action/utils/FileService.class
+END
+LastSubmittedComparator.class
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/artaround/action/utils/LastSubmittedComparator.class
+END
+ArtAroundUtils.class
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/artaround/action/utils/ArtAroundUtils.class
+END
+ImageScaleService$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/artaround/action/utils/ImageScaleService$1.class
+END
+LastModifiedComparator.class
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/artaround/action/utils/LastModifiedComparator.class
+END

@@ -1,0 +1,79 @@
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+
+<suite name="CoreServiceTests" verbose="2" parallel="false">
+    <test name="ConfigurationService" junit="false">
+        <classes>
+            <class name="kiwi.test.service.ConfigurationServiceTest"/>
+        </classes>
+    </test>
+    <test name="TripleStore" junit="false">
+        <classes>
+            <class name="kiwi.test.service.TripleStoreTest"/>
+        </classes>
+    </test>
+    <test name="KiWiEntityManager" junit="false">
+        <classes>
+            <class name="kiwi.test.service.KiWiEntityManagerTest"/>
+        </classes>
+    </test>
+    <test name="ContentItemService" junit="false">
+        <classes>
+            <class name="kiwi.test.service.ContentItemServiceTest"/>
+        </classes>
+    </test>
+    <test name="OntologyService" junit="false">
+        <classes>
+            <class name="kiwi.test.service.OntologyServiceTest"/>
+        </classes>
+    </test>
+    <test name="TaggingService" junit="false">
+        <classes>
+            <class name="kiwi.test.service.TaggingServiceTest"/>
+        </classes>
+    </test>
+    <test name="ActivityLoggingServiceTest" junit="false">
+        <classes>
+            <class name="kiwi.test.service.ActivityLoggingServiceTest"/>
+        </classes>
+    </test>
+    <test name="FacadeTest" junit="false">
+        <classes>
+            <class name="kiwi.test.service.FacadeTest"/>
+        </classes>
+    </test>
+    <test name="FragmentServiceTest" junit="false">
+        <classes>
+            <class name="kiwi.test.service.FragmentServiceTest"/>
+        </classes>
+    </test>
+    <test name="PersonalizedSearchServiceTest" junit="false">
+        <classes>
+            <class name="kiwi.test.service.PersonalizedSearchServiceTest"/>
+        </classes>
+    </test>  
+    <test name="RecommendationTest" junit="false">
+        <classes>
+            <class name="kiwi.test.service.RecommendationTest"/>
+        </classes>
+    </test>
+    <test name="RatingServiceTest" junit="false">
+        <classes>
+            <class name="kiwi.test.service.RatingServiceTest"/>
+        </classes>
+    </test>
+    <test name="GeoCodingServiceTest" junit="false">
+        <classes>
+            <class name="kiwi.test.service.GeoCodingServiceTest"/>
+        </classes>
+    </test> 
+    <test name="PortalConfigurationService" junit="false">
+        <classes>
+            <class name="kiwi.test.service.PortalConfigServiceTest"/>
+        </classes>
+    </test>
+    <test name="PerspectiveServiceTest" junit="false">
+        <classes>
+            <class name="kiwi.test.service.PerspectiveServiceTest"/>
+        </classes>
+    </test> 
+</suite>

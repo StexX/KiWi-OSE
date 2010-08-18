@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="KiWi">
+  <test verbose="2" name="@@class@@" junit="false">
+    <classes>
+      <class name="@@class@@"/>
+    </classes>
+  </test>
+</suite>

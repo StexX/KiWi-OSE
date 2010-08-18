@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/reasonmaintenance
+END
+ReasonMaintenanceServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/reasonmaintenance/ReasonMaintenanceServiceImpl.class
+END
+ReasonMaintenanceServiceImpl$EdgeTypes.class
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/reasonmaintenance/ReasonMaintenanceServiceImpl$EdgeTypes.class
+END
+NeoIndexServiceFactory.class
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/reasonmaintenance/NeoIndexServiceFactory.class
+END
+Justification.class
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/reasonmaintenance/Justification.class
+END
+NeoFactory.class
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/reasonmaintenance/NeoFactory.class
+END

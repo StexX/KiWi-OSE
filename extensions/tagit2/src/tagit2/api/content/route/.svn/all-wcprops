@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/4999/KiWi/trunk/extensions/tagit2/src/tagit2/api/content/route
+END
+TrackPointFacade.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/3079/KiWi/trunk/extensions/tagit2/src/tagit2/api/content/route/TrackPointFacade.java
+END
+WayPointFacade.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/3079/KiWi/trunk/extensions/tagit2/src/tagit2/api/content/route/WayPointFacade.java
+END
+GeoLocatedImageFacade.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kiwi/!svn/ver/4999/KiWi/trunk/extensions/tagit2/src/tagit2/api/content/route/GeoLocatedImageFacade.java
+END
+RouteFacade.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/4103/KiWi/trunk/extensions/tagit2/src/tagit2/api/content/route/RouteFacade.java
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/kiwi/!svn/ver/5504/KiWi/trunk/src/action/kiwi/api/skill
+END
+SkillServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/3641/KiWi/trunk/src/action/kiwi/api/skill/SkillServiceRemote.java
+END
+SkillServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/3641/KiWi/trunk/src/action/kiwi/api/skill/SkillServiceLocal.java
+END
+SkillService.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/kiwi/!svn/ver/5504/KiWi/trunk/src/action/kiwi/api/skill/SkillService.java
+END

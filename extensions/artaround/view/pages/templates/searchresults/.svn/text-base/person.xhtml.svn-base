@@ -1,0 +1,25 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+    xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:a="http://richfaces.org/a4j">
+		<div class="sr_artwork">
+		   <h:form>
+		   		
+		   	  <s:graphicImage id = "profilePictureImg" alt = "no picture available" style="padding: 3px; border: 1px solid black; height: 100px"
+	    					value="#{ci.mediaContent.data}" 
+	    	                fileName="#{ci.mediaContent.fileName}"/>
+		   		
+		   		
+			<!--  	<kiwi:link value="#{ci.title}" contentItem="#{ci}" styleClass="sr_title" refView="/artaround/pages/artworks/imagesOfArtwork.seam?" /> -->
+				<h:commandLink value = "Person #{ci.title}"/>
+				<br/>
+				
+				
+			</h:form>
+		</div>
+</ui:composition>

@@ -1,0 +1,118 @@
+#globalStatusDiv {
+	left: 50%;
+	top: 50%;
+	margin-left: -16px;
+	margin-top: -16px;
+	z-index: 20;
+	position: fixed;
+}
+
+#globalStatusDiv img {
+	border: 0;
+}
+
+.editPanel {
+	position: fixed;
+	z-index: 10;
+	top: 100px;
+	left: 50%;
+	margin-left:-250px;
+	display: block;
+	width: 500px;
+	height: 332px;
+	-moz-box-shadow: 0 0 90px 5px #000000;
+	background-color: #333333;
+	border: 1px solid #666666;
+}
+
+/**************** edit panel ************/
+.editPanel_header {
+	width: 488px;
+	padding-left: 10px;
+	background-color: #74B5B7;
+	border: 1px solid white;
+}
+
+.editPanel_header h4 {
+	font-size: 15px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.editPanel_content {
+	width: 488px;
+	padding-left: 5px;
+	padding-right: 5px;
+	border: 1px solid white;
+	height: 272px;
+	background-color: white;
+}
+
+.editPanel_content h3 {
+	width:500px;	
+}
+
+.editPanel_content ul {
+	border:1px solid black;
+	height:110px;
+	overflow: auto;
+	padding:5px;
+}
+
+.editPanel_content ul li {
+	margin-left: 15px;	
+}
+
+.editPanel_buttons {
+	width: 478px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 2px;
+	padding-bottom: 1px;
+	background-color : #74B5B7;
+	border: 1px solid white;
+	background-color: #74B5B7;
+}
+
+/*
+a.button {
+    background: transparent url('../img/bg_button_a.gif') no-repeat scroll top right;
+    color: #444;
+    display: block;
+    float: left;
+    font: normal 12px arial, sans-serif;
+    height: 24px;
+    margin-right: 6px;
+    padding-right: 18px; 
+    text-decoration: none;
+}
+
+
+a.button span {
+    background: transparent url('../img/bg_button_span.gif') no-repeat;
+    display: block;
+    line-height: 14px;
+    padding: 5px 0 5px 18px;
+}
+*/
+
+.editPanel_buttons input { 
+	  color:#444; 
+	  font: bold 12px 'trebuchet ms',helvetica,sans-serif; 
+	  background-color:white; 
+	  border:1px solid; 
+	  border-color: #696 #363 #363 #696;
+	  width:230px;
+} 
+
+#back_shadow {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 0px;
+	height: 0px;
+	display: block;
+	z-index: 9;
+	/*opacity: 0.8;
+	background-color: rgb(241, 241, 241);*/
+}

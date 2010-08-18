@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-interedu.jar/interedu/service/recommend
+END
+SimpleRecommenderServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-interedu.jar/interedu/service/recommend/SimpleRecommenderServiceImpl.class
+END
+KeaRecommendServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-interedu.jar/interedu/service/recommend/KeaRecommendServiceImpl.class
+END
+SimpleRecommenderServiceImpl$SimpleRecommendation.class
+K 25
+svn:wc:ra_dav:version-url
+V 174
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-interedu.jar/interedu/service/recommend/SimpleRecommenderServiceImpl$SimpleRecommendation.class
+END

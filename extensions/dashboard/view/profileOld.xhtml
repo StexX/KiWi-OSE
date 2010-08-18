@@ -1,0 +1,94 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a="http://richfaces.org/a4j"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+	template="/layout/template-2col.xhtml">
+
+	<ui:define name="header">
+		<a:loadScript src="resource://jquery.js" />
+		<link href="stylesheet/dashboard.css" rel="stylesheet" type="text/css" />
+
+		<ui:include src="/wiki/dialogs/mediaupload.xhtml" />
+	</ui:define>
+
+	<ui:define name="navigation">
+		<ui:include src="layout/navigation.xhtml" />
+	</ui:define>
+
+	<ui:define name="body">
+
+           <div class="actionmenu" >
+               <div class="actionmenu-label">
+                   <h:outputText value="#{messages['wiki.menu.actions']}"/>
+               </div>
+               <div class="actionmenu-items" style="display: none;">
+                <h:form id="formWikiMenu">
+                   <hr/>
+           	       <s:link styleClass="actionmenu-item" value="#{messages['wiki.menu.view']}" action="/wiki/home.xhtml"/>
+                      <hr/>
+                      <s:link styleClass="actionmenu-item" value="#{messages['wiki.menu.edit_content']}" action="/wiki/edit.xhtml"/>
+                      <hr/>
+                      <a href="#" class="actionmenu-item" onclick="#{rich:component('taggingPanel')}.show();">#{messages['wiki.menu.edit_tags']}</a>
+                      <s:link styleClass="actionmenu-item" value="#{messages['wiki.menu.edit_annotations']}" action="/wiki/annotate.xhtml"/>
+                      <s:link styleClass="actionmenu-item" value="#{messages['wiki.menu.edit_metadata']}" action="/wiki/metadata.xhtml"/>
+                      <hr/>
+                      <s:link styleClass="actionmenu-item" value="#{messages['wiki.menu.history']}" action="/wiki/history.xhtml"/>
+                </h:form>
+            </div>
+            <script type="text/javascript">
+            jQuery(".actionmenu").click(function() {
+	            jQuery(".actionmenu-items").slideToggle("fast");
+            });
+            </script>
+        </div>
+		<h:form id="formWikiContent">
+
+			<h1>#{currentUser.contentItem.title}</h1>
+			<span> 
+				<h:outputText value="#{messages['dashboard.registeredsince']} " />
+				<h:outputText value="#{currentUser.contentItem.created}">
+					<s:convertDateTime pattern="dd/MM/yyyy" />
+				</h:outputText>
+				
+				<h:outputText value=" - " /> 
+				
+				<h:outputText value="#{messages['wiki.updateon']} " />
+				<h:outputText value="#{currentUser.contentItem.modified}">
+					<s:convertDateTime pattern="dd/MM/yyyy" />
+				</h:outputText>
+			</span>
+			<br />
+
+			<kiwi:tagListEditor label="Interests: " 
+				tagItems="#{kiwi.wiki.tagCloudAction.tagCloud}" />
+			
+			<kiwi:mediaContent contentItem="#{kiwi.dashboard.profileAction.profilePhoto}" edit="true"
+				onSaveEvent="userProfilePhotoSave"
+				onRemoveEvent="userProfilePhotoRemove"
+				style="float:left;padding: 3px; margin:4px;border:solid 1px #ccc;">
+				<ui:define name="nomedia">
+					<img src="#{facesContext.externalContext.requestContextPath}/img/professor.png" />
+				</ui:define>
+				<s:transformImageSize width="180" maintainRatio="true" />
+			</kiwi:mediaContent>
+			
+			<s:div>
+				<f:verbatim>#{viewAction.currentContentHtml}</f:verbatim>
+			</s:div>
+
+			<hr style="clear: left;" />
+
+			<ui:include src="commentingPanel.xhtml">
+				<ui:param name="editable" value="true" />
+			</ui:include>
+
+		</h:form>
+	</ui:define>
+</ui:composition>

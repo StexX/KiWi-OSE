@@ -1,0 +1,219 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                             	
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+			 	xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                template="../../layout/template-3col.xhtml">
+                	
+	<ui:define name="breadcrumps">
+		<ul>
+			<li class="first">				 			
+				<s:link view="/artaround/home.seam" 
+					value="#{messages['artaround.breadcrumps.home']}"/>
+			</li>
+			<li>				 			
+				<s:link view="/artaround/pages/profil/meinProfil.seam" 
+					value="#{messages['artaround.breadcrumps.myPage']}"/>
+			</li>		
+		</ul>
+	</ui:define>	
+		
+	<ui:define name="body">		 
+	
+	<style>
+	
+		/* root element for scrollable */
+		.vertical {  
+			
+			/* required settings */
+			position:relative;
+			overflow:hidden;	
+		
+			/* vertical scrollers have typically larger height than width */	
+			height: 600px;	 
+			width: 600px;
+			
+			
+			padding-left:10px;
+		}
+		
+		/* root element for scrollable items */
+		.items {	
+			position:absolute;
+			
+			/* this time we have very large space for height */	
+			height:20000em;	
+			margin: 0px;
+		}
+		
+		/* single scrollable item */
+		.items div {
+			border-bottom:1px solid #ccc;
+			padding:10px;
+			font-size:12px;
+			height:80px;
+			
+		}
+		
+		/* elements inside single item */
+		.items img {
+			float:left;
+			margin-right:20px;
+			/*width:150px;
+			width:#{showArtWorkAction.artWorkWrapWidth}px;
+			height:#{showArtWorkAction.artWorkWrapHeight}px;*/
+			
+		}		
+		
+		.items h3 {
+			margin:0 0 5px 0;
+			font-size:16px;
+			color:#456;
+			font-weight:normal;
+		}
+		
+		.items h4 {
+			margin:5px 0;
+			font-size:14px;
+			color:#456;
+			font-weight:normal;
+		}
+		
+		.items h5 {
+			font-size:12px;
+			color:#456;
+			font-weight:bold;
+			margin-bottom:5px;
+		}
+		
+					
+		#cover {
+			margin-left:40px;
+			margin-top:-5px;
+		} 
+		
+	</style>	
+	
+	<div id="cover">
+
+		
+	<!-- root element for scrollable -->
+	<div class="scrollable vertical">	
+		<h:form> 		
+		<!-- root element for the items -->
+		<div class="items">				
+				<div>
+					<h:commandLink action="profil" style="text-decoration:none"><img src="#{facesContext.externalContext.requestContextPath}/view/img/profil.png" /></h:commandLink>
+					
+					<h3>#{messages['artaround.myProfil']}</h3>
+					
+					<h5>
+						#{messages['artaround.menutext.text1']}
+					</h5>	
+					
+					<h:commandLink value="Weiter ..." action="profil" style="text-decoration:none"/>											
+					
+				</div>
+			
+				<div>
+	
+					<h:commandLink  action="neuesKunstwerk" style="text-decoration:none"><img src="#{facesContext.externalContext.requestContextPath}/view/img/neues_kunstwerk.png" /></h:commandLink>
+				
+					<h3>#{messages['artaround.myProfil.newArtwork']}</h3>
+					
+					<h5>
+						#{messages['artaround.menutext.text2']}
+					</h5>
+					
+					<h:commandLink value= "Weiter ..." action="neuesKunstwerk" style="text-decoration:none"/>
+									
+				</div>
+			
+				<div>
+					<h:commandLink  action = "myArtWorks"  style="text-decoration:none"><img src="#{facesContext.externalContext.requestContextPath}/view/img/galery.png"  /></h:commandLink>
+					
+					<h3>#{messages['artaround.myProfil.myArtworks']}</h3>
+					
+					<h5>
+						#{messages['artaround.menutext.text3']}
+					</h5>
+				
+						<h:commandLink value = "Weiter ..." action = "myArtWorks"  style="text-decoration:none"/>
+					
+					<br/>						
+					
+				</div>
+			
+				<div>
+				
+					<h:commandLink  action = "myBlog"  style="text-decoration:none"><img src="#{facesContext.externalContext.requestContextPath}/view/img/blog.png" /></h:commandLink>
+					
+					<h3>Mein Kunstblog</h3>
+					
+					<h5>
+						#{messages['artaround.menutext.text4']}
+					</h5>
+					
+					
+						<h:commandLink value = "Weiter ..." action = "myBlog"  style="text-decoration:none"/>
+					
+					
+					<br/>						
+					
+				</div>
+			
+				<div>
+	
+					<h:commandLink  style="text-decoration:none"><img src="#{facesContext.externalContext.requestContextPath}/view/img/events.png" /></h:commandLink>
+					
+					<h3>Meine Events</h3>
+					
+					<h5>
+						Hier kannst du deine eigenen Veranstaltungen eintragen und verwalten.
+					</h5>
+					
+					
+						<h:commandLink value = "Weiter ..."   style="text-decoration:none"/>
+					
+					
+					<br/>						
+					
+				</div>
+			
+				<div>
+					<h:commandLink  style="text-decoration:none"><img src="#{facesContext.externalContext.requestContextPath}/view/img/kontakte.png" /></h:commandLink>
+					
+					<h3>Meine Kontakte</h3>
+					
+					<h5>
+						Hier kannst du deine Kontakte pflegen und verwalten
+					</h5>
+					
+					
+							<h:commandLink value = "Weiter ..." action = "acontacts"  style="text-decoration:none"/>
+					
+					
+					<br/>				    	
+					
+				</div>	 
+				
+				
+			</div>
+			
+			</h:form>	
+		</div>
+		
+		
+	</div>
+
+  </ui:define> 
+	
+</ui:composition>

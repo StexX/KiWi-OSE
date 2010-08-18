@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/render/renderlet
+END
+RdfaRenderlet.class
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/render/renderlet/RdfaRenderlet.class
+END
+AnnotationLinksRenderlet.class
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/render/renderlet/AnnotationLinksRenderlet.class
+END
+QueryRenderlet.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/render/renderlet/QueryRenderlet.class
+END
+EditorLinkRenderlet.class
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/render/renderlet/EditorLinkRenderlet.class
+END
+ComponentDisplayRenderlet.class
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/render/renderlet/ComponentDisplayRenderlet.class
+END
+HtmlLinkRenderlet.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/render/renderlet/HtmlLinkRenderlet.class
+END
+Renderlet.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/render/renderlet/Renderlet.class
+END
+ComponentRenderlet.class
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/render/renderlet/ComponentRenderlet.class
+END
+HtmlFragmentRenderlet.class
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/render/renderlet/HtmlFragmentRenderlet.class
+END
+SourceRenderlet.class
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/render/renderlet/SourceRenderlet.class
+END
+TemplateRenderlet.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/render/renderlet/TemplateRenderlet.class
+END
+HtmlRdfaRenderlet.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/render/renderlet/HtmlRdfaRenderlet.class
+END
+XOMRenderlet.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/render/renderlet/XOMRenderlet.class
+END
+ImageLinkRenderlet.class
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/render/renderlet/ImageLinkRenderlet.class
+END
+MediaContentRenderlet.class
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/render/renderlet/MediaContentRenderlet.class
+END
+SFRenderlet.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/render/renderlet/SFRenderlet.class
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/kiwi/!svn/ver/4220/KiWi/trunk/src/action/kiwi/api/explanation
+END
+ExplanationServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/4190/KiWi/trunk/src/action/kiwi/api/explanation/ExplanationServiceLocal.java
+END
+ExplanationService.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/4220/KiWi/trunk/src/action/kiwi/api/explanation/ExplanationService.java
+END
+ExplanationServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/4190/KiWi/trunk/src/action/kiwi/api/explanation/ExplanationServiceRemote.java
+END

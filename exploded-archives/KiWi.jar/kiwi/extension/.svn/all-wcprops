@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/extension
+END
+PropertiesLoader.class
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/extension/PropertiesLoader.class
+END
+KiWiResourceServlet.class
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/extension/KiWiResourceServlet.class
+END
+DescriptorFactory$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/extension/DescriptorFactory$1.class
+END
+DescriptorFactory.class
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/extension/DescriptorFactory.class
+END
+KiWiResourceServlet$ResourceCacheEntry.class
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/extension/KiWiResourceServlet$ResourceCacheEntry.class
+END
+CheckSetupFilter.class
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/extension/CheckSetupFilter.class
+END
+KiWiPages$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/extension/KiWiPages$1.class
+END
+ExtensionLoader.class
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/extension/ExtensionLoader.class
+END
+DescriptorFactory$PropertiesApplicationDescriptor.class
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/extension/DescriptorFactory$PropertiesApplicationDescriptor.class
+END
+KiWiPages.class
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/extension/KiWiPages.class
+END
+KiWiResourceResolver.class
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/extension/KiWiResourceResolver.class
+END

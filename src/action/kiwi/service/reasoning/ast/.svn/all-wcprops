@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/kiwi/!svn/ver/4581/KiWi/trunk/src/action/kiwi/service/reasoning/ast
+END
+Literal.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/4273/KiWi/trunk/src/action/kiwi/service/reasoning/ast/Literal.java
+END
+ConstructionVariable.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/4273/KiWi/trunk/src/action/kiwi/service/reasoning/ast/ConstructionVariable.java
+END
+Uri.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/4273/KiWi/trunk/src/action/kiwi/service/reasoning/ast/Uri.java
+END
+Term.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/4581/KiWi/trunk/src/action/kiwi/service/reasoning/ast/Term.java
+END
+Formula.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/4273/KiWi/trunk/src/action/kiwi/service/reasoning/ast/Formula.java
+END
+TypedLiteral.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/4491/KiWi/trunk/src/action/kiwi/service/reasoning/ast/TypedLiteral.java
+END
+Negation.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/4273/KiWi/trunk/src/action/kiwi/service/reasoning/ast/Negation.java
+END
+Program.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/4491/KiWi/trunk/src/action/kiwi/service/reasoning/ast/Program.java
+END
+BNode.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/4273/KiWi/trunk/src/action/kiwi/service/reasoning/ast/BNode.java
+END
+Disjunction.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/4273/KiWi/trunk/src/action/kiwi/service/reasoning/ast/Disjunction.java
+END
+Body.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/4273/KiWi/trunk/src/action/kiwi/service/reasoning/ast/Body.java
+END
+Head.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/4273/KiWi/trunk/src/action/kiwi/service/reasoning/ast/Head.java
+END
+Rule.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/4491/KiWi/trunk/src/action/kiwi/service/reasoning/ast/Rule.java
+END
+Variable.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/4273/KiWi/trunk/src/action/kiwi/service/reasoning/ast/Variable.java
+END
+Namespace.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/4273/KiWi/trunk/src/action/kiwi/service/reasoning/ast/Namespace.java
+END
+Conjunction.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/4273/KiWi/trunk/src/action/kiwi/service/reasoning/ast/Conjunction.java
+END
+Inconsistency.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/4273/KiWi/trunk/src/action/kiwi/service/reasoning/ast/Inconsistency.java
+END
+TriplePattern.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/4581/KiWi/trunk/src/action/kiwi/service/reasoning/ast/TriplePattern.java
+END
+Atom.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/4273/KiWi/trunk/src/action/kiwi/service/reasoning/ast/Atom.java
+END

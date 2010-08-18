@@ -1,0 +1,845 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY futuremobility "http://www.ways2go.at/2009/futuremobility.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.ways2go.at/2009/futuremobility.owl#"
+     xml:base="http://www.ways2go.at/2009/futuremobility.owl"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:futuremobility="http://www.ways2go.at/2009/futuremobility.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+    <owl:Ontology rdf:about=""/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#broader -->
+
+    <owl:ObjectProperty rdf:about="&skos;broader"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#hasTopConcept -->
+
+    <owl:ObjectProperty rdf:about="&skos;hasTopConcept"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#inScheme -->
+
+    <owl:ObjectProperty rdf:about="&skos;inScheme"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#narrower -->
+
+    <owl:ObjectProperty rdf:about="&skos;narrower"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#prefLabel -->
+
+    <owl:DatatypeProperty rdf:about="&skos;prefLabel"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
+
+    <owl:Class rdf:about="&skos;Concept"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#ConceptScheme -->
+
+    <owl:Class rdf:about="&skos;ConceptScheme"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#academicdisciplines -->
+
+    <skos:Concept rdf:about="#academicdisciplines">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <skos:prefLabel xml:lang="de"
+            >Academic disciplines</skos:prefLabel>
+        <skos:prefLabel xml:lang="de"
+            >Akademische Disziplinen</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+        <skos:narrower rdf:resource="#psychology"/>
+        <skos:narrower rdf:resource="#sociology"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#afternoon -->
+
+    <owl:Thing rdf:about="#afternoon">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="de">afternoon</skos:prefLabel>
+        <skos:prefLabel xml:lang="de">nachmittag</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#air -->
+
+    <skos:Concept rdf:about="#air">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <skos:prefLabel xml:lang="de">Luftfahrt</skos:prefLabel>
+        <skos:prefLabel xml:lang="en"
+            >Air transportation</skos:prefLabel>
+        <skos:broader rdf:resource="#byinfrastructure"/>
+        <skos:inScheme rdf:resource="#fm"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#austria -->
+
+    <skos:Concept rdf:about="#austria">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <skos:prefLabel xml:lang="de">Austria</skos:prefLabel>
+        <skos:prefLabel xml:lang="de">&#214;sterreich</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+        <skos:narrower rdf:resource="#loweraustria"/>
+        <skos:narrower rdf:resource="#vienna"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#bike -->
+
+    <owl:Thing rdf:about="#bike">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="de">Fahrrad</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">bicyle</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#byagegroups -->
+
+    <owl:Thing rdf:about="#byagegroups">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="de"
+            >nach Altersgruppen</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">by age groups</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#bydistance -->
+
+    <owl:Thing rdf:about="#bydistance">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="de">nach Entfernung</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">by Distance</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+        <skos:narrower rdf:resource="#micromobility"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#byinfrastructure -->
+
+    <owl:Thing rdf:about="#byinfrastructure">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="de"
+            >nach Infrastruktur</skos:prefLabel>
+        <skos:prefLabel xml:lang="en"
+            >by Infrastructure</skos:prefLabel>
+        <skos:narrower rdf:resource="#air"/>
+        <skos:inScheme rdf:resource="#fm"/>
+        <skos:narrower rdf:resource="#intermodal"/>
+        <skos:narrower rdf:resource="#multimodal"/>
+        <skos:narrower rdf:resource="#rail"/>
+        <skos:narrower rdf:resource="#road"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#bylifestyle -->
+
+    <owl:Thing rdf:about="#bylifestyle">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="de"
+            >Lebensstilgruppe</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">by Lifestyle</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#bypowersupply -->
+
+    <owl:Thing rdf:about="#bypowersupply">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="de"
+            >nach Antriebsart</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">by power supply</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+        <skos:narrower rdf:resource="#motorized"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#car -->
+
+    <owl:Thing rdf:about="#car">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="de">Auto</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Car</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+        <skos:broader rdf:resource="#individual"/>
+        <skos:broader rdf:resource="#motorized"/>
+        <skos:broader rdf:resource="#road"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#commuting -->
+
+    <owl:Thing rdf:about="#commuting">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="de">Pendler</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Commuter</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#daytime -->
+
+    <owl:Thing rdf:about="#daytime">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="de">Tageszeiten</skos:prefLabel>
+        <skos:prefLabel xml:lang="de">Time of Day</skos:prefLabel>
+        <skos:narrower rdf:resource="#afternoon"/>
+        <skos:inScheme rdf:resource="#fm"/>
+        <skos:narrower rdf:resource="#morning"/>
+        <skos:narrower rdf:resource="#night"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#europe -->
+
+    <skos:Concept rdf:about="#europe">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <skos:prefLabel xml:lang="de">Europa</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Europe</skos:prefLabel>
+        <skos:narrower rdf:resource="#austria"/>
+        <skos:inScheme rdf:resource="#fm"/>
+        <skos:narrower rdf:resource="#germany"/>
+        <skos:narrower rdf:resource="#italy"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#fm -->
+
+    <skos:ConceptScheme rdf:about="#fm">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <skos:hasTopConcept rdf:resource="#futuremobility"/>
+    </skos:ConceptScheme>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#futuremobility -->
+
+    <skos:Concept rdf:about="#futuremobility">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <skos:prefLabel xml:lang="de"
+            >Zuk&#252;nftige Mobilit&#228;t</skos:prefLabel>
+        <skos:prefLabel xml:lang="en"
+            >Future Moblility</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+        <skos:narrower rdf:resource="#location"/>
+        <skos:narrower rdf:resource="#mobilityresearch"/>
+        <skos:narrower rdf:resource="#modessoftransport"/>
+        <skos:narrower rdf:resource="#time"/>
+        <skos:narrower rdf:resource="#transportorganisation"/>
+        <skos:narrower rdf:resource="#usercharacteristics"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#geopoliticallocation -->
+
+    <owl:Thing rdf:about="#geopoliticallocation">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="de"
+            >Geographisch-politische Orte</skos:prefLabel>
+        <skos:prefLabel xml:lang="en"
+            >Geopolitical Location</skos:prefLabel>
+        <skos:narrower rdf:resource="#europe"/>
+        <skos:inScheme rdf:resource="#fm"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#germany -->
+
+    <owl:Thing rdf:about="#germany">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="de">Deutschland</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Germany</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#holiday -->
+
+    <owl:Thing rdf:about="#holiday">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="de">Urlaubsverkehr</skos:prefLabel>
+        <skos:prefLabel xml:lang="de">holiday travel</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#human -->
+
+    <skos:Concept rdf:about="#human">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <skos:prefLabel xml:lang="de">menschlich</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">human powered</skos:prefLabel>
+        <skos:broader rdf:resource="#bypowersupply"/>
+        <skos:inScheme rdf:resource="#fm"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#individual -->
+
+    <skos:Concept rdf:about="#individual">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <skos:prefLabel xml:lang="de"
+            >Individualverkehr</skos:prefLabel>
+        <skos:prefLabel xml:lang="en"
+            >Individual transport</skos:prefLabel>
+        <skos:narrower rdf:resource="#bike"/>
+        <skos:inScheme rdf:resource="#fm"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#informationsystems -->
+
+    <owl:Thing rdf:about="#informationsystems">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="de"
+            >Informationssysteme</skos:prefLabel>
+        <skos:prefLabel xml:lang="de"
+            >Informationsystems</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+        <skos:broader rdf:resource="#mobilityresearch"/>
+        <skos:narrower rdf:resource="#transportinformationsystems"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#intermodal -->
+
+    <owl:Thing rdf:about="#intermodal">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="de"
+            >Intermodal Transport</skos:prefLabel>
+        <skos:prefLabel xml:lang="de"
+            >Intermodaler Verkehr</skos:prefLabel>
+        <skos:broader rdf:resource="#byinfrastructure"/>
+        <skos:inScheme rdf:resource="#fm"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#italy -->
+
+    <skos:Concept rdf:about="#italy">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <skos:prefLabel xml:lang="de">Italien</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Italy</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#location -->
+
+    <skos:Concept rdf:about="#location">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <skos:prefLabel xml:lang="de">Ort</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Location</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+        <skos:narrower rdf:resource="#geopoliticallocation"/>
+        <skos:narrower rdf:resource="#sociodemographic"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#loweraustria -->
+
+    <owl:Thing rdf:about="#loweraustria">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="en">Lower Austria</skos:prefLabel>
+        <skos:prefLabel xml:lang="en"
+            >Nieder&#246;sterreich</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+        <skos:narrower rdf:resource="#schwechat"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#masstransport -->
+
+    <skos:Concept rdf:about="#masstransport">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <skos:prefLabel xml:lang="de">Massentransport</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Mass transport</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+        <skos:narrower rdf:resource="#train"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#micromobility -->
+
+    <skos:Concept rdf:about="#micromobility">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <skos:prefLabel xml:lang="de">Nahmobilit&#228;t</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Micromobility</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#mobilityresearch -->
+
+    <owl:Thing rdf:about="#mobilityresearch">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="de"
+            >Mobilit&#228;tsforschung</skos:prefLabel>
+        <skos:prefLabel xml:lang="en"
+            >mobility research</skos:prefLabel>
+        <skos:narrower rdf:resource="#academicdisciplines"/>
+        <skos:inScheme rdf:resource="#fm"/>
+        <skos:narrower rdf:resource="#informationsystems"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#modessoftransport -->
+
+    <skos:Concept rdf:about="#modessoftransport">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <skos:prefLabel xml:lang="de">Verkehrsmittel</skos:prefLabel>
+        <skos:prefLabel xml:lang="en"
+            >Modes of transport</skos:prefLabel>
+        <skos:narrower rdf:resource="#byinfrastructure"/>
+        <skos:narrower rdf:resource="#bypowersupply"/>
+        <skos:inScheme rdf:resource="#fm"/>
+        <skos:broader rdf:resource="#futuremobility"/>
+        <skos:narrower rdf:resource="#individual"/>
+        <skos:narrower rdf:resource="#masstransport"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#morning -->
+
+    <skos:Concept rdf:about="#morning">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <skos:prefLabel xml:lang="de">morning</skos:prefLabel>
+        <skos:prefLabel xml:lang="de">vormittag</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#motorized -->
+
+    <skos:Concept rdf:about="#motorized">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <skos:prefLabel xml:lang="de">motorisiert</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">motorized</skos:prefLabel>
+        <skos:narrower rdf:resource="#car"/>
+        <skos:inScheme rdf:resource="#fm"/>
+        <skos:narrower rdf:resource="#train"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#multimodal -->
+
+    <owl:Thing rdf:about="#multimodal">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="de"
+            >Mutimodaler Verkehr</skos:prefLabel>
+        <skos:prefLabel xml:lang="en"
+            >Multimodal transport</skos:prefLabel>
+        <skos:broader rdf:resource="#byinfrastructure"/>
+        <skos:inScheme rdf:resource="#fm"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#night -->
+
+    <skos:Concept rdf:about="#night">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <skos:prefLabel xml:lang="de">nachts</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">nightly</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#notassigned -->
+
+    <owl:Thing rdf:about="#notassigned">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:inScheme rdf:resource="#fm"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#psychology -->
+
+    <skos:Concept rdf:about="#psychology">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <skos:prefLabel xml:lang="de">Psychologie</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Psychology</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#public -->
+
+    <skos:Concept rdf:about="#public">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <skos:prefLabel xml:lang="de"
+            >&#214;ffentlicher Verkehr</skos:prefLabel>
+        <skos:prefLabel xml:lang="en"
+            >Public transport</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+        <skos:broader rdf:resource="#masstransport"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#purposeoftravel -->
+
+    <skos:Concept rdf:about="#purposeoftravel">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <skos:prefLabel xml:lang="en"
+            >Purpose of Travel</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Reisezweck</skos:prefLabel>
+        <skos:narrower rdf:resource="#commuting"/>
+        <skos:inScheme rdf:resource="#fm"/>
+        <skos:narrower rdf:resource="#holiday"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#rail -->
+
+    <skos:Concept rdf:about="#rail">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <skos:prefLabel xml:lang="de">Schienenverkehr</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Railway</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+        <skos:narrower rdf:resource="#train"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#road -->
+
+    <owl:Thing rdf:about="#road">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="de">Stra&#223;e</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Road</skos:prefLabel>
+        <skos:narrower rdf:resource="#bike"/>
+        <skos:narrower rdf:resource="#car"/>
+        <skos:inScheme rdf:resource="#fm"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#ruralarea -->
+
+    <owl:Thing rdf:about="#ruralarea">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="de">L&#228;ndlich</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Rural Area</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#schwechat -->
+
+    <owl:Thing rdf:about="#schwechat">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="de">Schwechat</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Schwechat</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#seasons -->
+
+    <owl:Thing rdf:about="#seasons">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="de">Jahreszeiten</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Seasons</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+        <skos:narrower rdf:resource="#summer"/>
+        <skos:narrower rdf:resource="#winter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#sociodemographic -->
+
+    <skos:Concept rdf:about="#sociodemographic">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <skos:prefLabel xml:lang="de"
+            >Soziodemographische Orte</skos:prefLabel>
+        <skos:prefLabel xml:lang="en"
+            >Sociodemographic Location</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+        <skos:narrower rdf:resource="#ruralarea"/>
+        <skos:narrower rdf:resource="#suburbanarea"/>
+        <skos:narrower rdf:resource="#urbanarea"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#sociology -->
+
+    <skos:Concept rdf:about="#sociology">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <skos:prefLabel xml:lang="de">Soziologie</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Sociology</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#suburbanarea -->
+
+    <owl:Thing rdf:about="#suburbanarea">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="de">Vorstadt</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Suburban Area</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#summer -->
+
+    <skos:Concept rdf:about="#summer">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <skos:prefLabel xml:lang="de">Sommer</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Summer</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#time -->
+
+    <skos:Concept rdf:about="#time">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <skos:prefLabel xml:lang="de">Zeit</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Time</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+        <skos:narrower rdf:resource="#timerelative"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#timerelative -->
+
+    <owl:Thing rdf:about="#timerelative">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="de">Relative Zeiten</skos:prefLabel>
+        <skos:prefLabel xml:lang="de">Relative time</skos:prefLabel>
+        <skos:narrower rdf:resource="#daytime"/>
+        <skos:inScheme rdf:resource="#fm"/>
+        <skos:narrower rdf:resource="#seasons"/>
+        <skos:narrower rdf:resource="#weekend"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#train -->
+
+    <skos:Concept rdf:about="#train">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <skos:prefLabel xml:lang="de">Zug</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Train</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#transportinformationsystems -->
+
+    <skos:Concept rdf:about="#transportinformationsystems">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <skos:prefLabel xml:lang="de"
+            >Transportinformationsystems</skos:prefLabel>
+        <skos:prefLabel xml:lang="de"
+            >Verkehrsinformationssysteme</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#transportorganisation -->
+
+    <owl:Thing rdf:about="#transportorganisation">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="de"
+            >Verkehrsorganisation und Verkehrsmanagement</skos:prefLabel>
+        <skos:prefLabel xml:lang="en"
+            >Transport organisation and management</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#urbanarea -->
+
+    <owl:Thing rdf:about="#urbanarea">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="de">St&#228;dtisch</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Urban area</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#usercharacteristics -->
+
+    <skos:Concept rdf:about="#usercharacteristics">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <skos:prefLabel xml:lang="de">Nutzergruppen</skos:prefLabel>
+        <skos:prefLabel xml:lang="en"
+            >User Characteristics</skos:prefLabel>
+        <skos:narrower rdf:resource="#byagegroups"/>
+        <skos:narrower rdf:resource="#bydistance"/>
+        <skos:narrower rdf:resource="#bylifestyle"/>
+        <skos:inScheme rdf:resource="#fm"/>
+        <skos:narrower rdf:resource="#purposeoftravel"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#vienna -->
+
+    <skos:Concept rdf:about="#vienna">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <skos:prefLabel xml:lang="en">Vienna</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Wien</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+    </skos:Concept>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#weekend -->
+
+    <owl:Thing rdf:about="#weekend">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="de">Wochenende</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">weekend</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/futuremobility.owl#winter -->
+
+    <owl:Thing rdf:about="#winter">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="de">Winter</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Winter</skos:prefLabel>
+        <skos:inScheme rdf:resource="#fm"/>
+    </owl:Thing>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+

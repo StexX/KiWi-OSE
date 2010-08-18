@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/triplestore
+END
+ConnectionFactory.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/triplestore/ConnectionFactory.class
+END
+TripleStorePersisterImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/triplestore/TripleStorePersisterImpl.class
+END
+RepositoryFactory.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/triplestore/RepositoryFactory.class
+END
+TripleStoreImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/triplestore/TripleStoreImpl.class
+END
+TripleStoreUtil.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/triplestore/TripleStoreUtil.class
+END

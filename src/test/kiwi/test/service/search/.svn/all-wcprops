@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/kiwi/!svn/ver/5225/KiWi/trunk/src/test/kiwi/test/service/search
+END
+SearchTests.xml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/3795/KiWi/trunk/src/test/kiwi/test/service/search/SearchTests.xml
+END
+SolrServiceTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5225/KiWi/trunk/src/test/kiwi/test/service/search/SolrServiceTest.java
+END

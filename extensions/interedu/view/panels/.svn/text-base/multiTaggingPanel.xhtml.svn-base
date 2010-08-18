@@ -1,0 +1,44 @@
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+                xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf">
+	<div id="multiTagging_panel" style="display:none">
+		<div class="editPanel" id="article_multiTag" style="height:290px;">
+			<div class="editPanel_header">
+				<h4>Neue Stichworte eintragen</h4>
+			</div>
+			<div class="editPanel_content" style="height:230px;">
+				<h3 style="width:500px;">List der Artikel:</h3>
+				<br />
+				<ul>
+					<c:forEach items="#{interedu.artikelCollector.articleCollection}" var="art">
+						<li>
+							<h:outputText value="#{art.title}" />
+						</li>
+					</c:forEach>
+				</ul>
+				<br />
+				<h3 style="width:500px;">Stichworte durch Komma getrennt eingeben:</h3>
+				<br />
+				<h:inputText id="inputTagList" value="#{interedu.artikelCollector.tags}" style="width:480px;" />
+			</div>
+			<div class="editPanel_buttons">
+				<table width="100%">
+					<tr>
+						<td><a:commandButton value="Taggen abbrechen" onclick="closeEditPanel('multiTagging_panel');" /></td>
+						<td align="right">
+							<a:commandButton value="Artikel taggen" oncomplete="closeEditPanel('multiTagging_panel');" action="#{interedu.artikelCollector.tagAll()}" reRender="content_middle_complete"/>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+</ui:composition>

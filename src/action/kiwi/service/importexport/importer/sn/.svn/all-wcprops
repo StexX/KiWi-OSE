@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5342/KiWi/trunk/src/action/kiwi/service/importexport/importer/sn
+END
+SNImportException.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/5342/KiWi/trunk/src/action/kiwi/service/importexport/importer/sn/SNImportException.java
+END
+SNNewsItemFacade.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/2750/KiWi/trunk/src/action/kiwi/service/importexport/importer/sn/SNNewsItemFacade.java
+END
+snhtml.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/3057/KiWi/trunk/src/action/kiwi/service/importexport/importer/sn/snhtml.xsl
+END

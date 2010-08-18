@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-ontologies.jar/imports
+END
+sioc.owl
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-ontologies.jar/imports/sioc.owl
+END
+calendar.owl
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-ontologies.jar/imports/calendar.owl
+END
+foaf.owl
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-ontologies.jar/imports/foaf.owl
+END
+contact.owl
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-ontologies.jar/imports/contact.owl
+END
+exif.rdf
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-ontologies.jar/imports/exif.rdf
+END
+skos-core.rdf
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-ontologies.jar/imports/skos-core.rdf
+END
+geo.rdf
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-ontologies.jar/imports/geo.rdf
+END
+ical.rdf
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-ontologies.jar/imports/ical.rdf
+END
+moat.owl
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-ontologies.jar/imports/moat.owl
+END
+dcelements.rdf
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-ontologies.jar/imports/dcelements.rdf
+END
+geonames_v2.0_lite.rdf
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-ontologies.jar/imports/geonames_v2.0_lite.rdf
+END
+hgtags.owl
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-ontologies.jar/imports/hgtags.owl
+END

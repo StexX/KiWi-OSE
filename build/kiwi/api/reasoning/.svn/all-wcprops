@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/reasoning
+END
+ProgramLoader.class
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/reasoning/ProgramLoader.class
+END
+ReasoningService.class
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/reasoning/ReasoningService.class
+END
+ProgramProcessorLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/reasoning/ProgramProcessorLocal.class
+END
+ReasoningServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/reasoning/ReasoningServiceRemote.class
+END
+ProgramProcessor.class
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/reasoning/ProgramProcessor.class
+END
+RuleLoader.class
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/reasoning/RuleLoader.class
+END
+ProgramProcessorRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/reasoning/ProgramProcessorRemote.class
+END
+ReasoningServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/reasoning/ReasoningServiceLocal.class
+END

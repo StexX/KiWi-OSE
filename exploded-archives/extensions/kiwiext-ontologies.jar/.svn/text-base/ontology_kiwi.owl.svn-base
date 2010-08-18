@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+<!ENTITY hgtags "http://www.holygoat.co.uk/owl/redwood/0.1/tags/">
+<!ENTITY sioc "http://rdfs.org/sioc/ns#">
+<!ENTITY scot "http://scot-project.org/scot/ns#">
+<!ENTITY foaf "http://xmlns.com/foaf/0.1/">
+<!ENTITY cont "http://www.w3.org/2000/10/swap/pim/contact#">
+<!ENTITY geo "http://www.w3.org/2003/01/geo/wgs84_pos#">
+<!ENTITY kiwi "http://www.kiwi-project.eu/kiwi/core/">
+<!ENTITY skos "http://www.w3.org/2004/02/skos/core#">
+<!ENTITY dc "http://purl.org/dc/elements/1.1/">]>
+<rdf:RDF
+    xmlns:rdf="&rdf;"
+    xmlns:rdfs="&rdfs;"
+    xmlns:owl="&owl;"
+    xmlns:dc="&dc;"
+    xmlns:foaf="&foaf;"
+    xmlns:kiwi="&kiwi;"
+    xmlns:geo="&geo;"
+    xmlns:cont="&cont;"
+    xmlns:hgtags="&hgtags;"
+    xmlns:scot="&scot;"
+    xmlns:sioc="&sioc;"
+    xmlns:skos="&skos;"
+    xml:base="&kiwi;">
+
+    <owl:Ontology rdf:about="">
+        <rdfs:comment>This ontology describes the KiWi datamodel</rdfs:comment>
+        <rdfs:label>KiWi</rdfs:label>
+        <owl:imports>
+            <owl:Ontology rdf:about="imports/foaf.rdf"/>
+        </owl:imports>
+        <owl:imports>
+            <owl:Ontology rdf:about="imports/sioc.rdf"/>
+        </owl:imports>
+        <owl:imports>
+            <owl:Ontology rdf:about="imports/geo.rdf"/>
+        </owl:imports>
+        <owl:imports>
+            <owl:Ontology rdf:about="imports/contact.rdf"/>
+        </owl:imports>
+        <owl:imports>
+            <owl:Ontology rdf:about="imports/hgtags.rdf"/>
+        </owl:imports>
+        
+        <owl:imports>
+            <owl:Ontology rdf:about="ceq/ceq.owl"/>
+        </owl:imports>
+        
+    </owl:Ontology>
+    <!--  ID property to be stored with all KiWi entities -->
+    <owl:DatatypeProperty rdf:about="&kiwi;id">
+        <rdfs:label>Database Primary Key</rdfs:label>
+        <rdfs:comment>The Primary Key of this entity in the database; used for fast lookups in TripleStore</rdfs:comment>
+        <rdfs:domain rdf:resource="&rdfs;Resource"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="&kiwi;FileReference">
+        <rdfs:label>Filereference</rdfs:label>
+        <rdfs:comment>FileReference</rdfs:comment>
+        <rdfs:domain rdf:resource="&rdfs;Resource"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+
+    <!-- Class 'Address' ... -->
+    <owl:Class rdf:about="&kiwi;City">
+        <rdfs:label>City</rdfs:label>
+        <rdfs:comment>A city in the KiWi system; used in user profiles</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="&geo;Point"/>
+        <rdfs:subClassOf rdf:resource="&cont;Address"/>
+    </owl:Class>
+
+    <owl:DatatypeProperty rdf:about="&kiwi;cityPostalCode">
+        <rdfs:label>Postal Code</rdfs:label>
+        <rdfs:comment>The postal code of a city</rdfs:comment>
+        <rdfs:domain rdf:resource="&kiwi;City"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="&kiwi;cityName">
+        <rdfs:label>City Name</rdfs:label>
+        <rdfs:comment>The name of a city</rdfs:comment>
+        <rdfs:domain rdf:resource="&kiwi;City"/>
+    </owl:DatatypeProperty>
+
+
+    <owl:Class rdf:about="&kiwi;Country">
+        <rdfs:label>Country</rdfs:label>
+        <rdfs:comment>A country in the KiWi system; used in user profiles</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="&geo;SpatialThing"/>
+    </owl:Class>
+    <owl:DatatypeProperty rdf:about="&kiwi;countryName">
+        <rdfs:label>Country Name</rdfs:label>
+        <rdfs:comment>The name of a country</rdfs:comment>
+        <rdfs:domain rdf:resource="&kiwi;Country"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="&kiwi;countryISOCode">
+        <rdfs:label>Country ISO Code</rdfs:label>
+        <rdfs:comment>The two-letter ISO code of a country (e.g. AT, DE, ...)</rdfs:comment>
+        <rdfs:domain rdf:resource="&kiwi;Country"/>
+    </owl:DatatypeProperty>
+    <owl:ObjectProperty rdf:about="&kiwi;inCountry">
+        <rdfs:label>In Country</rdfs:label>
+        <rdfs:comment>The country a spatial thing is located in</rdfs:comment>
+        <rdfs:domain rdf:resource="&geo;SpatialThing"/>
+        <rdfs:range rdf:resource="&kiwi;City"/>
+    </owl:ObjectProperty>
+
+
+    <!-- Class 'User' ... -->
+    <owl:Class rdf:about="&kiwi;User">
+        <rdfs:label>User</rdfs:label>
+        <rdfs:comment>KiWi User</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="&sioc;User"/>
+        <rdfs:subClassOf rdf:resource="&foaf;Person"/>
+        <rdfs:subClassOf rdf:resource="&cont;Person"/>
+    </owl:Class>
+    <!-- ... and 'address' -->
+    <owl:DatatypeProperty rdf:about="&kiwi;phone">
+        <rdfs:label>Phone Number (Landline)</rdfs:label>
+        <rdfs:comment>The landline phone number of a user</rdfs:comment>
+        <rdfs:domain rdf:resource="&kiwi;User"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="&kiwi;mobile">
+        <rdfs:label>Mobile Number</rdfs:label>
+        <rdfs:comment>The mobile telephone number of a user</rdfs:comment>
+        <rdfs:domain rdf:resource="&kiwi;User"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="&kiwi;facebookAccount">
+        <rdfs:label>Facebook Account</rdfs:label>
+        <rdfs:comment>The facebook account name of a user; used for exchanging user content with Facebook.</rdfs:comment>
+        <rdfs:domain rdf:resource="&kiwi;User"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="&kiwi;twitterAccount">
+        <rdfs:label>Twitter Account</rdfs:label>
+        <rdfs:comment>The twitter account name of a user; used for exchanging user content with Twitter.</rdfs:comment>
+        <rdfs:domain rdf:resource="&kiwi;User"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="&kiwi;skypeAccount">
+        <rdfs:label>Skype Account</rdfs:label>
+        <rdfs:comment>The skype account name of a user; used for exchanging user content with Skype (Online Status, Presence).</rdfs:comment>
+        <rdfs:domain rdf:resource="&kiwi;User"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="&kiwi;street">
+        <rdfs:label>Street</rdfs:label>
+        <rdfs:comment>The street of a user's address</rdfs:comment>
+        <rdfs:domain rdf:resource="&kiwi;User"/>
+    </owl:DatatypeProperty>
+    <owl:ObjectProperty rdf:about="&kiwi;city">
+        <rdfs:label>City</rdfs:label>
+        <rdfs:comment>The city of a user's address</rdfs:comment>
+        <rdfs:domain rdf:resource="&kiwi;User"/>
+        <rdfs:range rdf:resource="&kiwi;City"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="&kiwi;hasProfilePhoto">
+        <rdfs:label>Profile Photo</rdfs:label>
+        <rdfs:comment>The profile photo of the user</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&foaf;img"/>
+        <rdfs:domain rdf:resource="&kiwi;User"/>
+        <rdfs:range rdf:resource="&kiwi;Image"/>
+    </owl:ObjectProperty>
+
+    <owl:Class rdf:about="&kiwi;Interest">
+        <rdfs:label>Topic of Interest</rdfs:label>
+        <rdfs:comment>A topic that is of interest to some user</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="&kiwi;Tag"/>
+    </owl:Class>
+
+
+
+    <!-- Class 'Content' ... -->
+    <owl:Class rdf:about="&kiwi;ContentItem">
+        <rdfs:label>Content</rdfs:label>
+        <rdfs:comment>Content</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+        <rdfs:subClassOf rdf:resource="&sioc;Item"/>
+    </owl:Class>
+    <!-- Class 'TextContent' ... -->
+    <owl:Class rdf:about="&kiwi;TextContent">
+        <rdfs:label>TextContent</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&kiwi;ContentItem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&kiwi;hasContent"/>
+                <owl:hasValue rdf:resource="&rdf;XMLLiteral"/>
+                <owl:cardinality rdf:datatype="&xsd;integer">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&kiwi;ExternContent"/>
+        <owl:disjointWith rdf:resource="&kiwi;MediaContent"/>
+    </owl:Class>
+    <!-- Class 'MediaContent' ... -->
+    <owl:Class rdf:about="&kiwi;MediaContent">
+        <rdfs:label>MediaContent</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&kiwi;ContentItem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&kiwi;hasContent"/>
+                <owl:hasValue rdf:resource="&rdfs;Resource"/>
+                <owl:cardinality rdf:datatype="&xsd;integer">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&kiwi;ExternContent"/>
+        <owl:disjointWith rdf:resource="&kiwi;TextContent"/>
+    </owl:Class>
+    <!-- Class 'ExternContent' ... -->
+    <owl:Class rdf:about="&kiwi;ExternContent">
+        <rdfs:label>ExternContent</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&kiwi;ContentItem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&kiwi;hasContent"/>
+                <owl:hasValue rdf:resource="&rdfs;Resource"/>
+                <owl:cardinality rdf:datatype="&xsd;integer">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&kiwi;MediaContent"/>
+        <owl:disjointWith rdf:resource="&kiwi;TextContent"/>
+    </owl:Class>
+    <!-- ... has properties: 'author', ...  -->
+    <owl:ObjectProperty rdf:about="&kiwi;author">
+        <rdfs:label>Author</rdfs:label>
+        <rdfs:comment>Content has an author</rdfs:comment>
+        <rdfs:domain rdf:resource="&kiwi;ContentItem"/>
+        <rdfs:range rdf:resource="&kiwi;User"/>
+    </owl:ObjectProperty>
+    <!-- ... 'title', ...  -->
+    <owl:DatatypeProperty rdf:about="&kiwi;title">
+        <rdfs:label>title</rdfs:label>
+        <rdfs:comment>Content may have a title</rdfs:comment>
+        <rdfs:domain rdf:resource="&kiwi;ContentItem"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    <!-- ... 'title', ...  -->
+    <owl:DatatypeProperty rdf:about="&kiwi;tagLabel">
+        <rdfs:label>Tag Label</rdfs:label>
+        <rdfs:comment>ContentItems may have any number of tag labels, i.e. words used for referring to them in tags</rdfs:comment>
+        <rdfs:domain rdf:resource="&kiwi;ContentItem"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    <!-- ... 'rating', ... -->
+    <owl:DatatypeProperty rdf:about="&kiwi;rating">
+        <rdfs:label>rating</rdfs:label>
+        <rdfs:comment>Content may be rated</rdfs:comment>
+        <rdfs:domain rdf:resource="&kiwi;ContentItem"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    <!-- ... 'language', ... -->
+    <owl:DatatypeProperty rdf:about="&kiwi;language">
+        <rdfs:label>language</rdfs:label>
+        <rdfs:comment>Content may have a specific language</rdfs:comment>
+        <rdfs:domain rdf:resource="&kiwi;ContentItem"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    <!-- ... and 'createdOn' -->
+    <owl:DatatypeProperty rdf:about="&kiwi;createdOn">
+        <rdfs:label>createdOn</rdfs:label>
+        <rdfs:comment>Specifies timestamp when a content was created</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/date"/>
+        <rdfs:domain rdf:resource="&kiwi;ContentItem"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    <!-- ... has properties: 'hasText' -->
+    <owl:DatatypeProperty rdf:about="&kiwi;hasContent">
+        <rdfs:label>hasContent</rdfs:label>
+        <rdfs:comment>Content hold by the </rdfs:comment>
+        <rdfs:domain rdf:resource="&kiwi;ContentItem"/>
+    </owl:DatatypeProperty>
+
+    <!--  Tagging -->
+    <owl:Class rdf:about="&kiwi;Tagging">
+        <rdfs:label>Tagging</rdfs:label>
+        <rdfs:comment>A tagging action relating a content item with a tag</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="&hgtags;Tagging"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&kiwi;taggingResource"/>
+                <owl:cardinality rdf:datatype="&xsd;integer">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:Class rdf:about="&kiwi;Tag">
+        <rdfs:label>Tag</rdfs:label>
+        <rdfs:comment>Content Items that are used as taggingResource in a Tagging get the type kiwi:Tag</rdfs:comment>
+       	<rdfs:subClassOf rdf:resource="&hgtags;Tag"/>
+        <rdfs:subClassOf rdf:resource="&scot;Tag"/>
+    </owl:Class>
+    
+    <owl:Class rdf:about="&kiwi;FreeTag">
+        <rdfs:label>Tag</rdfs:label>
+        <rdfs:comment>Content Items that are used as taggingResource in a Tagging get the type kiwi:Tag</rdfs:comment>
+    	<rdfs:subClassOf rdf:resource="&kiwi;ContentItem"/>
+    </owl:Class>
+
+    <!--  tagging relations are taken from HG ontology; TODO: we'd also want to add scot relations like scot:hasTag -->
+
+    <owl:DatatypeProperty rdf:about="&kiwi;mimeType">
+        <rdfs:label>Mime Type</rdfs:label>
+        <rdfs:comment>Specifies mime type of a media content element</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/format"/>
+        <rdfs:domain rdf:resource="&kiwi;MediaContent"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+
+    <!--  different media types -->
+    <!-- Image -->
+    <owl:Class rdf:about="&kiwi;Image">
+        <rdfs:label>Image</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&kiwi;MediaContent"/>
+        <rdfs:subClassOf rdf:resource="&foaf;Image"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="&kiwi;Audio">
+        <rdfs:label>Audio</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&kiwi;MediaContent"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="&kiwi;Video">
+        <rdfs:label>Video</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&kiwi;MediaContent"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="&kiwi;Document">
+        <rdfs:label>Document</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&kiwi;MediaContent"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="&kiwi;FlashVideo">
+        <rdfs:label>Flash Video</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&kiwi;Video"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="&kiwi;PDFDocument">
+        <rdfs:label>PDF Document</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&kiwi;Document"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="&kiwi;MSWordDocument">
+        <rdfs:label>MS Word Document</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&kiwi;Document"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="&kiwi;MP3Audio">
+        <rdfs:label>MP3 Audio</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&kiwi;Audio"/>
+    </owl:Class>
+
+
+    <!-- knowledge spaces -->
+    <owl:Class rdf:about="&kiwi;KnowledgeSpace">
+        <rdfs:label>KiWi Knowledge Space</rdfs:label>
+        <rdfs:comment>A knowledge space in KiWi is used to differentiate meta-data from different contexts. Internally, it is used as named graph identifier for querying</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="&kiwi;ContentItem"/>
+    </owl:Class>
+
+    <kiwi:KnowledgeSpace rdf:about="&kiwi;DefaultKnowledgeSpace">
+        <rdfs:label>Default</rdfs:label>
+    </kiwi:KnowledgeSpace>
+
+
+    <!--  links between ContentItems -->
+    <owl:ObjectProperty rdf:about="&kiwi;internalLink">
+        <rdfs:label>internal link</rdfs:label>
+        <rdfs:comment>An internal link is a navigational link from one ContentItem to another ContentItem</rdfs:comment>
+        <rdfs:domain rdf:resource="&kiwi;ContentItem"/>
+        <rdfs:range rdf:resource="&kiwi;ContentItem"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="&kiwi;externalLink">
+        <rdfs:label>external link</rdfs:label>
+        <rdfs:comment>An external link is a navigational link from a ContentItem to an external web page</rdfs:comment>
+        <rdfs:domain rdf:resource="&kiwi;ContentItem"/>
+        <rdfs:range rdf:resource="&rdfs;Resource"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="&kiwi;includesImage">
+        <rdfs:label>includes image</rdfs:label>
+        <rdfs:comment>A relation to the images included in a content item text</rdfs:comment>
+        <rdfs:domain rdf:resource="&kiwi;ContentItem"/>
+        <rdfs:range rdf:resource="&kiwi;Image"/>
+    </owl:ObjectProperty>
+
+
+    <!--  comments -->
+    <owl:Class rdf:about="&kiwi;Comment">
+        <rdfs:label>Comment</rdfs:label>
+        <rdfs:comment>a comment to a content item in the kiwi system</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="&kiwi;ContentItem"/>
+        <rdfs:subClassOf rdf:resource="&sioc;Post"/>
+    </owl:Class>
+
+    <owl:ObjectProperty rdf:about="&kiwi;hasComment">
+        <rdfs:label>has comment</rdfs:label>
+        <rdfs:comment>the relation between a reply and the content item replied to</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&sioc;has_reply"/>
+        <rdfs:domain rdf:resource="&kiwi;ContentItem"/>
+        <rdfs:range rdf:resource="&kiwi;Comment"/>
+    </owl:ObjectProperty>
+
+    <!-- tweets/microblogging -->
+    <owl:Class rdf:about="&kiwi;MicrobloggingPost">
+        <rdfs:label>Microblogging Post (common superclass)</rdfs:label>
+        <rdfs:comment>a microblogging post (tweet)</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="&kiwi;ContentItem"/>
+        <rdfs:subClassOf rdf:resource="&sioc;Post"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="&kiwi;KiWiTweet">
+        <rdfs:label>KiWi Tweet</rdfs:label>
+        <rdfs:comment>a microblogging post created directly in KiWi</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="&kiwi;ContentItem"/>
+        <rdfs:subClassOf rdf:resource="&kiwi;MicrobloggingPost"/>
+        <rdfs:subClassOf rdf:resource="&sioc;Post"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="&kiwi;TwitterPost">
+        <rdfs:label>Twitter Post</rdfs:label>
+        <rdfs:comment>a microblogging post imported from twitter</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="&kiwi;ContentItem"/>
+        <rdfs:subClassOf rdf:resource="&kiwi;MicrobloggingPost"/>
+        <rdfs:subClassOf rdf:resource="&sioc;Post"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="&kiwi;FacebookPost">
+        <rdfs:label>Facbeook Status Update</rdfs:label>
+        <rdfs:comment>a facebook status update posted on a user's wall</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="&kiwi;ContentItem"/>
+        <rdfs:subClassOf rdf:resource="&kiwi;MicrobloggingPost"/>
+        <rdfs:subClassOf rdf:resource="&sioc;Post"/>
+    </owl:Class>
+
+    <!-- wiki articles -->
+    <owl:Class rdf:about="&kiwi;WikiArticle">
+        <rdfs:label>WikiArticle</rdfs:label>
+        <rdfs:comment>an article in a wiki</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="&kiwi;ContentItem"/>
+    </owl:Class>
+
+    <!-- blog posts -->
+    <owl:Class rdf:about="&kiwi;BlogPost">
+        <rdfs:label>Blog Post</rdfs:label>
+        <rdfs:comment>a post in a blog imported from an external source</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="&kiwi;ContentItem"/>
+        <rdfs:subClassOf rdf:resource="&sioc;Post"/>
+    </owl:Class>
+
+
+    <!-- RSS blog posts -->
+    <!--
+    <owl:Class rdf:about="&kiwi;FeedPost">
+        <rdfs:label>FeedPost</rdfs:label>
+        <rdfs:comment>a post imported from an RSS or Atom feed</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="&kiwi;ContentItem"/>
+        <rdfs:subClassOf rdf:resource="&sioc;Post"/>
+    </owl:Class>
+    -->
+    <owl:Class rdf:about="&kiwi;Template">
+        <rdfs:label>Template</rdfs:label>
+        <rdfs:comment>A template (e.g. article), describing a subject and its properties, which can be instantiated.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="&kiwi;FromTemplate">
+        <rdfs:label>FromTemplate</rdfs:label>
+        <rdfs:comment>A template instance.</rdfs:comment>
+    </owl:Class>
+
+    <owl:ObjectProperty rdf:about="&kiwi;hasTemplateInstance">
+        <owl:inverseOf rdf:resource="&kiwi;instancesTemplate" />
+        <rdfs:label>hasTemplateInstance</rdfs:label>
+        <rdfs:comment>An item of type Template may have template instances.</rdfs:comment>
+        <rdfs:domain rdf:resource="&kiwi;Template"/>
+        <rdfs:range rdf:resource="&kiwi;FromTemplate"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="&kiwi;instancesTemplate">
+        <owl:inverseOf rdf:resource="&kiwi;hasTemplateInstance" />
+        <rdfs:label>instances template</rdfs:label>
+        <rdfs:comment>An item of type FromTemplate instances another item of type Template.</rdfs:comment>
+        <rdfs:domain rdf:resource="&kiwi;FromTemplate"/>
+        <rdfs:range rdf:resource="&kiwi;Template"/>
+    </owl:ObjectProperty>
+
+    <owl:Class rdf:about="&kiwi;TemplateInstanceField">
+        <rdfs:label>TemplateInstanceField</rdfs:label>
+        <rdfs:comment>A field of a template instance.</rdfs:comment>
+    </owl:Class>
+
+    <owl:ObjectProperty rdf:about="&kiwi;fieldOfTemplateInstance">
+        <rdfs:label>field of template instance</rdfs:label>
+        <rdfs:comment>A template instance contains several fields/properties. This is the relation between fields and template instances</rdfs:comment>
+        <rdfs:domain rdf:resource="&kiwi;TemplateInstanceField"/>
+        <rdfs:range rdf:resource="&kiwi;FromTemplate"/>
+    </owl:ObjectProperty>
+
+
+</rdf:RDF>

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/kiwi/!svn/ver/5558/KiWi/trunk/src/action/kiwi/service/transaction
+END
+KiWiSynchronizationImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5557/KiWi/trunk/src/action/kiwi/service/transaction/KiWiSynchronizationImpl.java
+END
+TransactionServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5558/KiWi/trunk/src/action/kiwi/service/transaction/TransactionServiceImpl.java
+END

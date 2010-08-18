@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/admin/api/sunspace
+END
+SunSpaceImportService.class
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/admin/api/sunspace/SunSpaceImportService.class
+END
+ImportException.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/admin/api/sunspace/ImportException.class
+END
+SunSpaceImportService$FILE.class
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/admin/api/sunspace/SunSpaceImportService$FILE.class
+END
+SunSpaceImportServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/admin/api/sunspace/SunSpaceImportServiceRemote.class
+END
+SunSpaceImportServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/admin/api/sunspace/SunSpaceImportServiceLocal.class
+END
+package-info.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/admin/api/sunspace/package-info.class
+END

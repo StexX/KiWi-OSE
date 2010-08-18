@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/src/action/kiwi/service/multimedia/aperture
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/3038/KiWi/trunk/src/action/kiwi/service/multimedia/aperture/README.txt
+END
+FileCrawler.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/3038/KiWi/trunk/src/action/kiwi/service/multimedia/aperture/FileCrawler.java
+END
+AbstractCrawler.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/src/action/kiwi/service/multimedia/aperture/AbstractCrawler.java
+END

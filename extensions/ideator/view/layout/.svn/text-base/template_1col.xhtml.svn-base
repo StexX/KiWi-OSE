@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:a4j="http://richfaces.org/a4j"
+	  xmlns:s="http://jboss.com/products/seam/taglib"
+	  xmlns:h="http://java.sun.com/jsf/html">
+<head>    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title><h:outputText value="#{messages['ideator.templ.title']}" /></title>
+	
+	<!-- stylesheets -->
+    <link href="stylesheet/theme.css" rel="stylesheet" type="text/css" />
+
+	<!-- javascript -->
+	<a4j:loadScript src="resource://jquery.js"/>
+	<script type="text/javascript" src="js/lib/interface.js"></script>
+	<script type="text/javascript">
+		//<![CDATA[
+		
+		//no conflict mode
+        jQuery.noConflict();
+		
+		//initalize dock onload
+		jQuery(document).ready(function() {
+			jQuery('#dock').Fisheye({
+				maxWidth: 50,
+				items: 'a',
+				itemsText: 'span',
+				container: '.dock-container',
+				itemWidth: 40,
+				proximity: 90,
+				halign : 'center'
+			});
+		});
+				
+		//]]>
+	</script>
+	<ui:insert name="html_head" />
+</head>   
+<!--	to define:
+			html_head			:= Some stuff for html head (sytesheets and/or scripts)
+			
+			main_header			:= Header of center content box (e.g. <h2>Test</h2>)
+			main_header_links	:= Header Links of center boc (e.g. <li><a href="#"><img src="images/header_links/sound.png"></a></li><li>...</li>)
+			main_content		:= Main content (e.g. <h1>Test</h2><p>...</p>)
+ -->
+
+<body>
+<!--page design -->
+<div id="page">
+	<center>
+	<div id="center">
+		<div id="main">
+			<!-- top dock -->
+			<div class="dock" id="dock">
+				<ui:include src="../pages/static/dock.xhtml" />
+			</div>
+			<img src="img/ideator.png" />
+		</div>
+		<div id="right">
+			<ui:include src="../pages/static/search.xhtml" />
+			<s:div id="loginName" rendered="#{identity.loggedIn}" style="margin-top:60px;">
+				<h:outputText value="#{messages['ideator.templ.logged_in']} " />
+				<s:link action="dashboard" value="#{currentUser.firstName} #{currentUser.lastName}" />
+			</s:div>
+		</div>
+		<div class="clear" />
+
+				<table class="mbox">
+					<tr>
+						<td class="mbox_header_left"></td>
+						<td class="mbox_header_middle">
+							<div class="mbox_header_title">
+								<ui:insert name="main_header" />
+							</div>
+							<div class="mbox_header_links">
+								<ul>
+									<ui:insert name="main_header_links" />
+									<li>
+										<img src="img/header_links/blank.png" style="margin-left:-8px"/>
+									</li>
+								</ul>
+							</div>
+						</td>
+						<td class="mbox_header_right"></td>
+					</tr>
+					<tr>
+						<td class="mbox_body_left"></td>
+						<td class="mbox_body_middle">
+						<div id="center_content">
+							<ui:insert name="main_content" />
+						</div>
+						</td>
+						<td class="mbox_body_right"></td>
+					</tr>
+					<tr>
+						<td class="mbox_footer_left"></td>
+						<td class="mbox_footer_middle"></td>
+						<td class="mbox_footer_right"></td>
+					</tr>
+				</table>
+				<div id="content_footer">
+					<ui:include src="../pages/static/footer.xhtml" />
+				</div>
+
+	</div>
+	</center>
+</div>
+<ui:insert name="popups" />
+</body>
+</html>

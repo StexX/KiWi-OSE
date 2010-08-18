@@ -1,0 +1,258 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+                xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                template="layout/template.xhtml">
+
+
+
+    <ui:define name="body">
+        <h1>Import Data</h1>
+        
+        <a:outputPanel layout="block" id="messages">
+            <rich:messages/>
+        </a:outputPanel>
+        
+        <p>
+            In the following, you can import data from external sources like RDF files or RSS
+            feeds. Manual import imports data once, scheduled import allows you to import the
+            specified URL at regular intervals (e.g. RSS feeds).
+        </p>
+        
+        <h3>Manual Import</h3>
+        
+        <h:form id="manualImportForm">
+            <h:panelGrid columns="2">
+                <h:panelGroup>
+                    <strong><h:outputText value="Format: " /></strong>
+                </h:panelGroup>
+                <h:selectOneMenu value="#{kiwi.admin.importAction.selectedMimeType}">
+                    <s:selectItems var="mimeType" value="#{kiwi.admin.importAction.mimeTypes}" label="#{mimeType}" noSelectionLabel="select mime type"/>
+                </h:selectOneMenu>
+                <h:panelGroup>
+                    <strong><h:outputText value="URL: " /></strong>
+                </h:panelGroup>
+                <h:inputText value="#{kiwi.admin.importAction.selectedUrl}" size="80"/>
+                <h:panelGroup>
+                    <strong><h:outputText value="Tags: " /></strong>
+                </h:panelGroup>
+                <h:panelGroup>
+	                <h:inputText value="#{kiwi.admin.importAction.tagLabels}" id="taglabel" size="80"/>
+	                <rich:suggestionbox id="suggestionBoxId" for="taglabel" tokens=",[]"
+	                        suggestionAction="#{kiwi.admin.importAction.autocomplete}" 
+	                        var="result"
+	                        fetchValue="#{result}" 
+	                        minChars="2"
+	                        shadowOpacity="4"
+	                        border="1"
+	                        height="150"
+	                        width="200"
+	                        shadowDepth="3"
+	                        cellpadding="2"
+	                        nothingLabel="No tags found" 
+	                        columnClasses="center"
+	                        usingSuggestObjects="true" reRender="suggestionBoxId">
+	                        
+	                        <h:column>
+	                            <h:outputText value="#{result}" />
+	                        </h:column>
+	                </rich:suggestionbox>
+                </h:panelGroup>
+               <h:panelGroup>
+                    <strong><h:outputText value="Types: " /></strong>
+                </h:panelGroup>
+                <h:panelGroup>
+                    <h:inputText value="#{kiwi.admin.importAction.typeLabels}" id="typelabel" size="80"/>
+                    <rich:suggestionbox id="typeSuggestionBoxId" for="typelabel" tokens=",[]"
+                            suggestionAction="#{kiwi.admin.importAction.autocompleteClasses}" 
+                            var="result"
+                            fetchValue="#{result}" 
+                            minChars="2"
+                            shadowOpacity="4"
+                            border="1"
+                            height="150"
+                            width="200"
+                            shadowDepth="3"
+                            cellpadding="2"
+                            nothingLabel="No types found" 
+                            columnClasses="center"
+                            usingSuggestObjects="true" reRender="typeSuggestionBoxId">
+                            
+                            <h:column>
+                                <h:outputText value="#{result}" />
+                            </h:column>
+                    </rich:suggestionbox>
+                </h:panelGroup>
+                <h:panelGroup>
+                	<strong><h:outputText value="Use templates?" /></strong>
+                </h:panelGroup>
+                <h:panelGroup>
+                	<h:selectBooleanCheckbox value="#{kiwi.admin.importAction.templates}"/>
+                </h:panelGroup>
+                <a:commandButton action="#{kiwi.admin.importAction.manualImport()}" value="Import!" reRender="messages,manualImportForm" />
+            </h:panelGrid>
+        </h:form>
+
+
+        <h3>Scheduled Import</h3>
+        
+        <h:form id="schedulesForm">
+	        <rich:dataTable id="taskList"
+		        onRowMouseOver="this.style.backgroundColor='#F1F1F1'"
+		        onRowMouseOut="this.style.backgroundColor='#{a4jSkin.tableBackgroundColor}'"
+		        cellpadding="0" cellspacing="0" 
+		        width="700" border="0" var="task" value="#{kiwi.admin.importAction.tasks}">
+	               
+	            <f:facet name="header">
+	                <rich:columnGroup>
+	                    <rich:column>
+	                        <h:outputText value="No" />
+	                    </rich:column>
+	                    <rich:column>
+	                        <h:outputText value="Description" />
+	                    </rich:column>
+	                    <rich:column>
+	                        <h:outputText value="URL" />
+	                    </rich:column>
+                        <rich:column>
+                            <h:outputText value="Last Executed" />
+                        </rich:column>
+                        <rich:column>
+                            <h:outputText value="Interval" />
+                        </rich:column>
+	                    <rich:column>
+	                        <h:outputText value="Tags" />
+	                    </rich:column>
+	                    <rich:column>
+	                        <h:outputText value="Types" />
+	                    </rich:column>
+	                    <rich:column>
+	                        <h:outputText value="Owner" />
+	                    </rich:column>
+	                    <rich:column>
+	                        <h:outputText value="Action" />
+	                    </rich:column>
+	                </rich:columnGroup>
+	            </f:facet>
+	            
+	            <rich:column>
+	                <h:outputText value="#{task.id}"/>
+	            </rich:column>
+	            <rich:column>
+	                <h:outputText value="#{task.description}"/>
+	            </rich:column>
+	            <rich:column>
+	                <h:outputText value="#{task.url}"/>
+	            </rich:column>
+                <rich:column>
+                    <h:outputText value="#{task.lastExecuted}">
+                        <s:convertDateTime pattern="dd/MM/yyyy HH:mm"/>
+                    </h:outputText>
+                </rich:column>
+                <rich:column>
+                    <h:outputText value="#{task.interval.time / 1000 / 60}">
+                        <f:convertNumber integerOnly="true" />
+                    </h:outputText>
+                    <h:outputText value=" min"/>
+                </rich:column>
+	            <rich:column>
+	                <ui:repeat value="#{kiwi.admin.importAction.setToList(task.tags)}" var="tag"><h:outputText value="#{tag.title},"/></ui:repeat>
+	            </rich:column>
+	            <rich:column>
+	                <ui:repeat value="#{kiwi.admin.importAction.setToList(task.types)}" var="type"><h:outputText value="#{type.label},"/></ui:repeat>
+	            </rich:column>
+	            <rich:column>
+	                <h:outputText value="#{task.owner.login}"/>
+	            </rich:column>
+	            <rich:column>
+	                <a:commandButton action="#{kiwi.admin.importAction.removeTask(task)}" value="Remove" reRender="taskList"/>
+	            </rich:column>
+	        </rich:dataTable>
+	        <a:commandButton action="#{kiwi.admin.importAction.runAllTasks()}" value="Run All!" reRender="messages"/>
+        </h:form>
+        
+        <h:form id="scheduledImportForm">
+            <h:panelGrid columns="2">
+                <h:panelGroup>
+                    <strong><h:outputText value="Description: " /></strong>
+                </h:panelGroup>
+                <h:inputText value="#{kiwi.admin.importAction.description}" size="80"/>
+                <h:panelGroup>
+                    <strong><h:outputText value="Interval (min): " /></strong>
+                </h:panelGroup>
+                    <rich:inputNumberSpinner value="#{kiwi.admin.importAction.interval}" minValue="1" maxValue="360" required="true"/>
+               <h:panelGroup>
+                    <strong><h:outputText value="Format: " /></strong>
+                </h:panelGroup>
+                <h:selectOneMenu value="#{kiwi.admin.importAction.selectedMimeType}">
+                    <s:selectItems var="mimeType" value="#{kiwi.admin.importAction.mimeTypes}" label="#{mimeType}" noSelectionLabel="select mime type"/>
+                </h:selectOneMenu>
+                <h:panelGroup>
+                    <strong><h:outputText value="URL: " /></strong>
+                </h:panelGroup>
+                <h:inputText value="#{kiwi.admin.importAction.selectedUrl}" size="80"/>
+                <h:panelGroup>
+                    <strong><h:outputText value="Tags: " /></strong>
+                </h:panelGroup>
+                <h:panelGroup>
+                    <h:inputText value="#{kiwi.admin.importAction.tagLabels}" id="taglabel" size="80"/>
+                    <rich:suggestionbox id="suggestionBoxId" for="taglabel" tokens=",[]"
+                            suggestionAction="#{kiwi.admin.importAction.autocomplete}" 
+                            var="result"
+                            fetchValue="#{result}" 
+                            minChars="2"
+                            shadowOpacity="4"
+                            border="1"
+                            height="150"
+                            width="200"
+                            shadowDepth="3"
+                            cellpadding="2"
+                            nothingLabel="No tags found" 
+                            columnClasses="center"
+                            usingSuggestObjects="true" reRender="suggestionBoxId">
+                            
+                            <h:column>
+                                <h:outputText value="#{result}" />
+                            </h:column>
+                    </rich:suggestionbox>
+                </h:panelGroup>
+               <h:panelGroup>
+                    <strong><h:outputText value="Types: " /></strong>
+                </h:panelGroup>
+                <h:panelGroup>
+                    <h:inputText value="#{kiwi.admin.importAction.typeLabels}" id="typelabel" size="80"/>
+                    <rich:suggestionbox id="typeSuggestionBoxId" for="typelabel" tokens=",[]"
+                            suggestionAction="#{kiwi.admin.importAction.autocompleteClasses}" 
+                            var="result"
+                            fetchValue="#{result}" 
+                            minChars="2"
+                            shadowOpacity="4"
+                            border="1"
+                            height="150"
+                            width="200"
+                            shadowDepth="3"
+                            cellpadding="2"
+                            nothingLabel="No types found" 
+                            columnClasses="center"
+                            usingSuggestObjects="true" reRender="typeSuggestionBoxId">
+                            
+                            <h:column>
+                                <h:outputText value="#{result}" />
+                            </h:column>
+                    </rich:suggestionbox>
+                </h:panelGroup>
+                <a:commandButton action="#{kiwi.admin.importAction.addTask()}" value="Add Task" reRender="messages,scheduledImportForm,taskList" />
+            </h:panelGrid>
+        </h:form>
+        
+    </ui:define>         
+                
+</ui:composition>

@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/search
+END
+StringToListConverter.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/search/StringToListConverter.class
+END
+KiWiSearchEngine.class
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/search/KiWiSearchEngine.class
+END
+KWQLAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/search/KWQLAction.class
+END
+KiWiSearchEngine$UserAggregator.class
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/search/KiWiSearchEngine$UserAggregator.class
+END
+SearchAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/search/SearchAction.class
+END
+SearchRecommendationWebService.class
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/search/SearchRecommendationWebService.class
+END
+ImageBrowserAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/search/ImageBrowserAction.class
+END
+KiWiSearchEngine$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/search/KiWiSearchEngine$1.class
+END
+KiWiSearchEngine$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/search/KiWiSearchEngine$2.class
+END
+KiWiSearchEngine$3.class
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/search/KiWiSearchEngine$3.class
+END
+SearchWebService.class
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/search/SearchWebService.class
+END
+KiWiSearchEngine$4.class
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/search/KiWiSearchEngine$4.class
+END
+SearchEngine.class
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/search/SearchEngine.class
+END
+KiWiSearchEngine$5.class
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/search/KiWiSearchEngine$5.class
+END
+KiWiSearchEngine$TypeAggregator.class
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/search/KiWiSearchEngine$TypeAggregator.class
+END
+KWQLSearchEngine.class
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/search/KWQLSearchEngine.class
+END
+KWQLSearchEngine$ceqComparator.class
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/search/KWQLSearchEngine$ceqComparator.class
+END
+KWQLSearchEngine$modifiedComparator.class
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/search/KWQLSearchEngine$modifiedComparator.class
+END
+KWQLSearchEngine$scoreComparator.class
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/search/KWQLSearchEngine$scoreComparator.class
+END

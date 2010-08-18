@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html  debug="true">
+<head>
+	<script type="text/javascript" src="../common/js/jquery.js"></script>
+	<script type="text/javascript" src="../common/js/jquery.template.js"></script>
+        <script type="text/javascript" src="../common/js/jquery.overlay-min.js"></script>
+	<link rel="stylesheet" href="./css/tags_editor.css">
+</head>
+	
+<body>
+
+	<div>
+            <button id="sun_tag_editor_button" rel="#sun_tag_editor_overlay">Sun Tags</button>
+<!--	<h3><a name="Home-ExploreSunSpaceCommunities"></a>Widgets Test Page Stub</h3> -->
+            <div id="sun_tag_editor_overlay" class="overlay"/>
+
+            <script type="text/javascript" src="./js/jquery.tags_editor.js"></script>
+            <script type="text/javascript" src="./js/tags_editor_templates.js"></script>
+            <script type="text/javascript">
+		jQuery.noConflict();
+		jQuery(document).ready(function(){
+                    (function($){
+                        $("#sun_tag_editor_button").overlay({
+				onBeforeLoad:function(){
+                                    $("#sun_tag_editor_overlay").append("<div id=\"sun_tag_editor_overlay_content\"></div>");
+                                    var tagsEditor = new jQuery.TagsEditor("#sun_tag_editor_overlay_content");
+
+									// Tell the widget not to send actual add/remove requests
+									tagsEditor.testAddRemove = true;
+
+									// Set test data in; the widget won't attempt
+									// to invoke webservice
+									tagsEditor.testData = {
+										"resource":"URI-of-tagged-resource",
+										"items": [
+											{
+												"uri":"http://kiwi/tags/1234",
+												"usage":262,
+												"label":"community:DEV",
+												"tq":2263,
+												"controlled":0
+											},
+											{
+												"uri":"http://kiwi/tags/1235",
+												"usage":11,
+												"label":"community:CEPEDIA",
+												"tq":-72,
+												"controlled":1
+											},
+											{
+												"uri": "http://example.oracle.com/usa",
+												"usage":11,
+												"label": "USA",
+												"tq":-72,
+												"controlled":1
+											}
+										]
+									};
+									// Set test data in; the widget won't attempt
+									// to invoke webservice
+									tagsEditor.testDataTagExtract = {
+										"optional": [
+											{
+												"id": "tag_d4882835-280a-429e-9bb7-0bc011ac1ffe",
+												"score": 5.031974792480469,
+												"label": "page"
+											},
+											{
+												"id": "tag_f91bfde0-74bd-4b57-92f0-bc353b57c6cc",
+												"score": 6.766575813293457,
+												"label": "java",
+												"uri": "http://www.iptc.org/NAR/NewsML#_100000009"
+											},
+											{
+												"id": "tag_f91bfde0-74bd-4b57-92f0-bc353b57c6cc",
+												"score": 3.766575813293457,
+												"label": "controlled",
+												"uri": "http://www.iptc.org/NAR/NewsML#_100000009",
+												"controlled" : 1
+											}
+										],
+										"required": [
+											{
+												"label": "Region",
+												"uri": "http://example.oracle.com/region",
+												"narrower": [
+													{
+														"score": 0.2,
+														"label": "EMEA",
+														"uri": "http://example.oracle.com/emea"
+													},
+													{
+														"score": 0,
+														"label": "USA",
+														"uri": "http://example.oracle.com/usa"
+													},
+													{
+														"score": 0.5,
+														"label": "Latin America",
+														"uri": "http://kiwi.sunsolutioncenter.de/KiWi/content/latin_america/344d6845-f517-442a-b0a9-3752c4bfbcfe"
+													}
+												]
+											},
+											{
+												"label": "Business Unit",
+												"uri": "http://example.oracle.com/business_unit",
+												"narrower": [
+													{
+														"score": 0,
+														"label": "Software",
+														"uri": "http://example.oracle.com/software"
+													},
+													{
+														"score": 1.0,
+														"label": "Hardware",
+														"uri": "http://kiwi.sunsolutioncenter.de/KiWi/content/hardware/5f4b391a-d293-4f95-bf2c-d2d0a19e36c2"
+													}
+												]
+											}
+										]
+									};
+
+									tagsEditor.testDataRequiredCategories = {
+										required: [
+											{
+												"label": "Region",
+												"uri": "http://example.oracle.com/region",
+												"narrower": [
+													{
+														"label": "EMEA",
+														"uri": "http://example.oracle.com/emea"
+													},
+													{
+														"label": "USA",
+														"uri": "http://example.oracle.com/usa"
+													},
+													{
+														"label": "Latin America",
+														"uri": "http://kiwi.sunsolutioncenter.de/KiWi/content/latin_america/344d6845-f517-442a-b0a9-3752c4bfbcfe"
+													}
+												]
+											},
+											{
+												"label": "Business Unit",
+												"uri": "http:example.oracle.com/business_unit",
+												"narrower": [
+													{
+														"label": "Software",
+														"uri": "http://example.oracle.com/software"
+													},
+													{
+														"label": "Hardware",
+														"uri": "http://kiwi.sunsolutioncenter.de/KiWi/content/hardware/5f4b391a-d293-4f95-bf2c-d2d0a19e36c2"
+													}
+												]
+											}
+										]
+									};
+
+                                    tagsEditor.deploy();
+
+
+				},
+				onClose:function(){                                        
+					$("#sun_tag_editor_overlay_content").remove();
+				},
+				expose: {
+					color: '#BAD0DB',
+					opacity: 0.7,
+					closeSpeed: 1000
+				},
+				finish: {
+					top: 100,
+					left: 'center',
+					absolute: false
+				}
+			});
+                    })(jQuery);
+                });
+                    
+            </script>
+        </div>
+</body>
+
+</html>

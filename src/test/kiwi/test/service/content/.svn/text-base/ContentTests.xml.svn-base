@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+
+<suite name="ContentTests" verbose="2" parallel="tests">
+    <test name="MultimediaServiceTest" junit="false">
+        <classes>
+            <class name="kiwi.test.service.content.MultimediaServiceTest"/>
+        </classes>
+    </test>
+</suite>

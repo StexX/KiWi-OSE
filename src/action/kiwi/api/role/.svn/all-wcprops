@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/kiwi/!svn/ver/4645/KiWi/trunk/src/action/kiwi/api/role
+END
+RoleService.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/kiwi/!svn/ver/4645/KiWi/trunk/src/action/kiwi/api/role/RoleService.java
+END
+RoleServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/4430/KiWi/trunk/src/action/kiwi/api/role/RoleServiceLocal.java
+END
+RoleServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/4430/KiWi/trunk/src/action/kiwi/api/role/RoleServiceRemote.java
+END

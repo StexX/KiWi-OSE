@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/util
+END
+JDBCUtils.class
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/util/JDBCUtils.class
+END
+TransformationException.class
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/util/TransformationException.class
+END
+KiWiXomUtils$NodePosIterator.class
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/util/KiWiXomUtils$NodePosIterator.class
+END
+KiWiXomUtils$NodePos.class
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/util/KiWiXomUtils$NodePos.class
+END
+Transformer.class
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/util/Transformer.class
+END
+KiWiFormatUtils.class
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/util/KiWiFormatUtils.class
+END
+KiWiXomUtils.class
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/util/KiWiXomUtils.class
+END
+ConcurrentHashSet.class
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/util/ConcurrentHashSet.class
+END
+MD5.class
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/util/MD5.class
+END
+KiWiStringUtils.class
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/util/KiWiStringUtils.class
+END
+URLUtils.class
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/util/URLUtils.class
+END
+JDBCTool.class
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/util/JDBCTool.class
+END
+KiWiCollections.class
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/util/KiWiCollections.class
+END
+package-info.class
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/util/package-info.class
+END

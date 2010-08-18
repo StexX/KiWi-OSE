@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/kiwi/!svn/ver/5233/KiWi/trunk/lib/gwt2
+END
+readme.txt
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/kiwi/!svn/ver/4029/KiWi/trunk/lib/gwt2/readme.txt
+END
+gwt-user.jar
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/kiwi/!svn/ver/4361/KiWi/trunk/lib/gwt2/gwt-user.jar
+END
+smartgwt-skins.jar
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/kiwi/!svn/ver/5233/KiWi/trunk/lib/gwt2/smartgwt-skins.jar
+END
+smartgwt.jar
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/kiwi/!svn/ver/5233/KiWi/trunk/lib/gwt2/smartgwt.jar
+END
+gwt-dev.jar
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/kiwi/!svn/ver/4361/KiWi/trunk/lib/gwt2/gwt-dev.jar
+END
+gwt-servlet.jar
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/kiwi/!svn/ver/4361/KiWi/trunk/lib/gwt2/gwt-servlet.jar
+END

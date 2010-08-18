@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+
+<suite name="UserServiceTests" verbose="2" parallel="tests">
+    <test name="UserServiceTest" junit="false">
+        <classes>
+            <class name="kiwi.test.service.user.UserServiceTest"/>
+        </classes>
+    </test>
+</suite>

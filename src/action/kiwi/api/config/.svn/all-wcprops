@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/kiwi/!svn/ver/5166/KiWi/trunk/src/action/kiwi/api/config
+END
+ConfigurationService.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5166/KiWi/trunk/src/action/kiwi/api/config/ConfigurationService.java
+END
+PortalConfigServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/4586/KiWi/trunk/src/action/kiwi/api/config/PortalConfigServiceRemote.java
+END
+ConfigurationServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/action/kiwi/api/config/ConfigurationServiceLocal.java
+END
+PortalConfigService.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/4714/KiWi/trunk/src/action/kiwi/api/config/PortalConfigService.java
+END
+ConfigurationServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/action/kiwi/api/config/ConfigurationServiceRemote.java
+END
+PortalConfigServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/4586/KiWi/trunk/src/action/kiwi/api/config/PortalConfigServiceLocal.java
+END

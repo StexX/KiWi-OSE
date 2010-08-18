@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-tagit2.jar/tagit2/api/category
+END
+CategoryService.class
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-tagit2.jar/tagit2/api/category/CategoryService.class
+END
+CategoryServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-tagit2.jar/tagit2/api/category/CategoryServiceRemote.class
+END
+PointWithCategoryFacade.class
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-tagit2.jar/tagit2/api/category/PointWithCategoryFacade.class
+END
+PointOfSubcategoryFacade.class
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-tagit2.jar/tagit2/api/category/PointOfSubcategoryFacade.class
+END
+CategoryServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-tagit2.jar/tagit2/api/category/CategoryServiceLocal.class
+END

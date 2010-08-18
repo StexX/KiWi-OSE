@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/kiwi/!svn/ver/5166/KiWi/trunk/src/action/kiwi/api/triplestore
+END
+TripleStorePersister.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/triplestore/TripleStorePersister.java
+END
+TripleStorePersisterLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/3570/KiWi/trunk/src/action/kiwi/api/triplestore/TripleStorePersisterLocal.java
+END
+TripleStoreRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/triplestore/TripleStoreRemote.java
+END
+TripleStoreLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/triplestore/TripleStoreLocal.java
+END
+TripleStoreUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/triplestore/TripleStoreUtil.java
+END
+TripleStorePersisterRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/3570/KiWi/trunk/src/action/kiwi/api/triplestore/TripleStorePersisterRemote.java
+END
+TripleStore.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5166/KiWi/trunk/src/action/kiwi/api/triplestore/TripleStore.java
+END

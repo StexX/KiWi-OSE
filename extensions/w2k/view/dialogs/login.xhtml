@@ -1,0 +1,43 @@
+<rich:modalPanel
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+   	  xmlns:rich="http://richfaces.org/rich"
+ 	  xmlns:a4j="http://richfaces.org/a4j"
+      id="loginPanel" width="350" height="200">
+
+
+        <f:facet name="header">
+            <h:panelGroup>
+                <h:outputText value="Login"></h:outputText>
+            </h:panelGroup>
+        </f:facet>
+        <f:facet name="controls">
+            <h:panelGroup>
+                <h:graphicImage value="/images/modal/close.png" style="cursor:pointer" id="login_hidelink"/>
+                <rich:componentControl for="loginPanel" attachTo="login_hidelink" operation="hide" event="onclick"/>
+            </h:panelGroup>
+        </f:facet>
+        
+        <h:form>
+	        <h:panelGrid columns="2" rowClasses="prop" columnClasses="name,value">
+	            <h:outputLabel for="username">Username</h:outputLabel>
+	            <h:inputText id="username" 
+	                      value="#{credentials.username}"/>
+	            <h:outputLabel for="password">Password</h:outputLabel>
+	            <h:inputSecret id="password" 
+	                        value="#{credentials.password}"/>
+	            <h:outputLabel for="rememberMe">Remember me</h:outputLabel>
+	            <h:selectBooleanCheckbox id="rememberMe" 
+	                                  value="#{rememberMe.enabled}"/>
+	        </h:panelGrid>
+	
+	        <div class="actionButtons">
+	            <h:commandButton value="Login" id="btnLoginSubmit" action="#{identity.login}"/>
+	            <h:commandButton value="Abort" id="btnLoginAbort"/>
+                <rich:componentControl for="loginPanel" attachTo="btnLoginAbort" operation="hide" event="onclick"/>
+	        </div>
+		</h:form>
+</rich:modalPanel>

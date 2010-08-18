@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/kiwi/!svn/ver/3122/KiWi/trunk/resources/tinymce
+END
+kiwiPlugins.properties
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/kiwi/!svn/ver/3122/KiWi/trunk/resources/tinymce/kiwiPlugins.properties
+END
+sentidoPlugin.properties
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/kiwi/!svn/ver/1808/KiWi/trunk/resources/tinymce/sentidoPlugin.properties
+END
+tinymce-full.properties
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/kiwi/!svn/ver/3122/KiWi/trunk/resources/tinymce/tinymce-full.properties
+END
+kiwilinkPlugin.properties
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/resources/tinymce/kiwilinkPlugin.properties
+END
+omeditPlugin.properties
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/kiwi/!svn/ver/1808/KiWi/trunk/resources/tinymce/omeditPlugin.properties
+END
+kiwibookmarkPlugin.properties
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/resources/tinymce/kiwibookmarkPlugin.properties
+END
+tinymce-small.properties
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/kiwi/!svn/ver/2557/KiWi/trunk/resources/tinymce/tinymce-small.properties
+END
+queryWizardPlugin.properties
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/2303/KiWi/trunk/resources/tinymce/queryWizardPlugin.properties
+END
+tinymce-swim.properties
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/kiwi/!svn/ver/2557/KiWi/trunk/resources/tinymce/tinymce-swim.properties
+END
+tinymce-ieeval.properties
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/kiwi/!svn/ver/2230/KiWi/trunk/resources/tinymce/tinymce-ieeval.properties
+END
+kiwiPlugins-swim.properties
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/kiwi/!svn/ver/2002/KiWi/trunk/resources/tinymce/kiwiPlugins-swim.properties
+END
+annotationPlugin.properties
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/resources/tinymce/annotationPlugin.properties
+END

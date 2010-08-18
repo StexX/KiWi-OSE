@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/4443/KiWi/trunk/extensions/interedu/src/interedu/api/dataimport
+END
+InterEduKategorieFacade.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/extensions/interedu/src/interedu/api/dataimport/InterEduKategorieFacade.java
+END
+InterEduImportServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/extensions/interedu/src/interedu/api/dataimport/InterEduImportServiceRemote.java
+END
+ParseArtikelService.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/1975/KiWi/trunk/extensions/interedu/src/interedu/api/dataimport/ParseArtikelService.java
+END
+DokumentArtResolver.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/4443/KiWi/trunk/extensions/interedu/src/interedu/api/dataimport/DokumentArtResolver.java
+END
+InterEduImportService.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/2320/KiWi/trunk/extensions/interedu/src/interedu/api/dataimport/InterEduImportService.java
+END
+InterEduImportServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/extensions/interedu/src/interedu/api/dataimport/InterEduImportServiceLocal.java
+END

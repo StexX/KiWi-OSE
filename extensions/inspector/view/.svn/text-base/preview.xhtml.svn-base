@@ -1,0 +1,114 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+		    	xmlns:a4j="http://richfaces.org/a4j"
+		    	template="layout/template.xhtml">
+
+<ui:define name="body">
+
+	<h1>KiWi Inspector - Current Revision Updates</h1>
+	
+	<hr />
+
+	<script src="styles.js" type="text/javascript">
+    </script>
+	<style type="text/css">
+.info{
+    /*position:relative; this is the key*/
+    /*z-index:24;*/
+    text-decoration:none}
+
+.info:hover{/*z-index:25;*/}
+
+.info span.text{display: none}
+
+.info:hover span.text{ /*the span will display just on :hover state*/
+    display:block;
+    position:absolute;
+    top:2px; right:2px;
+    width:140px;
+    border-style:double;
+    background-color:#ffffff; color:#000;
+    text-align:center;
+    padding: 20px;
+    </style>
+    
+	    <h:form id="formWikiPreview">
+   
+		    <ui:repeat var="revision" value="#{revisions}">
+				<script type="text/javascript">createRevisionStyle('#{revision.id}','#{revision.colour}')</script>
+		<!-- //		<script type="text/javascript">//createRevisionStyle('#{revision.id}','#{revision.colour}')</script>  -->
+			</ui:repeat>
+			
+			<s:div>
+				<h:commandLink action="#{kiwi.action.inspector.viewRevisionsAction.end}" value="Back to revision list" style="padding-right:30px;"/>
+		    </s:div>
+	    </h:form>
+	    <h:panelGrid columns="2" columnClasses="name,inspector-value">
+		    <strong>Title:</strong>
+		    <s:div>
+				<h:outputText value="#{kiwi.action.inspector.previewAction.title}" />
+		    </s:div>
+		    <strong>Author:</strong>
+		    <s:div>
+		    	<h:outputText value="#{kiwi.action.inspector.previewAction.author}" />
+	    	</s:div>
+		    <s:div rendered="#{! empty kiwi.action.inspector.previewAction.previewContentHtml}">
+		    	<strong>TextContent:</strong>
+		    </s:div>
+		    <s:div id="previewText" rendered="#{! empty kiwi.action.inspector.previewAction.previewContentHtml}">
+		        <f:verbatim escape="#{false}">#{kiwi.action.inspector.previewAction.previewContentHtml}</f:verbatim>
+		    </s:div>
+		    <s:div rendered="#{! empty kiwi.action.inspector.previewAction.metadataUpdate.addedTriples}">
+		    	<strong>Metadata - Added Triples</strong>
+		    </s:div>
+		    <s:div id="previewAddedTriples" rendered="#{! empty kiwi.action.inspector.previewAction.metadataUpdate.addedTriples}">
+		    	<ui:repeat value="#{kiwi.action.inspector.previewAction.metadataUpdate.addedTriples}" var="triple">
+		    	    <h:outputText value="#{triple.toRDFXML()}" /><br/>
+		    	</ui:repeat>
+		    </s:div>
+		    <s:div rendered="#{! empty kiwi.action.inspector.previewAction.metadataUpdate.removedTriples}">
+		    	<strong>Metadata - Removed Triples</strong>
+		    </s:div>
+		    <s:div id="previewRemovedTriples" rendered="#{! empty kiwi.action.inspector.previewAction.metadataUpdate.removedTriples}">
+		    	<ui:repeat value="#{kiwi.action.inspector.previewAction.metadataUpdate.removedTriples}" var="triple">
+		    	    <h:outputText value="#{triple.toRDFXML()}" /><br/>
+		    	</ui:repeat>
+		    </s:div>
+		    <s:div rendered="#{! empty kiwi.action.inspector.previewAction.taggingUpdate.addedTags}">
+		    	<strong>Added Tags</strong>
+		    </s:div>
+		    <s:div  id="previewAddedTags" rendered="#{! empty kiwi.action.inspector.previewAction.taggingUpdate.addedTags}">
+		    	<ui:repeat value="#{kiwi.action.inspector.previewAction.taggingUpdate.addedTags}" var="tag">
+		    	    <h:outputText value="#{tag.taggingResource.title}"/><br/>
+		    	</ui:repeat>
+		    </s:div>
+		    <s:div rendered="#{! empty kiwi.action.inspector.previewAction.taggingUpdate.removedTags}">
+		    	<strong>Removed Tags</strong>
+		    </s:div>
+		    <s:div  id="previewRemovedTags" rendered="#{! empty kiwi.action.inspector.previewAction.taggingUpdate.removedTags}">
+		    	<ui:repeat value="#{kiwi.action.inspector.previewAction.taggingUpdate.removedTags}" var="tag">
+		    	    <h:outputText value="#{tag.taggingResource.title}"/><br/>
+		    	</ui:repeat>
+		    </s:div>
+		    <s:div rendered="#{! empty kiwi.action.inspector.previewAction.renamingUpdate}">
+		    	<strong>Renaming</strong>
+		    </s:div>
+		    <s:div id="previewRenaming">
+		        <h:outputText rendered="#{! empty kiwi.action.inspector.previewAction.renamingUpdate}" value="Changed title to #{kiwi.action.inspector.previewAction.renamingUpdate.title}"/>
+		    </s:div>
+		    <s:div rendered="#{! empty kiwi.action.inspector.previewAction.deletionUpdate}">
+		    	<strong>Deletion</strong>
+		    </s:div>
+		    <s:div id="previewDeleted">
+		    	<h:outputText rendered="#{! empty kiwi.action.inspector.previewAction.deletionUpdate}" value="Changed deleted flag to #{kiwi.action.inspector.previewAction.deletionUpdate.deleted}"/>
+		    </s:div>
+	    </h:panelGrid>
+    </ui:define>
+    
+</ui:composition>

@@ -1,0 +1,71 @@
+10
+
+dir
+5558
+https://svn.salzburgresearch.at/svn/kiwi/KiWi/trunk/extensions/artaround/src/artaround/datamodel
+https://svn.salzburgresearch.at/svn/kiwi
+
+
+
+2010-08-04T12:16:13.299553Z
+5503
+rsint
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+df910b12-e4fe-467b-9c3d-147a02c1fe00
+
+ArtAroundUserFacade.java
+file
+
+
+
+
+2010-08-17T20:18:51.000000Z
+3b015f1a52b0feeaab6a407a1387158c
+2010-08-04T12:16:13.299553Z
+5503
+rsint
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4658
+
+artwork
+dir
+
+donationRecipient
+dir
+
+events
+dir
+

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/kiwi/!svn/ver/4576/KiWi/trunk/src/action/kiwi/extension
+END
+CheckSetupFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/extension/CheckSetupFilter.java
+END
+DescriptorFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/4412/KiWi/trunk/src/action/kiwi/extension/DescriptorFactory.java
+END
+KiWiResourceServlet.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/extension/KiWiResourceServlet.java
+END
+PropertiesLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/2054/KiWi/trunk/src/action/kiwi/extension/PropertiesLoader.java
+END
+KiWiPages.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/kiwi/!svn/ver/4576/KiWi/trunk/src/action/kiwi/extension/KiWiPages.java
+END
+KiWiResourceResolver.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/extension/KiWiResourceResolver.java
+END
+ExtensionLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/2054/KiWi/trunk/src/action/kiwi/extension/ExtensionLoader.java
+END

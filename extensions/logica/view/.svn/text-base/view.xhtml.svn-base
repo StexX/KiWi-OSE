@@ -1,0 +1,33 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+		    	xmlns:a4j="http://richfaces.org/a4j"
+		    	>
+		    	
+
+	<div style="float: right">(<s:link view="/createpdf.xhtml">pdf</s:link>)</div>
+   	<h1>#{currentContentItem.title}</h1>
+   	
+   	<s:div rendered="#{currentContentItem.mediaContent != null}" style="width: 100%; margin: 10px; text-align: center">
+    	<center>
+	    	<s:graphicImage style="padding: 3px; border: 1px solid black;"
+	    					value="#{currentContentItem.mediaContent.data}" 
+	    	                fileName="#{currentContentItem.mediaContent.fileName}"/>
+    	</center>
+    </s:div>
+   	
+   
+    <s:div>
+    	<f:verbatim>#{formRisk.currentContentHtml}</f:verbatim>
+    </s:div>
+    
+    <s:div>
+    	<ui:include src="#{formRisk.htmlRef}"/>
+    </s:div>
+   
+</ui:composition>

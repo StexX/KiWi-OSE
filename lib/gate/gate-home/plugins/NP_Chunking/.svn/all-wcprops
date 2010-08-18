@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/kiwi/!svn/ver/2940/KiWi/trunk/lib/gate/gate-home/plugins/NP_Chunking
+END
+chunker.bat
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/2940/KiWi/trunk/lib/gate/gate-home/plugins/NP_Chunking/chunker.bat
+END
+HISTORY
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/2940/KiWi/trunk/lib/gate/gate-home/plugins/NP_Chunking/HISTORY
+END
+sample_input
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/2940/KiWi/trunk/lib/gate/gate-home/plugins/NP_Chunking/sample_input
+END
+pos_tag_dict
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/2940/KiWi/trunk/lib/gate/gate-home/plugins/NP_Chunking/pos_tag_dict
+END
+Chunker.jar
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/2940/KiWi/trunk/lib/gate/gate-home/plugins/NP_Chunking/Chunker.jar
+END
+rules
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/kiwi/!svn/ver/2940/KiWi/trunk/lib/gate/gate-home/plugins/NP_Chunking/rules
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/2940/KiWi/trunk/lib/gate/gate-home/plugins/NP_Chunking/build.xml
+END
+chunker.sh
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/2940/KiWi/trunk/lib/gate/gate-home/plugins/NP_Chunking/chunker.sh
+END
+creole.xml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/2940/KiWi/trunk/lib/gate/gate-home/plugins/NP_Chunking/creole.xml
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/2940/KiWi/trunk/lib/gate/gate-home/plugins/NP_Chunking/COPYING
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/kiwi/!svn/ver/2940/KiWi/trunk/lib/gate/gate-home/plugins/NP_Chunking/README
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/importexport/importer/ikewiki
+END
+RXRReader.class
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/importexport/importer/ikewiki/RXRReader.class
+END
+RXRReader$TripleIterator.class
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/importexport/importer/ikewiki/RXRReader$TripleIterator.class
+END
+transform-html.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/importexport/importer/ikewiki/transform-html.xsl
+END

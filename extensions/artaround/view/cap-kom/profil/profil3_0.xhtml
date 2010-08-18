@@ -1,0 +1,129 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                             	
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+			 	xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                template="../layout/template-profil.xhtml">
+                	  
+	 <ui:define name="navigation">
+		<ui:include src="../layout/menuLoggedIn.xhtml" />
+	 </ui:define>
+
+	 <ui:define name="body">
+          
+			<!-- begin: Profil: -->
+			<div id="editProfil">
+				<div class="subcolumns">
+					<div class="c33l">
+						<div class="subcl">
+							<table>
+								<tr>
+									<td>
+										<div id="bildKuenstler" class="capKomBorderProfil">
+											<img src="../images/antoniaProfil.png" title="Antonia Schlick" 
+															alt="Antonia Schlick" />
+										</div>
+									</td>
+									<td valign="top">
+										<div id="buttonUpload">
+						  					<a href="#" title="Foto hochladen" onClick="javascript:openPanel2();">
+						  						<!-- Profil (sichtbar nach Login) -->
+												<img src="../images/icons/meinBildHochladen75px.gif" 
+													title="#{messages['artaround.cap-kom.einfacheSprache.FotoHochladen']}" 
+													alt="#{messages['artaround.cap-kom.einfacheSprache.FotoHochladen']}"/>
+												<div class="simpleText">
+													#{messages['artaround.cap-kom.einfacheSprache.FotoHochladen']}
+												</div>									
+											</a>
+										</div>
+									</td>						
+								</tr>				
+							</table>
+						</div>
+					</div>
+					<div class="c66r">
+						<div class="subcr">
+							<table>
+								<tr>
+									<td>
+										#{messages['artaround.cap-kom.einfacheSprache.Name']}
+									</td>
+									<td>
+										<input type="text" size="50" class="capKomBorderProfil" 
+											value="Antonia Schlick"></input>
+									</td>
+								</tr>
+								<tr>	
+									<td>
+										#{messages['artaround.cap-kom.einfacheSprache.Alter']}
+									</td>
+									<td>
+										<select class="capKomBorderProfil">
+											<option>...</option>
+											<option>6</option>
+											<option>7</option>
+											<option>8</option>
+											<option>9</option>
+											<option>10</option>
+											<option>11</option>
+											<option>12</option>
+											<option>13</option>
+											<option selected="selected">25</option>
+										</select>
+									</td>												
+								</tr>	
+								<tr>
+									<td>
+										#{messages['artaround.cap-kom.einfacheSprache.Wohnort']}
+									</td>
+									<td>
+										<input type="text" size="50" class="capKomBorderProfil" value="Salzburg"></input>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										#{messages['artaround.cap-kom.einfacheSprache.Hobbies']}
+									</td>
+									<td>
+										<textarea rows="5" cols="50" class="capKomBorderProfil">
+											malen, klettern
+										</textarea>
+									</td>
+								</tr>													
+							</table>	
+						</div>
+					</div>
+				</div>			
+			</div>
+			<!-- end: Profil -->
+			<!-- begin: buttons -->
+			<div id="navButtons">
+		    	<div class="hlist">
+		  			<ul>
+		  				<li class="button">
+		  					<a href="#" onClick="JavaScript:submitOkForm();" title="Speichern">
+		  						<!-- Profil (sichtbar nach Login) -->
+								<img src="../images/icons/speichern75px.gif" 
+									title="#{messages['artaround.cap-kom.einfacheSprache.speichern']}" 
+									alt="#{messages['artaround.cap-kom.einfacheSprache.speichern']}"/>
+								<div class="simpleText">
+									#{messages['artaround.cap-kom.einfacheSprache.speichern']}
+								</div>									
+							</a>
+		  				</li>			
+					</ul>
+				</div>
+			</div>
+			<!-- end: buttons -->			
+			
+	 </ui:define>   
+	 
+</ui:composition>	 

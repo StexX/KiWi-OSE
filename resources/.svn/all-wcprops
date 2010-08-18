@@ -1,0 +1,161 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/kiwi/!svn/ver/5554/KiWi/trunk/resources
+END
+ideator.properties
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/kiwi/!svn/ver/5269/KiWi/trunk/resources/ideator.properties
+END
+messages_fr.properties
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/resources/messages_fr.properties
+END
+seam.properties
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/resources/seam.properties
+END
+kiwiOrange.properties
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/resources/kiwiOrange.properties
+END
+messages_en.properties
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/resources/messages_en.properties
+END
+KiWi-dev-ds.tmpl.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/kiwi/!svn/ver/2872/KiWi/trunk/resources/KiWi-dev-ds.tmpl.xml
+END
+messages_bg.properties
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/resources/messages_bg.properties
+END
+import-dev-words.sql
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/resources/import-dev-words.sql
+END
+emeraldTown.properties
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/resources/emeraldTown.properties
+END
+components.properties
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/resources/components.properties
+END
+import-dev.sql
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/resources/import-dev.sql
+END
+messages_de.properties
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/kiwi/!svn/ver/5470/KiWi/trunk/resources/messages_de.properties
+END
+KiWi-test-ds.xml.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/kiwi/!svn/ver/3785/KiWi/trunk/resources/KiWi-test-ds.xml.tmpl
+END
+kiwiGreen.properties
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/resources/kiwiGreen.properties
+END
+classic.properties
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/resources/classic.properties
+END
+messages_tr.properties
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/resources/messages_tr.properties
+END
+security.drl
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/resources/security.drl
+END
+seam-gen.reveng.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/resources/seam-gen.reveng.xml
+END
+KiWi-prod-ds.xml.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/resources/KiWi-prod-ds.xml.tmpl
+END
+KiWi-destinations-service.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/kiwi/!svn/ver/3075/KiWi/trunk/resources/KiWi-destinations-service.xml
+END
+KiWi-dev-ds.xml.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/resources/KiWi-dev-ds.xml.tmpl
+END
+components-test.properties
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/resources/components-test.properties
+END
+import-test.sql
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/resources/import-test.sql
+END
+blueSky.properties
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/resources/blueSky.properties
+END
+.gpd.createuser.jpdl.xml
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/resources/.gpd.createuser.jpdl.xml
+END
+import-prod.sql
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/resources/import-prod.sql
+END

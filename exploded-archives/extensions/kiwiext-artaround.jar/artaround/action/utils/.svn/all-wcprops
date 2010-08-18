@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-artaround.jar/artaround/action/utils
+END
+ImageScaleService.class
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-artaround.jar/artaround/action/utils/ImageScaleService.class
+END
+PropertiesReader.class
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-artaround.jar/artaround/action/utils/PropertiesReader.class
+END
+FileService.class
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-artaround.jar/artaround/action/utils/FileService.class
+END
+LastSubmittedComparator.class
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-artaround.jar/artaround/action/utils/LastSubmittedComparator.class
+END
+ArtAroundUtils.class
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-artaround.jar/artaround/action/utils/ArtAroundUtils.class
+END
+ImageScaleService$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-artaround.jar/artaround/action/utils/ImageScaleService$1.class
+END
+LastModifiedComparator.class
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-artaround.jar/artaround/action/utils/LastModifiedComparator.class
+END

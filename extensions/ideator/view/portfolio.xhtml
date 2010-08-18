@@ -1,0 +1,174 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+			 	xmlns:c="http://java.sun.com/jstl/core"
+                template="layout/template_1col.xhtml">
+
+<ui:define name="html_head">
+	<link href="js/lib/jquery/jquery-ui.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="js/lib/jquery/jquery-ui.js" />
+	<script type="text/javascript" src="js/lib/flot/jquery.flot.js"></script>
+    <script type="text/javascript" src="js/lib/flot/jquery.flot.debug.js"></script>
+    <script type="text/javascript" src="js/lib/flot/jquery.flot.highlighter.js"></script>
+    <script type="text/javascript" src="js/lib/flot/jquery.flot.navigate.js"></script>
+    <script type="text/javascript" src="js/lib/flot/jquery.flot.bubbles.js"></script>
+    <script type="text/javascript" src="js/portfolio.js"></script>
+	
+	<!-- for tests delete this later -->
+	<script type="text/javascript">
+	/* <![CDATA[ */
+	function getTestValues() {
+    return [ {
+                color: 'navy',
+                title: "Idee 1",
+                cid : 1,
+                clickable: true,
+                data: [[90, 80, 6]],
+                author: 'tom',
+                created: new Date()
+            },{
+                color: 'pink',
+                title: "Idee 2",
+                cid : 2,
+                clickable: true,
+                data: [[80, 10, 10]],
+                author: 'wastl',
+                created: new Date()
+            },{
+                color: 'red',
+                title: "Idee 3",
+                cid : 3,
+                clickable: true,
+                data: [[10, 10, 25]],
+                author: 'steffi',
+                created: new Date()
+            },{
+                color: 'green',
+                title: "Idee 4",
+                cid : 4,
+                clickable: true,
+                data: [[20, 30, 15]],
+                author: 'mihai',
+                created: new Date()
+            },{
+                color: 'blue',
+                title: "Idee 5",
+                cid : 5,
+                clickable: true,
+                data: [[10, 70, 5]],
+                author: 'rolf',
+                created: new Date()
+            }]
+
+}
+
+function print(id) {
+    var idea;
+
+    for( var i=0; i<ideas.length; i++ ) {
+        if(ideas[i].cid == id) {
+            idea = ideas[i];
+            break;
+        }
+    }
+    
+    for( var i=0; i<hiddenIdeas.length; i++ ) {
+        if(hiddenIdeas[i].cid == id) {
+            idea = hiddenIdeas[i];
+            break;
+        }
+    }
+    
+    if(idea != null) {
+        //TODO load idea from server
+        jQuery('#singleview').html('<h3 style="color:'+idea.color+';">'+idea.title+'</h2>');
+    } else {
+        jQuery('#singleview').text('Select an Idea');
+    }
+}
+	/* ]]> */
+	</script>
+	
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		jQuery(document).ready(function() {
+   			 getData();
+		});
+		/* ]]> */
+	</script>
+</ui:define>
+              
+<ui:define name="main_header">
+ 	<h2>Portfolio</h2>
+</ui:define>
+
+<ui:define name="main_content">
+		<div class="line_box" id="portfolio" style="width:950px;overflow:auto;position:relative;margin-left:-475px;left:50%;margin-bottom:10px;padding-bottom:10px;margin-top:10px;">
+            <h2 style="margin-left:10px;">Configuration</h2>
+            <div id="configuration" style="width:900px;border: 2px solid #555;position:relative;left:25px;background-color:white;">
+                <h:form>
+                <table width="100%">
+                    <tr>
+                    <td>X - Axis</td>
+                    <td>Y - Axis</td>
+                    <td>Radius</td>
+                    <td style="color:gray;">Number</td>
+                    <td>Bubblesize</td>
+                    <td width="80px"><a href="#" onclick="setlegend();">legend</a></td>
+                    <td width="110px"><a href="#" onclick="fill=true;legend=true;getData();">reset</a></td>
+                    </tr>
+                    <tr>
+                    <td>
+                    	<h:selectOneMenu value="#{ideator.portfolio.xaxis}" onchange="getData();">
+                    		<s:selectItems value="#{ideator.portfolio.axes}" var="xaxis" label="#{xaxis.title}" itemValue="#{xaxis.title}"/>
+                    	</h:selectOneMenu>
+                    </td>
+                    <td>
+                        <h:selectOneMenu value="#{ideator.portfolio.yaxis}" onchange="getData();">
+                    		<s:selectItems value="#{ideator.portfolio.axes}" var="yaxis" label="#{yaxis.title}" itemValue="#{yaxis.title}"/>
+                    	</h:selectOneMenu>
+                    </td>
+                    <td>
+                        <h:selectOneMenu value="#{ideator.portfolio.zaxis}" onchange="getData();">
+                    		<s:selectItems value="#{ideator.portfolio.axes}" var="zaxis" label="#{zaxis.title}" itemValue="#{zaxis.title}"/>
+                    	</h:selectOneMenu>
+                    </td>
+                    <td>
+                        <select>
+                        	<option>1</option>
+                            <option>not in use</option>
+                        </select>
+                    </td>
+                    <td>
+                        <a href="#" onclick="minusBubbleSize()">-</a>
+                        <a href="#" onclick="plusBubbleSize()">+</a>
+                    </td>
+                    <td width="80px"><a href="#" onclick="unfill();">(un)fill</a></td>
+                    <td width="110px"><s:link value="reload" view="/ideator/portfolio.xhtml" /></td>
+                    </tr>
+                </table>
+                <a:jsFunction name="getData" data="#{ideator.portfolio.values}" oncomplete="setData(data)"/>
+                </h:form>
+            </div>
+            <h2 style="margin-left:10px;">Portfolio</h2>
+            <div id="plot">
+                <div id="placeholder" style="width:600px;height:300px;float:left;"></div>
+                <div id="legend" style="width:305px;height:255px;padding:5px;position:relative;top:5px;left:10px;overflow:auto;border: 2px solid #555555;"></div>
+                <div style="clear:left;"></div>
+            </div>
+            <h2 style="margin-left:10px;">Idea</h2>
+            <div id="singleview" style="width:890px;border: 2px solid #555;position:relative;left:25px;padding:5px;background-color:white;">
+                Select an Idea
+            </div>
+        </div>
+
+</ui:define>
+
+</ui:composition>

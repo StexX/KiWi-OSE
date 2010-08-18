@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/kiwi/!svn/ver/5166/KiWi/trunk/src/model/kiwi/util
+END
+KiWiStringUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/kiwi/!svn/ver/5166/KiWi/trunk/src/model/kiwi/util/KiWiStringUtils.java
+END
+MD5.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/kiwi/!svn/ver/3302/KiWi/trunk/src/model/kiwi/util/MD5.java
+END
+ConcurrentHashSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/kiwi/!svn/ver/3225/KiWi/trunk/src/model/kiwi/util/ConcurrentHashSet.java
+END
+KiWiXomUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/kiwi/!svn/ver/4228/KiWi/trunk/src/model/kiwi/util/KiWiXomUtils.java
+END
+KiWiFormatUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/kiwi/!svn/ver/3742/KiWi/trunk/src/model/kiwi/util/KiWiFormatUtils.java
+END
+KiWiCollections.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/model/kiwi/util/KiWiCollections.java
+END

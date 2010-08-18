@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/kiwi/!svn/ver/5555/KiWi/trunk/izpack
+END
+Readme.txt
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/kiwi/!svn/ver/5529/KiWi/trunk/izpack/Readme.txt
+END
+Licence.txt
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/kiwi/!svn/ver/5529/KiWi/trunk/izpack/Licence.txt
+END
+userInputSpec.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/kiwi/!svn/ver/5537/KiWi/trunk/izpack/userInputSpec.xml
+END
+install-definition.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/kiwi/!svn/ver/5555/KiWi/trunk/izpack/install-definition.xml
+END

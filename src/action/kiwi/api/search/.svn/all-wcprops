@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/kiwi/!svn/ver/4978/KiWi/trunk/src/action/kiwi/api/search
+END
+SemanticIndexingService.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/search/SemanticIndexingService.java
+END
+KiWiSearchResults.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/4928/KiWi/trunk/src/action/kiwi/api/search/KiWiSearchResults.java
+END
+PersonalizedSearchService.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/3054/KiWi/trunk/src/action/kiwi/api/search/PersonalizedSearchService.java
+END
+SemanticIndexingServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/2305/KiWi/trunk/src/action/kiwi/api/search/SemanticIndexingServiceLocal.java
+END
+SolrServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/1922/KiWi/trunk/src/action/kiwi/api/search/SolrServiceRemote.java
+END
+SolrServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/1922/KiWi/trunk/src/action/kiwi/api/search/SolrServiceLocal.java
+END
+KiWiSearchCriteria.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/3512/KiWi/trunk/src/action/kiwi/api/search/KiWiSearchCriteria.java
+END
+SemanticIndexingServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/2305/KiWi/trunk/src/action/kiwi/api/search/SemanticIndexingServiceRemote.java
+END
+SolrService.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/kiwi/!svn/ver/4978/KiWi/trunk/src/action/kiwi/api/search/SolrService.java
+END

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5460/KiWi/trunk/extensions/ideator/src/ideator/action/evaluation
+END
+Criteria.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5290/KiWi/trunk/extensions/ideator/src/ideator/action/evaluation/Criteria.java
+END
+Paragraph.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5290/KiWi/trunk/extensions/ideator/src/ideator/action/evaluation/Paragraph.java
+END
+Rating.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5011/KiWi/trunk/extensions/ideator/src/ideator/action/evaluation/Rating.java
+END
+Evaluation.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5290/KiWi/trunk/extensions/ideator/src/ideator/action/evaluation/Evaluation.java
+END
+EvaluationResource.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/5460/KiWi/trunk/extensions/ideator/src/ideator/action/evaluation/EvaluationResource.java
+END
+EvaluationAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5423/KiWi/trunk/extensions/ideator/src/ideator/action/evaluation/EvaluationAction.java
+END
+XMLEvaluationService.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5460/KiWi/trunk/extensions/ideator/src/ideator/action/evaluation/XMLEvaluationService.java
+END

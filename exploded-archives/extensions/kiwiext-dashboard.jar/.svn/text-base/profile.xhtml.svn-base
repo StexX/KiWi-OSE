@@ -1,0 +1,114 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a="http://richfaces.org/a4j"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+	template="/layout/template-2col.xhtml">
+
+	<ui:define name="header">
+		<a:loadScript src="resource://jquery.js" />
+		<link href="stylesheet/dashboard.css" rel="stylesheet" type="text/css" />
+
+		<ui:include src="/wiki/dialogs/mediaupload.xhtml" />
+	</ui:define>
+
+	<ui:define name="navigation">
+		<ui:include src="layout/navigation.xhtml" />
+	</ui:define>
+
+	<ui:define name="body">
+        <h:form id="formUserProfile">
+            <div class="actionmenu" >
+                <div class="actionmenu-label">
+                    <s:link action="/dashboard/profile_edit.xhtml" value="#{messages['profile.edit']}"/>
+                </div>
+            </div>
+
+
+            <h3>#{messages['profile.label.general']}</h3>
+            <div id="profileGeneral" class="profileSection">
+            
+		        <kiwi:mediaContent contentItem="#{kiwi.dashboard.profileAction.profilePhoto}" 
+	                    edit="false"
+	                    style="position: absolute; left: 700px; padding: 3px; margin:4px;border:solid 1px #ccc;">
+	                <ui:define name="nomedia">
+	                    <h:outputText value="No image" />
+	                </ui:define>
+	                <s:transformImageSize 
+	                    maintainRatio="true"
+	                    width="80"/>
+	            </kiwi:mediaContent>
+                
+            	            
+                <h:panelGrid columns="2" columnClasses="label,value">
+                    <h:outputText value="#{messages['profile.label.name']}: "/>
+                    <h:panelGroup>
+                        <h:outputText value="#{kiwi.dashboard.profileAction.firstName} " />
+                        <h:outputText value="#{kiwi.dashboard.profileAction.lastName}" />
+                    </h:panelGroup>
+                
+                    <h:outputText value="#{messages['profile.label.gender']}: "/>
+                    <h:outputText value="#{kiwi.dashboard.profileAction.gender}" />
+                    
+                    <h:outputText value="#{messages['profile.label.birthday']}: "/>
+                    <h:outputText value="#{kiwi.dashboard.profileAction.birthday}">
+                       <s:convertDateTime pattern="dd. MMMM yyyy"/>
+                    </h:outputText>
+                    
+                    <h:outputText value="#{messages['profile.label.street']}: " rendered="#{!empty kiwi.dashboard.profileAction.street}"/>
+                    <h:outputText value="#{kiwi.dashboard.profileAction.street}" rendered="#{!empty kiwi.dashboard.profileAction.street}"/>
+                    
+                    <h:outputText value="#{messages['profile.label.city']}: "/>
+                    <h:outputText value="#{kiwi.dashboard.profileAction.cityName}"/>
+                </h:panelGrid>
+            </div>
+
+            <h3>#{messages['profile.label.personal']}</h3>
+            <div id="profileDescription" class="profileSection">
+                <h:panelGrid columns="1">
+                    <strong><h:outputText value="#{messages['profile.label.interests']}:"/></strong>
+                       <rich:panel bodyClass="rich-laguna-panel-no-header">
+                       <h:outputText value="#{kiwi.dashboard.profileAction.interests}"/>
+                       </rich:panel>
+                    
+                    <strong><h:outputText value="#{messages['profile.label.about']}:"/></strong>
+                    <rich:panel bodyClass="rich-laguna-panel-no-header">
+                    <h:outputText value="#{kiwi.dashboard.profileAction.description}"/>
+                    </rich:panel>	                    
+                
+                </h:panelGrid>
+            </div>
+            
+            <h3>Contact</h3>
+            <div id="profileContact" class="profileSection">
+                <h:panelGrid columns="2" columnClasses="label,value">
+                    <h:outputText value="E-Mail: "/>
+                    <h:outputText value="#{kiwi.dashboard.profileAction.email}"/>
+
+                    <h:outputText value="Mobile: "/>
+                    <h:outputText value="#{kiwi.dashboard.profileAction.mobile}"/>
+
+                    <h:outputText value="Phone: "/>
+                    <h:outputText value="#{kiwi.dashboard.profileAction.phone}"/>
+
+                    <h:outputText value="Skype: "/>
+                    <h:outputText value="#{kiwi.dashboard.profileAction.skypeAccount}"/>
+
+                    <h:outputText value="Facebook: "/>
+                    <h:outputText value="#{kiwi.dashboard.profileAction.facebookAccount}"/>
+
+                    <h:outputText value="Twitter: "/>
+                    <h:outputText value="#{kiwi.dashboard.profileAction.twitterAccount}"/>
+
+                </h:panelGrid>
+            </div>
+
+        </h:form>
+	</ui:define>
+</ui:composition>

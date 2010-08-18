@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/kiwi/!svn/ver/3506/KiWi/trunk/extensions/interedu/view/panels
+END
+relArtsPanel.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/2882/KiWi/trunk/extensions/interedu/view/panels/relArtsPanel.xhtml
+END
+editKatPanel.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/2882/KiWi/trunk/extensions/interedu/view/panels/editKatPanel.xhtml
+END
+editTagsPanel.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/3506/KiWi/trunk/extensions/interedu/view/panels/editTagsPanel.xhtml
+END
+removeLinkPanel.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/2882/KiWi/trunk/extensions/interedu/view/panels/removeLinkPanel.xhtml
+END
+multiTaggingPanel.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/2882/KiWi/trunk/extensions/interedu/view/panels/multiTaggingPanel.xhtml
+END
+addLinkPanel.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/2882/KiWi/trunk/extensions/interedu/view/panels/addLinkPanel.xhtml
+END

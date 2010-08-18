@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/kiwi/!svn/ver/5492/KiWi/trunk/src/model/kiwi/model/cluster
+END
+TagCluster.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/kiwi/!svn/ver/5492/KiWi/trunk/src/model/kiwi/model/cluster/TagCluster.java
+END
+SpectralClusteringModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5492/KiWi/trunk/src/model/kiwi/model/cluster/SpectralClusteringModel.java
+END
+SpectralClusterBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5483/KiWi/trunk/src/model/kiwi/model/cluster/SpectralClusterBean.java
+END

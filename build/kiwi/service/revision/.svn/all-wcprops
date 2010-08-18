@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/revision
+END
+RenameContentItemServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/revision/RenameContentItemServiceImpl.class
+END
+UpdateMediaContentServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/revision/UpdateMediaContentServiceImpl.class
+END
+UpdateRulesServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/revision/UpdateRulesServiceImpl.class
+END
+UpdateConfigurationServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/revision/UpdateConfigurationServiceImpl.class
+END
+UpdateTaggingServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/revision/UpdateTaggingServiceImpl.class
+END
+RevisionServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/revision/RevisionServiceImpl.class
+END
+LCS.class
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/revision/LCS.class
+END
+UpdateMetadataServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/revision/UpdateMetadataServiceImpl.class
+END
+UpdateTextContentServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/revision/UpdateTextContentServiceImpl.class
+END
+CIVersionServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/revision/CIVersionServiceImpl.class
+END
+DeleteContentItemServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/revision/DeleteContentItemServiceImpl.class
+END

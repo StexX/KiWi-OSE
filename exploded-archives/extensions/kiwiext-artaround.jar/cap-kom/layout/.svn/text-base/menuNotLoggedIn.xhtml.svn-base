@@ -1,0 +1,36 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">		
+
+	    	<ul>
+				<li class="loginCol menubutton">
+					<a href="#{facesContext.externalContext.requestContextPath}/artaround/cap-kom/login/login2_1.seam" title="#{messages['artaround.cap-kom.einfacheSprache.mitmachen']}">
+  					<!-- login/logout button: -->
+  					<img src="#{facesContext.externalContext.requestContextPath}/artaround/cap-kom/images/icons/login.gif" 
+						title="#{messages['artaround.cap-kom.einfacheSprache.mitmachen']}" 
+						alt="#{messages['artaround.cap-kom.einfacheSprache.mitmachen']}" 
+						width="150" height="150"/>
+					<div class="simpleText">
+						#{messages['artaround.cap-kom.einfacheSprache.mitmachen']}
+					</div>
+				</a>
+				</li>
+				<li class="gallCol menubutton">
+					<a href="#{facesContext.externalContext.requestContextPath}/artaround/cap-kom/kunstwerke/kunstwerke4_0.seam" title="#{messages['artaround.cap-kom.einfacheSprache.Kunstwerke']}">
+  					<!-- Kunstwerke -->
+  					<img src="#{facesContext.externalContext.requestContextPath}/artaround/cap-kom/images/icons/kunstwerke.gif" 
+						title="#{messages['artaround.cap-kom.einfacheSprache.Kunstwerke']}" 
+						alt="#{messages['artaround.cap-kom.einfacheSprache.Kunstwerke']}" 
+						width="150" height="150"/>
+					<div class="simpleText">
+						#{messages['artaround.cap-kom.einfacheSprache.Kunstwerke']}
+					</div>							
+				</a>				
+				</li>
+			</ul>
+			
+</ui:composition>

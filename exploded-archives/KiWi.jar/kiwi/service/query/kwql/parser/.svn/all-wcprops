@@ -1,0 +1,857 @@
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser
+END
+KWQLBody$expanded_resource_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$expanded_resource_return.class
+END
+KWQLHead$conjunction_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLHead$conjunction_return.class
+END
+KWQL_KWQLBody$atomar_value_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$atomar_value_return.class
+END
+KWQL$boolean_query_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL$boolean_query_return.class
+END
+KWQLHead$atomar_value_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLHead$atomar_value_return.class
+END
+KWQLHead$c_qualifier_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLHead$c_qualifier_return.class
+END
+KWQL_KWQLBody$DFA13.class
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$DFA13.class
+END
+KWQL_KWQLBody$connective_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$connective_return.class
+END
+KWQL_KWQLBody$opt_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$opt_return.class
+END
+KWQL_KWQLBody$DFA17.class
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$DFA17.class
+END
+KWQL$global_body_helper_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL$global_body_helper_return.class
+END
+KWQL$DFA13.class
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL$DFA13.class
+END
+KWQLBody$DFA12.class
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$DFA12.class
+END
+KWQL_KWQLHead$c_resource_content_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLHead$c_resource_content_return.class
+END
+KWQL_KWQLBody$unbound_contentterm_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$unbound_contentterm_return.class
+END
+KWQLBody$DFA16.class
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$DFA16.class
+END
+KWQLBody.class
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody.class
+END
+KWQLHead$c_resource_term_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLHead$c_resource_term_return.class
+END
+KWQLBody$valueterm_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$valueterm_return.class
+END
+KWQL$ci_body_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL$ci_body_return.class
+END
+KWQLBody$optional_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$optional_return.class
+END
+KWQL_KWQLHead$q_c_qualifier_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLHead$q_c_qualifier_return.class
+END
+KWQL_KWQLBody$DFA3.class
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$DFA3.class
+END
+KWQL_KWQLBody$DFA20.class
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$DFA20.class
+END
+KWQL_KWQLBody$DFA7.class
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$DFA7.class
+END
+KWQL_KWQLBody$non_ci_resource_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$non_ci_resource_return.class
+END
+KWQL$conjunctive_connectives_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL$conjunctive_connectives_return.class
+END
+KWQL_KWQLHead$q_c_resource_term_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLHead$q_c_resource_term_return.class
+END
+KWQLBody$ci_resource_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$ci_resource_return.class
+END
+KWQLBody$unbound_complex_contentterm_helper_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$unbound_complex_contentterm_helper_return.class
+END
+KWQLBody$DFA23.class
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$DFA23.class
+END
+KWQLBody$connectives_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$connectives_return.class
+END
+KWQL$complex_boolean_query_helper_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL$complex_boolean_query_helper_return.class
+END
+KWQL_KWQLBody$subquery_term_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$subquery_term_return.class
+END
+KWQL_KWQLBody$non_ci_resourceterm_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$non_ci_resourceterm_return.class
+END
+KWQL_KWQLBody$res_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$res_return.class
+END
+KWQL_KWQLBody$resource_term_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$resource_term_return.class
+END
+KWQLHead$q_cvalue_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLHead$q_cvalue_return.class
+END
+KWQLBody$ci_resourceterm_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$ci_resourceterm_return.class
+END
+KWQL_KWQLBody$DFA10.class
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$DFA10.class
+END
+KWQL_KWQLBody$complex_contentterm_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$complex_contentterm_return.class
+END
+KWQL_KWQLBody$expanded_resource_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$expanded_resource_return.class
+END
+KWQL_KWQLHead$conjunction_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLHead$conjunction_return.class
+END
+KWQLBody$atomar_value_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$atomar_value_return.class
+END
+KWQLexer$DFA20.class
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLexer$DFA20.class
+END
+KWQL$DFA10.class
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL$DFA10.class
+END
+KWQLHead$c_resource_content_helper_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLHead$c_resource_content_helper_return.class
+END
+KWQL_KWQLBody$DFA18.class
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$DFA18.class
+END
+KWQLBody$contentterm_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$contentterm_return.class
+END
+KWQLBody$DFA13.class
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$DFA13.class
+END
+KWQLBody$connective_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$connective_return.class
+END
+KWQL_KWQLHead$c_qualifier_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLHead$c_qualifier_return.class
+END
+KWQL.class
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL.class
+END
+KWQL$DFA18.class
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL$DFA18.class
+END
+KWQLBody$DFA17.class
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$DFA17.class
+END
+KWQL_KWQLBody$body_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$body_return.class
+END
+KWQLBody$DFA1.class
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$DFA1.class
+END
+KWQLHead$c_resource_content_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLHead$c_resource_content_return.class
+END
+KWQL$DFA3.class
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL$DFA3.class
+END
+KWQL_KWQLHead$c_resource_term_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLHead$c_resource_term_return.class
+END
+KWQL_KWQLBody$valueterm_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$valueterm_return.class
+END
+KWQLBody$DFA20.class
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$DFA20.class
+END
+KWQL$ci_query_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL$ci_query_return.class
+END
+KWQLBody$complex_qualifierterm_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$complex_qualifierterm_return.class
+END
+KWQLexer.class
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLexer.class
+END
+KWQL_KWQLBody$unbound_contentterm_helper_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$unbound_contentterm_helper_return.class
+END
+KWQL_KWQLBody$ci_resource_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$ci_resource_return.class
+END
+KWQL_KWQLBody$connectives_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$connectives_return.class
+END
+KWQLBody$unbound_complex_contentterm_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$unbound_complex_contentterm_return.class
+END
+KWQLBody$qualifierterm_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$qualifierterm_return.class
+END
+KWQL_KWQLHead$q_c_resource_content_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLHead$q_c_resource_content_return.class
+END
+KWQLBody$complex_valueterm_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$complex_valueterm_return.class
+END
+KWQL_KWQLBody$DFA11.class
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$DFA11.class
+END
+KWQL_KWQLBody$resource_term_helper_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$resource_term_helper_return.class
+END
+KWQL_KWQLHead$cvalue_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLHead$cvalue_return.class
+END
+KWQL_KWQLBody$ci_resourceterm_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$ci_resourceterm_return.class
+END
+KWQL_KWQLHead.class
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLHead.class
+END
+KWQLBody$DFA10.class
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$DFA10.class
+END
+KWQL_KWQLBody$DFA19.class
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$DFA19.class
+END
+KWQL$DFA19.class
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL$DFA19.class
+END
+KWQL_KWQLHead$head_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLHead$head_return.class
+END
+KWQLBody$DFA18.class
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$DFA18.class
+END
+KWQL_KWQLHead$c_resource_content_helper_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLHead$c_resource_content_helper_return.class
+END
+KWQL_KWQLBody$contentterm_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$contentterm_return.class
+END
+KWQL$ci_query_helper_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL$ci_query_helper_return.class
+END
+KWQL$global_body_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL$global_body_return.class
+END
+KWQL$kwqlrule_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL$kwqlrule_return.class
+END
+KWQL$helper_bool_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL$helper_bool_return.class
+END
+KWQL$DFA4.class
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL$DFA4.class
+END
+KWQLBody$DFA6.class
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$DFA6.class
+END
+KWQLBody$body_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$body_return.class
+END
+KWQL_KWQLBody$DFA1.class
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$DFA1.class
+END
+KWQL_KWQLBody$complex_contentterm_helper_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$complex_contentterm_helper_return.class
+END
+KWQL$selection_query_helper_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL$selection_query_helper_return.class
+END
+KWQL_KWQLBody$DFA22.class
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$DFA22.class
+END
+KWQL_KWQLHead$resource_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLHead$resource_return.class
+END
+KWQL_KWQLBody$DFA9.class
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$DFA9.class
+END
+KWQL$unique_ci_query_helper_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL$unique_ci_query_helper_return.class
+END
+KWQL_KWQLBody$complex_qualifierterm_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$complex_qualifierterm_return.class
+END
+KWQLBody$unbound_contentterm_helper_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$unbound_contentterm_helper_return.class
+END
+KWQL_KWQLBody$unbound_complex_contentterm_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$unbound_complex_contentterm_return.class
+END
+KWQLBody$opt_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$opt_return.class
+END
+KWQL_KWQLBody$qualifierterm_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$qualifierterm_return.class
+END
+KWQL_KWQLBody$DFA12.class
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$DFA12.class
+END
+KWQLBody$unbound_contentterm_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$unbound_contentterm_return.class
+END
+KWQLHead$q_c_resource_content_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLHead$q_c_resource_content_return.class
+END
+KWQL_KWQLBody$DFA16.class
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$DFA16.class
+END
+KWQL_KWQLBody.class
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody.class
+END
+KWQL$DFA12.class
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL$DFA12.class
+END
+KWQLBody$DFA11.class
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$DFA11.class
+END
+KWQLBody$resource_term_helper_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$resource_term_helper_return.class
+END
+KWQLHead$cvalue_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLHead$cvalue_return.class
+END
+KWQL_KWQLBody$complex_valueterm_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$complex_valueterm_return.class
+END
+KWQLHead.class
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLHead.class
+END
+KWQLBody$DFA19.class
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$DFA19.class
+END
+KWQLHead$q_c_qualifier_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLHead$q_c_qualifier_return.class
+END
+KWQL_KWQLBody$optional_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$optional_return.class
+END
+KWQL$DFA1.class
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL$DFA1.class
+END
+KWQL$unique_ci_query_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL$unique_ci_query_return.class
+END
+KWQLBody$DFA3.class
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$DFA3.class
+END
+KWQLHead$head_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLHead$head_return.class
+END
+KWQL$DFA5.class
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL$DFA5.class
+END
+KWQLBody$DFA7.class
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$DFA7.class
+END
+KWQLBody$non_ci_resource_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$non_ci_resource_return.class
+END
+KWQL_KWQLBody$DFA2.class
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$DFA2.class
+END
+KWQL$selection_query_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL$selection_query_return.class
+END
+KWQLHead$q_c_resource_term_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLHead$q_c_resource_term_return.class
+END
+KWQL_KWQLBody$DFA6.class
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$DFA6.class
+END
+KWQL_KWQLBody$unbound_complex_contentterm_helper_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$unbound_complex_contentterm_helper_return.class
+END
+KWQLBody$complex_contentterm_helper_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$complex_contentterm_helper_return.class
+END
+KWQL_KWQLBody$DFA23.class
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLBody$DFA23.class
+END
+KWQLBody$DFA22.class
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$DFA22.class
+END
+KWQLHead$resource_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLHead$resource_return.class
+END
+KWQLexer$DFA37.class
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLexer$DFA37.class
+END
+KWQLBody$subquery_term_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$subquery_term_return.class
+END
+KWQLBody$non_ci_resourceterm_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$non_ci_resourceterm_return.class
+END
+KWQL$complex_boolean_query_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL$complex_boolean_query_return.class
+END
+KWQLBody$res_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$res_return.class
+END
+KWQLBody$resource_term_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$resource_term_return.class
+END
+KWQL_KWQLHead$q_cvalue_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQL_KWQLHead$q_cvalue_return.class
+END
+KWQLBody$complex_contentterm_return.class
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLBody$complex_contentterm_return.class
+END
+KWQLexer$DFA6.class
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kwql/parser/KWQLexer$DFA6.class
+END

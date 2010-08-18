@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/informationextraction
+END
+TermRecognitionService$TermGroupScore.class
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/informationextraction/TermRecognitionService$TermGroupScore.class
+END
+Extractlet.class
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/informationextraction/Extractlet.class
+END
+KiWiGATEService.class
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/informationextraction/KiWiGATEService.class
+END
+FeatureStoreServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/informationextraction/FeatureStoreServiceLocal.class
+END
+LabelService.class
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/informationextraction/LabelService.class
+END
+TermRecognitionServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/informationextraction/TermRecognitionServiceLocal.class
+END
+InformationExtractionService.class
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/informationextraction/InformationExtractionService.class
+END
+InformationExtractionServiceRemove.class
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/informationextraction/InformationExtractionServiceRemove.class
+END
+TermRecognitionService$Term.class
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/informationextraction/TermRecognitionService$Term.class
+END
+InformationExtractionService$Task.class
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/informationextraction/InformationExtractionService$Task.class
+END
+LabelServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/informationextraction/LabelServiceRemote.class
+END
+InformationExtractionServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/informationextraction/InformationExtractionServiceLocal.class
+END
+FeatureStoreService.class
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/informationextraction/FeatureStoreService.class
+END
+LabelServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/informationextraction/LabelServiceLocal.class
+END
+TermRecognitionService.class
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/informationextraction/TermRecognitionService.class
+END
+InstanceExtractor.class
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/informationextraction/InstanceExtractor.class
+END
+KiWiGATEServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/api/informationextraction/KiWiGATEServiceLocal.class
+END

@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/src/test/kiwi/test/service/importer
+END
+FrontPage.xml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/1886/KiWi/trunk/src/test/kiwi/test/service/importer/FrontPage.xml
+END
+feed.atom
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/kiwi/!svn/ver/1878/KiWi/trunk/src/test/kiwi/test/service/importer/feed.atom
+END
+feed.rss
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/kiwi/!svn/ver/1878/KiWi/trunk/src/test/kiwi/test/service/importer/feed.rss
+END
+ImportExportServiceTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/src/test/kiwi/test/service/importer/ImportExportServiceTest.java
+END
+FlickrImporterTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/4198/KiWi/trunk/src/test/kiwi/test/service/importer/FlickrImporterTest.java
+END
+KurierRSSImporterTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/test/kiwi/test/service/importer/KurierRSSImporterTest.java
+END
+flickr.rss
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/2123/KiWi/trunk/src/test/kiwi/test/service/importer/flickr.rss
+END
+test_xmlliteral.rdf
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/3055/KiWi/trunk/src/test/kiwi/test/service/importer/test_xmlliteral.rdf
+END
+reuters.atom
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/3673/KiWi/trunk/src/test/kiwi/test/service/importer/reuters.atom
+END
+SNImporterTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/4198/KiWi/trunk/src/test/kiwi/test/service/importer/SNImporterTest.java
+END
+kurier.rss
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/1962/KiWi/trunk/src/test/kiwi/test/service/importer/kurier.rss
+END
+ImporterTests.xml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/3805/KiWi/trunk/src/test/kiwi/test/service/importer/ImporterTests.xml
+END
+RDFImporterTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/test/kiwi/test/service/importer/RDFImporterTest.java
+END
+IkeWikiImporterTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/4998/KiWi/trunk/src/test/kiwi/test/service/importer/IkeWikiImporterTest.java
+END
+RSSImporterTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/src/test/kiwi/test/service/importer/RSSImporterTest.java
+END

@@ -1,0 +1,18 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+    <head>
+        <title>Facebook Test</title>
+    </head>
+
+    <body>
+		<script
+			src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php/en_US"
+			type="text/javascript"></script>
+			
+			
+		<fb:login-button></fb:login-button>
+		
+		<script type="text/javascript">  
+		  FB.init("190a903512661358a6e73b787aaa2a85", "fbconnect/xd_receiver.htm"); 
+		</script>
+    </body>
+</html>

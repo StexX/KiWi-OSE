@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<evaluation>
+	<paragraph title="Neuigkeitswert">
+		<criteria title="Wie stark ist der Impact">
+			<rating>
+				<choice value="0">
+					Ganz schlecht
+				</choice>
+				<choice value="50">
+					Besser
+				</choice>
+				<choice value="100">
+					Hervorragend
+				</choice>
+			</rating>
+			<comment />
+		</criteria>
+		<criteria title="Billiger als andere?">
+			<rating>
+				<choice value="80">
+					Ja
+				</choice>
+				<choice value="20">
+					Nein
+				</choice>
+			</rating>
+		</criteria>
+	</paragraph>
+	<paragraph title="Kosten">
+		<criteria title="Sind die Kosten ueberschaubar">
+			<rating>
+				<choice value="0">
+					Niemals
+				</choice>
+				<choice value="50">
+					so lala
+				</choice>
+				<choice value="100">
+					Ja
+				</choice>
+			</rating>
+		</criteria>
+		<criteria title="Wieviel wird das kosten?">
+			<rating>
+				<choice value="0">
+					ca 1.000.000
+				</choice>
+				<choice value="10">
+					10.000
+				</choice>
+				<choice value="50">
+					1.000
+				</choice>
+				<choice value="100">
+					gratis
+				</choice>
+			</rating>
+		</criteria>
+	</paragraph>
+	<paragraph title="Umsetzbarkeit">
+		<criteria title="Kann unsere Firma das leisten">
+			<rating>
+				<choice value="0">
+					Niemals
+				</choice>
+				<choice value="50">
+					Weiss nicht
+				</choice>
+				<choice value="100">
+					Ja klar
+				</choice>
+			</rating>
+		</criteria>
+		<criteria title="Passt es ins Profil">
+			<rating>
+				<choice value="100">
+					Ja
+				</choice>
+				<choice value="0">
+					Nein
+				</choice>
+			</rating>
+		</criteria>
+	</paragraph>
+</evaluation>

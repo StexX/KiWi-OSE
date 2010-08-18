@@ -1,0 +1,10 @@
+MultiPhase:	TestTheGrammars
+Phases: 
+compound_analysis
+time_date
+profession
+person
+location
+org
+number
+money

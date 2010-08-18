@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/kiwi/!svn/ver/3402/KiWi/trunk/src/action/kiwi/api/comment
+END
+CommentServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/1845/KiWi/trunk/src/action/kiwi/api/comment/CommentServiceRemote.java
+END
+CommentService.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/3402/KiWi/trunk/src/action/kiwi/api/comment/CommentService.java
+END
+CommentServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/1845/KiWi/trunk/src/action/kiwi/api/comment/CommentServiceLocal.java
+END

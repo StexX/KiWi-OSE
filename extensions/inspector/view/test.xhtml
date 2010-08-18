@@ -1,0 +1,64 @@
+<html>
+<head></head>
+<body>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:kiwi="http://www.kiwi-project.eu/kiwi/html/"
+	xmlns="http://www.w3.org/1999/xhtml">
+
+	<h2 xmlns="http://www.w3.org/1999/xhtml">3. (Semantic) Wiki
+	Functionality</h2>
+	<ul xmlns="http://www.w3.org/1999/xhtml">
+		<li>viewing pages: open the page#{' '}<a
+			href="http://localhost:8080/KiWi/home.seam?uri=http://localhost:8080/KiWi/sn/news7x24-41-15106872.xml"
+			kiwi:kind="intlink"
+			kiwi:target="uri::http://localhost:8080/KiWi/sn/news7x24-41-15106872.xml">EU-Lateinamerikagipfel
+		beendet</a> and show the various aspects that are presented: 
+		<ul>
+			<li>content</li>
+			<li>tags</li>
+			<li>incoming/outgoing references</li>
+			<li>stream of activities</li>
+			<li>recommendations</li>
+		</ul>
+		</li>
+		<li>action menu: show what can be done with a page</li>
+		<li>inspector: show how a page looks like in RDF and how tags are
+		represented#{' '}</li>
+		<li>tagging pages: add one of the recommended tags (red means
+		"free tag, does not yet exist"), a free tag ("kiwiknows"), and a skos
+		concept ("environmental politics") and show the effects in the
+		inspector</li>
+		<li>editing pages: show WYSIWYG functionality, link editor, RDFa
+		editor</li>
+		<li>rdf metadata: show that they are listed, change the title and
+		show how it updates the view</li>
+		<li>rdf relations: create a relation to another content item
+		(e.g. skos:related)  TODO: does not work yet!#{' '}</li>
+		<li>upload a media file and show how EXIF data gets added</li>
+		<li>show revisions in inspector to illustrate that everything is
+		versioned</li>
+	</ul>
+	<h2 xmlns="http://www.w3.org/1999/xhtml">4. (Semantic) Search
+	Functionality</h2>
+	<ul xmlns="http://www.w3.org/1999/xhtml">
+		#{' '}
+		<li>search for SN article (keyword "klimawandel") and refine
+		search based on tags (e.g. "weltpolitik")</li>
+		#{' '}
+		<li>search for articles with tag "flickr" and show how they are
+		rendered differently</li>
+		#{' '}
+		<li>go to admin interface and add facet properties fNumber and
+		apertureValue#{' '}</li>
+		#{' '}
+		<li>search for tag "flickr" again and demonstrate dynamic
+		facetting of search results based on RDF properties</li>
+		#{' '}
+		<li>create a new page and show how search functionality can be
+		used to dynamically create pages with tables and maps</li>
+		#{' '}
+	</ul>
+</ui:composition>
+</body>
+</html>
+

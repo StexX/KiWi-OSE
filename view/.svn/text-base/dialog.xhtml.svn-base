@@ -1,0 +1,43 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:a="http://richfaces.org/a4j"
+    xmlns:c="http://java.sun.com/jstl/core">
+	<script>
+		var hideKiwiDialogbox = function(){
+			 Richfaces.hideModalPanel('kiwiDialog');
+		}
+		var _showKiwiDialog = function(w,h){
+			hideKiwiDialogbox();
+			Richfaces.showModalPanel('kiwiDialog',{
+				width:  Math.min(w, window.innerWidth-40),
+				height: Math.min(h, window.innerHeight-20)
+			});
+		}
+	</script>
+	<a:form>
+	   	<a:jsFunction name="showKiwiDialogbox" 
+	   		data="#{popupManagerAction.dialog.dimensions}"
+	   		reRender="modalHeader,modalControls,modalBody" 
+	   		oncomplete="_showKiwiDialog(data.width,data.height)" >
+	   		<a:actionparam name="param" assignTo="#{popupManagerAction.dialogbox}"/>
+	   	</a:jsFunction>
+	</a:form>
+	<rich:modalPanel
+	    id="kiwiDialog">
+	  		<f:facet name="header">
+		    <h:panelGroup id="modalHeader"><h:outputText value="#{popupManagerAction.dialog.title}"></h:outputText></h:panelGroup>
+		</f:facet>
+		<f:facet name="controls"><h:panelGroup id="modalControls">
+		        <h:outputText value="x" styleClass="hidelink" id="hidelink">
+		        	<rich:componentControl for="kiwiDialog" attachTo="hidelink" operation="hide" event="onclick"/>
+		        </h:outputText>
+		</h:panelGroup></f:facet>
+	  		<s:div id="modalBody">
+	  			<a:region><ui:include src="#{popupManagerAction.dialog.path}" /></a:region>
+	   	</s:div>
+	</rich:modalPanel>
+</ui:composition>

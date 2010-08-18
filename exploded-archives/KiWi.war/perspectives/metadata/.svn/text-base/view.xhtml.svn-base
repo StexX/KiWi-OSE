@@ -1,0 +1,61 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+		    	xmlns:a4j="http://richfaces.org/a4j"
+                template="layout/template.xhtml">
+
+
+		<h1>RDF Metadata for #{currentContentItem.title}</h1>
+		
+		<p style="margin-top: 20px; margin-left: 10px; margin-right: 10px;" class="help">
+		  In the following, you can browse the RDF metadata (datatype and annotation properties)
+		  associated with the page '#{currentContentItem.title}'. Click on "Edit" to modify the
+		  RDF metadata directly. <em>For advanced users only!</em>
+		</p>
+		
+		<h:form id="metadataForm">
+			<rich:dataTable value="#{metadataAction.metadataSet}" var="md" 
+				onRowMouseOver="this.style.backgroundColor='#F1F1F1'"
+				onRowMouseOut="this.style.backgroundColor='#{a4jSkin.tableBackgroundColor}'"
+				rowKeyVar="row" id="metadataTable" styleClass="metadataTable">
+				<f:facet name="header">
+					<h:outputText value="Content Metadata"/>
+				</f:facet>
+		
+				<rich:column>
+					<f:facet name="header">
+						<h:outputText value="Property" />
+					</f:facet>
+					<h:outputText value="#{md.name}" />
+				</rich:column>	
+			
+				<rich:column>
+					<f:facet name="header">
+						<h:outputText value="Value" />
+					</f:facet>
+					<h:outputText value="#{md.value}"/>
+				</rich:column>	
+			
+				<rich:column>
+					<f:facet name="header">
+						<h:outputText value="Language" />
+					</f:facet>
+					<h:outputText value="#{md.language}" id="propertyLanguage" />
+				</rich:column>	
+			
+				<rich:column>
+					<f:facet name="header">
+						<h:outputText value="Type" />
+					</f:facet>
+					<h:outputText value="#{md.type}" id="propertyType" />
+				</rich:column>	
+						
+			</rich:dataTable>	
+	    </h:form> 
+</ui:composition>

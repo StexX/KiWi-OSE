@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/tagit2/util/route
+END
+ProfileService.class
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/tagit2/util/route/ProfileService.class
+END
+DistanceService.class
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/tagit2/util/route/DistanceService.class
+END
+AltitudeService.class
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/tagit2/util/route/AltitudeService.class
+END

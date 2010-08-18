@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/kiwi/!svn/ver/5452/KiWi/trunk/src/action/kiwi/api/history
+END
+HistoryServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/3644/KiWi/trunk/src/action/kiwi/api/history/HistoryServiceLocal.java
+END
+HistoryServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/3644/KiWi/trunk/src/action/kiwi/api/history/HistoryServiceRemote.java
+END
+HistoryService.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/5452/KiWi/trunk/src/action/kiwi/api/history/HistoryService.java
+END

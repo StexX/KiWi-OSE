@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/tagging
+END
+TaggingServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/tagging/TaggingServiceRemote.class
+END
+TagCloudEntry.class
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/tagging/TagCloudEntry.class
+END
+TagRecommendationServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/tagging/TagRecommendationServiceRemote.class
+END
+TagRecommendationServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/tagging/TagRecommendationServiceLocal.class
+END
+TagCloudService.class
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/tagging/TagCloudService.class
+END
+TaggingServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/tagging/TaggingServiceLocal.class
+END
+ExtendedTagCloudEntry.class
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/tagging/ExtendedTagCloudEntry.class
+END
+TagCloudServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/tagging/TagCloudServiceRemote.class
+END
+TaggingService.class
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/tagging/TaggingService.class
+END
+TagCloudServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/tagging/TagCloudServiceLocal.class
+END
+TagRecommendationService.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/tagging/TagRecommendationService.class
+END
+TagRecommendation.class
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/tagging/TagRecommendation.class
+END
+TagCloudEntry$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/tagging/TagCloudEntry$1.class
+END

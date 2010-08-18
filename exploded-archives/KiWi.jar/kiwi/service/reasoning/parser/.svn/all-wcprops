@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/reasoning/parser
+END
+SimpleCharStream.class
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/reasoning/parser/SimpleCharStream.class
+END
+SimpleKWRLProgramParser$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/reasoning/parser/SimpleKWRLProgramParser$1.class
+END
+Token.class
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/reasoning/parser/Token.class
+END
+TokenMgrError.class
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/reasoning/parser/TokenMgrError.class
+END
+SimpleKWRLProgramParser$LookaheadSuccess.class
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/reasoning/parser/SimpleKWRLProgramParser$LookaheadSuccess.class
+END
+SimpleKWRLProgramParser.class
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/reasoning/parser/SimpleKWRLProgramParser.class
+END
+ParseException.class
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/reasoning/parser/ParseException.class
+END
+SimpleKWRLProgramParser$JJCalls.class
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/reasoning/parser/SimpleKWRLProgramParser$JJCalls.class
+END
+SimpleKWRLProgramParserTokenManager.class
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/reasoning/parser/SimpleKWRLProgramParserTokenManager.class
+END
+SimpleKWRLProgramParserConstants.class
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/reasoning/parser/SimpleKWRLProgramParserConstants.class
+END

@@ -1,0 +1,71 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+		    	xmlns:a4j="http://richfaces.org/a4j"
+                template="layout/template.xhtml">
+
+    <ui:define name="content">
+
+	<script src="styles.js" type="text/javascript">
+    </script>
+	<style type="text/css">
+.info{
+    position:relative; /*this is the key*/
+    z-index:24;
+    text-decoration:none}
+
+.info:hover{/*z-index:25;*/}
+
+.info span.text{display: none}
+
+.info:hover span.text{ /*the span will display just on :hover state*/
+    display:block;
+    position:absolute;
+    top:2px; right:2px;
+    width:140px;
+    border-style:double;
+    background-color:#ffffff; color:#000;
+    text-align:center;
+    padding: 20px;
+    }
+    
+.previewActions{
+ 	border-style: none;
+ 	padding-left: 20px;
+ 	padding-right: 20px;
+ 	background-color: #fafafa;
+}
+    </style>
+    
+	    <h:form id="formWikiPreview">
+   
+		    <ui:repeat var="revision" value="#{wikiRevisions}">
+				<script type="text/javascript">createRevisionStyle('#{revision.version.versionId}','#{revision.version.colour}')</script>
+		<!-- //		<script type="text/javascript">//createRevisionStyle('#{revision.id}','#{revision.colour}')</script>  -->
+			</ui:repeat>
+		    
+			<rich:dataTable rows="2" style="border-style: none;" border="0" captionStyle="text-align: center; pagging-right: 50px; padding-left:50px; border-style: none;">
+				<f:facet name="caption">
+				<rich:columnGroup columnClasses="previewActions" rowClasses="previewActions">
+					<rich:column rowspan="2"  style="border-style: none;">
+						<h:commandLink action="#{kiwi.action.revision.viewRevisionsAction.end}" 
+							value="Back to revision list" />
+					</rich:column>
+				</rich:columnGroup>
+				</f:facet>
+	    	</rich:dataTable>
+	    	
+		    <hr/>
+		    <s:div id="preview">
+		        <h1>#{kiwi.action.revision.comparePreviewAction.title}</h1>
+		        <f:verbatim escape="#{false}">#{kiwi.action.revision.comparePreviewAction.previewComparison}</f:verbatim>
+		    </s:div>
+	    </h:form>
+    </ui:define>
+    
+</ui:composition>

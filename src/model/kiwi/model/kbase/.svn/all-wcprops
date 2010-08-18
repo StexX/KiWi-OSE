@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/kiwi/!svn/ver/5459/KiWi/trunk/src/model/kiwi/model/kbase
+END
+KiWiQueryLanguage.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/model/kiwi/model/kbase/KiWiQueryLanguage.java
+END
+KiWiLiteral.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/model/kiwi/model/kbase/KiWiLiteral.java
+END
+KiWiTriple.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/kiwi/!svn/ver/5309/KiWi/trunk/src/model/kiwi/model/kbase/KiWiTriple.java
+END
+KiWiResource.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/kiwi/!svn/ver/5459/KiWi/trunk/src/model/kiwi/model/kbase/KiWiResource.java
+END
+KiWiNamespace.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/kiwi/!svn/ver/5309/KiWi/trunk/src/model/kiwi/model/kbase/KiWiNamespace.java
+END
+KiWiAnonResource.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/model/kiwi/model/kbase/KiWiAnonResource.java
+END
+KiWiUriResource.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/5197/KiWi/trunk/src/model/kiwi/model/kbase/KiWiUriResource.java
+END
+KiWiEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/kiwi/!svn/ver/5009/KiWi/trunk/src/model/kiwi/model/kbase/KiWiEntity.java
+END
+KiWiNode.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/kiwi/!svn/ver/5309/KiWi/trunk/src/model/kiwi/model/kbase/KiWiNode.java
+END
+KiWiDataFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/model/kiwi/model/kbase/KiWiDataFormat.java
+END

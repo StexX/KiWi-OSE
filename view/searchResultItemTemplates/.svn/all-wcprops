@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/kiwi/!svn/ver/5409/KiWi/trunk/view/searchResultItemTemplates
+END
+compactsearchresultItem.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/3128/KiWi/trunk/view/searchResultItemTemplates/compactsearchresultItem.xhtml
+END
+imageresultItem.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/3128/KiWi/trunk/view/searchResultItemTemplates/imageresultItem.xhtml
+END
+DEPRECATED
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/kiwi/!svn/ver/5409/KiWi/trunk/view/searchResultItemTemplates/DEPRECATED
+END
+defaultsearchresultItem.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/4925/KiWi/trunk/view/searchResultItemTemplates/defaultsearchresultItem.xhtml
+END

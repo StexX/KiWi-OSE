@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" > 
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:s="http://jboss.com/products/seam/taglib"> 
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>KiWi Query Builder</title>
+		
+		<link rel="stylesheet" href="KQB.css" type="text/css" />
+		<s:remote include="KQBAction"/>
+		<script src="KQB.js" type="text/javascript"></script>
+		<script src="KQBNode.js" type="text/javascript"></script>
+		<script src="KQBDragDrop.js" type="text/javascript"></script>
+		<script src="KQBUtilities.js" type="text/javascript"></script>
+		<script src="KQBStrings_En.js" type="text/javascript"></script>
+		<script type="text/javascript" src="antlr3-all.js"></script> 
+		<script type="text/javascript" src="KWQLLexer.js"></script> 
+		<script type="text/javascript" src="KWQLParser.js"></script> 
+		
+		
+
+	
+    </head>     
+    <body onload="KQB.Init()">
+    
+		<noscript>
+			
+			<div style="background-color:red; color:white; margin: 10px; padding: 10px; font-size:20px; width:70%;">
+			Welcome to the KiWi Query Builder. 
+			The KQB is a DHTML application using JavaScript.
+			JavaScript is currently disabled in Your browser. 
+			To use the KQB, please enable the execution of scripts for this page
+			</div>
+			
+		</noscript>
+	
+		<ul id="menulevel1">
+	
+		<li><a href="#">Resources</a>
+			<ul class="menulevel2">
+				<li><a href="#" title="ContentItem" alt="test" onclick="KQB.NewNode(KQB.NodeType.ContentItem); return false;">content item</a></li>
+				<li><a href="#" title="Fragment" onclick="KQB.NewNode(KQB.NodeType.Fragment); return false;">fragment</a></li>
+				<li><a href="#" title="Link" onclick="KQB.NewNode(KQB.NodeType.Link); return false;">link</a></li>
+				<li><a href="#" title="Tag" onclick="KQB.NewNode(KQB.NodeType.Tag); return false;">tag</a></li>
+			</ul>
+		</li>
+	
+		<li><a href="#">Qualifiers</a>
+			<ul class="menulevel2">
+				<li><a href="#">content item<span>&raquo;</span></a>
+					<ul class="menulevel3">
+						<li><a href="#" title="Author" onclick="KQB.NewNode(KQB.NodeType.Author); return false;">author</a></li>
+						<li><a href="#" title="Child" onclick="KQB.NewNode(KQB.NodeType.Child); return false;">child</a></li>
+						<li><a href="#" title="Created" onclick="KQB.NewNode(KQB.NodeType.Created); return false;">created</a></li>
+						<li><a href="#" title="Descendant" onclick="KQB.NewNode(KQB.NodeType.Descendant); return false;">descendant</a></li>
+						<li><a href="#" title="Agree" onclick="KQB.NewNode(KQB.NodeType.Agree); return false;">agree</a></li>		
+						<li><a href="#" title="Disagree" onclick="KQB.NewNode(KQB.NodeType.Disagree); return false;">disagree</a></li>		
+						<li><a href="#" title="Fragment" onclick="KQB.NewNode(KQB.NodeType.Fragment); return false;">fragment</a></li>
+						<li><a href="#" title="LastEdited" onclick="KQB.NewNode(KQB.NodeType.LastEdited); return false;">lastEdited</a></li>
+						<li><a href="#" title="Link" onclick="KQB.NewNode(KQB.NodeType.Link); return false;">link</a></li>
+						<li><a href="#" title="NumberEdits" onclick="KQB.NewNode(KQB.NodeType.NumberEdits); return false;">numberEdits</a></li>
+						<li><a href="#" title="Tag" onclick="KQB.NewNode(KQB.NodeType.Tag); return false;">tag</a></li>
+						<li><a href="#" title="Text" onclick="KQB.NewNode(KQB.NodeType.Text); return false;">text</a></li>
+						<li><a href="#" title="Title" onclick="KQB.NewNode(KQB.NodeType.Title); return false;">title</a></li>	
+						<li><a href="#" title="URI" onclick="KQB.NewNode(KQB.NodeType.URI); return false;">URI</a></li>					
+					</ul>
+				</li>
+				<li><a href="#">fragment<span>&raquo;</span></a>
+					<ul class="menulevel3">
+						<li><a href="#" title="Author" onclick="KQB.NewNode(KQB.NodeType.Author); return false;">author</a></li>
+						<li><a href="#" title="Child" onclick="KQB.NewNode(KQB.NodeType.Child); return false;">child</a></li>
+						<li><a href="#" title="Created" onclick="KQB.NewNode(KQB.NodeType.Created); return false;">created</a></li>
+						<li><a href="#" title="Descendant" onclick="KQB.NewNode(KQB.NodeType.Descendant); return false;">descendant</a></li>
+						<li><a href="#" title="Tag" onclick="KQB.NewNode(KQB.NodeType.Tag); return false;">tag</a></li>
+						<li><a href="#" title="URI" onclick="KQB.NewNode(KQB.NodeType.URI); return false;">URI</a></li>	
+					</ul>
+				</li>
+				<li><a href="#">link<span>&raquo;</span></a>
+					<ul class="menulevel3">
+						<li><a href="#" title="AnchorText" onclick="KQB.NewNode(KQB.NodeType.AnchorText); return false;">anchor text</a></li>
+						<li><a href="#" title="Tag" onclick="KQB.NewNode(KQB.NodeType.Tag); return false;">tag</a></li>
+						<li><a href="#" title="Target" onclick="KQB.NewNode(KQB.NodeType.Target); return false;">target</a></li>
+					</ul>
+				</li>
+				<li><a href="#">tag<span>&raquo;</span></a>
+					<ul class="menulevel3">
+						<li><a href="#" title="Author" onclick="KQB.NewNode(KQB.NodeType.Author); return false;">author</a></li>
+						<li><a href="#" title="Created" onclick="KQB.NewNode(KQB.NodeType.Created); return false;">created</a></li>
+						<li><a href="#" title="Disagree" onclick="KQB.NewNode(KQB.NodeType.Disagree); return false;">disagree</a></li>	
+						<li><a href="#" title="Name" onclick="KQB.NewNode(KQB.NodeType.Name); return false;">name</a></li>
+						<li><a href="#" title="URI" onclick="KQB.NewNode(KQB.NodeType.URI); return false;">URI</a></li>	
+					</ul>
+				</li>
+			</ul>
+		</li>
+		
+
+		<li><a href="#">Operators</a>
+			<ul class="menulevel2">
+				<li><a href="#" title="AND" onclick="KQB.NewNode(KQB.NodeType.AND); return false;">AND</a></li>
+				<li><a href="#" title="OR" onclick="KQB.NewNode(KQB.NodeType.OR); return false;">OR</a></li>
+				<li><a href="#" title="NOT" onclick="KQB.NewNode(KQB.NodeType.NOT); return false;">NOT</a></li>
+				<li><a href="#" title="OPTIONAL" onclick="KQB.NewNode(KQB.NodeType.OPTIONAL); return false;">OPTIONAL</a></li>
+				<li><a href="#" title="ALL" onclick="KQB.NewNode(KQB.NodeType.ALL); return false;">ALL</a></li>
+				<li><a href="#" title="SOME" onclick="KQB.NewNode(KQB.NodeType.SOME); return false;">SOME</a></li>
+				<li><a href="#" title="COUNT" onclick="KQB.NewNode(KQB.NodeType.COUNT); return false;">COUNT</a></li>
+			</ul>
+		</li>
+		
+		<li><a href="#">Other</a>
+			<ul class="menulevel2">
+				<li><a href="#" title="Keyword" onclick="KQB.NewNode(KQB.NodeType.Keyword); return false;">Value</a></li>
+				<li><a href="#" title="Variable" onclick="KQB.NewNode(KQB.NodeType.Variable); return false;">Variable</a></li>
+				<li><a href="#" title="Binding" onclick="KQB.NewNode(KQB.NodeType.Binding); return false;">Binding</a></li>
+				<li><a href="#" title="Compound" onclick="KQB.NewNode(KQB.NodeType.Compound); return false;">Compound</a></li>
+				<li><a href="#" title="Rule" onclick="KQB.NewNode(KQB.NodeType.Rule); return false;">Rule</a></li>
+				<li><a href="#" title="SPARQL" onclick="KQB.NewNode(KQB.NodeType.SPARQL); return false;">SPARQL</a></li>
+			</ul>
+		</li>
+		
+		<li><a href="#">Examples</a>
+			<ul class="menulevel2">
+				<li><a href="#" onclick="KQB.Example(1); return false;" title="Search for wiki pages with 'KiWi' in the title and 'KWQL' somewhere in the text">Example 1</a></li>
+				<li><a href="#" onclick="KQB.Example(2); return false;" title="Search for wiki pages which are tagged 'KiWi' or have a child-page tagged 'KWQL'">Example 2</a></li>
+				<li><a href="#" onclick="KQB.Example(3);return false;" title="Search for wiki pages that contain the word 'KiWi' and do not contain the word 'KWQL'">Example 3</a></li>
+				<li><a href="#" onclick="KQB.Example(4);return false;" title="Get the number of tags that were given to wiki pages">Example 4</a></li>
+				<li><a href="#" onclick="KQB.Example(5);return false;" title="Get the number of tags that were given to wiki pages">Example 5</a></li>
+				<li><a href="#" onclick="KQB.Example(6);return false;" title="Get the number of tags that were given to wiki pages">Example 6</a></li>
+				<li><a href="#" onclick="KQB.Example(7);return false;" title="Get the number of tags that were given to wiki pages">Example 7</a></li>
+			</ul>
+		</li>
+		
+	</ul>
+		
+		<table id="toppanel" style="width:75%">
+		    <tr>
+			<td>
+			    <button onclick="KQB.Undo()">UNDO</button>
+			    <button onclick="KQB.Redo()">REDO</button>
+			</td>
+			<td style="text-align:right;">
+			    Saved Queries:
+			    <select id="KQBSavedQueriesBox" style="width:200px"></select>
+			    <button onclick="KQB.LoadSavedQuery()">Load</button>
+			    <button onclick="KQB.DeleteSavedQuery()">Delete</button>
+			    <button onclick="KQB.SaveCurrentQuery()">Save current query</button>
+			</td>
+		    </tr>
+		</table>
+		<div id="workspace"></div>
+		<div id="tooltippane"></div>
+		<div id="hintarea" style="width:75%; height:30px">
+		    <span id="hintpane"></span>
+		    <span id="resizearea"></span>
+		</div> 
+		
+		<table id="outputtable" style="clear:both;">
+			<tr>
+				<td class="left">KWQL:</td>
+				<td style="width:40%">
+				    <textarea id="outputpane" rows="5" style="width:97%"></textarea>
+				</td>
+				<td>
+				    <table>
+					<tr>
+					    <td>
+						<button onclick="var inputstring = KQB.Outputpane.value;
+						    if ( (inputstring.length == 0) || (KQB.ErrorNodes.length>0))
+						    {
+							alert ('Invalid query');
+							return;
+						    }
+						    parent.location.href = '../kwql.seam?q=' + inputstring; 
+						">Execute Query</button>
+						
+					    </td>
+					</tr>
+					<tr>
+					    <td>
+						<button onclick="KQB.Parse()">Parse Query</button>
+					    </td>
+					</tr>
+					<tr>
+					    <td>
+						<button onclick="KQB.Clear()">Clear Workspace</button>
+					    </td>
+					</tr>
+				    </table>
+				    
+				</td>
+				<td>
+				    <span id="parsererrorpane" style="color:red;"></span>				    
+				</td>
+			</tr>
+
+			
+			
+		</table><!--
+		
+		<span style="color:orange">
+						    Please note that KWQL and its grammar are not yet finished. Some of its proposed features, like
+						    text construction in rules or the SPARQL node, which are already available in visKWQL, are not
+						    yet in the grammar and can thus not yet be parsed from text
+						</span>
+		
+		
+		
+    --></body>
+</html>

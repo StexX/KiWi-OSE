@@ -1,0 +1,109 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:rich="http://richfaces.org/rich"
+    xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+    xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:a4j="http://richfaces.org/a4j">
+
+    <div id="header">
+        <!-- define a view-global queue for ajax requests -->
+        <a4j:queue/>
+
+	    <div id="logo">
+	    	<img src="#{facesContext.externalContext.requestContextPath}/img/kiwi_logo.png" alt="KiWi Logo" />
+	    </div>
+	    <div id="mainnav">
+	        <h:form id="formHdrApplications">
+		        <ul>		        	
+		              <li>
+		                  <h:commandLink action="/setup/setupUser.xhtml">
+		                  	  <c:if test="#{view.viewId == '/setup/setupUser.xhtml'}">
+		                  	      <f:attribute name="styleClass" value="active"/>
+							  </c:if>
+		                      <span class="mainnav_title">1. User</span>
+		                      <span class="mainnav_subtitle">Configure default users</span>
+		                  </h:commandLink>
+		              </li>
+		              <li>
+		                  <h:commandLink action="/setup/setupOntologies.xhtml">
+		                  	  <c:if test="#{view.viewId == '/setup/setupOntologies.xhtml'}">
+		                  	      <f:attribute name="styleClass" value="active"/>
+							  </c:if>
+		                      <span class="mainnav_title">2. Ontologies</span>
+		                      <span class="mainnav_subtitle">Load initial ontologies</span>
+		                  </h:commandLink>
+		              </li>
+		              <li>
+		                  <h:commandLink action="/setup/setupData.xhtml">
+		                  	  <c:if test="#{view.viewId == '/setup/setupData.xhtml'}">
+		                  	      <f:attribute name="styleClass" value="active"/>
+							  </c:if>
+		                      <span class="mainnav_title">3. Content</span>
+		                      <span class="mainnav_subtitle">Load initial content</span>
+		                  </h:commandLink>
+		              </li>
+		        </ul>   
+	        </h:form>
+	    </div>
+	    <div id="searchbox">
+	    </div>
+    </div>
+
+    <div id="navbar">
+        <h:form id="formHdrNavigation">
+            <a4j:queue/>
+		    <div id="user">
+	            <h:outputText value="#{messages['hdr.welcome']}, #{currentUser.firstName} #{currentUser.lastName}!"
+	                       rendered="#{identity.loggedIn}" />
+<!-- 	                       
+	            <div id="status">
+                    <a4j:region>
+                        <a4j:push interval="1000" eventProducer="#{kiwi.core.statusService.addListener}" reRender="statusIndicator,statusTooltip" id="push"/>
+                    </a4j:region>
+                    <a4j:outputPanel id="statusIndicator">
+                        <h:graphicImage  
+                            url="#{facesContext.externalContext.requestContextPath}/img/status-running.gif" 
+                            title="#{kiwi.core.statusService.systemStatus.size()} tasks currently in progress (click for more information)..." 
+                            rendered="#{not kiwi.core.statusService.systemStatus.isEmpty()}">
+                        </h:graphicImage>
+                        <h:graphicImage  
+                            url="#{facesContext.externalContext.requestContextPath}/img/status-stopped.gif" 
+                            title="currently no background tasks (click for more information)" 
+                            rendered="#{kiwi.core.statusService.systemStatus.isEmpty()}">
+                        </h:graphicImage>
+                    </a4j:outputPanel>
+                    <rich:toolTip for="statusIndicator"
+                                  id="statusTooltip"
+                                  mode="ajax"
+                                  showEvent="onclick" 
+                                  direction="bottom-left" 
+                                  styleClass="tooltip" 
+                                  layout="block">
+			            <f:facet name="defaultContent">
+			                <strong>Please wait...</strong>
+			            </f:facet>
+                        <s:div rendered="#{not kiwi.core.statusService.systemStatus.isEmpty()}">
+	                        <ul>
+	                            <ui:repeat var="status" value="#{kiwi.core.statusService.systemStatus}">
+	                                <li><h:outputText value="#{status.name} is running " /> 
+	                                    <s:span rendered="#{status.hasProgress()}">(<h:outputText value="#{status.progress}%"/>)</s:span>
+	                                    <s:span> <br/>(<h:outputText value="#{status.message}"/>)</s:span>
+	                                </li>
+	                            </ui:repeat>                            
+	                        </ul>
+                        </s:div>
+                        <s:div rendered="#{kiwi.core.statusService.systemStatus.isEmpty()}">
+                            <p>there are currently no active background tasks ...</p>
+                        </s:div>
+                    </rich:toolTip>
+	            </div>
+	            -->
+		    </div>
+	    </h:form>
+    </div>
+	
+</ui:composition>

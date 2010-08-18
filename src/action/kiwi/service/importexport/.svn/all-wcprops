@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/kiwi/!svn/ver/5557/KiWi/trunk/src/action/kiwi/service/importexport
+END
+ImportServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5557/KiWi/trunk/src/action/kiwi/service/importexport/ImportServiceImpl.java
+END
+KiWiImportException.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/service/importexport/KiWiImportException.java
+END
+ImportScheduleController.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/3180/KiWi/trunk/src/action/kiwi/service/importexport/ImportScheduleController.java
+END
+ImportScheduleProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5557/KiWi/trunk/src/action/kiwi/service/importexport/ImportScheduleProcessor.java
+END
+ExportServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5000/KiWi/trunk/src/action/kiwi/service/importexport/ExportServiceImpl.java
+END

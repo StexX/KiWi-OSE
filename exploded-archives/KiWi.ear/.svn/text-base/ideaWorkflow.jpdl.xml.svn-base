@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pageflow-definition name="Idea-manage">
+
+	<start-state name="start">
+		<transition name="beantragen" to="bearbeiten"/>
+	</start-state>
+	
+	<task-node name ="bearbeiten">
+		<task name ="antrag" description="#{ideator.ideaBean.title}">
+			<assignment pooled-actors="admins"/>
+		</task>
+		<transition name="annehmen" to="angenommen" />
+		<transition name="ablehnen" to="abgelehnt" />
+	</task-node>
+	
+	<end-state name = "angenommen"/>
+	<end-state name = "abgelehnt"/>
+	
+</pageflow-definition>

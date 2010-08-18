@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/user
+END
+RegisterAction$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/user/RegisterAction$1.class
+END
+UsersWithPermissions.class
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/user/UsersWithPermissions.class
+END
+FacebookLoginAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/user/FacebookLoginAction.class
+END
+RegisterAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/user/RegisterAction.class
+END
+FoafSslLoginServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/user/FoafSslLoginServiceImpl.class
+END
+GroupsWithPermissions.class
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/user/GroupsWithPermissions.class
+END
+AssignRoleAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/user/AssignRoleAction.class
+END
+GrantTypePermissionAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/user/GrantTypePermissionAction.class
+END
+LoginAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/user/LoginAction.class
+END
+UsersWithRoles.class
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/user/UsersWithRoles.class
+END
+GrantPermissionAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/user/GrantPermissionAction.class
+END
+GroupsWithRoles.class
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/user/GroupsWithRoles.class
+END
+AdminSetupAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/user/AdminSetupAction.class
+END
+TypesWithPermissions.class
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/user/TypesWithPermissions.class
+END

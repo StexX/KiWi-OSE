@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/revision
+END
+RenameContentItemServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/revision/RenameContentItemServiceImpl.class
+END
+UpdateMediaContentServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/revision/UpdateMediaContentServiceImpl.class
+END
+UpdateRulesServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/revision/UpdateRulesServiceImpl.class
+END
+UpdateConfigurationServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/revision/UpdateConfigurationServiceImpl.class
+END
+UpdateTaggingServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/revision/UpdateTaggingServiceImpl.class
+END
+RevisionServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/revision/RevisionServiceImpl.class
+END
+LCS.class
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/revision/LCS.class
+END
+UpdateMetadataServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/revision/UpdateMetadataServiceImpl.class
+END
+UpdateTextContentServiceImpl$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/revision/UpdateTextContentServiceImpl$1.class
+END
+UpdateTextContentServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/revision/UpdateTextContentServiceImpl.class
+END
+CIVersionServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/revision/CIVersionServiceImpl.class
+END
+DeleteContentItemServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/revision/DeleteContentItemServiceImpl.class
+END

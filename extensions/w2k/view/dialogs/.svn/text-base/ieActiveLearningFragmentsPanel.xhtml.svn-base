@@ -1,0 +1,65 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a="http://richfaces.org/a4j"
+	xmlns:kiwi="http://www.kiwi-project.eu/jsf">
+
+	<s:div rendered="#{ie.activeLearningFragments.isFragmentTag}">
+		<rich:togglePanel id="activeLearningFragments" switchType="ajax"
+			stateOrder="closed,open">
+			<f:facet name="closed">
+				<rich:toggleControl>
+					<h2>Fragment Suggestions</h2>
+				</rich:toggleControl>
+			</f:facet>
+	
+			<f:facet name="open">
+				
+				<f:subview id="suggestions">
+				
+					<rich:toggleControl>
+						<h2>Fragment Suggestions</h2>
+					</rich:toggleControl>
+		
+					<p><h:commandButton value="Re-initiaze" action="#{ie.activeLearningFragments.init}"/> <h:commandButton value="Recompute" action="#{ie.activeLearningFragments.compute}"/> </p>
+		
+					<ul>
+						<ui:repeat var="suggestion" value="#{ie.activeLearningFragments.suggestions}">
+							<li><h:outputText value="#{suggestion.instance.context.leftContext}"/>
+							<b><h:outputText value="#{suggestion.instance.context.inContext}"/></b>
+							<h:outputText value="#{suggestion.instance.context.rightContext}"/> 
+							
+							<h:commandButton action="#{ie.activeLearningFragments.acceptSuggestion(suggestion)}" value="Accept"/>
+							<h:commandButton action="#{ie.activeLearningFragments.rejectSuggestion(suggestion)}" value="Reject"/>
+							
+							</li>
+						</ui:repeat>
+					</ul>
+					
+					<p>Positive</p>
+					<ul>
+						<ui:repeat var="x" value="#{ie.activeLearningFragments.positiveExamples}">
+							<li><h:outputText value="#{x.instance.context.leftContext}"/>
+							<b><h:outputText value="#{x.instance.context.inContext}"/></b>
+							<h:outputText value="#{x.instance.context.rightContext}"/> </li>
+						</ui:repeat>
+					</ul>
+					
+					<p>Negative</p>
+					<ul>
+						<ui:repeat var="x" value="#{ie.activeLearningFragments.negativeExamples}">
+							<li><h:outputText value="#{x.instance.context.leftContext}"/>
+							<b><h:outputText value="#{x.instance.context.inContext}"/></b>
+							<h:outputText value="#{x.instance.context.rightContext}"/> </li>
+						</ui:repeat>
+					</ul>
+				
+				</f:subview>
+			</f:facet>
+		</rich:togglePanel>
+	</s:div>
+</ui:composition>

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/ideator/action/evaluation
+END
+EvaluationResource.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/ideator/action/evaluation/EvaluationResource.class
+END
+Evaluation.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/ideator/action/evaluation/Evaluation.class
+END
+Rating.class
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/ideator/action/evaluation/Rating.class
+END
+Paragraph.class
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/ideator/action/evaluation/Paragraph.class
+END
+Criteria.class
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/ideator/action/evaluation/Criteria.class
+END
+EvaluationAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/ideator/action/evaluation/EvaluationAction.class
+END
+XMLEvaluationService.class
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/ideator/action/evaluation/XMLEvaluationService.class
+END

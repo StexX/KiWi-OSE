@@ -1,0 +1,110 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                             	
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+			 	xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                template="../layout/template-profil.xhtml">
+                	  
+	 <ui:define name="navigation">
+		<ui:include src="../layout/menuLoggedIn.xhtml" />
+	 </ui:define>
+
+	 <ui:define name="body">
+          
+			<!-- begin: Liste mit Freunden: -->
+			<div class="capKomBorderProfil">
+				<table>
+					<tr>
+						<td class="newUserPic">
+							<img src="../images/cotransfarb.png" title="Christian Osterrieder-Schlick" alt="Christian Osterrieder-Schlick" />
+						</td>
+						<td class="newUserDaten">
+							Christian Osterrieder-Schlick<br/>
+							wohnhaft in Salzburg<br/><br/>
+							Hobbies: malen, programmieren
+						</td>
+					</tr>
+				</table>
+				<div id="navButtons" style="margin-left:10px">
+			    	<div class="hlist">
+			  			<ul>
+			  				<li class="button">
+			  					<a href="#" title="#{messages['artaround.cap-kom.einfacheSprache.FreundschaftBeenden']}">
+									<img src="../images/icons/75px.gif" 
+										title="#{messages['artaround.cap-kom.einfacheSprache.FreundschaftBeenden']}" 
+										alt="#{messages['artaround.cap-kom.einfacheSprache.FreundschaftBeenden']}" />
+									<div class="simpleText">
+										#{messages['artaround.cap-kom.einfacheSprache.FreundschaftBeenden']}
+									</div>	
+								</a>
+			  				</li>
+							<li class="button">
+								<a href="../kunstwerke/kunstwerke4_0.html" 
+									title="#{messages['artaround.cap-kom.einfacheSprache.KunstwerkeVon']} Christian Osterrieder-Schlick">
+									<img src="../images/icons/meineKunstwerke75px.gif" 
+										title="#{messages['artaround.cap-kom.einfacheSprache.KunstwerkeVon']} Christian Osterrieder-Schlick" 
+										alt="#{messages['artaround.cap-kom.einfacheSprache.KunstwerkeVon']} Christian Osterrieder-Schlick" />
+									<div class="simpleText">
+										#{messages['artaround.cap-kom.einfacheSprache.Kunstwerke']}
+									</div>	
+								</a>											
+							</li>
+						</ul>
+					</div>
+				</div>					
+			</div>
+			<div style="clear:both;"/>	
+			<!-- end: Liste mit Freunden -->
+			<!-- begin: buttons -->
+			<div id="navButtons">
+		    	<div class="hlist">
+		  			<ul>
+		  				<li class="button">
+		  					<a href="./profil3_1.seam" title="#{messages['artaround.cap-kom.einfacheSprache.zurueckBlaettern']}">
+		  						<!-- Profil (sichtbar nach Login) -->
+								<img src="../images/icons/zurueck75px.gif" 
+									title="#{messages['artaround.cap-kom.einfacheSprache.zurueckBlaettern']}" 
+									alt="#{messages['artaround.cap-kom.einfacheSprache.zurueckBlaettern']}"/>
+								<div class="simpleText">
+									#{messages['artaround.cap-kom.einfacheSprache.zurueckBlaettern']}
+								</div>									
+							</a>
+		  				</li>
+						<li class="button">
+							<a href="./profil3_2.seam" title="#{messages['artaround.cap-kom.einfacheSprache.FreundeSuchen']}">
+		  						<!-- Profil (sichtbar nach Login) -->
+								<img src="../images/icons/freundeSuchen75px.gif" 
+									title="#{messages['artaround.cap-kom.einfacheSprache.FreundeSuchen']}" 
+									alt="#{messages['artaround.cap-kom.einfacheSprache.FreundeSuchen']}"/>
+								<div class="simpleText">
+									#{messages['artaround.cap-kom.einfacheSprache.FreundeSuchen']}
+								</div>									
+							</a>
+						</li>
+						<li class="button">
+							<a href="./profil3_1.seam" title="#{messages['artaround.cap-kom.einfacheSprache.weiterBlaettern']}">
+		  						<!-- Profil (sichtbar nach Login) -->
+								<img src="../images/icons/weiter75px.gif" 
+									title="#{messages['artaround.cap-kom.einfacheSprache.weiterBlaettern']}" 
+									alt="#{messages['artaround.cap-kom.einfacheSprache.weiterBlaettern']}"/>
+								<div class="simpleText">
+									#{messages['artaround.cap-kom.einfacheSprache.weiterBlaettern']}
+								</div>									
+							</a>
+						</li>					
+					</ul>
+				</div>
+			</div>
+			<!-- end: buttons -->			
+			
+ 	 </ui:define>   
+	 
+</ui:composition>	

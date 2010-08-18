@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pages xmlns="http://jboss.com/products/seam/pages"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://jboss.com/products/seam/pages http://jboss.com/products/seam/pages-2.0.xsd"
+       no-conversation-view-id="/home.xhtml"
+       login-view-id="/login.xhtml"
+       xmlns:navigation="http://jboss.com/products/seam/navigation">
+
+<!--  	<navigation:pages http-port="8080" https-port="8443"/> -->
+	<page view-id="*">
+        <navigation>
+            <rule if-outcome="home">
+            	<end-conversation before-redirect="true"/>
+                <redirect view-id="/home.xhtml">
+                	<param name="uri" value="#{configurationService.startPage}"/>
+                	<param name="title" value=""/>
+                	<param name="kiwiid" value=""/>
+                	<param name="id" value=""/>
+                 </redirect>
+            </rule>
+            <rule if-outcome="personalized_home">
+            	<end-conversation before-redirect="true"/>
+                <redirect view-id="/home.xhtml">
+                	<param name="uri" value="#{historyService.lastVisitedPage}"/>
+                	<param name="title" value=""/>
+                	<param name="kiwiid" value=""/>
+                	<param name="id" value=""/>
+                 </redirect>
+            </rule>            
+            <rule if-outcome="logica">
+                <redirect view-id="/logica/index.seam"/>
+            </rule>
+            
+            <rule if-outcome="login">
+                <redirect view-id="/login.xhtml"/>
+            </rule>
+            <rule if-outcome="register">
+                <redirect view-id="/register.xhtml"/>
+            </rule>
+            <rule if-outcome="createcontent">
+                <redirect view-id="/createcontent.xhtml"/>
+            </rule>
+            <rule if-outcome="origlayoutmanager">
+            	<redirect view-id="/orig_layout_manager.xhtml"/>
+            </rule>
+        </navigation>
+        
+<!--      	<navigation from-action="#{loginAction.login}">-->
+<!--			<rule if="#{not (currentUser.getLogin() eq 'anonymous')}">-->
+<!--                <end-conversation before-redirect="true"/>-->
+<!--				<redirect view-id="/dashboard/home.xhtml"/>-->
+<!--			</rule>-->
+<!--		</navigation>-->
+		
+<!--		-->
+<!--		<navigation from-action="#{kiwi.user.facebookLoginAction.login()}">-->
+<!--			<rule if="#{not (identity.getPrincipal().getName() eq 'anonymous')}">-->
+<!--            <rule if="#{not (currentUser.getLogin() eq 'anonymous')}">-->
+<!--                <end-conversation before-redirect="true"/>-->
+<!--				<redirect view-id="/dashboard/home.xhtml"/>-->
+<!--			</rule>-->
+<!--		</navigation>-->
+		
+		<navigation from-action="#{identityManagerService.logout}">
+			<redirect view-id="/home.xhtml"/>
+		</navigation>
+
+		<navigation from-action="#{kiwi.user.foafSslLoginService.createUserInfoOutOfFoafFile}">
+			<rule if-outcome="success">
+                <redirect view-id="/dashboard/home.xhtml"/>
+    		</rule>
+		</navigation>
+<!--        <navigation from-action="#{kiwi.user.facebookLoginAction.login()}">-->
+<!--            <rule if="#{identity.loggedIn}">-->
+<!--                <end-conversation before-redirect="true"/>-->
+<!--                <redirect view-id="/dashboard/home.xhtml"/>-->
+<!--            </rule>-->
+<!--        </navigation>-->
+
+        <navigation from-action="#{kiwi.ui.headerAction.switchApplication}">          
+            <rule>             
+                <redirect view-id="/#{currentApplication.identifier}/home.xhtml"/>
+            </rule>
+        </navigation>
+    </page>
+    
+    <page view-id="/fblogin/loginFB.xhtml">
+    	<navigation>
+<!--        	<rule if-outcome="fbIdExists">-->
+<!-- 				<raise-event type="activity.login.facebook"/>-->
+<!--        	</rule>-->
+        	<rule if-outcome="fbIdNotExists">
+        		<redirect view-id="/fblogin/loginFBoverlayUsername.xhtml"></redirect>
+        	</rule>
+<!--        	<rule if-outcome="success">-->
+<!--                <redirect view-id="/dashboard/home.xhtml"/>-->
+<!--    		</rule>-->
+       	</navigation>
+    </page>
+
+    <page view-id="/fblogin/loginFBoverlayUsername.xhtml">
+    	<navigation>
+        	<rule if-outcome="fbUserExists">
+        		<redirect view-id="/fblogin/loginFBoverlayCredentials.xhtml"/>	
+        	</rule>
+        	<rule if-outcome="fbUserNotExists">
+        		<redirect view-id="/fblogin/loginFBShowGenPassword.xhtml"/>
+        	</rule>
+       	</navigation>
+    </page>
+    
+    <page view-id="/fblogin/loginFBShowGenPassword.xhtml">
+    	<navigation from-action="#{kiwi.user.facebookLoginAction.register()}">
+        	<redirect view-id="/dashboard/home.xhtml"/>
+       	</navigation>
+    </page>
+    
+    <page view-id="/fblogin/loginFBoverlayCredentials.xhtml">
+    	<navigation>
+        	<rule if-outcome="notAuthenticated">
+        		<redirect view-id="fblogin/loginFBoverlayCredentials.xhtml"/>	
+        	</rule>
+        	<rule if-outcome="authenticated">
+        		<redirect view-id="/dashboard/home.xhtml"/>
+        	</rule>
+       	</navigation>
+    </page>
+    
+<!--     <page view-id="/seam/resource/services/FOAFSSLAuthentication" scheme="https"/> -->
+    
+    <page view-id="/foaflogin/loginFOAFSSL.xhtml">
+       <action execute="#{configurationService.redirectToIDP()}"/>
+	</page>
+	
+	<page view-id="/kwql.xhtml">
+   <action execute="#{kwqlAction.begin}"/>
+        <action execute="#{kwqlAction.runSearch}" on-postback="false"/>
+        <param name="q" value="#{kwqlAction.searchEngine.KWQLQuery}" required="false"/>
+    </page>
+	
+    <!-- navigation for the inspector -->
+    <page view-id="/inspector/*">
+		<navigation>
+			<rule if-outcome="preview">
+	        	<raise-event type="beginInspectorPreview"/>
+	        	<redirect view-id="/inspector/preview.xhtml"/>
+	        </rule>
+	        <rule if-outcome="revision">
+	        	<redirect view-id="/inspector/revision.xhtml"/>
+	        </rule>
+	    </navigation>
+	</page>
+
+	<page view-id="/home.xhtml" >
+		<param name="uri" value="#{currentContentItemFactory.currentItemUri}" required="false"/>
+		<param name="kiwiid" value="#{currentContentItemFactory.currentItemKiWiId}" required="false"/>
+		<param name="id" value="#{currentContentItemFactory.currentItemId}" required="false"/>
+		<param name="title" value="#{currentContentItemFactory.currentItemTitle}" required="false"/>
+		
+		<begin-conversation join="true"/>
+
+		<!--  redirect to current application -->
+		<action execute="#{kiwi.ui.redirectAction.redirect()}"/>
+		<!-- 
+        <action execute="/#{currentPerspective.label}/home.xhtml"/>
+		<navigation>
+		  <rule>
+		      <redirect view-id="/wiki/home.xhtml"/>
+ 		  </rule>
+		</navigation>	
+		-->
+	</page>
+	
+    <page view-id="/feed.xhtml" >
+        <action execute="#{rssAction.begin()}"/>
+    </page>
+   
+   
+    <page view-id="/linkeddata.xhtml" >
+        <param name="uri" value="#{currentContentItemFactory.currentItemUri}" required="false"/>
+        <param name="kiwiid" value="#{currentContentItemFactory.currentItemKiWiId}" required="false"/>
+        <param name="id" value="#{currentContentItemFactory.currentItemId}" required="false"/>
+        <param name="title" value="#{currentContentItemFactory.currentItemTitle}" required="false"/>
+        
+        <begin-conversation join="true"/>   
+    </page>
+    
+    <page view-id="/register.xhtml">
+    	<navigation from-action="#{registerAction.register}">   	    
+    		<rule if-outcome="success">
+                <redirect view-id="/dashboard/home.xhtml"/>
+    			<!--  should rather try to restore the previous view, see http://seamframework.org/Community/ReturnToPreviousViewOrCurrentView1 -->
+    		</rule>
+    		<rule>
+    			<redirect view-id="/register.xhtml"/>
+    		</rule>
+    	</navigation>
+    </page>
+	
+	<page view-id="/login.xhtml">
+    	<navigation from-action="#{loginAction.login}">   	    
+    		<rule if-outcome="success">
+                <redirect view-id="/dashboard/home.xhtml"/>
+    		</rule>
+    	</navigation>
+    </page>
+	
+<!--	<page view-id="/login.xhtml">-->
+<!--		 strange, but the navigation works only if the from-action -->
+<!--		definition is not set. -->
+<!--		<navigation>-->
+<!--		    <end-conversation before-redirect="true"/>-->
+<!--			<redirect view-id="/dashboard/home.xhtml"/>-->
+<!--			<rule if="#{not (identity.getPrincipal().getName() eq 'anonymous')}">-->
+<!--			<rule if="#{not (currentUser.getLogin() eq 'anonymous')}">-->
+<!--                <end-conversation before-redirect="true"/>-->
+<!--				<redirect view-id="/dashboard/home.xhtml"/>-->
+<!--			</rule>-->
+<!--		</navigation>-->
+<!--    </page>-->
+  
+    <page view-id="/setup/setupUser.xhtml">
+    	<navigation from-action="#{kiwi.setup.setupUserAction.submit}">   	    
+    		<rule if-outcome="success">
+                <redirect view-id="/setup/setupOntologies.xhtml"/>
+    		</rule>
+    		<rule>
+    			<redirect view-id="/setup/setupUser.xhtml"/>
+    		</rule>
+    	</navigation>
+    </page>
+
+    <page view-id="/setup/setupOntologies.xhtml">
+    	<navigation from-action="#{kiwi.setup.setupOntologiesAction.next}">   	    
+    		<rule if-outcome="success">
+                <redirect view-id="/setup/setupData.xhtml"/>
+    		</rule>
+    		<rule>
+    			<redirect view-id="/setup/setupOntologies.xhtml"/>
+    		</rule>
+    	</navigation>
+    </page>
+
+    <page view-id="/setup/setupData.xhtml">
+    	<navigation from-action="#{kiwi.setup.setupDataAction.loadData}">   	    
+    		<rule if-outcome="success">
+                <redirect view-id="/home.xhtml"/>
+    		</rule>
+    		<rule>
+    			<redirect view-id="/setup/setupData.xhtml"/>
+    		</rule>
+    	</navigation>
+    </page>
+
+    
+    <!--  TODO: please move this to the ArtAround extension's pages.xml! -->
+    <page view-id="/artaround/register.xhtml">
+    	<navigation from-action="#{registerAction.register}">   	    
+    		<rule if-outcome="success">
+                <redirect view-id="/dashboard/home.xhtml"/>
+    			<!--  should rather try to restore the previous view, see http://seamframework.org/Community/ReturnToPreviousViewOrCurrentView1 -->
+    		</rule>
+    		<rule>
+    			<redirect view-id="/register.xhtml"/>
+    		</rule>
+    	</navigation>
+    </page>
+
+    <page view-id="/search.xhtml">
+        <action execute="#{searchAction.begin}"/>
+        <action execute="#{searchAction.runSearch}"/>
+        <param name="q" value="#{searchAction.searchQuery}" required="false"/>
+    </page>
+
+
+    <exception class="org.jboss.seam.framework.EntityNotFoundException">
+        <redirect view-id="/error.xhtml">
+            <message>Not found</message>
+        </redirect>
+    </exception>
+    
+    <exception class="javax.persistence.EntityNotFoundException">
+        <redirect view-id="/error.xhtml">
+            <message>Not found</message>
+        </redirect>
+    </exception>
+    
+    <exception class="javax.persistence.OptimisticLockException">
+        <end-conversation/>
+        <redirect view-id="/error.xhtml">
+            <message>Another user changed the same data, please try again. </message>
+        </redirect>
+    </exception>
+    
+    <exception class="org.jboss.seam.security.AuthorizationException">
+        <redirect view-id="/error.xhtml">
+            <message>You've been denied access to the resource</message>
+        </redirect>
+    </exception>
+    
+    <exception class="org.jboss.seam.security.NotLoggedInException">
+        <redirect view-id="/login.xhtml">
+            <message>Please log in first</message>
+        </redirect>
+    </exception>
+    
+    <exception class="javax.faces.application.ViewExpiredException">
+        <redirect view-id="/error.xhtml">
+            <message>Your session has timed out, please try again</message>
+        </redirect>
+    </exception>
+     
+   <exception class="org.jboss.seam.ConcurrentRequestTimeoutException">
+	   <end-conversation/>
+	   <redirect view-id="/error.xhtml">
+	      <message>The server is too busy to process your request, please try again later</message>
+	   </redirect>
+   </exception>
+
+    <exception>
+        <redirect view-id="/error.xhtml">
+            <message>Unexpected error, please try again</message>
+        </redirect>
+    </exception>
+    
+</pages>

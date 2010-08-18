@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/bootstrap.tmpl/conf
+END
+jboss-service.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/bootstrap.tmpl/conf/jboss-service.xml
+END
+jbossjta-properties.xml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/bootstrap.tmpl/conf/jbossjta-properties.xml
+END
+bootstrap-beans.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/bootstrap.tmpl/conf/bootstrap-beans.xml
+END
+login-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/bootstrap.tmpl/conf/login-config.xml
+END

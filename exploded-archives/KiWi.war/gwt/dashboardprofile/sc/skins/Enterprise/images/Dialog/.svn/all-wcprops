@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/gwt/dashboardprofile/sc/skins/Enterprise/images/Dialog
+END
+warn.png
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/gwt/dashboardprofile/sc/skins/Enterprise/images/Dialog/warn.png
+END
+error.png
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/gwt/dashboardprofile/sc/skins/Enterprise/images/Dialog/error.png
+END
+ask.png
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/gwt/dashboardprofile/sc/skins/Enterprise/images/Dialog/ask.png
+END
+notify.png
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/gwt/dashboardprofile/sc/skins/Enterprise/images/Dialog/notify.png
+END
+say.png
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/gwt/dashboardprofile/sc/skins/Enterprise/images/Dialog/say.png
+END
+warn copy.png
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/gwt/dashboardprofile/sc/skins/Enterprise/images/Dialog/warn%20copy.png
+END
+confirm.png
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/gwt/dashboardprofile/sc/skins/Enterprise/images/Dialog/confirm.png
+END
+stop.png
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/gwt/dashboardprofile/sc/skins/Enterprise/images/Dialog/stop.png
+END

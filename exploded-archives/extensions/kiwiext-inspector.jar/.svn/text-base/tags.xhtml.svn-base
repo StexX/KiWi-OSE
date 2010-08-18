@@ -1,0 +1,43 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+		    	xmlns:a4j="http://richfaces.org/a4j"
+		    	template="layout/template.xhtml">
+
+<ui:define name="body">
+
+	<h1>KiWi Inspector - Tags</h1>
+	
+	<hr />
+
+	
+	<ui:repeat var="tag" value="#{inspectorAction.listTags()}">
+		<h:panelGrid columns="2" columnClasses="name,inspector-value">
+			<strong>KiWi ID</strong>
+			<s:div>#{tag.resource.kiwiIdentifier}</s:div>
+	
+			<strong>Tagging Resource</strong>
+			<s:div>#{tag.taggingResource.title}</s:div>
+			
+			<strong>Tagging User</strong>
+			<s:div>#{tag.taggedBy.login}</s:div>
+			
+		
+			<strong>Created</strong>
+			<s:div>#{tag.creationTime}</s:div>
+		
+			<strong>RDF</strong>
+			<s:div>
+			<pre>#{inspectorAction.getTagRDF(tag)}</pre>
+			</s:div>
+		
+		</h:panelGrid>
+	</ui:repeat>
+   	
+</ui:define>     
+</ui:composition>

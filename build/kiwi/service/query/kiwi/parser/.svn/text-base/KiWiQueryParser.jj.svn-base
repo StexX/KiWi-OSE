@@ -1,0 +1,91 @@
+options {
+  JDK_VERSION="1.5";
+  LOOKAHEAD=2;
+  STATIC=false;
+}
+PARSER_BEGIN(KiWiQueryParser)
+package kiwi.service.query.kiwi.parser;
+
+import java.util.List;
+import java.util.LinkedList;
+
+public class KiWiQueryParser {
+
+    private List<String> projectedVars = new LinkedList<String>();
+
+    private String searchString;
+    
+    private String format;
+    
+    public List<String> getProjectedVars() {
+    	return projectedVars;
+    }
+    
+    public String getSearchString() {
+    	return searchString;
+    }
+    
+    public String getFormat() {
+    	return format;
+    }
+}
+PARSER_END(KiWiQueryParser)
+
+
+SKIP:
+{
+    " "
+|   "\t"
+|   "\r"
+|   "\n"
+}
+
+
+TOKEN : {
+  <SELECT : "SELECT">
+| <WHERE  : "WHERE">
+| <FORMAT : "FORMAT">
+| <VAR    : "?">
+}
+
+TOKEN : {
+    < IDENTIFIER: ( <LETTER> )+ ( <DIGIT> | <LETTER> |<SPECIAL_CHARS>)* >
+|   < #LETTER: ["a"-"z", "A"-"Z"] >
+|   < #DIGIT:  ["0" - "9"] >
+|   < #SPECIAL_CHARS: "$" | "_" | ":" >
+|   < QUERY : "{" (~["}"])* "}" >
+}
+
+void parseQuery() : {
+    Token tQuery, tFormat;
+} {
+  <SELECT> Projection() <WHERE> tQuery=<QUERY> ( Format() )?
+  {
+  	 searchString = tQuery.image.substring(1,tQuery.image.length()-1).trim();
+  }
+}
+
+void Format() : {
+	Token tFormat;
+} {
+	<FORMAT> tFormat=<IDENTIFIER>
+	{
+		format = tFormat.image;
+	}
+}
+
+void Projection() : {} {
+	(ProjectionDefault() )? (ProjectionIdentifier() )* 
+}
+
+void ProjectionDefault() : {} {
+    <VAR> 
+    { projectedVars.add(""); }
+}
+
+void ProjectionIdentifier() : {
+	Token tId;
+} {
+    <VAR> tId=<IDENTIFIER>
+    { projectedVars.add(tId.image); }
+}

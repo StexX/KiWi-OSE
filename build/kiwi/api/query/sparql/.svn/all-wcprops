@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/query/sparql
+END
+SparqlUpdateServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/query/sparql/SparqlUpdateServiceLocal.class
+END
+SparqlUpdateServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/query/sparql/SparqlUpdateServiceRemote.class
+END
+SparqlService.class
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/query/sparql/SparqlService.class
+END
+SparqlServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/query/sparql/SparqlServiceLocal.class
+END
+SparqlServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/query/sparql/SparqlServiceRemote.class
+END
+SparqlUpdateService.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/query/sparql/SparqlUpdateService.class
+END

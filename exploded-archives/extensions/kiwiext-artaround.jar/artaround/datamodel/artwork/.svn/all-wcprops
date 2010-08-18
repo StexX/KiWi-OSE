@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-artaround.jar/artaround/datamodel/artwork
+END
+ArtWorkTextFacade.class
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-artaround.jar/artaround/datamodel/artwork/ArtWorkTextFacade.class
+END
+ArtWorkFacade.class
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-artaround.jar/artaround/datamodel/artwork/ArtWorkFacade.class
+END
+MultimediaTextFacade.class
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-artaround.jar/artaround/datamodel/artwork/MultimediaTextFacade.class
+END
+MultimediaFacade.class
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-artaround.jar/artaround/datamodel/artwork/MultimediaFacade.class
+END

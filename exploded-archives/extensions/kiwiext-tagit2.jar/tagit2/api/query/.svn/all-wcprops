@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-tagit2.jar/tagit2/api/query
+END
+IconService.class
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-tagit2.jar/tagit2/api/query/IconService.class
+END
+QueryService.class
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-tagit2.jar/tagit2/api/query/QueryService.class
+END
+QueryServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-tagit2.jar/tagit2/api/query/QueryServiceLocal.class
+END
+IconServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-tagit2.jar/tagit2/api/query/IconServiceLocal.class
+END
+IconServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-tagit2.jar/tagit2/api/query/IconServiceRemote.class
+END
+QueryServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-tagit2.jar/tagit2/api/query/QueryServiceRemote.class
+END

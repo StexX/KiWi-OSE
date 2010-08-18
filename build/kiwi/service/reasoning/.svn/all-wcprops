@@ -1,0 +1,287 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning
+END
+RemoveTriplesTask.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/RemoveTriplesTask.class
+END
+AddTriplesTask.class
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/AddTriplesTask.class
+END
+ClasspathProgramLoader.class
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/ClasspathProgramLoader.class
+END
+RuleInstantiator.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/RuleInstantiator.class
+END
+CantorsPairing.class
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/CantorsPairing.class
+END
+ReasoningTask$ReasoningTaskType.class
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/ReasoningTask$ReasoningTaskType.class
+END
+SemiNaiveOneRoundResult.class
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/SemiNaiveOneRoundResult.class
+END
+ReasoningImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/ReasoningImpl.class
+END
+StringRuleLoader.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/StringRuleLoader.class
+END
+ReasoningStatistics.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/ReasoningStatistics.class
+END
+CompiledRuleInstance.class
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/CompiledRuleInstance.class
+END
+AbstractStatistics.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/AbstractStatistics.class
+END
+StringProgramLoader.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/StringProgramLoader.class
+END
+TBox$MetaClass.class
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/TBox$MetaClass.class
+END
+AbstractSummaryStatistics.class
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/AbstractSummaryStatistics.class
+END
+TBox$MetaProperty.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/TBox$MetaProperty.class
+END
+RuleInstantiator$RuleInstanceInfo.class
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/RuleInstantiator$RuleInstanceInfo.class
+END
+TBoxLoader.class
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/TBoxLoader.class
+END
+ConfigurationChangeTask.class
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/ConfigurationChangeTask.class
+END
+ClasspathRuleLoader.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/ClasspathRuleLoader.class
+END
+CompiledRule.class
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/CompiledRule.class
+END
+ProgramProcessorImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/ProgramProcessorImpl.class
+END
+RDFList.class
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/RDFList.class
+END
+CompiledProgram.class
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/CompiledProgram.class
+END
+RuleBodyProcessor.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/RuleBodyProcessor.class
+END
+TriplestoreProgramLoader.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/TriplestoreProgramLoader.class
+END
+TBox.class
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/TBox.class
+END
+ReasoningConfiguration.class
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/ReasoningConfiguration.class
+END
+RunReasoningTask.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/RunReasoningTask.class
+END
+owl2-rl.skwrl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/owl2-rl.skwrl
+END
+RuleBodyResult.class
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/RuleBodyResult.class
+END
+RuleCompiler.class
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/RuleCompiler.class
+END
+TriplestoreProgramPersister.class
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/TriplestoreProgramPersister.class
+END
+rdfs.skwrl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/rdfs.skwrl
+END
+ProgramCompiler.class
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/ProgramCompiler.class
+END
+ProgramParser.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/ProgramParser.class
+END
+ReasoningTask.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/ReasoningTask.class
+END
+ReasoningConfiguration$ReasoningFeature.class
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/ReasoningConfiguration$ReasoningFeature.class
+END
+VariablePosition.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/VariablePosition.class
+END
+ReasoningTaskStatistics.class
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/ReasoningTaskStatistics.class
+END
+TriplestoreTBoxLoader.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/TriplestoreTBoxLoader.class
+END
+VariablePositions.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/VariablePositions.class
+END
+ProgramComparer.class
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/ProgramComparer.class
+END
+ReasoningConstants.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/ReasoningConstants.class
+END
+ReasoningException.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/ReasoningException.class
+END
+RoundStatistics.class
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/RoundStatistics.class
+END
+ProgramUpdateTask.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/reasoning/ProgramUpdateTask.class
+END

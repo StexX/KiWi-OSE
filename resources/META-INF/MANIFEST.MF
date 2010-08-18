@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.7.0
+Created-By: 1.5.0_16-133 (Apple Inc.)
+Implementation-Version: 2.1.0.CR1
+Specification-Version: 2.1.0.CR1
+Specification-Title: kiwi
+Specification-Vendor: SRFG
+Implementation-Title: kiwi
+Implementation-Vendor: JBoss
+Class-Path: lib/jaxrs-api.jar lib/jboss-seam-resteasy.jar lib/jboss-seam-rss.jar 
+ lib/stax-api-1.0.1.jar lib/stax2-api-3.0.1.jar lib/woodstox-core-asl-4.0.6.jar
+ lib/resteasy-jaxrs.jar lib/resteasy-jaxb-provider.jar lib/resteasy-atom-provider.jar
+ lib/richfaces-impl-3.3.1.GA.jar lib/richfaces-ui-3.3.1.GA.jar 
+ lib/richfaces-api-3.3.1.GA.jar lib/commons-beanutils.jar lib/commons-digester.jar 
+ lib/itext-rtf.jar lib/itext.jar lib/jboss-seam-debug.jar lib/jboss-seam-excel.jar 
+ lib/jboss-seam-ioc.jar lib/jboss-seam-jul.jar lib/jboss-seam-mail.jar 
+ lib/jboss-seam-pdf.jar lib/jboss-seam-rss.jar lib/jboss-seam-ui.jar 
+ lib/jsf-facelets.jar lib/jxl.jar lib/gmaps4jsf-core-1.1.jar 
+ lib/yarfraw.jar lib/commons-collections.jar lib/jsonp-1.0.1.jar lib/jettison-1.1.jar

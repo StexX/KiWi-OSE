@@ -1,0 +1,81 @@
+<userInput>
+
+    <panel order="0">
+        <createForPack name="KiWi.home" />
+        <field type="title" txt="Configure the KiWi Enviroment" bold="true" size="1"/>
+        <field type="divider" align="top"/>
+        
+        <field type="text" variable="kiwi.homeDir">
+            <description align="left"
+                         txt="This will be the directory where KiWi swystem will store files." />
+            <spec txt="KiWi home directory:" 
+                  size="10" set="$USER_HOME/kiwi_home" 
+                  create="true" 
+                  mustExist="false"/>
+            <validator
+                  class="com.izforge.izpack.util.NotEmptyValidator"
+                  txt="Invalide KiWi Home value">
+            </validator>
+
+        </field>
+<!--        <field type="staticText" align="left" txt="The KiWi home directory:"/>-->
+<!--        <field type="dir" align="left" variable="kiwi.homeDir">-->
+<!--            <spec txt="" size="25" set="$USER_HOME/kiwi_home" create="true" mustExist="false"/>-->
+<!--        </field>-->
+<!--        <field type="space"/>-->
+		
+
+    </panel>
+    
+    <panel order="1">
+        <createForPack name="KiWi.db" />
+        <field type="title" align="Left" txt="Database Connection Parameters" bold="true" size="1"/>
+        <field type="staticText" align="left" txt="The following information are needed for making the connection with the database."/>
+        <field type="divider" align="center"/>
+        <field type="combo" variable="kiwi.database.type">
+            <spec txt="Database type">
+                <choice processor="" txt="Postgresql" value="Postgresql" set="true"/>
+                <choice processor="" txt="Hyerdrive" value="Hyerdrive"/>
+                <choice processor="" txt="MySQL" value="MySQL"/>
+            </spec>
+        </field>
+        <field type="text" variable="kiwi.database.host">
+            <description align="left" txt="" />
+            <spec txt="Host name / IP  " size="10" set="localhost"/>
+            <validator
+                  class="com.izforge.izpack.util.IPValidator"
+                  txt="Invalide Host / IP">
+            </validator>
+        </field>
+        <field type="divider" align="center"/>
+        <field type="text" variable="kiwi.database.port" >
+            <spec txt="Enter the port number for the database connection" 
+                  size="10"
+                  set="5432"/>
+            <validator
+                  class="com.izforge.izpack.util.IsPortValidator"
+                  txt="Invalide port number">
+            </validator>
+        </field>
+        <field type="divider" align="center"/>
+        <field type="text" variable="kiwi.database.name">
+        <description align="left" txt="" />
+        <spec txt="Database name :  " size="10" set="KiWi"/>
+        </field>
+        <field type="divider" align="center"/>
+        <field type="text" variable="kiwi.database.user">
+            <description align="left" txt="" />
+            <spec txt="User : " size="10" set="kiwi"/>
+            <validator
+                  class="com.izforge.izpack.util.NotEmptyValidator"
+                  txt="Invalide KiWi Database User value">
+            </validator>
+            
+        </field>
+        <field type="text" variable="kiwi.database.password">
+            <description align="left" txt=""/>
+            <spec txt="Password : " size="10" set="${kiwi.database.password}"/>
+        </field>
+    </panel>
+
+</userInput>

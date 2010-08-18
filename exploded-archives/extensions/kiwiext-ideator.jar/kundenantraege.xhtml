@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:a4j="http://richfaces.org/a4j"
+	  xmlns:s="http://jboss.com/products/seam/taglib"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:h="http://java.sun.com/jsf/html">
+		
+	 <body>			
+	 <h:messages/>
+				<h:form>
+						<div>Eingegangene Kundenantraege</div>
+						
+						<h:outputText value = "Keine Antraege vorhanden" rendered="#{empty pooledTaskInstanceList}"/>						
+						
+						<h:dataTable value = "#{pooledTaskInstanceList}" var ="task" rendered="#{not empty pooledTaskInstanceList}" columnClasses = "column">
+							
+							<h:column>
+								<f:facet name = "header">ID</f:facet>
+								<h:outputText value= "#{task.id}"/>
+							</h:column>
+							
+							<h:column>
+								<f:facet name = "header">Eingereichte Ideen</f:facet>
+								<h:outputText value= "#{task.description}"/>
+							</h:column>
+							
+							<h:column>
+								<f:facet name = "header">Antragsdatum</f:facet>
+								<h:outputText value= "#{task.taskMgmtInstance.processInstance.start}"/>
+							</h:column>
+							
+							<h:column>
+								<s:button action ="#{ideaManageHandler.accept}" taskInstance="#{task}" value="Annehmen" styleClass="button">
+									
+								</s:button>
+							</h:column>
+							
+							<h:column>
+								<s:button action ="#{ideaManageHandler.reject}" taskInstance="#{task}" value="Ablehnen" styleClass="button">
+									
+								</s:button>
+							</h:column>
+							
+						</h:dataTable>			
+											  
+				</h:form>
+			
+	</body>
+
+</html>

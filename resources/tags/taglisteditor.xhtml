@@ -1,0 +1,23 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:a="http://richfaces.org/a4j">
+
+	<s:span id="taglist">
+		<h:outputText value="#{label}" />
+		<c:forEach var="tag"
+			items="#{tagItems}">
+			<h:outputText value=" " />
+			<s:link view="/search.xhtml" value="#{tag.tag.title}">
+				<f:param name="q" value="tag:&quot;#{tag.tag.title}&quot;" />
+			</s:link>
+			<h:outputText value=", " />
+		</c:forEach>
+		[<a:commandLink action="#{taggingAction.onShow()}" 
+		                reRender="taggingPanel" 
+		                oncomplete="#{rich:component('taggingPanel')}.show();">#{messages['btn.edit']}</a:commandLink>]
+	</s:span>
+</ui:composition>

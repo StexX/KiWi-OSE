@@ -1,0 +1,20 @@
+@charset "UTF-8";
+/**
+ * ArtAround. Das Kunstnetzwerk.
+ *
+ * Central stylesheet
+ *
+ * @copyright       ArtAround
+ * @author			coster
+ * @version         1.0
+ */
+
+/* import core styles  */
+  @import url(./style.css);
+  @import url(./layout_1-3-2.css);
+
+/* import screen layout */
+  @import url(./screen/artaroundScreen.css);
+
+/* import print layout */
+  @import url(./print/artaroundPrint.css); 

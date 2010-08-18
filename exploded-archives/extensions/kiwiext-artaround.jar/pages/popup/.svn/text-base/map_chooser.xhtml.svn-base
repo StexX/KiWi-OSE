@@ -1,0 +1,129 @@
+<!--
+	Copyright © Rolf Sint, Michael Schneider, Christian Osterrieder, 2010
+ */
+ -->
+
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a4j="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+			 	xmlns:c="http://java.sun.com/jstl/core"
+                template="../../layout/box_template.xhtml">
+
+                	
+<ui:define name="box_header">
+		<h2>Wählen Sie den Ort aus, an dem Ihr Kunstwerk erstellt wurde</h2>
+</ui:define>
+
+<ui:define name="box_header_links">
+	<li>
+		<a4j:commandLink onclick="jQuery('#map_chooser').fadeOut('fast');saveIt(innerMapCurPoint.lat(),innerMapCurPoint.lng())">
+			<img src="../../img/header_links/orange_dot.png" />
+		</a4j:commandLink>
+	</li>
+</ui:define>
+
+<ui:define name="box_content" onunload="GUnload()">
+
+	<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAA2EQ2uSxB8zXya_KFGNf4dBS281F-4w0REIZVg3vVvlo-sRAHWBR6ya_ogF2eAZLjC2otmEuImBOclw"
+							            type="text/javascript"></script>
+
+							<script type="text/javascript">
+							    /* <![CDATA[ */
+							    
+							    var marker = null;
+							    var innerMapCurPoint = null;
+							    var map = null;	
+								var geocoder = null;
+
+							    function initialize() {							        
+							      if (GBrowserIsCompatible()) { 
+							        map = new GMap2(document.getElementById("map_canvas"));
+							        map.setUIToDefault();
+							        
+									if (innerMapCurPoint == null) {
+										map.setCenter(new GLatLng(37.4419, -122.1419), 13);
+										
+										var l = GEvent.addListener(map, "dblclick", function(o, point){
+											GEvent.removeListener(l);
+											innerMapCurPoint = point;
+											alert(innerMapCurPoint.lat());
+											marker = new GMarker(point, {
+												draggable: true
+											});
+											map.addOverlay(marker);
+										});
+									}
+									else{
+										setMap();
+									}
+							        
+							       } 
+							      /* ]]> */
+						 	   	}
+								
+								
+								function setNewAdress(address) {
+									geocoder = new GClientGeocoder();
+									geocoder.getLatLng(
+									          address,
+									          function(point) {
+									            if (!point) {
+									              alert(address + " nicht gefunden!");
+									            } else {
+									            	innerMapCurPoint = point;
+										          	if(marker!=null) {
+										              	map.removeOverlay(marker);
+										            }
+										          	setMap();
+									              	newAdress = address;
+									            }
+									          }
+									        );
+									}
+								
+									function setMap() {
+										map.setCenter(innerMapCurPoint,13);
+									//	if(loggedIn) { 
+											marker = new GMarker(innerMapCurPoint,{draggable:true});
+											GEvent.addListener(marker,"dragend",function(p){
+												innerMapCurPoint = p;
+												jQuery('#geocoder_input').val("");
+												newAdress = "";
+											});
+									//	} else {
+									//		marker = new GMarker(innerMapCurPoint);
+									//	}
+										map.addOverlay(marker);
+									}
+						 	   	
+						    </script>
+	  
+	  						 <a4j:jsFunction name="saveIt" data="#{artWorkBean.check()}">
+								<!--	<a4j:jsFunction name="save" data="#{artWorkController.storeContentItem}" oncomplete="afterCheck(data);">-->
+										<a4j:actionparam name="lat" assignTo="#{artWorkBean.latitude}"/>
+										<a4j:actionparam name="lng" assignTo="#{artWorkBean.longitude}"/>
+							 </a4j:jsFunction>
+							 
+	  
+	  <center>
+      <div id="map_canvas" style="width: 550px; height: 300px"></div> 
+	  <s:div styleClass="innermap_geo">
+					<input type="text" id="geocoder_input" value="#{tagit2.newLocationAction.adress}"/>
+					<a style="left:530px;position:absolute;margin-top:0px" href="#" onclick="setNewAdress(jQuery('#geocoder_input').val());">
+						<img style="border:none;padding:0;" src="../../img/point/geolocate.png" title="Neue Adresse zuweisen"/>
+					</a>
+	 </s:div>
+	 </center>
+
+	
+</ui:define>
+
+
+</ui:composition>

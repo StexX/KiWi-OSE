@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/kiwi/!svn/ver/4789/KiWi/trunk/extensions/tagit2/resources
+END
+RSSManager-descriptor.properties
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/2829/KiWi/trunk/extensions/tagit2/resources/RSSManager-descriptor.properties
+END
+messages_en.properties
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/2829/KiWi/trunk/extensions/tagit2/resources/messages_en.properties
+END
+messages_de.properties
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/2829/KiWi/trunk/extensions/tagit2/resources/messages_de.properties
+END

@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+
+<suite name="KWQLTests" verbose="2" parallel="false">
+    <test name="KWQL" junit="false">
+        <classes>
+            <class name="kiwi.test.service.query.KWQLTest"/>
+        </classes>
+    </test>
+
+</suite>

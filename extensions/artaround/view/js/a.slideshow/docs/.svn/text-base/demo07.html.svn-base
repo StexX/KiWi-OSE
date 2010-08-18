@@ -1,0 +1,327 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+<head>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>(a)SlideShow jQuery Plugin - Demo - 12 visual effects for transition</title>		
+    <link href="../js/jquery.aslideshow/shadow/styles.css" media="screen" rel="stylesheet" type="text/css" />	
+    <link href="../style.css" media="screen" rel="stylesheet" type="text/css" />	
+	<script type="text/javascript" src="../js/jquery.js"></script>	
+	<script type="text/javascript" src="../js/jquery.aslideshow.js"></script>	
+
+    <script type="text/javascript" src="http://scripts.hohli.com/brush/shCore.js"></script>
+	<script type="text/javascript" src="http://scripts.hohli.com/brush/shBrushJScript.js"></script>
+	<script type="text/javascript" src="http://scripts.hohli.com/brush/shBrushXml.js"></script>
+	<link type="text/css" rel="stylesheet" href="http://scripts.hohli.com/brush/styles/shCore.css"/>
+	<link type="text/css" rel="stylesheet" href="http://scripts.hohli.com/brush/styles/shThemeDefault.css"/>
+	<script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = 'http://scripts.hohli.com/brush/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+</head>
+
+<body>
+
+<h2>12 visual effects for transition</h2>
+<div>
+    <table class="demo" width="960px">
+        <tr>
+            <td>
+                <img src="img/image_0.jpg" alt="Camomile"/>
+                <img src="img/image_1.jpg" alt="Bumblebees"/>
+                <img src="img/image_2.jpg" alt="Wood Toothpicks"/>
+            </td>
+            <td>
+                <img src="img/image_0.jpg" alt="Camomile"/>
+                <img src="img/image_1.jpg" alt="Bumblebees"/>
+                <img src="img/image_2.jpg" alt="Wood Toothpicks"/>
+            </td>
+            <td>
+                <img src="img/image_0.jpg" alt="Camomile"/>
+                <img src="img/image_1.jpg" alt="Bumblebees"/>
+                <img src="img/image_2.jpg" alt="Wood Toothpicks"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="img/image_0.jpg" alt="Camomile"/>
+                <img src="img/image_1.jpg" alt="Bumblebees"/>
+                <img src="img/image_2.jpg" alt="Wood Toothpicks"/>
+            </td>
+            <td>
+                <img src="img/image_0.jpg" alt="Camomile"/>
+                <img src="img/image_1.jpg" alt="Bumblebees"/>
+                <img src="img/image_2.jpg" alt="Wood Toothpicks"/>
+            </td>
+            <td>
+                <img src="img/image_0.jpg" alt="Camomile"/>
+                <img src="img/image_1.jpg" alt="Bumblebees"/>
+                <img src="img/image_2.jpg" alt="Wood Toothpicks"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="img/image_0.jpg" alt="Camomile"/>
+                <img src="img/image_1.jpg" alt="Bumblebees"/>
+                <img src="img/image_2.jpg" alt="Wood Toothpicks"/>
+            </td>
+            <td>
+                <img src="img/image_0.jpg" alt="Camomile"/>
+                <img src="img/image_1.jpg" alt="Bumblebees"/>
+                <img src="img/image_2.jpg" alt="Wood Toothpicks"/>
+            </td>
+            <td>
+                <img src="img/image_0.jpg" alt="Camomile"/>
+                <img src="img/image_1.jpg" alt="Bumblebees"/>
+                <img src="img/image_2.jpg" alt="Wood Toothpicks"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="img/image_0.jpg" alt="Camomile"/>
+                <img src="img/image_1.jpg" alt="Bumblebees"/>
+                <img src="img/image_2.jpg" alt="Wood Toothpicks"/>
+            </td>
+            <td>
+                <img src="img/image_0.jpg" alt="Camomile"/>
+                <img src="img/image_1.jpg" alt="Bumblebees"/>
+                <img src="img/image_2.jpg" alt="Wood Toothpicks"/>
+            </td>
+            <td>
+                <img src="img/image_0.jpg" alt="Camomile"/>
+                <img src="img/image_1.jpg" alt="Bumblebees"/>
+                <img src="img/image_2.jpg" alt="Wood Toothpicks"/>
+            </td>
+        </tr>
+    </table>
+</div>
+<h2>Source</h2>
+<div>
+    <b>HTML</b>:
+<pre class="brush:xml">
+&lt;table class=&quot;demo&quot; width=&quot;960px&quot;&gt;
+    &lt;tr&gt;
+        &lt;td&gt;
+            &lt;img src=&quot;img/image_0.jpg&quot; alt=&quot;Camomile&quot;/&gt;
+            &lt;img src=&quot;img/image_1.jpg&quot; alt=&quot;Bumblebees&quot;/&gt;
+            &lt;img src=&quot;img/image_2.jpg&quot; alt=&quot;Wood Toothpicks&quot;/&gt;
+        &lt;/td&gt;
+        &lt;td&gt;..&lt;/td&gt;
+        &lt;td&gt;..&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;..&lt;/td&gt;
+        &lt;td&gt;..&lt;/td&gt;
+        &lt;td&gt;..&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;..&lt;/td&gt;
+        &lt;td&gt;..&lt;/td&gt;
+        &lt;td&gt;..&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+    <b>JavaScript</b>:
+<pre class="brush:jscript">
+&lt;script type=&quot;text/javascript&quot;&gt;
+//&lt;![CDATA[
+$(document).ready(function(){
+
+    $('.demo td:eq(0)').slideshow({
+        title:false,
+        playframe:false,
+        play:true,
+        effect:'fade',
+        help:'Effect &quot;fade&quot;'
+    });
+
+    $('.demo td:eq(1)').slideshow({
+        title:false,
+        playframe:false,
+        play:true,
+        effect:'zoomFade',
+        help:'Effect &quot;zoomFade&quot;'
+    });
+
+    $('.demo td:eq(2)').slideshow({
+        title:false,
+        playframe:false,
+        play:true,
+        effect:'scrollUp',
+        help:'Effect &quot;scrollUp&quot;'
+    });
+
+    $('.demo td:eq(3)').slideshow({
+        title:false,
+        playframe:false,
+        play:true,
+        effect:'scrollLeft',
+        help:'Effect &quot;scrollLeft&quot;'
+    });
+
+    $('.demo td:eq(4)').slideshow({
+        title:false,
+        playframe:false,
+        play:true,
+        effect:'scrollRight',
+        help:'Effect &quot;scrollLeft&quot;'
+    });
+
+
+    $('.demo td:eq(5)').slideshow({
+        title:false,
+        playframe:false,
+        play:true,
+        effect:'scrollDown',
+        help:'Effect &quot;scrollDown&quot;'
+    });
+
+
+    $('.demo td:eq(6)').slideshow({
+        title:false,
+        playframe:false,
+        play:true,
+        effect:'zoom',
+        help:'Effect &quot;zoom&quot;'
+    });
+    $('.demo td:eq(7)').slideshow({
+        title:false,
+        playframe:false,
+        play:true,
+        effect:'growX',
+        help:'Effect &quot;growX&quot;'
+    });
+
+    $('.demo td:eq(8)').slideshow({
+        title:false,
+        playframe:false,
+        play:true,
+        effect:'growY',
+        help:'Effect &quot;growY&quot;'
+    });
+    $('.demo td:eq(9)').slideshow({
+        title:false,
+        playframe:false,
+        play:true,
+        effect:'zoomBR',
+        help:'Effect &quot;zoomBR&quot;'
+    });
+    $('.demo td:eq(10)').slideshow({
+        title:false,
+        playframe:false,
+        play:true,
+        effect:'zoomTL',
+        help:'Effect &quot;zoomTL&quot;'
+    });
+    $('.demo td:eq(11)').slideshow({
+        title:false,
+        playframe:false,
+        play:true,
+        effect:'random',
+        help:'Effect &quot;random&quot;'
+    });
+});
+//]]&gt;
+&lt;/script&gt;
+</pre>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function(){
+    
+    $('.demo td:eq(0)').slideshow({
+        title:false,
+        playframe:false,
+        play:true,
+        effect:'fade',
+        help:'Effect "fade"'
+    });
+    
+    $('.demo td:eq(1)').slideshow({
+        title:false,
+        playframe:false,
+        play:true,
+        effect:'zoomFade',
+        help:'Effect "zoomFade"'
+    });
+    
+    $('.demo td:eq(2)').slideshow({
+        title:false,
+        playframe:false,
+        play:true,
+        effect:'scrollUp',
+        help:'Effect "scrollUp"'
+    });
+    
+    $('.demo td:eq(3)').slideshow({
+        title:false,
+        playframe:false,
+        play:true,
+        effect:'scrollLeft',
+        help:'Effect "scrollLeft"'
+    });
+    
+    $('.demo td:eq(4)').slideshow({
+        title:false,
+        playframe:false,
+        play:true,
+        effect:'scrollRight',
+        help:'Effect "scrollLeft"'
+    });
+    
+    
+    $('.demo td:eq(5)').slideshow({
+        title:false,
+        playframe:false,
+        play:true,
+        effect:'scrollDown',
+        help:'Effect "scrollDown"'
+    });
+    
+    
+    $('.demo td:eq(6)').slideshow({
+        title:false,
+        playframe:false,
+        play:true,
+        effect:'zoom',
+        help:'Effect "zoom"'
+    });    
+    $('.demo td:eq(7)').slideshow({
+        title:false,
+        playframe:false,
+        play:true,
+        effect:'growX',
+        help:'Effect "growX"'
+    });
+    
+    $('.demo td:eq(8)').slideshow({
+        title:false,
+        playframe:false,
+        play:true,
+        effect:'growY',
+        help:'Effect "growY"'
+    });
+    $('.demo td:eq(9)').slideshow({
+        title:false,
+        playframe:false,
+        play:true,
+        effect:'zoomBR',
+        help:'Effect "zoomBR"'
+    });
+    $('.demo td:eq(10)').slideshow({
+        title:false,
+        playframe:false,
+        play:true,
+        effect:'zoomTL',
+        help:'Effect "zoomTL"'
+    });
+    $('.demo td:eq(11)').slideshow({
+        title:false,
+        playframe:false,
+        play:true,
+        effect:'random',
+        help:'Effect "random"'
+    });
+});
+//]]>
+</script>
+</body>
+</html>

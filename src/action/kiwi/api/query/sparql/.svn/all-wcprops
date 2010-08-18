@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/kiwi/!svn/ver/5166/KiWi/trunk/src/action/kiwi/api/query/sparql
+END
+SparqlServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/3034/KiWi/trunk/src/action/kiwi/api/query/sparql/SparqlServiceLocal.java
+END
+SparqlService.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/3034/KiWi/trunk/src/action/kiwi/api/query/sparql/SparqlService.java
+END
+SparqlUpdateServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5166/KiWi/trunk/src/action/kiwi/api/query/sparql/SparqlUpdateServiceRemote.java
+END
+SparqlUpdateServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5166/KiWi/trunk/src/action/kiwi/api/query/sparql/SparqlUpdateServiceLocal.java
+END
+SparqlUpdateService.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5166/KiWi/trunk/src/action/kiwi/api/query/sparql/SparqlUpdateService.java
+END
+SparqlServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/3034/KiWi/trunk/src/action/kiwi/api/query/sparql/SparqlServiceRemote.java
+END

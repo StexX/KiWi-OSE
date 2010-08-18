@@ -1,0 +1,191 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/kiwi/!svn/ver/4633/KiWi/trunk/src/model/kiwi/exception
+END
+FaultTripleException.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/2296/KiWi/trunk/src/model/kiwi/exception/FaultTripleException.java
+END
+TagElementIsCorruptException.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/model/kiwi/exception/TagElementIsCorruptException.java
+END
+RegisterException.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/4597/KiWi/trunk/src/model/kiwi/exception/RegisterException.java
+END
+CouldNotCreateStyleException.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/model/kiwi/exception/CouldNotCreateStyleException.java
+END
+NoEmailAddressGivenException.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/model/kiwi/exception/NoEmailAddressGivenException.java
+END
+CyclicDependencyException.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/model/kiwi/exception/CyclicDependencyException.java
+END
+FoafProfileAssociationException.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/model/kiwi/exception/FoafProfileAssociationException.java
+END
+UserDoesNotExistException.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/model/kiwi/exception/UserDoesNotExistException.java
+END
+DataImportException.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/4443/KiWi/trunk/src/model/kiwi/exception/DataImportException.java
+END
+UserUpdateException.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/model/kiwi/exception/UserUpdateException.java
+END
+VersionDoesNotExistException.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/model/kiwi/exception/VersionDoesNotExistException.java
+END
+RevisionDoesNotExistException.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/model/kiwi/exception/RevisionDoesNotExistException.java
+END
+XHTMLFormatException.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/model/kiwi/exception/XHTMLFormatException.java
+END
+GroupExistsException.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/2497/KiWi/trunk/src/model/kiwi/exception/GroupExistsException.java
+END
+TransactionNotInitializedException.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/4443/KiWi/trunk/src/model/kiwi/exception/TransactionNotInitializedException.java
+END
+KiWiConfigurationException.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/model/kiwi/exception/KiWiConfigurationException.java
+END
+UserExistsException.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/2296/KiWi/trunk/src/model/kiwi/exception/UserExistsException.java
+END
+ContentItemDoesNotExistException.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/model/kiwi/exception/ContentItemDoesNotExistException.java
+END
+TextContentNotChangedException.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/4443/KiWi/trunk/src/model/kiwi/exception/TextContentNotChangedException.java
+END
+NamespaceResolvingException.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/model/kiwi/exception/NamespaceResolvingException.java
+END
+PermissionException.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/4633/KiWi/trunk/src/model/kiwi/exception/PermissionException.java
+END
+KiWiException.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/model/kiwi/exception/KiWiException.java
+END
+TextCountReachedException.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/model/kiwi/exception/TextCountReachedException.java
+END
+InvalidArgumentException.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/model/kiwi/exception/InvalidArgumentException.java
+END
+AuthenticationFailedException.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/model/kiwi/exception/AuthenticationFailedException.java
+END
+NamespaceExistsException.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/2296/KiWi/trunk/src/model/kiwi/exception/NamespaceExistsException.java
+END
+SystemNotYetSetUpException.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/model/kiwi/exception/SystemNotYetSetUpException.java
+END
+InconsistentStateException.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/model/kiwi/exception/InconsistentStateException.java
+END
+ContentItemMissingException.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/model/kiwi/exception/ContentItemMissingException.java
+END
+NonUniqueRelationException.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/model/kiwi/exception/NonUniqueRelationException.java
+END
+MalformedCertificateException.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/model/kiwi/exception/MalformedCertificateException.java
+END

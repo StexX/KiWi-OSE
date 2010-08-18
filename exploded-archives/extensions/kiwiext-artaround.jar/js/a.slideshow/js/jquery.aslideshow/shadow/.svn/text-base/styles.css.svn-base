@@ -1,0 +1,212 @@
+.slideshow, .slideshow-label, .slideshow-content, .slideshow-panel {
+    font:12px Verdana, Tahoma, sans-serif;
+}
+
+.slideshow {
+    padding:0;
+    border:0;
+    position:relative;
+    display:none;           /* Set to "none" for not preview slideshow content */
+    z-index:1
+}
+.slideshow-content {
+    padding:0;
+    color:#333;
+    overflow:hidden;
+    position:relative;
+    z-index:1;
+}
+
+    /* Some Content Changes */
+    .slideshow-content p {
+        padding:0 !important;
+        overflow:auto;
+    }
+
+    .slideshow-content img {
+        padding:0 !important;
+        border:0 !important;
+    }
+
+    .slideshow-slide {
+        display:none;
+        position:absolute;
+    }
+
+.slideshow-fullscreen {
+    position:absolute;
+    top:0;
+    left:0;
+    padding:0;
+    border:0;  
+    overflow:hidden;
+}
+
+.slideshow-label-place, .slideshow-panel-place {
+    /* Stupid IE hack */
+    // border-style:dotted; border-width: 1px 0; border-color: transparent; background:transparent;
+}
+
+.slideshow-label-place {
+    padding:0;
+    position:absolute;
+    top:4px;
+    right:6px;
+    z-index:100;
+    height:30px;
+	width:60% !important;
+}
+    .slideshow-label {
+        z-index:101;
+        color:#fff;
+        width:100%;
+        height:100%;
+        line-height:30px;
+        text-indent:8px;
+        font-weight:bold;
+		
+	    border:#888 solid 1px;
+	    border-radius: 6px;
+	    -moz-border-radius: 6px;
+	    -khtml-border-radius: 6px;
+	    -webkit-border-radius: 6px
+    }
+
+    .slideshow-label a,
+    .slideshow-label a:hover,
+    .slideshow-label a:active,
+    .slideshow-label a:visited {
+        color:#fff;
+    }
+
+.slideshow-panel-place {
+    padding:0;
+    position:absolute;
+    bottom:4px;
+    left:6px;
+	width:60% !important;
+    z-index:100;
+    height:34px;
+}
+    .slideshow-panel {
+        z-index:101;    
+        width:100%;
+        height:100%;
+		padding:0 2px;
+	    border:#888 solid 1px;
+	    border-radius: 6px;
+	    -moz-border-radius: 6px;
+	    -khtml-border-radius: 6px;
+	    -webkit-border-radius: 6px
+    }
+    
+        .slideshow-panel a.button {
+            display: block;
+            width:30px;
+            height:32px;
+            float:left;
+            text-indent:-99999%;
+            overflow:hidden;
+            outline: 0; /* @ Firefox, prevent dotted border after click */ 
+            background-image:url(images/buttons.png);
+            background-repeat:no-repeat;
+            border:1px solid transparent
+        }
+        
+            .slideshow-panel a.button:hover {
+                background-color:#333;
+            }
+            
+            
+            .slideshow-panel a.first {
+                background-position: 0 0
+            }
+            
+            .slideshow-panel a.prev {
+                background-position: -30px 0
+            }
+            
+            .slideshow-panel a.play {
+                background-position: -60px 0
+            }
+            
+            .slideshow-panel a.stop {
+                background-position: -90px 0
+            }
+            
+            .slideshow-panel a.next {
+                background-position: -120px 0
+            }
+            
+            .slideshow-panel a.last {
+                background-position: -150px 0
+            }
+            
+            .slideshow-panel a.help {
+                position:relative;
+                background-position: -180px 0
+            }
+            
+            .slideshow-panel span.counter {
+                float:right;
+                display: block;
+                font-weight:700;
+                color:#fff;
+                /*width:26px;*/
+                height:32px;
+                line-height:32px;
+                padding:0 8px;
+            }
+
+
+.slideshow-help {
+    position:absolute;
+    bottom:32px;
+    z-index:101;   
+    background-color:#ff9; 
+    display:none;
+	padding:2px;
+	margin:0 2px;
+    opacity: 0.8;
+    width:98%;
+}
+
+.slideshow-frame div {
+    position:absolute;
+    top:0px;
+    left:0px;
+    background:url(images/play.png) 50% 50% no-repeat;
+    z-index:201;
+    cursor:pointer;
+    width:100%;
+    height:100%;
+}
+
+.slideshow-load {
+    display:none;
+}
+    .slideshow-load div {
+        position:absolute;
+        top:0px;
+        left:0px;
+        background:url(images/ajax-loader.gif) 50% 50% no-repeat;
+        z-index:201;
+        cursor:pointer;
+        width:100%;
+        height:100%;
+    }
+
+.slideshow-shadow {
+    position:absolute;
+    top:0px;
+    left:0px;
+    z-index:200;
+    width:100%;
+    height:100%;
+}
+    
+.slideshow-opacity {
+    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA9JREFUeNpiYmBgaAAIMAAAjwCD5Hc2/AAAAABJRU5ErkJggg==);
+    background:rgba(0, 0, 0, 0.5);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#85000000, endColorstr=#85000000);
+}

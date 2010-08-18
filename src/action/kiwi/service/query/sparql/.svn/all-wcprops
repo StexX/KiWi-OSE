@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/kiwi/!svn/ver/5166/KiWi/trunk/src/action/kiwi/service/query/sparql
+END
+QueryBinding.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/service/query/sparql/QueryBinding.java
+END
+SparqlServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/3570/KiWi/trunk/src/action/kiwi/service/query/sparql/SparqlServiceImpl.java
+END
+SparqlUpdateServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5166/KiWi/trunk/src/action/kiwi/service/query/sparql/SparqlUpdateServiceImpl.java
+END

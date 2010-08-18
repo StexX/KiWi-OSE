@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/kiwi/!svn/ver/3809/KiWi/trunk/src/action/kiwi/api/interaction
+END
+InteractionServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/3630/KiWi/trunk/src/action/kiwi/api/interaction/InteractionServiceRemote.java
+END
+InteractionServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/3630/KiWi/trunk/src/action/kiwi/api/interaction/InteractionServiceLocal.java
+END
+InteractionService.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/3809/KiWi/trunk/src/action/kiwi/api/interaction/InteractionService.java
+END

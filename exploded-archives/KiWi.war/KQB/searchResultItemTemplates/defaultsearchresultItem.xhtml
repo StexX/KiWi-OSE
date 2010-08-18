@@ -1,0 +1,46 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+    xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:a="http://richfaces.org/a4j">
+		<div class="searchResultItem">
+		   <h:form>
+				<kiwi:link value="#{ci.title}" contentItem="#{ci}" styleClass="searchResultTitle" />
+				
+				<rich:spacer width="4px"/>
+				<ui:repeat var="tag" value="#{tagCloudService.aggregateTagsByCI(ci)}">
+					
+					<!-- Add Tag button -->
+					<a:commandButton 
+						action="#{searchAction.searchEngine.addSearchTag(tag.tagTitle)}" 
+						styleClass="searchAddTag" 
+						value="#{tag.tagTitle}" 
+						reRender="searchresults,search-keyword,articlemeta"/>
+					<rich:spacer width="2px"/>
+				</ui:repeat>
+				
+				<br />
+				by <rich:spacer width="3px"/>
+		                           <a:commandLink 
+		                               action="#{searchAction.searchEngine.addSearchPerson(ci.author.login)}" 
+		                               styleClass="searchAddTag" 
+		                               value="#{ci.author.login}" 
+		                               reRender="searchresults,search-keyword,articlemeta"/>
+		
+				<rich:spacer/>
+				<h:outputText value="#{ci.modified}">
+					<f:convertDateTime type="both"/>
+				</h:outputText>
+				<br />
+				Score: #{score}, CEQ: #{ceq}
+				<p>
+                    ...<h:outputText value="#{preview}" escape="false" />...
+                </p>
+<!-- 				<h:outputText value="#{searchAction.renderPreview(ci)}" escape="false" /> -->
+			</h:form>
+		</div>
+</ui:composition>

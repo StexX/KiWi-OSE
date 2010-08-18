@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/informationextraction
+END
+TermRecognitionService$TermGroupScore.class
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/informationextraction/TermRecognitionService$TermGroupScore.class
+END
+Extractlet.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/informationextraction/Extractlet.class
+END
+KiWiGATEService.class
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/informationextraction/KiWiGATEService.class
+END
+FeatureStoreServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/informationextraction/FeatureStoreServiceLocal.class
+END
+LabelService.class
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/informationextraction/LabelService.class
+END
+TermRecognitionServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/informationextraction/TermRecognitionServiceLocal.class
+END
+InformationExtractionService.class
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/informationextraction/InformationExtractionService.class
+END
+InformationExtractionServiceRemove.class
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/informationextraction/InformationExtractionServiceRemove.class
+END
+TermRecognitionService$Term.class
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/informationextraction/TermRecognitionService$Term.class
+END
+InformationExtractionService$Task.class
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/informationextraction/InformationExtractionService$Task.class
+END
+LabelServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/informationextraction/LabelServiceRemote.class
+END
+InformationExtractionServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/informationextraction/InformationExtractionServiceLocal.class
+END
+FeatureStoreService.class
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/informationextraction/FeatureStoreService.class
+END
+LabelServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/informationextraction/LabelServiceLocal.class
+END
+TermRecognitionService.class
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/informationextraction/TermRecognitionService.class
+END
+InstanceExtractor.class
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/informationextraction/InstanceExtractor.class
+END
+KiWiGATEServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/informationextraction/KiWiGATEServiceLocal.class
+END

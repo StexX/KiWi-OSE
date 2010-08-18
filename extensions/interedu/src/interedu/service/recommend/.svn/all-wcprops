@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/3513/KiWi/trunk/extensions/interedu/src/interedu/service/recommend
+END
+KeaRecommendServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/kiwi/!svn/ver/2531/KiWi/trunk/extensions/interedu/src/interedu/service/recommend/KeaRecommendServiceImpl.java
+END
+SimpleRecommenderServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/kiwi/!svn/ver/3513/KiWi/trunk/extensions/interedu/src/interedu/service/recommend/SimpleRecommenderServiceImpl.java
+END

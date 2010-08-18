@@ -1,0 +1,115 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:a="http://richfaces.org/a4j" 
+    xmlns:c="http://java.sun.com/jstl/core"
+    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+    template="layout/navigationpage-template.xhtml">
+
+    <ui:define name="links">
+        <link href="#{facesContext.externalContext.requestContextPath}/feed.seam?mode=MOSTRECENT&amp;format=RSS20" type="application/rss+xml" rel="alternate" title="Most Recently Changed" />
+        <link href="#{facesContext.externalContext.requestContextPath}/feed.seam?mode=COMMENTS&amp;format=RSS20" type="application/rss+xml" rel="alternate" title="Comments for #{currentContentItem.title}" />
+        <link href="#{facesContext.externalContext.requestContextPath}/activity-feed.seam?mode=ACTIVITIES&amp;format=RSS20" type="application/rss+xml" rel="alternate" title="Stream of Activities for #{currentContentItem.title}" />
+
+    	<script src="http://static.simile.mit.edu/timeline/api-2.3.0/timeline-api.js?bundle=true" type="text/javascript"></script>
+<script type="text/javascript">
+ var tl;
+ function timelinelOnLoad() {
+   var bandInfos = [
+     Timeline.createBandInfo({
+     	 eventSource:    window.eventSource,
+         width:          "70%", 
+         intervalUnit:   Timeline.DateTime.MONTH, 
+         intervalPixels: 100
+     }),
+     Timeline.createBandInfo({
+     	 eventSource:    window.eventSource,
+         width:          "30%", 
+         intervalUnit:   Timeline.DateTime.YEAR, 
+         intervalPixels: 200
+     })
+   ];
+   bandInfos[1].syncWith = 0;
+   bandInfos[1].highlight = true;
+   
+   tl = Timeline.create(document.getElementById("my-timeline"), bandInfos);
+ }
+
+ var resizeTimerID = null;
+ function onResize() {
+     if (resizeTimerID == null) {
+         resizeTimerID = window.setTimeout(function() {
+             resizeTimerID = null;
+             tl.layout();
+         }, 500);
+     }
+ }
+
+ jQuery(document).ready(function(){
+    window.eventSource = new Timeline.DefaultEventSource();
+ 	timelinelOnLoad();
+/*
+ 	 var json = {
+		events:[{
+		title: "asdf",
+		start: 'Nov 11 2009 22:31:56 +0100',
+		end: 'Nov 11 2009 22:31:58 +0100',
+		durationEvent: false}]
+		}; 
+	console.info(json.events);
+ 	window.eventSource.loadJSON(json, "");
+*/
+ });
+</script>
+    </ui:define>
+
+
+<ui:define name="content">
+	<h1>#{param.t}</h1>
+	<rich:panel layout="block">
+		<f:facet name="header">
+	        Who Tagged
+	    </f:facet>
+        <ui:repeat var="taggingUser" value="#{tagCloudService.listTaggingUsers(param.t)}">
+	    	<s:span rendered="#{not taggingUser.get('first')}" style="font-size:medium;">
+	    		#{taggingUser.get("user").login} (#{taggingUser.get("count")})
+	    	</s:span>
+	    	<s:span rendered="#{taggingUser.get('first')}" style="font-weight:bold;font-size:medium;">
+	    		#{taggingUser.get("user").login} (#{taggingUser.get("count")})
+	    	</s:span>
+	    	<h:outputText value=" " />
+	    	<script type="text/javascript">
+ 				jQuery(document).ready(function(){
+		    	 	var json = {
+		    	 		events:[{
+							title: "#{taggingUser.get("user").firstName} #{taggingUser.get("user").lastName}",
+					 		start:  '#{taggingUser.get("firstTagging").toString()}',
+					 		end:    '#{taggingUser.get("lastTagging").toString()}',
+					 		durationEvent: false}]
+					 };
+	 				window.eventSource.loadJSON(json, "");
+	 			});
+	    	</script>
+	    </ui:repeat>
+    
+    </rich:panel>
+	<rich:panel layout="block">
+		<f:facet name="header">
+	        Usage times
+	    </f:facet>
+	    <div id="my-timeline" style="height: 150px; border: 1px solid #aaa"></div>
+	</rich:panel>
+		<rich:panel layout="block">
+		<f:facet name="header">
+	        Tagged Content
+	    </f:facet>
+	    <kiwi:queryResultTable query="SELECT ? ?kiwi:modifiedOn  WHERE {tag:#{param.t}}" language="kiwi" />
+	</rich:panel>
+	
+</ui:define>
+</ui:composition>

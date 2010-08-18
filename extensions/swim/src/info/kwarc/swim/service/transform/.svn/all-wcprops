@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/3376/KiWi/trunk/extensions/swim/src/info/kwarc/swim/service/transform
+END
+TransformingServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/kiwi/!svn/ver/3376/KiWi/trunk/extensions/swim/src/info/kwarc/swim/service/transform/TransformingServiceImpl.java
+END
+identity.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/2281/KiWi/trunk/extensions/swim/src/info/kwarc/swim/service/transform/identity.xsl
+END
+metadata.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/2314/KiWi/trunk/extensions/swim/src/info/kwarc/swim/service/transform/metadata.xsl
+END
+html2omdoc.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/2251/KiWi/trunk/extensions/swim/src/info/kwarc/swim/service/transform/html2omdoc.xsl
+END
+omdoc2html.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/2281/KiWi/trunk/extensions/swim/src/info/kwarc/swim/service/transform/omdoc2html.xsl
+END
+XSLTFunctions.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/2249/KiWi/trunk/extensions/swim/src/info/kwarc/swim/service/transform/XSLTFunctions.java
+END
+Parsers.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/2250/KiWi/trunk/extensions/swim/src/info/kwarc/swim/service/transform/Parsers.java
+END
+URIResolver.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/2065/KiWi/trunk/extensions/swim/src/info/kwarc/swim/service/transform/URIResolver.java
+END

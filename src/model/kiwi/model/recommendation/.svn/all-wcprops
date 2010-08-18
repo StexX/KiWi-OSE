@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/src/model/kiwi/model/recommendation
+END
+RuleBasedRecommendation.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5354/KiWi/trunk/src/model/kiwi/model/recommendation/RuleBasedRecommendation.java
+END
+SocialCapital.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/src/model/kiwi/model/recommendation/SocialCapital.java
+END
+ContactRecommendation.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5443/KiWi/trunk/src/model/kiwi/model/recommendation/ContactRecommendation.java
+END
+MySimilarRecommendation.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5309/KiWi/trunk/src/model/kiwi/model/recommendation/MySimilarRecommendation.java
+END
+SocialCapitalRecommendation.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5309/KiWi/trunk/src/model/kiwi/model/recommendation/SocialCapitalRecommendation.java
+END
+RecommendableUserBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/3296/KiWi/trunk/src/model/kiwi/model/recommendation/RecommendableUserBean.java
+END

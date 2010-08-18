@@ -1,0 +1,85 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a="http://richfaces.org/a4j"
+	xmlns:kiwi="http://www.kiwi-project.eu/jsf">
+
+	<!--  commenting functionality -->
+	<rich:togglePanel id="comments" switchType="ajax"
+		stateOrder="closed,open">
+		<f:facet name="closed">
+			<rich:toggleControl>
+				<h2 class="commentsClosed">Comments</h2>
+			</rich:toggleControl>
+		</f:facet>
+
+		<f:facet name="open">
+			<f:subview id="commentPanel">
+				<rich:toggleControl>
+					<h2 class="commentsOpen">Comments</h2>
+				</rich:toggleControl>
+
+				<c:if
+					test="#{currentContentItem.comments.isEmpty()}">
+					<div class="nocomments">No comments</div>
+				</c:if>
+
+				<ui:repeat var="comment" value="#{currentContentItem.comments}">
+					<div class="comment">
+					<div class="comment-title"><h:outputText
+						value="#{comment.title}" /></div>
+					<div class="comment-meta"><h:outputText
+						value="#{comment.created}">
+						<s:convertDateTime pattern="dd/MM/yyyy" />
+					</h:outputText> <h:outputText value=" by " /> <kiwi:link
+						resource="#{comment.author.resource}"
+						value=" #{comment.author.firstName} #{comment.author.lastName}" />
+					</div>
+					<div class="comment-body"><h:outputText
+						value="#{kiwi.dashboard.CommentAction.getCommentHtml(comment)}"
+						escape="false" /></div>
+					</div>
+				</ui:repeat>
+
+				<rich:togglePanel rendered="#{editable}" id="newcomment" switchType="ajax"
+					stateOrder="closed,open">
+					<!-- this one doesn't work for some reason, would be nice though for
+						hiding the editor when a comment was created. Now the CommentAction alone takes care of it. 
+					binding="#{kiwi.dashboard.CommentAction.newCommentTogglePanel}" -->
+					<f:facet name="closed">
+						<rich:toggleControl id="addComment" value="Add Comment" />
+					</f:facet>
+
+					<f:facet name="open">
+						<f:subview id="newCommentPanel">
+							<hr />
+
+							<strong>Title:</strong>
+							<h:inputText value="#{kiwi.dashboard.CommentAction.title}"
+								style="margin-left: 10px; width: 90%" />
+							<rich:editor id="newcommentEditor" height="100" required="false"
+								theme="advanced" configuration="tinymce-small"
+								plugins="safari,pagebreak,style,layer,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,visualchars,nonbreaking,xhtmlxtras"
+								value="#{kiwi.dashboard.CommentAction.comment}">
+							</rich:editor>
+							
+							<a:commandLink value="Add" id="addComment" 
+								action="#{kiwi.dashboard.CommentAction.addComment}" 
+								reRender="comments" styleClass="grayRoundButton">
+								<rich:componentControl for="newcomment" 
+									operation="switchToState('closed')">
+								</rich:componentControl>
+							</a:commandLink>
+							<rich:toggleControl id="commentCancel" process="comments"
+								value="Cancel" styleClass="grayRoundButton" />
+						</f:subview>
+					</f:facet>
+				</rich:togglePanel>
+			</f:subview>
+		</f:facet>
+	</rich:togglePanel>
+</ui:composition>

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/2944/KiWi/trunk/extensions/artaround/view/stylesheet/yaml/core
+END
+base.css
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/2944/KiWi/trunk/extensions/artaround/view/stylesheet/yaml/core/base.css
+END
+slim_base.css
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/2944/KiWi/trunk/extensions/artaround/view/stylesheet/yaml/core/slim_base.css
+END
+print_base.css
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/2944/KiWi/trunk/extensions/artaround/view/stylesheet/yaml/core/print_base.css
+END
+slim_iehacks.css
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/2944/KiWi/trunk/extensions/artaround/view/stylesheet/yaml/core/slim_iehacks.css
+END
+slim_print_base.css
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/2944/KiWi/trunk/extensions/artaround/view/stylesheet/yaml/core/slim_print_base.css
+END
+iehacks.css
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/2944/KiWi/trunk/extensions/artaround/view/stylesheet/yaml/core/iehacks.css
+END

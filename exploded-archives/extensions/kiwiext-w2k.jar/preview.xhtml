@@ -1,0 +1,89 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+		    	xmlns:a4j="http://richfaces.org/a4j"
+		    	xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                template="layout/template.xhtml">
+
+    <ui:define name="content">
+
+	<script src="styles.js" type="text/javascript">
+    </script>
+    
+	    <h:form id="formWikiPreview">
+			<rich:dataTable rows="2" style="border-style: none;" border="0" captionStyle="text-align: center; pagging-right: 50px; padding-left:50px; border-style: none;">
+				<f:facet name="caption">
+				<rich:columnGroup columnClasses="previewActions" rowClasses="previewActions">
+					<rich:column rowspan="2"  style="border-style: none;">
+						<h:commandLink action="#{kiwi.action.revision.viewRevisionsAction.end}" 
+							value="Back to revision list" />
+					</rich:column>
+					<rich:column rowspan="2">
+						<h:commandLink action="#{kiwi.action.revision.previewAction.restore}" 
+							value="Restore this version" />
+					</rich:column>
+					<rich:column rowspan="2">
+						<a4j:region>
+								<h:selectBooleanCheckbox  value="#{kiwi.action.revision.previewAction.showDeleted}">
+									<a4j:support id="preview_support" event="onchange" action="#{kiwi.action.revision.previewAction.refresh()}">
+									</a4j:support>
+								</h:selectBooleanCheckbox>
+								<h:outputText value="Show deleted words" />
+						</a4j:region>
+					</rich:column>
+                    <rich:column>
+                    <!-- onslide="#{kiwi.action.revision.previewAction.slideAction()}" -->
+						<a4j:region>
+							<rich:inputNumberSlider 
+								showArrows="true"
+								showBoundaryValues="true" width="120px" minValue="1" 
+								maxValue="#{kiwi.action.revision.viewRevisionsAction.countRevisions}" 
+								value="#{kiwi.action.revision.previewAction.indexRevision}" showInput="false">
+								<a4j:support id="preview_support_slider" event="onchange" action="#{kiwi.action.revision.previewAction.refresh()}">
+								</a4j:support>
+							</rich:inputNumberSlider>
+						</a4j:region>
+					</rich:column>
+<!-- 					<rich:column colspan="3" breakBefore="true"> <rich:spacer /> </rich:column> -->
+					<rich:column breakBefore="true" style="text-align: center;">
+						<h:outputText value="Switch to Revision" />
+					</rich:column>
+				</rich:columnGroup>
+				</f:facet>
+	    	</rich:dataTable>
+	    	
+	    	<s:div rendered="#{contentItem.mediaContent != null}" >
+	            <center>
+					<kiwi:mediaContent contentItem="#{contentItem}" 
+							edit="true"
+							style="padding: 3px; margin:4px;border:solid 1px #ccc;">
+						<ui:define name="nomedia">
+							<h:outputText value="No image" />
+						</ui:define>
+						<s:transformImageSize 
+							maintainRatio="true"
+							width="400"/>
+					</kiwi:mediaContent>
+			    </center>
+			</s:div>
+	    	
+		    <hr/>
+		    <s:div id="preview">
+		        <h1>#{kiwi.action.revision.previewAction.title}</h1>
+		        <f:verbatim escape="#{false}">#{kiwi.action.revision.previewAction.previewContentHtml}</f:verbatim>
+		    </s:div>
+		    
+		    <ui:include src="dialogs/versionedmetadata.xhtml">
+				<ui:param name="editable" value="true" />
+			</ui:include>
+		    <ui:include src="dialogs/versionedtags.xhtml">
+				<ui:param name="editable" value="true" />
+			</ui:include>
+	    </h:form>
+    </ui:define>
+</ui:composition>

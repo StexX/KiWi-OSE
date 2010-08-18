@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/kbase
+END
+KiWiAnonResource.class
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/kbase/KiWiAnonResource.class
+END
+KiWiUriResource.class
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/kbase/KiWiUriResource.class
+END
+KiWiNamespace.class
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/kbase/KiWiNamespace.class
+END
+KiWiResource.class
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/kbase/KiWiResource.class
+END
+KiWiTriple.class
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/kbase/KiWiTriple.class
+END
+KiWiLiteral.class
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/kbase/KiWiLiteral.class
+END
+KiWiQueryLanguage.class
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/kbase/KiWiQueryLanguage.class
+END
+KiWiDataFormat.class
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/kbase/KiWiDataFormat.class
+END
+KiWiNode.class
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/kbase/KiWiNode.class
+END
+KiWiEntity.class
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/kbase/KiWiEntity.class
+END
+KiWiResource$LabelComparator.class
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/kbase/KiWiResource$LabelComparator.class
+END

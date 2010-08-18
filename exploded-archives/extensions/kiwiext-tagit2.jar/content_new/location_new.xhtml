@@ -1,0 +1,375 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+			    xmlns:a="http://richfaces.org/a4j" 
+			    xmlns:c="http://java.sun.com/jstl/core"
+			    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                xmlns:rich="http://richfaces.org/rich"
+ >
+
+<script type="text/javascript">
+	/* <![CDATA[ */
+	
+	function activateImageBox(){
+		alert(jQuery(".imagetabs"));
+		//activate imageSlides
+		jQuery(".imagetabs").tabs(".images > div", {
+	        // enable "cross-fading" effect 
+	        effect: 'fade', 
+	        fadeOutSpeed: "slow", 
+	        // start from the beginning after the last tab 
+	        rotate: true
+	    // use the slideshow plugin. It accepts its own configuration 
+	    }).slideshow();
+
+		//activate mouseoverfunction
+		jQuery(".imagesDiv").mouseover(function(){
+			jQuery(".imageoverlay").show();
+		}).mouseout(function(){
+			jQuery(".imageoverlay").hide();
+		});
+
+	}
+	
+	/* ]]> */
+</script>
+
+<a:form>
+<div id="newsItemBox">
+	
+	<div id="pointContentBackground">
+	<div id="pointHeader">
+
+		<div id="pointHeaderTitle">
+			<!-- text image -->
+			<img src="image/icon30x30/news.png" />
+			<!-- text title -->
+				<div id="pointHeaderTitleTextDiv" class="pointHeaderTitleTextDivClass">		
+					<h:inputText value="#{tagit2.newLocationAction.title}" styleClass="titleInput" style="color:#475B63;" />
+					
+				</div>
+		</div>
+		<div id="pointHeaderCloser" onclick="check();">
+		</div>
+		<div class="clear"></div>
+
+	</div>
+		<div id="newsItemContent">
+		
+		<!-- content -->
+		<ul class="tabs">
+			<li><a href="#">Artikel</a></li>
+			<li><a href="#">Bilder</a></li>
+			<li><a href="#">Karte</a></li>
+		</ul>
+		
+		<div class="panes">
+		
+			<!-- text -->
+			<div>
+				<s:div styleClass="descDiv" style="height:360px;width:100%;">
+							<div class="locationCatsEdit">
+								<table><tr>
+								<td><div><b>Kategorie:</b></div></td>
+								<td>
+									<rich:comboBox width="150" id="tag_category"  value="#{tagit2.newLocationAction.category}" defaultLabel="#{tagit2.newLocationAction.CAT_DEFAULT}" enableManualInput="false">
+        									<s:selectItems value="#{tagit2.newLocationAction.getCatgoryStrings()}" var="cat"/>
+        									<a:support event="onselect" reRender="tag_subcategory"/>
+    								</rich:comboBox>
+								</td>
+								<td width="300" align="right"><div><b>Unterkategorie:</b></div></td>
+								<td>
+									<rich:comboBox width="150" id="tag_subcategory"  value="#{tagit2.newLocationAction.subCategory}" defaultLabel="#{tagit2.newLocationAction.SUBCAT_DEFAULT}" enableManualInput="true">
+        									<s:selectItems value="#{tagit2.newLocationAction.getSubCategoryStrings()}" var="subcat"/>
+    								</rich:comboBox>
+								</td>
+								</tr>
+								</table>
+							</div>
+							<div class="locationTextEdit">
+								<rich:editor id="description_editor"
+		    						height="340"
+		    					 	width="670"
+		    						required="false"
+								 	theme="advanced"
+								 	configuration="tinymce-small"
+								 	plugins="safari,pagebreak,style,layer,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,visualchars,nonbreaking,xhtmlxtras"
+								 	value="#{tagit2.newLocationAction.description}">
+								</rich:editor>
+							</div>
+				</s:div>
+				
+			</div>
+			
+			<!-- images -->
+			<div>
+				<s:div id="imageBox">
+				
+				<s:div styleClass="imagesDiv" rendered="#{tagit2.newLocationAction.mode != 1 and tagit2.newLocationAction.imageListSize != 0}">
+				<!-- "previous slide" button --> 
+				<a class="backward backwardButton imagebuttons imageoverlay">&lt;</a> 
+ 
+				<!-- container for the slides --> 
+				<div class="images"> 
+ 				<ui:repeat value="#{tagit2.newLocationAction.images}" var="img">
+ 					<div>
+    					<s:graphicImage rendered="#{img.mediaContent ne null}" value="#{img.mediaContent.data}">
+	        				<s:transformImageSize height="#{tagit2.imageSizeService.getImageHeight(img.mediaContent, 560, 370)}" maintainRatio="true"/>
+	        			</s:graphicImage>
+    				</div>
+ 				</ui:repeat>
+				</div> 
+ 
+				<!-- "next slide" button --> 
+				<a class="forward forwardButton imagebuttons imageoverlay">&gt;</a> 
+ 
+				<!-- the tabs --> 
+				<div class="imagetabs">
+					<c:forEach begin="1" end="#{tagit2.newLocationAction.imageListSize}">
+						<a href="#"></a> 
+					</c:forEach>
+				</div>
+				
+				<!-- add image button -->
+				<a:commandLink action="#{tagit2.newLocationAction.startImageUpload()}" styleClass="addImageButton" reRender="imageBox">
+						<img src="img/point/addImage.png" title="Bilder hochladen" />
+				</a:commandLink>
+				<script type="text/javascript">
+					/* <![CDATA[ */
+					activateImageBox();
+					/* ]]> */
+				</script>
+				</s:div>
+				
+				<s:div styleClass="imagesDiv" rendered="#{tagit2.newLocationAction.mode != 1 and tagit2.newLocationAction.imageListSize == 0}">
+				<a:commandLink action="#{tagit2.newLocationAction.startImageUpload()}" styleClass="addImageButton" reRender="imageBox">
+						<img src="img/point/addImage.png" title="Bilder hochladen" />
+				</a:commandLink>
+				</s:div>
+				
+				<!-- upload Box -->
+				<s:div styleClass="imageUploadBox" rendered="#{tagit2.newLocationAction.mode == 1}">
+					<h3>Bilddateien hochladen</h3>
+			      		<rich:fileUpload
+                       fileUploadListener="#{tagit2.newLocationAction.listener}"
+                       immediateUpload="true"
+                       listHeight="260"
+                       listWidth="670"
+                       maxFilesQuantity="3"
+                       allowFlash="true"
+                       >
+               			</rich:fileUpload>
+               		<ul class="contextButtons">
+						<li><a:commandLink action="#{tagit2.newLocationAction.cancelImageUpluad()}" reRender="imageBox">
+							<img src="img/point/cancel.png" title="Abbrechen"/>
+						</a:commandLink></li>
+						<li><a:commandLink action="#{tagit2.newLocationAction.saveImageUpload()}" reRender="imageBox">
+							<img src="img/point/save.png" title="Speichern"/>
+						</a:commandLink></li>
+					</ul>
+				</s:div>
+
+				</s:div>
+
+			</div>
+			
+			<!-- map -->
+			<div>
+				<div id="innerMap_canvas"></div>
+				<s:div styleClass="innerMap_geocoder">
+					<input type="text" id="geocoder_input" value="#{tagit2.newLocationAction.adress}" />
+					<a style="left:660px;position:absolute;margin-top:-5px" href="#" onclick="setNewAdress(jQuery('#geocoder_input').val());">
+						<img style="border:none;padding:0;" src="img/point/geolocate.png" title="Neue Adresse zuweisen"/>
+					</a>
+				</s:div>
+
+			</div>
+		
+		</div>
+		
+		</div>
+	</div>
+	
+	<div id="messagePanel" class="panel">
+		<div id="messagePanelContent" class="messagePanelContent">
+		</div>
+		<div class="messagePanelButtons">
+			<table width="100%"><tr><td>
+			<a href="#" onclick="jQuery('#messagePanel').hide();ajaxCancelLocation();">Nicht Speichern</a>
+			</td><td align="right">
+			<a href="#" onclick="jQuery('#messagePanel').hide();ajaxSaveLocation();">Speichern</a>
+			</td></tr></table>
+		</div>
+	</div>
+	
+	<div id="errorPanel" class="panel">
+		<div id="errorPanelContent" class="messagePanelContent">
+		</div>
+		<div class="messagePanelButtons">
+			<table width="100%"><tr><td>
+			<a href="#" onclick="jQuery('#back2').hide();jQuery('#errorPanel').hide();ajaxCancelLocation();">Erstellen abbrechen</a>
+			</td><td align="right">
+			<a href="#" onclick="jQuery('#back2').hide();jQuery('#errorPanel').hide();">Fehler ausbessern</a>
+			</td></tr></table>
+		</div>
+	</div>
+	
+	<div id="back2" />
+	
+
+		<a:jsFunction name="ajaxCancelLocation" action="#{tagit2.newLocationAction.cancel()}" oncomplete="closeInfoWindow();closePoint();"></a:jsFunction>
+		<a:jsFunction name="ajaxSaveLocation" action="#{tagit2.newLocationAction.save()}" oncomplete="closeInfoWindow();closePointOnLocation(innerMapCurPoint);"></a:jsFunction>
+								<!--jsFunction for check-->
+				<a:jsFunction name="ajaxCheckLocation" data="#{tagit2.newLocationAction.check(identity.loggedIn)}" oncomplete="afterCheck(data);">
+					<a:actionparam name="lat" assignTo="#{tagit2.newLocationAction.location.latitude}"/>
+					<a:actionparam name="lng" assignTo="#{tagit2.newLocationAction.location.longitude}"/>
+					<a:actionparam name="adress" assignTo="#{tagit2.newLocationAction.adress}"/>
+				</a:jsFunction>
+	
+	<script type="text/javascript">
+	/* <![CDATA[ */
+	
+	//activate tabs
+	jQuery(".tabs").tabs(".panes > div", {
+		onClick: function(event, tabIndex) {
+						if(tabIndex == 2) {
+							loadInnerMap();
+						}}
+	});
+
+
+	jQuery("#back").css("background-color","#f1f1f1");
+	jQuery("#back").css("background-image","url(img/location/new_location.png)");
+
+	var innerMapCurPoint = null;
+	var innerMap = null;
+	var m = null;
+	var newAdress = "";
+	
+	//load innerMap
+	function loadInnerMap() {
+
+		innerMap = new GMap2(document.getElementById("innerMap_canvas"));
+		innerMap.setUIToDefault();
+
+		if( innerMapCurPoint == null ) {
+			var l = GEvent.addListener(innerMap,"dblclick",function(o,point){
+					GEvent.removeListener(l);
+					innerMapCurPoint = point;
+					setInnerMap();
+			});
+			
+			innerMap.setCenter(map.getCenter(),13);
+		} else {
+			
+			setInnerMap();
+		}
+
+		newAdress = jQuery('#geocoder_input').val();
+
+	}
+
+	function setInnerMap() {
+		innerMap.setCenter(innerMapCurPoint,13);
+		if(loggedIn) {
+			m = new GMarker(innerMapCurPoint,{draggable:true});
+			GEvent.addListener(m,"dragend",function(p){
+				innerMapCurPoint = p;
+				jQuery('#geocoder_input').val("");
+				newAdress = "";
+			});
+		} else {
+			m = new GMarker(innerMapCurPoint);
+		}
+		innerMap.addOverlay(m);
+	}
+
+	function setNewAdress(address) {
+		geocoder = new GClientGeocoder();
+		geocoder.getLatLng(
+		          address,
+		          function(point) {
+		            if (!point) {
+		              alert(address + " nicht gefunden!");
+		            } else {
+		            	innerMapCurPoint = point;
+			          	if(m!=null) {
+			              	innerMap.removeOverlay(m);
+			            }
+			          	setInnerMap();
+		              	newAdress = address;
+		            }
+		          }
+		        );
+		
+	}
+
+    //--- this part is necessary for each point item
+	function openPointWindow() {
+		//set images (css attributes)
+		jQuery('#pointHeaderCloser').css('background-image','url("img/location/close.png")');
+		jQuery("ul.tabs a").css('background-image','url("img/location/tabs.png")');
+		jQuery("#back").fadeIn("slow",function(){
+			jQuery("#point").fadeIn("slow");
+		});
+    }
+    
+    if(openByClick) {
+    	openByClick = false;
+    	openPointWindow();
+    }
+
+    function check() {
+
+		if( innerMapCurPoint != null ) {
+			ajaxCheckLocation(innerMapCurPoint.lat(),innerMapCurPoint.lng(),newAdress);
+		} else {
+			ajaxCheckLocation(0,0,newAdress);
+		}
+
+    }
+
+    function afterCheck(data) {
+
+		if( data.type == 0 ) {
+			//is an error
+			openErrorWindow(data.value);
+		} else {
+			if( data.value != null ) {
+				openInfoWindow(data.value);
+			} else {
+				ajaxCancelLocation();
+			}
+		}
+    }
+
+	function openInfoWindow(data) {
+		jQuery('#messagePanelContent').html(data);
+		jQuery('#back2').show();
+		jQuery('#messagePanel').show();
+	}
+
+	function openErrorWindow(data) {
+		jQuery('#errorPanelContent').html(data);
+		jQuery('#back2').show();
+		jQuery('#errorPanel').show();
+	}
+
+	function closeInfoWindow() {
+		jQuery('#errorPanelContent').html("");
+		jQuery('#messagePanelContent').html("");
+		jQuery('#back2').hide();
+		jQuery('.panel').hide();
+	}
+
+    //----------------------------------------------
+	
+	/* ]]> */
+	</script>
+
+</div>
+</a:form>
+
+</ui:composition>

@@ -1,0 +1,15 @@
+<html><head><script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAzr2EBOXUKnm_jVnk0OJI7xSosDVG8KKPE1-m51RBrvYughuyMxQ-i1QfUnH94QxWIa6N4U6MouMmBA"            type="text/javascript"></script><script src="../cluster.js"            type="text/javascript"></script><script language="JavaScript" type="text/javascript">var selCluster;var map;    function initialize() {      if (GBrowserIsCompatible()) {        map = new GMap2(document.getElementById("map_canvas"));        map.setCenter(new GLatLng(37.4419, -122.1419), 8);        map.setUIToDefault();				//define call function for points		GClusterConfig.onPointClick = openPointFromFlash;
+        GClusterConfig.swfFolder = "../";
+        GClusterConfig.basicImage = "../img/point.png";
+        GClusterConfig.onLeaveStage = closeCluster;				var cluster = new GCluster(map.getCenter());		map.addOverlay(cluster);
+        GEvent.addDomListener(cluster.clusterDiv,"click",function() {
+            if(selCluster == null) {
+                selCluster = cluster;
+                ajaxSelectCluster();
+            }
+        });				GEvent.addListener(map,"zoomend",map.clearOverlays);      }    }		function ajaxSelectCluster() {		selCluster.open("cluster.xml");	}		function openPointFromFlash(id){		GLog.write("clicked point "+id);	}
+    
+    function closeCluster() {
+        selCluster.close();
+        selCluster = null;
+    }function getSWF(movieName) {	if (navigator.appName.indexOf("Microsoft") != -1) {		return window[movieName];	} else {		if(document[movieName].length != undefined){			return document[movieName][1];		}		return document[movieName];	}}</script></head><body onload="initialize()"><div id="map_canvas" style="width: 500px; height: 300px"></div></body></html>

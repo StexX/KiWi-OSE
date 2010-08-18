@@ -1,0 +1,256 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+                xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                xmlns:a4j="http://richfaces.org/a4j"
+                template="layout/template.xhtml">
+
+ 
+ 
+    <ui:define name="body">
+
+        <h1>Configure Reasoning</h1>
+
+        <rich:messages styleClass="message"/>
+
+        
+        <rich:modalPanel id="progressWindow" width="400" height="100" >
+            <f:facet name="header">
+                <h:outputText value="Reasoner running ..." />
+            </f:facet>    
+            <f:facet name="controls">
+            </f:facet>
+            <center>
+                <br/>
+                Please wait while the reasoner is running ...
+            </center>
+        </rich:modalPanel>
+
+        <h3>Actions</h3>
+        <h:panelGrid columns="2">
+	        <h:outputText value="Run Reasoner:" />
+	        <h:form>
+                <a:commandButton id="reasoningLink" value="Start" action="#{reasoningAction.runReasoner()}">
+                    <rich:componentControl for="progressWindow" attachTo="reasoningLink" operation="show" event="onclick" />
+                </a:commandButton>
+		    </h:form>		    
+        </h:panelGrid>
+        
+        <h:panelGrid columns="2">
+		    <a4j:form>
+	 			<h:selectBooleanCheckbox value="#{reasoningAction.reasoningEnabled}" id="reasoningCheckBox">
+			        <a4j:support id="checkboxSupport" event="onchange" />
+			    </h:selectBooleanCheckbox>		
+			    <h:outputText value="Online reasoning"/>			    
+		    </a4j:form>	                        
+        </h:panelGrid>
+        
+        <h:panelGrid columns="2">
+		    <a4j:form>
+	 			<h:selectBooleanCheckbox value="#{reasoningAction.hybridReasoningEnabled}" id="hybridReasoningCheckBox">
+			        <a4j:support id="checkboxSupport" event="onchange" />
+			    </h:selectBooleanCheckbox>		
+			    <h:outputText value="Hybrid reasoning"/>			    
+		    </a4j:form>	                        
+        </h:panelGrid>
+        
+        <h:panelGrid columns="2">
+	        <h:outputText value="Run enqueued reasoning tasks:" />
+	        <h:form>
+                <a:commandButton id="runReasoningTasksLink" value="Start" action="#{reasoningAction.runEnqueuedTasks()}">
+                    <rich:componentControl for="progressWindow" attachTo="runReasoningTasksLink" operation="show" event="onclick" />
+                </a:commandButton>
+		    </h:form>		    
+        </h:panelGrid>        
+        <br/>
+        <br/>        
+        <br/>
+        <rich:panel rendered="#{reasoningAction.isReasonerRunning()}" style="width:500px;">
+        		<f:facet name="header">
+       				<h:outputText value="Current task"/>
+				</f:facet>
+
+        	<h:panelGrid columns="1">        	
+        		<h:outputText value="#{reasoningAction.currentTask.toString()}"/>
+        	</h:panelGrid>
+        </rich:panel>
+        <br/>        
+        <br/>
+
+        <h2>Reasoning task queue</h2><br/>
+        <h:form>
+		<rich:dataTable width="500" id="reasoningTasksTable" rows="20"
+			columnClasses="col" value="#{reasoningAction.taskQueue}" var="task">
+			<f:facet name="header">
+				<rich:columnGroup>
+					<h:column>
+						<b><h:outputText styleClass="columnHeader" value="Task id" /></b>
+					</h:column>
+					<h:column>
+						<b><h:outputText styleClass="columnHeader" value="Task" /></b>
+					</h:column>
+				</rich:columnGroup>
+			</f:facet>
+
+			<h:column>
+				<h:outputText value="#{task.number}" />
+			</h:column>
+
+			<h:column>
+				<h:outputText value="#{task.toString()}" />
+			</h:column>
+		</rich:dataTable>
+        </h:form>
+        
+        <h2>Reasoning task statistics</h2><br/>
+        
+        <h:form>
+		<rich:dataTable width="500" id="reasoningStatsTable" rows="20"
+			columnClasses="col" value="#{reasoningAction.getReasoningTaskStats()}" var="task">
+			<f:facet name="header">
+				<rich:columnGroup>
+					<h:column>
+						<b><h:outputText styleClass="columnHeader" value="Task id" /></b>
+					</h:column>
+					<h:column>
+						<b><h:outputText styleClass="columnHeader" value="Task" /></b>
+					</h:column>
+					<h:column>
+						<b><h:outputText styleClass="columnHeader" value="Generated triples" /></b>
+					</h:column>
+					<h:column>
+						<b><h:outputText styleClass="columnHeader" value="Marked triples" /></b>
+					</h:column>
+					<h:column>
+						<b><h:outputText styleClass="columnHeader" value="New triples" /></b>
+					</h:column>
+					<h:column>
+						<b><h:outputText styleClass="columnHeader" value="Executed rules" /></b>
+					</h:column>
+					<h:column>
+						<b><h:outputText styleClass="columnHeader" value="Rounds" /></b>
+					</h:column>
+					<h:column>
+						<b><h:outputText styleClass="columnHeader" value="Total time (ms)" /></b>
+					</h:column>
+					<h:column>
+						<b><h:outputText styleClass="columnHeader" value="Persistence time (ms)" /></b>
+					</h:column>
+					<h:column>
+						<b><h:outputText styleClass="columnHeader" value="Justification adding time (ms)" /></b>
+					</h:column>
+				</rich:columnGroup>
+			</f:facet>
+
+			<h:column>
+				<h:outputText value="#{task.reasoningTaskNumber}" />
+			</h:column>
+
+			<h:column>
+				<h:outputText value="#{task.reasoningTaskDescription}" />
+			</h:column>
+			
+			<h:column>
+				<h:outputText value="#{task.generatedTriplesCount}" />
+			</h:column>
+			
+			<h:column>
+				<h:outputText value="#{task.markedTriplesCount}" />
+			</h:column>
+			
+			<h:column>
+				<h:outputText value="#{task.newTriplesCount}" />
+			</h:column>
+			
+			<h:column>
+				<h:outputText value="#{task.rulesCount}" />
+			</h:column>
+			
+			<h:column>
+				<h:outputText value="#{task.roundsCount}" />
+			</h:column>
+			
+			<h:column>
+				<h:outputText value="#{task.time}" />
+			</h:column>
+			
+			<h:column>
+				<h:outputText value="#{task.persistenceTime}" />
+			</h:column>
+			
+			<h:column>
+				<h:outputText value="#{task.justificationAddingTime}" />
+			</h:column>
+		</rich:dataTable>
+				<rich:spacer height="30" />
+				<rich:datascroller id="reasoningStatsTableScroller" align="left"
+					for="reasoningStatsTable" maxPages="20" />		
+        </h:form>
+        <br/><br/><br/>
+        <h:outputText value="Generated triples total: #{reasoningAction.reasoningStats.generatedTriplesCount}"/><br/>
+        <h:outputText value="Marked triples total: #{reasoningAction.reasoningStats.markedTriplesCount}"/><br/>
+        <h:outputText value="New triples total: #{reasoningAction.reasoningStats.newTriplesCount}"/><br/>
+        <h:outputText value="Executed rules total: #{reasoningAction.reasoningStats.rulesCount}"/><br/>
+        <h:outputText value="Total time spent reasoning: #{reasoningAction.reasoningStats.time} ms"/> <br/>
+        
+        <br/><br/><br/>
+        <h2>Stored programs</h2><br/>
+        
+        <h:form>
+		<rich:dataTable width="700" id="programsTable" rows="20"
+			columnClasses="col" value="#{programsListing.programs}" var="program">
+			<f:facet name="header">
+				<rich:columnGroup>
+					<h:column>
+						<b><h:outputText styleClass="columnHeader" value="Program" /></b>
+					</h:column>
+					<h:column>
+						<b><h:outputText styleClass="columnHeader" value="Rules" /></b>
+					</h:column>
+					
+				</rich:columnGroup>
+			</f:facet>
+			
+			<h:column>
+				<h:outputText value="#{program.name}" />
+			</h:column>
+			<h:column>
+				<rich:dataTable width="600" id="rulesTable" rows="20"
+					columnClasses="col" value="#{program.rules}" var="rule">
+					<f:facet name="header">
+						<rich:columnGroup>
+							<h:column>
+								<b><h:outputText styleClass="columnHeader" value="Rule name" /></b>
+							</h:column>
+							<h:column>
+								<b><h:outputText styleClass="columnHeader" value="Rule" /></b>
+							</h:column>
+							
+						</rich:columnGroup>
+					</f:facet>
+					
+					<h:column>
+						<h:outputText value="#{rule.name}" />
+					</h:column>
+					<h:column>
+						<h:outputText value="#{rule.toString()}" />
+					</h:column>
+				</rich:dataTable>
+			</h:column>
+		</rich:dataTable>
+				<rich:spacer height="30" />
+				<rich:datascroller id="reasoningStatsTableScroller" align="left"
+					for="reasoningStatsTable" maxPages="20" />		
+        </h:form>
+        
+    </ui:define>         
+                
+</ui:composition>

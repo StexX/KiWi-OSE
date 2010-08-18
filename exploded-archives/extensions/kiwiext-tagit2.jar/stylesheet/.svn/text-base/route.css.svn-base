@@ -1,0 +1,278 @@
+#RouteBox {
+	width: 800px;
+	height: 477px;
+}
+
+#RouteContent {
+	width: 100%;
+	height: 440px;
+	background: white;
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-bottomright: 5px;
+	background: #FFFFFF url(../img/content.png) repeat-x scroll 0 0;
+	border: 1px solid #666;
+	border-top:none;
+}
+
+#routeHeaderCloser {
+	position:absolute;
+	width:35px;
+	height:35px;
+	background-image: url("../img/route/close.png");
+	margin-left:582px;
+	margin-top:15px;
+	cursor: pointer;
+}
+
+.routeContentLeft {
+	width:285px;
+	height:420px;
+	float:left;
+	margin-top:10px;
+	margin-left:10px;
+	margin-bottom:10px;
+}
+
+.routeEditLink {
+	position:absolute;
+	left:265px;
+	top:75px;
+}
+
+.routeTitleInput {
+	font-size:14px;
+	width:730px;
+}
+
+.routeContentRight {
+	width:495px;
+	height: 420px;
+	float: right;
+	margin:10px;
+	margin-left:0;
+}
+
+.routeTextContent {
+	width:100%;
+	height:285px;
+	overflow: auto;
+	border:1px solid #666;
+	margin-bottom:5px;
+}
+
+.routeTextImage {
+	width:100%;
+	height:90px;
+}
+
+/*waypoint*/
+.wpPanes div {
+	position:absolute;
+}
+.routeWaypointDescription {
+	width:260px;
+	height:180px;
+	overflow: auto;
+	border:1px solid #666;
+	padding-left:5px;
+	padding-right:5px;
+	padding-bottom:10px;
+}
+
+
+.routeWaypointDescription h3 {
+	margin:0;
+	margin-top:5px;
+}
+
+.routeWaypointDescription h4 {
+	margin:0;
+	font-size:10px;
+}
+
+.routeWaypointDescription p {
+	margin:0;
+	margin-top:5px;
+}	
+
+.routeWaypointImages {
+	width:100%;
+	height:185px;
+	overflow: auto;
+	border:1px solid #666;
+	top:197px;
+}
+
+.waypointOverlay {
+	position: absolute;
+	top:265px;
+	height:20px;
+	background-color: black;
+	opacity:0.7;
+	color:white;
+	font-weight: bold;
+	cursor: pointer;
+	z-index:2;
+	text-decoration: none;
+}
+
+.waypointOverlayLeft {
+	left:17px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-bottomright: 5px;
+	padding-left: 5px;
+	width:20px;
+}
+
+.waypointOverlayRight {
+	left:264px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	padding-left:10px;
+	width:15px;
+}
+
+.waypointOverlayMore {
+-moz-border-radius-bottomleft:5px;
+-moz-border-radius-bottomright:5px;
+-moz-border-radius-topleft:5px;
+-moz-border-radius-topright:5px;
+left:260px;
+padding-left:10px;
+padding-top:1px;
+top:85px;
+width:17px;
+}
+
+.routeAdditionalInfo {
+	width: 100%;
+	height:25px;
+	padding-top:5px;
+}
+
+.innerMapWrap {
+	width:100%;
+	height:390px;
+	border-top: 1px solid #666;
+	
+}
+
+#innerMapRoute_canvas {
+ height:382px;
+ width:490px;
+ border: 1px solid #666;
+ margin-top:5px;
+}
+
+/*tabs and panes*/
+ul.routeTabs { 
+	list-style:none; 
+	margin:0; 
+	padding:0;
+	height:30px;
+	border-bottom:1px solid #666;
+}
+
+/* single tab */
+ul.routeTabs li { 
+	float:left;	 
+	text-indent:0;
+	padding:0;
+	margin:0 !important;
+	list-style-image:none !important; 
+}
+
+/* link inside the tab. uses a background image */
+ul.routeTabs a { 
+	background: url(../img/route/tabs.png) no-repeat -652px 0;
+	font-size:11px;
+	display:block;
+	height: 30px;  
+	line-height:30px;
+	width: 111px;
+	text-align:center;	
+	text-decoration:none;
+	color:#000;
+	padding:0px;
+	margin:0px;	
+	position:relative;
+	top:1px;
+	font-size: 14px;
+}
+
+ul.routeTabs a:active {
+	outline:none;		
+}
+
+/* when mouse enters the tab move the background image */
+ul.routeTabs a:hover {
+	background-position: -652px -31px;	
+	color:#fff;	
+}
+
+/* active tab uses a class name "current". it's highlight is also done by moving the background image. */
+ul.routeTabs a.current, ul.routeTabs a.current:hover, ul.routeTabs li.current a {
+	background-position: -652px -62px;		
+	cursor:default !important; 
+	color:#000 !important;
+	font-weight: bold;
+}
+
+/* Different widths for tabs: use a class name: w1, w2, w3 or w2 */
+
+
+/* width 1 */
+ul.routeTabs a.w1 			{ background-position: -519px 0; width:134px; }
+ul.routeTabs a.w1:hover 	{ background-position: -519px -31px; }
+ul.routeTabs a.w1.current { background-position: -519px -62px; }
+
+/* width 2 */
+ul.routeTabss a.w2 			{ background-position: -366px -0px; width:154px; }
+ul.routeTabs a.w2:hover 	{ background-position: -366px -31px; }
+ul.routeTabs a.w2.current { background-position: -366px -62px; }
+
+
+/* width 3 */
+ul.routeTabs a.w3 			{ background-position: -193px -0px; width:174px; }
+ul.routeTabs a.w3:hover 	{ background-position: -193px -31px; }
+ul.routeTabs a.w3.current { background-position: -193px -62px; }
+
+/* width 4 */
+ul.routeTabs a.w4 			{ background-position: -0px -0px; width:194px; }
+ul.routeTabs a.w4:hover 	{ background-position: -0px -31px; }
+ul.routeTabs a.w4.current { background-position: -0px -62px; }
+
+
+/* initially all panes are hidden */ 
+div.routePanes div.pane {
+	display:none;		
+}
+
+div.routePanes {
+	padding:5px;
+	text-align: justify;
+	width:268px;
+	height:380px;
+	border-left: 1px solid #666;
+
+}
+
+#startEditPolyLink {
+	position:absolute;
+	top:85px;
+	left:750px;
+}
+
+#startEditPolyLink img {
+	border:0;
+}
+
+.startEditPolyLink2 {
+	position:absolute;
+	top:80px;
+	left:715px;
+}
+
+.startEditPolyLink2 img {
+	border:0;
+}

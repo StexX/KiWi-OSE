@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/security
+END
+PermissionServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/security/PermissionServiceImpl.class
+END
+FoafSslAuthenticationServlet$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/security/FoafSslAuthenticationServlet$1.class
+END
+FoafSslAuthenticationServlet.class
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/security/FoafSslAuthenticationServlet.class
+END
+KeyStoreServlet$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/security/KeyStoreServlet$1.class
+END
+KeyStoreServlet$DefaultPasswordFinder.class
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/security/KeyStoreServlet$DefaultPasswordFinder.class
+END
+KeyStoreServlet.class
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/security/KeyStoreServlet.class
+END
+CryptoServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/security/CryptoServiceImpl.class
+END
+SecurityServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/security/SecurityServiceImpl.class
+END

@@ -1,0 +1,491 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type">
+  <title>Extension Mechanism</title>
+</head>
+<body>
+<big><span style="font-weight: bold;">Extension Mechanism</span></big><br>
+<br>
+&nbsp;&nbsp;&nbsp; In a very simplistic way the <span
+ style="font-style: italic;">KiWi system</span> is formed
+from two kind of components :<br>
+<ul>
+  <li>Core components</li>
+  <li>Extensions <br>
+  </li>
+</ul>
+&nbsp;&nbsp;&nbsp; An <span style="font-style: italic;">extension</span>
+is a interchangeable piece if software
+which encapsulate a certain behavior, design to work together with the
+KiWi core with the purpose to extend the core functionality. The user
+can create its own extensions, and it must be able to decide which
+extension to use(together with the KiWi Core).<br>
+<br>
+The Extension can be :<br>
+<ul>
+  <li>a <span style="font-weight: bold;">service</span> - encapsulate
+a certain specific behavior (applicable on the core components) and
+make it available in a friendly way. This extension is
+similar with the <span style="font-weight: bold;">action</span>
+extension from many point of view but what
+makes it different is the way to way how is applied, the <span
+ style="font-weight: bold;">actions</span> can be
+interact only with <span style="font-style: italic;">content item(s)</span>
+and the services can be applied on more
+than content items. By example a&nbsp; service can be a stateless
+session beans that provide certain service functionality (i.e. Java
+methods) to other components.</li>
+  <li>an <span style="font-weight: bold;">action</span> - encapsulate
+a certain specific behavior applicable on a <span
+ style="font-style: italic;">content item</span>. Understand this
+extension like a simplified kind of service extension (applicable only
+on <span style="font-style: italic;">content item(s)</span>). <span
+ style="font-style: italic;"><small>NB: the "action" mechanism is not
+yet available, but foreseen for the future</small>.</span></li>
+  <li>a <span style="font-weight: bold;">perspective</span> - a
+perspective is useful in organizing various KiWi views widgets (and
+other graphical components) around certain task(s).&nbsp; A perspective
+can be also helpful in managing menus and tool bars(by group them). The
+user can use more than one perspective - he can switch between the
+perspectives. As an KiWi&nbsp; extension developer we can either create
+a new perspective from scratch or enhance existing perspective.
+Enhancing existing perspective essentially means to accommodate your
+view in an existing perspective.</li>
+  <li>a <span style="font-weight: bold;">widget</span> is a small user
+interface component that can be used by different perspectives&nbsp; to
+show or edit a certain kind of information, e.g. EXIF metadata,
+tagging, ...</li>
+</ul>
+<br>
+<big><span style="font-weight: bold;">How it works ?</span></big><br>
+<br>
+&nbsp;&nbsp;&nbsp; An extension make sense only in a KiWi system. This
+means there must be an way to bring the extension and the KiWi core
+together - this is call extension installation.<br>
+&nbsp;&nbsp;&nbsp; In the most common cases the extensions are packed
+in jar files and they are down-loadable from the KiWi portal. You only
+need to copy them in the extension directory and the KiWi system will
+install them.<br>
+&nbsp;&nbsp;&nbsp; Alternative you can use the <span
+ style="font-style: italic;">auto install</span> feature to allow the
+KiWi system to claim the needed extension by it self - you only must
+specify the extension name. (????)<br>
+<br>
+<br>
+<big><span style="font-weight: bold;">Develop your own&nbsp; KiWi
+service
+extension.</span></big><br>
+<br>
+&nbsp;&nbsp;&nbsp; For this you need to&nbsp; add your extension
+directory to the actual
+KiWi extension directory (extensions). The directory structure must
+look like
+:<br>
+<br>
+extensions<br>
++-- your extension<br>
+&nbsp;&nbsp;&nbsp; +-- resources<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +-- META-INF<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +--
+components.xml<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +--
+faces-config.xml<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +-- messages_en.properties<br>
+&nbsp;&nbsp;&nbsp; +-- src<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +-- exampleplugin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +--
+action<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
++-- ...<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; +-- api<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
++-- ...<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; +--
+services<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; +-- ...<br>
+&nbsp;&nbsp;&nbsp; +-- view<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +-- javascript<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +--
+exampleplugin.js<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; +-- layout<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; +--
+template.xhtml<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +-- stylesheet<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +--
+exampleplugin.css<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +-- file1.xhtml<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +-- file2.xhtml<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +-- ...<br>
+<br>
+&nbsp;&nbsp;&nbsp; This directory structure is very important to,
+otherwise the kiwi build process can not find the your
+components(extensions); the kiwi build process is responsible for the
+compile and deploy the KiWi core and the exception.<br>
+Directories details :<br>
+<ul>
+  <li>resources - used to store the META-INF information about the
+files contained in the extension. Here you can find : <br>
+  </li>
+  <ul>
+    <li>components.xml - seam specific file, it contains a list will
+all the seam components used in this extension<br>
+    </li>
+    <li>pages.xml - Facelets specif file - it contains the navigations
+rules for the views (pages).<br>
+    </li>
+    <li>messages_XXX.properties - used to the internationalization.</li>
+  </ul>
+</ul>
+<ul>
+  <li>src - all the java sources</li>
+  <li>view all the view files, take care the navigation rules are sored
+in the META-INF. This directory contains the <a
+ href="#extension_Advanced"><big><small><span
+ style="font-style: italic;">extension home page.</span></small></big></a></li>
+</ul>
+<br>
+<span style="color: rgb(0, 0, 153);">TODO : In the future will be
+possible to develop the kiwi extensions outside of the KiWi system -
+like independent projects. Here we must provide a&nbsp; extension
+project pattern - together with a kiwi mock. The </span><span
+ style="color: rgb(0, 0, 153);">kiwi mock purpose is to simulate the
+kiwi system install feature - in this way the user can test it self the
+plug in before goes official.</span><br>
+<br>
+&nbsp;&nbsp;&nbsp; So the first thing what you must care about is "to
+present" your
+extension to the KiWi system, this is done with a loader. A loader is
+a managed class which has a method triggered by the seam container in
+the Post Initialization phase. Because you have a managed class you
+can use the dependency injection. The KiWi system has a service used to
+register extensions - this is the way how you introduce your extension
+to the KiWi system. You can inject also other resources (like logger).<br>
+<br>
+@Name("myExten.cfg")<br>
+@Scope(ScopeType.STATELESS)<br>
+public class ExtensionConfiguration {<br>
+<br>
+&nbsp;&nbsp;&nbsp; @In<br>
+&nbsp;&nbsp;&nbsp; private ExtensionService extensionService;<br>
+<br>
+&nbsp;&nbsp;&nbsp; @Logger<br>
+&nbsp;&nbsp;&nbsp; private Log log<br>
+<br>
+&nbsp;&nbsp;&nbsp; @Observer("org.jboss.seam.postInitialization")<br>
+&nbsp;&nbsp;&nbsp; public void initializeExtension() {<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+extensionService.registerApplication(new KiWiApplication() {<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+@Override<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+public String getIdentifier() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+return "myExtension";<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+@Override<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+public String getName() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+return "myExtension";<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; });<br>
+&nbsp;&nbsp;&nbsp; }<br>
+}<br>
+<br>
+This code snippet does :<br>
+<ol>
+  <li>injects the ExtensionService in the extensionService field</li>
+  <li>annotate the initializeExtension method with the
+@Observer("org.jboss.seam.postInitialization"), this will inform the
+Seam container to trier this method in the post initialization phase.
+Because we are in the post initialization the extensionService was
+already injected.</li>
+  <li>create a KiWiApplication instance (with an anonymous class) which
+livers <br>
+  </li>
+  <ol>
+    <li>the extension name - a human readable String used to identify
+the application</li>
+    <li>the identification - an application unique id for the extension.</li>
+    <li><span style="color: rgb(51, 51, 255);">FIXME : what happen if
+two extension have the same id - some exception ?? I must try </span><br>
+    </li>
+  </ol>
+  <li>register this instance in the extensionService.</li>
+  <li>before alternative you can prove if the extension is already
+install like in the next snippet :<br>
+  </li>
+</ol>
+&nbsp;&nbsp;&nbsp; private void register(ExtensionService service,
+KiWiApplication app) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; final String name =
+app.getName();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; final KiWiApplication getIt
+= service.getApplication(name);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (getIt == null) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+service.registerApplication(app);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; }<br>
+<br>
+If you compile and deploy your extension the KiWi main view must look
+like :<br>
+<br>
+<img style="width: 576px; height: 141px;" alt="install resources"
+ src="images/installExtension.jpg"><br>
+<br>
+<span style="text-decoration: underline;">Note for windows users :</span>
+the windows file system does not make a difference between files names
+with big and small capitals and because the idetifier is use to build
+the path for the extension home page don't use capital letter for
+identifier.<br>
+<br>
+So if we try to summarize : to register a KiWi extension you need to
+provide a KiWiApplication instance to the ExtensionService.<br>
+Unfortunately this was not all.<br>
+<br>
+<span style="text-decoration: underline;">Seam note :</span> if
+everything is clear until here, there is still a open question and is
+seam related :&nbsp; Why&nbsp; do I use the&nbsp; <span
+ style="font-style: italic;">@Observer("org.jboss.seam.postInitialization")</span>
+why I don't observe something else? The reason is simple if you know
+how the <span style="font-style: italic;">@Observer</span> and the <span
+ style="font-style: italic;">Seam
+container</span> are working. The @Obsever annotation allows you to
+observe its build in events (or contextual events), and the <span
+ style="font-style: italic;">org.jboss.seam.postInitialization </span>is
+a seam event triggerd when seam has initialized and started up all
+components. As the name suggest an extension is nothing more then a
+extension of base functionality (or components) so it is important to
+start the install process after all the base components are initialized
+and started up.<br>
+The reason why we don't objserve a certain class initialization is the
+flexibility - we don't want to creat a dependency between the extesnion
+mechansim and a certain class.<br>
+For more information about Seam please go in the Seam section.<br>
+<span style="text-decoration: underline;">Seam note :</span> Don't
+forget to use the <span style="font-style: italic;">@Name</span>
+annotation&nbsp; - otherwise the seam container will ignore your
+observer because without this addnotation&nbsp; your class will be not
+a Seam Component and the Seam Container will not care about it.<br>
+<br>
+<big><span style="font-weight: bold;"><a name="extension_Advanced"></a><big>Extension
+advanced.</big><br>
+&nbsp;&nbsp;&nbsp; </span><small><br>
+&nbsp;&nbsp;&nbsp; In the previous section we see how to register a
+extension, in this section I will try to explain who I can customize
+the added extension. For this you need to understand how the kiwi main
+view (header) works.<br>
+&nbsp;&nbsp;&nbsp; After your extension is registered in the
+ExtensionService the kiwi
+main view header ask for all the installed extensions and for the each
+extension it build a commandLink. This are the big bold white text
+labels. A commandLink is a link which acts like a button - when the
+user click on then the view content changes - it loads the <span
+ style="font-style: italic;">extension home page</span>, this action is
+know also like the switch application. The <span
+ style="font-style: italic;">extension home page</span> is a xhtml
+document with the name home.xhtml placed under the path "/identifier/"
+- the identifier is described with the </small></big>KiWiApplication
+instance. In the previous example the identifier is the string returned
+by the getIdentifier method (<span style="font-style: italic;">"myExtension"</span>)
+in this case the <big><small><span style="font-style: italic;">extension
+home page</span> is <span style="font-style: italic;">"/</span></small></big><span
+ style="font-style: italic;">myExtension/home.xhtml"</span>.<br>
+In your extension directory structure this file is placed under the <span
+ style="font-style: italic;">/view</span> directory - so the project
+absolute path for the myExtension extension is .<br>
+<span style="font-style: italic;">../extensions/myExtensionDir/view/myExtension/home</span>.<br>
+Because the <big><small>identifier is unique each extension will have
+its own view home directory.<br>
+The home.xhtml is a normal JSF/Facelets file and it must be develop
+according with the </small></big><big><small>JSF/Facelets rules.<br>
+&nbsp;&nbsp;&nbsp; The next sequence diagram shows the two main
+extension related work flows : the extension loading (the upper flow)
+and the application switch.<br>
+more the diagram shows the participant type (e.g. XHTML Document).<br>
+<br>
+<img style="width: 795px; height: 446px;" alt="extension workflow"
+ src="images/extension.workflow.jpg"><br>
+<span style="font-weight: bold;"><br>
+<big>Navigation rules details</big><br>
+<br>
+</span>&nbsp;&nbsp;&nbsp; A navigation rule is a rule which describe
+how the user can navigate between two or more documents (e.g. it goes
+from home page to its specific application page). The KiWi application
+is a Seam base application, the Seam provides you various of ways to
+define navigation rules.<br>
+One of this way is the return String method - If a seam component
+returns a String from method which is called from a GUI component then
+this String is the new location where the user will navigate. This
+technique allows you to define dynamic navigation rules on the other
+side makes your application less flexible because they are hard coded.<br>
+<br>
+by example : <br>
+The next line call (from the view&nbsp; layer)&nbsp; the method&nbsp; "</small></big><big><small>switchApplication(app)</small></big><big><small>"
+on the seam component named </small></big><big><small>kiwi.ui.headerAction.
+</small></big><br>
+<big><small><br>
+&lt;h:commandLink
+action="#{kiwi.ui.headerAction.switchApplication(app)}" &gt;<br>
+<br>
+this method looks like this :<br>
+<br>
+public String switchApplication(KiWiApplication app) {<br>
+....<br>
+&nbsp;&nbsp;&nbsp; return "/"+app.getIdentifier()+"/home.xhtml";<br>
+}<br>
+<br>
+here the return value is used like navigation target - the browser
+loads the page identified after the dynamic build string.<br>
+<br>
+<br>
+<big><span style="font-weight: bold;">Navigation constrain</span></big><br>
+&nbsp;&nbsp;&nbsp; The Seam provide a fine granulate
+navigation/configuration feature over its XXX.page.xml - with this file
+you can have a </small></big><big><small>navigation/configuration</small></big><big><small>
+file for each page. This feature is not supported by the extension
+mechanism.<br>
+All other seam (and JSF) navigation rules are available.<br>
+<span style="color: rgb(0, 0, 102);"></span><br>
+For more details see the Seam section.<br>
+<br>
+<br>
+<span style="font-weight: bold;"><big>Extension via descriptor files</big><br>
+<span style="font-weight: bold;"></span></span>&nbsp;&nbsp;&nbsp; There
+is an second way to register an extension without to generate a </small></big>KiWiApplication
+instance. For remembering the KiWiApplication instance is a class which
+contains information about your extension (e.g. the name or the unique
+identifier). <br>
+&nbsp;&nbsp;&nbsp; The KiWi system provides a descriptive way to
+configure your extension via properties files. For this you need two
+things :<br>
+<ul>
+  <li>a package for your configuration</li>
+  <li>a properties file<br>
+  </li>
+</ul>
+The properties file can contain :<br>
+<ul>
+  <li>name - the name for your extension,this is mandatory<br>
+  </li>
+  <li>identifier - the unique identifier for your extension,this is
+mandatory</li>
+  <li>version - the version for your extension<br>
+  </li>
+  <li>project - the project where your extension belongs<br>
+  </li>
+  <li>author - the extension author</li>
+  <li>passInConstructor - future feature (see the <a
+ href="#passInConstructor">passInConstructor </a>section)</li>
+  <li>presentationType - future feature, it describe which kind of
+presentation layer part it represents (e.g. the footer).<br>
+  </li>
+</ul>
+&nbsp;&nbsp;&nbsp; As you can see only the name and the identifier and
+mandatory - this two properties correspond to&nbsp;
+the&nbsp;getName():String and getIdentifier():String from the
+KiWiApplication interface and they have the same meaning.<br>
+All the KiWi descriptor files must follow the
+"XXX-descriptor.properties" name pattern.<br>
+&nbsp;&nbsp;&nbsp; The descriptor file you must place it in classpath.
+If you use the KiWi ant build file then the build file will take care
+about this issue for you - otherwise you must handle this problem alone.<br>
+&nbsp;&nbsp;&nbsp; If the descriptor exist in the package
+"kiwi.extension.descriptors" and this package is placed in the
+classpath then the KiWi system will locate them and the extension will
+be automatic installed.<br>
+&nbsp;&nbsp;&nbsp; Alternative you can install extensions where the
+package or&nbsp; the descriptor file name pattern or&nbsp; is other.
+For this you only need to create your descriptor files on other package
+and place this package in the classpath. After this you need to use the
+<span style="font-style: italic;">DescriptorsFactory</span> class from
+the package<span style="font-style: italic;"> kiwi.extension<span
+ style="font-style: italic;"><span style="font-style: italic;"><span
+ style="font-style: italic;"> </span></span></span></span>this class
+will allows you to build KiWiApplication for all your descriptor files,
+this&nbsp; <span style="font-style: italic;">KiWiApplication</span>
+instances can be installed in the <span style="font-style: italic;">ExtensionService</span>.<br>
+<br>
+The following code snippet exemplify this :<br>
+<br>
+final List&lt;KiWiApplication&gt; apps;<br>
+try {<br>
+&nbsp;&nbsp;&nbsp; final String confgBase = "my.package.cfg";<br>
+&nbsp;&nbsp;&nbsp; apps = DescriptorsFactory.getDescriptors(confgBase);
+// 1<br>
+} catch (final IOException e) {<br>
+....<br>
+}<br>
+...<br>
+for (final KiWiApplication app : apps) {<br>
+&nbsp;&nbsp;&nbsp; register(extensionService, app); // 2<br>
+}<br>
+......<br>
+private void register(ExtensionService service, KiWiApplication app) {<br>
+&nbsp;&nbsp;&nbsp; final String name = app.getName();<br>
+&nbsp;&nbsp;&nbsp; final KiWiApplication getIt =
+service.getApplication(name);<br>
+&nbsp;&nbsp;&nbsp; if (getIt == null) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+service.registerApplication(app);<br>
+&nbsp;&nbsp;&nbsp; }<br>
+}<br>
+<br>
+&nbsp;&nbsp;&nbsp; On the <span style="font-weight: bold;">1</span>
+you load the all the descriptors files from the package <span
+ style="font-style: italic;">my.package.cfg </span>and you transform
+it in KiWiApplication&nbsp; instances. After this on 2&nbsp; it install
+it on the ExtensionService (and check if the extension is not already
+installed).<br>
+<br>
+<br>
+<big style="font-weight: bold;"><a name="passInConstructor"></a>Customize
+the installation with the passInConstructor</big><br>
+<br>
+&nbsp;&nbsp;&nbsp; The passInTheConstructor property allows you to
+customize the way how your extension is installed. This property value
+is a String and this string represents the absolute class name. This
+class must have a constructor witch accepts two arguments a
+ExtensionService and a ConfigurationService - this is the only
+requirement. More you can use the <span style="font-style: italic;">@kiwiPostInstall</span>,
+<span style="font-style: italic;">@kiwiPreInstall</span>&nbsp; and <span
+ style="font-style: italic;">@performInstall</span> annotations to mark
+the pre/post install methods.<br>
+<br>
+Why to use this class ?<br>
+<br>
+&nbsp;&nbsp;&nbsp; In most of the classes this class is used to prove
+the condition under a extension can be install - this because some
+extensions requires other extensions (or resources). If a descriptor
+contains this property an instance will be build and then before/after
+the install process begin/end the method will be trigger. Because the
+instance get in its parameter the ExtensionService you can check which
+other extensions are already installed and you can take the proper
+decision. If the method annotated with <span
+ style="font-style: italic;">kiwiPreInstall </span>throw an exception
+then the extension installation does not take place. You can achieve
+the same thing id you use the <span style="font-style: italic;">@performInstall</span>
+annotation, and you return false - the <span
+ style="font-style: italic;">@performInstall</span> is applicable for a
+method with no arguments which can return a boolean.<br>
+<br>
+&nbsp;&nbsp;&nbsp; You can do more than check if the pre install
+condition are satisfied - you can allocate needful resources by install
+and you release them by uninstall. The uninstall can be use also to
+remove the possible GUI components from the view - if this is necessary.<br>
+<big style="font-weight: bold;"><a name="defaultExtension"></a>Setting the default extension</big><br>
+The default extension is known to the ConfigurationService by the key
+&ldquo;kiwi.app.default&rdquo;. When the system is not running, it can
+be changed in the database as follows:<br><code>update
+    configuration_listvalue set element = 'my_extension' where
+    configuration_id = (select id from configuration where kiwikey =
+    'kiwi.app.default');</code><br>
+</body>
+</html>

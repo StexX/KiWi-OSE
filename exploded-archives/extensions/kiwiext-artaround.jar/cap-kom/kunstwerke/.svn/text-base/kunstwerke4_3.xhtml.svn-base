@@ -1,0 +1,161 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                             	
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+			 	xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                template="../layout/template-kunstwerke.xhtml">
+                	  
+	 <ui:define name="navigation">
+
+			<ui:include src="../layout/menuLoggedIn.xhtml" />
+
+	 </ui:define>
+
+	 <ui:define name="body">     
+	 
+			<script type="text/javascript">
+			/* <![CDATA[ */
+				
+					YAHOO.namespace("example.container");
+			
+					function init() {
+						
+						// Instantiate a Panel from markup
+						YAHOO.example.container.panel1 = new YAHOO.widget.Panel("panel1", 
+							{ width:"170px", visible:false, constraintoviewport:true, fixedcenter:true, modal:true   } );
+						YAHOO.example.container.panel1.render();
+			
+					}
+							
+					function submitOkForm(){
+						
+						YAHOO.example.container.panel1.show();
+						setTimeout(function(){document.submitForm.submit();},4000);			
+				
+					}		
+			
+					YAHOO.util.Event.addListener(window, "load", init);
+					
+			/* ]]> */
+			</script>	
+			
+			<form action="./kunstwerke4_0.seam" id="submitForm" name="submitForm" method="post"></form>	
+			
+			<div id="panel1">
+				<!--div class="hd">Panel #1 from Markup &mdash; This Panel is Draggable</div-->
+				<div class="bd">          
+					<div id="loggedInSuccess">
+						<a href="./kunstwerke4_0.seam">
+				      		<img src="../images/icons/ja.gif" title="#{messages['artaround.cap-kom.einfacheSprache.bewertungGespeichert']}" 
+								alt="Erfolgreich bewertet" width="150" height="150"/>
+							<div class="simpleText">
+								#{messages['artaround.cap-kom.einfacheSprache.bewertungGespeichert']}
+							</div>
+						</a>
+			        </div>
+				</div>
+				<!--div class="ft">End of Panel #1</div-->
+			</div>						
+	      
+			<!-- begin: Kunstwerk Details: -->
+			<div id="myKunstwerke">
+				<table>
+					<tr>
+						<td>
+							<div class="myKunstwerk">
+								<img src="../images/artworks/artwork1.jpg" title="Kunstwerk 1" alt="Kunstwerk 1" />
+								<div class="simpleText">
+									"Der Berg" von Antonia Schlick
+								</div>									
+							</div>							
+						</td>
+						<td>
+							<table>
+								<tr>
+									<td class="bewertungSelect capKomBorderProfil">
+										<a href="#" onClick="JavaScript:submitOkForm();">
+											<img src="../images/icons/bewertung_1_75px.gif" 
+												title="#{messages['artaround.cap-kom.einfacheSprache.Bewertung1']}" 
+												alt="#{messages['artaround.cap-kom.einfacheSprache.Bewertung1']}" 
+												id="bewertung1"/>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td class="bewertungSelect capKomBorderProfil">
+										<a href="#" onClick="JavaScript:submitOkForm();">
+											<img src="../images/icons/bewertung_2_75px.gif" 
+												title="#{messages['artaround.cap-kom.einfacheSprache.Bewertung2']}" 
+												alt="#{messages['artaround.cap-kom.einfacheSprache.Bewertung2']}" 
+												id="bewertung2"/>
+										</a>											
+									</td>
+								</tr>
+								<tr>
+									<td class="bewertungSelect capKomBorderProfil">
+										<a href="#" onClick="JavaScript:submitOkForm();">
+											<img src="../images/icons/bewertung_3_75px.gif" 
+												title="#{messages['artaround.cap-kom.einfacheSprache.Bewertung3']}" 
+												alt="#{messages['artaround.cap-kom.einfacheSprache.Bewertung3']}" 
+												id="bewertung3"/>
+										</a>											
+									</td>
+								</tr>
+								<tr>
+									<td class="bewertungSelect capKomBorderProfil">
+										<a href="#" onClick="JavaScript:submitOkForm();">
+											<img src="../images/icons/bewertung_4_75px.gif" 
+												title="#{messages['artaround.cap-kom.einfacheSprache.Bewertung4']}" 
+												alt="#{messages['artaround.cap-kom.einfacheSprache.Bewertung4']}" 
+												id="bewertung4"/>
+										</a>											
+									</td>
+								</tr>
+								<tr>
+									<td class="bewertungSelect capKomBorderProfil">
+										<a href="#" onClick="JavaScript:submitOkForm();">
+											<img src="../images/icons/bewertung_5_75px.gif" 
+												title="#{messages['artaround.cap-kom.einfacheSprache.Bewertung5']}" 
+												alt="#{messages['artaround.cap-kom.einfacheSprache.Bewertung5']}" 
+												id="bewertung5"/>
+										</a>
+									</td>
+								</tr>			
+							</table>
+						</td>						
+					</tr>					
+				</table>									
+			</div>
+			<!-- end: Kunstwerk Details -->
+			<!-- begin: buttons -->
+			<div id="navButtons">
+		    	<div class="hlist">
+		  			<ul>
+		  				<li class="button">
+		  					<a href="./kunstwerke4_0.seam" 
+								title="#{messages['artaround.cap-kom.einfacheSprache.zurueckZuKunstwerke']}">
+		  						<!-- Profil (sichtbar nach Login) -->
+								<img src="../images/icons/zurueck75px.gif" 
+									title="#{messages['artaround.cap-kom.einfacheSprache.zurueckZuKunstwerke']}" 
+									alt="#{messages['artaround.cap-kom.einfacheSprache.zurueckZuKunstwerke']}"/>
+								<div class="simpleText">
+									#{messages['artaround.cap-kom.einfacheSprache.zurueckZuKunstwerke']}
+								</div>									
+							</a>
+		  				</li>
+					</ul>
+				</div>
+			</div>
+			<!-- end: buttons -->		
+			
+	 </ui:define>   
+	 
+</ui:composition>	 

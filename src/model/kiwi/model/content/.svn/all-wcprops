@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/kiwi/!svn/ver/5459/KiWi/trunk/src/model/kiwi/model/content
+END
+ContentItemI.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/model/kiwi/model/content/ContentItemI.java
+END
+TextFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/model/kiwi/model/content/TextFragment.java
+END
+TextContent.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/kiwi/!svn/ver/5307/KiWi/trunk/src/model/kiwi/model/content/TextContent.java
+END
+ContentItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/kiwi/!svn/ver/5459/KiWi/trunk/src/model/kiwi/model/content/ContentItem.java
+END
+Content.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/kiwi/!svn/ver/5309/KiWi/trunk/src/model/kiwi/model/content/Content.java
+END
+TextContentSchema.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/src/model/kiwi/model/content/TextContentSchema.xsd
+END
+MediaContent.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/5424/KiWi/trunk/src/model/kiwi/model/content/MediaContent.java
+END

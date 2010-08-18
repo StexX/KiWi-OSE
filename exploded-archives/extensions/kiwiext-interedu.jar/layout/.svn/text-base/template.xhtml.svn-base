@@ -1,0 +1,37 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:c="http://java.sun.com/jstl/core"
+      xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+      template="/layout/template-2col.xhtml"
+      >
+
+      <ui:define name="header">
+          <link href="stylesheet/interedu.css" rel="stylesheet" type="text/css" />
+      </ui:define>
+
+      <ui:define name="actions">
+        <h:outputText value="Actions: " />
+        <s:link value="import" view="/interedu/import.xhtml"/>
+        <h:outputText value=" - " />
+        <s:link value="Upload" view="/interedu/upload.xhtml"/>
+        <span style="margin-left: 2em; margin-right: 2em"><h:outputText value=" | " /></span>
+
+
+      </ui:define>
+
+      <ui:define name="navigation">
+               <ui:insert name="left"></ui:insert>
+        </ui:define>
+
+      <ui:define name="body">
+            <ui:insert name="middle"></ui:insert>
+      </ui:define>
+
+</ui:composition>

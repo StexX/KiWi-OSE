@@ -1,0 +1,52 @@
+<rich:modalPanel
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+   	  xmlns:rich="http://richfaces.org/rich"
+ 	  xmlns:a4j="http://richfaces.org/a4j"
+ 	  width="400"
+ 	  height="250"
+      id="kiwirdfaLinkSelectPanel">
+        <f:facet name="header">
+            <h:panelGroup>
+                <h:outputText value="RDFa Link Select"></h:outputText>
+            </h:panelGroup>
+        </f:facet>
+        
+        <p style="margin-top: 20px; margin-left: 10px; margin-right: 10px;" class="help">
+        	Select a content item to link to. Only a valid title of an existing content item will be accepted.
+        </p>
+        
+       	<a4j:region renderRegionOnly="true">
+       	    
+       	    <h:form id="kiwirdfaLinkSelectForm">
+       	    	<rich:messages styleClass="message"/>
+       	    	<h:panelGrid columns="2" rowClasses="prop" columnClasses="name,value">
+       	    	
+       	    		<h:outputLabel for="rdfaLinkSelectRelation">Relation</h:outputLabel>
+		            <h:outputText id="rdfaLinkSelectRelation" value="#{kiwirdfaAction.selectedLinkRelationTitle}"/>
+		            
+		            <h:inputText id="rdfaLinkSelectTitle" value="#{kiwirdfaAction.linkTitle}"/>
+		            
+		        </h:panelGrid>
+		
+		        <div class="actionButtons center">
+		            <a4j:commandButton value="Update" id="btnUpdateRdfaLinkSelect" 
+		            	action="#{kiwirdfaAction.updateLinkSelect}"
+		            	data="#{kiwirdfaAction.linkJS}"
+		            	oncomplete="kiwirdfaJSLib.onUpdateLinkSelect(data)" />
+		       
+		            <a4j:commandButton value="Cancel" id="btnKiwirdfaCancelLinkSelect"
+		            	action="#{kiwirdfaAction.cancelLinkSelect}" 
+		            	oncomplete="kiwirdfaJSLib.onCancelLinkSelect()" />
+		            	
+		            <a4j:jsFunction name="kiwirdfaSetLinkSelect" reRender="kiwirdfaLinkSelectForm">
+		        		<a4j:actionparam name="Param1" assignTo="#{kiwirdfaAction.linkJS}"/>
+		        	</a4j:jsFunction>
+		        </div>
+			</h:form>
+		</a4j:region>
+
+</rich:modalPanel>

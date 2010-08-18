@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/kiwi/!svn/ver/4052/KiWi/trunk/src/action/kiwi/api/kspace
+END
+KnowledgeSpaceServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/4052/KiWi/trunk/src/action/kiwi/api/kspace/KnowledgeSpaceServiceLocal.java
+END
+KnowledgeSpaceService.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/4052/KiWi/trunk/src/action/kiwi/api/kspace/KnowledgeSpaceService.java
+END
+KnowledgeSpaceServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/4052/KiWi/trunk/src/action/kiwi/api/kspace/KnowledgeSpaceServiceRemote.java
+END

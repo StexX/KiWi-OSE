@@ -1,0 +1,36 @@
+.locationTextContent {
+	line-height:25px;
+}
+
+.locationText {
+	height:320px;
+	width: 670px;
+	overflow:auto;
+	padding-right:5px;
+}
+
+.locationTextEdit {
+	
+}
+
+.locationCats {
+	margin-top:10px;
+	height:45px;
+	border-bottom:1px solid #aaa;
+	fomt-size:14px;
+	overflow:auto;
+	font-size:12px;
+	line-height:15px;
+}
+
+.locationCatsEdit {
+	margin-bottom:10px;
+}
+
+.locationCatsEdit table{
+
+}
+
+.editor body {
+
+}

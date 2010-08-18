@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<document xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	  xmlns:om="http://www.openmath.org/OpenMath"
+	  xmlns:m="http://www.w3.org/1998/Math/MathML"
+	  xmlns="http://www.matracas.org/ns/qmath">
+  <tokenizer-settings
+      ignore-space="true"
+      implicit-variable-name-pattern="[a-zA-Zα-ωΑ-Ω][a-zA-Zα-ωΑ-Ω0-9]*"/>
+  <group cd="-qmath-openmath-literal">
+    <symbol name="OMR" token="OMR" type="object_morphism"/>
+    <symbol name="OMS" token="OMS" type="object_morphism"/>
+    <symbol name="OMA" token="OMA" type="object_morphism"/>
+    <symbol name="OMBIND" token="OMBIND" type="object_morphism"/>
+    <symbol name="OMBVAR" token="OMBVAR" type="object_morphism"/>
+  </group>
+  <group cd="org.matracas.algebra">
+    <symbol token="Plot" name="plot" type="object_morphism"/>
+    <symbol token="Debug" name="debug" type="object_morphism"/>
+  </group>
+  <group cd="org.matracas.cd.qmath-placeholders">
+    <symbol name="generic-main" token="&#x25A0;" type="object"/>
+    <symbol name="generic"      token="&#x25A1;" type="object"/>
+  </group>
+  
+  <!-- Standard OpenMath. -->
+  <group cd="alg1" type="object">
+    <symbol name="one" token="One"/>
+    <symbol name="zero" token="Zero"/>
+  </group>
+  <group cd="bigfloat1" type="object_morphism">
+    <symbol name="bigfloat" token="Bifloat"/>
+    <symbol name="bigfloatprec" token="Bigfloatprec"/>
+  </group>
+  <group cd="arith1">
+    <symbol name="abs" token="Abs" type="object_morphism"/>
+    <group name="divide" type="op_prod">
+      <symbol token="Divide"/>
+      <symbol token="/"/>
+      <!-- symbol token="÷"/ -->
+    </group>
+    <symbol name="gcd" token="Gcd" type="object_morphism"/>
+    <symbol name="lcm" token="Lcm" type="object_morphism"/>
+    <group type="op_plus">
+      <symbol name="minus" token="-"
+              unary_cd="arith1" unary_name="Unary_minus"/>
+      <symbol name="plus" token="+"/>
+    </group>
+    <symbol name="power" token="^" type="op_exp"/>
+    <group type="object_morphism">
+      <symbol name="product" token="Product"/>
+      <symbol name="product" token="∏"/>
+      <symbol name="root" token="Sqrt"/>
+      <symbol name="root" token="Root"/>
+      <symbol name="root" token="√"/>
+      <symbol name="sum" token="Sum"/>
+      <symbol name="sum" token="∑"/>
+    </group>
+    <group name="times" type="op_prod">
+      <symbol token="Times" juxtaposition="true"/>
+      <symbol token="*"/>
+    </group>
+    <symbol name="unary_minus" token="Unary_minus" type="object_morphism"/>
+  </group>
+  <group cd="calculus1" type="object_morphism">
+    <symbol name="defint" token="∫_^"/>
+    <symbol name="defint" token="Integrate"/>
+    <symbol name="diff" token="D"/>
+    <symbol name="int" token="∫"/>
+    <symbol name="int" token="Int"/>
+    <symbol name="nthdiff" token="Nthdiff"/>
+    <symbol name="partialdiff" token="∂"/>
+    <symbol name="partialdiff" token="Partialdiff"/>
+  </group>
+  <group cd="complex1" type="object_morphism">
+    <symbol name="argument" token="Arg"/>
+    <symbol name="complex_cartesian" token="Complex"/>
+    <symbol name="complex_polar" token="Polar"/>
+    <symbol name="conjugate" token="Conj"/>
+    <symbol name="imaginary" token="Im"/>
+    <symbol name="real" token="Re"/>
+  </group>
+  <group cd="fns1" type="object_morphism">
+    <symbol name="domain" token="Dom"/>
+    <symbol name="domainofapplication" token="Domainofapplication"/>
+    <symbol name="identity" token="Id"/>
+    <symbol name="image" token="Image"/>
+    <symbol name="image" token="Img"/>
+    <symbol name="inverse" token="Inv"/>
+    <symbol name="lambda" token="Lambda" type="binding"/>
+    <symbol name="lambda" token="λ" type="binding"/>
+    <symbol name="left_compose" token="Compose" type="op_prod"/>
+    <symbol name="left_compose" token="○" type="op_prod"/>
+    <symbol name="left_inverse" token="Linv"/>
+    <symbol name="range" token="Range"/>
+    <symbol name="right_inverse" token="Rinv"/>
+  </group>
+  <group cd="integer1" type="object_morphism">
+    <symbol name="factorial" token="!" type="op_fact"/>
+    <symbol name="factorof" token="Factorof"/>
+    <symbol name="quotient" token="Quotient"/>
+    <symbol name="remainder" token="Rem"/>
+    <symbol name="remainder" token="Mod"/>
+  </group>
+  <group cd="interval1" type="op_interval">
+    <symbol name="integer_interval" token="._."/>
+    <symbol name="interval" token="..."/>
+    <symbol name="interval_cc" token=".."/>
+    <symbol name="interval_co" token="..&lt;"/>
+    <symbol name="interval_oc" token="&lt;.."/>
+    <symbol name="interval_oo" token="&lt;..&lt;"/>
+  </group>
+  <group cd="linalg1" type="object_morphism">
+    <symbol name="determinant" token="Det"/>
+    <symbol name="matrix_selector" token="MatrixSelector"/>
+    <symbol name="outerproduct" token="Outerproduct"/>
+    <symbol name="outerproduct" token="⊗"/>
+    <symbol name="scalarproduct" token="Dot"/>
+    <symbol name="scalarproduct" token="·"/>
+    <symbol name="transpose" token="Transpose"/>
+    <symbol name="vector_selector" token="VectorSelector"/>
+    <symbol name="vectorproduct" token="×"/>
+  </group>
+  <group cd="linalg2" type="object_morphism">
+    <symbol name="matrix" token="Matrix"/>
+    <symbol name="matrixrow" token="Row"/>
+    <symbol name="vector" token="Vector"/>
+  </group>
+  <group cd="limit1" type="object">
+    <symbol name="above" token="Right"/>
+    <symbol name="below" token="Left"/>
+    <symbol name="both_sides" token="BothSides"/>
+    <symbol name="limit" token="Limit" type="object_morphism"/>
+    <symbol name="null" token="Unspecified"/>
+  </group>
+  <group cd="list1" type="object_morphism">
+    <symbol name="list" token="List"/>
+    <symbol name="map" token="Map"/>
+    <symbol name="suchthat" token="SuchThat"/>
+  </group>
+  <group cd="logic1">
+    <symbol name="and" token="And" type="op_and"/>
+    <symbol name="and" token="∧" type="op_and"/>
+    <symbol name="equivalent" token="&lt;=&gt;" type="op_impl"/>
+    <symbol name="equivalent" token="⇔" type="op_impl"/>
+    <symbol name="false" token="False" type="object"/>
+    <symbol name="false" token="⊥" type="object"/>
+    <symbol name="implies" token="=&gt;" type="op_impl"/>
+    <symbol name="implies" token="⇒" type="op_impl"/>
+    <symbol name="not" token="Not" type="op_not"/>
+    <symbol name="not" token="¬" type="op_not"/>
+    <symbol name="or" token="Or" type="op_or"/>
+    <symbol name="or" token="∨" type="op_or"/>
+    <symbol name="true" token="True" type="object"/>
+    <symbol name="true" token="⊤" type="object"/>
+    <symbol name="xor" token="Xor" type="op_or"/>
+    <symbol name="xor" token="⊻" type="op_or"/>
+  </group>
+  <group cd="mathmltypes" type="object">
+    <symbol name="complex_cartesian_type" token="ComplexT"/>
+    <symbol name="complex_polar_type" token="PolarT"/>
+    <symbol name="constant_type" token="ConstT"/>
+    <symbol name="fn_type" token="FnT"/>
+    <symbol name="integer_type" token="IntT"/>
+    <symbol name="list_type" token="ListT"/>
+    <symbol name="matrix_type" token="MatrixT"/>
+    <symbol name="rational_type" token="RationalT"/>
+    <symbol name="real_type" token="RealT"/>
+    <symbol name="set_type" token="SetT"/>
+    <symbol name="type" token="TypeT"/>
+    <symbol name="vector_type" token="VectorT"/>
+  </group>
+  <group cd="minmax1" type="object_morphism">
+    <symbol name="max" token="Max"/>
+    <symbol name="min" token="Min"/>
+  </group>
+  <group cd="multiset1" type="object_morphism">
+    <symbol name="cartesian_product" token="MultisetCartProd"/>
+    <symbol name="emptyset" token="MultisetEmpty"/>
+    <symbol name="in" token="MultisetIn"/>
+    <symbol name="intersect" token="MultisetIntersect"/>
+    <symbol name="multiset" token="Multiset"/>
+    <symbol name="notin" token="MultisetNotin"/>
+    <symbol name="notprsubset" token="MultisetNotprsubset"/>
+    <symbol name="notsubset" token="MultisetNotsubset"/>
+    <symbol name="prsubset" token="MultisetPrsubset"/>
+    <symbol name="setdiff" token="MultisetSetdiff"/>
+    <symbol name="size" token="MultisetSize"/>
+    <symbol name="size" token="MultisetCard"/>
+    <symbol name="subset" token="MultisetSubset"/>
+    <symbol name="union" token="MultisetUnion"/>
+  </group>
+  <group cd="nums1" type="object">
+    <symbol name="based_integer" token="BasedInteger" type="object_morphism"/>
+    <symbol name="e" token="Exp(1)"/>
+    <symbol name="gamma" token="Gamma"/>
+    <symbol name="gamma" token="γ"/>
+    <symbol name="i" token="I"/>
+    <symbol name="infinity" token="Infinity"/>
+    <symbol name="infinity" token="∞"/>
+    <symbol name="NaN" token="NaN"/>
+    <symbol name="pi" token="Pi"/>
+    <symbol name="pi" token="π"/>
+    <symbol name="rational" token="Rat" type="op_prod"/>
+  </group>
+  <group cd="piece1" type="object_morphism">
+    <symbol name="otherwise" token="Otherwise"/>
+    <symbol name="piece" token="Piece"/>
+    <symbol name="piecewise" token="Piecewise"/>
+  </group>
+  <group cd="quant1" type="binding">
+    <symbol name="exists" token="Exists"/>
+    <symbol name="exists" token="∃"/>
+    <symbol name="forall" token="ForAll"/>
+    <symbol name="forall" token="∀"/>
+  </group>
+  <group cd="relation1" type="op_eq">
+    <symbol name="approx" token="~"/>
+    <symbol name="approx" token="≅"/>
+    <symbol name="eq" token="="/>
+    <symbol name="geq" token="&gt;="/>
+    <symbol name="geq" token="≥"/>
+    <symbol name="gt" token="&gt;"/>
+    <symbol name="leq" token="&lt;="/>
+    <symbol name="leq" token="≤"/>
+    <symbol name="lt" token="&lt;"/>
+    <symbol name="neq" token="Neq"/>
+    <symbol name="neq" token="!="/>
+    <symbol name="neq" token="≠"/>
+  </group>
+  <group cd="setname1" type="object">
+    <symbol name="C" token="ℂ"/>
+    <symbol name="N" token="ℕ"/>
+    <symbol name="P" token="ℙ"/>
+    <symbol name="Q" token="ℚ"/>
+    <symbol name="R" token="ℝ"/>
+    <symbol name="Z" token="ℤ"/>
+  </group>
+  <group cd="rounding1" type="object_morphism">
+    <symbol name="ceiling" token="Ceiling"/>
+    <symbol name="floor" token="Floor"/>
+    <symbol name="round" token="Round"/>
+    <symbol name="trunc" token="Trunc"/>
+  </group>
+  <group cd="set1">
+    <group type="op_plus">
+      <symbol name="setdiff" unary_cd="set1" unary_name="setdiff" token="\"/>
+    </group>
+    <group type="op_prod">
+      <symbol name="union" token="∪"/>
+      <symbol name="intersect" token="∩"/>
+      <symbol name="cartesian_product" token="×"/>
+      <symbol name="emptyset" token="∅" type="object"/>
+      <symbol name="map" token="→" type="op_and"/>
+    </group>
+    <group type="op_eq">
+      <symbol name="in" token="∈"/>
+      <symbol name="in" token="In"/>
+      <symbol name="notin" token="¬∈"/>
+      <symbol name="notin" token="∉"/>
+      <symbol name="notprsubset" token="¬⊊"/>
+      <symbol name="notsubset" token="⊄"/>
+      <symbol name="prsubset" token="⊊"/>
+      <symbol name="subset" token="⊂"/>
+    </group>
+    <symbol type="fenced" name="set" token="{}"/>
+    <group type="object_morphism">
+      <symbol name="size" token="Size"/>
+      <symbol name="size" token="Length"/>
+      <symbol name="suchthat" token="|" type="binding"/>
+    </group>
+  </group>
+  <group cd="s_data1" type="object_morphism">
+    <symbol name="mean"     token="Mean"/>
+    <symbol name="median"   token="Median"/>
+    <symbol name="mode"     token="Mode"/>
+    <symbol name="moment"   token="Moment"/>
+    <symbol name="sdev"     token="Sdev"/>
+    <symbol name="variance" token="Var"/>
+  </group>
+  <group cd="s_dist1" type="object_morphism">
+    <symbol name="mean" token="DistMean"/>
+    <symbol name="moment" token="DistMoment"/>
+    <symbol name="sdev" token="DistSdev"/>
+    <symbol name="variance" token="DistVariance"/>
+  </group>
+  <group cd="transc1" type="object_morphism">
+    <symbol name="arccos"  token="ArcCos"/>
+    <symbol name="arccosh" token="ArcCosh"/>
+    <symbol name="arccot"  token="ArcCot"/>
+    <symbol name="arccoth" token="ArcCoth"/>
+    <symbol name="arccsc"  token="ArcCsc"/>
+    <symbol name="arccsch" token="ArcCsch"/>
+    <symbol name="arcsec"  token="ArcSec"/>
+    <symbol name="arcsech" token="ArcSech"/>
+    <symbol name="arcsin"  token="ArcSin"/>
+    <symbol name="arcsinh" token="ArcSinh"/>
+    <symbol name="arctan"  token="ArcTan"/>
+    <symbol name="arctanh" token="ArcTanh"/>
+    <symbol name="cos"  token="Cos"/>
+    <symbol name="cosh" token="Cosh"/>
+    <symbol name="cot"  token="Cot"/>
+    <symbol name="coth" token="Coth"/>
+    <symbol name="csc"  token="Csc"/>
+    <symbol name="csch" token="Csch"/>
+    <symbol name="exp" token="Exp"/>
+    <symbol name="ln"  token="Ln"/>
+    <symbol name="log" token="Log"/>
+    <symbol name="sec"  token="Sec"/>
+    <symbol name="sech" token="Sech"/>
+    <symbol name="sin"  token="Sin"/>
+    <symbol name="sinh" token="Sinh"/>
+    <symbol name="tan"  token="Tan"/>
+    <symbol name="tanh" token="Tanh"/>
+  </group>
+  <group cd="veccalc1" type="object_morphism">
+    <symbol name="curl" token="Curl"/>
+    <symbol name="divergence" token="Div"/>
+    <symbol name="grad" token="Grad"/>
+    <symbol name="grad" token="∇"/>
+    <symbol name="Laplacian" token="Laplacian"/>
+    <symbol name="Laplacian" token="∇^2"/>
+    <symbol name="Laplacian" token="∇²"/>
+  </group>
+  <group cd="altenc" type="object">
+    <symbol name="LaTeX_encoding" token="LaTeXEncoding"/>
+    <symbol name="MathML_encoding" token="MathMLEncoding"/>
+  </group>
+  
+  <group cd="linalg4" type="object_morphism">
+    <symbol name="eigenvalue"  token="EigenValue"/>
+    <symbol name="eigenvector" token="EigenVector"/>
+  </group>
+  <group cd="linalg5" type="object_morphism">
+    <symbol name="diagonal_matrix" token="DiagonalMatrix"/>
+    <symbol name="Hermitian" token="Hermitian"/>
+  </group>
+  <group cd="combinat1">
+    <symbol name="Bell" token="Bell" type="object"/>
+    <symbol name="binomial" token="Binomial" type="object_morphism"/>
+  </group>
+  <group cd="physical_consts1" type="object">
+    <symbol name="Avogadros_constant" token="Avogadro"/>
+    <symbol name="Boltzmann_constant" token="Boltzmann"/>
+    <symbol name="gravitational_constant" token="G"/>
+    <symbol name="light_year" token="LightYear"/>
+  </group>
+</document>

@@ -1,0 +1,161 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/src/test/kiwi/test/service
+END
+UpdateMediaContentTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5428/KiWi/trunk/src/test/kiwi/test/service/UpdateMediaContentTest.java
+END
+PersonalizedSearchServiceTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5166/KiWi/trunk/src/test/kiwi/test/service/PersonalizedSearchServiceTest.java
+END
+TemplateServiceTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/4860/KiWi/trunk/src/test/kiwi/test/service/TemplateServiceTest.java
+END
+RevisionTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/kiwi/!svn/ver/4304/KiWi/trunk/src/test/kiwi/test/service/RevisionTest.java
+END
+KiWiEntityManagerTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/src/test/kiwi/test/service/KiWiEntityManagerTest.java
+END
+FacadeTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/kiwi/!svn/ver/5166/KiWi/trunk/src/test/kiwi/test/service/FacadeTest.java
+END
+GeoCodingServiceTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/4592/KiWi/trunk/src/test/kiwi/test/service/GeoCodingServiceTest.java
+END
+RecommendationTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/src/test/kiwi/test/service/RecommendationTest.java
+END
+PerspectiveServiceTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5438/KiWi/trunk/src/test/kiwi/test/service/PerspectiveServiceTest.java
+END
+UpdateMetadataTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5325/KiWi/trunk/src/test/kiwi/test/service/UpdateMetadataTest.java
+END
+RatingServiceTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/4860/KiWi/trunk/src/test/kiwi/test/service/RatingServiceTest.java
+END
+FoafSslAuthenticationTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/3785/KiWi/trunk/src/test/kiwi/test/service/FoafSslAuthenticationTest.java
+END
+RevisionTests.xml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/src/test/kiwi/test/service/RevisionTests.xml
+END
+UpdateTitleTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/4860/KiWi/trunk/src/test/kiwi/test/service/UpdateTitleTest.java
+END
+CoreServiceTests.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/5434/KiWi/trunk/src/test/kiwi/test/service/CoreServiceTests.xml
+END
+ContentItemServiceTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/4998/KiWi/trunk/src/test/kiwi/test/service/ContentItemServiceTest.java
+END
+UpdateTaggingServiceTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/src/test/kiwi/test/service/UpdateTaggingServiceTest.java
+END
+PortalConfigServiceTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/4934/KiWi/trunk/src/test/kiwi/test/service/PortalConfigServiceTest.java
+END
+OntologyServiceTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/3785/KiWi/trunk/src/test/kiwi/test/service/OntologyServiceTest.java
+END
+ActivityLoggingServiceTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5001/KiWi/trunk/src/test/kiwi/test/service/ActivityLoggingServiceTest.java
+END
+FragmentServiceTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/4860/KiWi/trunk/src/test/kiwi/test/service/FragmentServiceTest.java
+END
+TripleStoreTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/4998/KiWi/trunk/src/test/kiwi/test/service/TripleStoreTest.java
+END
+UpdateTextContentTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5310/KiWi/trunk/src/test/kiwi/test/service/UpdateTextContentTest.java
+END
+TagRecommendationServiceTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/3057/KiWi/trunk/src/test/kiwi/test/service/TagRecommendationServiceTest.java
+END
+TaggingServiceTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/4860/KiWi/trunk/src/test/kiwi/test/service/TaggingServiceTest.java
+END
+ConfigurationServiceTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/src/test/kiwi/test/service/ConfigurationServiceTest.java
+END

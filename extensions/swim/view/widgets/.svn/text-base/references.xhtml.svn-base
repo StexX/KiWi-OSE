@@ -1,0 +1,50 @@
+<!DOCTYPE div PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:a4j="http://richfaces.org/a4j"
+                xmlns:rich="http://richfaces.org/rich">
+	<div>
+	   <b>Incoming References</b>
+        <rich:tree style="width:150px" switchType="client">
+            <rich:recursiveTreeNodesAdaptor 
+                  roots="#{referencesWidget.incoming}" 
+                  var="item"
+                  nodes="#{item.children}">
+	            <rich:treeNode>
+                    <s:link view="/home.xhtml" value="#{item.data.label} (#{item.data.namespacePrefix})"  propagation="none">
+                        <f:param name="title"/>
+                        <f:param name="uri"/>
+                        <f:param name="id" />
+                        <f:param name="kiwiid" value="#{item.data.kiwiIdentifier}"/>
+                    </s:link>
+	            </rich:treeNode>
+            </rich:recursiveTreeNodesAdaptor>
+        </rich:tree>	
+        <s:span style="color:red; text-align: center;" rendered="#{referencesWidget.incomingCount==referencesWidget.limit}"><center>more than <h:outputText value="#{referencesWidget.limit}" /> links</center></s:span>
+    </div>
+    
+    <div style="margin-top: 1em;">    
+       <b>Outgoing References</b>
+        <rich:tree style="width:150px" switchType="client">
+            <rich:recursiveTreeNodesAdaptor 
+                  roots="#{referencesWidget.outgoing}" 
+                  var="item"
+                  nodes="#{item.children}">
+                <rich:treeNode>
+                    <s:link view="/home.xhtml" value="#{item.data.label} (#{item.data.namespacePrefix})"  propagation="none">
+                        <f:param name="title"/>
+                        <f:param name="uri"/>
+                        <f:param name="id" />
+                        <f:param name="kiwiid" value="#{item.data.kiwiIdentifier}"/>
+                    </s:link>
+                </rich:treeNode>
+            </rich:recursiveTreeNodesAdaptor>
+        </rich:tree>    
+        <s:span style="color:red;" rendered="#{referencesWidget.outgoingCount==referencesWidget.limit}"><center>more than <h:outputText value="#{referencesWidget.limit}" /> links</center></s:span>
+        
+    </div>
+</ui:composition>

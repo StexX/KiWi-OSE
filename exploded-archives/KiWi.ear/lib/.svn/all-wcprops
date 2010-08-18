@@ -1,0 +1,1019 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib
+END
+jai_codec-1.1.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/jai_codec-1.1.3.jar
+END
+resteasy-jaxrs-1.2.GA.jar
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/resteasy-jaxrs-1.2.GA.jar
+END
+kiwi.db.import.jar
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/kiwi.db.import.jar
+END
+commons-codec-1.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/commons-codec-1.3.jar
+END
+antlr-3.1.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/antlr-3.1.3.jar
+END
+commons-lang-2.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/commons-lang-2.3.jar
+END
+jboss-el.jar
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/jboss-el.jar
+END
+lucene-core-2.9.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/lucene-core-2.9.1.jar
+END
+resteasy-jettison-provider-1.2.GA.jar
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/resteasy-jettison-provider-1.2.GA.jar
+END
+jboss-seam-excel.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/jboss-seam-excel.jar
+END
+jxl.jar
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/jxl.jar
+END
+jfreechart-1.0.13.jar
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/jfreechart-1.0.13.jar
+END
+slf4j-api-1.5.6.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/slf4j-api-1.5.6.jar
+END
+jboss-seam-ioc.jar
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/jboss-seam-ioc.jar
+END
+xstream-1.3.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/xstream-1.3.1.jar
+END
+c3p0-0.9.1.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/c3p0-0.9.1.2.jar
+END
+jbpm-jpdl.jar
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/jbpm-jpdl.jar
+END
+unionsail-0.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/unionsail-0.1.jar
+END
+poi-scratchpad-3.0.2-FINAL-20080204.jar
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/poi-scratchpad-3.0.2-FINAL-20080204.jar
+END
+lucene-misc-2.9.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/lucene-misc-2.9.1.jar
+END
+jettison-1.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/jettison-1.1.jar
+END
+simmetrics_jar_v1_6_2_d07_02_07.jar
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/simmetrics_jar_v1_6_2_d07_02_07.jar
+END
+lucene-queries-2.9.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/lucene-queries-2.9.1.jar
+END
+metadata-extractor-2.4.0-beta-1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/metadata-extractor-2.4.0-beta-1.jar
+END
+rdf2go.impl.sesame20-4.6.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/rdf2go.impl.sesame20-4.6.2.jar
+END
+ehcache-web-2.0.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/ehcache-web-2.0.1.jar
+END
+osgi.core-4.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/osgi.core-4.0.jar
+END
+janino.jar
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/janino.jar
+END
+htmlparser-1.6.jar
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/htmlparser-1.6.jar
+END
+drools-compiler.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/drools-compiler.jar
+END
+drools-core.jar
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/drools-core.jar
+END
+jmimemagic-0.1.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/jmimemagic-0.1.0.jar
+END
+infsail-0.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/infsail-0.1.jar
+END
+gate-asm.jar
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/gate-asm.jar
+END
+neo4j-index-1.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/neo4j-index-1.0.jar
+END
+rdf2go.impl.util-4.6.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/rdf2go.impl.util-4.6.2.jar
+END
+rome-1.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/rome-1.0.jar
+END
+gwt-servlet.jar
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/gwt-servlet.jar
+END
+jboss-seam-remoting.jar
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/jboss-seam-remoting.jar
+END
+semanticvectors-1.23-kiwi.jar
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/semanticvectors-1.23-kiwi.jar
+END
+stax-utils.jar
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/stax-utils.jar
+END
+backport-util-concurrent.jar
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/backport-util-concurrent.jar
+END
+lucene-memory-2.9.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/lucene-memory-2.9.1.jar
+END
+nekohtml-1.9.8.jar
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/nekohtml-1.9.8.jar
+END
+geonames-1.0-kiwi.jar
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/geonames-1.0-kiwi.jar
+END
+lucene-snowball-2.9.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/lucene-snowball-2.9.1.jar
+END
+neo4j-kernel-1.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/neo4j-kernel-1.0.jar
+END
+hibernate-search.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/hibernate-search.jar
+END
+richfaces-impl-3.3.1.GA.jar
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/richfaces-impl-3.3.1.GA.jar
+END
+xpp3_min-1.1.4c.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/xpp3_min-1.1.4c.jar
+END
+rdf2go.impl.base-4.6.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/rdf2go.impl.base-4.6.2.jar
+END
+jboss-cache.jar
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/jboss-cache.jar
+END
+shindig-social-api-1.0-incubating.jar
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/shindig-social-api-1.0-incubating.jar
+END
+xml-writer-0.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/xml-writer-0.2.jar
+END
+jpim-0.1-aperture-1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/jpim-0.1-aperture-1.jar
+END
+stax2-api-3.0.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/stax2-api-3.0.1.jar
+END
+h2-1.2.131.jar
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/h2-1.2.131.jar
+END
+richfaces-api-3.3.1.GA.jar
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/richfaces-api-3.3.1.GA.jar
+END
+ant-compression-utils-1.7.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/ant-compression-utils-1.7.1.jar
+END
+Jama-1.0.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/Jama-1.0.2.jar
+END
+lucene-analyzers-2.9.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/lucene-analyzers-2.9.1.jar
+END
+itext.jar
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/itext.jar
+END
+jcl-over-slf4j-1.5.6.jar
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/jcl-over-slf4j-1.5.6.jar
+END
+jai_core-1.1.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/jai_core-1.1.3.jar
+END
+mediarss-0.2.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/mediarss-0.2.1.jar
+END
+aperture-test-1.2.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/aperture-test-1.2.0.jar
+END
+poi-3.0.2-FINAL-20080204.jar
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/poi-3.0.2-FINAL-20080204.jar
+END
+core.jar
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/core.jar
+END
+applewrapper-0.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/applewrapper-0.2.jar
+END
+mail-1.4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/mail-1.4.jar
+END
+slf4j-log4j12-1.5.6.jar
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/slf4j-log4j12-1.5.6.jar
+END
+dom4j-1.6.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/dom4j-1.6.1.jar
+END
+jacob-1.10.jar
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/jacob-1.10.jar
+END
+resteasy-atom-provider-1.2.GA.jar
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/resteasy-atom-provider-1.2.GA.jar
+END
+cglib-nodep-2.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/cglib-nodep-2.2.jar
+END
+apache-solr-solrj-1.4-dev.jar
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/apache-solr-solrj-1.4-dev.jar
+END
+commons-collections.jar
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/commons-collections.jar
+END
+facebook-java-api-3.0.0-SNAPSHOT.jar
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/facebook-java-api-3.0.0-SNAPSHOT.jar
+END
+commons-lang.jar
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/commons-lang.jar
+END
+resteasy-multipart-provider-1.2.GA.jar
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/resteasy-multipart-provider-1.2.GA.jar
+END
+jcommon-1.0.16.jar
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/jcommon-1.0.16.jar
+END
+georss-rome-0.9.8.jar
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/georss-rome-0.9.8.jar
+END
+openrdf-sesame-2.3.1-onejar.jar
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/openrdf-sesame-2.3.1-onejar.jar
+END
+resteasy-jaxb-provider-1.2.GA.jar
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/resteasy-jaxb-provider-1.2.GA.jar
+END
+foafssl-verifier-0.3.2-SNAPSHOT.jar
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/foafssl-verifier-0.3.2-SNAPSHOT.jar
+END
+bcmail-jdk14-132.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/bcmail-jdk14-132.jar
+END
+mallet.jar
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/mallet.jar
+END
+oauth-core-20090105.jar
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/oauth-core-20090105.jar
+END
+ontotext.jar
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/ontotext.jar
+END
+ehcache-probe-1.0.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/ehcache-probe-1.0.0.jar
+END
+jutf7-0.9.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/jutf7-0.9.0.jar
+END
+gate.jar
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/gate.jar
+END
+lucene-spellchecker-2.9.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/lucene-spellchecker-2.9.1.jar
+END
+jboss-seam-ui.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/jboss-seam-ui.jar
+END
+neo4j-remote-graphdb-0.6.jar
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/neo4j-remote-graphdb-0.6.jar
+END
+protobuf-java-2.2.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/protobuf-java-2.2.0.jar
+END
+jul-to-slf4j-1.5.6.jar
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/jul-to-slf4j-1.5.6.jar
+END
+rome-wfw.jar
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/rome-wfw.jar
+END
+google-collect-1.0-rc3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/google-collect-1.0-rc3.jar
+END
+richfaces-ui-3.3.1.GA.jar
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/richfaces-ui-3.3.1.GA.jar
+END
+woodstox-core-asl-4.0.6.jar
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/woodstox-core-asl-4.0.6.jar
+END
+xstream-benchmark-1.3.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/xstream-benchmark-1.3.1.jar
+END
+jaudiotagger-1.0.8.jar
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/jaudiotagger-1.0.8.jar
+END
+neo4j-shell-1.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/neo4j-shell-1.0.jar
+END
+flickrapi-1.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/flickrapi-1.0.jar
+END
+htmlcleaner2_1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/htmlcleaner2_1.jar
+END
+jboss-seam-pdf.jar
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/jboss-seam-pdf.jar
+END
+json-20070829.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/json-20070829.jar
+END
+postgresql-8.4-701.jdbc4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/postgresql-8.4-701.jdbc4.jar
+END
+commons-beanutils.jar
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/commons-beanutils.jar
+END
+ezmorph-1.0.6.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/ezmorph-1.0.6.jar
+END
+winlaf-0.5.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/winlaf-0.5.1.jar
+END
+jboss-seam-jul.jar
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/jboss-seam-jul.jar
+END
+yarfraw.jar
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/yarfraw.jar
+END
+javaml-0.1.5.jar
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/javaml-0.1.5.jar
+END
+apache-mime4j-0.6.jar
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/apache-mime4j-0.6.jar
+END
+bcprov-jdk14-132.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/bcprov-jdk14-132.jar
+END
+jboss-seam-debug.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/jboss-seam-debug.jar
+END
+pdfbox-0.7.4-dev-20071030.jar
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/pdfbox-0.7.4-dev-20071030.jar
+END
+xom-1.2.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/xom-1.2.1.jar
+END
+commons-fileupload.jar
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/commons-fileupload.jar
+END
+storedProcedures.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/storedProcedures.jar
+END
+xmlunit-1.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/xmlunit-1.2.jar
+END
+demork-2.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/demork-2.1.jar
+END
+saxon8-dom.jar
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/saxon8-dom.jar
+END
+rdf2go.api-4.6.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/rdf2go.api-4.6.2.jar
+END
+kiwi.kea.jar
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/kiwi.kea.jar
+END
+gmaps4jsf-core-1.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/gmaps4jsf-core-1.1.jar
+END
+fontbox-0.2.0-dev.jar
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/fontbox-0.2.0-dev.jar
+END
+saxon8.jar
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/saxon8.jar
+END
+aperture-examples-1.2.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/aperture-examples-1.2.0.jar
+END
+commons-io-1.4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/commons-io-1.4.jar
+END
+JempBox-0.2.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/JempBox-0.2.0.jar
+END
+activation-1.0.2-upd2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/activation-1.0.2-upd2.jar
+END
+json-lib-2.2.3-jdk15.jar
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/json-lib-2.2.3-jdk15.jar
+END
+ehcache-core-2.1.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/ehcache-core-2.1.0.jar
+END
+ical4j-1.0-beta4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/ical4j-1.0-beta4.jar
+END
+jdom.jar
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/jdom.jar
+END
+apache-solr-core-1.4-dev.jar
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/apache-solr-core-1.4-dev.jar
+END
+DFKIUtils2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/DFKIUtils2.jar
+END
+choco-2.1.0-basic.jar
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/choco-2.1.0-basic.jar
+END
+junit-3.8.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/junit-3.8.1.jar
+END
+opensocial-20090402.jar
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/opensocial-20090402.jar
+END
+joda-time-1.6.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/joda-time-1.6.jar
+END
+weka.jar
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/weka.jar
+END
+jsf-facelets.jar
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/jsf-facelets.jar
+END
+mime-util-2.1.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/mime-util-2.1.3.jar
+END
+lucene-highlighter-2.9.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/lucene-highlighter-2.9.1.jar
+END
+itext-rtf.jar
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/itext-rtf.jar
+END
+jboss-seam-mail.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/jboss-seam-mail.jar
+END
+jsonp-1.0.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/jsonp-1.0.1.jar
+END
+kea-5.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/kea-5.0.jar
+END
+mvel14.jar
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/mvel14.jar
+END
+commons-digester.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/commons-digester.jar
+END
+jboss-seam-rss.jar
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/jboss-seam-rss.jar
+END
+aperture-1.2.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/aperture-1.2.0.jar
+END
+java-twitter-0.9-SNAPSHOT.jar
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/java-twitter-0.9-SNAPSHOT.jar
+END
+jgroups.jar
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/jgroups.jar
+END
+commons-httpclient-3.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/commons-httpclient-3.1.jar
+END
+hibernate-commons-annotations.jar
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/hibernate-commons-annotations.jar
+END
+rabin-hash-function-2.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/rabin-hash-function-2.0.jar
+END
+oscache-2.4.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/oscache-2.4.1.jar
+END
+facebook-java-api-schema-3.0.0-SNAPSHOT.jar
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/facebook-java-api-schema-3.0.0-SNAPSHOT.jar
+END
+gmaps4jsf-core-1.1.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/gmaps4jsf-core-1.1.1.jar
+END
+jboss-seam-resteasy.jar
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/jboss-seam-resteasy.jar
+END
+mstor-0.9.11.jar
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/mstor-0.9.11.jar
+END
+neo4j-commons-1.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/neo4j-commons-1.0.jar
+END
+nrlvalidator-0.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/nrlvalidator-0.1.jar
+END
+jaxrs-api-1.2.GA.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.ear/lib/jaxrs-api-1.2.GA.jar
+END

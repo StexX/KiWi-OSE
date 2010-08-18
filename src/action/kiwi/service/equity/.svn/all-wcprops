@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/src/action/kiwi/service/equity
+END
+EquityServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/src/action/kiwi/service/equity/EquityServiceImpl.java
+END
+StoringProcedureProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/4743/KiWi/trunk/src/action/kiwi/service/equity/StoringProcedureProcessor.java
+END
+EquityChartService.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5077/KiWi/trunk/src/action/kiwi/service/equity/EquityChartService.java
+END
+H2ProcedureProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/4743/KiWi/trunk/src/action/kiwi/service/equity/H2ProcedureProcessor.java
+END
+StoredProcedureLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5057/KiWi/trunk/src/action/kiwi/service/equity/StoredProcedureLoader.java
+END
+PostgresqlProcedureProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5187/KiWi/trunk/src/action/kiwi/service/equity/PostgresqlProcedureProcessor.java
+END
+StoringProcedureProcessorException.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/4743/KiWi/trunk/src/action/kiwi/service/equity/StoringProcedureProcessorException.java
+END

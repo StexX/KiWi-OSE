@@ -1,0 +1,57 @@
+<!DOCTYPE div PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:a="http://richfaces.org/a4j" 
+                xmlns:rich="http://richfaces.org/rich">
+  	<a:region renderRegionOnly="true">
+	    <s:span id="taglist" rendered="#{currentContentItem != null}">
+			<div>
+				<ui:repeat var="tag" value="#{tagCloudService.aggregateTags(currentContentItem.tags)}" >
+					<!-- TODO: instead, create a "red" link that redirects the user to a page where he can associate a meaning -->
+					<span style="font-size: #{tag.size}%;">
+					<s:link view="/search.xhtml" value="#{tag.tag.title}" style="color: rgb(100,#{tag.colorCode},100);">
+						<f:param name="q" value=""/>
+						<f:param name="t" value="#{tag.tag.title}"/>
+					</s:link>
+					</span>
+					<s:span rendered="#{!tag.ownTag}">
+						<a:commandButton action="#{taggingAction.addTag(tag.tag)}" image="img/type_add.png" reRender="taglist,recom"/>
+					</s:span>
+					<s:span rendered="#{tag.ownTag}">
+						<a:commandButton action="#{taggingAction.removeTag(tag.tag)}" image="img/type_delete.png" reRender="taglist,recom"/>
+					</s:span>
+					<h:outputText value=", " /> 
+				</ui:repeat>
+			</div>
+			<div class="center">
+					<h:inputText value="#{taggingAction.tagLabel}" id="taglabel"/>
+					<rich:suggestionbox id="suggestionBoxId" for="taglabel" tokens=",[]"
+		                    suggestionAction="#{taggingAction.autocomplete}" 
+		                    var="result"
+		                    fetchValue="#{result}" 
+		                    minChars="2"
+		                    shadowOpacity="4"
+		                    border="1"
+		                    height="150"
+		                    width="100"
+		                    shadowDepth="3"
+		                    cellpadding="2"
+		                    nothingLabel="No tags found" 
+		                    columnClasses="center"
+		                    usingSuggestObjects="true" reRender="suggestionBoxId">
+		                    
+		                    <h:column>
+		                        <h:outputText value="#{result}" />
+		                    </h:column>
+		            </rich:suggestionbox>
+					<a:commandButton id="addTagBtn" action="#{taggingAction.addTag}" value="Add" reRender="taglist,recom">
+						<s:defaultAction/>
+					</a:commandButton>
+			</div>
+		</s:span>
+	</a:region>
+</ui:composition>

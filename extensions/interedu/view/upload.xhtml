@@ -1,0 +1,80 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:a="http://richfaces.org/a4j"
+    template="/layout/template-2col.xhtml">
+
+    <ui:define name="header">
+        <!--<a:loadScript src="resource://jquery.js"/>
+
+       <link href="stylesheet/dashboard.css" rel="stylesheet" type="text/css" />-->
+
+    </ui:define>
+
+    <ui:define name="navigation">
+        <ui:include src="layout/navigation.xhtml" />
+    </ui:define>
+
+    <ui:define name="body">
+
+        <a:outputPanel layout="block" id="messages">
+            <rich:messages />
+        </a:outputPanel>
+
+
+        <p>In the following, you can import data from external sources
+        like doc or txt files.</p>
+
+
+        <h3>Upload</h3>
+
+        <h:form>
+
+            <h:panelGrid columns="2">
+
+                <h:outputText value="Title : " />
+                <h:inputText value="#{interEdu.uploadAction.title}" />
+
+                <h:outputText value="Subject : " />
+                <h:inputText value="#{interEdu.uploadAction.subject}" />
+
+                <h:outputText value="Dificulty : " />
+                <h:inputText value="#{interEdu.uploadAction.difficulty}" />
+
+                <h:outputText value="Information Source : " />
+                <h:inputText value="#{interEdu.uploadAction.informationSource}" />
+
+                <h:outputText value="Location : " />
+                <h:inputText value="#{interEdu.uploadAction.location}" />
+
+                <h:outputText value="Categories : " />
+                <h:selectManyMenu id="categoryList"
+                    value="#{interEdu.uploadAction.selectedCategories}">
+                    <s:selectItems value="#{interEdu.uploadAction.categories}"
+                        var="cat" label="#{cat}" />
+                    <s:convertEntity />
+                </h:selectManyMenu>
+
+                <h:outputText value="Tags : " />
+                <h:selectManyCheckbox id="tagsList" layout="pageDirection"
+                    value="#{interEdu.uploadAction.selectedTags}">
+                    <s:selectItems value="#{interEdu.uploadAction.recommendedTags}"
+                        var="recTag" label="#{recTag}" />
+                    <s:convertEntity />
+                </h:selectManyCheckbox>
+
+            </h:panelGrid>
+
+            <a:commandButton action="#{interEdu.uploadAction.load()}"
+                value="Load" reRender="tagsList" />
+            <a:commandButton action="#{interEdu.uploadAction.commit()}"
+                value="Commit" />
+        </h:form>
+    </ui:define>
+
+</ui:composition>

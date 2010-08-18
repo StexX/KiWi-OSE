@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/src/model/kiwi/model/revision
+END
+ConfigurationUpdate.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5309/KiWi/trunk/src/model/kiwi/model/revision/ConfigurationUpdate.java
+END
+TaggingUpdate.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5309/KiWi/trunk/src/model/kiwi/model/revision/TaggingUpdate.java
+END
+MediaContentUpdate.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/model/kiwi/model/revision/MediaContentUpdate.java
+END
+Revision.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/kiwi/!svn/ver/5309/KiWi/trunk/src/model/kiwi/model/revision/Revision.java
+END
+TextContentUpdateDiff.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5309/KiWi/trunk/src/model/kiwi/model/revision/TextContentUpdateDiff.java
+END
+KiWiUpdate.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/model/kiwi/model/revision/KiWiUpdate.java
+END
+MetadataUpdate.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5309/KiWi/trunk/src/model/kiwi/model/revision/MetadataUpdate.java
+END
+DeletionUpdate.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5309/KiWi/trunk/src/model/kiwi/model/revision/DeletionUpdate.java
+END
+TextContentUpdate.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5309/KiWi/trunk/src/model/kiwi/model/revision/TextContentUpdate.java
+END
+RuleUpdate.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/kiwi/!svn/ver/5309/KiWi/trunk/src/model/kiwi/model/revision/RuleUpdate.java
+END
+RenamingUpdate.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5309/KiWi/trunk/src/model/kiwi/model/revision/RenamingUpdate.java
+END
+CIVersion.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/src/model/kiwi/model/revision/CIVersion.java
+END
+ContentUpdate.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5309/KiWi/trunk/src/model/kiwi/model/revision/ContentUpdate.java
+END

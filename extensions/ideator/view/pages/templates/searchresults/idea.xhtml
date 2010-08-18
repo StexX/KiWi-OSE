@@ -1,0 +1,57 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+    xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:a="http://richfaces.org/a4j">
+		<div class="sr_idea">
+		   <h:form>
+		   		<div class="draggableSearchResult">
+					<kiwi:link value="#{ci.title}" contentItem="#{ci}" styleClass="sr_title" refView="/ideator/idea.xhtml" />
+					<input type="hidden" name="id" value="#{ci.id}" />
+				</div>
+				<p class="sr_whowhen">
+				
+				
+				<c:choose>
+				<c:when test="#{ideator.utils.isAnonymous(ci)}">
+					<h:outputText value="anonym eingereicht am "/>
+				</c:when>
+				<c:otherwise>
+    				<h:outputText value="von #{ci.author.login} am "/>
+				</c:otherwise>
+				</c:choose>
+				
+				
+		                           <!--
+								   <a:commandLink 
+		                               action="#{searchAction.searchEngine.addSearchPerson(ci.author.login)}" 
+		                               styleClass="searchAddTag" 
+		                               value="#{ci.author.login}" 
+		                               reRender="searchresults,search-keyword,articlemeta"/>
+									-->
+		
+				<h:outputText value="#{ci.modified}">
+					<f:convertDateTime type="both"/>
+				</h:outputText>
+				</p>
+				<p class="sr_tags">
+				<h:outputText value="Tags: "/>
+				<a:repeat var="tag" value="#{tagCloudService.aggregateTagsByCI(ci)}" >
+					<!-- Add Tag button -->
+					<a:commandLink 
+						action="#{ideator.searchAction.addTag(tag.tagTitle)}" 
+						value="#{tag.tagTitle}" 
+					/>
+					<rich:spacer width="2px"/>
+				</a:repeat>
+				</p>
+				<p class="sr_preview">
+                    ...<h:outputText value="#{preview}" escape="false" />...
+                </p>
+			</h:form>
+		</div>
+</ui:composition>

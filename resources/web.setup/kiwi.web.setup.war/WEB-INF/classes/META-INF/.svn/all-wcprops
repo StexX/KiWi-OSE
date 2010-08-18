@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/4024/KiWi/trunk/resources/web.setup/kiwi.web.setup.war/WEB-INF/classes/META-INF
+END
+orm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/4024/KiWi/trunk/resources/web.setup/kiwi.web.setup.war/WEB-INF/classes/META-INF/orm.xml
+END
+persistence.xml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/kiwi/!svn/ver/4024/KiWi/trunk/resources/web.setup/kiwi.web.setup.war/WEB-INF/classes/META-INF/persistence.xml
+END

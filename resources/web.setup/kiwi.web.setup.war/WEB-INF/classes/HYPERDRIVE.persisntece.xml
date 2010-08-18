@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" 
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd" 
+             version="1.0">
+
+   <!--
+   
+   		resources/META-INF/persistence.xml.tmpl should be the only place you change anything 
+   		any of persistence.*.xml. After changing it, "ant configure" 
+   		copies it to all places it is needed.
+   
+   -->
+     
+   <persistence-unit name="KiWi">
+      <provider>org.hibernate.ejb.HibernatePersistence</provider>
+      <jta-data-source>java:/KiWiDatasource</jta-data-source>
+      <properties>
+         <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+         
+         <!-- valid values are validate, update, create, create-drop -->
+         <property name="hibernate.hbm2ddl.auto" value="update"/>
+         <property name="hibernate.show_sql" value="false"/>
+         <property name="hibernate.format_sql" value="true"/>
+         <property name="jboss.entity.manager.factory.jndi.name" value="java:/KiWiEntityManagerFactory"/>
+         <property name="hibernate.jdbc.fetch_size" value="30"/>
+         <property name="hibernate.jdbc.batch_size" value="30"/>
+		 <property name="hibernate.default_batch_fetch_size" value="16" />
+         <property name="hibernate.max_fetch_depth" value="3" />
+
+         <!-- KiWi work directory; used as base for all other directories -->
+         <property name="kiwi.work.dir" value="/tmp/kiwi"/>
+
+         <!-- directory where the Sesame TripleStore will be stored -->
+         <property name="kiwi.triplestore.dir" 
+                  value="/tmp/kiwi/triples"/>
+
+         <!-- directory where the SOLR home will be stored -->
+         <property name="kiwi.solr.home" 
+                  value="/tmp/kiwi/solr"/>
+
+        <!-- path to an existing lucene index for generating a semanticvectors index  -->
+         <property name="kiwi.semanticvectors"
+                   value="/tmp/kiwi/solr" />
+                  
+         <!--  caching -->
+         <!--
+         <property name="hibernate.cache.provider_class"
+                  value="org.jboss.hibernate.jbc.cacheprovider.JmxBoundTreeCacheProvider" />
+         <property name="hibernate.treecache.mbean.object_name"
+                  value="jboss.cache:service=TreeCache" />
+         -->
+         <property name="hibernate.cache.provider_class"
+                  value="net.sf.ehcache.hibernate.EhCacheProvider" />
+         <property name="hibernate.cache.use_query_cache" value="true" />
+         <property name="hibernate.cache.use_second_level_cache" value="true"/>
+       </properties>
+   </persistence-unit>
+    
+</persistence>

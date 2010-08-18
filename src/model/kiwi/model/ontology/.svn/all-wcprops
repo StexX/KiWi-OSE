@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/kiwi/!svn/ver/4400/KiWi/trunk/src/model/kiwi/model/ontology
+END
+SKOSConcept.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/4400/KiWi/trunk/src/model/kiwi/model/ontology/SKOSConcept.java
+END
+KiWiClass.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/model/kiwi/model/ontology/KiWiClass.java
+END
+KiWiProperty.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/model/kiwi/model/ontology/KiWiProperty.java
+END
+SKOSConceptScheme.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/4374/KiWi/trunk/src/model/kiwi/model/ontology/SKOSConceptScheme.java
+END

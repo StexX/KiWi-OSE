@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/query/kwql
+END
+KWQLComponent.class
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/query/kwql/KWQLComponent.class
+END
+kwql.xml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/query/kwql/kwql.xml
+END
+kwql.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/query/kwql/kwql.xsd
+END
+KWQLConstraintViolationException.class
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/query/kwql/KWQLConstraintViolationException.class
+END
+KwqlServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/query/kwql/KwqlServiceImpl.class
+END
+KWQLQuery.class
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/query/kwql/KWQLQuery.class
+END
+KwqlQueryServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/query/kwql/KwqlQueryServiceImpl.class
+END

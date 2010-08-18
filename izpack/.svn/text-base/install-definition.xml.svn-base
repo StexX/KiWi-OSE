@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes" ?>
+
+<installation version="1.0">
+    <info>
+        <appname>KiWi</appname> 
+        <appversion>@{project.version}</appversion>
+        <authors>
+            <author name="Salzburg Research" email="sebastian.schaffert@salzburgresearch.at"/>
+            <author name="Ludwig-Maximilian-University Munich" email="bry@lmu.de"/>
+            <author name="Aalborg University" email="dolog@cs.aau.dk"/>
+            <author name="Brno University of Technology" email="smrz@fit.vutbr.cz"/>
+            <author name="Semantic Web Company" email="m.kaltenboeck@semantic-web.at"/>
+            <author name="Sun Microsystems (Prague)" email="peter.reiser@sun.com"/>
+            <author name="Logica" email="keld.pedersen@logica.com"/>
+        </authors>
+        <url>http://www.kiwi-project.eu/</url>
+    </info>
+
+    <guiprefs width="640" height="480" resizable="yes"/>
+
+    <variables>
+        <variable name="DesktopShortcutCheckboxEnabled" value="true"/>
+        <variable name="kiwi.homeDir" value=""/>
+        <variable name="kiwi.database.type" value=""/>
+        <variable name="kiwi.database.host" value=""/>
+        <variable name="kiwi.database.port" value=""/>
+        <variable name="kiwi.database.name" value=""/>
+        <variable name="kiwi.database.user" value="kiwi"/>
+        <variable name="kiwi.database.password" value="kiwi"/>
+   </variables>
+    
+    
+    <locale>
+		<langpack iso3="eng"/>
+		<langpack iso3="deu"/>
+    </locale>
+
+	<resources>
+  		<res id="LicencePanel.licence" src="izpack/Licence.txt"/>
+  		<res id="InfoPanel.info" src="izpack/Readme.txt"/>
+		<res id="userInputSpec.xml" src="izpack/userInputSpec.xml" />
+		<res id="Installer.image"
+		     src="@{kiwi.root}/resources/izpack/kiwi.install.lside.jpeg" />
+	</resources>
+
+	<panels>
+		<panel classname="HelloPanel"/>
+		<panel classname="InfoPanel"/>
+		<panel classname="UserInputPanel" id="kiwi.home"/>
+   		<panel classname="UserInputPanel" id="kiwi.db">
+   		   <validator classname="kiwi.util.izpack.JdbcConnectionValidator" question="jdbc.connection.question" default="true"/>
+   		</panel>
+		<panel classname="TargetPanel"/>
+		<panel classname="PacksPanel"/>
+		<panel classname="InstallPanel"/>
+		<panel classname="FinishPanel"/>
+	</panels>
+
+    <packs>
+        <pack name="KiWi.home" required="yes">
+            <description>
+                Prepare the KiWi home directory, this dircectory contains the solr and gate distr
+            </description>
+            <file src="@{kiwi.root}/lib/gate" targetdir="$kiwi.homeDir"/>
+            <fileset dir="@{kiwi.root}/lib/solr/solr-home" targetdir="$kiwi.homeDir/solr">
+                    <include name="**"/>
+            </fileset>
+            <file src="@{kiwi.root}/installer.izpack/helper/kiwiHelper.jar"
+                  targetdir="$kiwi.homeDir"/>
+
+            <!-- Default configuration files -->
+            <file src="@{izpackDefaultDSFile}"
+                  targetdir="$kiwi.homeDir"/>
+            <file src="@{izpackDefaultApplicationFile}"
+                  targetdir="$kiwi.homeDir"/>
+            <file src="@{izpackDefaultPersistenceFile}"
+                  targetdir="$kiwi.homeDir"/>
+            <!-- Default configuration files -->
+            <file src="@{izpackjBossConfFile}"
+                  targetdir="$INSTALL_PATH/bin"/>
+            <file src="@{izpackjBossMailFile}"
+                  targetdir="$INSTALL_PATH/server/default/deploy/"/>
+            <file src="@{izpackjBossServerConfFile}"
+                  targetdir="$INSTALL_PATH/server/default/deploy/jboss-web.deployer/"/>
+            <file src="@{izpackFOAFSSLlib1}"
+                  targetdir="$INSTALL_PATH/server/default/lib"/>
+            <file src="@{izpackFOAFSSLlib2}"
+                  targetdir="$INSTALL_PATH/server/default/lib"/>
+            <file src="@{izpackFOAFSSLkeystore}"
+                  targetdir="$INSTALL_PATH/server/default/conf"/>
+            <executable targetfile="$kiwi.homeDir/kiwiHelper.jar" 
+                        type="jar"
+                        stage="postinstall"
+                        class="@{kiwi.izhelpelr.class}">
+                <args>
+                    <arg value="$INSTALL_PATH"/>
+                    <arg value="${kiwi.homeDir}"/>
+                    <arg value="${kiwi.database.type}"/>
+                    <arg value="${kiwi.database.host}"/>
+                    <arg value="${kiwi.database.port}"/>
+                    <arg value="${kiwi.database.name}"/>
+                    <arg value="${kiwi.database.user}"/>
+                    <arg value="${kiwi.database.password}"/>
+                </args>
+            </executable>
+        </pack>
+
+        <pack name="KiWi.db" required="yes">
+            <description>
+                Prepare the database enviroment.
+            </description>
+        </pack>
+        
+        <pack name="KiWi.jboss" required="yes">
+            <description>
+                Prepare the kiw jBoss.
+            </description>
+            <file src="@{kiwi.root}/lib/hibernate-commons-annotations.jar" 
+                  targetdir="$INSTALL_PATH/server/default/lib"/>
+            <file src="@{kiwi.root}/lib/hibernate-annotations.jar" 
+                  targetdir="$INSTALL_PATH/server/default/lib"/>
+            <file src="@{kiwi.root}/lib/hibernate-entitymanager.jar"
+                  targetdir="$INSTALL_PATH/server/default/lib"/>
+            <file src="@{kiwi.root}/lib/hibernate-validator.jar"
+                  targetdir="$INSTALL_PATH/server/default/lib"/>
+            <file src="@{kiwi.root}/lib/hibernate.jar"
+                  targetdir="$INSTALL_PATH/server/default/lib"/>
+            <file src="@{kiwi.root}/lib/lucene-core-2.9.1.jar"
+                  targetdir="$INSTALL_PATH/server/default/lib"/>
+            <file src="@{kiwi.root}/lib/oscache-2.4.1.jar"
+                  targetdir="$INSTALL_PATH/server/default/lib"/>
+            <file src="@{kiwi.root}/lib/jboss-cache.jar"
+                  targetdir="$INSTALL_PATH/server/default/lib"/>
+            <file src="@{kiwi.root}/lib/jgroups.jar"
+                  targetdir="$INSTALL_PATH/server/default/lib"/>
+            <file src="@{kiwi.root}/lib/ehcache-core-2.1.0.jar"
+                  targetdir="$INSTALL_PATH/server/default/lib"/>
+            <file src="@{kiwi.root}/lib/ehcache-probe-1.0.0.jar"
+                  targetdir="$INSTALL_PATH/server/default/lib"/>
+            <file src="@{kiwi.root}/lib/hibernate-jbc-cacheprovider-1.0.1.GA.jar"
+                  targetdir="$INSTALL_PATH/server/default/lib"/>
+            <file src="@{kiwi.root}/lib/postgresql-8.4-701.jdbc4.jar"
+                  targetdir="$INSTALL_PATH/server/default/lib"/>
+            <file src="@{kiwi.root}/lib/h2-1.2.131.jar"
+                  targetdir="$INSTALL_PATH/server/default/lib"/>
+            <file src="@{kiwi.root}/lib/slf4j-api-1.5.6.jar"
+                  targetdir="$INSTALL_PATH/server/default/lib"/>
+            <file src="@{kiwi.root}/lib/slf4j-log4j12-1.5.6.jar"
+                  targetdir="$INSTALL_PATH/server/default/lib"/>
+            <file src="@{kiwi.root}/lib/c3p0-0.9.1.2.jar"
+                  targetdir="$INSTALL_PATH/server/default/lib"/>
+        </pack>
+
+        <pack name="KiWi.jboss.services" required="yes">
+            <description>
+                Prepare the kiw jBoss Services.
+            </description>
+            <!-- 
+                The best solution will be to install kiwi in its onw configuration/domain, 
+                not in the default configuration. 
+            -->
+            <file src="@{kiwi.root}/resources/jboss/4.2.x/jboss-service.xml" 
+                  targetdir="$INSTALL_PATH/server/default/conf"/>
+            <file src="@{kiwi.root}/resources/jboss/treecache-service.xml" 
+                  targetdir="$INSTALL_PATH/server/default/deploy"/>
+            <file src="@{kiwi.root}/resources/KiWi-destinations-service.xml" 
+                  targetdir="$INSTALL_PATH/server/default/deploy"/>
+        </pack>
+        
+        
+        <pack name="KiWi.jboss.software" required="yes">
+            <description>
+                Install kiwi software.
+            </description>
+
+            <file src="@{kiwi.izpack.ear}" 
+                  targetdir="$INSTALL_PATH/server/default/deploy"
+            />
+        </pack>
+    </packs>
+    
+    <jar src="@{izpackHelperJar}"/>
+    <jar src="@{postgresDriverJar}"/>
+    <jar src="@{hyperdirveDriverJar}"/>
+    
+</installation>

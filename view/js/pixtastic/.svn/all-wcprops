@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/kiwi/!svn/ver/5465/KiWi/trunk/view/js/pixtastic
+END
+license.txt
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/kiwi/!svn/ver/5465/KiWi/trunk/view/js/pixtastic/license.txt
+END
+pixastic.core.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/kiwi/!svn/ver/5465/KiWi/trunk/view/js/pixtastic/pixastic.core.js
+END
+pixastic.jquery.js
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/kiwi/!svn/ver/5465/KiWi/trunk/view/js/pixtastic/pixastic.jquery.js
+END

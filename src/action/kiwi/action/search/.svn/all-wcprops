@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/kiwi/!svn/ver/5534/KiWi/trunk/src/action/kiwi/action/search
+END
+SearchAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/5382/KiWi/trunk/src/action/kiwi/action/search/SearchAction.java
+END
+KWQLAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/action/search/KWQLAction.java
+END
+KiWiSearchEngine.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5280/KiWi/trunk/src/action/kiwi/action/search/KiWiSearchEngine.java
+END
+SearchEngine.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/5036/KiWi/trunk/src/action/kiwi/action/search/SearchEngine.java
+END
+SearchWebService.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/4894/KiWi/trunk/src/action/kiwi/action/search/SearchWebService.java
+END
+StringToListConverter.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/action/kiwi/action/search/StringToListConverter.java
+END
+ImageBrowserAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/action/search/ImageBrowserAction.java
+END
+SearchRecommendationWebService.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5036/KiWi/trunk/src/action/kiwi/action/search/SearchRecommendationWebService.java
+END
+KWQLSearchEngine.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5280/KiWi/trunk/src/action/kiwi/action/search/KWQLSearchEngine.java
+END

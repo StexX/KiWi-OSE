@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/tagit2/api/query
+END
+IconService.class
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/tagit2/api/query/IconService.class
+END
+QueryService.class
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/tagit2/api/query/QueryService.class
+END
+QueryServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/tagit2/api/query/QueryServiceLocal.class
+END
+IconServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/tagit2/api/query/IconServiceLocal.class
+END
+IconServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/tagit2/api/query/IconServiceRemote.class
+END
+QueryServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/tagit2/api/query/QueryServiceRemote.class
+END

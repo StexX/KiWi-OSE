@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/setup
+END
+AsynchronousOntologyLoader.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/setup/AsynchronousOntologyLoader.class
+END
+SetupDataAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/setup/SetupDataAction.class
+END
+SetupUserAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/setup/SetupUserAction.class
+END
+SetupOntologiesAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/setup/SetupOntologiesAction.class
+END
+OntologyAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/setup/OntologyAction.class
+END

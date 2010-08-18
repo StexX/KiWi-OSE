@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/kiwi/!svn/ver/5388/KiWi/trunk/src/action/kiwi/api/ontology
+END
+TemplateServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/ontology/TemplateServiceLocal.java
+END
+SKOSServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/action/kiwi/api/ontology/SKOSServiceRemote.java
+END
+OntologyServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/action/kiwi/api/ontology/OntologyServiceRemote.java
+END
+TemplateService.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/ontology/TemplateService.java
+END
+SKOSService.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/kiwi/!svn/ver/5388/KiWi/trunk/src/action/kiwi/api/ontology/SKOSService.java
+END
+OntologyService.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5262/KiWi/trunk/src/action/kiwi/api/ontology/OntologyService.java
+END
+OntologyServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/action/kiwi/api/ontology/OntologyServiceLocal.java
+END
+SKOSServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/action/kiwi/api/ontology/SKOSServiceLocal.java
+END
+TemplateServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/ontology/TemplateServiceRemote.java
+END

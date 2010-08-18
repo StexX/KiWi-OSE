@@ -1,0 +1,29 @@
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+
+<suite name="RevisionTests" verbose="5" parallel="false">
+    <test name="UpdateMetadataService" junit="false">
+        <classes>
+            <class name="kiwi.test.service.UpdateMetadataTest"/>
+        </classes>
+    </test>
+    <test name="UpdateTaggingService" junit="false">
+        <classes>
+            <class name="kiwi.test.service.UpdateTaggingServiceTest"/>
+        </classes>
+    </test>
+    <test name="UpdateTextContentService" junit="false">
+        <classes>
+            <class name="kiwi.test.service.UpdateTextContentTest"/>
+        </classes>
+    </test>
+    <test name="UpdateTitle" junit="false">
+        <classes>
+            <class name="kiwi.test.service.UpdateTitleTest"/>
+        </classes>
+    </test>
+    <test name="UpdateMediaContent" junit="false">
+        <classes>
+            <class name="kiwi.test.service.UpdateMediaContentTest"/>
+        </classes>
+    </test>
+</suite>

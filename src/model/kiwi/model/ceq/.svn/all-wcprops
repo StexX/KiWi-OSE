@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/kiwi/!svn/ver/5365/KiWi/trunk/src/model/kiwi/model/ceq
+END
+TagCEQFacade.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/kiwi/!svn/ver/5365/KiWi/trunk/src/model/kiwi/model/ceq/TagCEQFacade.java
+END
+SunSpaceImportInformation.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5177/KiWi/trunk/src/model/kiwi/model/ceq/SunSpaceImportInformation.java
+END
+SunSpaceImportKeyword.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5181/KiWi/trunk/src/model/kiwi/model/ceq/SunSpaceImportKeyword.java
+END
+SunSpaceComunityFacade.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5082/KiWi/trunk/src/model/kiwi/model/ceq/SunSpaceComunityFacade.java
+END
+SunSpaceImportSpace.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5183/KiWi/trunk/src/model/kiwi/model/ceq/SunSpaceImportSpace.java
+END
+SunSpaceImportLog.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/5153/KiWi/trunk/src/model/kiwi/model/ceq/SunSpaceImportLog.java
+END
+SunSpaceImportSpaceInformation.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5309/KiWi/trunk/src/model/kiwi/model/ceq/SunSpaceImportSpaceInformation.java
+END
+SunSpaceImportSpaceKeyword.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5309/KiWi/trunk/src/model/kiwi/model/ceq/SunSpaceImportSpaceKeyword.java
+END
+SoredProcedure.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/kiwi/!svn/ver/5309/KiWi/trunk/src/model/kiwi/model/ceq/SoredProcedure.java
+END
+UserCEQFacade.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/kiwi/!svn/ver/5365/KiWi/trunk/src/model/kiwi/model/ceq/UserCEQFacade.java
+END
+ContentItemCEQFacade.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5365/KiWi/trunk/src/model/kiwi/model/ceq/ContentItemCEQFacade.java
+END
+SunSpaceImportSpacePerson.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5309/KiWi/trunk/src/model/kiwi/model/ceq/SunSpaceImportSpacePerson.java
+END
+SunSpaceImportInfoKeyword.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5309/KiWi/trunk/src/model/kiwi/model/ceq/SunSpaceImportInfoKeyword.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/kiwi/!svn/ver/4699/KiWi/trunk/src/model/kiwi/model/ceq/package-info.java
+END
+SunSpaceImportPerson.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5048/KiWi/trunk/src/model/kiwi/model/ceq/SunSpaceImportPerson.java
+END

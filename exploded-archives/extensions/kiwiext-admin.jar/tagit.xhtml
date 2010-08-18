@@ -1,0 +1,103 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+                xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                template="layout/template.xhtml">
+
+ 
+ 
+    <ui:define name="body">
+
+        <h1>Configure TagIT</h1>
+
+        <rich:messages styleClass="message"/>
+
+        <h:form>
+            <s:validateAll>
+                <h3>Parameters</h3>
+	            <h:panelGrid columns="2">
+	            	
+	            	<h:outputText value="Geocoder:"/>
+	            	<h:selectOneMenu value="#{kiwi.admin.tagitConfigurationAction.geoCoder}">
+	            		<s:selectItems value="#{kiwi.admin.tagitConfigurationAction.geoCoders}" var="item" label="#{item}"/>
+	            	</h:selectOneMenu>
+	                
+	                <h:outputText value="Google Maps Key:" />
+	                <h:inputText value="#{kiwi.admin.tagitConfigurationAction.googleKey}" size="90" required = "true" requiredMessage="Google Maps Key is required"/>
+	
+	                <h:outputText value="Map Centre (lat,lng):" />
+	                <h:panelGroup>
+	                    <h:inputText value="#{kiwi.admin.tagitConfigurationAction.centerLat}" size="5" required = "true" />,
+	                    <h:inputText value="#{kiwi.admin.tagitConfigurationAction.centerLng}" size="5" required = "true" />
+	                </h:panelGroup>
+	                
+                    <h:outputText value="Default Zoom:" />
+                    <rich:inputNumberSpinner value="#{kiwi.admin.tagitConfigurationAction.zoom}" minValue="0" maxValue="20" required="true"/>
+
+                    <h:outputText value="Maximum number of trackpoints in a route" />
+                    <rich:inputNumberSpinner value="#{kiwi.admin.tagitConfigurationAction.maxTrackpoints}" minValue="100" maxValue="1000" step="100" required="true"/>
+	            
+	            </h:panelGrid>	 
+	            
+	            <h3>Layers</h3>
+	            <rich:orderingList value ="#{kiwi.admin.tagitConfigurationAction.layers}"  
+	                                 var = "layer" 
+	                                  id = "layerList"
+	                          listHeight = "300" 
+	                           listWidth = "650">
+	                <s:convertEntity/>
+	                <rich:column  width="180">
+	                    <f:facet name="header">
+	                        <h:outputText value="Layer Name" />
+	                    </f:facet> 
+	                    <h:outputText value="#{layer.title}"/>
+	                </rich:column>
+	                <rich:column  width="50"> 
+	                    <f:facet name="header">
+	                        <h:outputText value="Action" />
+	                    </f:facet>
+	                    <a:commandButton action="#{kiwi.admin.tagitConfigurationAction.removeLayer(layer)}" value="Remove" reRender="layerList"/>
+	                </rich:column>
+	            </rich:orderingList>
+	            <h:panelGrid columns="2">
+	                <h:panelGroup>
+		                <h:inputText value="#{kiwi.admin.tagitConfigurationAction.addedLayer}" id="addlayer" size="80"/>
+		                <rich:suggestionbox id="suggestionBoxId" for="addlayer" tokens=",[]"
+		                        suggestionAction="#{kiwi.admin.tagitConfigurationAction.autocomplete}" 
+		                        var="result"
+		                        fetchValue="#{result}" 
+		                        minChars="2"
+		                        shadowOpacity="4"
+		                        border="1"
+		                        height="150"
+		                        width="200"
+		                        shadowDepth="3"
+		                        cellpadding="2"
+		                        nothingLabel="No tags found" 
+		                        columnClasses="center"
+		                        usingSuggestObjects="true" reRender="suggestionBoxId">
+		                        
+		                        <h:column>
+		                            <h:outputText value="#{result}" />
+		                        </h:column>
+		                </rich:suggestionbox>
+		            </h:panelGroup>
+                    <h:panelGroup>
+                        <a:commandButton action="#{kiwi.admin.tagitConfigurationAction.addLayer()}" value="Add" reRender="addlayer,layerList"/>
+                    </h:panelGroup>
+		        </h:panelGrid>
+ 	                   
+	        </s:validateAll>
+	        <h:commandButton action="#{kiwi.admin.tagitConfigurationAction.submit()}" value="Save" />
+        </h:form>
+    </ui:define>         
+                
+</ui:composition>

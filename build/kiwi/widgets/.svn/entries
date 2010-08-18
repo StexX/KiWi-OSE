@@ -1,0 +1,81 @@
+10
+
+dir
+5565
+https://svn.salzburgresearch.at/svn/kiwi/KiWi/releases/0.9/build/kiwi/widgets
+https://svn.salzburgresearch.at/svn/kiwi
+
+
+
+2010-08-18T11:45:47.139629Z
+5565
+steffi
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+df910b12-e4fe-467b-9c3d-147a02c1fe00
+
+
+
+
+
+
+0
+empty
+
+activity
+dir
+
+cluster
+dir
+
+editor
+dir
+
+equity
+dir
+
+explanation
+dir
+
+fragment
+dir
+
+imagebrowser
+dir
+
+location
+dir
+
+photo
+dir
+
+rating
+dir
+
+recommendations
+dir
+
+references
+dir
+
+status
+dir
+
+tagging
+dir
+
+tags
+dir
+

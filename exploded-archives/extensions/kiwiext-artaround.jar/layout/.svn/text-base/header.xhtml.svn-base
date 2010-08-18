@@ -1,0 +1,131 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:rich="http://richfaces.org/rich"
+    xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+    xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:a4j="http://richfaces.org/a4j">
+
+	<!-- start header -->
+    <div id="header">
+    	<!-- logo: -->
+	    <div id="logo">
+		    <a href="http://www.artaround.at/" title="ArtAround Homepage">
+	            <img src="#{facesContext.externalContext.requestContextPath}/view/img/art_around_logo_65pxh.gif" 
+					alt="ArtAround Logo" 
+					title="#{messages['artaround.site.titleShort']}"/>
+	        </a>	    
+	    </div>
+		<!-- text in the center of the page -->
+	    <div id="mainnav">
+			<div id="artAroundHeaderText">					
+				<div class="top">
+					<h:outputText value="#{messages['artaround']}"/>
+				</div>
+				<div class="sub">
+					 <h:outputText value="#{messages['artaround.dasKunstnetzwerk']}"/>!
+				</div>					
+			</div>		
+	    </div>
+		<!-- fast login -->
+		<div id="headerRight">
+			
+				<div id="fastLogin"  >
+					<h:form id="formLoginFast" rendered="#{not identity.loggedIn}">	
+						<h:inputText id="username" value="#{credentials.username}" />
+						<h:outputText value=" " />
+						<h:inputSecret id="password" value="#{credentials.password}" />			
+						<h:commandButton value="#{messages['artaround.login']}" action="#{identity.login}" style="margin-left:5px;"/>
+						<div class="registerText" style="text-align:right;">
+							<h:outputText value="#{messages['artaround.login.notRegisteredYet']}" />
+							<h:outputText value=" " />
+							<s:link view="/artaround/pages/login/register.xhtml" value="#{messages['artaround.register']}" style="color:#EB6D0E;"/>
+						</div>					
+				    </h:form>
+				</div>
+			
+			<div id="cap-kom-link">
+			   <!-- [start] cap-kom logo and link -->
+			   <a href="#{facesContext.externalContext.requestContextPath}/view/cap-kom/index.seam" 
+			   		title="#{messages['artaround.cap-kom.site.title']}">
+			         <img src="#{facesContext.externalContext.requestContextPath}/view/cap-kom/images/p.jpg" 
+							alt="#{messages['artaround.cap-kom.site.title']}" 
+							title="#{messages['artaround.cap-kom.site.title']}" height="65"/>
+			   </a>		
+			   <!-- [start] cap-kom logo and link -->				
+			</div>	
+		</div>	
+    </div>
+	<!-- end header -->
+	
+	<!-- start main navigation bar -->
+    <div id="navbar">
+						
+			<!-- start login and register -->
+			<div id="login">
+				<h:form id="formHdrNavigation">
+		
+				    <div id="user">
+				    	
+				    	<h:outputText value="#{messages['artaround.welcome']}, " rendered="#{identity.loggedIn}" />
+			            <s:link value="#{identity.username}!"
+			            		   action="/artaround/pages/profil/userprofile.xhtml" 
+			                       rendered="#{identity.loggedIn}" />
+		            
+			            <s:link action="/artaround/pages/login/login.xhtml" 
+			                     value="#{messages['artaround.login']}"
+			                  rendered="#{not identity.loggedIn}" />
+			                    
+			            <h:outputText value=" | " />
+			
+			            <s:link action="/artaround/pages/login/register.xhtml" 
+			                     value="#{messages['artaround.login.registerFast']}"
+			                  rendered="#{not identity.loggedIn}" />
+			        
+			            <s:link action="#{identityManagerService.logout}" 
+			                     value="#{messages['artaround.logout']}"
+			                  rendered="#{identity.loggedIn}" />	    
+												
+				    </div>
+			
+			    </h:form>
+			</div>
+			<!-- end login and register -->			
+			
+			<!-- searchbox: -->	    
+		    <div id="searchbox">
+		    			       	
+		       <a4j:form id="formHdrSearch">
+		       	   
+		       	   <!-- [start] change locale, shows all available locale from faces-config.xml -->
+					<h:selectOneMenu value="#{localeSelector.localeString}">
+					    <f:selectItems value="#{localeSelector.supportedLocales}"/>
+					</h:selectOneMenu>
+					<h:commandButton action="#{localeSelector.select}" value="#{messages['ChangeLanguage']}"/>
+					<!-- [end] change locale -->	       	   
+		       	   
+		           <a4j:queue />
+		           <!--BEGIN: interedu hack -->
+<!--		           <s:fragment rendered="#{currentApplication.identifier ne 'interedu'}">-->
+			       <h:inputText id="hdrSearchBox" value="#{artSearchAction.fullquery}"/>
+			       
+	               <rich:suggestionbox for="hdrSearchBox" suggestionAction="#{searchAction.autocomplete}" var="result" >
+	               <h:column>
+	                    <h:outputText value="#{result}" />
+	               </h:column>
+	               </rich:suggestionbox>	          
+	               
+	               <a4j:commandButton id="hdrSearchBtn" action="#{artSearchAction.getSearchView()}"  style="border: 0" image="/img/search.png" value="#{messages['hdr.search']}" type="submit">
+		     			 <s:defaultAction/>
+		           </a4j:commandButton>
+		           		          
+			       <!-- END: interedu hack -->
+	           </a4j:form>	       
+		    </div>				
+    </div>
+	<!-- end main navigation bar -->
+	
+</ui:composition>

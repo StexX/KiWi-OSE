@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/gwt/dashboardprofile/sc/schema
+END
+WebServiceOperation.ds.xml
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/gwt/dashboardprofile/sc/schema/WebServiceOperation.ds.xml
+END
+DataSource.ds.xml
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/gwt/dashboardprofile/sc/schema/DataSource.ds.xml
+END
+JVMClassTreeDS.ds.xml
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/gwt/dashboardprofile/sc/schema/JVMClassTreeDS.ds.xml
+END
+WSDLMessage.ds.xml
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/gwt/dashboardprofile/sc/schema/WSDLMessage.ds.xml
+END
+SchemaSet.ds.xml
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/gwt/dashboardprofile/sc/schema/SchemaSet.ds.xml
+END
+WebService.ds.xml
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/gwt/dashboardprofile/sc/schema/WebService.ds.xml
+END
+XSElement.ds.xml
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/gwt/dashboardprofile/sc/schema/XSElement.ds.xml
+END
+DBSchema.ds.xml
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/gwt/dashboardprofile/sc/schema/DBSchema.ds.xml
+END
+DataSourceStore.ds.xml
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/gwt/dashboardprofile/sc/schema/DataSourceStore.ds.xml
+END
+WSOperationHeader.ds.xml
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/gwt/dashboardprofile/sc/schema/WSOperationHeader.ds.xml
+END
+DataSourceField.ds.xml
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/gwt/dashboardprofile/sc/schema/DataSourceField.ds.xml
+END
+Validator.ds.xml
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/gwt/dashboardprofile/sc/schema/Validator.ds.xml
+END
+XSComplexType.ds.xml
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/gwt/dashboardprofile/sc/schema/XSComplexType.ds.xml
+END
+SimpleType.ds.xml
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/gwt/dashboardprofile/sc/schema/SimpleType.ds.xml
+END
+DBListDS.ds.xml
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/gwt/dashboardprofile/sc/schema/DBListDS.ds.xml
+END

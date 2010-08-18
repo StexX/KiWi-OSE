@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/importexport/importer
+END
+RDFImporterImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/importexport/importer/RDFImporterImpl.class
+END
+ICALImporterImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/importexport/importer/ICALImporterImpl.class
+END
+SNImporterImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/importexport/importer/SNImporterImpl.class
+END
+RSSImporterImpl$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/importexport/importer/RSSImporterImpl$1.class
+END
+RSSImporterImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/importexport/importer/RSSImporterImpl.class
+END
+IkeWikiImporter.class
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/importexport/importer/IkeWikiImporter.class
+END

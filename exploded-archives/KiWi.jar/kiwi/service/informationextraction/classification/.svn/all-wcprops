@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/informationextraction/classification
+END
+LuceneClassification.class
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/informationextraction/classification/LuceneClassification.class
+END
+LuceneTraining$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/informationextraction/classification/LuceneTraining$1.class
+END
+LuceneTraining.class
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/informationextraction/classification/LuceneTraining.class
+END
+Iteration.class
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/informationextraction/classification/Iteration.class
+END
+Classifier.class
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/informationextraction/classification/Classifier.class
+END

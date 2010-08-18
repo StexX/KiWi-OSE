@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-inspector.jar/kiwi/action/inspector
+END
+ViewRevisionsAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-inspector.jar/kiwi/action/inspector/ViewRevisionsAction.class
+END
+InspectorAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-inspector.jar/kiwi/action/inspector/InspectorAction.class
+END
+PreviewAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-inspector.jar/kiwi/action/inspector/PreviewAction.class
+END
+InspectUserAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-inspector.jar/kiwi/action/inspector/InspectUserAction.class
+END

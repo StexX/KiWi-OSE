@@ -1,0 +1,203 @@
+<!--
+	Copyright © Rolf Sint, Michael Schneider, Christian Osterrieder, 2010
+ */
+ -->
+
+  <!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+		    	xmlns:rich="http://richfaces.org/rich"
+		    	template="../../layout/template-2col.xhtml"
+		    	xmlns:c="http://java.sun.com/jstl/core"
+		    	xmlns:a4j="http://richfaces.org/a4j">		    	
+
+	<ui:define name="breadcrumps">
+		<ul>
+			<li class="first">				 			
+				<s:link view="/artaround/home.seam" 
+					value="#{messages['artaround.breadcrumps.home']}"/>
+			</li>
+			<li>				 			
+				<s:link view="/artaround/pages/profil/meinProfil.seam" 
+					value="#{messages['artaround.breadcrumps.myPage']}"/>
+			</li>
+			<li>				 			
+				<s:link view="/artaround/pages/artworks/meineKunstwerke.seam" 
+					value="#{messages['artaround.myArtworks']}"/>
+			</li>	
+			<li>				 			
+				<s:link view="/artaround/pages/artworks/imagesOfArtwork.xhtml" 
+					value="Bilder meiner Kunstwerke"/>
+			</li>
+			<li>				 			
+				<s:link view="/artaround/pages/artworks/adminArtworks.xhtml" 
+					value="#{messages['artaround.artworks.administration']}"/>
+			</li>		
+		</ul>
+	</ui:define>
+	
+		
+	<ui:define name="body">
+		
+	<style>
+	
+		#cover {
+			margin-left:30px;
+			margin-top:20px;
+		} 		
+		
+		h3 {
+			margin:0 0 5px 0;
+			font-size:16px;
+			color:#456;
+			font-weight:normal;
+			text-align: left;
+		}
+		
+		h4 {
+			margin:5px 0;
+			font-size:14px;
+			color:#456;
+			font-weight:normal;
+			text-align: left;
+		}  
+		
+		h5 {
+			margin:0 15px 5px 0;
+			font-size:12px;
+			color:#456;
+			font-weight:normal;
+			text-align: left;
+		}  
+		
+		#mask {
+			background:#ccc url(#{facesContext.externalContext.requestContextPath}/view/img/mask_gradient_1000.png) no-repeat;
+			background-position:-260px -79px;
+		}
+		
+		div.expose {
+			/*border:1px outset #aaa; */
+			background:#fff url(#{facesContext.externalContext.requestContextPath}/view/img/h800.png) repeat-x;
+			padding:10px;
+			margin:5px 0;
+			text-align:center;
+			width:300px;
+			-moz-border-radius:4px;
+		}  
+	
+	</style>	
+		
+
+	
+	<div style="height: 350px;">
+	<h:form>
+		<table cellspacing="15px" style="margin-right:10px">			
+			<tr>				
+				<td valign="top">				
+					<div style="margin-left:15px;">						
+						<div class="dialog">
+							<h:messages/>			
+			           		<s:validateAll>
+									           	
+						    <fieldset class="fieldsetborder">
+						  		<legend>#{messages['artaround.artworks.artwork']} bearbeiten</legend>
+				               		 <div class="expose">
+				               		 <h:panelGrid columns="2" rowClasses="prop" columnClasses="name,value">
+				               	  		<h:outputLabel for="artWorkName">#{messages['artaround.artworks.artworkNameShort']}:</h:outputLabel>
+					              		<h:inputText id="artWorkName" 
+										  	defaultLabel="#{artWorkBean.artWorkName}"
+										  	style="width:200px;"
+											required="true" 
+										  	value = "#{artWorkBean.artWorkName}"/>
+					              		<h:outputLabel for="technik">#{messages['artaround.artworks.technique']}: </h:outputLabel>
+							      		<a href="#"  style="text-align:left; float:left;" id = "techniquex" onclick="jQuery('#technique_chooser').fadeIn('fast');">Auswahl</a> 
+							      		<h:outputLabel for="artWorkLocation">#{messages['artaround.artworks.artworkLocation']}: </h:outputLabel>
+					              		<a href="#" style="text-align:left; float:left;" id = "techniquex" onclick="jQuery('#map_chooser').fadeIn('fast',function(){initialize()})">Karte</a>
+		       							<h:outputLabel for="kunstbeschreibung">#{messages['artaround.artworks.artworkDescription']}:&#160;&#160;</h:outputLabel>
+					             	    <h:inputTextarea style="width:200px;" rows="5" id="kunstbeschreibung" value = "#{artWorkBean.description}" />
+		       						 </h:panelGrid>
+		       						 </div>
+							</fieldset><br/>
+							<fieldset class="fieldsetborder">
+							   <legend>#{messages['artaround.artworks.selling']}</legend>
+				               		<div class="expose">
+				               		<h:panelGrid columns="2" rowClasses="prop" columnClasses="name,value" float="left">					  
+									  	<h:outputLabel for="selling">#{messages['artaround.artworks.sellArtwork']}&#160;&#160;</h:outputLabel>
+			 						  	<h:selectBooleanCheckbox  id="selling"  value = "#{artWorkBean.sellingState}" style="float:left;" />								 
+									  	<h:outputLabel for="price">#{messages['artaround.price']}:</h:outputLabel>
+			 						  	<h:inputText id="price" 
+										  	style="width:100px; float:left;"
+											required="false" 
+										  	value = "#{artWorkBean.price}"/>
+										<h:outputLabel for="waehrung">#{messages['artaround.currency']}:</h:outputLabel>								
+								      	<rich:comboBox defaultLabel="EUR" 
+										  	id = "waehrung" value = "#{artWorkBean.currency}" width="100px" style="float:left;">
+									      			 <f:selectItem itemValue="USD"/>
+									      			 <f:selectItem itemValue="EUR"/>
+									      			 <f:selectItem itemValue="Alpen $"/>
+				       				  	</rich:comboBox>						      						
+						         	</h:panelGrid>
+						         	</div>   														
+								</fieldset><br/>
+								<fieldset class="fieldsetborder">
+							 	    <legend>#{messages['artaround.artworks.activatePublicAccess']}</legend>
+					               		<div class="expose">
+					               		<h:panelGrid columns="2" rowClasses="prop" columnClasses="name,value">
+				      						<h:outputLabel for="oeffentlich">#{messages['artaround.artworks.notPublic']}&#160;&#160;</h:outputLabel>
+									  		<h:selectBooleanCheckbox id="publicAccess" value = "#{artWorkBean.publicAccess}" style="float:left;"/>			 						  
+								  		</h:panelGrid>
+								  		</div>
+								 </fieldset>
+								 <br/><br/>	
+								      <h:commandButton id="submitArtwork" value="#{messages['artaround.save']}" action = "#{artWorkEditAction.changeArtWork()}" style="text-align:right; float:right;"/>
+							</s:validateAll>   
+						</div>  <!-- dialog -->				 
+					</div>
+				</td>
+				<td valign="top">
+					<fieldset class="fieldsetborder">
+						<legend>Bildbearbeitung</legend>
+							<div class="expose" id = "oGal">
+								<rich:dataGrid id="gal" value="#{artWorkBean.artAroundMediaList}"  var="pic" columns="1" elements="1"  width="270" align="center">
+									<br/>
+									<img src="#{showArtWorkAction.getThumbMultimediaFilename(pic)}" title="Dummytitel" alt="Dummybeschreibung" />
+									<br/><h:commandLink action="#{artWorkEditAction.deletePictureOfArtwork(pic)}" reRender="oGal">#{messages['artaround.delete']}</h:commandLink>
+									<br/><br/>
+									<a href="#" style="text-align:left; float:left;" id = "uploadPicture" onclick="jQuery('#uploadPictureChooser').fadeIn('fast')">Weitere Bilder hochladen</a>
+									<br/>
+									<br/>
+									<h5>Bildbeschreibung:</h5>
+									<h:inputTextarea style="width:290px;" rows="10" value = "" />
+	               					<br/><h:commandLink>#{messages['artaround.save']}</h:commandLink><br/>
+	               					<f:facet name="footer">
+										   <rich:datascroller></rich:datascroller>
+								  	</f:facet>
+								</rich:dataGrid>
+							</div>
+					</fieldset>			
+				</td>
+			</tr>					
+	   </table>		
+	</h:form>	
+	</div>  <!--  end div image wrap -->
+	
+	
+	<!-- "popup Windows" -->
+	<div id="technique_chooser" style="display:none" class="popup_600">
+				<ui:include src="../popup/technique_chooser.xhtml" />	
+	</div>
+	
+	<div id="map_chooser" style="display:none" class="popup_600">
+				<ui:include src="../popup/map_chooser.xhtml" />				
+	</div>
+	
+	<div id="uploadPictureChooser" style="display:none" class="popup_600">
+				<ui:include src="../popup/uploadPictureChooser.xhtml" />				
+	</div>
+		
+  	</ui:define>
+</ui:composition> 

@@ -1,0 +1,13 @@
+Phase: terms
+Input: Token Split
+Options: control = all
+
+Rule: NGramTerm
+Priority: 70
+(
+    (({Token.category == "NNP"})* {Token.category == "NNP"}) |
+    (({Token.category == "JJ"} | {Token.category == "NN"})* {Token.category == "NN"} )
+):term
+-->
+:term.Term = {rule="NGramTerm"}
+

@@ -1,0 +1,146 @@
+10
+
+dir
+5565
+https://svn.salzburgresearch.at/svn/kiwi/KiWi/releases/0.9/build
+https://svn.salzburgresearch.at/svn/kiwi
+
+
+
+2010-08-18T11:45:47.139629Z
+5565
+steffi
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+df910b12-e4fe-467b-9c3d-147a02c1fe00
+
+
+
+
+
+
+0
+empty
+
+artaround
+dir
+
+docs
+dir
+
+ideator
+dir
+
+ideator.docs
+dir
+
+info
+dir
+
+interedu
+dir
+
+interedu.readme
+file
+
+
+
+
+2010-08-17T20:17:01.000000Z
+d8f98ab1bf37d6d1872588ad480a81e7
+2010-08-18T11:45:47.139629Z
+5565
+steffi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2080
+
+kiwi
+dir
+
+logica
+dir
+
+mars
+dir
+
+org
+dir
+
+semForm
+dir
+
+tagit
+dir
+
+tagit2
+dir
+
+treecache.xml
+file
+
+
+
+
+2010-08-17T20:16:42.000000Z
+6dd99be024f7d94b6ede8fd33118ef33
+2010-08-18T11:45:47.139629Z
+5565
+steffi
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6133
+
+w2k
+dir
+

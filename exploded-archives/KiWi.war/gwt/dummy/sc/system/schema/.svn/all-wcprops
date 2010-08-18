@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/gwt/dummy/sc/system/schema
+END
+SmartClientOperations.wsdl
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/gwt/dummy/sc/system/schema/SmartClientOperations.wsdl
+END
+schemaTranslator.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/gwt/dummy/sc/system/schema/schemaTranslator.xsl
+END
+hibernateTranslator.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/gwt/dummy/sc/system/schema/hibernateTranslator.xsl
+END
+indent.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/gwt/dummy/sc/system/schema/indent.xsl
+END

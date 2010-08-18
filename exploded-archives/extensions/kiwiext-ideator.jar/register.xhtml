@@ -1,0 +1,82 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+			 	xmlns:c="http://java.sun.com/jstl/core"
+                template="layout/template_1col.xhtml">
+              
+<ui:define name="main_header">
+ 	<h2>#{messages['ideator.register.title']}</h2>
+</ui:define>
+
+<ui:define name="main_content">
+	<h:form id="formLogin">
+	<center>
+	<rich:messages styleClass="message" />
+	<div class="line_box" style="margin-top:30px;margin-bottom:30px;width:330px;padding:10px;">
+			<s:validateAll>
+               <h:panelGrid columns="2" rowClasses="prop" columnClasses="register_name,register_value">
+                  <h:outputLabel for="login">#{messages['ideator.register.login']}:<!--  <s:decorate id="loginDecoration" template="layout/edit.xhtml"> --></h:outputLabel>
+	              <h:inputText id="login" value="#{ideatorRegisterAction.login}" required="true"><!--     	<a:support event="onblur" reRender="loginDecoration" bypassUpdates="true"/> -->
+	              </h:inputText>
+                  <h:outputLabel for="fn">#{messages['ideator.register.firstname']}:</h:outputLabel> 
+                  <h:inputText id="fn" value="#{ideatorRegisterAction.firstName}" required="true"/>
+                  <h:outputLabel for="ln">#{messages['ideator.register.lastname']}:</h:outputLabel> 
+                  <h:inputText id="ln" value="#{ideatorRegisterAction.lastName}" required="true"/>
+                  <h:outputLabel for="password">#{messages['ideator.register.password']}:</h:outputLabel> 
+                  <h:inputSecret id="password" value="#{ideatorRegisterAction.password}" required="true"/>
+                  <h:outputLabel for="validate">#{messages['ideator.register.validate']}:</h:outputLabel> 
+                  <h:inputSecret id="validate" value="#{ideatorRegisterAction.validatePassword}" required="true"/>
+                  <h:outputLabel for="email">#{messages['ideator.register.email']}:</h:outputLabel> 
+                  <h:inputText id="email" value="#{ideatorRegisterAction.email}"  required="true"/>
+
+				  <h:outputLabel for="page_position_list">#{messages['ideator.register.position']}:</h:outputLabel> 
+				  <s:div id="page_position_list" >
+				  <ul>
+				  	<ui:repeat value="#{positionAction.chosenConcepts}" var="pos">
+				  		<li><h:outputText value="#{pos.preferredLabel}" /></li>
+				  	</ui:repeat>
+				  </ul>
+				  <a href="#" onclick="jQuery('#position_chooser').fadeIn('fast');">Edit</a>
+				  </s:div>
+				  <h:graphicImage value="/seam/resource/captcha"/>
+				  <h:inputText id="verifyCaptcha" value="#{captcha.response}" required="true">
+ 							<s:validate />
+				  </h:inputText>
+				  <h:message for="verifyCaptcha"/>	               
+				</h:panelGrid>
+            </s:validateAll>
+	</div>
+	</center>
+				<ul class="buttons_center" style="width:193px;padding-bottom: 30px; margin-top:-10px;">
+					<li>
+						<s:link action="home" styleClass="button">
+							<span>#{messages['ideator.btn.cancel']}</span>
+						</s:link>
+					</li>
+					<li>
+						<h:commandLink id="loginButton" action="#{ideatorRegisterAction.register}" styleClass="button">
+							<s:defaultAction />
+							<span>#{messages['ideator.btn.register']}</span>
+						</h:commandLink>
+					</li>
+				</ul>
+	</h:form>
+</ui:define>
+
+<ui:define name="popups">
+	<div id="position_chooser" style="display:none;">
+		<div class="background_hider" />
+		<div class="popup_600">
+			<ui:include src="pages/popup/position_chooser.xhtml" />
+		</div>
+	</div>
+</ui:define>
+
+</ui:composition>

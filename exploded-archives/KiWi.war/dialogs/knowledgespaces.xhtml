@@ -1,0 +1,36 @@
+<rich:modalPanel
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+   	  xmlns:rich="http://richfaces.org/rich"
+ 	  xmlns:a4j="http://richfaces.org/a4j"
+      id="kspacePanel" width="350" height="200">
+
+
+        <f:facet name="header">
+            <h:panelGroup>
+                <h:outputText value="Active Knowledge Spaces"></h:outputText>
+            </h:panelGroup>
+        </f:facet>
+        <f:facet name="controls">
+            <h:panelGroup>
+                <h:graphicImage value="/images/modal/close.png" style="cursor:pointer" id="kspace_hidelink"/>
+                <rich:componentControl for="kspacePanel" attachTo="kspace_hidelink" operation="hide" event="onclick"/>
+            </h:panelGroup>
+        </f:facet>
+        
+        <a4j:form>
+        	<rich:dataTable var="kspace" value="#{allKnowledgeSpaces}">
+        		<h:column>
+        			<h:selectBooleanCheckbox value="#{kspace.active}">
+        			 	<a4j:support ajaxSingle="true" event="onchange" immediate="true" />
+        			</h:selectBooleanCheckbox>
+        		</h:column>
+        		<h:column>
+        			<h:outputText value="#{kspace.contentItem.title}" />
+        		</h:column>
+        	</rich:dataTable>
+		</a4j:form>
+</rich:modalPanel>

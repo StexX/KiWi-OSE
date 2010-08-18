@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+<head>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>(a)SlideShow jQuery Plugin - Demo - Custom configuration</title>		
+    <link href="../js/jquery.aslideshow/shadow/styles.css" media="screen" rel="stylesheet" type="text/css" />	
+    <link href="../style.css" media="screen" rel="stylesheet" type="text/css" />	
+	<script type="text/javascript" src="../js/jquery.js"></script>	
+	<script type="text/javascript" src="../js/jquery.aslideshow.pack.js"></script>
+    
+    <script type="text/javascript" src="http://scripts.hohli.com/brush/shCore.js"></script>
+	<script type="text/javascript" src="http://scripts.hohli.com/brush/shBrushJScript.js"></script>
+	<script type="text/javascript" src="http://scripts.hohli.com/brush/shBrushXml.js"></script>
+	<link type="text/css" rel="stylesheet" href="http://scripts.hohli.com/brush/styles/shCore.css"/>
+	<link type="text/css" rel="stylesheet" href="http://scripts.hohli.com/brush/styles/shThemeDefault.css"/>
+	<script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = 'http://scripts.hohli.com/brush/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+</head>
+
+<body>
+
+<h2>Custom configuration</h2>
+<div>
+    <div id="CustomSlideshow"> 
+        <p><label>Show more information online</label>
+        Plugin homepage: <a href="http://slideshow.hohli.com">(a)Slideshow</a><br/>
+        Author homepage: <a href="http://anton.shevchuk.name">Anton Shevchuk</a>
+        </p>   
+        <img src="img/image_0.jpg" alt="Camomile"/> 
+        <img src="img/image_1.jpg" alt="Bumblebees"/> 
+        <img src="img/image_2.jpg" alt="Wood Toothpicks"/> 
+        <p><label>It's "Lorem ipsum"</label>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque vitae pede sit amet risus placerat mattis. 
+        Aliquam velit lacus, sodales quis, placerat eu, sagittis sit amet, enim. Sed vestibulum nisi ut mi. Ut sit amet leo. 
+        Integer vulputate risus sed elit. Nullam cursus. Pellentesque pharetra, tortor in vestibulum semper, erat nibh varius orci,
+        non semper nulla felis a orci. Nulla sed tortor in libero pretium iaculis. Cras malesuada elementum justo.
+        Nulla facilisis elit a ipsum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        Donec ultricies. Fusce dapibus. Donec neque lectus, consectetuer et, luctus et, volutpat eu, justo. Donec facilisis,
+        purus ut sollicitudin rhoncus, orci elit consectetuer ipsum, quis malesuada diam erat in tellus. Maecenas sit amet nunc.
+        Mauris volutpat dolor a sapien.
+        </p>
+    </div>
+</div>
+<h2>Source</h2>
+<div>
+    <b>HTML</b>:
+<pre class="brush:xml;">
+&lt;div id=&quot;CustomSlideshow&quot; &gt;
+    &lt;p&gt;&lt;label&gt;Show more information online&lt;/label&gt;
+    Plugin homepage: &lt;a href=&quot;http://slideshow.hohli.com&quot;&gt;(a)Slideshow&lt;/a&gt;&lt;br/&gt;
+    Author homepage: &lt;a href=&quot;http://anton.shevchuk.name&quot;&gt;Anton Shevchuk&lt;/a&gt;
+    &lt;/p&gt;
+    &lt;img src=&quot;img/image_0.jpg&quot; alt=&quot;Camomile&quot;/&gt;
+    &lt;img src=&quot;img/image_1.jpg&quot; alt=&quot;Bumblebees&quot;/&gt;
+    &lt;img src=&quot;img/image_2.jpg&quot; alt=&quot;Wood Toothpicks&quot;/&gt;
+    &lt;p&gt;&lt;label&gt;It's &quot;Lorem ipsum&quot;&lt;/label&gt;
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque vitae pede sit amet risus placerat mattis.
+    Aliquam velit lacus, sodales quis, placerat eu, sagittis sit amet, enim. Sed vestibulum nisi ut mi. Ut sit amet leo.
+    Integer vulputate risus sed elit. Nullam cursus. Pellentesque pharetra, tortor in vestibulum semper, erat nibh varius orci,
+    non semper nulla felis a orci. Nulla sed tortor in libero pretium iaculis. Cras malesuada elementum justo.
+    Nulla facilisis elit a ipsum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    Donec ultricies. Fusce dapibus. Donec neque lectus, consectetuer et, luctus et, volutpat eu, justo. Donec facilisis,
+    purus ut sollicitudin rhoncus, orci elit consectetuer ipsum, quis malesuada diam erat in tellus. Maecenas sit amet nunc.
+    Mauris volutpat dolor a sapien.
+    &lt;/p&gt;
+&lt;/div&gt;
+</pre>
+    <b>JavaScript</b>:
+<pre class="brush:jscript">
+&lt;script type=&quot;text/javascript&quot;&gt;
+//&lt;![CDATA[
+$(document).ready(function(){
+    $('#CustomSlideshow').slideshow({
+        width:640,     // width in px
+        height:480,    // height in px
+		history:true,  // change/check location hash 
+        index:0,       // start from frame number N
+        time:2000,     // time out beetwen (ms)
+        title:false,   // show title
+        panel:true,    // show controls panel
+        loop:false,    // stop looping
+
+        effect:'random',      // aviable fade, scrollUp/Down/Left/Right, zoom, zoomFade, zoomTL, zoomBR, growX, growY, random
+        effecttime:1000,      // aviable fast,slow,normal and any valid fx speed value
+        nextclick:true,       // bind content click next slide
+        playframe:true,       // show frame &quot;Play Now!&quot;
+        imgresize:true,       // resize image to slideshow window
+        help:'Hello World!',
+
+        controls :{         // show/hide controls elements
+            'hide':false,   // show controls bar on mouse hover
+            'first':false,  // goto first frame
+            'prev':false,   // goto previouse frame (if it first go to last)
+            'play':true,    // play slideshow
+            'next':false,   // goto next frame (if it last go to first)
+            'last':false,   // goto last frame
+            'help':false,   // show help message
+            'counter':true  // show slide counter
+        }
+    });
+});
+//]]&gt;
+&lt;/script&gt;
+</pre>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function(){    
+    $('#CustomSlideshow').slideshow({
+        width:640,     // width in px
+        height:480,    // height in px
+        history:true,  // change/check location hash 
+        index:0,       // start from frame number N 
+        time:2000,     // time out beetwen (ms)
+        title:false,   // show title
+        panel:true,   // show controls panel
+        loop:false,    // stop looping
+        
+        effect:'random',      // aviable fade, scrollUp/Down/Left/Right, zoom, zoomFade, zoomTL, zoomBR, growX, growY, random
+        effecttime:1000,      // aviable fast,slow,normal and any valid fx speed value
+        nextclick:true,       // bind content click next slide
+        playframe:true,       // show frame "Play Now!"
+        imgresize:true,       // resize image to slideshow window
+        help:'Hello World!',
+
+        controls :{         // show/hide controls elements
+            'hide':false,   // show controls bar on mouse hover   
+            'first':false,  // goto first frame
+            'prev':false,   // goto previouse frame (if it first go to last)
+            'play':true,    // play slideshow
+            'next':false,   // goto next frame (if it last go to first)
+            'last':false,   // goto last frame
+            'help':false,   // show help message
+            'counter':true  // show slide counter
+        }
+    });
+});
+//]]>
+</script>
+</body>
+</html>

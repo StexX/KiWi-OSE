@@ -1,0 +1,104 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+			 	xmlns:c="http://java.sun.com/jstl/core"
+                template="layout/template_2col.xhtml">
+              
+<ui:define name="main_header">
+ 	<h2>Adminkonsole</h2>
+</ui:define>
+
+<ui:define name="main_header_links">
+	<li>
+		<a href="#" title="Noch Fragen?"><img src="img/header_links/question.png" /></a>
+	</li>
+	<li>
+		<a href="#"><img src="img/header_links/sound.png" /></a>
+	</li>
+</ui:define>
+
+<ui:define name="main_content">
+	<!--if(document.j_id30_ideaManagercheckBox.checked == true) {-->
+<!--	<script type="text/javascript">
+		function test(){
+			
+			if(jQuery('#adminConsoleForm:dataTable:1:ideaManagercheckBox').attr('checked') == 'checked'){	
+				alert("Test works ...");
+				return false;
+			}
+			else{
+				alert("Test doen not work ...");
+			}			
+		}	
+	</script> -->
+	
+<h:form id = "adminConsoleForm">
+							<h:messages styleClass="message"/>
+							<h1>Alle Benutzer</h1>
+							
+							<h:dataTable value="#{usersl}" var="user" id ="dataTable">
+								<h:messages styleClass="message"/>
+								<h:column>
+								   <f:facet name="header">
+              							<h:outputText value="login"/>
+           							</f:facet>
+									#{user.user.login}
+								</h:column>
+								
+								<h:column>
+									<f:facet name="header">
+              							<h:outputText value="firstname"/>
+           							</f:facet>
+									#{user.user.firstName}
+								</h:column>
+								
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="lastname"/>
+									</f:facet>
+									#{user.user.lastName}
+								</h:column>
+								
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Ideatoruser"/>
+									</f:facet>
+									<!-- "#{ideator.adminAction.checkIdeatorUser(user)}" -->
+									 <h:selectBooleanCheckbox value="#{user.ideatorUser}" disabled="false" >
+									 	<a:support event="onclick" action="#{ideator.adminAction.changeIdeatorUser(user)}" reRender="adminConsoleForm"/> 
+									</h:selectBooleanCheckbox>
+								</h:column>
+								
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Ideamanager"/>
+									</f:facet>
+									 <h:selectBooleanCheckbox value="#{user.ideaManager}" disabled="false" id = "ideaManagercheckBox">
+									 	<a:support event="onclick" action="#{ideator.adminAction.changeIdeaManager(user)}" reRender="adminConsoleForm"/>
+									</h:selectBooleanCheckbox>
+								</h:column> 
+								
+						<!--		<h:column>
+									<f:facet name="header">
+										<h:outputText value="addToIdeamanager"/>
+									</f:facet>
+									<h:commandButton value = "-" action="#{ideator.adminAction.addToIdeaManager(user)}" reRender="dataTable"/>
+								</h:column> -->
+								
+							
+							</h:dataTable>
+</h:form>							
+</ui:define>
+
+<ui:define name="right_content">
+	<ui:include src="pages/box/sample.xhtml" />
+</ui:define>
+
+</ui:composition>

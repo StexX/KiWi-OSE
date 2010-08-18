@@ -1,0 +1,7 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:kiwi="http://www.kiwi-project.eu/kiwi/html/" kiwi:type="page">
+<p>Hello</p>
+<p>My name is <kiwi:fragment uri="http://127.0.0.1:8080/KiWi/content/487d00d8-37ba-45e5-b1df-d6d4a1590f30">Marek Smurfette</kiwi:fragment>.</p>
+<p>Lorem ipsum dolor sit amet,</p>
+<p>sincerely, <kiwi:fragment uri="http://127.0.0.1:8080/KiWi/content/487d00d8-37ba-45e5-b1df-d6d4a1590f30">Marek Smurfette</kiwi:fragment>.</p>
+<p>Bye!</p>
+</div>

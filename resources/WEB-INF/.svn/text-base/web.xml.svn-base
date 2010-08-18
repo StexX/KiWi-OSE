@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>idp</web-resource-name>
+            <url-pattern>/seam/resource/idp</url-pattern>
+        </web-resource-collection>
+	    <user-data-constraint>
+		    <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+	    </user-data-constraint>
+    </security-constraint>
+    
+    <!-- TODO: -->
+<!--    <security-constraint>-->
+<!--        <web-resource-collection>-->
+<!--            <web-resource-name>fblogin</web-resource-name>-->
+<!--            <url-pattern>/seam/resource/idp</url-pattern>-->
+<!--        </web-resource-collection>-->
+<!--	    <user-data-constraint>-->
+<!--		    <transport-guarantee>CONFIDENTIAL</transport-guarantee>-->
+<!--	    </user-data-constraint>-->
+<!--    </security-constraint>-->
+
+    <session-config>
+    	<!-- HTTP Session timeout, in minutes -->
+    	<session-timeout>30</session-timeout>
+	</session-config>
+
+    <!-- Ajax4jsf -->
+    
+    <context-param>
+      <param-name>org.richfaces.SKIN</param-name>
+      <param-value>#{themeSelector.theme}</param-value>
+    </context-param> 
+    
+    <context-param>
+        <param-name>org.richfaces.LoadScriptStrategy</param-name>
+        <param-value>ALL</param-value>
+    </context-param>
+
+	<context-param>
+	    <param-name>org.ajax4jsf.COMPRESS_SCRIPT</param-name>
+	    <param-value>false</param-value>
+	</context-param>
+    
+    
+   <!--   <context-param>
+                   <param-name>org.ajax4jsf.SKIN</param-name>
+                   <param-value>emeraldTown</param-value>
+    </context-param> -->
+    
+
+     
+    <!-- listeners required for this application --> 
+    <listener>
+        <listener-class>org.jboss.seam.servlet.SeamListener</listener-class>
+    </listener>
+        
+    <!-- filters -->
+
+<!-- caching -->
+
+	<filter>
+		<filter-name>SimpleCachingHeadersPageCachingFilter</filter-name>
+		<filter-class>net.sf.ehcache.constructs.web.filter.SimpleCachingHeadersPageCachingFilter</filter-class>
+		<init-param>
+			<param-name>suppressStackTraces</param-name>
+			<param-value>false</param-value>
+		</init-param>
+		<init-param>
+			<param-name>cacheName</param-name>
+			<param-value>PageCache</param-value>
+		</init-param>
+
+	</filter>
+
+    <!--  richfaces javascript  -->
+<!-- 
+    <filter-mapping>
+        <filter-name>SimpleCachingHeadersPageCachingFilter</filter-name>
+        <url-pattern>*.css</url-pattern>
+    </filter-mapping>
+-->
+<!-- commented because of caching problems while developing smrtgwt -->
+<!--   
+    <filter-mapping>
+        <filter-name>SimpleCachingHeadersPageCachingFilter</filter-name>
+        <url-pattern>*.js</url-pattern>
+    </filter-mapping>
+-->
+<!-- enable for automatic facebook authentication; requires facebook api key and secret -->
+
+ 
+    <filter>
+        <filter-name>Facebook Filter</filter-name>
+        <filter-class>kiwi.servlet.FacebookUserFilter</filter-class>
+    </filter>
+    
+    <filter-mapping>
+        <filter-name>Facebook Filter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <context-param>
+        <param-name>facebook_app_id</param-name>
+        <param-value>@facebook.appid@</param-value>
+    </context-param>
+    <context-param>
+        <param-name>facebook_api_key</param-name>
+        <param-value>@facebook.key@</param-value>
+    </context-param>
+    <context-param>
+        <param-name>facebook_secret</param-name>
+        <param-value>@facebook.secret@</param-value>
+    </context-param>
+
+
+    <filter>
+        <filter-name>Seam Filter</filter-name>
+        <filter-class>org.jboss.seam.servlet.SeamFilter</filter-class>
+    </filter>
+    
+    <filter-mapping>
+        <filter-name>Seam Filter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+        
+    <context-param>
+        <param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+        <param-value>server</param-value>
+    </context-param>
+    
+    <!-- Facelets development mode (disable in production) -->
+    <context-param>
+        <param-name>facelets.DEVELOPMENT</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    
+    <context-param>
+        <param-name>javax.faces.DEFAULT_SUFFIX</param-name>
+        <param-value>.xhtml</param-value>
+    </context-param>
+    
+    <context-param>
+        <param-name>facelets.SKIP_COMMENTS</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    
+    <context-param>
+        <param-name>facelets.RESOURCE_RESOLVER</param-name>
+        <param-value>kiwi.extension.KiWiResourceResolver</param-value>
+    </context-param>
+    
+    <!--  ensure that dynamically generated JSF is refreshed regularly; static content should
+          be unaffected as facelets check the modification time, so there should be only a minor
+          performance penalty -->
+    <context-param>
+        <param-name>facelets.REFRESH_PERIOD</param-name>
+        <param-value>1</param-value>
+    </context-param>
+    
+    <context-param>
+        <param-name>org.richfaces.queue.global.enabled</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    
+    <!-- servlets -->
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    
+    <servlet>
+        <servlet-name>Seam Resource Servlet</servlet-name>
+        <servlet-class>org.jboss.seam.servlet.ResourceServlet</servlet-class>
+    </servlet>
+    
+    
+	<servlet>
+	    <servlet-name>Document Store Servlet</servlet-name>
+	    <servlet-class>org.jboss.seam.document.DocumentStoreServlet</servlet-class>
+	</servlet>
+
+<!-- <servlet>
+        <servlet-name>idp</servlet-name>
+        <servlet-class>kiwi.extension.KeyStoreServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+ -->    
+    <servlet>
+        <servlet-name>KiWi Resource Servlet</servlet-name>
+        <servlet-class>kiwi.extension.KiWiResourceServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <!-- servlet mappings -->
+             
+   <servlet-mapping>
+      <servlet-name>Faces Servlet</servlet-name>
+      <url-pattern>*.seam</url-pattern>
+   </servlet-mapping>
+   
+    <servlet-mapping>
+        <servlet-name>Seam Resource Servlet</servlet-name>
+        <url-pattern>/seam/resource/*</url-pattern>
+    </servlet-mapping>
+   
+	<servlet-mapping>
+	    <servlet-name>Document Store Servlet</servlet-name>
+	    <url-pattern>*.pdf</url-pattern>
+	</servlet-mapping>
+
+    
+    <security-constraint> 
+        <display-name>Restrict raw XHTML Documents</display-name>
+        <web-resource-collection>
+            <web-resource-name>XHTML</web-resource-name>
+            <url-pattern>*.xhtml</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>NONE</role-name>
+        </auth-constraint>
+    </security-constraint>
+   
+    <!-- support JSONP callbacks -->
+	<filter>
+		<display-name>jsonp</display-name>
+		<filter-name>jsonp</filter-name>
+		<filter-class>org.jsonp.JsonpFilter</filter-class>
+		<init-param>
+			<param-name>jsonp</param-name>
+			<param-value>jsonpCallback</param-value>
+		</init-param>
+		<init-param>
+			<param-name>json-mime-types</param-name>
+			<param-value>application/json, application/x-json, text/json, text/x-json</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>jsonp</filter-name>
+		<url-pattern>/seam/resource/services/widgets/*</url-pattern>
+	</filter-mapping>
+	
+	<!-- for SN search service -->
+	<filter-mapping>
+		<filter-name>jsonp</filter-name>
+		<url-pattern>/seam/resource/services/sn/search/*</url-pattern>
+	</filter-mapping>
+
+	<mime-mapping>
+		<extension>json</extension>
+		<mime-type>application/json</mime-type>
+	</mime-mapping>
+   
+   <!-- Web-Services -->
+   <!-- 
+   <servlet>
+      <servlet-name>Wortschatz</servlet-name>
+      <servlet-class>kiwi.service.dictionary.Wortschatz</servlet-class>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>Wortschatz</servlet-name>
+      <url-pattern>/Wortschatz</url-pattern>
+   </servlet-mapping>
+
+   <filter>
+     <filter-name>Wortschatz Servlet Filter</filter-name>
+     <filter-class>org.jboss.seam.servlet.SeamServletFilter</filter-class>
+   </filter>
+
+   <filter-mapping>
+     <filter-name>Wortschatz Servlet Filter</filter-name>
+     <url-pattern>/Wortschatz</url-pattern>
+   </filter-mapping>
+   -->
+ 
+   <servlet>
+      <servlet-name>DataAccess</servlet-name>
+      <servlet-class>kiwi.webservice.DataAccessServiceImpl</servlet-class>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>DataAccess</servlet-name>
+      <url-pattern>/DataAccess</url-pattern>
+   </servlet-mapping>
+
+   <filter>
+     <filter-name>data_access_servlet_filter</filter-name>
+     <filter-class>org.jboss.seam.servlet.SeamServletFilter</filter-class>
+   </filter>
+
+   <filter-mapping>
+     <filter-name>data_access_servlet_filter</filter-name>
+     <url-pattern>/DataAccess</url-pattern>
+   </filter-mapping>
+   
+    <!--  map resources that should be loadable from extension files to the KiWi Resource Servlet -->
+    <servlet-mapping>
+        <servlet-name>KiWi Resource Servlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <!-- Seam does not like the Sentido TinyMCE plugin (for SWiM extension) -->
+    <servlet-mapping>
+        <servlet-name>KiWi Resource Servlet</servlet-name>
+	<url-pattern>/js/tinymceplugins/sentido/*</url-pattern>
+    </servlet-mapping>
+    <!-- 
+    <servlet-mapping>
+        <servlet-name>KiWi Resource Servlet</servlet-name>
+        <url-pattern>*.jpg</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>KiWi Resource Servlet</servlet-name>
+        <url-pattern>*.png</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>KiWi Resource Servlet</servlet-name>
+        <url-pattern>*.css</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>KiWi Resource Servlet</servlet-name>
+        <url-pattern>*.js</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>KiWi Resource Servlet</servlet-name>
+        <url-pattern>*.html</url-pattern>
+    </servlet-mapping>
+    -->
+</web-app>
+

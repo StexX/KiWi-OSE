@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>{#annotation_dlg.title}</title>
+	<script type="text/javascript">window.Array = parent.window.Array; /* Array compatibility hack */</script>
+	<script type="text/javascript" src="../../tiny_mce_popup.js"></script>
+	<script type="text/javascript" src="../../utils/mctabs.js"></script>
+	<script type="text/javascript" src="../../utils/editable_selects.js"></script>
+	<script type="text/javascript" src="../../utils/form_utils.js"></script>
+	<script type="text/javascript" src="/KiWi/seam/resource/remoting/resource/remote.js"></script>
+	<script type="text/javascript" src="/KiWi/seam/resource/remoting/interface.js?editorAction"></script>
+	<script type="text/javascript" src="js/wdg_annottools.js"></script>
+	<script type="text/javascript" src="js/annotsettings.js"></script>
+	<link href="css/annots.css" rel="stylesheet" type="text/css" />
+	<base target="_self" />
+</head>
+
+<body id="styleprops" style="display: none">
+<form onsubmit="updateAction();return false;" action="#">
+
+<div class="tabs">
+<!--	<ul>
+		<li id="general_tab" class="current"><span><a href="javascript:mcTabs.displayTab('general_tab','general_panel');" onmousedown="return false;">{#xhtmlxtras_dlg.general_tab}</a></span></li>
+	</ul>-->
+</div>
+
+<div class="panel_wrapper">
+	<div id="general_panel" class="panel current">
+
+	<strong><label for="annotation_type">{#annotation_dlg.annot_type}: </label></strong>
+	<select id="annotation_type" name="annotation_type" onchange="onTypeChange();"></select>
+	<hr/ >
+	<table border="0" width="100%">
+		<tr>
+			<td><label for="text_size">{#annotation_dlg.text_size}</label></td>
+			<td>
+				<select id="text_size" name="text_size" onchange="onPropsChange();"></select>
+			</td>
+			<td><label for="text_weight">{#annotation_dlg.text_weight}</label></td>
+			<td>
+				<select id="text_weight" name="text_weight" onchange="onPropsChange();"></select>
+			</td>
+		</tr>
+		<tr>
+			<td><label for="text_style">{#annotation_dlg.text_style}</label></td>
+			<td>
+				<select id="text_style" name="text_style" onchange="onPropsChange();">></select>
+			</td>
+			<td><label for="text_case">{#annotation_dlg.text_case}</label></td>
+			<td>
+				<select id="text_case" name="text_case" onchange="onPropsChange();">></select>
+			</td>
+		</tr>
+		<tr>
+			<td><label for="text_color">{#annotation_dlg.text_color}</label></td>
+			<td>
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td><input id="text_color" name="text_color" type="text" value="" size="9" onChange="updateColor('text_color_pick','text_color');onPropsChange();" /></td>
+						<td id="text_color_pickcontainer">&nbsp;</td>
+					</tr>
+				</table>
+			</td>
+
+			<td><label for="background_color">{#annotation_dlg.background_color}</label></td>
+			<td>
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td><input id="background_color" name="background_color" type="text" value="" size="9" onChange="updateColor('background_color_pick','background_color');onPropsChange();" /></td>
+						<td id="background_color_pickcontainer">&nbsp;</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+	<td class="tdelim">&nbsp;</td>
+	<td class="tdelim delim">&nbsp;</td>
+	<td class="tdelim">{#annotation_dlg.style}</td>
+	<td class="tdelim delim">&nbsp;</td>
+	<td class="tdelim">{#annotation_dlg.width}</td>
+	<td class="tdelim delim">&nbsp;</td>
+	<td class="tdelim">{#annotation_dlg.color}</td>
+</tr>
+
+<tr>
+	<td>{#annotation_dlg.underline}</td>
+	<td class="delim">&nbsp;</td>
+	<td><select id="border_style_bottom" name="border_style_bottom" onchange="onPropsChange();">></select></td>
+	<td class="delim">&nbsp;</td>
+	<td>
+		<table border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td><select id="border_width_bottom" name="border_width_bottom" onchange="onPropsChange();">></select></td>
+			</tr>
+		</table>
+	</td>
+	<td class="delim">&nbsp;</td>
+	<td>
+		<table border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td><input id="border_color_bottom" name="border_color_bottom" type="text" value="" size="9" onChange="updateColor('border_color_bottom_pick','border_color_bottom');onPropsChange();" /></td>
+				<td id="border_color_bottom_pickcontainer">&nbsp;</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+</table>
+<br/>
+<div style='margin:auto ;padding:5px; width:250px; border: 1px solid black; text-align:center; height: 35px;'>  <span id='example_text'>{#annotation_dlg.exampletext}</span> </div>
+
+</div>
+</div>
+
+
+<div class="mceActionPanel">
+	<div style="float: left">
+		<div style="float: left"><input type="submit" id="insert" name="insert" value="{#update}" /></div>
+
+		<br style="clear: both" />
+	</div>
+
+	<div style="float: right">
+		<input type="button" id="cancel" name="cancel" value="{#cancel}" onClick="tinyMCEPopup.close();" />
+	</div>
+</div>
+</form>
+
+<div style="display: none">
+	<div id="container"></div>
+</div>
+
+</body>
+</html>

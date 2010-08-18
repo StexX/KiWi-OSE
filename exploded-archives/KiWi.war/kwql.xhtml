@@ -1,0 +1,169 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+    xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:a="http://richfaces.org/a4j" 
+	template="layout/template-1col.xhtml">
+
+	<ui:define name="body">
+
+	    <div id="article">
+	        <h1><h:outputText value="#{messages['hdr.kwqlsearch']}"/></h1>
+	        <rich:messages styleClass="message" />
+
+            <h:form>
+                <div id="searchbar">
+	                    <h:inputText value="#{kwqlAction.searchEngine.KWQLQuery}" size="65" id="searchField"/>
+	                    <!-- 
+	                    <rich:suggestionbox for="searchField" suggestionAction="#{kwqlaAction.searchEngine.autocomplete}" var="result">
+		                    <h:column>
+		                        <h:outputText value="#{result}" />
+		                    </h:column>
+	                    </rich:suggestionbox>
+	                    -->
+	                    <a:commandButton 
+	                        action="#{kwqlAction.searchEngine.runSearch()}"
+	                        style="border: 0; margin-bottom: -5px; margin-right: 5px;margin-left: 5px;" 
+	                        image="#{facesContext.externalContext.requestContextPath}/img/search.png" 
+	                        value="#{messages['hdr.search']}"
+	                        reRender="#{kwqlAction.renderedSearchPageParts()}"
+	                    />
+	                    <s:link view="/exhibit.xhtml"
+	                        style="border: 0; margin-bottom: -5px; margin-right: 5px;margin-left: 5px;" 
+	                        value="Exhibit">
+	                        <f:param name="q" value="#{kwqlAction.searchEngine.KWQLQuery}"/>
+	                    </s:link>
+
+    
+	           </div>
+	
+				<div id="search_numberofresults">
+					<s:span id="nrOfResults">
+						<s:span rendered="#{kwqlAction.searchEngine.searchResults.resultCount>1}">
+							Results #{(kwqlAction.searchEngine.page-1) * kwqlAction.searchEngine.pageSize + 1} - 
+							#{kwqlAction.searchEngine.min(kwqlAction.searchEngine.searchResults.resultCount, (kwqlAction.searchEngine.page * kwqlAction.searchEngine.pageSize))}
+							out of #{kwqlAction.searchEngine.searchResults.resultCount} total.
+						</s:span>
+						<s:span rendered="#{1 eq kwqlAction.searchEngine.searchResults.resultCount }">
+							#{kwqlAction.searchEngine.searchResults.resultCount} result found.
+						</s:span>
+						<s:span rendered="#{0 eq kwqlAction.searchEngine.searchResults.resultCount and kwqlAction.searchEngine.KWQLQuery.length() > 0}">
+							No results found.
+						</s:span>
+						<br/>
+					</s:span>
+				</div>
+				<div id="search_view_sort">
+					  <h:outputText value="Personalized Search"/>
+	                    <h:selectBooleanCheckbox title="Sign in, tag and search" value="#{kwqlAction.searchEngine.personalSearch}" id="checkboxID">
+        					<a:support id="checkboxSupport" event="onchange" reRender="#{kwqlAction.renderedSearchPageParts()}" />
+						</h:selectBooleanCheckbox>
+	           		View: 
+	           		<rich:inplaceSelect id="searchviewmode" value="#{kiwi.wiki.ui.layoutAction.viewMode}"
+	        			defaultLabel="Click here to edit">
+		           		<a:support event="onviewactivated" 
+		           			actionListener="#{kwqlAction.searchEngine.getResults(false)}" 
+		           			reRender="searchviewmode,searchresults" />
+		           		<s:selectItems value="#{kiwi.wiki.ui.layoutAction.viewModes}" var="mode" label="#{mode}"/>
+	        		</rich:inplaceSelect>
+	        		
+					Sort by:
+					<rich:inplaceSelect id="searchorderby" value="#{kwqlAction.searchEngine.orderBy}"
+	        			defaultLabel="Click here to edit">
+						<a:support event="onviewactivated" 
+							action="#{kwqlAction.searchEngine.getResults(true)}" 
+							reRender="searchorderby,searchresults"/>
+		           		<s:selectItems value="#{kwqlAction.searchEngine.orderBys}" var="orderBy" label="#{orderBy}"/>
+		           	</rich:inplaceSelect>
+					<h:outputText value=" "/>
+					<rich:inplaceSelect id="searchorder" value="#{kwqlAction.searchEngine.order}"
+	        			defaultLabel="Click here to edit">
+						<a:support event="onviewactivated" 
+							action="#{kwqlAction.searchEngine.getResults(true)}" 
+							reRender="searchorder,searchresults"/>
+		           		<s:selectItems value="#{kwqlAction.searchEngine.orders}" var="order" label="#{kiwi.messages.getProperty(order)}"/>
+		           	</rich:inplaceSelect>
+				</div>
+				<br/>
+
+				<!--  the search results in the left column -->
+<s:div id="searchresults" style="clear:left;">
+					<c:forEach items="#{kwqlAction.searchEngine.currentResults.results}" var="r" >
+						<hr style="clear:both;"/>
+						<!-- include template to show one result item. -->
+						<ui:include src="#{kiwi.wiki.ui.layoutAction.getSearchResultItemTemplate(r.item)}">
+							<ui:param name="ci" value="#{r.item}" />
+							<ui:param name="mode" value="#{kiwi.wiki.ui.layoutAction.viewMode}" />
+							<ui:param name="score" value="#{r.score}" />
+							<ui:param name="ceq" value="#{r.ceq}" />
+							<ui:param name="preview" value="#{kwqlAction.searchEngine.getPreview(r.item)}"/>
+						</ui:include>
+						<br/>
+					</c:forEach> 
+				</s:div>
+				
+			
+				<s:div id="resultNavigation">
+				   <!-- result navigation -->
+				    <c:if test="${kwqlAction.searchEngine.pages.size>1}">
+	               <table width="100%">
+	                   <tr>
+	                       <td width="20%">
+	                           <a:commandButton action="#{kwqlAction.searchEngine.prevPage()}" 
+	                           		value="previous page" 
+	                           		reRender="#{kwqlAction.renderedSearchPageParts()}" 
+	                           		disabled="#{kwqlAction.searchEngine.page eq 1}"/>
+	                       </td>
+	                       <td style="text-align: center; font-size: 140%;">
+                       		   <c:forEach items="#{kwqlAction.searchEngine.pages}" var="page">
+	                            	<s:span rendered="#{ page eq 1 and kwqlAction.searchEngine.page > 5 }">
+	                            		<a:commandLink action="#{kwqlAction.searchEngine.setPage(page)}" 
+	                            			value="#{page}" 
+	                            			reRender="#{kwqlAction.renderedSearchPageParts()}" />
+	                            		<h:outputText value=" ... " />	                            	
+	                            	</s:span>
+
+	                            	<s:span rendered="#{page eq kwqlAction.searchEngine.page}">
+	                            		<strong>
+			                            	<h:outputText value="#{page}"/>
+			                            </strong>
+	                            	</s:span>
+	                            	
+	                            	<s:span rendered="#{ (page eq kwqlAction.searchEngine.pages.size) and ((page-kwqlAction.searchEngine.page) > 5) }">
+	                            		<h:outputText value=" ... " />	                            	
+	                            		<a:commandLink action="#{kwqlAction.searchEngine.setPage(page)}" 
+	                            			value="#{page}" 
+	                            			reRender="#{kwqlAction.renderedSearchPageParts()}" />
+	                            	</s:span>
+
+	                            	<s:span rendered="#{(page != kwqlAction.searchEngine.page) and (5 > page - kwqlAction.searchEngine.page) and (page - kwqlAction.searchEngine.page > -5) }">
+	                            		<a:commandLink action="#{kwqlAction.searchEngine.setPage(page)}" 
+	                            			value="#{page}" 
+	                            			reRender="#{kwqlAction.renderedSearchPageParts()}" />
+	                            	</s:span>
+	                           		
+	                           		<h:outputText value=" " />
+	                           </c:forEach>
+	                       </td>
+	                       <td style="text-align: right" width="20%">
+	                           <a:commandButton action="#{kwqlAction.searchEngine.nextPage()}" 
+	                           		value="next page" 
+	                           		reRender="#{kwqlAction.renderedSearchPageParts()}" 
+	                           		disabled="#{kwqlAction.searchEngine.page eq kwqlAction.searchEngine.pages.size}"/>
+	                       </td>    
+	                   </tr>
+	               </table>
+	               </c:if>
+				</s:div>
+			</h:form>
+	    </div>
+	    
+	</ui:define>
+</ui:composition>
+

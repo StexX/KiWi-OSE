@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram model-entity="SeamPagesDiagram">
+ <item ID="#dashboard#profile.xhtml" NAME="#xdashboard#xprofile.xhtml"
+  PATH="/dashboard/profile.xhtml" SHAPE="24,17,0,0" TYPE="page" model-entity="SeamPagesDiagramItem"/>
+ <item ID="#dashboard#*" NAME="#xdashboard#x*" PATH="/dashboard/*"
+  SHAPE="344,17,0,0" TYPE="page" model-entity="SeamPagesDiagramItem"/>
+</diagram>

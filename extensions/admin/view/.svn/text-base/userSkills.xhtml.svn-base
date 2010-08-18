@@ -1,0 +1,84 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+                xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                template="layout/template.xhtml">
+    <ui:define name="body">
+   
+    <a:outputPanel id="userSkillsPanel" >
+       <h:form> 
+
+        <h1>Compute User Skills</h1>
+
+        <rich:messages styleClass="message"/>
+        
+            <h:commandButton  value="index and compute" action="#{userSkillAction.indexAndComputeUserSkills()}"/>
+            
+            <h:commandButton  value="only compute" action="#{userSkillAction.computeUserSkills()}"/>
+
+            <h:commandButton  value="clean" action="#{userSkillAction.deleteUserSkills()}"/>
+            
+			<h:commandButton  value="load fake skills" action="#{userSkillAction.loadFakeSkillList()}"/>            
+
+
+		 <h2>User Skills</h2>
+
+         <s:span id="skillListTest" rendered="#{skillList.getRowCount() &gt; 0}"> 
+	         <rich:dataTable id = "skillPanel" value="#{skillList}" var="skillEntry">
+	
+				<h:column>
+					<f:facet name="header">User</f:facet>
+	 							<h:outputText value="#{skillEntry.user.login}"/>
+				</h:column>
+	
+				<h:column>
+					<f:facet name="header">Skill</f:facet>
+								<h:outputText value="#{skillEntry.skill}"/>
+								<a:commandButton action="#{userSkillAction.removeSkill(skillEntry.skill)}" image="img/type_delete.png" reRender="skillListTest"/>								
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Value</f:facet>
+								<h:outputText value="#{skillEntry.value}"/>
+				</h:column>			
+	
+			</rich:dataTable>
+		</s:span>
+		<s:span id="noSkillListTest" rendered="#{skillList.getRowCount() &lt;= 0}">		
+				<h:outputText value="No user skills computed"/>
+		</s:span><!--		 
+		 
+		 
+
+           <s:span id="userSkillSpan" rendered="#{userSkillAction.getUserSkills().size() &gt; 0}">
+               <div><ul>
+                    <ui:repeat var="userSkill" value="#{userSkillAction.getUserSkills()}" >
+						<li><b><h:outputText value="User:"/><h:outputText value="#{userSkill.user.firstName}"/></b>	</li>				
+			                    <ui:repeat var="skillMap" value="#{userSkill.skills}" >
+				                    <ui:repeat var="skillEntry" value="#{skillMap.entrySet()}" >
+				                      <h:outputText value="Skill/Level:"/>
+										<h:outputText value="#{skillEntry.key}"/>
+				                      <h:outputText value="#{skillEntry.value}"/>
+										<a:commandButton action="#{userSkillAction.removeSkill(skillEntry.getKey())}" image="img/type_delete.png" reRender="userSkillSpan"/>
+				                    </ui:repeat>			                    
+			                    </ui:repeat>
+	                    </ui:repeat>			                    
+                      </ul><br/>
+                </div>
+            </s:span>
+            <s:span id="noSkills" rendered="#{userSkillAction.getUserSkills().size() &lt;= 0}">
+                        <h:outputText value="No user skills computed"/>
+            </s:span>
+     --></h:form>
+    </a:outputPanel>     
+    </ui:define>
+
+</ui:composition>

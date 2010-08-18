@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pages xmlns="http://jboss.com/products/seam/pages"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://jboss.com/products/seam/pages http://jboss.com/products/seam/pages-2.0.xsd"
+
+       no-conversation-view-id="/home.xhtml"
+       login-view-id="/login.xhtml">
+
+    <page view-id="/inspector/revisions.xhtml" >
+        <action execute="#{kiwi.action.inspector.style.styleCreator.init}" />
+        <action execute="#{kiwi.action.inspector.style.styleCreator.generateStyle}" />
+    </page>
+    
+    <page view-id="/inspector/inferred.xhtml">
+        <navigation>
+            <rule if-outcome="explain">
+                <redirect view-id="/inspector/explanation.xhtml"/>
+            </rule>
+            <rule>
+                <redirect view-id="/inspector/inferred.xhtml"/>
+            </rule>
+        </navigation>    
+    </page>
+</pages>

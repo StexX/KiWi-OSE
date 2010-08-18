@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/kiwi/!svn/ver/5557/KiWi/trunk/extensions/ideator/src/ideator/service
+END
+IdeaService.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5557/KiWi/trunk/extensions/ideator/src/ideator/service/IdeaService.java
+END
+IdeatorUserService.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5557/KiWi/trunk/extensions/ideator/src/ideator/service/IdeatorUserService.java
+END
+IdeatorAutocompletionService.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/5557/KiWi/trunk/extensions/ideator/src/ideator/service/IdeatorAutocompletionService.java
+END
+IdeatorCollectorService.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5557/KiWi/trunk/extensions/ideator/src/ideator/service/IdeatorCollectorService.java
+END

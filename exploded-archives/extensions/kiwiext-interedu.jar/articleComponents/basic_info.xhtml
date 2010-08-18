@@ -1,0 +1,118 @@
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+                xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf" 
+                >
+
+	<c:set value="#{interedu.articleAction.article}" var="art" />
+	
+	<s:div styleClass="article-evaluation" id="article_state">
+		<h:form>
+		<h:commandLink action="#{interedu.articleAction.changeStateToCommit()}" title="Artikel freigeben" rendered="#{identity.loggedIn}" >
+			<img src="img/status_n_#{art.state}.png" alt="ampel" border="0"/>
+		</h:commandLink>
+		<s:fragment rendered="#{!identity.loggedIn}" >
+			<c:choose>
+				<c:when test="#{art.state == 0}">
+				<img src="img/status_n_0.png" alt="Dieser Artikel wurde noch nicht bearbeitet." title="Dieser Artikel wurde noch nicht bearbeitet." border="0"/>
+				</c:when>
+				<c:when test="#{art.state == 1}">
+				<img src="img/status_n_1.png" alt="Dieser Artikel ist in Bearbeitung." title="Dieser Artikel ist in Bearbeitung." border="0"/>
+				</c:when>
+				<c:otherwise>
+				<img src="img/status_n_2.png" alt="Dieser Artikel wurde freigegeben." title="Dieser Artikel wurde freigegeben." border="0"/>
+				</c:otherwise>
+			</c:choose>
+		</s:fragment>
+		</h:form>
+		
+		<a:form>
+		<div class="ratingStars">
+			<h:outputText value="#{interedu.articleAction.ratingStars}" escape="false" />
+		</div>
+		<p class="article-evaluation-info">(#{interedu.articleAction.nbOfRatings} Kommentare)</p>
+		</a:form>
+	</s:div>
+	<h1 id="singleArticleDrag">
+		<s:fragment rendered="#{!interedu.artikelCollector.isSelected(art.id)}">
+			<h:outputLink value="#{interedu.articleAction.link}" target="_blank" title="Link zum Material" style="color:black;text-decoration:none">
+				<h:outputText value="#{art.title}" />
+			</h:outputLink>
+		</s:fragment>
+		
+		<s:fragment rendered="#{interedu.artikelCollector.isSelected(art.id)}">
+			<h:outputLink value="#{interedu.articleAction.link}" target="_blank" title="Link zum Material" style="color:#DF7401;text-decoration:none">
+				<h:outputText value="#{art.title}" />
+			</h:outputLink>
+		</s:fragment>
+		
+		<input type="hidden" name="id" value="#{interedu.articleAction.article.id}" />
+
+	</h1>
+	
+	<p class="article-info" style="height:60px;">
+		<h:outputText value="Autor: #{art.artikelAutor}" />
+		<br />
+		<h:outputText value="Dokumentart: #{art.dokumentArt}" />
+		<br/>
+		<h:outputText value="Ge&#xE4;ndert: #{art.modified}" />
+		<br/>
+	</p>
+	
+	<div class="article-classification">
+		<div class="article-classification-subjects">
+	        <c:choose>
+	        	<c:when test="#{art.schultyp != ''}">
+	        		<h:outputText value="#{art.schultyp}"/>
+	        	</c:when>
+	        	 <c:otherwise>
+	        		<h:outputText value="Schultyp: k.A." />
+	        	</c:otherwise>
+	        </c:choose>
+		</div>
+		<div class="article-classification-levels">
+			<c:choose>
+				<c:when test="#{art.schulstufen != ''}">
+					<h:outputText value="Schulstufe: #{art.schulstufen}" />
+				</c:when>
+				<c:otherwise>
+					<h:outputText value=" Schulstufe: k.A." />
+				</c:otherwise>
+			</c:choose>
+		</div>
+		<div class="clearer" />
+	</div>
+	
+	<div class="article-text">
+		<c:choose>
+			<c:when test="#{art.bildlink != ''}">
+				<img alt="#{art.title}" class="article-image-left" src="#{art.bildlink}"/>
+			</c:when>
+		</c:choose>
+		<h:outputText styleClass="article-text" value="#{interedu.articleAction.renderedDescription}" escape="false" />
+	</div>
+	
+	<div class="article_editButton">
+		<h:form>
+		<a:commandLink action="#{interedu.articleAction.startBasicEdit()}" reRender="basic_info" rendered="#{identity.loggedIn}" >
+			<img title="Seite bearbeiten" alt="Seite bearbeiten" src="images/icon_edit.png"/>
+		</a:commandLink>
+		</h:form>
+	</div>
+	
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		
+		//set dragable dropable
+		jQuery('#singleArticleDrag').draggable({helper:'clone', opacity:0.7 });
+		
+		/* ]]> */
+	</script>
+	
+</ui:composition>

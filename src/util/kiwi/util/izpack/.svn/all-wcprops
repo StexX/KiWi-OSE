@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/kiwi/!svn/ver/5551/KiWi/trunk/src/util/kiwi/util/izpack
+END
+IZPackInstallerHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5550/KiWi/trunk/src/util/kiwi/util/izpack/IZPackInstallerHelper.java
+END
+JDBCParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/kiwi/!svn/ver/5507/KiWi/trunk/src/util/kiwi/util/izpack/JDBCParser.java
+END
+DatabaseParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/kiwi/!svn/ver/5539/KiWi/trunk/src/util/kiwi/util/izpack/DatabaseParser.java
+END
+DatabaseSystem.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/kiwi/!svn/ver/5507/KiWi/trunk/src/util/kiwi/util/izpack/DatabaseSystem.java
+END
+JdbcConnectionValidator.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5541/KiWi/trunk/src/util/kiwi/util/izpack/JdbcConnectionValidator.java
+END
+JPAHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/kiwi/!svn/ver/5507/KiWi/trunk/src/util/kiwi/util/izpack/JPAHelper.java
+END
+XMLUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/kiwi/!svn/ver/5542/KiWi/trunk/src/util/kiwi/util/izpack/XMLUtil.java
+END
+JDBCConnectionTester.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5541/KiWi/trunk/src/util/kiwi/util/izpack/JDBCConnectionTester.java
+END
+JBossHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/kiwi/!svn/ver/5551/KiWi/trunk/src/util/kiwi/util/izpack/JBossHelper.java
+END
+ApplicationsParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5507/KiWi/trunk/src/util/kiwi/util/izpack/ApplicationsParser.java
+END

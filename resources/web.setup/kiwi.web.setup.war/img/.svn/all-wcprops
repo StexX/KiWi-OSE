@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/kiwi/!svn/ver/4024/KiWi/trunk/resources/web.setup/kiwi.web.setup.war/img
+END
+msgwarn.png
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/4024/KiWi/trunk/resources/web.setup/kiwi.web.setup.war/img/msgwarn.png
+END
+msgerror.png
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/4024/KiWi/trunk/resources/web.setup/kiwi.web.setup.war/img/msgerror.png
+END
+manytoone.gif
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/4024/KiWi/trunk/resources/web.setup/kiwi.web.setup.war/img/manytoone.gif
+END
+seamlogo.png
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/4024/KiWi/trunk/resources/web.setup/kiwi.web.setup.war/img/seamlogo.png
+END
+onetomany.gif
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/4024/KiWi/trunk/resources/web.setup/kiwi.web.setup.war/img/onetomany.gif
+END
+dtpick.gif
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/4024/KiWi/trunk/resources/web.setup/kiwi.web.setup.war/img/dtpick.gif
+END
+msginfo.png
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/4024/KiWi/trunk/resources/web.setup/kiwi.web.setup.war/img/msginfo.png
+END
+error.gif
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/4024/KiWi/trunk/resources/web.setup/kiwi.web.setup.war/img/error.gif
+END

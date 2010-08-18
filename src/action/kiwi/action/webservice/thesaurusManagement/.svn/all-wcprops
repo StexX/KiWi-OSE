@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/src/action/kiwi/action/webservice/thesaurusManagement
+END
+AllResource.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/action/webservice/thesaurusManagement/AllResource.java
+END
+KiWiResourceListWriter.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/src/action/kiwi/action/webservice/thesaurusManagement/KiWiResourceListWriter.java
+END
+ContentItemWriter.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/kiwi/!svn/ver/4443/KiWi/trunk/src/action/kiwi/action/webservice/thesaurusManagement/ContentItemWriter.java
+END
+FreeTagWebService.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/kiwi/!svn/ver/5373/KiWi/trunk/src/action/kiwi/action/webservice/thesaurusManagement/FreeTagWebService.java
+END
+ContentItemArrayListWriter.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/kiwi/!svn/ver/5373/KiWi/trunk/src/action/kiwi/action/webservice/thesaurusManagement/ContentItemArrayListWriter.java
+END
+ContentItemListWriter.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/kiwi/!svn/ver/4443/KiWi/trunk/src/action/kiwi/action/webservice/thesaurusManagement/ContentItemListWriter.java
+END
+ExtConcepts.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5056/KiWi/trunk/src/action/kiwi/action/webservice/thesaurusManagement/ExtConcepts.java
+END
+WS.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5373/KiWi/trunk/src/action/kiwi/action/webservice/thesaurusManagement/WS.java
+END
+UpdateWebService.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5373/KiWi/trunk/src/action/kiwi/action/webservice/thesaurusManagement/UpdateWebService.java
+END
+ThesaurusVisualizer.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/kiwi/!svn/ver/4630/KiWi/trunk/src/action/kiwi/action/webservice/thesaurusManagement/ThesaurusVisualizer.java
+END
+thesaurusWebservices
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5074/KiWi/trunk/src/action/kiwi/action/webservice/thesaurusManagement/thesaurusWebservices
+END
+ThesaurusResource.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/kiwi/!svn/ver/4443/KiWi/trunk/src/action/kiwi/action/webservice/thesaurusManagement/ThesaurusResource.java
+END
+SKOSConceptUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5141/KiWi/trunk/src/action/kiwi/action/webservice/thesaurusManagement/SKOSConceptUtils.java
+END
+TemplateUpdateService.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/kiwi/!svn/ver/5373/KiWi/trunk/src/action/kiwi/action/webservice/thesaurusManagement/TemplateUpdateService.java
+END

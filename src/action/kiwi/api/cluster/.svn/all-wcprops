@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/kiwi/!svn/ver/5492/KiWi/trunk/src/action/kiwi/api/cluster
+END
+ClusterServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5483/KiWi/trunk/src/action/kiwi/api/cluster/ClusterServiceLocal.java
+END
+ClusterService.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/5492/KiWi/trunk/src/action/kiwi/api/cluster/ClusterService.java
+END
+ClusterServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5483/KiWi/trunk/src/action/kiwi/api/cluster/ClusterServiceRemote.java
+END

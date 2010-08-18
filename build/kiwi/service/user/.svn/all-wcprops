@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/user
+END
+IdentityManagerService.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/user/IdentityManagerService.class
+END
+UserServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/user/UserServiceImpl.class
+END
+ProfileServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/user/ProfileServiceImpl.class
+END
+PasswordGeneratorServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/user/PasswordGeneratorServiceImpl.class
+END
+MailServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/user/MailServiceImpl.class
+END

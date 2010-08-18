@@ -1,0 +1,73 @@
+<rich:modalPanel   
+       id="singleTagging" 
+       width="400" 
+       height="300"
+	   xmlns="http://www.w3.org/1999/xhtml"
+	   xmlns:ui="http://java.sun.com/jsf/facelets"
+	   xmlns:h="http://java.sun.com/jsf/html"
+	   xmlns:f="http://java.sun.com/jsf/core"
+	   xmlns:s="http://jboss.com/products/seam/taglib"
+	   xmlns:rich="http://richfaces.org/rich"
+	   xmlns:c="http://java.sun.com/jstl/core"
+	   xmlns:a="http://richfaces.org/a4j">
+     <f:facet name="header">Schlagwort f&#xFC;r Artikel vergeben:</f:facet>
+     <h:form>
+         <a:region>
+            <s:div id="tagcloud1">
+                <h3>Bestehende Tags:</h3>
+					<c:forEach items="#{interedu.articleAction.allTags}" var="tag">
+						<h:outputText value="#{tag.getTaggingResource().getTitle()} " />
+						<h:outputText value=", "/>
+					</c:forEach>
+                </c:forEach>
+            </s:div>
+
+            <s:div id="recommendedTags1" rendered="#{!interedu.articleAction.tagRecommendationGroups.isEmpty()}">
+            	<h3>F&#xFC;r den Artikel schlagen wir diese Tags vor:</h3>
+            	<ui:repeat var="entry" value="#{interedu.articleAction.tagRecommendationGroups}" >
+            		<ui:repeat var="rec" value="#{entry.value}" >
+                        	<a:commandButton action="#{interedu.addTagLine(rec.label)}" value="#{rec.label}" reRender="tagLabel1,recommendedTags1"/>
+                    		<h:outputText value=", " /> 
+                	</ui:repeat>
+                </ui:repeat>
+            </s:div>
+            <s:div id="taginput1" style="margin-top: 1em;">
+                <h3>Neue Tags:</h3>
+                <h:inputText value="#{interedu.taggingAction.tagLabel}" style="width: 300px" id="taglabel1"/>
+                <rich:suggestionbox id="suggestionBoxId" for="taglabel1" tokens=",[]"
+                        suggestionAction="#{interedu.taggingAction.autocomplete}" 
+                        var="result"
+                        fetchValue="#{result}" 
+                        minChars="2"
+                        shadowOpacity="4"
+                        border="1"
+                        height="150"
+                        width="100"
+                        shadowDepth="3"
+                        cellpadding="2"
+                        nothingLabel="No tags found" 
+                        columnClasses="center"
+                        usingSuggestObjects="true" reRender="suggestionBoxId">
+                        
+                        <h:column>
+                            <h:outputText value="#{result}" />
+                        </h:column>
+                </rich:suggestionbox>
+                <a:commandButton id="addTagBtn" action="#{interedu.taggingAction.addTag}" value="Taggen" reRender="taglist,tagcloud1,taginput1,articlemeta,contentPanel">
+                    <s:defaultAction/>
+                </a:commandButton>
+                <a:status>
+                    <f:facet name="start">
+                        <h:graphicImage  value="#{facesContext.externalContext.requestContextPath}/img/busy-indicator.gif"/>
+                    </f:facet>
+                </a:status>
+            </s:div>
+            
+            <s:link action="/admin/vmt/vmt.seam" value="Use the Vocabulary Management Tool to administrate your tags."/>
+            
+            <div style="width: 100%" class="center footer">
+                <input type="button" value="Schliessen"  onclick="#{rich:component('singleTagging')}.hide();"/>
+            </div>
+         </a:region>
+     </h:form>
+</rich:modalPanel>

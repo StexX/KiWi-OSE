@@ -1,0 +1,240 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+			 	xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                template="layout/template.xhtml">
+                       
+    <ui:define name="links">
+        <link href="#{facesContext.externalContext.requestContextPath}/feed.seam?mode=MOSTRECENT&amp;format=RSS20" type="application/rss+xml" rel="alternate" title="Most Recently Changed" />
+    </ui:define>
+                       
+	<ui:define name="script">
+		<script type="text/javascript" src="js/explorer.js"></script>
+		<script type="text/javascript" src="js/utils.js"></script>
+		<script type="text/javascript" src="js/display.js"></script>
+		<script type="text/javascript" src="js/search.js"></script>
+		<script type="text/javascript" src="js/extension/GMap2/cluster2/clusterInfo.js"></script>
+	</ui:define>
+	
+	<ui:define name="search">
+		<h:form id="formHdrSearch">
+		<a:queue/>
+				
+		<div id="searchbox">
+	       <div id="searchfield">
+		       <h:inputText id="hdrSearchBox" value="#{tagit2.searchAction.keyword}"/>
+
+               <a:commandButton id="hdrSearchBtn" image="/tagit2/img/sn_suche_go.gif" value="#{messages['hdr.search']}" onclick="search();">
+	               <s:defaultAction/>
+	           </a:commandButton>
+	        </div> 
+	       <div id="extendedSearchHead">
+	       		<div id="layers">
+	       			<div id="layersHead">
+	       				<div id="layersHeadLeft">
+	       					<h:selectBooleanCheckbox value="#{tagit2.layeringAction.showAllLayers}" onchange="search();changeLayerVisibility();">
+	       						<!--<a:support event="onchange" data="#{tagit2.explorerAction.setBoundsAndZoom()}" reRender="tagcloud" oncomplete="changeLayerVisibility();displayMarkers(data);"></a:support>-->
+	       					</h:selectBooleanCheckbox>
+	       					<h:outputText value=" alle Eintr&#228;ge" />
+	       				</div>
+	       				<div id="layersHeadRight">
+	       					<input id="checkBoxMapSection" type="checkbox" onclick="changeMapSection();" checked="checked" />
+	       					<h:outputText value=" im Kartenausschnitt" />
+	       				</div>
+	       				
+	       			</div>
+	       			<div id="layersBody" style="display:#{tagit2.layeringAction.cssDisplay}">
+	       				<!--<h:selectManyCheckbox id="layersBox" value="#{tagit2.layeringAction.selectedLayers}" layout="pageDirection" onchange="search();">
+                           <s:selectItems var="layer" value="#{tagit2.layeringAction.layers}" label="#{layer.layer.title}"/>
+                        </h:selectManyCheckbox>-->
+                        <table>
+                        <c:forEach items="#{tagit2.layeringAction.layers}" var="layer">
+                        	<tr>
+                        		<td><h:selectBooleanCheckbox value="#{layer.show}" onchange="search();"/></td>
+                        		<td><h:outputText value="#{layer.layer.title} " />
+                        			<c:choose>
+                        				<c:when test="#{layer.range == 'DAY'}">
+                        					<rich:inplaceSelect value="#{layer.timerange}" defaultLabel="(alle)">
+                        						<f:selectItem itemLabel="seit gestern" itemValue="1DAY"/>
+                        						<f:selectItem itemLabel="seit vorgestern" itemValue="2DAYS"/>
+                        						<f:selectItem itemLabel="der letzten 3 Tage" itemValue="3DAYS"/>
+                        						<f:selectItem itemLabel="der letzten 7 Tage" itemValue="7DAYS"/>
+                        						<f:selectItem itemLabel="der letzten 14 Tage" itemValue="14DAYS"/>
+                        						<f:selectItem itemLabel="des letzen Monats" itemValue="1MONTH"/>
+                        						<f:selectItem itemLabel="der letzten 12 Monate" itemValue="1YEAR"/>
+                        						<f:selectItem itemLabel="(alle)" itemValue="100YEARS"/>
+                        						<a:support event="onchange" oncomplete="search();"/>
+                        					</rich:inplaceSelect>
+                        				</c:when>
+                        				<c:when test="#{layer.range == 'MONTH'}">
+                        					<rich:inplaceSelect value="#{layer.timerange}" defaultLabel="(alle)" >
+                        						<f:selectItem itemLabel="der letzen 7 Tage" itemValue="7DAYS"/>
+                        						<f:selectItem itemLabel="des letzen Monats" itemValue="1MONTH"/>
+                        						<f:selectItem itemLabel="der letzten 12 Monate" itemValue="1YEAR"/>
+                        						<f:selectItem itemLabel="der letzten 2 Jahre" itemValue="2YEARS"/>
+                        						<f:selectItem itemLabel="(alle)" itemValue="100YEARS"/>
+                        						<a:support event="onchange" oncomplete="search();"/>
+                        					</rich:inplaceSelect>
+                        				</c:when>
+                        				<c:when test="#{layer.range == 'YEAR'}">
+                        					TODO
+                        				</c:when>
+                        				<c:otherwise>
+                        					<!--  (keine Zeiteinschr&#xE4;nkung m&#xF6;glich)-->
+                        					(alle)
+                        				</c:otherwise>
+                        			</c:choose>
+                        		</td>
+                        	</tr>
+                        </c:forEach>
+                        </table>
+	       			</div>
+	       		</div>
+	       		<div id="extSearchOpener">
+	       			
+	       		</div>
+	       </div>
+	    </div>
+			<!-- check if current content item is a poi, return map settings -->
+   			<a:jsFunction data="#{tagit2.explorerAction.checkCurrent()}" name="ajaxCheckCurrent" oncomplete="setMap(data);"/>
+   			
+   			<!-- set map bounds and zoom, return markers -->
+   			<a:jsFunction data="#{tagit2.explorerAction.setBoundsAndZoom()}" name="ajaxSetBoundsAndZoom" oncomplete="displayMarkers(data);" reRender="tagcloud">
+   				<a:actionparam name="swLat" assignTo="#{tagit2.explorerAction.swLat}"></a:actionparam>
+   				<a:actionparam name="swLng" assignTo="#{tagit2.explorerAction.swLng}"></a:actionparam>
+   				<a:actionparam name="neLat" assignTo="#{tagit2.explorerAction.neLat}"></a:actionparam>
+   				<a:actionparam name="neLng" assignTo="#{tagit2.explorerAction.neLng}"></a:actionparam>
+   				<a:actionparam name="zoom" assignTo="#{tagit2.explorerAction.zoom}"></a:actionparam>
+   			</a:jsFunction>
+   			
+   			<!-- search again in existing bounds -->
+   			<a:jsFunction data="#{tagit2.explorerAction.setBoundsAndZoom()}" name="ajaxSearch" oncomplete="displayMarkers(data);" reRender="tagcloud" />
+   			<!-- get bounds of current search -->
+   			<a:jsFunction name="ajaxGetBounds" data="#{tagit2.explorerAction.getBounds()}" oncomplete="setBounds(data);"></a:jsFunction>
+   			
+   			<!-- to select currentItem -->
+   			<a:jsFunction name="ajaxSelectPoi" action="#{tagit2.explorerAction.setPoint()}" reRender="point">
+   				<a:actionparam name="id" assignTo="#{tagit2.explorerAction.currentId}"></a:actionparam>
+   			</a:jsFunction>
+   			
+   			<!-- to select currentCluster-->
+   			<a:jsFunction name="ajaxSelectCluster" action="#{tagit2.explorerAction.setCluster()}" oncomplete="if(curCluster != null)openClusterInfoWindow();">
+   				<a:actionparam name="id" assignTo="#{tagit2.explorerAction.currentClusterId}"></a:actionparam>
+   			</a:jsFunction>
+   			
+   			<!-- cluster zoom -->
+   			<a:jsFunction name="ajaxGetClusterArea" data="#{tagit2.explorerAction.getClusterArea()}" oncomplete="if(curCluster != null)zoomToCluster(data);">
+   				<a:actionparam name="id" assignTo="#{tagit2.explorerAction.currentClusterId}"></a:actionparam>
+   			</a:jsFunction>
+   			
+   			<!-- unselect point -->
+   			<a:jsFunction name="ajaxUnselectPoi" action="#{tagit2.explorerAction.unselectPoint()}" reRender="point,formHdrNavigation"></a:jsFunction>
+   			<a:jsFunction name="ajaxUnselectPoiAndRelocate" action="#{tagit2.explorerAction.unselectPoint()}" reRender="point,formHdrNavigation" oncomplete="map.setCenter(newPoint);"></a:jsFunction>
+			<a:jsFunction name="ajaxUnselectPoiAndReRender" action="#{tagit2.explorerAction.unselectPoint()}" reRender="point,formHdrNavigation" oncomplete="boundsAndZoom();"></a:jsFunction>
+			<a:jsFunction name="ajaxUnselectPoiAndSearchTag" action="#{tagit2.explorerAction.unselectPoint()}" reRender="point,formHdrNavigation" oncomplete="searchCurrentTag();"></a:jsFunction>
+
+   			<!-- reRender point -->
+   			<!--  
+   			<a:jsFunction name="ajaxRerenderPoint" reRender="point"></a:jsFunction>
+   			-->
+   		</h:form>
+
+	</ui:define>
+	
+	<ui:define name="point">
+	
+	<s:div id="point">
+    		<ui:include src="#{tagit2.layoutAction.tagitLayoutPath}" />
+    </s:div>
+	
+	<!-- Boxes for add route -->
+	<rich:modalPanel id="addRoutePanel" width="360" height="140">
+     <f:facet name="header">Route hinzufuegen</f:facet>
+	 <a:form>
+	 		<p>
+	 			Hier kannst du ein neue Route anlegen. Du kannst sie entweder importieren, wenn du sie als.gpx oder .kml vorliegen hast,
+				oder neu zeichnen.
+	 		</p>
+               		<ul class="contextButtons" style="text-align:center">
+						<li><a:commandButton action="#{tagit2.newRouteAction.cancel()}" oncomplete="Richfaces.hideModalPanel('addRoutePanel');" value="Abbrechen" /></li>
+						<li><a:commandButton action="#{tagit2.explorerAction.startCreateRoute()}" reRender="point" onclick="openByClick = true;" oncomplete="Richfaces.hideModalPanel('addRoutePanel')" value="Route zeichnen" /></li>
+						<li><a:commandButton action="#{tagit2.newRouteAction.setMode(1)}"  oncomplete="Richfaces.hideModalPanel('addRoutePanel');Richfaces.showModalPanel('importRoutePanel');" value="Route importieren" /></li>
+					</ul>
+		
+	 </a:form>
+	</rich:modalPanel>
+	
+	<rich:modalPanel id="importRoutePanel" width="400" height="280">
+     	<f:facet name="header">Route importieren</f:facet>
+	 	<a:form>
+			<h:panelGrid columns="2">
+                <h:panelGroup>
+                    <strong><h:outputText value="Format: " /></strong>
+                </h:panelGroup>
+                <h:selectOneMenu value="#{tagit2.newRouteAction.format}">
+                    <f:selectItem id="rt1" itemLabel="GPX - GPS Exchange Format" itemValue="application/gpx+xml" />
+  					<!--<f:selectItem id="rt2" itemLabel="KML - Keyhole Markup Language" itemValue="application/kml+xml" />-->
+                </h:selectOneMenu>
+                <h:panelGroup>
+                    <strong><h:outputText value="URL: " /></strong>
+                </h:panelGroup>
+				<rich:fileUpload fileUploadListener="#{tagit2.newRouteAction.listener}"
+					listWidth="320"
+					listHeight="110"
+                	maxFilesQuantity="1"
+               	 	id="upload"
+                	immediateUpload="true"
+                	acceptedTypes="gpx,kml"
+					allowFlash="true">
+
+            	</rich:fileUpload>
+                
+				<!--
+				<h:panelGroup>
+                    <strong><h:outputText value="Tags: " /></strong>
+                </h:panelGroup>
+                
+				<h:panelGroup>
+	                <h:inputText value="#{kiwi.admin.importAction.tagLabels}" id="taglabel" size="80"/>
+	                <rich:suggestionbox id="suggestionBoxId" for="taglabel" tokens=",[]"
+	                        suggestionAction="#{kiwi.admin.importAction.autocomplete}" 
+	                        var="result"
+	                        fetchValue="#{result}" 
+	                        minChars="2"
+	                        shadowOpacity="4"
+	                        border="1"
+	                        height="150"
+	                        width="200"
+	                        shadowDepth="3"
+	                        cellpadding="2"
+	                        nothingLabel="No tags found" 
+	                        columnClasses="center"
+	                        usingSuggestObjects="true" reRender="suggestionBoxId">
+	                        
+	                        <h:column>
+	                            <h:outputText value="#{result}" />
+	                        </h:column>
+	                </rich:suggestionbox>
+                </h:panelGroup>-->
+			</h:panelGrid>
+			
+			        <ul class="contextButtons" style="text-align:center;margin-top:20px">
+						<li><a:commandButton action="#{tagit2.newRouteAction.cancel()}" value="Abbrechen" reRender="importRoutePanel" oncomplete="Richfaces.hideModalPanel('importRoutePanel');" /></li>
+						<li><a:commandButton action="#{tagit2.newRouteAction.importRoute()}" reRender="importRoutePanel" oncomplete="Richfaces.hideModalPanel('importRoutePanel');" value="Importieren" /></li>
+					</ul>
+			
+	 	</a:form>
+	</rich:modalPanel>
+	
+	</ui:define>
+	
+</ui:composition>
+

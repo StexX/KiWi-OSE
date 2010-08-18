@@ -1,0 +1,2106 @@
+<?xml version="1.0"?>
+
+<project name="KiWi" default="explode" basedir=".">
+
+    <!--
+    This is the KiWi main build file. It offers ANT targets for setting up, building, deploying,
+    and testing the KiWi project. The following main targets should be used:
+
+    - clean:     to clean up everything that has been created in previous builds (dist directories,
+                 compiled files, ...); does not remove configuration files
+    - mrproper:  to clean up everything including configuration files
+    - configure: to configure the project after a fresh checkout
+    - explode:   to build and deploy the KiWi system to the configured JBoss server
+    - restart:   to build and deploy the KiWi system and restart the configured JBoss server
+    - javadoc:   to build the java documentation for the KiWi project
+    - test:      to run all unit and integration tests defined for the KiWi source code
+    - dist:      to build the KiWi binary and source distribution files
+
+    Some testing examples (run test.compile before):
+    - run a single class:
+    ant -Dclass=kiwi.test.service.ConfigurationServiceTest test.run-class
+
+    - run a test suite:
+    ant -Dsuite=test-build/CoreServiceTests.xml test.run-suite
+
+    Clover support:
+    To run the tests with Atlassian Clover (code coverage analyser tool)
+    1. download and unpack clover
+        copy the licence file clover.licence in $CLOVER_HOME/lib/clover.licence
+    2. setup an environment variable
+        CLOVER_HOME=/path/to/clover-ant
+
+    ant test.clover # will turn on clover, run the tests and
+                                # create a report as html.
+    -->
+
+
+    <!-- Give user a chance to override without editing this file or typing -D -->
+    <property file="${basedir}/build.properties" />
+    <property environment="env"/>
+
+    <property name="profile" value="dev" />
+    <property file="build-${profile}.properties" />
+
+    <!-- set global properties for this build -->
+    <property name="project.domain" value="default" />
+    <property name="project.name" value="KiWi" />
+    <property name="project.version" value="0.9" />
+
+    <property name="extensions" value="wiki,tagit2,admin,inspector,ontologies,dashboard,interedu,w2k,mars,ideator,semForms,artaround" />
+    <property name="test.extensions" value="wiki,tagit2,admin,inspector,ontologies,logica,dashboard,interedu,w2k,mars,ideator,semForms,artaround" />
+    <property name="doc.extensions" value="wiki,tagit2,admin,inspector,dashboard,interedu,w2k,mars,ideator,semForms,artaround" />
+
+    <property name="dist.dir" value="dist" />
+    <property name="src.model.dir" value="src/model" />
+    <property name="src.action.dir" value="src/action" />
+    <property name="src.test.dir" value="src/test" />
+    <property name="src.ext.dir" value="extensions" />
+    <property name="src.util.dir" value="src/util" />
+    <property name="src.gwt.dir" value="src/view"/>
+    <property name="lib.dir" value="lib" />
+    <property name="ear.dir" value="exploded-archives/${project.name}.ear" />
+    <property name="jar.dir" value="exploded-archives/${project.name}.jar" />
+    <property name="war.dir" value="exploded-archives/${project.name}.war" />
+    <property name="ext.dir" value="exploded-archives/extensions" />
+    <property name="test.dir" value="test-build" />
+    <property name="test.data.dir" value="kiwi-test" />
+    <property name="bootstrap.dir" value="${basedir}/bootstrap" />
+    <property name="deploy.dir" value="${jboss.home}/server/${project.domain}/deploy" />
+    <property name="ear.deploy.dir" value="${deploy.dir}/${project.name}.ear" />
+    <property name="jar.deploy.dir" value="${ear.deploy.dir}/${project.name}.jar" />
+    <property name="war.deploy.dir" value="${ear.deploy.dir}/${project.name}.war" />
+    <property name="testng.jar" value="${basedir}/lib/testng.jar" />
+    <property name="clover.jar" value="${env.CLOVER_HOME}/lib/clover.jar"/>
+    <property name="javac.debug" value="true" />
+    <property name="javac.deprecation" value="false" />
+    <property name="classes.model.dir" value="${war.deploy.dir}/WEB-INF/classes" />
+    <property name="classes.action.dir" value="${war.deploy.dir}/WEB-INF/dev" />
+    <property name="debug" value="true" />
+    <property name="report.dir" value="reports" />
+
+    <property name="doc.dir" value="docs" />
+    <property name="doc.api.dir" value="docs/api" />
+
+    <property name="dist-jboss.zip.file" value="${dist.dir}/kiwi-jboss-${project.version}.zip" />
+    <property name="dist-bin.zip.file" value="${dist.dir}/kiwi-bin-${project.version}.zip" />
+    <property name="dist-src.zip.file" value="${dist.dir}/kiwi-src-${project.version}.zip" />
+
+    <property name="dist.jboss.basedir" value="${dist.dir}/jboss" />
+    <property name="dist.jboss.dir" value="${dist.jboss.basedir}/kiwi-jboss-${project.version}" />
+    <property name="dist.resources.dir" value="${basedir}/resources/dist.resources" />
+
+    <property name="db.dialect.postgresql" value="org.hibernate.dialect.PostgreSQLDialect"/>
+    <property name="db.dialect.mysql" value="org.hibernate.dialect.MySQLDialect"/>
+    <property name="db.dialect.h2" value="org.hibernate.dialect.H2Dialect"/>
+
+    <property name="kiwi.destinations.service" value="KiWi-destinations-service.xml" />
+
+    <!--Properties for validating configuration files -->
+    <property name="validate.resources.dir" value="${basedir}/exploded-archives" />
+    <property name="schema.dir" value="${basedir}/exploded-archives/schemas" />
+    <property name="src.schema.dir" value="${schema.dir}/org/jboss/seam" />
+    <property name="schema.version" value="2.0" />
+
+    <!--H2 databse related properties -->
+    <property name="h2.service.jar.dir" value="h2.service.sar" />
+    <property name="h2.service.jar.file" value="${test.dir}/kiwi.service.sar" />
+
+    <!--Checkstyle related properties -->
+    <property name="check.report.asci.dir" value="${report.dir}/checkstyle/asci" />
+    <property name="check.report.xml.dir" value="${report.dir}/checkstyle/xml" />
+    <property name="check.profile" value="config/eclipse/kiwiCheckStyle.new.xml" />
+
+    <!--GWT related properties-->
+    <property name="gwt.compiled-modules" value="view/gwt/modules" />
+    
+    <fileset id="lib" dir="${lib.dir}">
+        <include name="*.jar" />
+        <include name="test/antlr-testing.jar" />
+    </fileset>
+
+    <path id="build.classpath">
+        <fileset refid="lib" />
+    </path>
+
+    <path id="ext.classpath">
+        <fileset refid="lib" />
+        <pathelement location="${jar.dir}" />
+    </path>
+
+    <!-- the GWT build path -->
+    <path id="gwt2.classpath">
+        <pathelement location="${src.gwt.dir}"/>
+        <filelist dir="${lib.dir}/gwt2">
+            <file name="gwt-dev.jar"/>
+            <file name="gwt-user.jar"/>
+        </filelist>
+        <fileset dir="${lib.dir}/gwt2">
+            <include name="smart*.jar"/>
+        </fileset>
+    </path>
+
+    <path id="gwt.classpath" refid="gwt2.classpath"/>
+    <fileset id="gwt-servlet.jar" file="${lib.dir}/gwt2/gwt-servlet.jar"/>
+
+    <!-- load ant contrib package -->
+    <taskdef resource="net/sf/antcontrib/antlib.xml">
+        <classpath>
+            <pathelement location="${basedir}/lib/ant-contrib-1.0b3.jar" />
+        </classpath>
+    </taskdef>
+
+    <taskdef name="IzPack" classpath="${basedir}/lib/build/standalone-compiler.jar" classname="com.izforge.izpack.ant.IzPackTask" />
+
+    <taskdef resource="cloverlib.xml" classpath="${clover.jar}"/>
+
+    <!--
+     Initialize the build
+    -->
+    <target name="init">
+
+        <echo message="initialising KiWi build directories ..." />
+
+        <mkdir dir="${jar.dir}" />
+        <mkdir dir="${ear.dir}" />
+        <mkdir dir="${war.dir}" />
+        <mkdir dir="${dist.dir}" />
+
+        <!-- prepare the JBoss installation by copying relevant libraries and config files -->
+        <antcall target="prepare-jboss-${jboss.version}" />
+    </target>
+
+    <!-- run the JavaCC parser generator over jj files -->
+    <target name="parser.kwql" depends="init">
+        <echo message="*********************************************************************" />
+        <echo message="preprocessing KiWi KWQL parser" />
+        <echo message="*********************************************************************" />
+        <javacc target="src/action/kiwi/service/query/kiwi/parser/KiWiQueryParser.jj" outputdirectory="src/action/kiwi/service/query/kiwi/parser/" javacchome="${lib.dir}/build" />
+        <javacc target="src/action/kiwi/service/reasoning/parser/SimpleKWRLProgramParser.jj" outputdirectory="src/action/kiwi/service/reasoning/parser/" javacchome="${lib.dir}/build" />
+    </target>
+
+
+    <!-- Compile the Java source code -->
+    <target name="compile.core" depends="init,parser.kwql">
+        <echo message="*********************************************************************" />
+        <echo message="compiling the KiWi core classes" />
+        <echo message="*********************************************************************" />
+        <!--
+        Ensures that the java checker is compiled 1.4 conform,
+        this because the java checker must be compatible with all
+        the java versions 1.4, 1.5 and 1.6.
+        bytecode compiled 1.4 conform are compatible with all this verisons.
+        -->
+        <javac destdir="${jar.dir}" debug="${javac.debug}" srcdir="${src.util.dir}" source="1.4">
+            <include name="kiwi/JavaVersionChecker.java" />
+        </javac>
+
+        <javac destdir="${jar.dir}"
+               debug="${javac.debug}"
+               deprecation="${javac.deprecation}"
+               nowarn="on" excludes="kiwi/JavaVersionChecker*"
+               memoryinitialsize="128M"
+               memorymaximumsize="1024M"
+               fork="true">
+            <classpath>
+                <path refid="build.classpath"/>
+                <path refid="gwt.classpath"/>
+            </classpath>
+            <src path="${src.model.dir}" />
+            <src path="${src.action.dir}" />
+            <src path="${src.util.dir}" />
+            <src path="${src.gwt.dir}" />
+        </javac>
+
+
+    </target>
+
+
+
+
+    <target name="jar" depends="compile.core" description="Build the core KiWi.jar deployment directory">
+        <echo message="*********************************************************************" />
+        <echo message="assembling the KiWi.jar core library ... " />
+        <echo message="*********************************************************************" />
+
+        <echo message="- copying compiled classes to ${jar.dir} ..."/>
+        <copy todir="${jar.dir}">
+            <fileset dir="${src.model.dir}">
+                <include name="**/*.class" />
+                <include name="**/*.owl" />
+                <include name="**/*.rdf" />
+                <include name="**/*.xml" />
+                <include name="**/*.xsd" />
+                <include name="**/*.xsl" />
+            </fileset>
+            <fileset dir="${src.action.dir}">
+                <include name="**/*.class" />
+                <include name="**/*.owl" />
+                <include name="**/*.rdf" />
+                <include name="**/*.xml" />
+                <include name="**/*.xsd" />
+                <include name="**/*.xsl" />
+            </fileset>
+            <fileset dir="${src.gwt.dir}">
+                <include name="**/*.class" />
+                <include name="**/*.owl" />
+                <include name="**/*.rdf" />
+                <include name="**/*.xml" />
+                <include name="**/*.xsd" />
+                <include name="**/*.xsl" />
+            </fileset>
+        </copy>
+
+        <echo message="- copying rule definitions to ${jar.dir} ..."/>
+        <copy todir="${jar.dir}">
+            <fileset dir="${src.action.dir}">
+                <include name="kiwi/service/reasoning/*.skwrl" />
+                <include name="kiwi/service/explanation/prefix.cc.all.txt" />
+                <!--Jakub,TODO: remove -->
+            </fileset>
+        </copy>
+
+        <echo message="- copying JBoss Seam properties to ${jar.dir} ..."/>
+        <copy todir="${jar.dir}">
+            <fileset dir="${basedir}/resources">
+                <include name="seam.properties" />
+            </fileset>
+        </copy>
+
+        <echo message="- copying EH Cache configuration to ${jar.dir} ..."/>
+        <copy todir="${jar.dir}">
+            <fileset dir="${basedir}/resources/META-INF">
+                <include name="ehcache.xml" />
+            </fileset>
+        </copy>
+
+        <property name="KeyWiStore.dir" value="${jar.dir}/KeyWiStore" />
+        <mkdir dir="${KeyWiStore.dir}" />
+
+        <copy todir="${jar.dir}/KeyWiStore">
+            <fileset dir="${basedir}/resources/KeyWiStore">
+                <include name="keystore.jks" />
+            </fileset>
+        </copy>
+
+
+        <!-- copy tinymce configuration to classpath -->
+        <echo message="- copying TinyMCE configuration to ${jar.dir} ..."/>
+        <copy todir="${jar.dir}">
+            <fileset dir="${basedir}/resources/tinymce">
+                <include name="tinymce-full.properties" />
+                <include name="tinymce-small.properties" />
+                <include name="tinymce-ieeval.properties" />
+                <include name="tinymce-swim.properties" />
+                <!-- SWiM application -->
+                <include name="kiwiPlugins.properties" />
+                <include name="kiwiPlugins-swim.properties" />
+                <!-- special plugin configuration for SWiM -->
+            </fileset>
+        </copy>
+
+        <echo message="- copying KiWi core configuration to ${jar.dir} ..."/>
+        <copy todir="${jar.dir}/META-INF">
+            <fileset dir="${basedir}/resources/META-INF">
+                <include name="ejb-jar.xml" />
+                <include name="orm.xml" />
+                <include name="*taglib.xml" />
+                <include name="treecache.xml" />
+                <include name="ehcache.xml" />
+                <include name="skins/**" />
+            </fileset>
+        </copy>
+        <copy tofile="${jar.dir}/META-INF/persistence.xml" file="${basedir}/resources/META-INF/persistence-${profile}.xml" overwrite="true"
+            failonerror="true" />
+        <copy tofile="${jar.dir}/import.sql" file="${basedir}/resources/import-${profile}.sql" overwrite="true" />
+        <copy todir="${jar.dir}/tags">
+            <fileset dir="${basedir}/resources/tags">
+                <include name="*" />
+            </fileset>
+        </copy>
+    </target>
+
+
+    <!-- Build the distribution .war file -->
+    <target name="war" depends="init,war.gwt">
+        <echo message="*********************************************************************" />
+        <echo message="assembling the KiWi.war core web application ... " />
+        <echo message="*********************************************************************" />
+        <echo message="- copying web resources to ${war.dir} ..."/>
+        <copy todir="${war.dir}">
+            <fileset dir="${basedir}/view">
+                <exclude name="**/*.xhtml" />
+                <exclude name="gwt/"/>
+            </fileset>
+        </copy>
+        <echo message="- copying JSF resources to ${war.dir} ..."/>
+        <copy todir="${war.dir}">
+            <fileset dir="${basedir}/view" includes="**/*.xhtml" />
+            <filterset>
+                <filter token="version" value="${kiwi.version}" />
+                <filter token="kiwi.version" value="${kiwi.version}" />
+                <filter token="facebook.key" value="${facebook.key}" />
+                <filter token="facebook.secret" value="${facebook.secret}" />
+                <filter token="facebook.appid" value="${facebook.appid}" />
+           </filterset>
+        </copy>
+        <echo message="- copying KiWi configuration to ${war.dir} ..."/>
+        <copy todir="${war.dir}/WEB-INF">
+            <fileset dir="${basedir}/resources/WEB-INF">
+                <include name="*.*" />
+                <include name="classes/**/*.*" />
+                <exclude name="classes/**/*.class" />
+            </fileset>
+            <filterset>
+                <filter token="debug" value="${debug}" />
+                <filter token="jndiPattern" value="${project.name}/#{ejbName}/local" />
+                <filter token="facebook.key" value="${facebook.key}" />
+                <filter token="facebook.secret" value="${facebook.secret}" />
+                <filter token="facebook.appid" value="${facebook.appid}" />
+            </filterset>
+        </copy>
+        <copy todir="${war.dir}/WEB-INF">
+            <fileset dir="${basedir}/resources/WEB-INF">
+                <include name="lib/*.*" />
+                <include name="classes/**/*.class" />
+            </fileset>
+        </copy>
+        <copy todir="${war.dir}/WEB-INF/lib">
+            <fileset dir="${lib.dir}">
+                <includesfile name="deployed-jars-war.list" />
+                <exclude name="jboss-seam-gen.jar" />
+            </fileset>
+        </copy>
+        <copy todir="${war.dir}/WEB-INF/classes">
+            <fileset dir="${basedir}/resources">
+                <include name="messages*.properties" />
+            </fileset>
+        </copy>
+
+        <copy tofile="${war.dir}/META-INF/MANIFEST.MF" file="${basedir}/resources/META-INF/MANIFEST.MF" overwrite="true" />
+
+    </target>
+
+    <!-- 
+    -->
+    <target name="war.gwt">
+        <!-- Check flag file if newer than all gwt modules -->
+        <uptodate property="gwtIsUpToDate" targetfile="${war.dir}/gwt/flag">
+            <srcfiles dir="${gwt.compiled-modules}" includes="**/*"></srcfiles>
+        </uptodate>
+        <if>
+            <not>
+                <isset property="gwtIsUpToDate"/>
+            </not>
+            <!-- If flag file is old then copy gwt build new -->
+            <then>
+                <!-- Copy the view dir to the war except anything of the modules -->
+                <copy todir="${war.dir}">
+                    <fileset dir="${basedir}/view">
+                        <include name="gwt/**"/>
+                        <exclude name="gwt/modules/**"/>
+                    </fileset>
+                </copy>
+                
+                <!-- Take care of the modules -->
+                <foreach param="gwtmoduledir" target="war.gwtmoduledir">
+                    <path>
+                        <dirset dir="${gwt.compiled-modules}" includes="*"></dirset>
+                    </path>
+                </foreach>
+                <touch file="${war.dir}/gwt/flag" />
+            </then>
+        </if>
+    </target>
+
+    <target name="war.gwtmoduledir">
+        <copy todir="${war.dir}/gwt/temp">
+            <fileset dir="${gwtmoduledir}" includes="**/*"></fileset>
+        </copy>
+        
+        <foreach param="gwtmodulesubdir" target="war.gwt-scunzip">
+            <path>
+                <dirset dir="${war.dir}/gwt/temp/" includes="*"></dirset>
+            </path>
+        </foreach>
+        <move todir="${war.dir}/gwt">
+            <fileset dir="${war.dir}/gwt/temp" includes="**/*" />
+        </move>
+        <delete dir="${war.dir}/gwt/temp" />
+    </target>
+
+    <target name="war.gwt-scunzip">
+        <echo>gwtmodulesubdir: ${gwtmodulesubdir}</echo>
+        <unzip src="${gwtmodulesubdir}/sc.zip" dest="${gwtmodulesubdir}/sc"  />
+        <delete file="${gwtmodulesubdir}/sc.zip" />
+    </target>
+
+    
+    <!-- Build the EAR -->
+    <target name="ear" depends="init">
+        <echo message="*********************************************************************" />
+        <echo message="setting up the KiWi.ear enterprise archive directory ... " />
+        <echo message="*********************************************************************" />
+        <echo message="- copying KiWi configuration and contributed EJBs to ${ear.dir} ..."/>
+        <copy todir="${ear.dir}">
+            <fileset dir="${basedir}/resources">
+                <include name="*jpdl.xml" />
+                <include name="hibernate.cfg.xml" />
+                <include name="jbpm.cfg.xml" />
+                <include name="*.drl" />
+            </fileset>
+            <fileset dir="${lib.dir}">
+                <include name="jboss-seam.jar" />
+                <include name="jbpm.jar" />
+                <include name="quartz-1.6.5.jar" />
+            </fileset>
+             <fileset dir="${basedir}/resources/META-INF">
+                <include name="hibernate.cfg.xml"/>
+                 <include name="jbpm.cfg.xml"/>
+            </fileset>
+            <fileset dir="${basedir}/resources/workflow">
+                <include name="ideaWorkflow.jpdl.xml"/>
+            </fileset>
+        </copy>
+        <copy tofile="${ear.dir}/META-INF/MANIFEST.MF" file="${basedir}/resources/META-INF/MANIFEST-ear.MF" overwrite="true" />
+
+        <!--        <copy file="src/action/kiwi/service/reasoning/rules.txt" todir="${ear.dir}"/> -->
+        <!--Jakub,TODO: remove -->
+
+        <echo message="- copying libraries to ${ear.dir} ..."/>
+        <copy todir="${ear.dir}/lib">
+            <fileset dir="${lib.dir}">
+                <includesfile name="deployed-jars-ear.list" />
+                <exclude name="icefaces-ahs.jar" />
+            </fileset>
+            <fileset refid="gwt-servlet.jar"/>
+        </copy>
+        <copy todir="${ear.dir}/META-INF">
+            <fileset dir="${basedir}/resources/META-INF">
+                <include name="application.xml" />
+                <include name="jboss-app.xml" />
+            </fileset>
+        </copy>
+    </target>
+
+
+
+
+    <target name="build.core" depends="jar,war,ear" description="build the core KiWi system"/>
+
+
+    <target name="build.extensions" depends="jar">
+        <foreach list="${extensions}" delimiter="," param="extension" target="build.extension" />
+    </target>
+
+    <!-- target to build a single KiWi extension, passed as parameter ${extension} -->
+    <target name="build.extension">
+        <fail unless="extension">extension not specified</fail>
+
+        <echo message="*****************************************************************" />
+        <echo message="building extension '${extension}'" />
+        <echo message="*****************************************************************" />
+
+        <property name="ext.base.dir" value="${src.ext.dir}/${extension}" />
+        <property name="ext.target.dir" value="${ext.dir}/${extension}" />
+
+        <property name="ext.target.jar.dir" value="${ext.dir}/kiwiext-${extension}.jar" />
+
+        <mkdir dir="${ext.target.jar.dir}" />
+
+        <echo message="* compiling Java components for '${extension}' ..." />
+        <javac classpathref="ext.classpath" destdir="${ext.target.jar.dir}" debug="${javac.debug}" deprecation="${javac.deprecation}" nowarn="on">
+            <src path="${ext.base.dir}/src" />
+        </javac>
+
+
+        <echo message="* copying script files for '${extension}' ..." />
+        <copy todir="${ext.target.jar.dir}">
+            <fileset dir="${ext.base.dir}/src">
+                <include name="**/*.owl" />
+                <include name="**/*.rdf" />
+                <include name="**/*.xml" />
+                <include name="**/*.xsl" />
+            </fileset>
+        </copy>
+
+
+        <echo message="* copying resource files for '${extension}' ..." />
+        <copy todir="${ext.target.jar.dir}">
+            <fileset dir="${ext.base.dir}/resources">
+                <exclude name="WEB-INF/**" />
+            </fileset>
+            <fileset dir="${basedir}/resources">
+                <include name="seam.properties" />
+            </fileset>
+        </copy>
+        <!-- copy also ejb-jar.xml so that seam intercepts EJBs -->
+        <copy todir="${ext.target.jar.dir}/META-INF">
+            <fileset dir="${basedir}/resources/META-INF">
+                <include name="ejb-jar.xml" />
+                <include name="orm.xml" />
+            </fileset>
+        </copy>
+
+        <echo message="* copying web resources for '${extension}' ..." />
+        <copy todir="${ext.target.jar.dir}">
+            <fileset dir="${ext.base.dir}/view" excludes="**/*.xhtml" />
+        </copy>
+
+        <echo message="* copying JSF view definitions for '${extension}' ..." />
+        <copy todir="${ext.target.jar.dir}">
+            <fileset dir="${ext.base.dir}/view" includes="**/*.xhtml" />
+            <filterset>
+                <filter token="kiwi.version" value="${kiwi.version}" />
+                <filter token="facebook.key" value="${facebook.key}" />
+                <filter token="facebook.secret" value="${facebook.secret}" />
+                <filter token="facebook.appid" value="${facebook.appid}" />
+           </filterset>
+        </copy>
+
+        <!--
+        <echo message="* building extension JAR file kiwiext-${extension}.jar ..."/>
+        <jar jarfile="${ext.dir}/kiwiext-${extension}.jar" basedir="${ext.target.jar.dir}"/>
+        -->
+
+        <!-- the following configuration would be the proper one for Java EE, but multiple
+             .war files do not work with Seam at the moment (Seam issue JBSEAM-3119)       -->
+        <!--
+        <mkdir dir="${ext.target.war.dir}"/>
+
+        <echo message="* copying JSF view definitions for '${extension}' ..."/>
+        <copy todir="${ext.target.war.dir}">
+            <fileset dir="${ext.base.dir}/view" />
+            <fileset dir="${ext.base.dir}/resources">
+                <include name="WEB-INF/**" />
+            </fileset>
+        </copy>
+
+        <echo message="* building extension WAR file kiwiext-${extension}.war ..."/>
+        <jar jarfile="${ext.dir}/kiwiext-${extension}.war" basedir="${ext.target.war.dir}"/>
+        -->
+
+
+    </target>
+
+    <!-- Package the archives -->
+    <target name="archive" depends="jar,war,ear,jar.extensions">
+        <echo message="*****************************************************************" />
+        <echo message="packaging KiWi archives for deployment " />
+        <echo message="*****************************************************************" />
+        <jar jarfile="${dist.dir}/${project.name}.jar" basedir="${jar.dir}" />
+        <jar jarfile="${dist.dir}/${project.name}.war" basedir="${war.dir}" />
+        <jar jarfile="${dist.dir}/${project.name}.ear">
+            <fileset dir="${ear.dir}" />
+            <fileset dir="${dist.dir}">
+                <include name="${project.name}.jar" />
+                <include name="kiwiext-*.jar" />
+                <include name="${project.name}.war" />
+            </fileset>
+        </jar>
+    </target>
+
+    <target name="datasource">
+        <fail unless="jboss.home">jboss.home not set</fail>
+        <copy todir="${deploy.dir}">
+            <fileset dir="${basedir}/resources">
+                <include name="${project.name}-${profile}-ds.xml" />
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="destinations-service">
+        <fail unless="jboss.home">jboss.home not set</fail>
+        <copy todir="${deploy.dir}">
+            <fileset dir="${basedir}/resources">
+                <include name="${kiwi.destinations.service}" />
+            </fileset>
+        </copy>
+    </target>
+
+
+    <target name="explode" depends="prepare-solr,prepare-gate,build.core,build.extensions,datasource,destinations-service,jar.storedProcedures" description="Deploy the exploded archive">
+        <fail unless="jboss.home">jboss.home not set</fail>
+
+        <echo message="*****************************************************************" />
+        <echo message="deploying KiWi.ear to ${ear.deploy.dir} " />
+        <echo message="*****************************************************************" />
+
+        <mkdir dir="${jar.deploy.dir}" />
+        <mkdir dir="${war.deploy.dir}" />
+
+        <echo message="* exploding KiWi.jar to ${jar.deploy.dir} " />
+        <copy todir="${jar.deploy.dir}">
+            <fileset dir="${jar.dir}" />
+        </copy>
+        <echo message="* exploding KiWi.war to ${war.deploy.dir} " />
+        <copy todir="${war.deploy.dir}">
+            <fileset dir="${war.dir}" />
+        </copy>
+        <echo message="* exploding KiWi.ear to ${ear.deploy.dir} " />
+        <copy todir="${ear.deploy.dir}">
+            <fileset dir="${ear.dir}" />
+        </copy>
+
+        <echo message="* exploding extensions to ${ear.deploy.dir} " />
+        <copy todir="${ear.deploy.dir}">
+            <fileset dir="${ext.dir}">
+                <include name="kiwiext*.jar/**" />
+            </fileset>
+        </copy>
+
+        <echo message="* copying SOLR webapp to ${ear.deploy.dir}" />
+        <copy file="${lib.dir}/solr/apache-solr-1.4-dev.war" tofile="${ear.deploy.dir}/solr.war" />
+    </target>
+
+    <!--
+    This task expodes only one extension.
+    Use this task when you need to deploy only one extension, this task will
+    definetively faster than the explode task (because the explode does all
+    the extensions).
+    Usage : ant explode.extension -Dextension=myExtension
+    This will compile and deploy (on the application server) only the extension
+    named : "myExtension".
+    -->
+    <target name="explode.extension" depends="build.extension">
+        <copy todir="${ear.deploy.dir}" overwrite="true">
+            <fileset dir="${ext.dir}">
+                <include name="kiwiext-${extension}.jar/**" />
+            </fileset>
+        </copy>
+    </target>
+        
+    <target name="unexplode" description="Undeploy the exploded archive">
+        <delete failonerror="no">
+            <fileset dir="${ear.deploy.dir}">
+                <exclude name="**/*.jar" />
+            </fileset>
+        </delete>
+        <delete file="${deploy.dir}/${project.name}-${profile}-ds.xml" failonerror="no" />
+        <delete dir="${ear.deploy.dir}" failonerror="no" />
+    </target>
+
+    <target name="restart" depends="explode" description="Restart the exploded archive">
+        <echo message="*****************************************************************" />
+        <echo message="notifying JBoss server of application changes " />
+        <echo message="*****************************************************************" />
+        <touch file="${ear.deploy.dir}/META-INF/application.xml" />
+    </target>
+
+    <target name="deploy" depends="archive,datasource,destinations-service" description="Deploy to JBoss AS">
+        <fail unless="jboss.home">jboss.home not set</fail>
+        <delete dir="${deploy.dir}/${project.name}.ear" />
+        <copy todir="${deploy.dir}" file="${dist.dir}/${project.name}.ear" />
+    </target>
+
+    <target name="undeploy" description="Undeploy the example from JBoss">
+        <delete file="${deploy.dir}/${project.name}.ear" />
+        <delete file="${deploy.dir}/${project.name}-dev-ds.xml" />
+        <delete file="${deploy.dir}/${project.name}-prod-ds.xml" />
+    </target>
+
+    <target name="clean" description="Cleans up the build directory" depends="test.clean">
+        <delete dir="${dist.dir}" />
+        <delete dir="${ear.dir}" />
+        <delete dir="${war.dir}" />
+        <delete dir="${jar.dir}" />
+        <delete dir="${ext.dir}" />
+        <delete dir="${src.schema.dir}" failonerror="no" />
+        <delete dir="${basedir}/test-report" />
+        <delete dir="${basedir}/test-output" />
+        <delete failonerror="no">
+            <fileset dir="${test.dir}">
+                <include name="**" />
+            </fileset>
+        </delete>
+    </target>
+
+    <!-- Compile the Java source code for the tests -->
+    <target name="test.compile">
+        <echo message="*****************************************************************" />
+        <echo message="compiling test classes to ${test.dir}" />
+        <echo message="*****************************************************************" />
+
+        <mkdir dir="${test.dir}" />
+
+        <echo message="* compiling KiWi core classes to ${test.dir} ..." />
+        <javac destdir="${test.dir}" 
+               debug="${javac.debug}" 
+               deprecation="${javac.deprecation}" 
+               encoding="UTF-8" 
+               nowarn="on"
+               excludes="kiwi/JavaVersionChecker*">
+            <classpath>
+                <path refid="build.classpath"/>
+                <path refid="gwt.classpath"/>
+            </classpath>
+
+            <src path="${src.action.dir}" />
+            <src path="${src.model.dir}" />
+            <src path="${src.util.dir}" />
+            <src path="${src.gwt.dir}" />
+        </javac>
+
+        <echo message="* copying resource files to ${test.dir} ..." />
+        <copy todir="${test.dir}">
+            <fileset dir="${src.model.dir}">
+                <include name="**/*.owl" />
+                <include name="**/*.rdf" />
+                <include name="**/*.xml" />
+                <include name="**/*.xsl" />
+            </fileset>
+            <fileset dir="${src.action.dir}">
+                <include name="**/*.owl" />
+                <include name="**/*.rdf" />
+                <include name="**/*.xml" />
+                <include name="**/*.xsl" />
+                <include name="kiwi/service/reasoning/*.skwrl" />
+            </fileset>
+            <fileset dir="${src.test.dir}">
+                <include name="kiwi/test/service/xml_texts/*.xml" />
+                <include name="kiwi/test/service/importer/*.xml" />
+                <include name="kiwi/test/service/importer/sn/*.xml" />
+                <include name="kiwi/test/service/importer/*.rss" />
+                <include name="kiwi/test/service/importer/*.atom" />
+                <include name="kiwi/test/service/importer/*.rdf" />
+                <include name="kiwi/test/service/content/data/*" />
+                <include name="kiwi/test/service/exporter/data/*" />
+            </fileset>
+        </copy>
+
+        <echo message="* compiling KiWi extensions to ${test.dir} ..." />
+        <foreach list="${test.extensions}" delimiter="," param="extension" target="test.compile.extension" />
+
+        <echo message="* copying KiWi ontologies to ${test.dir}/ontologies ..." />
+        <mkdir dir="${test.dir}/ontologies" />
+        <copy todir="${test.dir}/ontologies">
+            <fileset dir="${src.ext.dir}/ontologies/resources">
+                <include name="**/*.owl" />
+                <include name="**/*.rdf" />
+                <include name="**/*.xml" />
+                <include name="**/*.xsl" />
+            </fileset>
+        </copy>
+
+        <echo message="* compiling KiWi integration and unit tests to ${test.dir} ..." />
+        <javac classpathref="build.classpath" destdir="${test.dir}" debug="${javac.debug}" deprecation="${javac.deprecation}" encoding="UTF-8" nowarn="on">
+            <src path="${src.test.dir}" />
+        </javac>
+
+    </target>
+
+
+    <!-- Build the tests -->
+    <target name="test.build" depends="test.compile">
+        <echo message="*****************************************************************" />
+        <echo message="building test environment in ${test.dir}" />
+        <echo message="*****************************************************************" />
+        <echo message="* copying database configuration to ${test.dir}" />
+        <copy todir="${test.dir}">
+            <fileset dir="${basedir}/resources">
+                <exclude name="META-INF/persistence*.xml" />
+                <exclude name="META-INF/jbpm.cfg.xml" />
+                <exclude name="**/hibernate*.xml" />
+                <exclude name="import*.sql" />
+                <exclude name="${project.name}-*-ds.xml" />
+                <exclude name="${project.name}-*.tmpl" />
+                <exclude name="build/**" />
+                <exclude name="dist.resources/**" />
+                <exclude name="datasource/**" />
+                <exclude name="web.setup/**" />
+            </fileset>
+            <fileset dir="${basedir}/resources/META-INF">
+                <include name="ehcache.xml" />
+            </fileset>
+           <fileset dir="${basedir}/resources/workflow">
+               <include name="ideaWorkflow.jpdl.xml"/>
+           </fileset>
+            <fileset dir="${basedir}/resources/META-INF">
+               <include name="jbpm.cfg.xml"/>
+           </fileset>
+        </copy>
+        <copy tofile="${test.dir}/META-INF/persistence.xml" file="${basedir}/resources/META-INF/persistence-test.xml" overwrite="true" />
+        <copy tofile="${test.dir}/hibernate.cfg.xml" file="${basedir}/resources/META-INF/hibernate-test.cfg.xml" overwrite="true" />
+        <copy tofile="${test.dir}/import.sql" file="${basedir}/resources/import-test.sql" overwrite="true" />
+        <echo message="* copying test suite configurations to ${test.dir}" />
+        <copy todir="${test.dir}" flatten="true">
+            <fileset dir="${src.test.dir}">
+                <include name="**/*Tests.xml" />
+            </fileset>
+        </copy>
+        <echo message="* copying datasource configurations to ${bootstrap.dir}/deploy/kiwi-ds.xml" />
+        <copy tofile="${bootstrap.dir}/deploy/kiwi-ds.xml" file="${basedir}/resources/KiWi-test-ds.xml.tmpl" overwrite="true" />
+
+        <echo message="* removing triples directory from previous tests ..." />
+        <delete dir="${test.data.dir}/triples" />
+
+        <echo message="* removing SOLR home directory from previous tests ..." />
+        <delete dir="${test.data.dir}/solr" />
+
+        <echo message="* removing Neo4j home directory from previous tests ..." />
+        <delete dir="${test.data.dir}/neo4j" />
+
+        <echo message="* creating SOLR home directory for testing ..." />
+        <mkdir dir="${test.data.dir}/solr" />
+
+        <echo message="* copying SOLR home directory default content ..." />
+        <copy todir="${test.data.dir}/solr">
+            <fileset dir="${lib.dir}/solr/solr-home" />
+        </copy>
+        <copy tofile="${test.data.dir}/solr/conf/solrconfig.xml" file="${lib.dir}/solr/solr-home/conf/solrconfig.test.xml" overwrite="true" />
+
+        
+    </target>
+
+    <!--
+        Prepare the environment for the test with Test NG
+        (unit, functional, integration) tests.
+    -->
+    <target name="test.prepare" depends="test.clean">
+        <echo message="*****************************************************************" />
+        <echo message="preparing project for testing" />
+        <echo message="*****************************************************************" />
+
+        <echo message="* setting up bootstrap directory ${bootstrap.dir}" />
+        <copy todir="${bootstrap.dir}">
+            <fileset dir="bootstrap.tmpl" />
+        </copy>
+        <copy todir="${jboss.home}/endorsed">
+            <fileset dir="lib/endorsed" />
+        </copy>
+
+        <echo message="* setting up default persistence-test.xml" />
+
+        <!--
+            This file(hibernate-all.jar) contains a lot of hibernate
+            related classes and it is provide from the seam-gen.
+            The seam-gen build it for a certain hibernate version,
+            so if you decide to change the hibernate this classes may
+            go in conflict with the other hibernate classes (from the
+            lib directory).
+            That is the reason why I prefere to delete it, to be shore
+            that the only one place from where the hibernate classes
+            are loaded are the hibernate jars from the lib dir.
+        -->
+        <delete file="lib/test/hibernate-all.jar" quiet="true" />
+
+        <echo message="* creating report directory ${report.dir}" />
+        <mkdir dir="${report.dir}" />
+
+        <!--
+           copy the right stored prcedures to the lib. directory.
+        -->
+        <antcall target="jar.storedProcedures">
+            <param name="kiwi.db" value="h2"/>
+        </antcall>
+    
+        <!-- copy solr configuration for testing -->
+    </target>
+
+
+    <!--
+        Cleans the environment from the previous test activities.
+    -->
+    <target name="test.clean" description="Cleans the environment from the previous test activities.">
+
+        <echo message="*****************************************************************" />
+        <echo message="cleaning test environment" />
+        <echo message="*****************************************************************" />
+
+        <delete dir="${testng.test.dir}" quiet="true" />
+        <delete dir="${tempIndexes.dir}" quiet="true" />
+        <delete dir="${report.dir}" quiet="true" />
+        <delete dir="null.lobs.db" quiet="true" />
+        <delete failonerror="no">
+            <fileset dir="${test.dir}">
+                <include name="**" />
+            </fileset>
+        </delete>
+        <delete failonerror="no">
+            <fileset dir="junit-report">
+                <include name="**" />
+            </fileset>
+        </delete>
+
+        <delete dir="${bootstrap.dir}" />
+    </target>
+
+    <!--
+        Setup the testing environment in ant
+    -->
+    <target name="test.init" description="setup testing environment in ant">
+
+        <taskdef resource="testngtasks" classpath="${testng.jar}" />
+        <property name="endorsed.dir" value="${jboss.home}/endorsed" />
+
+        <path id="test.path">
+            <path path="${test.dir}" />
+            <fileset dir="${lib.dir}/test">
+                <include name="*.jar" />
+            </fileset>
+            <fileset dir="${lib.dir}/build">
+                <include name="*.jar" />
+            </fileset>
+            <fileset dir="${lib.dir}/gwt2">
+                <include name="*.jar" />
+            </fileset>
+            <path path="${bootstrap.dir}" />
+            <fileset dir="${lib.dir}">
+                <include name="*.jar" />
+            </fileset>
+            <pathelement location="${clover.jar}"/>
+        </path>
+        <!--
+        <echo message="Path: "/>
+        <for list="${toString:test.path}" param="pathitem" delimiter=":">
+        <sequential>
+        <echo>pathitem == @{pathitem}${line.separator}</echo>
+        </sequential>
+        </for>
+        -->
+     </target>
+
+    <!--
+       run all tests in a single testng instance; useful for checking dependencies between tests
+    -->
+    <target name="test.run-combined" description="run all tests in a single testng instance" depends="test.clean,test.prepare,test.init,test.build">
+        <echo message="*****************************************************************" />
+        <echo message="running KiWi integration and unit tests (combined)" />
+        <echo message="*****************************************************************" />
+
+        <testng outputdir="${report.dir}" useDefaultListeners="false" listeners="org.uncommons.reportng.HTMLReporter,org.uncommons.reportng.JUnitXMLReporter">
+            <jvmarg line="-Djava.endorsed.dirs=${endorsed.dir}" />
+            <jvmarg line="-Dsun.lang.ClassLoader.allowArraySyntax=true" />
+            <jvmarg value="-Xmx512m" />
+            <jvmarg value="-XX:MaxPermSize=256m" />
+            <!-- turn on to do remote debugging of tests -->
+            <!--
+            <jvmarg line="-Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000"/>
+            -->
+            <classpath refid="test.path" />
+
+            <xmlfileset dir="${test.dir}" includes="*Tests.xml" />
+            <sysproperty key="org.uncommons.reportng.title" value="KiWi Test Report" />
+
+        </testng>
+    </target>
+
+
+    <!--
+       run all tests, but each suite in a separate isolated instance instance of testng; useful for
+       isolated testing of suites without garbage data remaining from previous tests, but not capable
+       of producing a combined HTML output
+    -->
+    <target name="test.run-isolated" description="run all tests in separate isolated instances of testng"
+        depends="test.clean,test.prepare,test.init,test.build">
+        <echo message="*****************************************************************" />
+        <echo message="running KiWi integration and unit tests (isolated)" />
+        <echo message="*****************************************************************" />
+
+        <foreach param="suite" target="test.run-suite">
+            <path>
+                <fileset dir="${test.dir}" includes="*Tests.xml" />
+            </path>
+        </foreach>
+
+    </target>
+
+    <!-- run a single clean test suite with clover in the XML suite passed as argument "suite" -->
+    <target name="test.clover.singlesuite" depends="clover.clean,test.prepare,clover,test.run-suite,clover.html" />
+    <!-- run a single clean test in the XML suite passed as argument "suite" -->
+    <target name="test.cleanRun-suite"
+            depends="test.prepare,test.run-suite" />
+    <!-- run a single test in the XML suite passed as argument "suite" -->
+    <target name="test.run-suite" depends="test.init, test.build">
+        <fail unless="suite">no suite for testing was given</fail>
+
+        <echo message="* running test suite ${suite} ..." />
+        <testng outputdir="${report.dir}" useDefaultListeners="false" listeners="org.uncommons.reportng.HTMLReporter,org.uncommons.reportng.JUnitXMLReporter">
+            <jvmarg line="-Djava.endorsed.dirs=${endorsed.dir}" />
+            <jvmarg line="-Dsun.lang.ClassLoader.allowArraySyntax=true" />
+            <jvmarg value="-Xmx512m" />
+            <jvmarg value="-XX:MaxPermSize=256m" />
+
+            <classpath refid="test.path" />
+            <xmlfileset file="${suite}" />
+            <sysproperty key="org.uncommons.reportng.title" value="KiWi Test Report" />
+
+        </testng>
+    </target>
+
+    <!-- run a single clean test in the class passed as argument "class" -->
+    <target name="test.cleanRun-class"
+            depends="test.prepare,test.init,test.build,test.run-class" />
+    <!-- run a single test in the class passed as argument "class" -->
+    <!-- run like: ant -Dclass=kiwi.test.service.importer.RDFImporterTest runTestClass -->
+    <target name="test.run-class" depends="test.init, test.build">
+        <fail unless="class">no class for testing was given</fail>
+        <echo message="* running test class ${class} ..." />
+
+        <copy file="${basedir}/resources/test/testng-template.xml" tofile="${test.dir}/testng-test.xml" overwrite="true"/>
+
+        <replace file="${test.dir}/testng-test.xml">
+             <replacefilter token="@@class@@" value="${class}" />
+        </replace>
+
+        <testng outputdir="${report.dir}" useDefaultListeners="false" listeners="org.uncommons.reportng.HTMLReporter,org.uncommons.reportng.JUnitXMLReporter">
+            <jvmarg line="-Djava.endorsed.dirs=${endorsed.dir}" />
+            <jvmarg line="-Dsun.lang.ClassLoader.allowArraySyntax=true" />
+            <jvmarg value="-Xmx512m" />
+            <jvmarg value="-XX:MaxPermSize=256m" />
+
+            <classpath refid="test.path" />
+
+            <xmlfileset file="${test.dir}/testng-test.xml" />
+            <sysproperty key="org.uncommons.reportng.title" value="KiWi Test Report" />
+
+        </testng>
+    </target>
+    <!--
+        Prepares the test environment, runs the tests and create test reports
+        for the entire project.
+        This is the main test target.
+        Note : this task requires a running HiperDrive database.
+        You can start it manualy : java -jar h2-1.1.100.jar
+        (the jar is in the lib dir).
+        Use the startH2DB target.
+    -->
+    <target name="test" depends="test.run-isolated" description="Prepares the test env. and runs the tests for the entire KiWi project">
+    </target>
+
+
+    <!-- Validate the xml configuration files -->
+    <target name="validateConfiguration" depends="war,ear,jar">
+        <mkdir dir="${schema.dir}" />
+        <unjar src="${lib.dir}/jboss-seam.jar" dest="${schema.dir}">
+            <patternset>
+                <include name="org/jboss/seam/*.xsd" />
+                <include name="org/jboss/seam/*.dtd" />
+            </patternset>
+        </unjar>
+        <ant antfile="validate.xml" target="validateConfiguration" />
+    </target>
+
+
+    <target name="purge" depends="undeploy" description="clean out jboss deployments of crashing applications">
+        <delete dir="${jboss.home}/server/${project.domain}/tmp/deploy" />
+        <mkdir dir="${jboss.home}/server/${project.domain}/tmp/deploy/" />
+        <delete dir="${jboss.home}/server/${project.domain}/tmp/sessions" />
+        <mkdir dir="${jboss.home}/server/${project.domain}/tmp/sessions" />
+        <delete dir="${jboss.home}/server/${project.domain}/work/jboss.web/localhost/${project.name}" />
+    </target>
+
+
+    <!--
+            This task does :
+                1.comipiles the java classes
+                2.deploys them
+                3.compiles the entire test classes.
+                4.deploy them in the bootstrap directory.
+            Please note : this target does not perform any test,
+            it only deploys.
+     -->
+    <target name="startH2DB" description="Starts the h2 database">
+        <java jar="lib/h2-1.2.131.jar" fork="true" />
+    </target>
+
+
+
+    <!--
+        This task does :
+            1.removes the pervious deployed project from the application
+             server
+             2.remove all the compiled classes
+             3.compiles all the classes
+             4.(hot)redeploy
+             5.changes the timestams for the deployment file (application.xml)
+             - in this way the application server is forced to do a redeploy.
+     -->
+    <target name="cleanExplode" depends="undeploy, unexplode, clean, explode, restart" description="undeploys, cleans, redeploy and informs the server to relaod the resources.." />
+
+    <!--
+       The following task prepares a JBoss 4.2.3 installation by copying the updated libraries to the relevant
+       places in JBoss.
+    -->
+    <target name="prepare-jboss-4.2.3">
+        <echo message="*********************************************************************" />
+        <echo message="preparing JBoss 4.2.3 installation in ${jboss.home}" />
+        <echo message="*********************************************************************" />
+
+        <echo message="removing old hibernate ..." />
+        <!-- delete old hibernate -->
+        <delete failonerror="false">
+            <fileset dir="${deploy.dir}/../lib">
+                <include name="hibernate3.jar" />
+                <include name="slf4j-api-1.5.2.jar" />
+                <include name="slf4j-log4j12-1.5.2.jar" />
+                <include name="postgresql-8.3dev-602.jdbc3.jar" />
+                <include name="oscache-2.1.jar" />
+                <include name="ehcache*.jar" />
+           </fileset>
+        </delete>
+
+        <!-- copy updated libraries, particularly Hibernate, and database drivers -->
+        <echo message="copying updated libraries and database drivers ..." />
+        <copy todir="${deploy.dir}/../lib" overwrite="false">
+            <fileset dir="${lib.dir}">
+                <include name="hibernate-commons-annotations.jar" />
+                <include name="hibernate-annotations.jar" />
+                <include name="hibernate-entitymanager.jar" />
+                <include name="hibernate-validator.jar" />
+                <include name="hibernate.jar" />
+                <include name="lucene-core.jar" />
+                <include name="oscache-2.4.1.jar" />
+                <include name="jboss-cache.jar" />
+                <include name="jgroups.jar" />
+                <include name="ehcache-core-2.1.0.jar" />
+                <include name="ehcache-probe-1.0.0.jar" />
+                <include name="hibernate-jbc-cacheprovider-1.0.1.GA.jar" />
+                <include name="postgresql-8.4-701.jdbc4.jar" />
+                <include name="h2-1.1.100.jar" />
+                <include name="slf4j-api-1.5.6.jar" />
+                <include name="slf4j-log4j12-1.5.6.jar" />
+                <include name="c3p0-0.9.1.2.jar" />
+            </fileset>
+        </copy>
+
+        <!-- copy JBoss configuration file with updated timeout values -->
+        <echo message="copying updated configuration ..." />
+        <copy todir="${deploy.dir}/../conf" overwrite="false">
+            <fileset dir="${basedir}/resources/jboss/4.2.x">
+                <include name="jboss-service.xml" />
+            </fileset>
+        </copy>
+
+
+        <echo message="deploying treecache to ${deploy.dir} " />
+        <copy todir="${deploy.dir}">
+            <fileset dir="${basedir}/resources/jboss">
+                <include name="treecache-service.xml" />
+            </fileset>
+        </copy>
+
+
+    </target>
+
+    <!--
+       The following task prepares a JBoss 4.2.3 installation by copying the updated libraries to the relevant
+       places in JBoss.
+    -->
+    <target name="prepare-jboss-5.1.0">
+        <echo message="*****************************************************************" />
+        <echo message="preparing JBoss 5.1.0.GA installation in ${jboss.home}" />
+        <echo message="*****************************************************************" />
+
+        <echo message="removing old hibernate ..." />
+        <!-- delete old hibernate -->
+        <delete>
+            <fileset dir="${deploy.dir}/../lib">
+                <include name="hibernate3.jar" />
+                <include name="postgresql-8.3dev-602.jdbc3.jar" />
+                <include name="oscache-2.1.jar" />
+                <include name="ehcache*.jar" />
+            </fileset>
+        </delete>
+
+        <!-- copy updated libraries, particularly Hibernate, and database drivers -->
+        <echo message="copying updated libraries and database drivers ..." />
+        <copy todir="${deploy.dir}/../lib" overwrite="false">
+            <fileset dir="${lib.dir}">
+                <include name="lucene-core.jar" />
+                <include name="oscache-2.4.1.jar" />
+                <include name="jboss-cache.jar" />
+                <include name="ehcache-core-2.1.0.jar" />
+                <include name="hibernate-jbc-cacheprovider-1.0.1.GA.jar" />
+                <include name="jgroups.jar" />
+                <include name="postgresql-8.4-701.jdbc4.jar" />
+                <include name="h2-1.1.100.jar" />
+                <include name="c3p0-0.9.1.2.jar" />
+            </fileset>
+        </copy>
+
+        <echo message="deploying treecache to ${deploy.dir} " />
+        <copy todir="${deploy.dir}">
+            <fileset dir="${basedir}/resources/jboss">
+                <include name="treecache-service.xml" />
+            </fileset>
+        </copy>
+
+    </target>
+
+
+    <target name="prepare-solr">
+        <fail unless="solr.home">solr.home not set</fail>
+        <echo message="*****************************************************************" />
+        <echo message="preparing SOLR configuration in ${solr.home}" />
+        <echo message="*****************************************************************" />
+
+
+        <echo message="creating SOLR home directory ..." />
+        <mkdir dir="${solr.home}" />
+
+        <echo message="copying SOLR home directory default content ..." />
+        <copy todir="${solr.home}">
+            <fileset dir="${lib.dir}/solr/solr-home" />
+        </copy>
+    </target>
+
+    <!--
+            This tasks will copy the GATE plugins.
+        -->
+    <target name="prepare-gate">
+        <fail unless="gate.home">gate.home not set. Set the gate.home path in build.properties to any path where the build should create a GATE installation. </fail>
+        <echo message="*****************************************************************" />
+        <echo message="preparing GATE configuration in ${gate.home}" />
+        <echo message="*****************************************************************" />
+        <echo message="creating GATE home directory ..." />
+        <mkdir dir="${gate.home}" />
+
+        <echo message="copying GATE home directory default content ..." />
+        <copy todir="${gate.home}">
+            <fileset dir="${lib.dir}/gate/gate-home" />
+        </copy>
+    </target>
+
+
+
+    <!--
+    Prepare this project for developing.
+    This task must be executed after the project is outchecked from the version
+    control. After this task runs the entire environment must be ready for
+    developing.
+    Note : This targe must be executed from the command line - Not from Eclipse.
+    -->
+    <target name="configure" description="Prepare this project for developing. Don't run this in your IDE">
+        <fail if="eclipse.running">please don't setup the project configuration while running Eclipse</fail>
+
+        <property name="prop.file" value="build.properties" />
+        <!-- existing properties are not overridden so the following
+        property tasks only do anything if the properties are not set -->
+        <property name="jboss.home" value="/opt/jboss-4.2.3" />
+        <property name="jboss.version" value="4.2.3" />
+        <property name="kiwi.db" value="h2" />
+        <property name="kiwi.home" value="/tmp/kiwi" />
+        <property name="facebook.appid" value="142094553610" /><!-- localhost -->
+        <property name="facebook.key" value="190a903512661358a6e73b787aaa2a85" /><!-- localhost -->
+           <property name="facebook.secret" value="928be2b9d43f58a958f7f010354ac229" /><!-- localhost -->
+
+        <input message="JBoss home directory: " addproperty="ttmp.jboss.home"
+                defaultvalue="${jboss.home}" />
+        <propertyregex property="tmp.jboss.home" input="${ttmp.jboss.home}" regexp="\\" replace="/"/>
+        <property name="tmp.jboss.home" value="${ttmp.jboss.home}" />
+
+        <input message="JBoss version: " addproperty="tmp.jboss.version"
+                defaultvalue="${jboss.version}" />
+<echo>
+* The following database systems are supported and tested:
+* postgresql, mysql, h2.
+* For the postgresql and mysql, the database server has to
+* be installed separately.
+* The DB needs a user 'kiwi' with the password 'kiwi' and two
+* db's 'kiwi' and 'ceq' with the user 'kiwi' as owner.
+* It's strongly recommended to use a different password
+* on a production server!
+* The h2 database is embedded, doesn't need the user and
+* db's set up and will be used for the test by default.
+</echo>
+        <input message="KiWi database: " addproperty="tmp.kiwi.db" defaultvalue="${kiwi.db}"
+               validargs="postgresql,mysql,h2"/>
+
+        <input message="KiWi data directory: " addproperty="ttmp.kiwi.home" defaultvalue="${kiwi.home}" />
+        <propertyregex property="tmp.kiwi.home" input="${ttmp.kiwi.home}" regexp="\\" replace="/"/>
+        <property name="tmp.kiwi.home" value="${ttmp.kiwi.home}" />
+
+        <input message="Facebook APP ID: " addproperty="tmp.facebook.appid" defaultvalue="${facebook.appid}"/>
+        <input message="Facebook API KEY: " addproperty="tmp.facebook.key" defaultvalue="${facebook.key}"/>
+        <input message="Facebook SECRET: " addproperty="tmp.facebook.secret" defaultvalue="${facebook.secret}"/>
+
+        <!-- Property changes done, write it in build.properties -->
+        <copy file="${basedir}/${prop.file}.tmpl" tofile="${basedir}/${prop.file}"
+              overwrite="true"/>
+        <replace file="${basedir}/${prop.file}">
+            <replacefilter token="@@jboss.home@@" value="${tmp.jboss.home}" />
+            <replacefilter token="@@jboss.version@@" value="${tmp.jboss.version}" />
+            <replacefilter token="@@kiwi.home@@" value="${tmp.kiwi.home}" />
+            <replacefilter token="@@solr.home@@" value="${tmp.kiwi.home}/solr" />
+            <replacefilter token="@@gate.home@@" value="${tmp.kiwi.home}/gate" />
+            <replacefilter token="@@kiwi.database@@" value="${tmp.kiwi.db}" />
+            <replacefilter token="@@facebook.appid@@" value="${tmp.facebook.appid}" />
+            <replacefilter token="@@facebook.key@@" value="${tmp.facebook.key}" />
+            <replacefilter token="@@facebook.secret@@" value="${tmp.facebook.secret}" />
+
+            <replacefilter token="@@warning@@" value="WARNING: This is a generated file. Do not edit it but use the Ant target 'configure' instead" />
+        </replace>
+<!--
+        <copy file=".classpath.tmpl" tofile=".classpath" overwrite="true" />
+-->
+
+        <mkdir dir="${basedir}/build"/>
+        <antcall target="changeDB">
+            <param name="kiwi.db" value="${tmp.kiwi.db}"/>
+        </antcall>
+
+
+    </target>
+
+
+    <target name="guard.noclover">
+        <available property="clover.installed"
+            classname="com.cenqua.clover.CloverInstr" />
+        <fail unless="clover.installed" message="The target you are attempting to run requires Clover, which doesn't appear to be installed"/>
+    </target>
+
+    <target name="clover" depends="guard.noclover">
+        <property name="coverage.includes" value="**"/>
+        <clover-setup>
+           <files includes="${coverage.includes}"/>
+        </clover-setup>
+    </target>
+
+    <target name="clover.html" depends="guard.noclover">
+       <clover-html-report outdir="${basedir}/reports/clover"
+                           title="KiWi"/>
+    </target>
+    <target name="clover.pdf" depends="guard.noclover">
+       <clover-pdf-report outfile="${basedir}/reports/coverage.pdf"
+                           title="KiWi"/>
+    </target>
+    <target name="clover.xml" depends="guard.noclover">
+       <clover-report>
+          <current outfile="${basedir}/reports/coverage.xml">
+             <format type="xml"/>
+          </current>
+       </clover-report>
+    </target>
+
+    <target name="clover.clean" depends="guard.noclover">
+        <clover-clean/>
+        <clover-setup></clover-setup>
+    </target>
+    <target name="test.clover" description="Run Tests and create clover Html reports"
+            depends="clover.clean,clover,test,clover.html" />
+
+    <!--
+    convert TestNG test reports to hudson
+    TODO: @Sebastian: hudson is dead, right? Delete this?
+    -->
+    <target name="junit-report">
+        <copy todir="junit-report">
+            <fileset dir="reports/xml">
+                <include name="*.xml" />
+            </fileset>
+        </copy>
+    </target>
+
+
+
+    <target name="jar.extensions" depends="build.extensions">
+        <echo message="*****************************************************************" />
+        <echo message="packaging KiWi extensions" />
+        <echo message="*****************************************************************" />
+
+        <foreach list="${extensions}" delimiter="," param="extension" target="jar.extension" />
+    </target>
+
+    <target name="jar.extension">
+        <fail unless="extension">extension not specified</fail>
+
+        <echo message="*****************************************************************" />
+        <echo message="packaging extension '${extension}'" />
+        <echo message="*****************************************************************" />
+
+        <property name="ext.base.dir" value="${src.ext.dir}/${extension}" />
+        <property name="ext.target.dir" value="${ext.dir}/${extension}" />
+
+        <property name="ext.target.jar.dir" value="${ext.dir}/kiwiext-${extension}.jar" />
+        <echo message="* building extension JAR file kiwiext-${extension}.jar ..." />
+
+        <jar jarfile="${dist.dir}/kiwiext-${extension}.jar" basedir="${ext.target.jar.dir}" />
+    </target>
+
+    <!-- target to compile a KiWi extension for testing, passed as parameter ${extension} -->
+    <target name="test.compile.extension">
+        <fail unless="extension">no extension was given</fail>
+
+        <property name="ext.base.dir" value="${src.ext.dir}/${extension}" />
+
+        <echo message="* compiling Java components for '${extension}' ..." />
+        <javac classpathref="ext.classpath" destdir="${test.dir}" debug="${javac.debug}" deprecation="${javac.deprecation}" nowarn="on">
+            <src path="${ext.base.dir}/src" />
+        </javac>
+
+    </target>
+
+
+    <!--
+        Gernerates java doc for the all KiWi Extesnions.
+        Use this task if you need to generate java doc api
+        only for KiWi extension.
+    -->
+    <target name="javadoc.extensions">
+        <mkdir dir="${doc.api.dir}" />
+
+        <foreach list="${doc.extensions}" delimiter="," param="extension" target="javadoc.extension" />
+    </target>
+
+
+    <!--
+        Generates java doc for only one extension.
+        Very important : this task is an intern task,
+        it only works inside of this ant file.
+        DON'T call it from command line (or other kinds of runners).
+    -->
+    <target name="javadoc.extension">
+        <fail unless="extension">extension not specified</fail>
+
+        <echo message="*****************************************************************" />
+        <echo message="generating JavaDoc for extension '${extension}'" />
+        <echo message="*****************************************************************" />
+
+        <property name="ext.base.dir" value="${src.ext.dir}/${extension}" />
+
+        <delete dir="${doc.api.dir}/${extension}" quiet="true" />
+        <javadoc destdir="${doc.api.dir}/${extension}" author="true" version="true" use="true" classpathref="ext.classpath" windowtitle="KiWi extension API for ${extension}">
+
+            <fileset dir="${ext.base.dir}/src" defaultexcludes="yes">
+                <include name="**/*.java" />
+            </fileset>
+
+            <doctitle>
+                <![CDATA[<h1>KiWi API</h1>]]></doctitle>
+            <bottom>
+                <![CDATA[<i>Copyright &#169; 2009 The KiWi Project (http://www.kiwi-project.eu).</i>]]></bottom>
+            <tag name="todo" scope="all" description="To do:" />
+            <link href="http://java.sun.com/javase/6/docs/api/" />
+            <link href="http://java.sun.com/javaee/5/docs/api/" />
+            <link href="http://docs.jboss.org/seam/2.1.1.GA/api/" />
+            <link href="docs/api/core/" offline="true" packagelistLoc="${doc.api.dir}/core/" resolveLink="true" />
+        </javadoc>
+
+    </target>
+
+
+    <!--
+            Used to generate java doc for the KiWi project core.
+        -->
+    <target name="javadoc.core">
+        <delete dir="${doc.api.dir}/core" quiet="true" />
+
+        <echo message="*****************************************************************" />
+        <echo message="generating JavaDoc for KiWi core libraries ..." />
+        <echo message="*****************************************************************" />
+
+        <javadoc destdir="${doc.api.dir}/core"
+                  author="true"
+                 version="true"
+                     use="true"
+            classpathref="build.classpath"
+              linksource="true"
+               maxmemory="512M"
+             windowtitle="KiWi API">
+
+            <fileset dir="${src.model.dir}" defaultexcludes="yes">
+                <include name="**/*.java" />
+            </fileset>
+            <fileset dir="${src.action.dir}" defaultexcludes="yes">
+                <include name="**/*.java" />
+            </fileset>
+            <fileset dir="${src.gwt.dir}" defaultexcludes="yes">
+                <include name="**/*.java" />
+            </fileset>
+
+            <doctitle>
+                <![CDATA[<h1>KiWi API</h1>]]></doctitle>
+            <bottom>
+                <![CDATA[<i>Copyright &#169; 2009 The KiWi Project (http://www.kiwi-project.eu).</i>]]></bottom>
+            <tag name="todo" scope="all" description="To do:" />
+            <link href="http://java.sun.com/javase/6/docs/api/" />
+            <link href="http://java.sun.com/javaee/5/docs/api/" />
+            <link href="http://docs.jboss.org/seam/2.1.1.GA/api/" />
+        </javadoc>
+    </target>
+
+    <!--
+            Used to generate java doc for the entire KiWi project
+            (for the code and for the extensions.
+            This is the main java doc task.
+        -->
+    <target name="javadoc" depends="javadoc.core, javadoc.extensions"
+            description="Build the Java documentation for the KiWi core system and extensions"/>
+
+    <!--
+        dist tasks
+        -->
+
+    <!-- Copy the jBoss server and in the kiwi distribution dir. -->
+    <target name="dist.prepare.jboss">
+
+        <!--
+            I want to be sure that no previous distribtion is perssent.
+        -->
+        <delete dir="${dist.jboss.dir}" failonerror="false" />
+        <mkdir dir="${dist.jboss.dir}" />
+
+        <echo message="* copying slimmed JBoss to ${dist.jboss.dir}" />
+
+        <copy todir="${dist.jboss.dir}">
+        <fileset dir="${jboss.home}">
+        <!-- slim down JBoss -->
+        <exclude name="server/${project.domain}/log/**" />
+        <exclude name="server/${project.domain}/tmp/**" />
+        <exclude name="server/${project.domain}/work/**" />
+        <exclude name="server/${project.domain}/data/**" />
+        <exclude name="server/${project.domain}/deploy/jbosws.sar/**" />
+        <exclude name="server/${project.domain}/deploy/http-invoker.sar/**" />
+        <exclude name="server/${project.domain}/deploy/bsh-deployer.xml" />
+        <exclude name="server/${project.domain}/lib/bsh-*.jar" />
+        <exclude name="server/${project.domain}/deploy/jmx-console.war/**" />
+        <exclude name="server/${project.domain}/deploy/management/**" />
+        <exclude name="server/${project.domain}/deploy/jboss-web.deployer/ROOT.war" />
+        <exclude name="server/${project.domain}/deploy/scheduler-service.xml" />
+        <exclude name="server/${project.domain}/deploy/schedule-manager-service.xml" />
+        <exclude name="server/${project.domain}/lib/scheduler-plugin-*.jar" />
+        <exclude name="server/${project.domain}/deploy/KiWi-*-ds.xml" />
+        <exclude name="server/${project.domain}/deploy/KiWi.ear/KiWi.jar/META-INF/persistence.xml" />
+        </fileset>
+        </copy>
+        <mkdir dir="${dist.jboss.dir}/server/${project.domain}/log" />
+        <mkdir dir="${dist.jboss.dir}/server/${project.domain}/tmp" />
+        <mkdir dir="${dist.jboss.dir}/server/${project.domain}/work" />
+        <mkdir dir="${dist.jboss.dir}/server/${project.domain}/data" />
+
+        <echo message="* copying database definitions to ${dist.jboss.dir}" />
+
+        <copy tofile="${dist.jboss.dir}/server/${project.domain}/deploy/KiWi.ear/KiWi.jar/META-INF/persistence.xml" file="${dist.resources.dir}/persistence-jboss.xml" overwrite="true" failonerror="false" />
+        <copy tofile="${dist.jboss.dir}/server/${project.domain}/deploy/KiWi-ds.xml" file="${dist.resources.dir}/KiWi-jboss-ds.xml" overwrite="true" failonerror="false" />
+
+        <echo message="* copying additional resources to ${dist.jboss.dir}" />
+
+        <copy todir="${dist.jboss.dir}/bin">
+        <fileset dir="${dist.resources.dir}" includes="start.bash" />
+        <fileset dir="${dist.resources.dir}" includes="start.bat" />
+        <fileset dir="${dist.resources.dir}" includes="howToRun.txt" />
+        </copy>
+
+        <copy todir="${dist.jboss.dir}/bin" file="${dist.resources.dir}/run.conf" overwrite="true" />
+    </target>
+
+    <property name="dist.jar.deploy.dir" value="${dist.jboss.dir}/server/${project.domain}/deploy/${project.name}.jar" />
+
+    <!--
+        The kiwi distribution requires a specific persistence.xml and datasource file.
+        This task deploys this distribution specific files to the right location.
+        (copies the distribution specific persitence.xml and kiwi-ds.xml files to
+        its right location)
+        -->
+    <target name="dist.prepare.persistence">
+        <fail unless="dist.jboss.dir">jboss.home not set</fail>
+        <copy file="${dist.resources.dir}/persistence-dist.xml"
+              tofile="${dist.jar.deploy.dir}/META-INF/persistence.xml" overwrite="true"
+              failonerror="true" />
+
+        <property name="dataSourceFile.source" value="resources/datasource/KiWi-dev-ds.h2.xml" />
+        <property name="dataSourceFile.dest" value="${dist.jboss.dir}/server/${project.domain}/deploy/KiWi-ds.xml" />
+
+        <copy file="${dataSourceFile.source}"
+              tofile="${dataSourceFile.dest}" overwrite="true" />
+    </target>
+
+    <property name="dist.solr.dir" value="${dist.jboss.dir}/bin/solr" />
+
+    <target name="dist.prepare.solr">
+        <echo message="copying SOLR home directory default content ..." />
+
+        <delete dir="${dist.solr.dir}" />
+        <mkdir dir="${dist.solr.dir}" />
+
+        <copy todir="${dist.solr.dir}">
+        <fileset dir="${lib.dir}/solr/solr-home" />
+        </copy>
+
+    </target>
+
+    <!--
+        Builds a zip which contains a kiwi distribution including jboss.
+        -->
+    <target name="dist.jboss.zip">
+        <echo message="*****************************************************************" />
+        <echo message="* building the KiWi JBoss distribution in ${dist-jboss.zip.file}" />
+        <echo message="*****************************************************************" />
+        <zip destfile="${dist-jboss.zip.file}">
+            <fileset dir="${dist.jboss.basedir}" />
+        </zip>
+        <echo message="* the kiwi distibution zip ${dist-jboss.zip.file} was successful generated." />
+    </target>
+
+    <!--
+           This is the main ditribution task, use this task to generate
+           a kiwi distribution.
+        -->
+    <target name="dist.jboss" description="Create a kiwi distribution, is the main ditribution task."
+        depends="clean, gwt.optimised, explode, dist.prepare.jboss, dist.prepare.persistence,dist.prepare.solr,dist.prepare.h2starter, dist.jboss.zip, dist.jboss.clean"/>
+
+    <!--
+            It cleans the files generated withe a previous dist task call.
+        -->
+    <target name="dist.jboss.clean">
+        <delete dir="${dist.jboss.dir}" />
+    </target>
+
+    <!--
+           Generate the KiWi source distribution
+        -->
+    <target name="dist.src" depends="compile.core,javadoc,clean">
+        <echo message="*****************************************************************" />
+        <echo message="* building the KiWi source distribution in ${dist-src.zip.file}" />
+        <echo message="*****************************************************************" />
+        <mkdir dir="${dist.dir}" />
+        <zip destfile="${dist-src.zip.file}" update="false">
+            <zipfileset dir="${basedir}" prefix="kiwi-src-${project.version}">
+                <exclude name=".svn/**" />
+                <exclude name="dist/**" />
+                <exclude name="classes/**" />
+                <exclude name="bootstrap/**" />
+                <exclude name="reports/**" />
+                <exclude name="junit-report/**" />
+                <exclude name="test-build/**" />
+                <exclude name="build.properties" />
+                <exclude name="temp-testng-customsuite.xml" />
+                <exclude name="resources/KiWi-*-ds.xml" />
+                <exclude name="resources/META-INF/persistence-*.xml" />
+            </zipfileset>
+        </zip>
+        <echo message="* KiWi source distribution successfully created in ${dist-src.zip.file}" />
+    </target>
+
+    <!-- Compiles and packs the h2 database starter service. -->
+    <target name="dist.prepare.h2starter">
+
+        <mkdir dir="${h2.service.jar.dir}" />
+
+        <javac srcdir="${src.util.dir}" classpathref="build.classpath" destdir="${h2.service.jar.dir}" debug="${javac.debug}" deprecation="${javac.deprecation}" nowarn="on">
+
+            <include name="**/H2StartupServiceMBean.java" />
+            <include name="**/H2StartupService.java" />
+            <include name="**/HyperDriveStarter.java" />
+        </javac>
+
+        <mkdir dir="${h2.service.jar.dir}/META-INF" />
+        <copy file="resources/dist.resources/h2.starter.jboss-service.xml" tofile="${h2.service.jar.dir}/META-INF/jboss-service.xml" />
+
+        <copy file="resources/dist.resources/kiwi16.gif" tofile="${h2.service.jar.dir}/kiwi16.gif" failonerror="false" />
+        <copy file="resources/dist.resources/kiwi24.gif" tofile="${h2.service.jar.dir}/kiwi24.gif" failonerror="false" />
+
+
+        <property name="h2.service.jar.file" value="${test.dir}/kiwi.service.sar" />
+        <jar jarfile="${h2.service.jar.file}" basedir="${h2.service.jar.dir}" />
+        <delete dir="${h2.service.jar.dir}" />
+
+        <copy file="${h2.service.jar.file}" todir="${dist.jboss.dir}/server/${project.domain}/deploy" overwrite="true" />
+    </target>
+
+
+    <!--
+            This task alter the JBoss configuration file and makes it to
+            "take care" perm gen memory.
+            The reason why this task is in a speparate task is to me easly removed
+            if the user want to keep his configuration for the jBoss.
+        -->
+    <target name="dist.jboss.permgen" description="Enshure that the server runs always with the perm gen option active.">
+
+        <copy file="resources/dist.resources/run.conf" todir="${dist.jboss.dir}/bin" overwrite="true" />
+    </target>
+
+    <target name="dist" depends="dist.jboss,dist.src" description="Build complete KiWi distribution" />
+
+<!-- Checkstyle related tasks -->
+<!--
+        This is the link with the checkstyle ant.
+        The checkstyle ant  allows ant to use checksyle analyze from together
+         with ant targets.
+        I choose to use this solution to let the system ant installation untouched.
+        You can obtain this jars from the check style download page.
+        The checkstyle.dir point to the location where you install your checkstyle
+    -->
+<taskdef resource="checkstyletask.properties" classpath="lib/checkstyle-all-4.4.jar" />
+
+<!--
+        Clean the report environment (from the data which may remains
+        after a previous session).
+        The report environment is the place where all the reports
+        are stored.
+    -->
+<target name="clean.checkstyle.reports">
+    <delete dir="${check.report.asci.dir}" quiet="true" />
+    <delete dir="${check.report.xml.dir}" quiet="true" />
+</target>
+
+<!--
+        Proves the code style&design for all the source codes using
+        a defined profile file and create a report.
+    -->
+<target name="checkstyle" description="Proves the codes using the check style profile.">
+
+    <mkdir dir="${check.report.asci.dir}" />
+    <mkdir dir="${check.report.xml.dir}" />
+
+    <checkstyle config="${check.profile}">
+        <fileset dir="${src.model.dir}" includes="**/*.java" />
+        <fileset dir="${src.action.dir}" includes="**/*.java" />
+        <fileset dir="${src.gwt.dir}" includes="**/*.java" />
+        <fileset dir="${src.test.dir}" includes="**/*.java" />
+
+        <fileset dir="${src.ext.dir}" includes="**/*.java" />
+
+        <formatter type="plain" toFile="${check.report.asci.dir}/${project.name}.checks.txt" />
+        <formatter type="xml" toFile="${check.report.xml.dir}/${project.name}.checks.xml" />
+    </checkstyle>
+</target>
+
+<target name="updateDatabase">
+    <sql classpath="mysql-connector-java-3.0.8-stable-bin.jar" driver="org.gjt.mm.mysql.Driver" url="jdbc:mysql://bugtrackerLocation" userid="myUserID" password="myPassword" print="yes">
+        update MyTable set id=id+1;
+        select * from MyTable;
+        insert into MyTableTwo (id, version) values(X, BuildVersion);
+    </sql>
+</target>
+
+<target name="changeDB" description="allows you to change the actaul database system, supported version mysql, postgresql, h2.">
+<echo>
+    This task sets up the datasource and persistence xml files for
+    all three running modes {dev,test,prod}.
+    This task generates the data source and persistence files
+    for the selected database system.
+</echo>
+    <!-- setting ${db.dialect} to the appropriate dialect name -->
+    <condition property="db.dialect" value="${db.dialect.postgresql}"><equals arg1="${kiwi.db}" arg2="postgresql"/></condition>
+    <condition property="db.dialect" value="${db.dialect.mysql}"><equals arg1="${kiwi.db}" arg2="mysql"/></condition>
+    <condition property="db.dialect" value="${db.dialect.h2}"><equals arg1="${kiwi.db}" arg2="h2"/></condition>
+
+    <copy file="resources/datasource/KiWi-dev-ds.${kiwi.db}.xml"  tofile="resources/KiWi-dev-ds.xml"  overwrite="true" />
+    <copy file="resources/datasource/KiWi-prod-ds.${kiwi.db}.xml" tofile="resources/KiWi-prod-ds.xml" overwrite="true"/>
+    <copy file="resources/datasource/KiWi-test-ds.${kiwi.db}.xml" tofile="resources/KiWi-test-ds.xml" overwrite="true"/>
+
+    <copy file="resources/META-INF/persistence.xml.tmpl" tofile="resources/META-INF/persistence-dev.xml"  overwrite="true" />
+    <copy file="resources/META-INF/persistence.xml.tmpl" tofile="resources/META-INF/persistence-test.xml" overwrite="true" />
+    <copy file="resources/META-INF/persistence.xml.tmpl" tofile="resources/META-INF/persistence-prod.xml" overwrite="true" />
+    <copy file="resources/META-INF/persistence.xml.tmpl" tofile="${dist.resources.dir}/persistence-dist.xml" overwrite="true" />
+
+    <echo> Doing the necessary substitutions to the persistence.*.xml files </echo>
+    <replace file="resources/META-INF/persistence-dev.xml">
+        <replacefilter token="@@kiwi.home@@" value="${kiwi.home}" />
+        <replacefilter token="@@solr.home@@" value="${solr.home}" />
+        <replacefilter token="@@hibernate.hbm2ddl.auto@@" value="update" />
+        <replacefilter token="@@db.dialect@@" value="${db.dialect}" />
+        <replacefilter token="@@Datasource@@" value="KiWiDatasource" />
+        <replacefilter token="@@second_level_cache@@" value="true" />
+    </replace>
+    <replace file="resources/META-INF/persistence-test.xml">
+        <replacefilter token="@@kiwi.home@@" value="${test.data.dir}" />
+        <replacefilter token="@@solr.home@@" value="${test.data.dir}/solr" />
+        <replacefilter token="@@hibernate.hbm2ddl.auto@@" value="create-drop" />
+        <replacefilter token="@@db.dialect@@" value="${db.dialect.h2}" />
+        <replacefilter token="@@Datasource@@" value="DefaultDS" />
+        <replacefilter token="@@second_level_cache@@" value="false" />
+    </replace>
+    <replace file="resources/META-INF/persistence-prod.xml">
+        <replacefilter token="@@kiwi.home@@" value="${kiwi.home}" />
+        <replacefilter token="@@solr.home@@" value="${solr.home}" />
+        <replacefilter token="@@hibernate.hbm2ddl.auto@@" value="update" />
+        <replacefilter token="@@db.dialect@@" value="${db.dialect}" />
+        <replacefilter token="@@Datasource@@" value="KiWiDatasource" />
+        <replacefilter token="@@second_level_cache@@" value="true" />
+    </replace>
+    <replace file="${dist.resources.dir}/persistence-dist.xml">
+        <replacefilter token="@@kiwi.home@@" value="${kiwi.home}" />
+        <replacefilter token="@@solr.home@@" value="${solr.home}" />
+        <replacefilter token="@@hibernate.hbm2ddl.auto@@" value="update" />
+        <replacefilter token="@@db.dialect@@" value="${db.dialect.h2}" />
+        <replacefilter token="@@Datasource@@" value="DefaultDS" />
+        <replacefilter token="@@second_level_cache@@" value="true" />
+    </replace>
+
+    <echo message="The current database system is : ${kiwi.db}" />
+</target>
+
+    <!-- Compile all GWT classes in src/view into Javascript -->
+    <target name="gwt" description="Build the GWT components">
+        <if>
+            <isset property="module"/>
+            <then>
+                <propertyregex property="class" input="${module}" regexp="\." replace="." override="true" />
+            	<echo>class: ${class}</echo>
+                <antcall target="gwt.compile-class" />
+            </then>
+            <else>
+                <foreach param="classfile" target="gwt.compile-classfile">
+                    <path>
+                        <fileset dir="${src.gwt.dir}">
+                            <include name="**/kiwi/view/**/*.gwt.xml"/>
+                        </fileset>
+                    </path>
+                </foreach>
+            </else>
+        </if>
+    </target>
+    
+    <target name="gwt.compile-classfile">
+        <echo>classfile: ${classfile}</echo>
+        <propertyregex property="basedir-unix" input="${basedir}" regexp="\\" replace="/" defaultValue="${basedir}" />
+        <propertyregex property="classfile-unix" input="${classfile}" regexp="\\" replace="/" defaultValue="${classfile}"/>
+        <propertyregex property="classfile-cut" input="${classfile-unix}" regexp="(${basedir-unix}/${src.gwt.dir}/|.gwt.xml)" replace=""/>
+        <propertyregex property="class" input="${classfile-cut}" regexp="/" replace="." override="true"/>
+
+        <echo>class: ${class}</echo>
+        <antcall target="gwt.compile-class">
+            <param name="class" value="${class}"/>
+        </antcall>
+    </target>
+    <target name="gwt.compile-class" depends="init,jar">
+        <fail unless="class">no class for compiling was given</fail>
+        <echo>Compiling GWT for ${class}</echo>
+        <delete dir="${gwt.compiled-modules}/${class}" includes="**/*" excludes=".svn/**/*" />
+        
+        <property name="gwtdebug" value="false"></property>
+        <if>
+            <equals arg1="${gwtdebug}" arg2="true"/>
+            <then>
+                <property name="gwt.compile-style" value="PRETTY"></property>
+            </then>
+            <else>
+                <property name="gwt.compile-style" value="OBFUSCATED"></property>
+                <echo>If you need pretty gwt code for debugging set the ant property gwtdebug=true</echo>
+            </else>
+        </if>
+        
+        <property name="gwtCompileReport" value="false"></property>
+        <if>
+            <equals arg1="${gwtCompileReport}" arg2="true"/>
+            <then>
+                <property name="gwt.compile-report" value="-compileReport"></property>
+            </then>
+            <else>
+                <property name="gwt.compile-report" value=""></property>
+                <echo>If you need gwt compile report for debugging set the ant property gwtCompileReport=true</echo>
+            </else>
+        </if>
+        
+        <property name="gwt.draftCompile" value=""/>
+        <echo>gwt.compile-style is ${gwt.compile-style}</echo>
+        <java failonerror="true" fork="true" classname="com.google.gwt.dev.Compiler">
+            <classpath refid="gwt.classpath" />
+            <jvmarg line="-Xmx600M"/>
+            
+            <arg line="-logLevel INFO"/>
+            <arg line="-localWorkers 2"/>
+            <arg line="-style ${gwt.compile-style}"/>
+            <arg line="${gwt.compile-report}" />
+            <arg line="${gwt.draftCompile}" />
+                        <arg line="-extra reports"/>
+            <arg line="-war view/gwt/compile/${class}"/>
+            <arg value="${class}"/>
+        </java>
+        <foreach param="zipdir" target="gwt.zipsc">
+            <path>
+                <dirset dir="view/gwt/compile/${class}" includes="*"></dirset>
+            </path>
+        </foreach>
+
+        <!--
+        <gwtcompile destdir="${basedir}/${war.dir}" optimize="true">
+            <fileset dir="src/view">
+                <include name="**/*.gwt.xml"/>
+            </fileset>
+        </gwtcompile>
+        -->
+    </target>
+
+    <target name="gwt.zipsc">
+        <zip destfile="${zipdir}/sc.zip" basedir="${zipdir}/sc">
+            <zipfileset dir="${zipdir}/sc"  />
+        </zip>
+        <delete dir="${zipdir}/sc"></delete>
+        <move todir="${gwt.compiled-modules}">
+            <fileset dir="${zipdir}/../.."></fileset>
+        </move>
+    </target>
+
+    <target name="gwt.optimised">
+        <antcall target="gwt">
+            <param name="gwtdebug" value="false" />
+        </antcall>
+    </target>
+    
+    <target name="gwtExplode" depends="gwt,explode" description="Quick developer target: Compiles gwt and explodes it."/>
+
+    <!--
+          This task is used to build the KiWi web installer.
+          If the tasks runs properly then the distribution direcory
+          will contains a kiwi.web.setup.war directory.
+          This is the exploded war file, copy this in the your jBoss
+          server (in the ..../jBoss/server/default/deploy) start the
+          server and use the url :
+          http://localhost:8080/kiwi.web.setup/home.seam to access the
+          KiWi Web Setup UI.
+          ) and then
+    -->
+    <property name="web.setup.src.dir" value="src/web.setup" />
+    <target name="dist.web-setup"
+            description="Compile the Kiwi web setup java source code"
+            depends="cleanExplode">
+
+        <property name="dist.web.setup.template.dir" value="resources/web.setup/kiwi.web.setup.war" />
+
+        <!-- Here is the kiwi.web.setup distr builded -->
+        <property name="dist.web.setup.dir" value="dist/kiwi.web.setup.war" />
+        <mkdir dir="${dist.web.setup.dir}"/>
+
+        <!-- Prepare the dist from the given template -->
+        <property name="dist.web.setup.template.dir" value="resources/web.setup" />
+        <copy todir="${dist.web.setup.dir}" overwrite="true">
+            <fileset dir="${dist.web.setup.template.dir}"/>
+        </copy>
+
+        <property name="dist.web.setup.classes.dir" value="${dist.web.setup.dir}/WEB-INF/classes" />
+        <mkdir dir="${dist.web.setup.classes.dir}"/>
+
+
+
+        <!-- copile the web.setup classes in the dist-->
+        <javac classpathref="build.classpath"
+               destdir="${dist.web.setup.classes.dir}"
+               debug="${javac.debug}"
+               deprecation="${javac.deprecation}"
+               nowarn="on">
+            <src path="${web.setup.src.dir}" />
+        </javac>
+    </target>
+    
+    <target name="jar.storedProcedures">
+    	<delete file="${lib.dir}/storedProcedures.jar" failonerror="false"/>
+        <jar destfile="${lib.dir}/storedProcedures.jar"
+             basedir="${basedir}/resources/ceq.resources/stored_procedures/${kiwi.db}" 
+         />
+    	<echo message="The Stored procedures for ${kiwi.db} are deployed on : ${lib.dir}/storedProcedures.jar"/>
+    </target>
+	
+    <!--define the izpack task  -->
+    <taskdef name="izpack" 
+             classpath="${lib.dir}/standalone-compiler.jar" 
+             classname="com.izforge.izpack.ant.IzPackTask"/>
+	
+	<property name="kiwi.izpack.dest.dir" value="installer.izpack" />
+	<property name="kiwi.izpack.ear"
+		      value="${kiwi.izpack.dest.dir}/KiWi.ear" />
+
+	<!--
+	    This task is used to generate a KiWi (iZpack based) installer.
+	    This task is time consummer use it carefully.
+	    If the task complete successfully then the KiWi project root will
+	    contain a directory named : installer.izpack.
+	    This directory will contain an runnig jar named kiwi.installer.XXX.jar
+	    where the XXX is the KiWi release number.
+	    You can run this jar by using the following command :
+	     
+	    java -jar kiwi.installer.XXX.jar
+	     
+	    for the enviroments with XServer or 
+	    
+	    java -jar kiwi.installer.XXX.jar -console
+	    
+	    for the enviroments without XServer. 
+	-->
+	<target name="build.izpack.installer" depends="build.izpack.helper">
+		
+        <property name="kiwi.root" value="." />
+        <property name="kiwi.izpack.dest.dir" value="installer.izpack" />
+	    <property name="kiwi.izpack.dest.file" 
+	              value="${kiwi.izpack.dest.dir}/kiwi.installer.${project.version}.jar" />
+	    <property name="izpack.dir" value="izpack" />
+        <property name="kiwi.izhelpelr.class"
+                 value="kiwi.util.izpack.IZPackInstallerHelper" />
+
+        <mkdir dir="${kiwi.izpack.ear}"/>
+
+        <antcall target="explode" >
+            <param name="ear.deploy.dir" value="${kiwi.izpack.ear}"/>
+            <param name="jar.deploy.dir" value="${kiwi.izpack.ear}/KiWi.jar"/>
+            <param name="war.deploy.dir" value="${kiwi.izpack.ear}/KiWi.war"/>
+        </antcall>
+	    
+		<!--
+		  I don't want to involve files outside of the iZpack dir, this is the 
+		  reason why I preffer to copy it. 
+		-->
+		<copy file="COPYING" tofile="${izpack.dir}/Licence.txt" overwrite="true" failonerror="false"/>
+		<copy file="COPYING" tofile="${izpack.dir}/Readme.txt" overwrite="true" failonerror="false"/>
+	    
+		<izpack input="${izpack.dir}/install-definition.xml" 
+	            output="${kiwi.izpack.dest.file}" 
+	            installerType="standard" 
+	            inheritAll="true" 
+	            basedir="." 
+	            compression="deflate" 
+	            compressionlevel="9"/>
+		
+		<delete dir="${kiwi.izpack.ear}"/>
+		
+	</target>
+
+    <property name="izpackHelperJar" 
+              value="${kiwi.izpack.dest.dir}/helper/kiwiHelper.jar" />
+	
+    <target name="build.izpack.helper">
+        <property name="kiwi.izpack.class.dir" 
+                  value="${kiwi.izpack.dest.dir}/helper/classes" />
+
+        <delete dir="${kiwi.izpack.class.dir}" failonerror="false"/>
+        <mkdir dir="${kiwi.izpack.class.dir}" />
+
+        <javac srcdir="${src.util.dir}"
+               classpathref="build.classpath" 
+               destdir="${kiwi.izpack.class.dir}" 
+               debug="${javac.debug}"
+               deprecation="${javac.deprecation}" 
+               nowarn="on">
+
+            <include name="kiwi/util/izpack/**" />
+        </javac>
+
+    	
+    	<jar destfile="${izpackHelperJar}"
+             basedir="${kiwi.izpack.class.dir}"/>
+    	<delete dir="${kiwi.izpack.class.dir}"/>
+    	
+
+	</target>
+
+	<!--
+	   This properties are used by the iZpack installer.
+	-->
+    <property name="izpackDefaultDSFile" 
+              value="resources/izpack/KiWi-default-ds.xml" />
+    <property name="izpackDefaultApplicationFile" 
+              value="resources/izpack/KiWi-default-application.xml" />
+    <property name="izpackDefaultPersistenceFile" 
+              value="resources/izpack/KiWi-default-persistence.xml" />
+    <property name="izpackjBossConfFile" 
+              value="resources/dist.resources/run.conf" />
+	<property name="izpackjBossMailFile" 
+	          value="resources/dist.resources/mail-service.xml" />
+	<property name="izpackjBossServerConfFile" 
+		      value="resources/dist.resources/server.xml" />
+	<property name="izpackFOAFSSLlib1" 
+			  value="lib/jsslutils-0.5.1.jar" />
+	<property name="izpackFOAFSSLlib2" 
+			  value="lib/jsslutils-extra-apachetomcat6-0.5.2.jar" />
+	<property name="izpackFOAFSSLkeystore" 
+				  value="resources/dist.resources/server.keystore" />
+
+
+   <property name="postgresDriverJar" 
+	         value="${lib.dir}/postgresql-8.4-701.jdbc4.jar" />
+
+   <property name="hyperdirveDriverJar" 
+	         value="${lib.dir}/h2-1.2.131.jar" />
+</project>

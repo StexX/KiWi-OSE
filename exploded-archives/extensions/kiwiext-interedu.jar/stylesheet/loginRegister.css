@@ -1,0 +1,66 @@
+.login h1 {
+	text-align: center;
+	color: #004769;
+	margin-bottom: 20px;
+	padding-top: 10px;
+}
+
+#loginDialog {
+-moz-border-radius-bottomleft:5px;
+-moz-border-radius-bottomright:5px;
+-moz-border-radius-topleft:5px;
+-moz-border-radius-topright:5px;
+background-color:#9DCBCC;
+border-bottom:1px solid #CCCCCC;
+border-left:1px solid #CCCCCC;
+border-right:1px solid #CCCCCC;
+color:black;
+padding:5px;
+text-align:left;
+width:380px;
+z-index:11;
+}
+
+.name{
+clear:left;
+float:left;
+font-weight:bold;
+margin-top:3px;
+padding:5px;
+vertical-align:top;
+width:155px;
+}
+
+.name2{
+clear:left;
+float:left;
+font-weight:bold;
+margin-top:3px;
+padding:5px;
+vertical-align:top;
+width:175px;
+}
+
+.value2 input{
+	width:170px;
+}
+
+.registerText{
+text-align:center;
+width:100%;
+font-size:12px;
+}
+
+.buttons {
+	width:100%;
+	text-align:center;	
+}
+
+.buttons input{
+	  color:#444; 
+	  font: bold 12px 'trebuchet ms',helvetica,sans-serif; 
+	  background-color:white; 
+	  border:1px solid; 
+	  border-color: #696 #363 #363 #696;
+	  width:230px;
+}

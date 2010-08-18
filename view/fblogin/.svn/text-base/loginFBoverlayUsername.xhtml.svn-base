@@ -1,0 +1,27 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:fb="http://www.facebook.com/2008/fbml"
+                template="loginFBoverlay.xhtml">
+
+	<ui:define name="popup">
+		<h:form>
+			<h:outputText for="fb_loginName" value="Chose your login name: "/>
+			<br></br>
+			<h:inputText id="fb_loginName" value="#{kiwi.user.facebookLoginAction.username}" />
+			<h:commandButton id="loginNameChosen" 
+				action="#{kiwi.user.facebookLoginAction.checkIfUserExists()}" 
+				value="#{messages['btn.ok']}">
+			</h:commandButton>
+			<h:commandButton id="loginNameAborted" 
+				action="home" 
+				value="#{messages['btn.cancel']}">
+			</h:commandButton>
+		</h:form>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,147 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a="http://richfaces.org/a4j" 
+	template="../layout/template.xhtml">
+
+<ui:define name="body">
+
+	<h1>Setup Ontologies</h1>
+
+    <!--  
+    <rich:modalPanel id="progressWindow" width="400" height="120" >
+        <f:facet name="header">
+            <h:outputText value="Loading Ontologies ..." />
+        </f:facet>    
+        <f:facet name="controls">
+        </f:facet>
+        Loading may take several minutes ... <br/><br/>
+        <center>
+	        <h:form>
+	            <a:outputPanel id="progressPanel">
+	                <rich:progressBar 
+	                               value = "#{ontologyAction.progress}" 
+	                             enabled = "#{ontologyAction.processing}" 
+	                               label = "#{ontologyAction.status}"
+	                            minValue = "0" 
+	                            maxValue = "#{ontologyAction.progressMax}"
+	                            interval = "1000"
+	                         eventsQueue = "async"
+	                  ignoreDupResponses = "true"
+	                               style = "width: 300px; height: 15px; font-weight: bold;"
+                                reRender = "progressPanel,btnClose"
+	               reRenderAfterComplete = "progressPanel,btnClose"
+	                        requestDelay = "200"
+	                >
+	                    <f:facet name="complete">
+                            <h:outputText value="#{ontologyAction.size()} triples have been loaded into the triple store" />
+	                    </f:facet>
+                        <f:facet name="initial">
+                            <h:outputText value="Loading ontologies has not yet started"/>
+                        </f:facet>
+	                </rich:progressBar>
+	            </a:outputPanel>
+
+                <a:commandButton id="btnClose" action="#{ontologyAction.commit}" value="Close" disabled="#{ontologyAction.processing}">
+                    <rich:componentControl for="progressWindow" attachTo="btnClose" operation="hide" event="onclick"/>
+                </a:commandButton>
+	        </h:form>
+        </center>
+    </rich:modalPanel>
+    -->
+    <rich:modalPanel id="progressWindow" width="400" height="100" >
+        <f:facet name="header">
+            <h:outputText value="Loading Ontologies ..." />
+        </f:facet>    
+        <f:facet name="controls">
+        </f:facet>
+        <center>
+            <br/>
+            Please wait while ontologies are loaded (may take several minutes) ...
+        </center>
+    </rich:modalPanel>
+
+	<h:form>
+		<rich:dataTable value="#{setupOntologyList}" var="ontology" id="ontologyTable">
+			<h:column>
+				<h:selectBooleanCheckbox value="#{ontology.load}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Name</f:facet>
+				<h:outputText value="#{ontology.name}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Type</f:facet>
+				<h:outputText value="#{ontology.format}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Description</f:facet>
+				<h:outputText value="#{ontology.description} " />
+				<s:span rendered="#{ontology.mandatory}">(Loading this ontology is mandatory, the system will not function properly without it)</s:span>
+			</h:column>
+			
+		</rich:dataTable>
+		<h:panelGrid columns="4">
+            <a:commandButton id = "btnSelectall"
+                          value = "Select all" 
+                       reRender = "ontologyTable,clearCB"
+                         action = "#{ontologyAction.selectAll()}">
+            </a:commandButton>
+            <a:commandButton id = "btnSelectmandatory"
+                          value = "Select mandatory" 
+                       reRender = "ontologyTable,clearCB"
+                         action = "#{ontologyAction.selectMandatory()}">
+            </a:commandButton>
+            <a:commandButton id = "btnDeselectall"
+                          value = "Deselect all" 
+                       reRender = "ontologyTable,clearCB"
+                         action = "#{ontologyAction.deselectAll()}">
+            </a:commandButton>
+            <a:commandButton id = "btnReset"
+                          value = "Reset form" 
+                       reRender = "ontologyTable,clearCB"
+                         action = "#{ontologyAction.reset()}">
+            </a:commandButton>
+<!-- 
+			<a:commandButton id = "btnLoad"
+			              value = "Load Ontologies" 
+			           reRender = "progressPanel"
+				         action = "#{ontologyAction.startProgress(ontologyAction)}">
+                <rich:componentControl for="progressWindow" attachTo="btnLoad" operation="show" event="onclick" />
+ 			</a:commandButton>
+--> 			
+		</h:panelGrid>
+		
+		<h:panelGrid columns="2">
+				<h:selectBooleanCheckbox value="#{ontologyAction.clear}" id="clearCB" />
+				<h:outputText value="Remove all triples from TripleStore before loading." />
+		</h:panelGrid>
+
+		<h:panelGrid columns="2">
+            <a:commandButton id = "btnLoad"
+                          value = "Load Ontologies" 
+                       reRender = "progressPanel"
+                         action = "#{ontologyAction.loadOntologies()}">
+                <rich:componentControl for="progressWindow" attachTo="btnLoad" operation="show" event="onclick" />
+            </a:commandButton>
+<!-- 
+			<a:commandButton id = "btnLoad"
+			              value = "Load Ontologies" 
+			           reRender = "progressPanel"
+				         action = "#{ontologyAction.startProgress(ontologyAction)}">
+                <rich:componentControl for="progressWindow" attachTo="btnLoad" operation="show" event="onclick" />
+ 			</a:commandButton>
+--> 			
+		</h:panelGrid>
+	
+	</h:form>
+
+
+</ui:define>
+</ui:composition>
+

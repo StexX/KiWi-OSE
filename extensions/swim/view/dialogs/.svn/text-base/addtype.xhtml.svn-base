@@ -1,0 +1,35 @@
+<rich:modalPanel 
+	  xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+   	  xmlns:rich="http://richfaces.org/rich"
+ 	  xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+	  id="addTypeDialog" autosized="true">
+	<f:facet name="header">
+		<h:panelGroup>
+			<h:outputText value="Add Type"></h:outputText>
+		</h:panelGroup>
+	</f:facet>
+	<f:facet name="controls">
+		<h:panelGroup>
+			<h:outputLabel value="X" style="cursor:pointer" id="addtype_hidelink" />
+			<rich:componentControl for="addTypeDialog" attachTo="addtype_hidelink"
+				operation="hide" event="onclick" />
+		</h:panelGroup>
+	</f:facet>
+	<h:form>
+	   <a4j:queue />
+		<h:outputText value="Select RDF Class"></h:outputText>
+		<h:selectOneMenu value="#{annotateAction.selectedType}" required="true">
+			<s:selectItems value="#{annotateAction.classes}" var="type"
+				label="#{type.title} (#{type.resource.namespacePrefix})" noSelectionLabel="Please select ..." />
+			<kiwi:convertEntity />
+		</h:selectOneMenu>
+		<div class="actionButtons">
+		  <a4j:commandButton action="#{annotateAction.associateContentType}" value="Add" reRender="pageTypes,articlemeta,addTypeDialog"/>
+		</div>
+	</h:form>
+</rich:modalPanel>

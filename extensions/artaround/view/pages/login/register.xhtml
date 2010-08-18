@@ -1,0 +1,118 @@
+<!--
+	Copyright © Rolf Sint, Michael Schneider, Christian Osterrieder, 2010
+ */
+ -->
+
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+		    	xmlns:rich="http://richfaces.org/rich"
+		    	xmlns:a="http://richfaces.org/a4j"
+                template="../../layout/template-3col.xhtml">
+                	
+<ui:define name="breadcrumps">
+	<ul>
+		<li class="first">				 			
+			<s:link view="/artaround/home.xhtml" value="#{messages['artaround.breadcrumps.home']}"/>
+		</li>
+		<li>				 			
+			<s:link view="/artaround/pages/login/register.xhtml" value="#{messages['artaround.breadcrumps.register']}"/>
+		</li>		
+	</ul>
+</ui:define>					
+
+<ui:define name="body">
+	
+		<script type="text/javascript">
+		jQuery.noConflict();
+	</script>
+	
+    <h1>#{messages['artaround.login.pleaseRegister']}</h1>
+    
+    <rich:messages styleClass="message"/>
+	    
+	<div class="subcolumns">
+	  <div class="c50l">
+	    <div class="subcl">
+			<a:form id="formSignup">
+		
+			   <div class="dialog">
+		            <s:validateAll>
+		               <h:panelGrid columns="2" rowClasses="prop" columnClasses="name,value">
+		               	
+		                  <h:outputLabel for="login">#{messages['artaround.login.username']}*</h:outputLabel>
+			              <h:inputText id="login" value="#{artaroundRegisterAction.login}" required="true"></h:inputText>
+		                  <h:outputLabel for="fn">#{messages['artaround.login.firstname']}*</h:outputLabel> 
+		                  <h:inputText id="fn" value="#{artaroundRegisterAction.firstName}" required="true"/>
+		                  <h:outputLabel for="ln">#{messages['artaround.login.lastname']}*</h:outputLabel> 
+		                  <h:inputText id="ln" value="#{artaroundRegisterAction.lastName}" required="true"/>
+		                  <h:outputLabel for="password">#{messages['artaround.login.password']}*</h:outputLabel> 
+		                  <h:inputSecret id="password" value="#{artaroundRegisterAction.password}" required="true"/>
+		                  <h:outputLabel for="validate">#{messages['artaround.login.passwordValidate']}*</h:outputLabel> 
+		                  <h:inputSecret id="validate" value="#{artaroundRegisterAction.validatePassword}" required="true"/>
+		                  <h:outputLabel for="email">#{messages['artaround.login.email']}*</h:outputLabel> 
+		                  <h:inputText id="email" value="#{artaroundRegisterAction.email}"  required="true"/>
+						  <h:outputLabel for="gebDate">Geburtstatum</h:outputLabel>
+						 
+						  <a:outputPanel id="calendar" layout="block"> 
+		            	      <rich:calendar  locale="de" value="#{artaroundRegisterAction.gebDate}" cellWidth="24px" cellHeight="22px" style="width:200px" enableManualInput="true"/>
+						   </a:outputPanel>
+							  
+						<h:outputLabel for="profilePicture">Profilbild</h:outputLabel> 						
+						<rich:fileUpload 
+									fileUploadListener="#{artaroundRegisterAction.listener}"
+									immediateUpload="false"
+									maxFilesQuantity="1"
+									listHeight="50pt"
+									listWidth="auto"
+									allowFlash="true"
+									acceptedTypes="jpg, gif, png" 
+									addControlLabel="#{messages['artaround.addFile']}..." 
+									clearAllControlLabel="#{messages['artaround.clearAll']}" 
+									clearControlLabel="#{messages['artaround.clear']}"
+				                    stopEntryControlLabel="#{messages['artaround.stopProcess']}" 
+									uploadControlLabel="#{messages['artaround.upload']}...">
+											        	
+										</rich:fileUpload>
+						
+						<h:graphicImage value="/seam/resource/captcha"/>
+					    <h:inputText id="verifyCaptcha" value="#{captcha.response}" required="true"></h:inputText>
+						  
+						  <h:outputLabel for="registerButton"><h:outputText value=" " /></h:outputLabel> 
+						  <h:commandButton id="registerButton" value="#{messages['artaround.register']}" 
+						  		action="#{artaroundRegisterAction.register}"/>
+						  		               
+						</h:panelGrid>
+
+						
+		            </s:validateAll>
+		            
+		        </div>
+		        
+		     </a:form>
+		</div>
+	 </div>
+	 <div class="c50r">
+	    <div class="subcr"> 
+			<p style="padding-bottom:5px;font-weight:bold;">
+				#{messages['artaround.register.registerFree']}
+			</p>	 
+			<ul>
+				<li>#{messages['artaround.register.registerText1']}</li>
+				<li>#{messages['artaround.register.registerText2']}</li>
+				<li>#{messages['artaround.register.registerText3']}</li>
+				<li>#{messages['artaround.register.registerText4']}</li>
+				<li>#{messages['artaround.register.registerText5']}</li>
+				<li>#{messages['artaround.register.registerText6']}</li>
+			</ul>
+	 	</div>
+	</div>
+</div>
+
+</ui:define> 
+</ui:composition>
+

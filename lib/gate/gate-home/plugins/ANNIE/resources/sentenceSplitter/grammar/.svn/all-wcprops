@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/3932/KiWi/trunk/lib/gate/gate-home/plugins/ANNIE/resources/sentenceSplitter/grammar
+END
+split.jape
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/kiwi/!svn/ver/2940/KiWi/trunk/lib/gate/gate-home/plugins/ANNIE/resources/sentenceSplitter/grammar/split.jape
+END
+main.jape
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/kiwi/!svn/ver/3932/KiWi/trunk/lib/gate/gate-home/plugins/ANNIE/resources/sentenceSplitter/grammar/main.jape
+END
+find.jape
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/kiwi/!svn/ver/2940/KiWi/trunk/lib/gate/gate-home/plugins/ANNIE/resources/sentenceSplitter/grammar/find.jape
+END
+prepare.jape
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/kiwi/!svn/ver/2940/KiWi/trunk/lib/gate/gate-home/plugins/ANNIE/resources/sentenceSplitter/grammar/prepare.jape
+END
+no-splits.jape
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/kiwi/!svn/ver/2940/KiWi/trunk/lib/gate/gate-home/plugins/ANNIE/resources/sentenceSplitter/grammar/no-splits.jape
+END
+cleanup.jape
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/kiwi/!svn/ver/2940/KiWi/trunk/lib/gate/gate-home/plugins/ANNIE/resources/sentenceSplitter/grammar/cleanup.jape
+END
+find-single-nl.jape
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/kiwi/!svn/ver/2940/KiWi/trunk/lib/gate/gate-home/plugins/ANNIE/resources/sentenceSplitter/grammar/find-single-nl.jape
+END
+main-single-nl.jape
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/kiwi/!svn/ver/2940/KiWi/trunk/lib/gate/gate-home/plugins/ANNIE/resources/sentenceSplitter/grammar/main-single-nl.jape
+END
+main.jape.orig
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/kiwi/!svn/ver/3932/KiWi/trunk/lib/gate/gate-home/plugins/ANNIE/resources/sentenceSplitter/grammar/main.jape.orig
+END

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/geo
+END
+GeoCodingServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/3671/KiWi/trunk/src/action/kiwi/api/geo/GeoCodingServiceRemote.java
+END
+GeoCodingService.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/kiwi/!svn/ver/3671/KiWi/trunk/src/action/kiwi/api/geo/GeoCodingService.java
+END
+GeoCodingFailedException.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/3671/KiWi/trunk/src/action/kiwi/api/geo/GeoCodingFailedException.java
+END
+Location.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/geo/Location.java
+END
+GeoCodingServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/3671/KiWi/trunk/src/action/kiwi/api/geo/GeoCodingServiceLocal.java
+END

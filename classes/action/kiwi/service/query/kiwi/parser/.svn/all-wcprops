@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/classes/action/kiwi/service/query/kiwi/parser
+END
+KiWiQueryParser.class
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/classes/action/kiwi/service/query/kiwi/parser/KiWiQueryParser.class
+END
+KiWiQueryParser$JJCalls.class
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/classes/action/kiwi/service/query/kiwi/parser/KiWiQueryParser$JJCalls.class
+END
+KiWiQueryParserConstants.class
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/classes/action/kiwi/service/query/kiwi/parser/KiWiQueryParserConstants.class
+END
+KiWiQueryParserTokenManager.class
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/classes/action/kiwi/service/query/kiwi/parser/KiWiQueryParserTokenManager.class
+END
+KiWiQueryParser$LookaheadSuccess.class
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/classes/action/kiwi/service/query/kiwi/parser/KiWiQueryParser$LookaheadSuccess.class
+END

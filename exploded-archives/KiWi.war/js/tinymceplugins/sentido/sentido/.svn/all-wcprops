@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/js/tinymceplugins/sentido/sentido
+END
+context_to_parse_stylesheet.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/js/tinymceplugins/sentido/sentido/context_to_parse_stylesheet.xsl
+END
+om_to_pmml.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/js/tinymceplugins/sentido/sentido/om_to_pmml.xsl
+END
+sentido-embedded-html.css
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/js/tinymceplugins/sentido/sentido/sentido-embedded-html.css
+END
+parse_tree_to_openmath.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/js/tinymceplugins/sentido/sentido/parse_tree_to_openmath.xsl
+END
+sentido_logo_horizontal_40px.png
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/js/tinymceplugins/sentido/sentido/sentido_logo_horizontal_40px.png
+END
+sentido-icon_64x64.png
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/js/tinymceplugins/sentido/sentido/sentido-icon_64x64.png
+END
+cmml_to_om.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/js/tinymceplugins/sentido/sentido/cmml_to_om.xsl
+END
+om_to_cmml.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.war/js/tinymceplugins/sentido/sentido/om_to_cmml.xsl
+END

@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/interedu/api/dataimport
+END
+DokumentArtResolver.class
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/interedu/api/dataimport/DokumentArtResolver.class
+END
+InterEduImportService.class
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/interedu/api/dataimport/InterEduImportService.class
+END
+InterEduArtikelFacade.class
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/interedu/api/dataimport/InterEduArtikelFacade.class
+END
+InterEduImportServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/interedu/api/dataimport/InterEduImportServiceRemote.class
+END
+ParseArtikelService.class
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/interedu/api/dataimport/ParseArtikelService.class
+END
+InterEduKategorieFacade.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/interedu/api/dataimport/InterEduKategorieFacade.class
+END
+InterEduApertureFacade.class
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/interedu/api/dataimport/InterEduApertureFacade.class
+END
+InterEduComment.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/interedu/api/dataimport/InterEduComment.class
+END
+InterEduImportServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/interedu/api/dataimport/InterEduImportServiceLocal.class
+END

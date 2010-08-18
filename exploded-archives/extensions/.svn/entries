@@ -1,0 +1,72 @@
+10
+
+dir
+5565
+https://svn.salzburgresearch.at/svn/kiwi/KiWi/releases/0.9/exploded-archives/extensions
+https://svn.salzburgresearch.at/svn/kiwi
+
+
+
+2010-08-18T11:45:47.139629Z
+5565
+steffi
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+df910b12-e4fe-467b-9c3d-147a02c1fe00
+
+
+
+
+
+
+0
+empty
+
+kiwiext-admin.jar
+dir
+
+kiwiext-artaround.jar
+dir
+
+kiwiext-dashboard.jar
+dir
+
+kiwiext-ideator.jar
+dir
+
+kiwiext-inspector.jar
+dir
+
+kiwiext-interedu.jar
+dir
+
+kiwiext-mars.jar
+dir
+
+kiwiext-ontologies.jar
+dir
+
+kiwiext-semForms.jar
+dir
+
+kiwiext-tagit2.jar
+dir
+
+kiwiext-w2k.jar
+dir
+
+kiwiext-wiki.jar
+dir
+

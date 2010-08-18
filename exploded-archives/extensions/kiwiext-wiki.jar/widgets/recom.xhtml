@@ -1,0 +1,33 @@
+<!DOCTYPE div PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- author: Peter Dolog -->
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:a="http://richfaces.org/a4j" 
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                xmlns:rich="http://richfaces.org/rich">
+  	<a:region renderRegionOnly="true">
+	    <s:span id="recom" rendered="#{currentContentItem != null}">
+	    <s:span id="recomlist" rendered="#{recommendationActionScope.recommendations.size() &gt; 0}">
+			<div><ul>
+				<ui:repeat var="recommendation" value="#{recommendationActionScope.recommendations}" >
+					<li>
+					<kiwi:link contentItem="#{recommendation}"/>
+                    <br/>
+					<h:outputText value="by "/>
+					<h:outputText value="#{recommendation.author.firstName} "/>
+					<h:outputText value="#{recommendation.author.lastName}"/>
+					</li>
+				</ui:repeat>
+				</ul>
+			</div>
+		</s:span>
+		<s:span id="norecomlist" rendered="#{recommendationActionScope.recommendations.size() &lt;= 0}">
+					<h:outputText value="No Recommendations"/>
+		</s:span>
+		</s:span>
+	</a:region>
+</ui:composition>

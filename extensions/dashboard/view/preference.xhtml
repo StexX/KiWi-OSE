@@ -1,0 +1,125 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+                xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                template="/layout/template-2col.xhtml">
+
+
+    <ui:define name="header">
+       <a:loadScript src="resource://jquery.js"/>
+       
+       <link href="stylesheet/dashboard.css" rel="stylesheet" type="text/css" />
+    
+    </ui:define>
+
+    <ui:define name="navigation">
+        <ui:include src="layout/navigation.xhtml" />
+    </ui:define>
+
+           
+    <ui:define name="body">
+        <h2>My Preferences</h2>
+        <rich:messages styleClass="message"/>
+        
+        <p>
+            In this part of the dashboard, you can setup your visual presentation in KiWi.
+            Navigate through the tabs to personalize KiWi as you like.
+        </p>
+
+       <h:form id="preferenceForm">
+		    <rich:tabPanel switchType="client">
+		        <rich:tab label="Recommendations">
+                   <table>
+                     <tr>
+                       <td>	           
+                        <div class="integrationLoginBox">
+			               <h3>Recommendation Preferences</h3>
+			               <h:panelGrid columns="2">
+			                    <h:outputText value="Recommendations per view: "/>
+			                    <h:inputText value="#{kiwi.dashboard.preferenceAction.recommendationSize}" size="2" />
+			                    
+				                <h:outputText value="Show Recommendations: " />
+				                <h:selectBooleanCheckbox value="#{kiwi.dashboard.preferenceAction.showRecommendation}" />
+				                
+				                <h:outputText value="Show Standard Recommendations: " />
+				                <h:selectBooleanCheckbox value="#{kiwi.dashboard.preferenceAction.showStandardRecommendation}" />
+				                
+				                <h:outputText value="Show Semantic Recommendations: " />
+				                <h:selectBooleanCheckbox value="#{kiwi.dashboard.preferenceAction.showSemanticVectorRecommendation}" />				                
+				                
+				                <h:outputText value="Show Multifactor Recommendations: " />
+				                <h:selectBooleanCheckbox value="#{kiwi.dashboard.preferenceAction.showMultiFactorRecommendation}" />				                
+				                
+				                <h:outputText value="Show Recommendations Grouped By Tag: " />
+				                <h:selectBooleanCheckbox value="#{kiwi.dashboard.preferenceAction.showTagGroupedRecommendation}" />				                
+				                
+				                <h:outputText value="Show Recommendations Sent By Contacts: " />
+				                <h:selectBooleanCheckbox value="#{kiwi.dashboard.preferenceAction.showContactRecommendation}" />
+				                
+				                <h:outputText value="Show Personal Recommendations: " />
+				                <h:selectBooleanCheckbox value="#{kiwi.dashboard.preferenceAction.showPersonalRecommendation}" />				                
+
+				                <h:outputText value="Show Social Capital Recommendations: " />
+				                <h:selectBooleanCheckbox value="#{kiwi.dashboard.preferenceAction.showSocialCapitalRecommendation}" />
+	                				                				                				                				                
+
+			               </h:panelGrid>
+			               <a:commandButton action="#{kiwi.dashboard.preferenceAction.saveUserPreference()}" value="Save Preference"/>
+			            </div>
+			           </td>
+		             </tr>
+		           </table>
+		        </rich:tab>
+		        <rich:tab label="Widgets">
+                   <table>
+                     <tr>
+                       <td>	           
+                        <div class="integrationLoginBox">
+			               <h3>Widgets Preferences</h3>
+			               <h:panelGrid columns="2">
+			                    <h:outputText value="Widgets per Page: "/>
+			                    <h:outputText value="Show Tag Clould: "/>
+			               </h:panelGrid>
+			               <a:commandButton action="#{kiwi.dashboard.preferenceAction.saveUserPreference()}" value="Save Preference"/>
+			            </div>
+			           </td>
+		             </tr>
+		           </table>
+		        </rich:tab>
+		        
+		        <rich:tab label="Browsing">
+                   <table>
+                     <tr>
+                       <td>	           
+                        <div class="integrationLoginBox">
+			               <h3>Browsing Preferences</h3>
+			               <h:panelGrid columns="2">
+			                    <h:outputText value="After login, redirect me to the last pages visited: "/>
+				                <h:selectBooleanCheckbox value="#{kiwi.dashboard.preferenceAction.redirectToLastPage}" />	
+			                    <h:outputText value="After login, show my last visted pages on the menu: "/>
+				                <h:selectBooleanCheckbox value="#{kiwi.dashboard.preferenceAction.showMyLastVisitedPages}" />
+				                <h:outputText value="Show tag cluster menu: " />
+				                <h:selectBooleanCheckbox value="#{kiwi.dashboard.preferenceAction.showTagClusterMenu}" />				                
+			               </h:panelGrid>
+			               <a:commandButton action="#{kiwi.dashboard.preferenceAction.saveUserPreference()}" value="Save Preference"/>
+			            </div>
+			           </td>
+		             </tr>
+		           </table>
+		        </rich:tab>		        
+		        
+		    </rich:tabPanel>
+
+       </h:form>
+ 
+    </ui:define>       
+                
+ </ui:composition>

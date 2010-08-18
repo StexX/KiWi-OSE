@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-artaround.jar/stylesheet/yaml/core
+END
+base.css
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-artaround.jar/stylesheet/yaml/core/base.css
+END
+print_base.css
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-artaround.jar/stylesheet/yaml/core/print_base.css
+END
+slim_base.css
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-artaround.jar/stylesheet/yaml/core/slim_base.css
+END
+slim_iehacks.css
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-artaround.jar/stylesheet/yaml/core/slim_iehacks.css
+END
+slim_print_base.css
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-artaround.jar/stylesheet/yaml/core/slim_print_base.css
+END
+iehacks.css
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-artaround.jar/stylesheet/yaml/core/iehacks.css
+END

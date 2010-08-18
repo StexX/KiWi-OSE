@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-ontologies.jar/umbel
+END
+umbel.n3
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-ontologies.jar/umbel/umbel.n3
+END
+umbel_subject_concepts.n3
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-ontologies.jar/umbel/umbel_subject_concepts.n3
+END
+umbel_abstract_concepts.n3
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-ontologies.jar/umbel/umbel_abstract_concepts.n3
+END
+umbel_external_ontologies_linkage.n3
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-ontologies.jar/umbel/umbel_external_ontologies_linkage.n3
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/rss
+END
+RSSServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/rss/RSSServiceLocal.class
+END
+RSSServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/rss/RSSServiceRemote.class
+END
+RSSService.class
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/rss/RSSService.class
+END

@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+
+<suite name="TagITServiceTests" verbose="2" parallel="false">
+<!-- disabled as Geocoder is not reliable in testing (they change data from time to time)
+    <test name="GeocoderTest" junit="false">
+        <classes>
+            <class name="tagit.test.service.TestGeocoder"/>
+        </classes>
+    </test>
+-->
+    <test name="ExplorerTest" junit="false">
+        <classes>
+            <class name="tagit.test.service.ExplorerTest"/>
+        </classes>
+    </test>
+</suite>

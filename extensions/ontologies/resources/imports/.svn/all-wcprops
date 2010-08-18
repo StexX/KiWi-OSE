@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/kiwi/!svn/ver/4381/KiWi/trunk/extensions/ontologies/resources/imports
+END
+sioc.owl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/extensions/ontologies/resources/imports/sioc.owl
+END
+calendar.owl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/3145/KiWi/trunk/extensions/ontologies/resources/imports/calendar.owl
+END
+foaf.owl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/extensions/ontologies/resources/imports/foaf.owl
+END
+skos-core.rdf
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/4381/KiWi/trunk/extensions/ontologies/resources/imports/skos-core.rdf
+END
+exif.rdf
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/extensions/ontologies/resources/imports/exif.rdf
+END
+contact.owl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/extensions/ontologies/resources/imports/contact.owl
+END
+geo.rdf
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/extensions/ontologies/resources/imports/geo.rdf
+END
+moat.owl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/extensions/ontologies/resources/imports/moat.owl
+END
+ical.rdf
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/3045/KiWi/trunk/extensions/ontologies/resources/imports/ical.rdf
+END
+dcelements.rdf
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/extensions/ontologies/resources/imports/dcelements.rdf
+END
+geonames_v2.0_lite.rdf
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/extensions/ontologies/resources/imports/geonames_v2.0_lite.rdf
+END
+hgtags.owl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/extensions/ontologies/resources/imports/hgtags.owl
+END

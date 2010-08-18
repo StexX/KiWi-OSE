@@ -1,0 +1,1319 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service
+END
+OntologyServiceTest.class
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/OntologyServiceTest.class
+END
+PerspectiveServiceTest$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/PerspectiveServiceTest$1.class
+END
+RatingServiceTest$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/RatingServiceTest$2.class
+END
+UpdateMetadataTest$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateMetadataTest$2.class
+END
+GeoCodingServiceTest$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/GeoCodingServiceTest$2.class
+END
+KiWiEntityManagerTest$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/KiWiEntityManagerTest$2.class
+END
+RevisionTest$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/RevisionTest$1.class
+END
+ContentItemServiceTest.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ContentItemServiceTest.class
+END
+TemplateServiceTest$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TemplateServiceTest$2.class
+END
+PerspectiveServiceTest$5.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/PerspectiveServiceTest$5.class
+END
+RatingServiceTest$6.class
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/RatingServiceTest$6.class
+END
+UpdateMetadataTest$6.class
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateMetadataTest$6.class
+END
+UpdateMediaContentTest$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateMediaContentTest$1.class
+END
+ConfigurationServiceTest$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ConfigurationServiceTest$1.class
+END
+GeoCodingServiceTest$6.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/GeoCodingServiceTest$6.class
+END
+RevisionTest$5.class
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/RevisionTest$5.class
+END
+ConfigurationServiceTest$5.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ConfigurationServiceTest$5.class
+END
+TripleStoreTest$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TripleStoreTest$1.class
+END
+RevisionTests.xml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/RevisionTests.xml
+END
+ConfigurationServiceTest$9.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ConfigurationServiceTest$9.class
+END
+OntologyServiceTest$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/OntologyServiceTest$2.class
+END
+TripleStoreTest$5.class
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TripleStoreTest$5.class
+END
+ContentItemServiceTest$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ContentItemServiceTest$1.class
+END
+TripleStoreTest$9.class
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TripleStoreTest$9.class
+END
+UpdateTaggingServiceTest$3.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTaggingServiceTest$3.class
+END
+ContentItemServiceTest$5.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ContentItemServiceTest$5.class
+END
+ActivityLoggingServiceTest$13.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ActivityLoggingServiceTest$13.class
+END
+UpdateTextContentTest$33.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$33.class
+END
+ContentItemServiceTest$9.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ContentItemServiceTest$9.class
+END
+TripleStoreTest$23.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TripleStoreTest$23.class
+END
+UpdateTextContentTest$12.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$12.class
+END
+ActivityLoggingServiceTest$17.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ActivityLoggingServiceTest$17.class
+END
+UpdateTextContentTest$37.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$37.class
+END
+TagRecommendationServiceTest.class
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TagRecommendationServiceTest.class
+END
+UpdateTextContentTest$16.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$16.class
+END
+FragmentServiceTest.class
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/FragmentServiceTest.class
+END
+RecommendationTest$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/RecommendationTest$2.class
+END
+UpdateMetadataTest$13.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateMetadataTest$13.class
+END
+PersonalizedSearchServiceTest$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/PersonalizedSearchServiceTest$2.class
+END
+TaggingServiceTest$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TaggingServiceTest$2.class
+END
+TagRecommendationServiceTest$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TagRecommendationServiceTest$2.class
+END
+UpdateTextContentTest$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$2.class
+END
+FragmentServiceTest$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/FragmentServiceTest$1.class
+END
+ActivityLoggingServiceTest$4.class
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ActivityLoggingServiceTest$4.class
+END
+PortalConfigServiceTest$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/PortalConfigServiceTest$2.class
+END
+UpdateTextContentTest$6.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$6.class
+END
+ContentItemServiceTest$10.class
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ContentItemServiceTest$10.class
+END
+FoafSslAuthenticationTest.class
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/FoafSslAuthenticationTest.class
+END
+ActivityLoggingServiceTest$8.class
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ActivityLoggingServiceTest$8.class
+END
+UpdateTextContentTest$40.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$40.class
+END
+TemplateServiceTest.class
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TemplateServiceTest.class
+END
+UpdateTextContentTest$44.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$44.class
+END
+UpdateTitleTest$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTitleTest$2.class
+END
+UpdateMediaContentTest.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateMediaContentTest.class
+END
+UpdateTextContentTest$23.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$23.class
+END
+TripleStoreTest$13.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TripleStoreTest$13.class
+END
+ConfigurationServiceTest$11.class
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ConfigurationServiceTest$11.class
+END
+UpdateTextContentTest$27.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$27.class
+END
+TripleStoreTest$17.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TripleStoreTest$17.class
+END
+PerspectiveServiceTest$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/PerspectiveServiceTest$2.class
+END
+RatingServiceTest$3.class
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/RatingServiceTest$3.class
+END
+UpdateMetadataTest$3.class
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateMetadataTest$3.class
+END
+GeoCodingServiceTest$3.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/GeoCodingServiceTest$3.class
+END
+KiWiEntityManagerTest$3.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/KiWiEntityManagerTest$3.class
+END
+RevisionTest$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/RevisionTest$2.class
+END
+TemplateServiceTest$3.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TemplateServiceTest$3.class
+END
+PerspectiveServiceTest$6.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/PerspectiveServiceTest$6.class
+END
+UpdateMetadataTest$7.class
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateMetadataTest$7.class
+END
+UpdateMediaContentTest$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateMediaContentTest$2.class
+END
+ConfigurationServiceTest$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ConfigurationServiceTest$2.class
+END
+RevisionTest$6.class
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/RevisionTest$6.class
+END
+ConfigurationServiceTest$6.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ConfigurationServiceTest$6.class
+END
+TripleStoreTest$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TripleStoreTest$2.class
+END
+OntologyServiceTest$3.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/OntologyServiceTest$3.class
+END
+TripleStoreTest$6.class
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TripleStoreTest$6.class
+END
+ContentItemServiceTest$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ContentItemServiceTest$2.class
+END
+UpdateTaggingServiceTest$4.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTaggingServiceTest$4.class
+END
+ActivityLoggingServiceTest$10.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ActivityLoggingServiceTest$10.class
+END
+UpdateTextContentTest$30.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$30.class
+END
+ContentItemServiceTest$6.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ContentItemServiceTest$6.class
+END
+TripleStoreTest$20.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TripleStoreTest$20.class
+END
+ActivityLoggingServiceTest$14.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ActivityLoggingServiceTest$14.class
+END
+UpdateTextContentTest$34.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$34.class
+END
+TripleStoreTest$24.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TripleStoreTest$24.class
+END
+UpdateTextContentTest$13.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$13.class
+END
+UpdateTextContentTest$38.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$38.class
+END
+UpdateTextContentTest$17.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$17.class
+END
+UpdateTextContentTest.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest.class
+END
+ActivityLoggingServiceTest.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ActivityLoggingServiceTest.class
+END
+PortalConfigServiceTest.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/PortalConfigServiceTest.class
+END
+UpdateMetadataTest$10.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateMetadataTest$10.class
+END
+RecommendationTest$3.class
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/RecommendationTest$3.class
+END
+PersonalizedSearchServiceTest$3.class
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/PersonalizedSearchServiceTest$3.class
+END
+UpdateTitleTest.class
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTitleTest.class
+END
+ActivityLoggingServiceTest$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ActivityLoggingServiceTest$1.class
+END
+UpdateTextContentTest$3.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$3.class
+END
+FragmentServiceTest$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/FragmentServiceTest$2.class
+END
+ActivityLoggingServiceTest$5.class
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ActivityLoggingServiceTest$5.class
+END
+UpdateTextContentTest$7.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$7.class
+END
+ContentItemServiceTest$11.class
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ContentItemServiceTest$11.class
+END
+CoreServiceTests.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/CoreServiceTests.xml
+END
+RatingServiceTest.class
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/RatingServiceTest.class
+END
+UpdateMetadataTest.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateMetadataTest.class
+END
+ActivityLoggingServiceTest$9.class
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ActivityLoggingServiceTest$9.class
+END
+FacadeTest.class
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/FacadeTest.class
+END
+UpdateTextContentTest$41.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$41.class
+END
+RevisionTest.class
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/RevisionTest.class
+END
+UpdateTextContentTest$20.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$20.class
+END
+TripleStoreTest$10.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TripleStoreTest$10.class
+END
+UpdateTitleTest$3.class
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTitleTest$3.class
+END
+ConfigurationServiceTest.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ConfigurationServiceTest.class
+END
+UpdateTextContentTest$24.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$24.class
+END
+TripleStoreTest$14.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TripleStoreTest$14.class
+END
+ConfigurationServiceTest$12.class
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ConfigurationServiceTest$12.class
+END
+TripleStoreTest.class
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TripleStoreTest.class
+END
+UpdateTextContentTest$28.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$28.class
+END
+TripleStoreTest$18.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TripleStoreTest$18.class
+END
+PerspectiveServiceTest$3.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/PerspectiveServiceTest$3.class
+END
+RatingServiceTest$4.class
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/RatingServiceTest$4.class
+END
+UpdateMetadataTest$4.class
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateMetadataTest$4.class
+END
+UpdateTaggingServiceTest.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTaggingServiceTest.class
+END
+GeoCodingServiceTest$4.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/GeoCodingServiceTest$4.class
+END
+KiWiEntityManagerTest$4.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/KiWiEntityManagerTest$4.class
+END
+RevisionTest$3.class
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/RevisionTest$3.class
+END
+UpdateMetadataTest$8.class
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateMetadataTest$8.class
+END
+UpdateMediaContentTest$3.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateMediaContentTest$3.class
+END
+ConfigurationServiceTest$3.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ConfigurationServiceTest$3.class
+END
+RevisionTest$7.class
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/RevisionTest$7.class
+END
+ConfigurationServiceTest$7.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ConfigurationServiceTest$7.class
+END
+TripleStoreTest$3.class
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TripleStoreTest$3.class
+END
+TripleStoreTest$7.class
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TripleStoreTest$7.class
+END
+UpdateTaggingServiceTest$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTaggingServiceTest$1.class
+END
+ContentItemServiceTest$3.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ContentItemServiceTest$3.class
+END
+UpdateTaggingServiceTest$5.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTaggingServiceTest$5.class
+END
+ActivityLoggingServiceTest$11.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ActivityLoggingServiceTest$11.class
+END
+UpdateTextContentTest$31.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$31.class
+END
+ContentItemServiceTest$7.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ContentItemServiceTest$7.class
+END
+FacadeTest$FacadeTest2.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/FacadeTest$FacadeTest2.class
+END
+TripleStoreTest$21.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TripleStoreTest$21.class
+END
+UpdateTextContentTest$10.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$10.class
+END
+ActivityLoggingServiceTest$15.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ActivityLoggingServiceTest$15.class
+END
+UpdateTextContentTest$35.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$35.class
+END
+TaggingServiceTest.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TaggingServiceTest.class
+END
+TripleStoreTest$25.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TripleStoreTest$25.class
+END
+UpdateTextContentTest$14.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$14.class
+END
+UpdateTextContentTest$39.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$39.class
+END
+UpdateTextContentTest$18.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$18.class
+END
+UpdateMetadataTest$11.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateMetadataTest$11.class
+END
+PersonalizedSearchServiceTest$4.class
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/PersonalizedSearchServiceTest$4.class
+END
+ActivityLoggingServiceTest$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ActivityLoggingServiceTest$2.class
+END
+UpdateTextContentTest$4.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$4.class
+END
+FragmentServiceTest$3.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/FragmentServiceTest$3.class
+END
+ActivityLoggingServiceTest$6.class
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ActivityLoggingServiceTest$6.class
+END
+UpdateTextContentTest$8.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$8.class
+END
+UpdateTextContentTest$42.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$42.class
+END
+UpdateTextContentTest$21.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$21.class
+END
+TripleStoreTest$11.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TripleStoreTest$11.class
+END
+UpdateTitleTest$4.class
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTitleTest$4.class
+END
+UpdateTextContentTest$25.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$25.class
+END
+TripleStoreTest$15.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TripleStoreTest$15.class
+END
+UpdateTextContentTest$29.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$29.class
+END
+RatingServiceTest$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/RatingServiceTest$1.class
+END
+TripleStoreTest$19.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TripleStoreTest$19.class
+END
+UpdateMetadataTest$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateMetadataTest$1.class
+END
+GeoCodingServiceTest$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/GeoCodingServiceTest$1.class
+END
+KiWiEntityManagerTest$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/KiWiEntityManagerTest$1.class
+END
+TemplateServiceTest$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TemplateServiceTest$1.class
+END
+PerspectiveServiceTest$4.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/PerspectiveServiceTest$4.class
+END
+RatingServiceTest$5.class
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/RatingServiceTest$5.class
+END
+UpdateMetadataTest$5.class
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateMetadataTest$5.class
+END
+GeoCodingServiceTest$5.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/GeoCodingServiceTest$5.class
+END
+RevisionTest$4.class
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/RevisionTest$4.class
+END
+UpdateMetadataTest$9.class
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateMetadataTest$9.class
+END
+UpdateMediaContentTest$4.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateMediaContentTest$4.class
+END
+ConfigurationServiceTest$4.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ConfigurationServiceTest$4.class
+END
+ConfigurationServiceTest$8.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ConfigurationServiceTest$8.class
+END
+OntologyServiceTest$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/OntologyServiceTest$1.class
+END
+TripleStoreTest$4.class
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TripleStoreTest$4.class
+END
+TripleStoreTest$8.class
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TripleStoreTest$8.class
+END
+UpdateTaggingServiceTest$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTaggingServiceTest$2.class
+END
+ContentItemServiceTest$4.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ContentItemServiceTest$4.class
+END
+RecommendationTest.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/RecommendationTest.class
+END
+ActivityLoggingServiceTest$12.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ActivityLoggingServiceTest$12.class
+END
+UpdateTextContentTest$32.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$32.class
+END
+ContentItemServiceTest$8.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ContentItemServiceTest$8.class
+END
+PersonalizedSearchServiceTest.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/PersonalizedSearchServiceTest.class
+END
+TripleStoreTest$22.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TripleStoreTest$22.class
+END
+UpdateTextContentTest$11.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$11.class
+END
+ActivityLoggingServiceTest$16.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ActivityLoggingServiceTest$16.class
+END
+UpdateTextContentTest$36.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$36.class
+END
+TripleStoreTest$26.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TripleStoreTest$26.class
+END
+UpdateTextContentTest$15.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$15.class
+END
+UpdateTextContentTest$19.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$19.class
+END
+RecommendationTest$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/RecommendationTest$1.class
+END
+FacadeTest$FacadeTest2$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/FacadeTest$FacadeTest2$1.class
+END
+UpdateMetadataTest$12.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateMetadataTest$12.class
+END
+UpdateTextContentTest$UpdateTextContentSupport.class
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$UpdateTextContentSupport.class
+END
+PersonalizedSearchServiceTest$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/PersonalizedSearchServiceTest$1.class
+END
+TaggingServiceTest$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TaggingServiceTest$1.class
+END
+PersonalizedSearchServiceTest$5.class
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/PersonalizedSearchServiceTest$5.class
+END
+TagRecommendationServiceTest$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TagRecommendationServiceTest$1.class
+END
+UpdateTextContentTest$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$1.class
+END
+ActivityLoggingServiceTest$3.class
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ActivityLoggingServiceTest$3.class
+END
+PortalConfigServiceTest$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/PortalConfigServiceTest$1.class
+END
+UpdateTextContentTest$5.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$5.class
+END
+ActivityLoggingServiceTest$7.class
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ActivityLoggingServiceTest$7.class
+END
+UpdateTextContentTest$9.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$9.class
+END
+PerspectiveServiceTest.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/PerspectiveServiceTest.class
+END
+GeoCodingServiceTest.class
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/GeoCodingServiceTest.class
+END
+KiWiEntityManagerTest.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/KiWiEntityManagerTest.class
+END
+UpdateTextContentTest$43.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$43.class
+END
+UpdateTitleTest$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTitleTest$1.class
+END
+UpdateTextContentTest$22.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$22.class
+END
+TripleStoreTest$12.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TripleStoreTest$12.class
+END
+ConfigurationServiceTest$10.class
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/ConfigurationServiceTest$10.class
+END
+UpdateTitleTest$5.class
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTitleTest$5.class
+END
+UpdateTextContentTest$26.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/UpdateTextContentTest$26.class
+END
+TripleStoreTest$16.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/TripleStoreTest$16.class
+END
+FoafSslAuthenticationTest$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/test/service/FoafSslAuthenticationTest$1.class
+END

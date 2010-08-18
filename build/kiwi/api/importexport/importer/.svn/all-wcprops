@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/importexport/importer
+END
+RDFImporter.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/importexport/importer/RDFImporter.class
+END
+ImporterRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/importexport/importer/ImporterRemote.class
+END
+ImporterLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/importexport/importer/ImporterLocal.class
+END
+RDFImporterRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/importexport/importer/RDFImporterRemote.class
+END
+Importer.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/importexport/importer/Importer.class
+END
+RDFImporterLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/importexport/importer/RDFImporterLocal.class
+END

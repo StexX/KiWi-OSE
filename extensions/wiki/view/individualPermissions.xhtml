@@ -1,0 +1,158 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+		    	xmlns:rich="http://richfaces.org/rich"
+		    	xmlns:a4j="http://richfaces.org/a4j"
+	            xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+		    	template="layout/template.xhtml">
+
+<ui:define name="content">
+	<h:form>
+        <h1>#{messages['permission.indiviual']}</h1>
+    
+    <br />
+    <h:selectBooleanCheckbox value="#{grantPermissionAction.globalRead}" />
+    <h:outputText value="Allow users with global read permissions to read this content"/>
+    <br />
+    <h:selectBooleanCheckbox value="#{grantPermissionAction.globalWrite}" />
+    <h:outputText value="Allow users with global write permissions to edit this content"/>
+    <br />
+    <!-- Add User link -->
+	<f:subview xmlns="http://www.w3.org/1999/xhtml"
+	      xmlns:ui="http://java.sun.com/jsf/facelets"
+	      xmlns:h="http://java.sun.com/jsf/html"
+	      xmlns:f="http://java.susn.com/jsf/core"
+	      xmlns:a4j="http://richfaces.org/a4j"
+	      xmlns:rich="http://richfaces.org/rich"> 
+	    <rich:modalPanel id="panel" width="250" height="60">
+	        <f:facet name="header">
+	            <h:panelGroup>
+	                <h:outputText value="Add User"></h:outputText>
+	            </h:panelGroup>
+	        </f:facet>
+	        <f:facet name="controls">
+	            <h:panelGroup>
+	            	<h:outputText value="Close" id="hidelink" />
+<!-- 	                <h:graphicImage value="close.png" styleClass="hidelink" id="hidelink"/> -->
+	                <rich:componentControl for="panel" attachTo="hidelink" operation="hide" event="onclick"/>
+	                <rich:componentControl for="panel" attachTo="addUserButton" operation="hide" event="onclick"/>
+	            </h:panelGroup>
+	        </f:facet>
+	        <h:selectOneMenu value="#{grantPermissionAction.selectedUser}">
+	        	<s:selectItems value="#{grantPermissionAction.allUsers}" var="user" 
+	        	label="#{user.firstName} #{user.lastName} (#{user.login})" noSelectionLabel="Please select ...">
+	        	</s:selectItems>
+	        	<s:convertEntity />
+	        </h:selectOneMenu>
+	        <rich:spacer />
+	        <h:commandButton id="addUserButton" value="Add" action="#{grantPermissionAction.addToUsersWithPermissions()}"/>
+	    </rich:modalPanel>
+	    <h:outputLink value="#" id="link" style="padding: 5px">
+	        Add User
+	        <rich:componentControl for="panel" attachTo="link" operation="show" event="onclick"/>
+	    </h:outputLink>
+	</f:subview>
+	
+    <rich:dataTable 
+			cellpadding="0" cellspacing="0" 
+			border="0" var="user" value="#{grantPermissionAction.usersWithPermissions}">
+ 
+		<f:facet name="header">
+			<rich:columnGroup>
+				<rich:column width="300">
+					<rich:spacer />
+				</rich:column>
+				<rich:column width="150">
+					<h:outputText value="read" />
+				</rich:column>
+				<rich:column width="150">
+					<h:outputText value="write" />
+				</rich:column>
+				<rich:column width="150">
+					<h:outputText value="edit permissions" />
+				</rich:column>
+				<rich:column width="150">
+					<h:outputText value="annotate content" />
+				</rich:column>
+				<rich:column width="150">
+					<h:outputText value="tag content" />
+				</rich:column>
+				<rich:column width="150">
+					<h:outputText value="comment" />
+				</rich:column>
+				<rich:column width="150">
+					<h:outputText value="delete" />
+				</rich:column>
+			</rich:columnGroup>
+		</f:facet>
+		
+		<rich:column>
+			<h:outputText value="#{user.displayname}" />
+		</rich:column>
+		<rich:column style="text-align:center">
+			<h:selectBooleanCheckbox value="#{user.read}" />
+		</rich:column>
+		<rich:column style="text-align:center">
+			<h:selectBooleanCheckbox value="#{user.write}" />
+		</rich:column>
+        <rich:column style="text-align:center">
+			<h:selectBooleanCheckbox value="#{user.editPermissions}" />
+		</rich:column>
+		<rich:column style="text-align:center">
+			<h:selectBooleanCheckbox value="#{user.annotate}" />
+		</rich:column>
+		<rich:column style="text-align:center">
+			<h:selectBooleanCheckbox value="#{user.tag}" />
+		</rich:column>
+		<rich:column style="text-align:center">
+			<h:selectBooleanCheckbox value="#{user.comment}" />
+		</rich:column>
+		<rich:column style="text-align:center">
+			<h:selectBooleanCheckbox value="#{user.delete}" />
+		</rich:column>
+	</rich:dataTable>
+	
+	<!-- Add group -->
+<!--	<f:subview xmlns="http://www.w3.org/1999/xhtml"-->
+<!--	      xmlns:ui="http://java.sun.com/jsf/facelets"-->
+<!--	      xmlns:h="http://java.sun.com/jsf/html"-->
+<!--	      xmlns:f="http://java.sun.com/jsf/core"-->
+<!--	      xmlns:a4j="http://richfaces.org/a4j"-->
+<!--	      xmlns:rich="http://richfaces.org/rich"> -->
+<!--	    <rich:modalPanel id="panel" width="200" height="60">-->
+<!--	        <f:facet name="header">-->
+<!--	            <h:panelGroup>-->
+<!--	                <h:outputText value="Add User"></h:outputText>-->
+<!--	            </h:panelGroup>-->
+<!--	        </f:facet>-->
+<!--	        <f:facet name="controls">-->
+<!--	            <h:panelGroup>-->
+<!--	            	<h:outputText value="Close" id="hidelink" />-->
+<!-- 	                <h:graphicImage value="close.png" styleClass="hidelink" id="hidelink"/> -->
+<!--	                <rich:componentControl for="panel" attachTo="hidelink" operation="hide" event="onclick"/>-->
+<!--	            </h:panelGroup>-->
+<!--	        </f:facet>-->
+<!--	        <h:selectOneMenu>-->
+<!--	        	<s:selectItems value="#{grantPermissionAction.allGroups}" var="group" -->
+<!--	        		label="#{group.name}" noSelectionLabel="Please select ...">-->
+<!--	        	</s:selectItems>-->
+<!--	        </h:selectOneMenu>-->
+<!--	        <rich:spacer />-->
+<!--	        <h:commandButton value="Add" />-->
+<!--	    </rich:modalPanel>-->
+<!--	    <h:outputLink value="#" id="link" style="padding: 5px">-->
+<!--	        Add Group-->
+<!--	        <rich:componentControl for="panel" attachTo="link" operation="show" event="onclick"/>-->
+<!--	    </h:outputLink>-->
+<!--	</f:subview>-->
+	<h:commandButton value="Save Changes" action="#{grantPermissionAction.store()}" style="padding: 5px">
+	</h:commandButton>
+	
+	</h:form>	
+</ui:define>
+</ui:composition>
+

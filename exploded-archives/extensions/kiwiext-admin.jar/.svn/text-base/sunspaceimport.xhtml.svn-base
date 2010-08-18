@@ -1,0 +1,108 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a4j="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+                xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                template="layout/template.xhtml">
+
+ 
+ 
+    <ui:define name="body">
+    	<h1>Import Sun Space information</h1>
+    	
+    	<a4j:outputPanel id="msg">
+            <h:outputText value="#{importMonitor.message}">
+                <f:convertDateTime type="time"/>
+            </h:outputText>
+        </a4j:outputPanel>
+
+		<h:form id="importPanel">
+		
+		    <h:panelGrid columns="2">
+		        <h:outputText value="Import Directory : " />
+		        <h:inputText value="#{importSunSpaceDataAction.importDir}"
+		                     required="true"
+		                     disable="true"/>
+		                     
+                <h:outputText value="Activities Limit Count : " />
+                <h:inputText value="#{importSunSpaceDataAction.logsLimit}"/>
+                
+                <h:outputText value="Import All Activities : " />
+                <h:selectBooleanCheckbox value="#{importSunSpaceDataAction.allLogs}" />
+    
+                <h:outputText value="Tag Limit Count : " />
+                <h:inputText value="#{importSunSpaceDataAction.tagsLimit}"/>
+
+                <h:outputText value="Import All tags : " />
+                <h:selectBooleanCheckbox value="#{importSunSpaceDataAction.allTags}" />
+
+                <h:outputText value="Comunities Limit Count : " />
+                <h:inputText value="#{importSunSpaceDataAction.spacesLimit}"/>
+                
+                <h:outputText value="Import All Sun Comunities : " />
+                <h:selectBooleanCheckbox value="#{importSunSpaceDataAction.allSpaces}" />
+
+
+                <h:commandButton action="#{importSunSpaceDataAction.importFiles()}" 
+                                 value="Start Import" 
+                                 disabled="#{importSunSpaceDataAction.importRuns}"/>
+		    </h:panelGrid>
+		</h:form>
+		
+         <a4j:region>
+            <a4j:push reRender="msg" eventProducer="#{importMonitor.addListener}" interval="2000"/>
+        </a4j:region>
+
+        <br/><rich:separator lineType="beveled" height="8" width="75%" align="center"/><br/>
+        <s:div styleClass="dialog">
+
+            <p>
+                This page is used to import sun space related information in to the KiWi system.
+                The import operation is a time and resource consuming task so please use it carefully.
+            </p>
+        
+            <p>
+                The import requires the following files :
+            </p>
+            <ul>
+                <li>LOG.xml</li>
+                <li>INFORMATION.xml</li>
+                <li>INFO_KEYWORDS.xml</li>
+                <li>KEYWORD.xml</li>
+                <li>PERSON.xml</li>
+                <li>SPACE.xml</li>
+                <li>SPACE_INFORMATION.xml</li>
+                <li>SPACE_KEYWORD.xml</li>
+                <li>SPACE_PERSON.xml</li>
+            </ul>
+            <p>
+                All files are required.
+                All the files must be placed in the directory specified in the "Import Directory" field.
+            </p>
+            <p>
+                Because the import can take a while the user is able to limit the
+                imported items count. The Limit count can be done for :
+            </p>
+            <ul>
+	                <li>Sun Space Logs - a log represents an activity doned by a sun space user on a certain information</li>
+	                <li>Sun Space Tags - a tag represents relation between an user a keyword and an information (the user tag an information with a keyword)</li>
+	                <li>Sun Space Communities - a community represents a group of sun space users involved in a common theme</li>
+            </ul>
+            <p>
+                If you select one of the "Import All ..." checkbox then the associated limit value (specified with the text field) is ignored.
+                You can provide a limit for all (Tag, Comunities and Activities) or individual.
+            </p>
+            <p>
+                Plase note that there is not 1 to 1 coresponce between the sun space concepts and the kiwi one. 
+            </p>
+        </s:div>
+
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,142 @@
+<!--
+	Copyright © Rolf Sint, Michael Schneider, Christian Osterrieder, 2010
+ */
+ -->
+
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+			 	xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                template="../../layout/template-2col.xhtml"
+                xmlns:a4j="http://richfaces.org/a4j">
+                	
+	<ui:define name="breadcrumps">
+		<ul>
+			<li class="first">				 			
+				<s:link view="/artaround/home.seam" 
+					value="#{messages['artaround.breadcrumps.home']}"/>
+			</li>
+			<li>				 			
+				<s:link view="/artaround/pages/profil/meinProfil.seam" 
+					value="#{messages['artaround.breadcrumps.myPage']}"/>
+			</li>	
+			<li>				 			
+				<s:link view="/artaround/pages/profil/neuesKunstwerk.seam" 
+					value="neues Kunstwerk"/>
+			</li>	
+			<li>				 			
+				<s:link view="/artaround/pages/artworks/uploadMedia.seam" 
+					value="#{messages['artaround.breadcrumps.uploadMedia']}"/>
+			</li>				
+		</ul>
+	</ui:define>	
+	
+	<ui:define name="navigation">
+	
+	<style>
+	
+		h3 {
+			font-size:16px;
+			color:#456;
+			font-weight:normal;
+			text-align: left;
+		}
+		
+		h4 {
+			font-size:14px;
+			color:#456;
+			font-weight:bold;
+			text-align: left;
+		}    
+		
+		#cover {
+				margin-left:15px;
+				margin-top:15px;
+		}
+		
+		#mask {
+			background:#ccc url(#{facesContext.externalContext.requestContextPath}/view/img/mask_gradient_1000.png) no-repeat;
+			background-position:-260px -79px;
+		}
+	
+		form.expose {
+			border:1px outset #aaa;
+			background:#fff url(#{facesContext.externalContext.requestContextPath}/view/img/h150.png) repeat-x;
+			padding:10px;
+			margin:5px 0;
+			text-align:center;
+			width:270px;
+			-moz-border-radius:4px;
+		}
+	
+	
+	</style>
+	 
+	</ui:define>	
+					
+	
+	<ui:define name="body">
+	
+	<div id="cover">	
+		
+	<div class="subcolumns">	
+	  <div class="c50l">
+    	<div class="subcl"> 
+    		<fieldset class="fieldsetborder">
+				<legend>#{messages['artaround.information']}</legend>
+				  <div style="background:#fff url(#{facesContext.externalContext.requestContextPath}/view/img/h180.png) repeat-x;
+							padding:10px; width:360px; -moz-border-radius:4px;">
+					<p style="margin-bottom:10px;">
+					#{messages['artaround.artworks.artworkCreation.step2Legend']}
+					</p>
+					<img src="#{facesContext.externalContext.requestContextPath}/view/img/li.gif"/>&#160;
+					<h4>#{messages['artaround.artworks.artworkCreation.step2']} ...</h4>
+				 </div>
+			</fieldset>
+		</div>	
+	  </div>
+	  <div class="c50r">
+	    <div class="subcr">	    
+	      <fieldset class="fieldsetborder">
+			<legend>#{messages['artaround.artworks.mediaUpload']}</legend>			
+			<h:form>  			 	
+					<rich:fileUpload 
+						fileUploadListener="#{artWorkMediaAction.listener}"
+						immediateUpload="false"
+						maxFilesQuantity="#{artWorkMediaAction.uploadsAvailable}"
+						listHeight="200pt"
+						listWidth="auto"
+				        allowFlash="true"
+				        acceptedTypes="jpg, gif, png" 
+						addControlLabel="#{messages['artaround.addFile']}..." 
+						clearAllControlLabel="#{messages['artaround.clearAll']}" 
+						clearControlLabel="#{messages['artaround.clear']}"
+                        stopEntryControlLabel="#{messages['artaround.stopProcess']}" 
+						uploadControlLabel="#{messages['artaround.upload']}...">
+				        	
+			        <a4j:support event="onuploadcomplete" reRender="media_content" />
+		            <f:facet name="label">
+		                <h:outputText value="#{messages['artaround.upload.state']}" />
+		        	</f:facet>					
+		   		</rich:fileUpload>
+				<br/>
+            	<h:commandButton action="#{artWorkMediaAction.storeArtWork()}" 
+					value="Weiter" style="margin-top:5px;"/>
+				
+			 </h:form>	
+			</fieldset>
+		  </div>
+		</div>
+	</div>
+	</div>		 
+  </ui:define>         
+	
+</ui:composition>

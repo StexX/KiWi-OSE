@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/kiwi/!svn/ver/5285/KiWi/trunk/config/eclipse
+END
+kiwiJavaTemplates.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/config/eclipse/kiwiJavaTemplates.xml
+END
+readMe.txt
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/config/eclipse/readMe.txt
+END
+kiwiCheckStyle.xml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/config/eclipse/kiwiCheckStyle.xml
+END
+eclipse.updatesidetes.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/config/eclipse/eclipse.updatesidetes.xml
+END
+kiwiCheckStyle.new.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/config/eclipse/kiwiCheckStyle.new.xml
+END
+kiwiCodeTemplates.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/kiwi/!svn/ver/5285/KiWi/trunk/config/eclipse/kiwiCodeTemplates.xml
+END
+kiwiCodeFormatStyle.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/config/eclipse/kiwiCodeFormatStyle.xml
+END
+kiwi.importorder
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/config/eclipse/kiwi.importorder
+END
+kiwiCleanUp.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/config/eclipse/kiwiCleanUp.xml
+END

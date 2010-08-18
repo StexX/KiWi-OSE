@@ -1,0 +1,45 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+		    	xmlns:rich="http://richfaces.org/rich"
+		    	xmlns:a="http://richfaces.org/a4j"
+	            xmlns:kiwi="http://www.kiwi-project.eu/jsf">
+	            
+         <s:span id="testSocialCapitalRecomlist" rendered="#{currentUser.userPreference != null and currentUser.userPreference.showSocialCapitalRecommendation}">
+ 			<h2>Social Capital Recommendations</h2>
+			<s:span id="socialCapitalRec" rendered="#{recommendationActionScope.socialCapitalizedRecommendations.size() &gt; 0}">		            
+				<div><ul>
+					<h:dataTable id="srcCapitalTable" columns="1" var="recommendation" value="#{recommendationActionScope.socialCapitalizedRecommendations}" footerClass="footerClass">
+						<h:column>
+			                        <li>
+				                        <s:link view="/home.xhtml" value="#{recommendation.recommendedItem.title}" propagation="none">
+				                            <f:param name="title" value="#{recommendation.recommendedItem.title}"/>
+				                            <f:param name="uri"/>
+				                            <f:param name="id" />
+											<f:param name="kiwiid" value="#{recommendation.recommendedItem.resource.kiwiIdentifier}"/>                            
+				                        </s:link>
+				                        <br/>
+				                        <h:outputText value="#{recommendation.recommendedItem.author.firstName} "/>
+				                        <h:outputText value="#{recommendation.recommendedItem.author.lastName}"/>
+				                        <br/>
+										<h:outputText value="Skill "/>
+				                        <h:outputText value="#{recommendation.topic} "/>
+				                        <br/>	
+				                        <h:outputText value="Social Capital "/>
+				                        <h:outputText value="#{recommendation.earnedSocialCapitalValue} "/>
+			                        </li>
+							</h:column>
+						</h:dataTable>	
+						</ul>
+					</div>
+				</s:span>		            
+	            <s:span id="noSocialCapitalRec" rendered="#{recommendationActionScope.socialCapitalizedRecommendations.size() &lt;= 0}">
+	                        <h:outputText value="No social capitalized recommendations"/>
+	            </s:span>  
+	        </s:span>
+	            
+</ui:composition>

@@ -1,0 +1,73 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a4j="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+                xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                template="layout/template.xhtml">
+
+ 
+ 
+    <ui:define name="body">
+    	<h1>Configure CEQ</h1>
+
+        <h:form>
+                <h3>Units (must between 0 and 100)</h3>
+	            <h:panelGrid columns="2">
+	            	<h:outputText value="Add Tag:" />
+					<h:inputText value="#{kiwi.admin.ceqConfigurationAction.addTag}" required="true">
+           				<f:validateDoubleRange minimum="0" maximum="100"/>
+         			</h:inputText>
+					
+					<h:outputText value="Remove Tag:" />
+					<h:inputText value="#{kiwi.admin.ceqConfigurationAction.removeTag}" required="true">
+           				<f:validateDoubleRange minimum="0" maximum="100"/>
+         			</h:inputText>
+					
+					<h:outputText value="Add Content:" />
+					<h:inputText value="#{kiwi.admin.ceqConfigurationAction.addContent}" required="true">
+           				<f:validateDoubleRange minimum="0" maximum="100"/>
+         			</h:inputText>
+					
+					<h:outputText value="Remove Content:" />
+					<h:inputText value="#{kiwi.admin.ceqConfigurationAction.removeContent}" required="true">
+           				<f:validateDoubleRange minimum="0" maximum="100"/>
+         			</h:inputText>
+					
+					<h:outputText value="Edit Content:" />
+					<h:inputText value="#{kiwi.admin.ceqConfigurationAction.editContent}" required="true">
+           				<f:validateDoubleRange minimum="0" maximum="100"/>
+         			</h:inputText>
+         			
+					<h:outputText value="Edit Content:" />
+					<h:inputText value="#{kiwi.admin.ceqConfigurationAction.editContent}" required="true">
+           				<f:validateDoubleRange minimum="0" maximum="100"/>
+         			</h:inputText>
+					
+					<h:outputText value="Share Content:" />
+					<h:inputText value="#{kiwi.admin.ceqConfigurationAction.shareContent}" required="true">
+           				<f:validateDoubleRange minimum="0" maximum="100"/>
+         			</h:inputText>
+					
+					<h:outputText value="Visit Content:" />
+					<h:inputText value="#{kiwi.admin.ceqConfigurationAction.visitContent}" required="true">
+           				<f:validateDoubleRange minimum="0" maximum="100"/>
+         			</h:inputText>
+					
+					<h:outputText value="Annotate Content:" />
+					<h:inputText value="#{kiwi.admin.ceqConfigurationAction.annotateContent}" required="true">
+           				<f:validateDoubleRange minimum="0" maximum="100"/>
+         			</h:inputText>
+	            </h:panelGrid>
+				<h:commandButton action="#{kiwi.admin.ceqConfigurationAction.cancel()}" value="Cancel" />
+                <h:commandButton action="#{storedProcedureLoader.processStoredProcedures()}" value="Reload Stored Procedures" />
+		</h:form>
+		
+	</ui:define>
+</ui:composition>

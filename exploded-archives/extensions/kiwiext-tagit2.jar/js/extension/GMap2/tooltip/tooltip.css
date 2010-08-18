@@ -1,0 +1,19 @@
+#sn_gmapTooltip_front{
+	color: white;
+	z-index:101;
+}
+
+#sn_gmapTooltip_back{
+	color: black;
+	padding-left:2px;
+	padding-top:2px;
+	z-index:100;
+}
+
+.sn_gmapTooltip {
+	display:none;
+	position:absolute;
+	font-size:1.2em;
+	font-weight: bold;
+	margin-top:-20px;
+}

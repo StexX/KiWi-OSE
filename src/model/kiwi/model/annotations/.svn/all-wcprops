@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/kiwi/!svn/ver/5166/KiWi/trunk/src/model/kiwi/model/annotations
+END
+RDFType.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/model/kiwi/model/annotations/RDFType.java
+END
+RDFFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/model/kiwi/model/annotations/RDFFilter.java
+END
+RDFInverse.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5166/KiWi/trunk/src/model/kiwi/model/annotations/RDFInverse.java
+END
+KiWiFacade.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/model/kiwi/model/annotations/KiWiFacade.java
+END
+RDF.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/kiwi/!svn/ver/5166/KiWi/trunk/src/model/kiwi/model/annotations/RDF.java
+END

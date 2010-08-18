@@ -1,0 +1,388 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html  debug="true">
+    <head>
+        <script type="text/javascript" src="../common/js/jquery.js"></script>
+        <script type="text/javascript" src="../common/js/jquery.template.js"></script>
+        <script type="text/javascript" src="../common/js/jquery.overlay-min.js"></script>
+
+
+
+        <link rel="stylesheet" href="./css/tags_editor.css">
+        <link rel="stylesheet" href="./css/suggester.css">
+    </head>
+
+    <body>
+
+
+        <div>
+            <span id="one">one</span>
+            &nbsp;&nbsp;
+            <span id="two">two</span>
+            &nbsp;&nbsp;
+            <span id="three">three</span>
+            &nbsp;&nbsp;
+        </div>
+
+        <script type="text/javascript" src="./js/jquery.suggester.js"></script>
+        <script type="text/javascript">
+            jQuery.noConflict();
+            jQuery(document).ready(function($){
+                // Create new instance of the suggester component
+                var suggester = new jQuery.Suggester();
+                suggester.show({below:$("#two")});
+
+                // Provide custom implementation of data-related methods
+                suggester.loadSuggestions = function(txt) {
+                    // Normally, we would do AJAX here,
+                    // for now, just load with test data
+				
+                    //var suggestions = ["foo", "bar", "product:jav"];
+                    var suggestions = [
+                        {
+                            "uri":"http://kiwi/tags/1",
+                            "label":"DEV",
+                            "controlled":1,
+                            "parent": "http://kiwi/tags/2",
+                            "hasChildren": true,
+							"prefix":"community"
+                        },
+                        {
+                            "uri":"http://kiwi/tags/2",
+                            "label":"web2.0",
+                            "controlled":0
+                        },
+                        {
+                            "uri":"http://kiwi/tags/3",
+                            "label":"DEV",
+                            "controlled":1,
+                            "parent": "http://kiwi/tags/5",
+                            "hasChildren": false,
+							"prefix":"region"
+                        },
+						{
+							"uri": "http://example.oracle.com/usa",
+							"usage":15,
+							"label": "USA",
+							"tq":-72,
+							"controlled":1,
+							"prefix":"region"
+						},
+						{
+							"uri": "http://example.oracle.com/europe",
+							"usage":11,
+							"label": "Europe",
+							"tq":-75,
+							"controlled":1,
+							"prefix":"region"
+						},
+						{
+							"id": "tag_d4882835-280a-429e-9bb7-0bc011ac1ffe",
+							"score": 5.031974792480469,
+							"label": "page",
+							"uri": "http://www.iptc.org/NAR/NewsML#_100000129"
+						},
+                        {
+                            "uri":"http://kiwi/tags/4",
+                            "label":"DEV",
+                            "controlled":1,
+                            "parent": "http://kiwi/tags/6",
+                            "hasChildren": true,
+							"prefix":"region"
+                        },
+                        {
+                            "uri":"http://kiwi/tags/5",
+                            "label":"DEV",
+                            "controlled":1,
+                            "parent": "http://kiwi/tags/8",
+                            "hasChildren": true,
+							"prefix":"community"
+                        },
+                        {
+                            "uri":"http://kiwi/tags/6",
+                            "label":"DEV",
+                            "controlled":1,
+                            "parent": "http://kiwi/tags/10",
+                            "hasChildren": true,
+							"prefix":"community"
+                        },
+                        {
+                            "uri":"http://kiwi/tags/7",
+                            "label":"DEV",
+                            "controlled":1,
+                            "parent": "http://kiwi/tags/0123",
+                            "hasChildren": true,
+							"prefix":"community"
+                        },
+                        {
+                            "uri":"http://kiwi/tags/8",
+                            "label":"DEV",
+                            "controlled":1,
+                            "parent": "http://kiwi/tags/0123",
+                            "hasChildren": true,
+							"prefix":"region"
+                        },
+                        {
+                            "uri":"http://kiwi/tags/9",
+                            "label":"DEV",
+                            "controlled":0
+                        },
+                        {
+                            "uri":"http://kiwi/tags/10",
+                            "label":"DEV",
+                            "controlled":1,
+                            "parent": "http://kiwi/tags/0123",
+                            "hasChildren": true,
+							"prefix":"region"
+                        },
+                        {
+                            "uri":"http://kiwi/tags/11",
+                            "label":"DEV",
+                            "controlled":1,
+                            "parent": "http://kiwi/tags/0123",
+                            "hasChildren": true,
+							"prefix":"community"
+                        },
+                        {
+                            "uri":"http://kiwi/tags/12",
+                            "label":"DEV",
+                            "controlled":0
+                        },
+                        {
+                            "uri":"http://kiwi/tags/13",
+                            "label":"DEV",
+                            "controlled":1,
+                            "parent": "http://kiwi/tags/0123",
+                            "hasChildren": true,
+							"prefix":"region"
+                        },
+                        {
+                            "uri":"http://kiwi/tags/14",
+                            "label":"DEV",
+                            "controlled":1,
+                            "parent": "http://kiwi/tags/0123",
+                            "hasChildren": true,
+							"prefix":"community"
+                        },
+                        {
+                            "uri":"http://kiwi/tags/15",
+                            "label":"DEV",
+                            "controlled":1,
+                            "parent": "http://kiwi/tags/0123",
+                            "hasChildren": true,
+							"prefix":"community"
+                        },
+                        {
+                            "uri":"http://kiwi/tags/16",
+                            "label":"DEV",
+                            "controlled":1,
+                            "parent": "http://kiwi/tags/0123",
+                            "hasChildren": true,
+							"prefix":"region"
+                        },
+                        {
+                            "uri":"http://kiwi/tags/17",
+                            "label":"DEV",
+                            "controlled":1,
+                            "parent": "http://kiwi/tags/0123",
+                            "hasChildren": true,
+							"prefix":"community"
+                        },
+                        {
+                            "uri":"http://kiwi/tags/18",
+                            "label":"DEV",
+                            "controlled":1,
+                            "parent": "http://kiwi/tags/19",
+                            "hasChildren": true,
+							"prefix":"community"
+                        },
+                        {
+                            "uri":"http://kiwi/tags/20",
+                            "label":"DEV",
+                            "controlled":1,
+                            "parent": "http://kiwi/tags/0123",
+                            "hasChildren": true,
+							"prefix":"community"
+                        },
+                        {
+                            "uri":"http://kiwi/tags/21",
+                            "label":"DEV",
+                            "controlled":1,
+                            "parent": "http://kiwi/tags/0123",
+                            "hasChildren": true,
+							"prefix":"community"
+                        },
+                        {
+                            "uri":"http://kiwi/tags/22",
+                            "label":"DEV",
+                            "controlled":1,
+                            "parent": "http://kiwi/tags/0123",
+                            "hasChildren": true,
+							"prefix":"community"
+                        },
+                        {
+                            "uri":"http://kiwi/tags/23",
+                            "label":"DEV",
+                            "controlled":1,
+                            "parent": "http://kiwi/tags/0123",
+                            "hasChildren": true,
+							"prefix":"community"
+                        },
+                        {
+                            "uri":"http://kiwi/tags/24",
+                            "label":"DEV",
+                            "controlled":1,
+                            "parent": "http://kiwi/tags/0123",
+                            "hasChildren": true,
+							"prefix":"community"
+                        },
+                        {
+                            "uri":"http://kiwi/tags/25",
+                            "label":"DEV",
+                            "controlled":1,
+                            "parent": "http://kiwi/tags/0123",
+                            "hasChildren": true,
+							"prefix":"region"
+                        },
+                        {
+                            "uri":"http://kiwi/tags/26",
+                            "label":"DEV",
+                            "controlled":1,
+                            "parent": "http://kiwi/tags/0123",
+                            "hasChildren": true,
+							"prefix":"region"
+                        },
+                        {
+                            "uri":"http://kiwi/tags/27",
+                            "label":"DEV",
+                            "controlled":1,
+                            "parent": "http://kiwi/tags/0123",
+                            "hasChildren": true,
+							"prefix":"community"
+                        },
+                        {
+                            "uri":"http://kiwi/tags/28",
+                            "label":"DEV",
+                            "controlled":1,
+                            "parent": "http://kiwi/tags/0123",
+                            "hasChildren": true,
+							"prefix":"community"
+                        },
+                        {
+                            "uri":"http://kiwi/tags/29",
+                            "label":"DEV",
+                            "controlled":1,
+                            "parent": "http://kiwi/tags/0123",
+                            "hasChildren": true,
+							"prefix":"community"
+                        },
+                        {
+                            "uri":"http://kiwi/tags/30",
+                            "label":"DEV",
+                            "controlled":1,
+                            "parent": "http://kiwi/tags/0123",
+                            "hasChildren": true,
+							"prefix":"community"
+                        }
+                    ];
+                    
+                    //Simulation of downloading time - 2s
+                    setTimeout(function(){ suggester.onLoadSuggestions(suggestions); }, 2000);
+                    //suggester.onLoadSuggestions(suggestions);
+                }
+
+                suggester.loadChildren = function(selRes){
+                    //Load children from the server
+                    var children = [
+                        {
+                            "uri":"http://kiwi/tags/1334",
+                            "label":"Child",
+                            "controlled":1,
+                            "parent": "http://kiwi/tags/0123",
+                            "hasChildren": true,
+							"prefix":"community"
+                        },
+                        {
+                            "uri":"http://kiwi/tags/1335",
+                            "label":"Uncontrolled child",
+                            "controlled":0
+                        },
+                        {
+                            "uri":"http://kiwi/tags/1336",
+                            "label":"New Child",
+                            "controlled":1,
+                            "parent": "http://kiwi/tags/0123",
+                            "hasChildren": false,
+							"prefix":"region"
+                        },
+                        {
+                            "uri":"http://kiwi/tags/1337",
+                            "label":"Nice Child",
+                            "controlled":1,
+                            "parent": "http://kiwi/tags/0123",
+                            "hasChildren": true,
+							"prefix":"community"
+                        },
+                        {
+                            "uri":"http://kiwi/tags/1338",
+                            "label":"Cool Child",
+                            "controlled":0
+                        }
+                    ];                    
+                    //Simulation of downloading time - 2s - hiding parrents/suggestions
+                    setTimeout(function(){
+                        //And load children
+                        suggester.onLoadChildren(children);
+                    }, 2000);
+                    
+                }
+
+                suggester.loadParents = function(selRes){
+                    //Load Parents from the server
+                    var parents = [
+                        {
+                            "uri":"http://kiwi/tags/1234",
+                            "label":"Father",
+                            "controlled":1,
+                            "parent": "http://kiwi/tags/0123",
+                            "hasChildren": true,
+							"prefix":"region"
+                        },
+                        {
+                            "uri":"http://kiwi/tags/1235",
+                            "label":"Mother",
+                            "controlled":0
+                        },
+                        {
+                            "uri":"http://kiwi/tags/1236",
+                            "label":"Grandfather",
+                            "controlled":1,
+                            "parent": "http://kiwi/tags/0127",
+                            "hasChildren": false,
+							"prefix":"community"
+                        },
+                        {
+                            "uri":"http://kiwi/tags/1237",
+                            "label":"Grandmother",
+                            "controlled":0
+                        },
+                        {
+                            "uri":"http://kiwi/tags/1238",
+                            "label":"Nobody",
+                            "controlled":1,
+                            "parent": "http://kiwi/tags/0123",
+                            "hasChildren": true,
+							"prefix":"community"
+                        }
+                    ];
+                    //Simulation of downloading time - 2s - hiding parrents/suggestions
+                    setTimeout(function(){
+                        //And load children
+                        suggester.onLoadChildren(parents);
+                    }, 2000);
+                }
+
+
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-ideator.jar/ideator/action/evaluation
+END
+EvaluationResource.class
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-ideator.jar/ideator/action/evaluation/EvaluationResource.class
+END
+Evaluation.class
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-ideator.jar/ideator/action/evaluation/Evaluation.class
+END
+Rating.class
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-ideator.jar/ideator/action/evaluation/Rating.class
+END
+Paragraph.class
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-ideator.jar/ideator/action/evaluation/Paragraph.class
+END
+Criteria.class
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-ideator.jar/ideator/action/evaluation/Criteria.class
+END
+EvaluationAction.class
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-ideator.jar/ideator/action/evaluation/EvaluationAction.class
+END
+XMLEvaluationService.class
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/extensions/kiwiext-ideator.jar/ideator/action/evaluation/XMLEvaluationService.class
+END

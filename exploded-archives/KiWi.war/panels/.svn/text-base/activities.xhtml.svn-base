@@ -1,0 +1,34 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+		    	xmlns:rich="http://richfaces.org/rich"
+		    	xmlns:a="http://richfaces.org/a4j"
+	            xmlns:kiwi="http://www.kiwi-project.eu/jsf">
+            <h2>Activities</h2>
+
+            <div id="activities"></div>
+
+            <script>
+                jQuery(document).ready(function(){
+                    jQuery('#activities').activity(
+                       { uri:           '#{currentContentItem.resource.uri}',
+                         webServiceUrl: '#{facesContext.externalContext.requestContextPath}/seam/resource/services/widgets/activity/list'});
+                });
+            </script>
+
+            <!--
+            <ul>
+                <ui:repeat value="#{activityWidget.activities}" var="activity">
+                    <li>
+                        <h:outputText value="#{activity.created}" ><s:convertDateTime dateStyle="short"/></h:outputText>
+                        <h:outputText value=": " />
+                        <h:outputText escape="false" value="#{messages.get(fn:join('widget.',activity.getMessageIdentifier()))}"/>
+                    </li>
+                </ui:repeat>
+            </ul>
+            -->
+</ui:composition>

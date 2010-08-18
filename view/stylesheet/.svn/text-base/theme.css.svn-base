@@ -1,0 +1,386 @@
+#article a.new,a.new:visited,a.new:hover,a.new:link {
+	color: red;
+}
+
+
+input[type='submit'],input[type='button'],input[type='reset'] {
+	-moz-border-radius-bottomleft:4px;
+	-moz-border-radius-bottomright:4px;
+	-moz-border-radius-topleft:4px;
+	-moz-border-radius-topright:4px;
+	-moz-outline-radius-bottomleft:4px;
+	-moz-outline-radius-bottomright:4px;
+	-moz-outline-radius-topleft:4px;
+	-moz-outline-radius-topright:4px;
+	background-color:#222222;
+	border:1px solid #FFFFFF;
+	color:#FFFFFF;
+	cursor:pointer;
+	font-size:11px;
+	height:24px;
+	outline-color:#999999;
+	outline-style:outset;
+	outline-width:1px;
+}
+
+input[type='submit']:disabled,input[type='button']:disabled {
+	background-color:#222222;
+	border:1px solid #dddddd;
+	color:#dddddd;
+	cursor:default;
+}
+
+
+
+/* simple css-based tooltip */ 
+div.jqTooltip { 
+    background-color:#000; 
+    border:1px solid #fff; 
+    padding:10px 15px; 
+    width:200px; 
+    display:none; 
+    color:#fff; 
+    text-align:left; 
+    font-size:12px; 
+ 
+    /* outline radius for mozilla/firefox only */ 
+    -moz-box-shadow:0 0 10px #000; 
+    -webkit-box-shadow:0 0 10px #000; 
+}
+
+.tableControl,.actionButtons {
+	width: 100%;
+}
+
+.tableControl a {
+	padding-left: 10px;
+}
+
+.tableControl {
+	text-align: right;
+}
+
+/*
+.rich-table {
+	width: 100%;
+}
+*/
+
+.columnHeader:hover {
+	color: #FF6600;
+}
+
+.message {
+	border: 1px solid #FFCC00;
+	padding: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	background-color: #F0F8FF;
+	font-size: 12px;
+}
+
+.help {
+    border: 1px solid #66F;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: #99F;
+    font-size: 12px;
+}
+
+
+.name {
+	vertical-align: top;
+	font-weight: bold;
+	width: 115px;
+	float: left;
+	padding: 5px;
+	margin-top: 3px;
+	clear: left;
+}
+
+.value {
+	float: left;
+	padding: 5px;
+}
+
+.error {
+	float: left;
+	padding: 5px;
+}
+
+.errors {
+	color: red;
+	vertical-align: middle;
+}
+
+img.errors {
+	padding-right: 5px;
+}
+
+.errors input {
+	border: 1px solid red;
+}
+
+.errors textarea {
+	border: 1px solid red;
+}
+
+.required {
+	color: red;
+	padding-left: 2px;
+}
+
+.rich-stglpanel-body {
+	overflow: auto;
+}
+
+
+
+/* Widget Content Layout */
+#articlemeta ul {
+	line-height: 1.5em;
+	list-style-type: square;
+	margin: 0 0 0 1em;
+	padding: 0;
+	list-style-image: url(../img/bullet.gif);
+}
+
+#articlemeta ol {
+	line-height: 1.5em;
+	margin: .3em 0 0 3.2em;
+	padding: 0;
+	list-style-image: none;
+}
+
+#articlemeta li {
+	margin-bottom: .1em;
+}
+
+#article a {
+	text-decoration: none;
+	/* background: none; // conflicts with the stars jquery widget. */
+	color: #33F;
+}
+
+
+#article a:hover {
+	text-decoration: underline;
+}
+
+
+/* search */
+input.searchRemoveTag,input.searchAddTag {
+	background-color: #ccc;
+	margin: 2px;
+	border: none;
+}
+
+input.searchRemoveTag {
+	background-color: #ccc;
+	color: black;
+}
+
+input.searchAddTag {
+	background-color: green;
+}
+
+.searchResults {
+	vertical-align: top;
+}
+
+.searchResultTitle {
+	font-size: 150%;
+	font-weight: bold;
+	padding: 15px 0;
+}
+
+.searchInput {
+	width: 150px;
+	vertical-align: top;
+}
+
+/* Location Widget */
+.locationPanel {
+	width: 100%;
+	height: 200px;
+}
+
+/* hide copyright info from google, because it is too broad - any other way?
+div.gmnoprint {
+	display: none;
+}
+*/
+.metadataTable .rich-inplace-view,.metadataTable .rich-inplace-changed {
+	border: none;
+	white-space: normal;
+}
+
+.metadataTable .rich-inplace-view-hover,.metadataTable .rich-inplace-changed-hover
+	{
+	background-color: #F0F8FF;
+	white-space: normal;
+}
+
+/* KiWi Header */
+.kiwiHeader {
+    width: 1000px;
+    background-color: #8BC53E; 
+    padding: 10px;
+}
+
+.kiwiHeader .kiwiHeaderBody {
+    padding: 0;
+}
+
+.kiwiHeader .kiwiHeaderTop {
+	padding: 10px;
+}
+
+.kiwiHeader .kiwiLogo {
+    width: 150px;
+    float: left;
+}	
+
+.kiwiHeader .kiwiAppList {
+	margin-left: 160px;
+	height: 35px;
+}
+
+.kiwiHeader .kiwiAppList td {
+    padding-right: 5px;
+}
+
+.kiwiHeader .kiwiAppList .kiwiApp {
+    display: inline;
+    text-align: center;
+    width: 90px;
+}
+
+
+.kiwiHeader .kiwiAppList .kiwiAppHeader {
+    display: block;
+    text-align: center;
+    font-size: 120%;
+    font-weight: bold;
+    color: #000000;
+}
+
+.kiwiHeader .kiwiAppActive .kiwiAppHeader {
+    color: #FFFFFF;
+}
+
+.kiwiHeader .kiwiAppList .kiwiAppDesc {
+    display: block;
+    text-align: center;
+    font-size: 90%;
+    color: #000000;
+}
+
+.kiwiHeader .kiwiAppActive .kiwiAppDesc {
+    display: block;
+    text-align: center;
+    font-size: 90%;
+    color: #FFFFFF;
+}
+
+.kiwiHeader .kiwiSearch {
+    float: right;
+    margin-right: -5px;
+    margin-top: 5px;
+}
+
+.kiwiHeader .kiwiHeaderToolbar {
+    background: #A0A0A0;
+    color: #FFFFFF;
+    -moz-border-radius-bottomleft: 5px;
+    -webkit-border-radius-bottomleft: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -webkit-border-radius-bottomright: 5px;
+	border: 0;
+	margin-left: -1px;
+	margin-bottom: -1px;
+	width: 1002px;
+	padding-top: 2px;
+	padding-bottom: 2px;    
+}
+
+.kiwiHeader .kiwiBreadcrumps {
+    font-weight: normal;
+}
+
+.kiwiHeader .kiwiHeaderToolbar a {
+    color: #000000;		
+}
+
+.kiwiHeader .kiwiHeaderToolbar a:hover {
+    color: #000000;     
+    text-decoration: underline;
+}
+
+/* KiWi Footer */
+.kiwiFooter {
+    text-align: center;
+    font-size: 10px;
+    width: 1000px;
+}
+
+
+
+/* KiWi Layout 1-column */
+.col1Main {
+    width: 1000px;
+}
+
+/* KiWi Layout 2-column */
+.col2Navigation {
+	width: 150px;
+	vertical-align: top;
+	padding: 0;
+}
+
+.col2Main {
+	width: 854px;
+	vertical-align: top;
+	padding: 0;
+	padding-left: 10px;
+}
+
+/* Login panel */
+.registerText {
+	text-align: center;
+}
+
+.foafsslText {
+	text-align: center;
+}
+
+/* KiWi Panel definitions (for use in rich:panel and similar as styleClass, classHeader, classContent) */
+.kiwiBox {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 1px solid #8BC53E;
+	margin: 5px;
+	padding: 0;
+}
+
+.kiwiBoxHeader {
+	padding: 4px;
+	-moz-border-radius-topleft: 5px;
+	-webkit-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	-webkit-border-radius-topright: 5px;
+}
+
+.kiwiBoxContent {
+	padding: 10px;
+}
+
+/* KiWi Action Menu definitions */
+.kiwiActionMenu {
+    background: #A0A0A0;
+    color: #FFFFFF;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;		
+}
+

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/kiwi/!svn/ver/5355/KiWi/trunk/src/action/kiwi/api/group
+END
+GroupServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/group/GroupServiceRemote.java
+END
+GroupService.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/kiwi/!svn/ver/5355/KiWi/trunk/src/action/kiwi/api/group/GroupService.java
+END
+GroupServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/group/GroupServiceLocal.java
+END

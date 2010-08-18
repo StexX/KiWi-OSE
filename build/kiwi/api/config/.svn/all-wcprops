@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/config
+END
+PortalConfigService.class
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/config/PortalConfigService.class
+END
+ConfigurationServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/config/ConfigurationServiceLocal.class
+END
+PortalConfigServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/config/PortalConfigServiceRemote.class
+END
+ConfigurationService.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/config/ConfigurationService.class
+END
+PortalConfigServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/config/PortalConfigServiceLocal.class
+END
+ConfigurationServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/config/ConfigurationServiceRemote.class
+END

@@ -1,0 +1,144 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+			 	xmlns:c="http://java.sun.com/jstl/core"
+                template="layout/template_2col.xhtml">
+
+<ui:define name="main_header">
+ 	<h2>Co Authors</h2>
+</ui:define>
+                
+<ui:define name="main_content">
+<rich:messages styleClass="message" />
+<h:form rendered="#{!ideator.coAuthorAction.existingUser}" styleClass="formBorderHighlight" id="coAuthorForm" name="coAuthors">
+		
+<!--		<h:selectOneListbox value="#{kiwiTreeAction.selectedAltLabel}" required="true" id = "al">                       -->
+<!--			<s:selectItems value="#{conceptInformation.altLabels}" var="altLabel" label="#{altLabel}" noSelectionLabel="-"/>-->
+<!--	    </h:selectOneListbox>-->
+
+		<h:panelGrid columns="2" rowClasses="prop" columnClasses="register_name,register_value">
+
+		<h:outputLabel for="coAuthorFirstName">#{messages['ideator.coAuthorForm.firsName']}:</h:outputLabel>
+		
+		<s:div style="position:relative;">
+			<h:inputText id="coAuthorFirstName" style="width:200px;" value = "#{ideator.coAuthorAction.coAuthorsFirstName}" autocomplete="off" onkeyup="if(jQuery(this).val().length > 1) setAutoComplete();else jQuery('#recommendedUsers').hide();" />
+			
+			<a:jsFunction name="setAutoComplete" data="#{ideator.coAuthorAction.autocompleteUsername()}" reRender="recommendedUsersList" oncomplete="if(data)jQuery('#recommendedUsers').show();else jQuery('#recommendedUsers').hide();" />
+			<div id="recommendedUsers" class="autocomplete" style="left:0;top:22px;width:204px;max-height:100px;">
+				<s:div id="recommendedUsersList">
+					<ul>
+					<ui:repeat value="#{ideator.coAuthorAction.recommendedUsers}" var="usr">
+						<li>
+							<h:commandLink action="#{ideator.coAuthorAction.selectUser(usr)}" value="#{usr.firstName} #{usr.lastName}" title="#{usr.email}" />
+						</li>
+					</ui:repeat>
+					</ul>
+				</s:div>
+			</div>
+			
+		<!--     <rich:suggestionbox id="suggestionBoxId" for="coAuthorFirstName"
+                        suggestionAction="#{ideator.coAuthorAction.recommendedUsers}" 
+                        var="usr"
+                        fetchValue="#{usr.firstname}" 
+                        minChars="2"
+                        shadowOpacity="4"
+                        border="1"
+                        height="150"
+                        width="100"
+                        shadowDepth="3"
+                        cellpadding="2"
+                        nothingLabel="No tags found" 
+                        columnClasses="center"
+                        usingSuggestObjects="true" reRender="suggestionBoxId">
+                        
+                        <h:column>
+                            <h:outputText value="#{usr.firstName} #{usr.lastName} (#{usr.email})"/>
+                        </h:column>
+                        <a:support event="onselect" action="#{ideator.coAuthorAction.selectUser(usr)}" />
+                </rich:suggestionbox> -->
+		</s:div>
+		  							  	
+		<h:outputLabel for="coAuthorLastName">#{messages['ideator.coAuthorForm.lastName']}:</h:outputLabel>
+		<h:inputText id="coAuthorLastName" style="width:200px;" value = "#{ideator.coAuthorAction.coAuthorsLastName}" />
+	
+		<h:outputLabel for="email">#{messages['ideator.register.email']}:</h:outputLabel> 
+        <h:inputText id="email" value="#{ideator.coAuthorAction.coAuthorsEmail}" />
+		
+		<h:outputLabel for="page_position_list">#{messages['ideator.register.position']}:</h:outputLabel> 
+		<s:div id="page_position_list" >
+		<ul>
+			<ui:repeat value="#{positionAction.chosenConcepts}" var="pos">
+					<li><h:outputText value="#{pos.preferredLabel}" /></li>
+			</ui:repeat>
+		</ul>
+				  <a href="#" onclick="jQuery('#position_chooser').fadeIn('fast');">Edit</a>
+		</s:div>
+			
+		</h:panelGrid>
+																	
+		<h:commandLink id="clearFix" action="#{ideator.coAuthorAction.cancel()}" styleClass="button">		
+			<span>#{messages['ideator.btn.cancel']}</span>
+		</h:commandLink>
+	 	<h:commandLink id="finnishFix" action="#{ideator.coAuthorAction.addUser()}" styleClass="button">
+		<s:defaultAction />
+			<span>#{messages['ideator.btn.finnish']}</span>
+		</h:commandLink>		
+
+</h:form>
+
+<!-- Fixe User -->
+<h:form rendered="#{ideator.coAuthorAction.existingUser}">
+		<h:panelGrid columns="2" rowClasses="prop" columnClasses="register_name,register_value">
+
+		<h:outputLabel for="coAuthorFirstNameFix">#{messages['ideator.coAuthorForm.firsName']}:</h:outputLabel>
+		<h:outputText id="coAuthorFirstNameFix" value = "#{ideator.coAuthorAction.coAuthorsFirstName}" />
+		  							  	
+		<h:outputLabel for="coAuthorLastNameFix">#{messages['ideator.coAuthorForm.lastName']}:</h:outputLabel>
+		<h:outputText id="coAuthorLastNameFix" value = "#{ideator.coAuthorAction.coAuthorsLastName}" />
+	
+		<h:outputLabel for="emailFix">#{messages['ideator.register.email']}:</h:outputLabel> 
+        <h:outputText id="emailFix" value="#{ideator.coAuthorAction.coAuthorsEmail}" />
+		
+		<h:outputLabel for="positionsFix">#{messages['ideator.register.position']}:</h:outputLabel> 
+		<s:div id="page_position_listFix" >
+		<ul>
+			<ui:repeat value="#{positionAction.chosenConcepts}" var="pos">
+					<li><h:outputText value="#{pos.preferredLabel}" /></li>
+			</ui:repeat>
+		</ul>
+		</s:div>
+			
+		</h:panelGrid>
+
+		<h:commandLink id="clearFix" action="#{ideator.coAuthorAction.unselectUser()}" styleClass="button">		
+			<span>#{messages['ideator.btn.cancel']}</span>
+		</h:commandLink>															
+		<h:commandLink id="finnishFix" action="#{ideator.coAuthorAction.addUser()}" styleClass="button">
+		<s:defaultAction />
+			<span>#{messages['ideator.btn.finnish']}</span>
+		</h:commandLink>
+
+</h:form>
+</ui:define>
+
+<ui:define name="right_content">
+	<ui:include src="pages/box/sample.xhtml" />
+</ui:define>
+
+<ui:define name="popups">
+	<div id="position_chooser" style="display:none;">
+		<div class="background_hider" />
+		<div class="popup_600">
+			<ui:include src="pages/popup/position_chooser.xhtml" />
+		</div>
+	</div>
+</ui:define>
+
+</ui:composition>

@@ -1,0 +1,235 @@
+<!--
+Copyright © Rolf Sint, Michael Schneider, Christian Osterrieder, 2010
+*/
+--> <!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:s="http://jboss.com/products/seam/taglib" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:rich="http://richfaces.org/rich" xmlns:a="http://richfaces.org/a4j" xmlns:m="http://code.google.com/p/gmaps4jsf/" xmlns:c="http://java.sun.com/jstl/core" xmlns:kiwi="http://www.kiwi-project.eu/jsf" template="../../layout/template-2col.xhtml">
+    <ui:define name="breadcrumps">
+        <ul>
+            <li class="first">
+                <s:link view="/artaround/home.seam" value="#{messages['artaround.breadcrumps.home']}"/>
+            </li>
+            <li>
+                <s:link view="/artaround/pages/profil/meinProfil.seam" value="#{messages['artaround.breadcrumps.myPage']}"/>
+            </li>
+            <li>
+                <s:link view="/artaround/pages/profil/userprofile.seam" value="#{messages['artaround.myProfil']}"/>
+            </li>
+        </ul>
+    </ui:define>
+    <ui:define name="navigation">
+        <style>
+            
+            h3 {
+                margin-left: 17px;
+                font-size: 16px;
+                color: #456;
+                font-weight: normal;
+                text-align: left;
+            }
+            
+            h4 {
+                margin-left: 17px;
+                font-size: 14px;
+                color: #456;
+                font-weight: normal;
+                text-align: left;
+            }
+            
+            #cover {
+                margin-left: 15px;
+                /*margin-top:15px; */
+            }
+            
+            #mask {
+                background: #ccc url(#{facesContext.externalContext.requestContextPath}/view/img/mask_gradient_1000.png) no-repeat;
+                background-position: -260px -79px;
+            }
+            
+            div.expose {
+                /* border:1px outset #aaa; */
+                background: #fff url(#{facesContext.externalContext.requestContextPath}/view/img/h800.png) repeat-x;
+                padding: 10px;
+                margin: 5px 0;
+                text-align: center;
+                width: 270px;
+                -moz-border-radius: 4px;
+            }
+            
+            /* root element for vert_accordion. decorated with rounded borders and gradient background image */
+            #verto_accordion {
+                /*background:#fff url(#{facesContext.externalContext.requestContextPath}/view/img/h300.png) ;*/
+                background: #fff;
+                width: 650px;
+                /*border:1px solid #eee;	*/
+                -background: #666;
+                margin-top: 20px;
+                margin-left: -10px;
+            }
+            
+            /* vert_accordion header */
+            #verto_accordion h2 {
+                /*background:#fff url(#{facesContext.externalContext.requestContextPath}/view/img/h30.png);*/
+                background: #fff;
+                margin: 0;
+                padding: 5px 15px;
+                font-size: 14px;
+                font-weight: normal;
+                /*border:1px solid #eee; */
+                border-bottom: 1px solid #ddd;
+                cursor: pointer;
+                color: #452;
+            }
+            
+            /* currently active header */
+            #verto_accordion h2.current {
+                cursor: default;
+                background-color: #eee;
+            }
+            
+            /* vert_accordion pane */
+            #verto_accordion div.paneo {
+                /*border:1px solid #eee;*/
+                border-width: 0 2px;
+                display: none;
+                height: 230px;
+                padding: 15px;
+                color: #aaa;
+                font-size: 12px;
+            }
+            
+            #verto_accordion div.pane p {
+                margin: 0 0 5px 0;
+            }
+            
+        </style>
+        <!-- default set of jQuery Tools + jQuery 1.3.2 -->
+        <script src="#{facesContext.externalContext.requestContextPath}/view/js/jQueryMain/jquery.tools.min.js">
+        </script>
+        <!-- activate tabs with JavaScript -->
+        <script>
+            
+            jQuery(function(){
+            
+                jQuery("#verto_accordion").tabs("#verto_accordion div.paneo", {
+                    tabs: 'h2',
+                    effect: 'slide',
+                    initialIndex: null
+                });
+            });
+            
+        </script>
+    </ui:define>
+    <ui:define name="body">
+        <div id="cover">
+            <h:form>
+                <div id="verto_accordion">
+                    <!--  Logo Arbeitsbereich  -->
+                    <fieldset class="fieldsetborder">
+                        <legend>
+                            #{messages['artaround.myProfil']}
+                        </legend>
+                         <img style="float:left; margin:0 10px 5px 10px;" src="#{facesContext.externalContext.requestContextPath}/view/img/person1.png" /><h4>#{messages['artaround.menutext.profil']}</h4>
+                        
+						<!--	<s:graphicImage style="padding: 3px; border: 1px solid black;"
+	    					value="#{artaround.profileAction.data}" 
+	    	                fileName="#{artaround.profileAction.currentUser.contentItem.mediaContent.fileName}"/>-->
+						
+						<br/>
+                    </fieldset>
+                    <br/>
+                    <!--  Tab 0 Allgemeines --><h2 class="current">Allgemeines</h2>
+                    <!--  Tab 0 Content -->
+                    <div class="paneo">
+                        <table cellpadding="5px" cellspacing="10px">
+                            <tr>
+                                <td valign="top" align="center">
+                                    <fieldset class="fieldsetborder">
+                                        <legend>
+                                            #{messages['artaround.generalInfo']}
+                                        </legend>
+                                        <div class="expose">
+                                            <div class="dialog">
+                                                <h:panelGrid columns="2" rowClasses="prop" columnClasses="name,value">
+                                                    <h:outputText value="#{messages['artaround.login.firstname']}" />
+                                                    <h:inputText id="firstname" value="#{artaround.profileAction.profileBean.firstName}">
+                                                    </h:inputText>
+                                                    <h:outputText value="#{messages['artaround.login.lastname']}" /><h:inputText id="lastname" value="#{artaround.profileAction.profileBean.lastName}"/><h:outputText value="#{messages['artaround.myProfil.label.gender']} " /><h:inputText id="sex" value="#{artaround.profileAction.profileBean.gender}" /><h:outputText value="#{messages['artaround.myProfil.label.birthday']} "/><h:inputText id="birthday" value="#{artaround.profileAction.profileBean.gebDate}"/><h:outputText value="#{messages['artaround.myProfil.label.street']} "/><h:inputText id="street" value="#{artaround.profileAction.profileBean.postalAdressStreetAndNumber}" /><h:outputText value="#{messages['artaround.myProfil.city']} "/><h:inputText id="city" value="#{artaround.profileAction.profileBean.postalAdressCity}" /><h:outputText value="Staat"/><h:inputText id="state" value="#{artaround.profileAction.profileBean.postalAdressCountryCode}" />
+                                                </h:panelGrid>
+                                            </div>
+                                        </div>
+                                    </fieldset><!--  end allgemeine Informationen -->
+                                </td>
+                                <td valign="top">
+                                    <fieldset class="fieldsetborder">
+                                        <legend>
+                                            #{messages['artaround.myFoto']}
+                                        </legend>
+                                        <div class="expose" style="text-align:center; width:280px; height:185px;">
+                                            <!--<img src="#{facesContext.externalContext.requestContextPath}/view/img/testbild_profil.jpg" alt="Kein Bild geladen" title="Testbild"/>-->
+                                            <s:graphicImage id = "profilePictureImg" alt = "no picture available" style="padding: 3px; border: 1px solid black; height: 100px"
+	    					value="#{artaround.profileService.data}" 
+	    	                fileName="#{artaround.profileAction.currentUser.contentItem.mediaContent.fileName}"/>
+	    	                <br/>
+	    	                <a href="#" id = "profilePicture" onclick="jQuery('#uploadProfilePicture').fadeIn('fast');">Profilbild ändern</a>
+											<br/>
+                                        </div>
+                                    </fieldset>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!--  Tab 1 Header --><h2>Kontaktdaten</h2>
+                    <!--  Tab 1 Content -->
+                    <div class="paneo">
+                        <table cellpadding="5px" cellspacing="10px">
+                            <tr>
+                                <td valign="top" align="center">
+                                    <fieldset class="fieldsetborder">
+                                        <legend>
+                                            #{messages['artaround.myProfil.label.personal']}
+                                        </legend>
+                                        <div class="expose">
+                                            <div class="dialog">
+                                                <h:panelGrid columns="2" rowClasses="prop" columnClasses="name,value">
+                                                    <h:outputText value="#{messages['artaround.login.email']} "/><h:inputText id="email" value="#{artaround.profileAction.profileBean.emailAdress}"/><h:outputText value="#{messages['artaround.myProfil.label.mobile']} "/><h:inputText id="mobile" value="#{artaround.profileAction.profileBean.mobilePhoneNumber}"/><h:outputText value="#{messages['artaround.myProfil.label.phone']} "/><h:inputText id="tel" value="#{artaround.profileAction.profileBean.privatePhoneNumber}" /><h:outputText value="#{messages['artaround.myProfil.label.skype']} "/><h:inputText value="#{artaround.profileAction.profileBean.skypePhoneNumber}"/><h:outputText value="#{messages['artaround.myProfil.label.facebook']} "/><h:inputText value="#{artaround.profileAction.profileBean.facebook}"/><h:outputText value="#{messages['artaround.myProfil.label.twitter']} "/><h:inputText value="#{artaround.profileAction.profileBean.twitter}"/>
+                                                </h:panelGrid>
+                                            </div>
+                                        </div>
+                                    </fieldset><!--  end persoenliche Informationen -->
+                                    <br/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <h2>Schreib etwas ueber dich</h2>
+                    <div class="paneo">
+                        <table cellpadding="5px" cellspacing="10px">
+                            <tr>
+                                <td valign="top" align="center">
+                                    <fieldset class="fieldsetborder">
+                                        <legend>
+                                            #{messages['artaround.myProfil.label.about']}
+                                        </legend>
+                                        <div class="expose">
+                                            <div class="dialog">
+                                                <h:inputTextarea id="about" style="width:270px;" rows="12" value = "#{artaround.profileAction.profileBean.about}" />
+                                                <br/>
+                                                <br/>
+                                            </div>
+                                        </div>
+                                        <h:commandButton value="#{messages['artaround.save']}" action="#{artaround.profileAction.store}" />
+                                    </fieldset>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div><rich:messages styleClass="message"/>
+            </h:form>
+        </div><!-- end cover -->
+        
+      <div id="uploadProfilePicture" style="display:none" class="popup_600">
+		<ui:include src="../popup/uploadProfilePicture.xhtml" />	
+	 </div>
+        
+    </ui:define>
+</ui:composition>

@@ -1,0 +1,26 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+    xmlns:c="http://java.sun.com/jstl/core"
+    xmlns:a4j="http://richfaces.org/a4j">
+
+    <ul>
+        <li><s:link view="/dashboard/home.xhtml" styleClass="mydashboard" value="My Dashboard" /></li>
+        <li><s:link view="/dashboard/preference.xhtml" styleClass="myprofile" value="My UI Preferences"/></li>
+        <li><s:link view="/dashboard/profile.xhtml" styleClass="myprofile" value="My Profile" /></li>
+        <li><s:link view="/dashboard/myrules.xhtml" styleClass="myprofile" value="My Rules" /></li>        
+        <li><s:link view="/dashboard/integration.xhtml" styleClass="myprofile" value="My Subscriptions" /></li>
+        <li><s:link view="/dashboard/contacts.xhtml" styleClass="mycontacts" value="My Contacts" /></li>
+		<li><s:link view="/dashboard/groups.xhtml" styleClass="mygroups" value="My Groups"/></li>        
+        <li><s:link view="/dashboard/contributions.xhtml" styleClass="mycontributions" value="My Contributions" /></li>
+        <li><s:link view="/dashboard/watchlist.xhtml" styleClass="mywatchlist" value="My Watchlist" /></li>
+        <li><s:link view="/dashboard/streamoftags.xhtml" styleClass="mytags" value="My Tags"/></li>
+    </ul>
+
+    
+</ui:composition>

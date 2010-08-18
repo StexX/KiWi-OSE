@@ -1,0 +1,68 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+		    	xmlns:a4j="http://richfaces.org/a4j">
+		    	
+		    	<h:form>
+		    	
+		    <h:panelGrid id="columnLayout" columns="2" style="height: 100%; width: 100%; border-collapse: collapse;">
+		    	
+		    	<f:facet name = "header">Details for "#{formRisk.selectedRisk.title}"</f:facet>
+		    	
+		    	<rich:panel style="height:180px;">
+		    	<rich:panel rendered ="#{((formRisk.selectedRisk.likelihood != null) and (formRisk.selectedRisk.likelihood != ''))}">
+				<h:outputText value="Likelihood:" />
+				
+				<rich:comboBox defaultLabel="Enter some value" value ="#{formRisk.selectedRisk.likelihood}">
+           				<f:selectItem itemValue="10%"/>
+            			<f:selectItem itemValue="40%"/>
+           				<f:selectItem itemValue="70%"/>
+            			<f:selectItem itemValue="100%"/>
+       			</rich:comboBox>
+				</rich:panel>	
+				
+				<rich:panel rendered = "#{((formRisk.selectedRisk.category != null) and (formRisk.selectedRisk.category != ''))}" >
+				<br/>
+				<h:outputText value="Category: " />
+				<rich:comboBox defaultLabel="Choose a category" value ="#{formRisk.selectedRisk.category}">
+           				<f:selectItem itemValue="Financial"/>
+            			<f:selectItem itemValue="Equipment"/>
+           				<f:selectItem itemValue="Organisational"/>
+           				<f:selectItem itemValue="Security"/>
+            			<f:selectItem itemValue="Technology"/>
+            			<f:selectItem itemValue="Stakeholder Management"/>
+       			</rich:comboBox>
+       			</rich:panel>
+				
+				<rich:panel rendered = "#{((formRisk.selectedRisk.riskStatus != null) and (formRisk.selectedRisk.riskStatus != null))}">
+				<br/>
+				<h:outputLabel id="riskstatusf">Risk Status</h:outputLabel>
+				<rich:comboBox defaultLabel="riskstatus ..." value="#{formRisk.selectedRisk.riskStatus}" id="riskstatus">
+           			 <f:selectItem itemValue="Low"/>
+           			 <f:selectItem itemValue="Medium"/>
+        			 <f:selectItem itemValue="High"/>
+           		</rich:comboBox>
+				</rich:panel>
+				
+				</rich:panel>
+				
+				<rich:panel style="height:180px;">
+				
+				<h:outputLabel id="riskgroupf">Risk Group</h:outputLabel>
+	            <h:inputText id="riskgroup" value="#{formRisk.selectedRisk.riskGroup}"/>
+				<br/>
+   				<br/>
+           		<h:outputLabel id="dateIdentifiedf">Date Identified: #{formRisk.selectedRisk.dateIdentified}</h:outputLabel>
+				<br/>
+				<br/>
+	            <h:outputLabel id="dateLastReviewf">Last Reviewed #{formRisk.selectedRisk.dateIdentified}</h:outputLabel>
+				 </rich:panel>
+				 
+		    	 </h:panelGrid>
+		    	</h:form>
+</ui:composition>

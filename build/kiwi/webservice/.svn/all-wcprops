@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/webservice
+END
+DataSpecialFormat.class
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/webservice/DataSpecialFormat.class
+END
+DataAccessServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/webservice/DataAccessServiceImpl.class
+END
+FieldSet.class
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/webservice/FieldSet.class
+END
+DataStructured.class
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/webservice/DataStructured.class
+END
+ExhibitExporterWebService.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/webservice/ExhibitExporterWebService.class
+END
+ImageWebService.class
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/webservice/ImageWebService.class
+END
+DataUnit.class
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/webservice/DataUnit.class
+END
+WebserviceTests.xml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/webservice/WebserviceTests.xml
+END
+DataAccessTest.class
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/webservice/DataAccessTest.class
+END
+TemplateDescription.class
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/webservice/TemplateDescription.class
+END

@@ -1,0 +1,58 @@
+<rich:modalPanel
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+   	  xmlns:rich="http://richfaces.org/rich"
+ 	  xmlns:a4j="http://richfaces.org/a4j"
+ 	  width="400"
+ 	  height="250"
+      id="kiwirdfaIterationPanel">
+        <f:facet name="header">
+            <h:panelGroup>
+                <h:outputText value="RDFa Create Component Iteration"></h:outputText>
+            </h:panelGroup>
+        </f:facet>
+        
+        <p style="margin-top: 20px; margin-left: 10px; margin-right: 10px;" class="help">
+        	Here you can define a placeholder for components related to the content item with a specific predicate.
+        </p>
+        
+       	<a4j:region renderRegionOnly="true">
+       	    
+       	    <h:form id="kiwirdfaIterationForm">
+       	    	<rich:messages styleClass="message"/>
+       	    	<h:panelGrid columns="2" rowClasses="prop" columnClasses="name,value">
+       	    	
+       	    		<h:outputLabel for="rdfaIterationRelation">Relation</h:outputLabel>
+		            
+		            <h:selectOneMenu value="#{kiwirdfaAction.selectedIterationRelation}" id="rdfaIterationRelation">
+						<s:selectItems value="#{kiwirdfaAction.possibleIterationRelations}" var="item" label="#{item.label}" itemValue="#{item.value}" noSelectionLabel="Please select ..."/>
+					</h:selectOneMenu>
+		            
+		        </h:panelGrid>
+		
+		        <div class="actionButtons center">
+		            <a4j:commandButton value="Create/Update" id="btnCreateRdfaIteration" 
+		            	action="#{kiwirdfaAction.createOrUpdateIteration}"
+		            	data="#{kiwirdfaAction.iterationJS}"
+		            	oncomplete="kiwirdfaJSLib.onCreateOrUpdateIteration(data)" />
+		            	
+		            <a4j:commandButton value="Delete" id="btnDeleteRdfaIteration" 
+		            	action="#{kiwirdfaAction.deleteIteration}"
+		            	oncomplete="kiwirdfaJSLib.onDeleteIteration()" />
+		            	
+		            <a4j:commandButton value="Cancel" id="btnKiwirdfaCancelIteration"
+		            	action="#{kiwirdfaAction.cancelIteration}" 
+		            	oncomplete="kiwirdfaJSLib.onCancelIteration()" />
+		            	
+		            <a4j:jsFunction name="kiwirdfaSetIteration" reRender="rdfaIterationRelation">
+		        		<a4j:actionparam name="Param1" assignTo="#{kiwirdfaAction.iterationJS}"/>
+		        	</a4j:jsFunction>
+
+		        </div>
+			</h:form>
+		</a4j:region>
+
+</rich:modalPanel>

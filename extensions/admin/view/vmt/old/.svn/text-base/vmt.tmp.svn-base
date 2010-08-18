@@ -1,0 +1,194 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a="http://richfaces.org/a4j" template="layout/template.xhtml"
+	xmlns:a4j="http://richfaces.org/a4j">
+
+	<style>
+.col,.col2 {
+	width: 50%;
+	vertical-align: top;
+}
+</style>
+
+	<ui:define name="body">
+		<h:messages globalOnly="true" styleClass="message" />
+		<rich:panel>
+			<table border="1" style="width: 617px;">
+				<tr>
+					<td><h:panelGrid columns="2" width="100%"
+						columnClasses="col1,col2">
+						<h:form>
+
+
+							<!--  stateAdvisor="#{fileSystemBean}" -->
+							<rich:tree nodeSelectListener="#{kiwiTreeBean.onSelect}"
+								ajaxSubmitSelection="true" switchType="ajax" reRender="abc">
+								<rich:recursiveTreeNodesAdaptor
+									roots="#{kiwiTreeBean.sourceRoots}" var="item"
+									nodes="#{item.children}">
+								</rich:recursiveTreeNodesAdaptor>
+
+								<rich:treeNode>
+									<h:outputText value="#{item}" />
+								</rich:treeNode>
+
+
+							</rich:tree>
+
+							<!-- <rich:tree style="width:300px" nodeSelectListener="#{kiwiTreeBean.onSelect}" 
+                 ajaxSubmitSelection="true"  switchType="client"
+                value="#{kiwiTreeBean.sourceRoots}" var="item" ajaxKeys="#{null}">
+            </rich:tree> -->
+
+
+						</h:form>
+					</h:panelGrid></td>
+
+					<td style="vertical-align: top;"><h:panelGrid id="abc">
+						<rich:dataTable value="#{kiwiTreeBean.synonyms}" var="record">
+							<h:column>
+								<f:facet name="header">Synonyms</f:facet>
+					 		#{record}
+						</h:column>
+						</rich:dataTable>
+					</h:panelGrid></td>
+
+					<td style="vertical-align: top;"><rich:tabPanel
+						style="height: 100%" switchType="normal">
+						<rich:tab label="Search" style="height: 100%">
+							<a:form>
+								<h:panelGrid columns="3">
+									<h:inputText value="#{searchAction.searchQuery}" />
+									<a:commandButton action="#{searchAction.runSearch()}"
+										value="Search" reRender="search-results" />
+
+									<!-- SearchTags listing -->
+									<s:div>
+										<rich:spacer width="4px" />
+										<h:outputLabel value="Query Tags:"
+											rendered="#{searchActions.searchTags != null}" />
+										<ui:repeat var="tag" value="#{searchAction.searchTags}">
+
+											<s:button styleClass="searchRemoveTag" value="#{tag} x"
+												view="/search.xhtml" propagation="none"
+												title="Remove from query">
+												<f:param name="t"
+													value="#{searchAction.buildSearchTagWithout(tag)}" />
+											</s:button>
+
+										</ui:repeat>
+									</s:div>
+								</h:panelGrid>
+							</a:form>
+
+							<!-- TagCloud listing -->
+							<!--  	<h:panelGrid>
+								<h:outputText value="TagCloud:" />
+								<ui:repeat var="tag"
+									value="#{tagCloudService.aggregateTags(searchAction.relevantTags)}"
+									styleClass="searchAddTag">
+
+									<span style="font-size: #{tag.size}"> <s:button
+										view="/search.xhtml" propagation="none"
+										value="#{tag.tag.title}" styleClass="searchAddTag"
+										style="color: rgb(100,#{tag.colorCode},100);">
+										<f:param name="t"
+											value="#{searchAction.buildSearchTagWith(tag.tag.title)}" />
+									</s:button> </span>
+
+								</ui:repeat>
+							</h:panelGrid> -->
+	
+							
+							  <h:form id="search-results"> 
+							
+								<rich:dataTable value="#{searchAction.searchResults}" var="ci">
+									<rich:column>
+
+										<div class="searchResultItem">
+										<s:link view="/home.xhtml"
+											value="#{ci.title}" propagation="none"></s:link>
+
+											<h:column>
+												<!--  action="#{kiwiTreeBean.addSynonym(tag.tag)}" -->
+												<h:commandButton value="Syn"
+													action="#{kiwiTreeBean.addSynonym(ci)}">
+												</h:commandButton>
+											</h:column>
+											<h:column>
+												<h:commandButton value="Nar"
+													action="#{kiwiTreeBean.addTag(ci)}">
+												</h:commandButton>
+											</h:column>
+
+										 <rich:spacer width="4px" /> <!-- Add Tag button --> <!--  		<ui:repeat var="tag"
+											value="#{tagCloudService.aggregateTags(ci.tags)}">
+
+										
+											<h:commandButton value="#{tag.tag.title}"
+												action="#{kiwiTreeBean.addTag(tag.tag)}">
+
+											</h:commandButton>
+											<rich:spacer width="2px" />
+										</ui:repeat> --> <h:outputText
+											value="No tags defined for current page"
+											rendered="#{empty tagCloudService.aggregateTags(ci.tags)}" />
+										<h:dataTable value="#{tagCloudService.aggregateTags(ci.tags)}"
+											var="tag"
+											rendered="#{not empty tagCloudService.aggregateTags(ci.tags)}">
+											<h:column>
+												<f:facet name="header">Tags</f:facet>
+												 #{tag.tag.title} 
+											</h:column>
+											<h:column>
+												<!--  action="#{kiwiTreeBean.addSynonym(tag.tag)}" -->
+												<h:commandButton value="Syn"
+													action="#{kiwiTreeBean.addSynonym(tag.tag)}">
+												</h:commandButton>
+											</h:column>
+											<h:column>
+												<h:commandButton value="Nar"
+													action="#{kiwiTreeBean.addTag(tag.tag)}">
+												</h:commandButton>
+											</h:column>
+
+
+										</h:dataTable> <!--  <rich:orderingList
+											value="#{tagCloudService.aggregateTags(ci.tags)}" var="tag"
+											listHeight="auto" listWidth="auto" selection="#{kiwiTreeBean.selectedItems}" valueChangeListener = "#{kiwiTreeBean.processValueChanged}" switchType="ajax">
+
+											<rich:column width="80">
+												<f:facet name="header">
+													<h:outputText value="Tags" />
+												</f:facet>
+												<h:outputText value="#{tag.tag.title}"></h:outputText>
+											</rich:column>
+
+										</rich:orderingList> --> <br />
+										by <rich:spacer width="3px" /> <s:link view="/home.xhtml"
+											value="#{ci.author.login}" propagation="none">
+											<f:param name="title" value="#{ci.author.login}" />
+											<f:param name="uri" />
+										</s:link> <rich:spacer /> <h:outputText value="#{ci.modified}">
+											<f:convertDateTime type="both" />
+										</h:outputText> <h:outputText value="#{searchAction.renderPreview(ci)}"
+											escape="false" /></div>
+									</rich:column>
+									<rich:separator />
+								</rich:dataTable>
+							  </h:form> 
+						
+
+						</rich:tab>
+					</rich:tabPanel></td>
+				</tr>
+			</table>
+		</rich:panel>
+	</ui:define>
+</ui:composition>

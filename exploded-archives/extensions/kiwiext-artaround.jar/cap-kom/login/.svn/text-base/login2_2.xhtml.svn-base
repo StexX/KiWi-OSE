@@ -1,0 +1,92 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                             	
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+			 	xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                template="../layout/template-login.xhtml">   
+				
+	<ui:define name="body"> 
+          
+			<!-- begin: Passwortgenerierung: -->
+			<div id="tiersymb" class="loginCol capKomBorderLogin">
+				<table>
+					<tr>
+						<td class="passSymb">
+							<img src="../images/icons/stuhl.gif" title="Stuhl" alt="Stuhl" width="150" height="150" />
+						</td>
+						<td class="passSymb">
+							<img src="../images/icons/ball.gif" title="Ball" alt="Ball" width="150" height="150" />
+						</td>
+						<td class="passSymb">
+							<img src="../images/icons/flasche.gif" title="Flasche" alt="Flasche" width="150" height="150" />
+						</td>
+						<td class="passSymb">
+							<img src="../images/icons/Mond.gif" title="Mond" alt="Mond" width="150" height="150" />
+						</td>
+						<td class="passSymb">
+							<img src="../images/icons/schirm.gif" title="Schirm" alt="Schirm" width="150" height="150" />
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div id="gegenst" class="loginCol capKomBorderLogin">
+				<table>
+					<tr>
+						<td class="passSymb">
+							<img src="../images/icons/fisch.gif" title="Fisch" alt="Fisch" width="150" height="150" />
+						</td>
+						<td class="passSymb">
+							<img src="../images/icons/hahn.gif" title="Hahn" alt="Hahn" width="150" height="150" />
+						</td>
+						<td class="passSymb">
+							<img src="../images/icons/hund.gif" title="Hund" alt="Hund" width="150" height="150" />
+						</td>
+						<td class="passSymb">
+							<img src="../images/icons/katze.gif" title="Katze" alt="Katze" width="150" height="150" />
+						</td>
+						<td class="passSymb">
+							<img src="../images/icons/kuh.gif" title="Kuh" alt="Kuh" width="150" height="150" />
+						</td>
+					</tr>
+				</table>				
+			</div>
+			<!-- end: Passwortgenerierung -->
+
+		<!-- begin: buttons -->
+		<div id="navButtons">
+	    	<div class="hlist">
+	  			<ul>
+	  				<li class="button">
+	  					<a href="JavaScript:window.print();" title="#{messages['artaround.cap-kom.einfacheSprache.drucken']}">
+	  						<img src="../images/icons/drucken75px.gif" title="#{messages['artaround.cap-kom.einfacheSprache.drucken']}" alt="#{messages['artaround.cap-kom.einfacheSprache.drucken']}" />
+							<div class="simpleText">
+								#{messages['artaround.cap-kom.einfacheSprache.drucken']}
+							</div>	
+						</a>
+					</li>		  				
+	  				<li class="button">
+	  					<a href="login2_3.seam" title="#{messages['artaround.cap-kom.einfacheSprache.weiter']}">
+	  						<img src="../images/icons/weiter75px.gif" 
+								title="#{messages['artaround.cap-kom.einfacheSprache.weiter']}" 
+								alt="#{messages['artaround.cap-kom.einfacheSprache.weiter']}" />
+							<div class="simpleText">
+								#{messages['artaround.cap-kom.einfacheSprache.weiter']}
+							</div>	
+						</a>
+	  				</li>		  							
+				</ul>
+			</div>
+		</div>
+		<!-- end: buttons -->
+			
+ 	</ui:define>
+	
+ </ui:composition>

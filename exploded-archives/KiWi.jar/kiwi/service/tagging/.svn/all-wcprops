@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/tagging
+END
+TagCloudServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/tagging/TagCloudServiceImpl.class
+END
+TagRecommendationServiceImpl$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/tagging/TagRecommendationServiceImpl$1.class
+END
+TaggingServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/tagging/TaggingServiceImpl.class
+END
+TagRecommendationServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/tagging/TagRecommendationServiceImpl.class
+END
+TagRecommendationServiceImpl$TagRecommendationRatingComparator.class
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/tagging/TagRecommendationServiceImpl$TagRecommendationRatingComparator.class
+END

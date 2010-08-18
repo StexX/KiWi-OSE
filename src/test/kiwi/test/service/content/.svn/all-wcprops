@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/kiwi/!svn/ver/5005/KiWi/trunk/src/test/kiwi/test/service/content
+END
+ContentTests.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/3771/KiWi/trunk/src/test/kiwi/test/service/content/ContentTests.xml
+END
+MultimediaServiceTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5005/KiWi/trunk/src/test/kiwi/test/service/content/MultimediaServiceTest.java
+END

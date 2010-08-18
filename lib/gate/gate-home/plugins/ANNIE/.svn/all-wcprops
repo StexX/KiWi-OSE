@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/kiwi/!svn/ver/3932/KiWi/trunk/lib/gate/gate-home/plugins/ANNIE
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/kiwi/!svn/ver/2940/KiWi/trunk/lib/gate/gate-home/plugins/ANNIE/build.xml
+END
+creole.xml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/kiwi/!svn/ver/2940/KiWi/trunk/lib/gate/gate-home/plugins/ANNIE/creole.xml
+END
+ANNIE_with_defaults.gapp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/2940/KiWi/trunk/lib/gate/gate-home/plugins/ANNIE/ANNIE_with_defaults.gapp
+END

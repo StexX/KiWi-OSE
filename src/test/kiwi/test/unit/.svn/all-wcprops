@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/kiwi/!svn/ver/3834/KiWi/trunk/src/test/kiwi/test/unit
+END
+LCStest.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/kiwi/!svn/ver/1855/KiWi/trunk/src/test/kiwi/test/unit/LCStest.java
+END
+UnitTests.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/kiwi/!svn/ver/2240/KiWi/trunk/src/test/kiwi/test/unit/UnitTests.xml
+END
+FacadeUtilsTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/kiwi/!svn/ver/3834/KiWi/trunk/src/test/kiwi/test/unit/FacadeUtilsTest.java
+END
+KiWiQueryParserTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/3038/KiWi/trunk/src/test/kiwi/test/unit/KiWiQueryParserTest.java
+END

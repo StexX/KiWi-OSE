@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+
+<suite name="QueryTests" verbose="2" parallel="false">
+    <test name="SparqlService" junit="false">
+        <classes>
+            <class name="kiwi.test.service.query.SparqlServiceTest"/>
+        </classes>
+    </test>
+
+</suite>

@@ -1,0 +1,71 @@
+@prefix rdf : <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+@prefix owl: <http://www.w3.org/2002/07/owl#>
+
+eq-sym:	($x owl:sameAs $y) -> ($y owl:sameAs $x)
+eq-trans: ($x owl:sameAs $y), ($y owl:sameAs $z) -> ($x owl:sameAs $z)
+eq-rep-s: ($s owl:sameAs $s'), ($s $p $o) -> ($s' $p $o)
+eq-rep-p: ($p owl:sameAs $p'), ($s $p $o) -> ($s $p' $o)
+eq-rep-o: ($o owl:sameAs $o'), ($s $p $o) -> ($s $p $o')
+eq-diff1: ($x owl:sameAs $y), ($x owl:differentFrom $y) -> inconsistency
+
+prp-dom: ($p rdfs:domain $c),  ($x $p $y) -> ($x rdf:type $c)
+prp-rng: ($p rdfs:range $c),  ($x $p $y) -> ($y rdf:type $c)
+prp-fp: ($p rdf:type owl:FunctionalProperty), ($x $p $y1), ($x $p $y2) -> ($y1 owl:sameAs $y2)
+prp-ifp: ($p rdf:type owl:InverseFunctionalProperty), ($x1 $p $y), ($x2 $p $y) -> ($x1 owl:sameAs $x2)
+prp-irp: ($p rdf:type owl:IrreflexiveProperty), ($x $p $x) -> inconsistency
+prp-symp: ($p rdf:type owl:SymmetricProperty), ($x $p $y) -> ($y $p $x)
+prp-asyp: ($p rdf:type owl:AsymmetricProperty), ($x $p $y), ($y $p $x) -> inconsistency
+prp-trp: ($p rdf:type owl:TransitiveProperty), ($x $p $y), ($y $p $z) -> ($x $p $z)
+prp-spo1: ($p1 rdfs:subPropertyOf $p2), ($x $p1 $y) -> ($x $p2 $y)
+prp-eqp1: ($p1 owl:equivalentProperty $p2), ($x $p1 $y) -> ($x $p2 $y)
+prp-eqp2: ($p1 owl:equivalentProperty $p2), ($x $p2 $y) -> ($x $p1 $y)
+prp-pdw: ($p1 owl:propertyDisjointWith $p2), ($x $p1 $y), ($x $p2 $y) -> inconsistency
+prp-inv1: ($p1 owl:inverseOf $p2), ($x $p1 $y) -> ($y $p2 $x)
+prp-inv2: ($p1 owl:inverseOf $p2), ($x $p2 $y) -> ($y $p1 $x)
+prp-npa1: ($x owl:sourceIndividual $i1), ($x owl:assertionProperty $p), ($x owl:targetIndividual $i2), ($i1 $p $i2) -> inconsistency
+prp-npa2: ($x owl:sourceIndividual $i), ($x owl:assertionProperty $p), ($x owl:targetValue $lt), ($i $p $lt) -> inconsistency
+
+
+cls-nothing2: ($x rdf:type owl:Nothing) -> inconsistency
+cls-com: ($c1 owl:complementOf $c2), ($x rdf:type $c1), ($x rdf:type $c2) -> inconsistency
+cls-svf1: ($x owl:someValuesFrom $y), ($x owl:onProperty $p), ($u $p $v), ($v rdf:type $y) -> ($u rdf:type $x)
+cls-svf2: ($x owl:someValuesFrom owl:Thing), ($x owl:onProperty $p), ($u $p $v) -> ($u rdf:type $x)
+cls-avf: ($x owl:hasValue $y), ($x owl:onProperty $p), ($u rdf:type $x), ($u $p $v) -> ($v rdf:type $y)
+cls-hv1: ($x owl:hasValue $y), ($x owl:onProperty $p), ($u rdf:type $x) -> ($u $p $y)
+cls-hv2: ($x owl:hasValue $y), ($x owl:onProperty $p), ($u $p $y) -> ($u rdf:type $x)
+cls-maxc1: ($x owl:maxCardinality "0"^^xsd:nonNegativeInteger), ($x owl:onProperty $p),($u rdf:type $x), ($u $p $y) -> inconsistency
+cls-maxc2: ($x owl:maxCardinality "1"^^xsd:nonNegativeInteger), ($x owl:onProperty $p),($u rdf:type $x), ($u $p $y1), ($u $p $y2) -> ($y1 owl:sameAs $y2)
+cls-maxqc1: ($x owl:maxQualifiedCardinality "0"^^xsd:nonNegativeInteger), ($x owl:onProperty $p), ($x owl:onClass $c), ($u rdf:type $x), ($u $p $y), ($y rdf:type $c) -> inconsistency
+cls-maxqc2: ($x owl:maxQualifiedCardinality "0"^^xsd:nonNegativeInteger), ($x owl:onProperty $p), ($x owl:onClass owl:Thing), ($u rdf:type $x), ($u $p $y) -> inconsistency
+cls-maxqc3: ($x owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger), ($x owl:onProperty $p), ($x owl:onClass $c), ($u rdf:type $x), ($u $p $y1), ($y1 rdf:type $c), ($u $p $y2), ($y2 rdf:type $c) -> ($y1 owl:sameAs $y2)
+cls-maxqc4: ($x owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger), ($x owl:onProperty $p), ($x owl:onClass owl:Thing), ($u rdf:type $x), ($u $p $y1), ($u $p $y2) -> inconsistency
+
+cax-sco: ($c1 rdfs:subClassOf $c2), ($x rdf:type $c1) -> ($x rdf:type $c2)
+cax-eqc1: ($c1 owl:equivalentClass $c2), ($x rdf:type $c1) -> ($x rdf:type $c2)
+cax-eqc2: ($c1 owl:equivalentClass $c2), ($x rdf:type $c2) -> ($x rdf:type $c1)
+
+
+
+
+scm-cls: ($c rdf:type owl:Class) -> ($c rdfs:subClassOf $c), ($c owl:equivalentClass $c), ($c rdfs:subClassOf owl:Thing), (owl:Nothing rdfs:subClassOf $c)
+scm-sco: ($c1 rdfs:subClassOf $c2), ($c2 rdfs:subClassOf $c3) -> ($c1 rdfs:subClassOf $c3)
+scm-eqc1: ($c1 owl:equivalentClass $c2) -> ($c1 rdfs:subClassOf $c2), ($c2 rdfs:subClassOf $c1)
+scm-eqc2: ($c1 rdfs:subClassOf $c2), ($c2 rdfs:subClassOf $c1) -> ($c1 owl:equivalentClass $c2)
+scm-op: ($p rdf:type owl:ObjectProperty) -> ($p rdfs:subPropertyOf $p), ($p owl:equivalentProperty $p)
+scm-dp: ($p rdf:type owl:DatatypeProperty) -> ($p rdfs:subPropertyOf $p), ($p owl:equivalentProperty $p)
+scm-spo: ($p1 rdfs:subPropertyOf $p2), ($p2 rdfs:subPropertyOf $p3) -> ($p1 rdfs:subPropertyOf $p3)
+scm-eqp1: ($p1 owl:equivalentProperty $p2) -> ($p1 rdfs:subPropertyOf $p2), ($p2 rdfs:subPropertyOf $p1)
+scm-eqp2: ($p1 rdfs:subPropertyOf $p2), ($p2 rdfs:subPropertyOf $p1) -> ($p1 owl:equivalentProperty $p2)
+scm-dom1: ($p rdfs:domain $c1), ($c1 rdfs:subClassOf $c2) -> ($p rdfs:domain $c2)
+scm-dom2: ($p2 rdfs:domain $c), ($p1 rdfs:subPropertyOf $p2) -> ($p1 rdfs:domain $c)
+scm-rng1: ($p rdfs:range $c1), ($c1 rdfs:subClassOf $c2)-> ($p rdfs:range $c2)
+scm-rng2: ($p2 rdfs:range $c), ($p1 rdfs:subPropertyOf $p2)-> ($p1 rdfs:range $c)
+scm-hv: ($c1 owl:hasValue $i), ($c1 owl:onProperty $p1), ($c2 owl:hasValue $i), ($c2 owl:onProperty $p2), ($p1 rdfs:subPropertyOf $p2) -> ($c1 rdfs:subClassOf $c2)
+scm-svf1: ($c1 owl:someValuesFrom $y1), ($c1 owl:onProperty $p), ($c2 owl:someValuesFrom $y2), ($c2 owl:onProperty $p), ($y1 rdfs:subClassOf $y2) -> ($c1 rdfs:subClassOf $c2)
+scm-svf2: ($c1 owl:someValuesFrom $y), ($c1 owl:onProperty $p1), ($c2 owl:someValuesFrom $y), ($c2 owl:onProperty $p2), ($p1 rdfs:subPropertyOf $p2) -> ($c1 rdfs:subClassOf $c2)
+scm-avf1: ($c1 owl:allValuesFrom $y1), ($c1 owl:onProperty $p), ($c2 owl:allValuesFrom $y2), ($c2 owl:onProperty $p), ($y1 rdfs:subClassOf $y2) -> ($c1 rdfs:subClassOf $c2)
+scm-avf2: ($c1 owl:allValuesFrom $y), ($c1 owl:onProperty $p1), ($c2 owl:allValuesFrom $y), ($c2 owl:onProperty $p2), ($p1 rdfs:subPropertyOf $p2) -> ($c1 rdfs:subClassOf $c2)
+
+
+

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5464/KiWi/trunk/extensions/artaround/src/artaround/datamodel/artwork
+END
+ArtWorkFacade.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/5464/KiWi/trunk/extensions/artaround/src/artaround/datamodel/artwork/ArtWorkFacade.java
+END
+ArtWorkTextFacade.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/4775/KiWi/trunk/extensions/artaround/src/artaround/datamodel/artwork/ArtWorkTextFacade.java
+END
+MultimediaFacade.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/4775/KiWi/trunk/extensions/artaround/src/artaround/datamodel/artwork/MultimediaFacade.java
+END
+MultimediaTextFacade.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/kiwi/!svn/ver/4775/KiWi/trunk/extensions/artaround/src/artaround/datamodel/artwork/MultimediaTextFacade.java
+END

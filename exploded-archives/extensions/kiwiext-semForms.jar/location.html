@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA6_0WfBruz995QE495JCO5BSYRS6RMyPXpWvVF76Ga-Tv1CkebhRvhIg1Vee6SbV-4i5L3LdKj_AwXA"></script>	
+	<script type="text/javascript">
+			/* <![CDATA[ */
+
+			var map;
+			var marker;
+			var geocoder;
+			
+			var start;
+			
+			jQuery(document).ready(function(){
+				var lat = jQuery("#lat").val();
+				var lng = jQuery("#lng").val();
+				map = new GMap2(document.getElementById("map"));
+				geocoder = new GClientGeocoder();
+				start = new GLatLng(45,12);
+				
+				if( lat!="" && lng!="" ) {
+					setMarker(new GLatLng(lat, lng));	
+				} else {
+					locate();
+				}
+        		
+       			map.setUIToDefault();
+			});
+			
+			function setMarker(point) {
+				map.setCenter(point, 12);
+				if( !marker ) {
+					marker = new GMarker(point,{draggable:true});
+					GEvent.addListener(marker,"dragend",function(p){
+						jQuery("#lat").val(p.lat());
+						jQuery("#lng").val(p.lng());
+					});
+        			map.addOverlay(marker);
+				} else  {
+					marker.setLatLng(point);
+				}
+				jQuery("#lat").val(point.lat());
+				jQuery("#lng").val(point.lng());
+			}
+			
+			function locate() {
+				var address = jQuery("#street").val()+" "+jQuery("#postal").val()+" "+jQuery("#city").val()+" "+jQuery("#country").val();
+				geocoder.getLatLng(address,function(point) {
+      				if (!point) {
+						alert("no point found for "+address);
+						setMarker(start);
+      				} else {
+						setMarker(point);
+      				}
+    			});
+			 }
+			 
+			 /* ]]> */
+
+		</script>
+	</head>
+	<body>
+		<h3>Manage Location:</h3>
+		<form>
+			<table>
+
+				<tr><td>Street:</td><td><input id="street" type="text" property="http://www.w3.org/2000/10/swap/pim/contact#street" size="40" maxlength="50"/></td></tr>
+				<tr><td>City:</td><td><input id="city" type="text" property="http://www.w3.org/2000/10/swap/pim/contact#city" size="40" maxlength="50"/></td></tr>
+				<tr><td>PostalCode:</td><td><input id="postal" type="text" property="http://www.w3.org/2000/10/swap/pim/contact#postalCode" size="40" maxlength="50"/></td></tr>
+				<tr><td>Country:</td><td><input id="country" type="text" property="http://www.w3.org/2000/10/swap/pim/contact#country" size="40" maxlength="50"/></td></tr>
+
+			</table>
+			<input type="hidden" id="lat" property="http://www.w3.org/2003/01/geo/wgs84_pos#lat" value="47.9"/>
+			<input type="hidden" id="lng" property="http://www.w3.org/2003/01/geo/wgs84_pos#long" value="13.03" />
+			<div id="map" style="width:400px;height:200px;border:1px solid black;margin-top:10px;" ></div>
+			<input type="submit" style="margin-top:20px;" name="Save" value="Save"/>
+		</form>
+		<button onclick="locate();" href="#" style="position:absolute;top:424px;left:60px;" >Geolocate</button>
+	</body>
+</html>
+

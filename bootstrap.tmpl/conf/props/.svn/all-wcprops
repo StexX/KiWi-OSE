@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/bootstrap.tmpl/conf/props
+END
+messaging-users.properties
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/bootstrap.tmpl/conf/props/messaging-users.properties
+END
+messaging-roles.properties
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/bootstrap.tmpl/conf/props/messaging-roles.properties
+END

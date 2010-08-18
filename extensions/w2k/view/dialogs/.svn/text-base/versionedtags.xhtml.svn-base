@@ -1,0 +1,46 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a="http://richfaces.org/a4j"
+	xmlns:kiwi="http://www.kiwi-project.eu/jsf">
+
+	<!--  commenting functionality -->
+	<rich:togglePanel id="versionedtags" switchType="ajax"
+		stateOrder="closed,open">
+		<f:facet name="closed">
+			<rich:toggleControl>
+				<h2 class="commentsClosed">Tags</h2>
+			</rich:toggleControl>
+		</f:facet>
+
+		<f:facet name="open">
+ 		<f:subview id="versionedTagsPanel">
+			<rich:toggleControl>
+				<h2 class="commentsOpen">Tags</h2>
+			</rich:toggleControl>
+			<h:panelGrid columns="2" columnClasses="name,inspector-value">
+				<s:div rendered="#{! empty kiwi.action.revision.previewAction.taggingUpdate.addedTags}">
+			    	<strong>Added Tags</strong>
+			    </s:div>
+			    <s:div  id="previewAddedTags" rendered="#{! empty kiwi.action.revision.previewAction.taggingUpdate.addedTags}">
+			    	<ui:repeat value="#{kiwi.action.revision.previewAction.taggingUpdate.addedTags}" var="tag">
+			    	    <h:outputText value="#{tag.taggingResource.title}"/><br/>
+			    	</ui:repeat>
+			    </s:div>
+			    <s:div rendered="#{! empty kiwi.action.revision.previewAction.taggingUpdate.removedTags}">
+			    	<strong>Removed Tags</strong>
+			    </s:div>
+			    <s:div  id="previewRemovedTags" rendered="#{! empty kiwi.action.revision.previewAction.taggingUpdate.removedTags}">
+			    	<ui:repeat value="#{kiwi.action.revision.previewAction.taggingUpdate.removedTags}" var="tag">
+			    	    <h:outputText value="#{tag.taggingResource.title}"/><br/>
+			    	</ui:repeat>
+			    </s:div>
+			</h:panelGrid>
+ 		</f:subview>
+		</f:facet>
+	</rich:togglePanel>
+</ui:composition>

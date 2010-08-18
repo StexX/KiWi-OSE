@@ -1,0 +1,19 @@
+
+
+I had this problem when running the testng tests: (jboss 4.2.3, Java 1.6)
+
+java.lang.ClassNotFoundException: [Ljava.lang.Class;
+    at java.net.URLClassLoader$1.run(Unknown Source)
+
+Solution:
+set the following parameters of your testng running VM.
+For details see http://www.seamframework.org/Community/DefaultUnitTestThrowsExceptionErrorInstallingToDescribedNameBeanDeployer
+-Dsun.lang.ClassLoader.allowArraySyntax=true
+-Djava.endorsed.dirs=${jboss-4.2.3.endorsed} ->the variable have to be set.
+
+
+An other interesting aspect, if you use a clean related ant task (e.g. cleanExplode)
+then you can not run individual test from eclise. The reason is : the clean task
+cleans all the previous actions (and also the bootstrap). To be able to run the
+test in the eclipse you need to run the doTest task (ant doTest) or
+the cleanTestEnv and prepareTestEnv tasks (ant cleanTestEnv;ant prepareTestEnv).

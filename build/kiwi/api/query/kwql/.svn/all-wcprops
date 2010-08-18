@@ -1,0 +1,155 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/query/kwql
+END
+Dictionary.class
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/query/kwql/Dictionary.class
+END
+KiWiSOLRTuple.class
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/query/kwql/KiWiSOLRTuple.class
+END
+KwqlQueryServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/query/kwql/KwqlQueryServiceLocal.class
+END
+KwqlTagQualifier.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/query/kwql/KwqlTagQualifier.class
+END
+KwqlQueryServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/query/kwql/KwqlQueryServiceRemote.class
+END
+UnexpectedNodeException.class
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/query/kwql/UnexpectedNodeException.class
+END
+KwqlQualifierType.class
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/query/kwql/KwqlQualifierType.class
+END
+KwqlServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/query/kwql/KwqlServiceLocal.class
+END
+KwqlVariable.class
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/query/kwql/KwqlVariable.class
+END
+KwqlConstraint.class
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/query/kwql/KwqlConstraint.class
+END
+KwqlContentItemQualifier.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/query/kwql/KwqlContentItemQualifier.class
+END
+VariableSet.class
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/query/kwql/VariableSet.class
+END
+KwqlAxis.class
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/query/kwql/KwqlAxis.class
+END
+KwqlLinkQualifier.class
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/query/kwql/KwqlLinkQualifier.class
+END
+KwqlService.class
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/query/kwql/KwqlService.class
+END
+KwqlConstraints.class
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/query/kwql/KwqlConstraints.class
+END
+KwqlResourceConstraint.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/query/kwql/KwqlResourceConstraint.class
+END
+KwqlFragmentQualifier.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/query/kwql/KwqlFragmentQualifier.class
+END
+KwqlQueryService.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/query/kwql/KwqlQueryService.class
+END
+KwqlServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/query/kwql/KwqlServiceRemote.class
+END
+KwqlSolrQueryGenerator.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/query/kwql/KwqlSolrQueryGenerator.class
+END
+KwqlTargetVariable.class
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/query/kwql/KwqlTargetVariable.class
+END
+KwqlTernary.class
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/query/kwql/KwqlTernary.class
+END
+KwqlResource.class
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/query/kwql/KwqlResource.class
+END
+SolrBacktrackingOption.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/query/kwql/SolrBacktrackingOption.class
+END

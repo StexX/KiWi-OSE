@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/user
+END
+Role.class
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/user/Role.class
+END
+User.class
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/user/User.class
+END
+Group.class
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/user/Group.class
+END
+PermissionOwner.class
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/user/PermissionOwner.class
+END

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pages xmlns="http://jboss.com/products/seam/pages"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://jboss.com/products/seam/pages http://jboss.com/products/seam/pages-2.0.xsd"
+
+       no-conversation-view-id="/home.xhtml"
+       login-view-id="/login.xhtml">
+    
+    <page view-id="/swim/home.xhtml" >
+        <!-- 
+        <param name="uri" value="#{currentContentItemFactory.currentItemUri}" required="false"/>
+        <param name="kiwiid" value="#{currentContentItemFactory.currentItemKiWiId}" required="false"/>
+        <param name="id" value="#{currentContentItemFactory.currentItemId}" required="false"/>
+        <param name="title" value="#{currentContentItemFactory.currentItemTitle}" required="false"/>
+        -->
+        
+        <begin-conversation join="true"/>
+
+        <action execute="#{viewAction.begin}"/>
+        
+        <!-- this should not happen all the time!
+        <action execute="#{currentContentItemFactory.refresh}"/>
+        -->
+    </page>
+    
+    <page view-id="/swim/media.xhtml" >
+        <navigation from-action="#{mediaAction.storeContentItem}">
+            <redirect view-id="/swim/home.xhtml"/>
+        </navigation>
+    </page>
+    
+    <page view-id="/swim/history.xhtml" >
+        <action execute="#{kiwi.action.revision.style.styleCreator.init}" />
+        <action execute="#{kiwi.action.revision.style.styleCreator.generateStyle}" />
+        <navigation>
+            <rule if="#{kiwi.action.revision.viewRevisionsAction.revisionSelected}">
+                <raise-event type="kiwi.action.revision.beginPreview"/>
+                <redirect view-id="/swim/preview.xhtml"/>
+            </rule>
+        </navigation>
+    </page>
+
+    
+    <page view-id="/swim/edit.xhtml">
+        <action execute="#{editorAction.begin}"/>
+
+        <navigation from-action="#{editorAction.storeContentItem}">
+            <redirect view-id="/swim/home.xhtml"/>
+        </navigation>
+    </page>
+
+    <page view-id="/swim/metadata.xhtml">
+        <action execute="#{metadataAction.loadMetadata}"/>
+
+    </page>
+    
+    <page view-id="/swim/activities.xhtml" action="#{activityAction.listActivities}">
+    </page>
+    
+</pages>

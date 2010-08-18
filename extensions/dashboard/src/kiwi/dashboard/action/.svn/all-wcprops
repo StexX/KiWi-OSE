@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/5557/KiWi/trunk/extensions/dashboard/src/kiwi/dashboard/action
+END
+UserHistoryAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/5429/KiWi/trunk/extensions/dashboard/src/kiwi/dashboard/action/UserHistoryAction.java
+END
+RuleBasedAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5415/KiWi/trunk/extensions/dashboard/src/kiwi/dashboard/action/RuleBasedAction.java
+END
+IntegrationAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/5557/KiWi/trunk/extensions/dashboard/src/kiwi/dashboard/action/IntegrationAction.java
+END
+StreamOfActivitiesAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/kiwi/!svn/ver/5393/KiWi/trunk/extensions/dashboard/src/kiwi/dashboard/action/StreamOfActivitiesAction.java
+END
+ContactsAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5418/KiWi/trunk/extensions/dashboard/src/kiwi/dashboard/action/ContactsAction.java
+END
+TweetAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/4630/KiWi/trunk/extensions/dashboard/src/kiwi/dashboard/action/TweetAction.java
+END
+CommentAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5280/KiWi/trunk/extensions/dashboard/src/kiwi/dashboard/action/CommentAction.java
+END
+ActivityAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/4630/KiWi/trunk/extensions/dashboard/src/kiwi/dashboard/action/ActivityAction.java
+END
+GroupAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5426/KiWi/trunk/extensions/dashboard/src/kiwi/dashboard/action/GroupAction.java
+END
+WatchlistAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/4632/KiWi/trunk/extensions/dashboard/src/kiwi/dashboard/action/WatchlistAction.java
+END
+PreferenceAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5498/KiWi/trunk/extensions/dashboard/src/kiwi/dashboard/action/PreferenceAction.java
+END

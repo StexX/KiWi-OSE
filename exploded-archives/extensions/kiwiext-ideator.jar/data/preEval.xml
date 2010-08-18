@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<preEvaluation>
+	<criteria question = "Ist die Idee interessant?" preEvalStatus = "1"/>
+	<criteria question = "Ist die Idee neu?" preEvalStatus = "2"/>
+	<criteria question = "Ist die Idee umsetzbar?" preEvalStatus = "3"/>
+	<criteria question = "Ist die Idee ohne größere Risiken umsetzbar?" preEvalStatus = "4"/>	
+</preEvaluation>

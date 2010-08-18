@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/2940/KiWi/trunk/lib/gate/gate-home/plugins/ANNIE/resources/BengaliNE/grammar
+END
+organisation.jape
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/kiwi/!svn/ver/2940/KiWi/trunk/lib/gate/gate-home/plugins/ANNIE/resources/BengaliNE/grammar/organisation.jape
+END
+main.jape
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/2940/KiWi/trunk/lib/gate/gate-home/plugins/ANNIE/resources/BengaliNE/grammar/main.jape
+END
+person.jape
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/2940/KiWi/trunk/lib/gate/gate-home/plugins/ANNIE/resources/BengaliNE/grammar/person.jape
+END
+location.jape
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/2940/KiWi/trunk/lib/gate/gate-home/plugins/ANNIE/resources/BengaliNE/grammar/location.jape
+END

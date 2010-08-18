@@ -1,0 +1,1298 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+    xmlns:c="http://java.sun.com/jstl/core"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:a="http://richfaces.org/a4j" 
+    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+    template="layout/template.xhtml">
+
+<ui:define name="content">
+       
+    <a:form id="formWikiContent">
+    
+	    <h1>#{currentContentItem.title}</h1>
+	    
+        <p style="margin-top: 20px; margin-left: 10px; margin-right: 10px;" class="help">
+          Annotating content. Select piece of text and click on one of the annotating buttons to create fragments or nested content items.
+          <em>This tool is a work in progress. Use it at your own risk!</em>
+        </p>
+
+        <rich:messages styleClass="message"/>
+
+		<h:inputHidden id="startCoord" value="#{ie.informationExtractionAction.startCoord}"/>
+		<h:inputHidden id="endCoord" value="#{ie.informationExtractionAction.endCoord}"/>
+				
+		<h:inputHidden id="selectedFragmentId" value="#{ie.informationExtractionAction.selectedFragmentId}"/>		
+		<h:inputHidden id="selectedNestedId" value="#{ie.informationExtractionAction.selectedNestedId}"/>		
+		
+		
+		
+		<!--		
+		<a:jsFunction name="ieAddFragment" action="#{ie.informationExtractionAction.addFragment}" data="#{ie.informationExtractionAction.selectedFragmentId}" oncomplete="onAddFragment(data);">
+			<a:actionparam name="startCoord" assignTo="#{ie.informationExtractionAction.startCoord}"/>
+			<a:actionparam name="endCoord" assignTo="#{ie.informationExtractionAction.endCoord}"/>
+		</a:jsFunction>
+		
+		<a:jsFunction name="ieAddNested" action="#{ie.informationExtractionAction.addNested}" data="#{ie.informationExtractionAction.selectedNestedId}" oncomplete="onAddNested(data);">
+			<a:actionparam name="startCoord" assignTo="#{ie.informationExtractionAction.startCoord}"/>
+			<a:actionparam name="endCoord" assignTo="#{ie.informationExtractionAction.endCoord}"/>			
+		</a:jsFunction>
+		
+		<a:jsFunction name="ieReRender" requestDelay="500" reRender="contentHtmlWrap, annotationEditor">
+		</a:jsFunction>
+		-->
+		
+		<a:jsFunction name="ieSelectAnnotation" action="#{ie.informationExtractionAction.selectAnnotation}" reRender="annotationEditor">
+			<a:actionparam name="id" assignTo="#{ie.informationExtractionAction.selectedAnnotationId}"/>
+		</a:jsFunction>
+		
+		<a:jsFunction name="ieSelectInterval" action="#{ie.informationExtractionAction.selectInterval}" reRender="annotationEditor">
+			<a:actionparam name="startCoord" assignTo="#{ie.informationExtractionAction.startCoord}"/>
+			<a:actionparam name="endCoord" assignTo="#{ie.informationExtractionAction.endCoord}"/>
+		</a:jsFunction>
+		
+		
+
+	    <script type="text/javascript;version=1.7">
+	 // <![CDATA[  
+	 
+	 		ieAddFragment = function(start, end) {
+		 		let startCoord = document.getElementById("formWikiContent:startCoord");
+		 		startCoord.value = start;
+
+		 		let endCoord = document.getElementById("formWikiContent:endCoord");
+		 		endCoord.value = end;
+	 		}
+
+	 		ieAddNested = ieAddFragment;
+			ieAddRdfaDatatype = ieAddFragment;
+			ieAddRdfaObject = ieAddFragment;
+	 		
+	 		
+	 		// some global values
+	 		
+	 		// id of the currently selected fragment
+	 		var selectedFragmentId = null;
+
+	 		// id of the currently selected nested item
+	 		var selectedNestedId = null;
+
+	 		// fragment id -> span list.
+	 		var fragmentMap = {};
+
+	 		// nested id -> div. just one div... 
+	 		var nestedMap = {};
+
+	 		// fragments that are currently hovered over... 
+	 		var hoveredFragmentIds = [];
+	 
+	 		NodePos = function(node, pos, prefix) {
+				this.node = node;
+				this.pos = pos;
+				this.prefix = prefix;
+		 	}
+
+	 		 /* reimplementation of KiWiXomUtils.NodePosIterator in JavaScript.
+	 		    it needs to behave exactly in the same way. */
+	 		textCoordsGenerator = function(root, root_offset) {
+				let stack = [];
+				let pos = root_offset;
+				//let node = root;
+
+				let isBlockElement = function(n) {
+					if (n.nodeType == 1) { //ELEMENT_TYPE
+						//alert(n.localName);
+						if (/^((p)|(div))$/i.test(n.localName)) {
+							//alert("true");
+							return true;
+						}
+					}
+					return false;
+				}
+
+				let add = function (n) {
+					
+					if (isBlockElement(n)) {
+
+						if (n.hasAttribute("skip")) {
+							return;
+						}
+						
+						if (stack.length > 0) {
+							stack[stack.length - 1].prefix = "\n" + stack[stack.length - 1].prefix;
+						}
+
+						stack.push(new NodePos(n, 0, "\n"));
+					}
+					else {
+						stack.push(new NodePos(n, 0, ""));
+					}
+				}
+				
+				add (root);
+
+				while (stack.length > 0) {
+					let n = stack.pop();
+					for (let i = n.node.childNodes.length - 1; i >= 0; --i) {
+						add(n.node.childNodes.item(i));
+					}
+
+					pos += n.prefix.length;
+
+					// allow the server to specify the precise coordinates in the "pos" attribute
+					// (I know I probably break XHTML spec this way here and I don't care.)
+					if (n.node.nodeType == 1) { //ELEMENT
+						if (n.node.hasAttribute("pos")) {
+							pos = parseInt(n.node.getAttribute("pos"));
+						}
+					}
+
+					n.pos = pos;
+
+					if (n.node.nodeType == 3) { //TEXT_TYPE
+						pos += n.node.nodeValue.length;
+					}
+
+					yield n;
+				}
+		 	}
+	 
+	 		getRangeTextCoords = function(root, root_offset, rng) {
+		 		let generator = textCoordsGenerator(root, root_offset);
+
+		 		let startNp = null;
+		 		let endNp = null;
+
+		 		let startCoord = null;
+		 		let endCoord = null;		 		
+		 		
+		 		for (let np in generator) {
+					// alert("" + np.node.nodeName + " " + np.node.nodeValue + np.pos);
+
+					if (rng.startContainer == np.node) {
+						startNp = np;
+					}
+
+					if (rng.endContainer == np.node) {
+						endNp = np;
+					}
+			 	}
+
+			 	if (startNp != null && endNp != null) {
+				 	if (startNp.node.nodeType == 3) { //TEXT_TYPE
+				 		startCoord = startNp.pos + rng.startOffset;
+				 	}
+				 	else {
+					 	startCoord = startNp.pos;
+				 	}
+
+				 	if (endNp.node.nodeType == 3) {
+					 	endCoord = endNp.pos + rng.endOffset;
+				 	}
+				 	else {
+					 	// if the ending node is not a text, we need to count the content.
+					 	endCoord = endNp.pos;
+					 	let generator = textCoordsGenerator(endNp.node, endNp.pos);
+					 	for (let np in generator) {
+							endCoord = np.pos;
+							if (np.node.nodeType == 3) {
+								endCoord += np.node.nodeValue.length;
+							} 
+						}
+					}
+
+				 	// alert(" " + startCoord + ", " + endCoord);
+				 	
+				 	return [startCoord, endCoord];
+				 	//alert("coordinates: " + startNp.pos + 
+			 	}
+
+			 	return null;
+	 		}
+
+	 		annotateFragment = function() {
+		 		let content = document.getElementById("contentHtml").firstChild;
+		 		let selection = window.getSelection();
+
+		 		let startCoord = null;
+		 		let endCoord = null;
+		 		
+		 		let coords = getRangeTextCoords (content, 0, selection.getRangeAt(0));
+				if (coords != null) {
+					[startCoord, endCoord] = coords;
+
+					// alert("coords: " + startCoord + " " + endCoord);
+					ieAddFragment (startCoord, endCoord);
+				}
+	 		} 
+
+	 		annotateRdfaDatatype = function() {
+		 		let content = document.getElementById("contentHtml").firstChild;
+		 		let selection = window.getSelection();
+
+		 		let startCoord = null;
+		 		let endCoord = null;
+		 		
+		 		let coords = getRangeTextCoords (content, 0, selection.getRangeAt(0));
+				if (coords != null) {
+					[startCoord, endCoord] = coords;
+
+					ieAddRdfaDatatype (startCoord, endCoord);
+				}
+	 		}
+
+	 		annotateRdfaObject = function() {
+		 		let content = document.getElementById("contentHtml").firstChild;
+		 		let selection = window.getSelection();
+
+		 		let startCoord = null;
+		 		let endCoord = null;
+		 		
+		 		let coords = getRangeTextCoords (content, 0, selection.getRangeAt(0));
+				if (coords != null) {
+					[startCoord, endCoord] = coords;
+
+					ieAddRdfaObject (startCoord, endCoord);
+				}
+	 		} 
+
+	 		selectInterval = function() {
+				let content = document.getElementById("contentHtml").firstChild;
+		 		let selection = window.getSelection();
+
+		 		let startCoord = null;
+		 		let endCoord = null;
+		 		
+		 		let coords = getRangeTextCoords (content, 0, selection.getRangeAt(0));
+				if (coords != null) {
+					[startCoord, endCoord] = coords;
+
+					// alert("coords: " + startCoord + " " + endCoord);
+					ieSelectInterval (startCoord, endCoord);
+				}
+			}
+
+			annotateNested = function() {
+				let content = document.getElementById("contentHtml").firstChild;
+		 		let selection = window.getSelection();
+
+		 		let startCoord = null;
+		 		let endCoord = null;
+		 		
+		 		let coords = getRangeTextCoords (content, 0, selection.getRangeAt(0));
+				if (coords != null) {
+					[startCoord, endCoord] = coords;
+
+					ieAddNested (startCoord, endCoord);
+				} 
+			}
+
+	 		dom2plain = function(node) {
+	 			let generator = textCoordsGenerator(node, 0);
+	 			let text = "";
+	 			for (let np in generator) {
+		 			text += np.prefix;
+		 			if (np.node.nodeType == 3) { //TEXT_TYPE
+
+		 				if (text.length != np.pos) {
+							alert("inconsistent position");
+			 			}
+			 			
+			 			text += np.node.nodeValue;
+		 			}
+	 			}
+
+	 			//text = text.replace(/\n/g, 'x');
+
+	 			return text;
+	 		}
+
+	 		clearElement = function(e) {
+				while(e.childNodes.length > 0) {
+					e.removeChild(e.firstChild);
+				}
+		 	}
+
+		 	onAddFragment = function(data) {
+			 	selectedFragmentId = data;
+			 	selectedNestedId = null;
+			 	
+		 		ieReRender();
+		 	}
+
+		 	onAddNested = function(data) {
+			 	selectedFragmentId = null;
+			 	selectedNestedId = data;
+			 	
+		 		ieReRender();
+		 	}
+
+		 	onDelete = function() {
+		 		selectedFragmentId = null;
+			 	selectedNestedId = null;
+
+			 	ieReRender();
+		 	}
+		 
+			/* 
+			 * Computes a span background color based on how many annotations are on the span...
+			 * variant flags can be 0, 1, 2, (1 | 2)=3   (not seleted, hover, selected, selected and hover)  
+			 */
+			mixColor = function(ids, variant, selectedId) {
+				
+				// no fragment, no background.
+				if (ids.length == 0) {
+					return null;
+				}
+
+				// The old colors based on select/hover, maybe I'll et back to them...
+				/*if (variant == 0) {
+					return "#cccccc";
+				}
+				else if (variant == 1) {
+					return "#8bc53e";
+				}
+				else if (variant == 2) {
+					return "#3e8bc5";
+				}
+				else if (variant == 3) {
+					return "#4e9bd5";
+				}*/
+
+				// The code implements alpha blending, multiple annotations are displayed as if transparent colored glass tiles on top of each other. 
+				// The color is based on validity of the annotation. (green, yellow for incomplete, red for inconsistent)
+				// Selected annotation displayed as blue.
+				
+				let a = 0;
+				let r = 0;
+				let g = 0;
+				let b = 0;
+				let inca = 0.2; 
+
+				for (let i = 0; i < ids.length; ++i) {
+					let annot = g_annotations[ids[i]];					
+					let _a = 0.2;
+					let _r = 0;
+					let _g = 0;
+					let _b = 0;
+
+					if (annot.validity == 0) { //valid
+						_g = 1;
+					}
+					else if (annot.validity == 1) { // incomplete
+						_r = 1;
+						_g = 0.5;
+					}
+					else if (annot.validity == 2) { // inconsistent
+						_r = 1;
+					}
+
+					if (ids[i] == selectedId && variant >= 2) {
+						_a = 0.4;
+						_r = 0;
+						_g = 0;
+						_b = 1;
+					}
+
+					a = _a + a*(1-_a);
+					r = (_r * _a + r * a * (1 - _a)) / a;
+					g = (_g * _a + g * a * (1 - _a)) / a;
+					b = (_b * _a + b * a * (1 - _a)) / a;
+				}
+
+				return "rgba(" + Math.floor(255 * r + 0.5) + "," + Math.floor(255 * g + 0.5) + "," + Math.floor(255 * b + 0.5) + "," + a + ")"; 
+			}
+
+			arrayContains = function(array, what) {
+				for (let i = 0; i < array.length; ++i) {
+					if (array[i] == what) return true;
+				}
+				return false;
+			}
+
+			unselectFragment = function(fragmentId) {
+				let spans = fragmentMap[fragmentId];
+
+				if (spans == null) return;
+
+				let flag = 0;
+				if (arrayContains(hoveredFragmentIds, fragmentId)) {
+					flag = 1;
+				}
+					
+				for (let j = 0; j < spans.length; ++j) {
+					let fragmentSpan = spans[j];
+					let fragmentSpanIds = fragmentSpan.getAttribute("fragment_ids").split(" ");
+
+					fragmentSpan.style["backgroundColor"] = mixColor(fragmentSpanIds, flag, null);
+				}
+			}
+
+			unselectNested = function(nestedId) {
+				let div = nestedMap[nestedId];
+
+				if (div == null) return;
+
+				let controlDiv = div.firstChild;
+
+				controlDiv.style["backgroundColor"] = "#cccccc";
+
+				div.style["borderLeft"] = "2px solid #cccccc";
+			}
+
+			
+
+			refreshNesteds = function() {
+				let divs = document.getElementsByTagName("div");
+
+				selectedNestedId = document.getElementById("formWikiContent:selectedNestedId").value;
+				nestedMap = {};
+
+				for (let i = 0; i < divs.length; ++i) {
+					let div = divs[i];
+
+					if (div.hasAttribute("kiwi:component")) {
+						let id = div.getAttribute("kiwi:component");
+
+						let controlDiv = document.createElement("div");
+						// mark it as "skip" so text coordinates computation skips this generated elements...
+						controlDiv.setAttribute("skip", "true");
+
+						let title = g_annotations[id].title;
+						controlDiv.appendChild(document.createTextNode(title));
+
+						if (selectedNestedId == id) {
+							controlDiv.style["backgroundColor"] = "#8bc53e";
+							div.style["borderLeft"] = "2px solid #8bc53e";
+						}
+						else {
+							controlDiv.style["backgroundColor"] = "#cccccc";
+							div.style["borderLeft"] = "2px solid #cccccc";
+						}
+						controlDiv.style["marginLeft"] = "-4px";
+						controlDiv.style["padding"] = "4px";
+						
+						div.style["paddingLeft"] = "4px";
+
+						div.style["marginTop"] = "2px";
+						div.style["marginBottom"] = "2px";
+
+						if (div.firstChild == null) {
+							div.appendChild(controlDiv);
+						}
+						else {
+							div.insertBefore(controlDiv, div.firstChild);
+						}
+
+						jQuery(controlDiv).click(function(eventObject) {
+							if (selectedNestedId != null) {
+								unselectNested(selectedNestedId);
+							}
+
+							if (selectedFragmentId != null) {
+								unselectFragment(selectedFragmentId);
+							}
+
+							selectedNestedId = id;
+							selectedFragmentId = null;
+
+							controlDiv.style["backgroundColor"] = "#8bc53e";
+							div.style["borderLeft"] = "2px solid #8bc53e";
+
+							ieSelectAnnotation(selectedNestedId);
+						});
+
+						nestedMap[id] = div;
+					}
+				}
+			}
+
+			refreshFragments = function() {
+				let spans = document.getElementsByTagName("span");
+
+				selectedFragmentId = document.getElementById("formWikiContent:selectedFragmentId").value;
+				
+				fragmentMap = {};
+				hoveredFragmentIds = [];
+				
+				for (let i = 0; i < spans.length; i++) { 
+					let span = spans[i];
+
+					if (span.hasAttribute("fragment_ids")) {
+
+						// fill the fragmentMap and fragmentIds array.
+						let selected = false;
+						let ids = span.getAttribute("fragment_ids").split(" ");
+						for (let j = 0; j < ids.length; ++j) {
+							let id = ids[j];
+
+							if (selectedFragmentId == id) {
+								selected = true;
+							}
+							
+							if (fragmentMap[id] == null) {
+								fragmentMap[id] = [span];
+							}
+							else {
+								fragmentMap[id].push(span);
+							}
+						}
+
+						let flag = 0;
+						if (selected) {
+							flag = 2;
+						}
+
+						/*for (let j = 0; j < ids.length; ++j) {
+							let annot = g_annotations[ids[j]];
+							// alert(annot.id);
+						}*/
+						
+						span.style["backgroundColor"] = mixColor(ids, flag, selectedFragmentId);
+						span.style["padding"] = "2px";
+						
+						jQuery(span).click(function(eventObject) {
+
+							// clicking cycles through fragments.. 
+							let ids = span.getAttribute("fragment_ids").split(" ");
+							let changed = false;
+							let oldSelectedFragmentId = selectedFragmentId;
+							for (let j = 0; j < ids.length - 1; ++j) {
+								if (ids[j] == selectedFragmentId) {
+									selectedFragmentId = ids[j + 1];
+									changed = true;
+									break;
+								}
+							}
+
+							if (!changed) {
+								selectedFragmentId = ids[0];
+							}
+
+							if (selectedNestedId != null) {
+								unselectNested(selectedNestedId);
+								selectedNestedId = null;
+							}
+
+							if (selectedFragmentId != oldSelectedFragmentId) {
+								if (oldSelectedFragmentId != null) {
+									unselectFragment(oldSelectedFragmentId);
+								}
+
+								if (selectedFragmentId != null) {
+									let spans = fragmentMap[selectedFragmentId];
+									for (let j = 0; j < spans.length; ++j) {
+										let fragmentSpan = spans[j];
+										let fragmentSpanIds = fragmentSpan.getAttribute("fragment_ids").split(" ");
+										fragmentSpan.style["backgroundColor"] = mixColor(fragmentSpanIds, 3, selectedFragmentId);
+									}
+								}
+
+								ieSelectAnnotation(selectedFragmentId);
+							}
+							
+							// let id = this.parentNode.getAttribute("id");
+							// TODO: get the context as the nearest "about" element...
+							// fragmentJSLib.showFragmentsPanel(null, id);
+						});
+
+						jQuery(span).hover(function() {
+
+							hoveredFragmentIds = [];
+							
+							// list of all relevant spans that needs to be updated... 
+							// we are updating all fragments that are contained on the hovered span...
+							let ids = span.getAttribute("fragment_ids").split(" ");
+							let spans = [];
+
+							for (let j = 0; j < ids.length; ++j) {
+								let id = ids[j];
+
+								if (fragmentMap[id] != null) {
+									let fragmentSpans = fragmentMap[id];
+									for (let k = 0; k < fragmentSpans.length; ++k) {
+										if (!arrayContains(spans, fragmentSpans[k])) {
+											spans.push(fragmentSpans[k]);
+										}
+									}
+								}
+
+								hoveredFragmentIds.push(id);
+							}
+
+							for (let j = 0; j < spans.length; ++j) {
+								let fragmentSpan = spans[j];
+								let fragmentSpanIds = fragmentSpan.getAttribute("fragment_ids").split(" ");
+								let selected = false;
+								for (let k = 0; k < fragmentSpanIds.length; ++k) {
+									if (fragmentSpanIds[k] == selectedFragmentId) {
+										selected = true;
+									}
+								}
+
+								if (selected) {
+									colorFlag = 3; // hover and selected
+								}
+								else {
+									colorFlag = 1; // hover
+								}
+								
+								fragmentSpan.style["backgroundColor"] = mixColor(fragmentSpanIds, colorFlag, selectedFragmentId);
+							}
+							
+							//let id = this.parentNode.getAttribute("id");
+							//setFragmentStyle(id, {backgroundColor:"#8bc53e"});
+						},function() {
+
+							hoveredFragmentIds = [];
+
+							let ids = span.getAttribute("fragment_ids").split(" ");
+							let spans = [];
+
+							for (let j = 0; j < ids.length; ++j) {
+								let id = ids[j];
+								if (fragmentMap[id] != null) {
+									let fragmentSpans = fragmentMap[id];
+									for (let k = 0; k < fragmentSpans.length; ++k) {
+										if (!arrayContains(spans, fragmentSpans[k])) {
+											spans.push(fragmentSpans[k]);
+										}
+									}
+								}
+							}
+
+							for (let j = 0; j < spans.length; ++j) {
+								let fragmentSpan = spans[j];
+								let fragmentSpanIds = fragmentSpan.getAttribute("fragment_ids").split(" ");
+								let selected = false;
+								for (let k = 0; k < fragmentSpanIds.length; ++k) {
+									if (fragmentSpanIds[k] == selectedFragmentId) {
+										selected = true;
+									}
+								}
+
+								if (selected) {
+									colorFlag = 2; // selected
+								}
+								else {
+									colorFlag = 0; // not selected
+								}
+								
+								fragmentSpan.style["backgroundColor"] = mixColor(fragmentSpanIds, colorFlag, selectedFragmentId);
+							}
+							
+							//let id = this.parentNode.getAttribute("id");
+						    //setFragmentStyle(id, {backgroundColor:null});	
+						});
+					}
+				}
+			}
+
+			
+	 // ]]>
+	    </script>
+	    <!--
+	    <div>
+	    	 <button onclick="annotateFragment()">Annotate Fragment</button> | <button onclick="annotateNested()">Annotate Nested Item</button>
+	    </div>
+	    -->
+	    
+	    <s:div rendered="#{ie.informationExtractionAction.content}">
+	    
+	    <div>
+	    	<!--  <button onclick="selectInterval();">Select Interval</button>
+	    	| -->
+	    	<h:commandButton action="#{ie.informationExtractionAction.suggest}" value="Suggest"/>
+	    	
+	    	<h:commandButton action="#{ie.informationExtractionAction.addRdfaDatatype}" onclick="annotateRdfaDatatype(); return true;" value="Create RDFa Datatype Property"/>
+	    	
+	    	<h:commandButton action="#{ie.informationExtractionAction.addRdfaObject}" onclick="annotateRdfaObject(); return true;" value="Create RDFa Object Property"/>
+	    	
+	    	<h:commandButton action="#{ie.informationExtractionAction.addFragment}" onclick="annotateFragment(); return true;" value="Create Fragment"/>
+	    	
+	    	<h:commandButton action="#{ie.informationExtractionAction.addNested}" onclick="annotateNested(); return true;" value="Create Nested Item"/>
+	    	
+	    </div>
+	    
+	    <s:div id="annotationEditor">
+	    	<s:div id="ieSuggestions" style="padding: 10px;">
+	    		<ui:repeat var="suggestion" value="#{ie.informationExtractionAction.displayedSuggestions}">
+	    			<s:div rendered="#{suggestion.score > 0.5}">
+		    			<s:span rendered="#{suggestion.kind == 1}">
+		    				<b>Tagged Fragment</b> <span><h:outputText value="#{suggestion.label}"/></span>
+		    			</s:span>
+		    			<s:span rendered="#{suggestion.kind == 2}">
+		    				<b>Tag</b> <span><h:outputText value="#{suggestion.label}"/></span>
+		    			</s:span>
+		    			<s:span rendered="#{suggestion.kind == 3}">
+		    				<b>Entity</b> <span><h:outputText value="#{suggestion.label}"/></span>
+		    				<h:outputText value=" "/>
+		    				<ui:repeat var="res" value="#{suggestion.resources}">
+		    					<s:link view="/home.xhtml" value="#{res.label} " propagation="none">
+		    						<f:param name="title" />
+									<f:param name="uri"/>
+									<f:param name="id" />
+									<f:param name="kiwiid" value="#{res.kiwiid}"/>
+		    					</s:link>
+		    				</ui:repeat>
+		    			</s:span>
+		    			<s:span rendered="#{suggestion.kind == 4}">
+		    				<b>Nested Item</b> <span><h:outputText value="#{suggestion.label}"/></span>
+		    			</s:span>
+		    			<s:span rendered="#{suggestion.kind == 6}">
+		    				<b>Type</b> <h:outputText value=" "/>
+		    				<ui:repeat var="res" value="#{suggestion.types}">
+		    					<s:link view="/home.xhtml" value="#{res.label} " propagation="none">
+		    						<f:param name="title" />
+									<f:param name="uri"/>
+									<f:param name="id" />
+									<f:param name="kiwiid" value="#{res.kiwiid}"/>
+		    					</s:link>
+		    				</ui:repeat>
+		    			</s:span>
+		    			
+		    			<rich:spacer width="1px"/>
+		    			<h:commandButton action="#{ie.informationExtractionAction.acceptSuggestion(suggestion)}" value="Accept"  image="img/type_add.png"/>
+		    			<h:commandButton action="#{ie.informationExtractionAction.rejectSuggestion(suggestion)}" value="Reject" image="img/type_delete.png"/>
+	    				<h:outputText value="(#{suggestion.suggestion.score})"/>
+	    			</s:div>
+	    			
+	    		</ui:repeat>
+	    	</s:div>
+	    	
+	    	<s:div rendered="#{ie.informationExtractionAction.selectedAnnotation != null}">
+	    	
+	    		<div style="background-color: #ccc; -moz-border-radius: 5px; -webkit-border-radius: 5px; border: 1px solid #000; padding: 10px;">
+	    	
+	    		<!-- Unspecified fragment-kind annotation (fragment, link, RDFa datatype property, RDFa object property... -->
+	    		<s:div rendered="#{ie.informationExtractionAction.selectedAnnotation.kind == 0}">
+	    			<div>
+	    				<h:outputText value="Annotation"/>
+	    				<h:commandButton action="#{ie.informationExtractionAction.deleteAnnotation}" value="Delete">
+	    				</h:commandButton>
+	    			</div>
+	    		</s:div>
+	    	
+	    		<!-- Pure Fragment -->
+	    		<s:div rendered="#{ie.informationExtractionAction.selectedAnnotation.kind == 1}">
+	    			
+	    				<div>
+	    					<b><h:outputText value="Fragment"/></b>
+	    					<h:commandButton action="#{ie.informationExtractionAction.deleteAnnotation}" value="Delete">
+	    					</h:commandButton>
+	    				</div>
+	    						
+	    				<div>    				
+	    					<h:outputLabel value="Tags"/>
+	    					<!-- TODO: tag autosuggestion -->
+	    					<h:inputText value="#{ie.informationExtractionAction.tagLabel}"/>
+	    					<a:commandButton action="#{ie.informationExtractionAction.addTag}" reRender="annotationEditor" value="Add"/>
+	    					<ui:repeat value="#{ie.informationExtractionAction.selectedAnnotation.tags}" var="tag">
+	    						<s:link view="/home.xhtml" value="#{tag.label} " propagation="none">
+		    						<f:param name="title" />
+									<f:param name="uri"/>
+									<f:param name="id" />
+									<f:param name="kiwiid" value="#{tag.kiwiid}"/>
+		    					</s:link>
+	    						<rich:spacer width="1px"/>
+	    						<h:commandButton action="#{ie.informationExtractionAction.removeTag(tag)}" reRender="annotationEditor" value="Remove" image="img/type_delete.png">
+	    						</h:commandButton>
+	    						<rich:spacer width="5px"/>
+	    					</ui:repeat>
+	    					
+	    					<rich:spacer width="10px"/>
+	    					
+	    					<ui:repeat var="res" value="#{ie.informationExtractionAction.resourceSuggestions}">
+	    						<s:span>
+	    							<s:link view="/home.xhtml" value="#{res.label} " propagation="none">
+		    							<f:param name="title" />
+										<f:param name="uri"/>
+										<f:param name="id" />
+										<f:param name="kiwiid" value="#{res.kiwiid}"/>
+		    						</s:link>
+	    							<rich:spacer width="1px"/>
+	    							<h:commandButton action="#{ie.informationExtractionAction.acceptResourceSuggestion(res)}" value="Accept" image="img/type_add.png"/>
+	    							<rich:spacer width="5px"/>
+	    						</s:span>
+	    						<!--  <h:commandButton action="#{ie.informationExtractionAction.rejectResourceSuggestion(suggestion, res)}" value="Reject"/> -->
+	    					</ui:repeat>
+	    					
+	    				</div>
+						<div>
+							<h2 class="commentsOpen">Comments</h2>
+
+							<c:if
+								test="#{ie.informationExtractionAction.selectedAnnotation.comments.isEmpty()}">
+								<div class="nocomments">No comments</div>
+							</c:if>
+
+							<ui:repeat var="comment"
+								value="#{ie.informationExtractionAction.selectedAnnotation.comments}">
+								<div class="comment">
+								<div class="comment-title">
+									<!--  <h:outputText value="#{comment.label}" /> -->
+								 	<h:outputText value=" by " /> 
+								 	<kiwi:link
+									resource="#{comment.author.resource}"
+									value=" #{comment.author.firstName} #{comment.author.lastName}" />
+								</div>
+								<div class="comment-body"><h:outputText
+									value="#{comment.html}"
+									escape="false" /></div>
+								</div>
+							</ui:repeat>
+
+							<rich:togglePanel id="newcomment"
+								switchType="ajax" stateOrder="closed,open">
+								<f:facet name="closed">
+									<rich:toggleControl id="addComment" value="Add Comment" />
+								</f:facet>
+								<f:facet name="open">
+									<f:subview id="newCommentPanel">
+										<hr />
+										
+										<style>
+											#formWikiContent\:newCommentPanel\:newcommentEditorTextArea {
+												width: 98%;
+											}
+										</style>
+
+										<!-- <strong>Title:</strong>
+										<h:inputText value="#{ie.informationExtractionAction.commentTitle}"
+											style="margin-left: 10px; width: 90%" /> -->
+										<rich:editor id="newcommentEditor" height="100" 
+											required="false" theme="advanced"
+											configuration="tinymce-small"
+											plugins="safari,pagebreak,style,layer,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,visualchars,nonbreaking,xhtmlxtras"
+											value="#{ie.informationExtractionAction.commentHtml}">
+										</rich:editor>
+
+										<h:commandLink value="Add" id="addComment"
+											action="#{ie.informationExtractionAction.addComment}"
+											styleClass="grayRoundButton">
+										</h:commandLink>
+										<rich:toggleControl id="commentCancel" process="comments"
+											value="Cancel" styleClass="grayRoundButton" />
+									</f:subview>
+								</f:facet>
+							</rich:togglePanel>
+							</div>
+				</s:div>
+	    		
+	    		<!-- Nested Content Item -->
+	    		<s:div rendered="#{ie.informationExtractionAction.selectedAnnotation.kind == 2}" style="padding-left:1em;">
+	    			<rich:toggleControl for="nestedItemSwitch">
+								<h3 style="margin-left: -1em;">
+									Nested Content Item
+								</h3> 	
+							</rich:toggleControl>
+	    			<rich:togglePanel id="nestedItemSwitch" switchType="ajax"
+						stateOrder="closed,open">
+						<f:facet name="closed">
+							<h:commandButton action="#{ie.informationExtractionAction.deleteAnnotation}" value="Delete">
+	    					</h:commandButton>
+						</f:facet>
+					<f:facet name="open">
+						<f:subview>
+							<h:commandButton action="#{ie.informationExtractionAction.deleteAnnotation}" value="Delete">
+	    					</h:commandButton>
+	    				<!-- Is this actual a "nested" item? (has a parent). if so, render selecting of a relation to the parent -->
+	    				<s:div rendered="#{ie.informationExtractionAction.getParentNestedItemAnnotation(ie.informationExtractionAction.selectedAnnotation) != null}">
+	    					<h4 style="margin-left:-1em;">Relation</h4>
+	    					<h:selectOneMenu value="#{ie.informationExtractionAction.selectedComponentRelationId}" id="selectComponentRelation">
+								<s:selectItems value="#{ie.informationExtractionAction.possibleComponentRelations}" var="item" label="#{item.resource.namespacePrefix}:#{item.resource.label}" itemValue="#{item.kiwiIdentifier}" noSelectionLabel="Please select ..."/>
+							</h:selectOneMenu>
+							<h:commandButton value="Select" action="#{ie.informationExtractionAction.selectComponentRelation}"/>
+	    				</s:div>
+	    				
+	    				<div>
+	    					<h4 style="margin-left:-1em;">Type</h4>
+	    					<!-- TODO: type autosuggestion -->
+	    					<h:inputText value="#{ie.informationExtractionAction.type}"/>
+	    					<h:commandButton action="#{ie.informationExtractionAction.addType}" value="Add"/>
+	    					<ui:repeat value="#{ie.informationExtractionAction.selectedAnnotation.types}" var="t">
+	    						<s:link view="/home.xhtml" value="#{t.label} " propagation="none">
+		    						<f:param name="title" />
+									<f:param name="uri"/>
+									<f:param name="id" />
+									<f:param name="kiwiid" value="#{t.kiwiid}"/>
+		    					</s:link>
+	    						<rich:spacer width="1px"/>
+	    						<h:commandButton action="#{ie.informationExtractionAction.removeType(t)}" reRender="annotationEditor" value="Remove" image="img/type_delete.png">
+	    						</h:commandButton>
+	    						<rich:spacer width="5px"/>
+	    					</ui:repeat>
+	    					
+	    					<rich:spacer width="10px"/>
+	    					<ui:repeat var="res" value="#{ie.informationExtractionAction.typeSuggestions}">
+	    						<s:link view="/home.xhtml" value="#{res.label} " propagation="none">
+		    						<f:param name="title" />
+									<f:param name="uri"/>
+									<f:param name="id" />
+									<f:param name="kiwiid" value="#{res.kiwiid}"/>
+		    					</s:link>
+	    						<rich:spacer width="1px"/>
+	    						<h:commandButton action="#{ie.informationExtractionAction.acceptTypeSuggestion(res)}" value="Accept" image="img/type_add.png"/>
+	    						<!-- <h:commandButton action="#{ie.informationExtractionAction.rejectTypeSuggestion(suggestion, res)}" value="Reject"/> -->
+	    						
+	    						<rich:spacer width="5px"/>
+	    					</ui:repeat>
+	    				</div>
+	    				
+	    				<h4 style="margin-left: -1em;">Properties</h4>
+	    				<div>
+	    					<!-- <h4 style="margin-left:-1em;">Datatype Properties</h4> -->
+	    					<ui:repeat var="datatypeProperty" value="#{ie.informationExtractionAction.selectedAnnotation.getVisibleDatatypeProperties()}">
+	    						<s:div rendered="#{datatypeProperty.inferred}">
+	    							<i>
+	    								<b><h:outputText value="#{datatypeProperty.predicate.label} "/></b>
+	    								<h:outputText value="#{datatypeProperty.literal}"/>
+	    							</i>
+	    						</s:div>
+	    						<s:div rendered="#{!datatypeProperty.inferred}">
+	    							<b><h:outputText value="#{datatypeProperty.predicate.label}"/></b>
+	    							<h:inputText value="#{datatypeProperty.literal}"/>
+	    							<rich:spacer width="1px"/>
+	    							<h:commandButton action="#{ie.informationExtractionAction.updateDatatypeProperty(datatypeProperty)}" value="Update"/>
+	    							<h:commandButton action="#{ie.informationExtractionAction.removeDatatypeProperty(datatypeProperty)}" value="Remove"/>
+	    						</s:div>
+	    						<rich:spacer width="5px"/>
+	    					</ui:repeat>
+	    				</div>
+	    				
+	    				<div>
+	    					<!-- <h4 style="margin-left: -1em;">Object Properties</h4> -->
+	    					<ui:repeat var="predicate" value="#{ie.informationExtractionAction.selectedAnnotation.getVisibleObjectPropertyPredicates()}">
+	    						<div>
+	    							<b><h:outputText value="#{predicate.label} "/></b>
+	    							<ui:repeat var="property" value="#{ie.informationExtractionAction.selectedAnnotation.getVisibleObjectProperties(predicate)}">
+	    								<s:div style="display:inline;" rendered="#{!property.inferred}">
+	    									<h:outputText value=" #{property.object.label} "/>
+	    									<rich:spacer width="1px"/>
+	    									<h:commandButton action="#{ie.informationExtractionAction.removeObjectProperty(property)}" value="Remove" image="img/type_delete.png"/>
+	    								</s:div>
+	    								<s:div style="display:inline; padding-left: 1em;" rendered="#{property.inferred}">
+	    									<i><h:outputText value=" #{property.object.label} "/></i>
+	    								</s:div>
+	    								<rich:spacer width="5px"/>
+	    							</ui:repeat>
+	    						</div>
+	    					</ui:repeat>
+	    				</div>
+	    				
+	    				<div>
+	    					Add property 
+	    					<h:selectOneMenu value="#{ie.informationExtractionAction.selectedPropertyId}" id="selectProperties">
+								<s:selectItems value="#{ie.informationExtractionAction.applicableProperties}" var="item" label="#{item.resource.namespacePrefix}:#{item.resource.label}" itemValue="#{item.kiwiIdentifier}" noSelectionLabel="Please select ..."/>
+							</h:selectOneMenu>
+							<h:commandButton value="Select" action="#{ie.informationExtractionAction.selectProperty}"/>
+							
+							<s:div rendered="#{ie.informationExtractionAction.selectedProperty != null}" style="display: inline;">
+								<s:div rendered="#{ie.informationExtractionAction.selectedPropertyDatatype}" style="display: inline;">
+									<h:inputText value="#{ie.informationExtractionAction.propertyLiteral}"/>
+									<h:commandButton action="#{ie.informationExtractionAction.createDatatypeProperty()}" value="Create"/>
+								</s:div>
+								<s:div rendered="#{!ie.informationExtractionAction.selectedPropertyDatatype}" style="display: inline;">
+									<h:inputText value="#{ie.informationExtractionAction.propertyObjectTitle}"/>
+		    						<h:commandButton action="#{ie.informationExtractionAction.selectPropertyObject}" value="Select">
+		    						</h:commandButton>
+		    						<h:commandButton action="#{ie.informationExtractionAction.createPropertyObject}" value="Create">
+		    						</h:commandButton>
+		    						
+		    						<rich:spacer width="10px"/>
+		    						
+		    						<ui:repeat var="s" value="#{ie.informationExtractionAction.objectPropertySuggestions}">
+		    							<s:link view="/home.xhtml" value="#{s.label} " propagation="none">
+		    								<f:param name="title" />
+											<f:param name="uri"/>
+											<f:param name="id" />
+											<f:param name="kiwiid" value="#{s.kiwiid}"/>
+		    							</s:link>
+		    							<rich:spacer width="1px"/>
+		    							<h:commandButton action="#{ie.informationExtractionAction.acceptObjectPropertySuggestion(s)}" value="Accept" image="img/type_add.png"/>
+		    							<h:commandButton action="#{ie.informationExtractionAction.rejectObjectPropertySuggestion(s)}" value="Reject" image="img/type_delete.png"/>
+		    							<rich:spacer width="5px"/>
+		    						</ui:repeat>
+								</s:div>
+							</s:div>
+	    				</div>
+	    				</f:subview>
+	    				</f:facet>
+	    				</rich:togglePanel>
+	    				
+	    				<div>
+	    					<h4 style="margin-left: -1em;">Tags</h4>
+	    					<!-- TODO: tag autosuggestion -->
+	    					<h:inputText value="#{ie.informationExtractionAction.tagLabel}"/>
+	    					<a:commandButton action="#{ie.informationExtractionAction.addTag}" reRender="annotationEditor" value="Add">
+	    					</a:commandButton>
+	    					<ui:repeat value="#{ie.informationExtractionAction.selectedAnnotation.tags}" var="tag">
+	    						<s:link view="/home.xhtml" value="#{tag.label} " propagation="none">
+		    						<f:param name="title" />
+									<f:param name="uri"/>
+									<f:param name="id" />
+									<f:param name="kiwiid" value="#{tag.kiwiid}"/>
+		    					</s:link>
+	    						<rich:spacer width="1px"/>
+	    						<a:commandButton action="#{ie.informationExtractionAction.removeTag(tag)}" reRender="annotationEditor" value="Remove" image="img/type_delete.png">
+	    						</a:commandButton>
+	    						<rich:spacer width="5px"/>
+	    					</ui:repeat>
+	    					
+	    					<rich:spacer width="10px"/>
+	    					<s:span>
+	    						<ui:repeat var="res" value="#{ie.informationExtractionAction.resourceSuggestions}">
+	    							<s:link view="/home.xhtml" value="#{res.label} " propagation="none">
+		    							<f:param name="title" />
+										<f:param name="uri"/>
+										<f:param name="id" />
+										<f:param name="kiwiid" value="#{res.kiwiid}"/>
+		    						</s:link>
+	    							<rich:spacer width="1px"/>
+	    							<h:commandButton action="#{ie.informationExtractionAction.acceptResourceSuggestion(res)}" value="Accept" image="img/type_add.png"/>
+	    							<!-- <h:commandButton action="#{ie.informationExtractionAction.rejectResourceSuggestion(suggestion, res)}" value="Reject"/> -->
+	    							<rich:spacer width="5px"/>
+	    						</ui:repeat>
+	    					</s:span>
+	    				</div>
+	    				
+	    		</s:div>
+	    		
+	    		<!-- RDFa datatype property -->
+	    		<s:div rendered="#{ie.informationExtractionAction.selectedAnnotation.kind == 3}">
+	    				<div>
+	    					<b><h:outputText value="RDFa datatype property"/></b>
+	    					<h:commandButton action="#{ie.informationExtractionAction.deleteAnnotation}" value="Delete">
+	    					</h:commandButton>
+	    				</div>
+	    						
+	    				<div>  
+	    					<h:outputLabel value="Literal"/>  				
+	    					<h:inputText value="#{ie.informationExtractionAction.literal}"/>
+	    					<h:commandButton action="#{ie.informationExtractionAction.setLiteral}" value="Set">
+	    					</h:commandButton>
+	    				</div>
+	    				<div>
+	    					<h:outputLabel value="Predicate"/>
+	    					<!-- TODO: predicate autosuggestion -->
+	    					<h:inputText value="#{ie.informationExtractionAction.predicate}"/>
+	    					<h:commandButton action="#{ie.informationExtractionAction.addPredicate}" value="Add"/>
+	    					<ui:repeat value="#{ie.informationExtractionAction.selectedAnnotation.predicates}" var="p">
+	    						<s:link view="/home.xhtml" value="#{p.label} " propagation="none">
+		    						<f:param name="title" />
+									<f:param name="uri"/>
+									<f:param name="id" />
+									<f:param name="kiwiid" value="#{p.kiwiid}"/>
+		    					</s:link>
+	    						<rich:spacer width="1px"/>
+	    						<h:commandButton action="#{ie.informationExtractionAction.removePredicate(p)}" reRender="annotationEditor" value="Remove" image="img/type_delete.png">
+	    						</h:commandButton>
+	    						<rich:spacer width="5px"/>
+	    					</ui:repeat>
+	    					
+	    					<rich:spacer width="10px"/>
+	    					<ui:repeat var="res" value="#{ie.informationExtractionAction.predicateSuggestions}">
+	    						<s:link view="/home.xhtml" value="#{res.label} " propagation="none">
+		    						<f:param name="title" />
+									<f:param name="uri"/>
+									<f:param name="id" />
+									<f:param name="kiwiid" value="#{res.kiwiid}"/>
+		    					</s:link>
+	    						<rich:spacer width="1px"/>
+	    						<h:commandButton action="#{ie.informationExtractionAction.acceptPredicateSuggestion(res)}" value="Accept" image="img/type_add.png"/>
+	    								<!--  <h:commandButton action="#{ie.informationExtractionAction.rejectPredicateSuggestion(suggestion, res)}" value="Reject"/> -->
+	    								
+	    						<rich:spacer width="5px"/>
+	    					</ui:repeat>
+	    				</div>
+	    		</s:div>
+	    		<!-- RDFa object property  -->
+	    		<s:div rendered="#{ie.informationExtractionAction.selectedAnnotation.kind == 4}">
+	    				<div>
+	    					<b><h:outputText value="RDFa object property"/></b>
+	    					<h:commandButton action="#{ie.informationExtractionAction.deleteAnnotation}" value="Delete">
+	    					</h:commandButton>
+	    				</div>
+	    				<!-- No resource  -->
+	    				<s:div rendered="#{fn:length(ie.informationExtractionAction.resources) == 0}">  
+	    					<h:outputLabel value="Resource "/>				
+	    					<h:inputText value="#{ie.informationExtractionAction.resourceTitle}"/>
+	    					<h:commandButton action="#{ie.informationExtractionAction.selectResource}" value="Select">
+	    					</h:commandButton>
+	    					<!-- <h:commandButton action="#{ie.informationExtractionAction.createResource}" value="Create">
+	    					</h:commandButton>-->
+	    					
+	    					<ui:repeat var="res" value="#{ie.informationExtractionAction.resourceSuggestions}">
+	    						<s:link view="/home.xhtml" value="#{res.label} " propagation="none">
+		    						<f:param name="title" />
+									<f:param name="uri"/>
+									<f:param name="id" />
+									<f:param name="kiwiid" value="#{res.kiwiid}"/>
+		    					</s:link>
+	    						<rich:spacer width="1px"/>
+	    						<h:commandButton action="#{ie.informationExtractionAction.acceptResourceSuggestion(res)}" value="Accept"  image="img/type_add.png"/>
+	    						<!-- <h:commandButton action="#{ie.informationExtractionAction.rejectResourceSuggestion(suggestion, res)}" value="Reject"/> -->
+	    						<rich:spacer width="5px"/>
+	    					</ui:repeat>			
+	    				</s:div>
+	    				<!-- One resource (unambiguous) -->
+	    				<s:div rendered="#{fn:length(ie.informationExtractionAction.resources) == 1}">  
+	    					<h:outputLabel value="Resource "/>	
+	    					<s:link view="/home.xhtml" value="#{ie.informationExtractionAction.resources[0].label} " propagation="none">
+		    						<f:param name="title" />
+									<f:param name="uri"/>
+									<f:param name="id" />
+									<f:param name="kiwiid" value="#{ie.informationExtractionAction.resources[0].kiwiid}"/>
+		    				</s:link>			
+	    					<!-- <h:outputText value="#{ie.informationExtractionAction.resource.label}"/> -->
+	    					<h:commandButton action="#{ie.informationExtractionAction.clearResource}" value="Clear">
+	    					</h:commandButton>
+	    				</s:div>
+	    				<!-- Multiple resources (ambiguous link)  -->
+	    				<s:div rendered="#{fn:length(ie.informationExtractionAction.resources) > 1}">
+	    					<h:outputLabel value="Resource "/>	
+	    					
+	    					<ui:repeat value="#{ie.informationExtractionAction.resources}" var="res">
+	    						<s:link view="/home.xhtml" value="#{res.label} " propagation="none">
+		    						<f:param name="title" />
+									<f:param name="uri"/>
+									<f:param name="id" />
+									<f:param name="kiwiid" value="#{res.kiwiid}"/>
+		    					</s:link>
+		    					<h:commandButton action="#{ie.informationExtractionAction.selectResource(res)}" value="Select">
+		    					</h:commandButton>
+	    					</ui:repeat>
+	    						
+	    					<!-- <h:outputText value="#{ie.informationExtractionAction.resource.label}"/> -->
+	    					<h:commandButton action="#{ie.informationExtractionAction.clearResource}" value="Clear">
+	    					</h:commandButton>
+	    				</s:div>
+	    				<div>
+	    					<h:outputLabel value="Predicate"/>
+	    					<!-- TODO: predicate autosuggestion -->
+	    					<h:inputText value="#{ie.informationExtractionAction.predicate}"/>
+	    					<h:commandButton action="#{ie.informationExtractionAction.addPredicate}" value="Add"/>
+	    					<ui:repeat value="#{ie.informationExtractionAction.selectedAnnotation.predicates}" var="p">
+	    						<s:link view="/home.xhtml" value="#{p.label} " propagation="none">
+		    						<f:param name="title" />
+									<f:param name="uri"/>
+									<f:param name="id" />
+									<f:param name="kiwiid" value="#{p.kiwiid}"/>
+		    					</s:link>
+	    						<rich:spacer width="1px"/>
+	    						<h:commandButton action="#{ie.informationExtractionAction.removePredicate(p)}" reRender="annotationEditor" value="Remove"  image="img/type_delete.png">
+	    						</h:commandButton>
+	    						<rich:spacer width="5px"/>
+	    					</ui:repeat>
+	    					
+	    					<rich:spacer width="10px"/>
+	    					
+	    					<ui:repeat var="res" value="#{ie.informationExtractionAction.predicateSuggestions}">
+	    						<s:link view="/home.xhtml" value="#{res.label} " propagation="none">
+		    						<f:param name="title" />
+									<f:param name="uri"/>
+									<f:param name="id" />
+									<f:param name="kiwiid" value="#{res.kiwiid}"/>
+		    					</s:link>
+	    						<rich:spacer width="1px"/>
+	    						<h:commandButton action="#{ie.informationExtractionAction.acceptPredicateSuggestion(res)}" value="Accept"  image="img/type_add.png"/>
+	    						<!-- <h:commandButton action="#{ie.informationExtractionAction.rejectPredicateSuggestion(suggestion, res)}" value="Reject"/> -->
+	    						<rich:spacer width="5px"/>
+	    					</ui:repeat>
+	    				</div>
+	    				<div>
+	    					<h:outputLabel value="Type"/>
+	    					<!-- TODO: type autosuggestion -->
+	    					<h:inputText value="#{ie.informationExtractionAction.type}"/>
+	    					<h:commandButton action="#{ie.informationExtractionAction.addType}" value="Add"/>
+	    					<ui:repeat value="#{ie.informationExtractionAction.selectedAnnotation.types}" var="t">
+	    						<s:link view="/home.xhtml" value="#{t.label} " propagation="none">
+		    						<f:param name="title" />
+									<f:param name="uri"/>
+									<f:param name="id" />
+									<f:param name="kiwiid" value="#{t.kiwiid}"/>
+		    					</s:link>
+	    						<rich:spacer width="1px"/>
+	    						<h:commandButton action="#{ie.informationExtractionAction.removeType(t)}" reRender="annotationEditor" value="Remove" image="img/type_delete.png">
+	    						</h:commandButton>
+	    						<rich:spacer width="5px"/>
+	    					</ui:repeat>
+	    					
+	    					<rich:spacer width="10px"/>
+	    					
+	    					<s:span>
+	    						<ui:repeat var="res" value="#{ie.informationExtractionAction.typeSuggestions}">
+	    							<s:link view="/home.xhtml" value="#{res.label} " propagation="none">
+		    							<f:param name="title" />
+										<f:param name="uri"/>
+										<f:param name="id" />
+										<f:param name="kiwiid" value="#{res.kiwiid}"/>
+		    						</s:link>
+	    							<rich:spacer width="1px"/>
+	    							<h:commandButton action="#{ie.informationExtractionAction.acceptTypeSuggestion(res)}" value="Accept"  image="img/type_add.png"/>
+	    							<!-- <h:commandButton action="#{ie.informationExtractionAction.rejectTypeSuggestion(suggestion, res)}" value="Reject"/> -->
+	    							<rich:spacer width="5px"/>
+	    						</ui:repeat>
+	    					</s:span>
+	    				</div>
+	    		</s:div>
+	    		
+	    		</div>
+	    	</s:div>
+	    	
+	    </s:div>
+	    	    
+	    <s:div id="contentHtmlWrap">
+	    	<div id="contentHtml">
+	        	<f:verbatim>#{ie.informationExtractionAction.currentContentHtml}</f:verbatim>
+	        </div>
+	        
+	        <script type="text/javascript;version=1.7">
+				/* Create a JavaScript representation of annotations and content items so we can visualise them using JS */
+        		function AnnotationUI(id, val, titles) {
+		        	this.id = id;
+		        	/* 0 - valid, 1 - incomplete, 2 - inconsistent*/
+		        	this.validity = val;
+
+		        	/* Used by nested items to display something in the header (currently type labels, instead of CI titles, because
+		        	those are usually not that important in nested CIs... */
+					this.title = null;
+		        	if (titles.length > 0) {
+		        		this.title = titles[0];
+		        	}
+	        	}
+
+	        	g_annotations = {};
+	        </script>
+	        <ui:repeat value="#{ie.informationExtractionAction.annotations}" var="annot">
+	        	<script type="text/javascript;version=1.7">
+	        		/* SECURITY: I see a potential XSS hole here. The annot.id and titleJson must return safe strings */
+					let a = new AnnotationUI("#{annot.id}", #{annot.validity}, #{annot.titleJson});
+					g_annotations[a.id] = a;
+				</script>
+	        </ui:repeat>
+	        
+	        <script type="text/javascript;version=1.7">
+	        	refreshFragments();
+	        	refreshNesteds();
+	        </script>
+	    </s:div>
+	    
+	    <h:commandButton action="#{ie.informationExtractionAction.save}" value="Save">
+	    </h:commandButton>
+	    
+	    </s:div>
+	    <s:div rendered="#{!ie.informationExtractionAction.content}">
+	    	There is no content to annotate.
+	    </s:div>
+    
+    </a:form>
+   
+</ui:define>
+</ui:composition>

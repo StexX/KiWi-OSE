@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pages xmlns="http://jboss.com/products/seam/pages"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://jboss.com/products/seam/pages http://jboss.com/products/seam/pages-2.0.xsd"
+       no-conversation-view-id="/ideator/home.xhtml"
+       login-view-id="/ideator/login.xhtml"
+       xmlns:navigation="http://jboss.com/products/seam/navigation">
+	
+	<page view-id="/ideator/admin.xhtml" login-required="true">
+    	<restrict>#{permissionAction.hasRole('admin')}</restrict>
+        <action execute="#{currentApplicationFactory.switchApplication('admin')}"/>
+    </page>
+	
+	<page view-id="/ideator/*">
+		<action if="#{currentApplication.name != 'ideator'}" execute="#{currentApplicationFactory.switchApplication('ideator')}"/>
+        <navigation>
+            <rule if-outcome="home">
+            	<redirect view-id="/ideator/home.xhtml" />
+            </rule>
+			<rule if-outcome="login">
+            	<redirect view-id="/ideator/login.xhtml" />
+            </rule>
+			<rule if-outcome="register">
+                <redirect view-id="/ideator/register.xhtml"/>
+            </rule>
+			<rule if-outcome="search">
+                <redirect view-id="/ideator/search.xhtml"/>
+            </rule>
+            <rule if-outcome="idea">
+                <redirect view-id="/ideator/idea.xhtml"/>
+            </rule>
+	        <rule if-outcome="new_idea">
+                <redirect view-id="/ideator/new_idea.xhtml"/>
+            </rule>
+            <rule if-outcome="coAuthorsPage">
+                <redirect view-id="/ideator/coAuthorsPage.xhtml"/>
+            </rule>
+            <rule if-outcome="selectCategories">
+                <redirect view-id="/ideator/selectCategories.xhtml"/>
+            </rule>
+            <rule if-outcome="user_Profile">
+                <redirect view-id="/ideator/userProfile.xhtml"/>
+            </rule>
+            
+        </navigation>
+			
+		<navigation from-action="#{identityManagerService.logout}">
+			<redirect view-id="/ideator/home.xhtml"/>
+		</navigation>
+
+	</page>
+	
+	<page view-id="/ideator/register.xhtml">
+    	<navigation from-action="#{ideatorRegisterAction.register}">   	    
+    		<rule if-outcome="success">
+                <redirect view-id="/ideator/home.xhtml"/>
+    		</rule>
+    		<rule>
+    			<redirect view-id="/ideator/register.xhtml"/>
+    		</rule>
+    	</navigation>
+    </page>
+	
+	<page view-id="/ideator/login.xhtml">
+    	<navigation from-action="#{loginAction.login}">   	    
+    		<rule if-outcome="success">
+                <redirect view-id="/ideator/home.xhtml"/>
+    		</rule>
+    	</navigation>
+    </page>
+	
+	<page view-id="/ideator/new_idea.xhtml" login-required="true" />
+	
+	<page view-id="/ideator/idea.xhtml">
+		<param name="uri" value="#{currentContentItemFactory.currentItemUri}" required="false"/>
+		<param name="kiwiid" value="#{currentContentItemFactory.currentItemKiWiId}" required="false"/>
+		<param name="id" value="#{currentContentItemFactory.currentItemId}" required="false"/>
+		<param name="title" value="#{currentContentItemFactory.currentItemTitle}" required="false"/>
+		
+		<begin-conversation join="true"/>
+    </page>
+	
+	<page view-id="/ideator/evaluation.xhtml" action="#{ideator.evaluationAction.begin()}" />
+	<!-- <page view-id="/ideator/userProfile.xhtml" action="#{ideatorProfileAction.begin1()}" /> -->
+	
+</pages>

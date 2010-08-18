@@ -1,0 +1,130 @@
+10
+
+dir
+5565
+https://svn.salzburgresearch.at/svn/kiwi/KiWi/releases/0.9/build/kiwi/model
+https://svn.salzburgresearch.at/svn/kiwi
+
+
+
+2010-08-18T11:45:47.139629Z
+5565
+steffi
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+df910b12-e4fe-467b-9c3d-147a02c1fe00
+
+
+
+
+
+
+0
+empty
+
+Constants.class
+file
+
+
+
+
+2010-08-18T06:53:03.000000Z
+9b647ffecc3f45b4c38355bdfd6d058e
+2010-08-18T11:45:47.139629Z
+5565
+steffi
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5430
+
+activity
+dir
+
+annotations
+dir
+
+ceq
+dir
+
+cluster
+dir
+
+content
+dir
+
+facades
+dir
+
+importexport
+dir
+
+informationextraction
+dir
+
+interaction
+dir
+
+kbase
+dir
+
+ontology
+dir
+
+personalization
+dir
+
+perspective
+dir
+
+recommendation
+dir
+
+revision
+dir
+
+security
+dir
+
+skill
+dir
+
+status
+dir
+
+tagging
+dir
+
+user
+dir
+

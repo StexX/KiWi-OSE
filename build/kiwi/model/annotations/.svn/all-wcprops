@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/annotations
+END
+KiWiFacade.class
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/annotations/KiWiFacade.class
+END
+RDFFilter.class
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/annotations/RDFFilter.class
+END
+RDFInverse.class
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/annotations/RDFInverse.class
+END
+RDFType.class
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/annotations/RDFType.class
+END
+RDF.class
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/annotations/RDF.class
+END

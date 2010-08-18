@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/kiwi/!svn/ver/4925/KiWi/trunk/lib/solr
+END
+apache-solr-1.4-dev.war
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/kiwi/!svn/ver/3285/KiWi/trunk/lib/solr/apache-solr-1.4-dev.war
+END
+web.xml
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/kiwi/!svn/ver/1922/KiWi/trunk/lib/solr/web.xml
+END

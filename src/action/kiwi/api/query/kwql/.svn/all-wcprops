@@ -1,0 +1,137 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/kiwi/!svn/ver/4621/KiWi/trunk/src/action/kiwi/api/query/kwql
+END
+KwqlConstraints.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/4526/KiWi/trunk/src/action/kiwi/api/query/kwql/KwqlConstraints.java
+END
+KwqlService.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/query/kwql/KwqlService.java
+END
+KwqlLinkQualifier.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/query/kwql/KwqlLinkQualifier.java
+END
+KwqlAxis.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/query/kwql/KwqlAxis.java
+END
+KwqlContentItemQualifier.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/query/kwql/KwqlContentItemQualifier.java
+END
+KwqlConstraint.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/query/kwql/KwqlConstraint.java
+END
+KwqlVariable.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/query/kwql/KwqlVariable.java
+END
+KwqlServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/query/kwql/KwqlServiceLocal.java
+END
+KwqlQualifierType.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/query/kwql/KwqlQualifierType.java
+END
+UnexpectedNodeException.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/query/kwql/UnexpectedNodeException.java
+END
+KwqlQueryServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/query/kwql/KwqlQueryServiceRemote.java
+END
+KwqlQueryServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/query/kwql/KwqlQueryServiceLocal.java
+END
+KwqlTagQualifier.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/query/kwql/KwqlTagQualifier.java
+END
+KiWiSOLRTuple.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/query/kwql/KiWiSOLRTuple.java
+END
+SolrBacktrackingOption.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/query/kwql/SolrBacktrackingOption.java
+END
+KwqlResource.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/query/kwql/KwqlResource.java
+END
+KwqlServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/query/kwql/KwqlServiceRemote.java
+END
+KwqlSolrQueryGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/query/kwql/KwqlSolrQueryGenerator.java
+END
+KwqlTernary.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/query/kwql/KwqlTernary.java
+END
+KwqlQueryService.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/4621/KiWi/trunk/src/action/kiwi/api/query/kwql/KwqlQueryService.java
+END
+KwqlTargetVariable.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/query/kwql/KwqlTargetVariable.java
+END
+KwqlFragmentQualifier.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/query/kwql/KwqlFragmentQualifier.java
+END

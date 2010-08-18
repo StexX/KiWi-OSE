@@ -1,0 +1,63 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+			 	xmlns:c="http://java.sun.com/jstl/core"
+                template="layout/template_2col.xhtml">
+              
+<ui:define name="main_header">
+ 	<h2>Evaluation</h2>
+</ui:define>
+
+<ui:define name="main_header_links">
+<!-- maybe later-->
+</ui:define>
+
+<ui:define name="main_content">
+
+		<h:form>
+		<div style="margin:10px;padding:10px;padding-top:0;" class="line_box">
+		<c:forEach items="#{ideator.evaluationAction.evaluation.paragraphs}" var="p">
+			<s:fragment rendered="#{p.rendered}">
+			<h2 style="margin-top:20px;margin-bottom:5px;"><h:outputText value="#{p.title}" /></h2>
+			<s:div rendered="#{ideator.evaluationAction.isIdeaManager()}" style="width:100%;text-align:right;margin-top:-25px;padding-bottom:5px;">
+				<b><h:outputText vakue="Evaluierender Benutzer: "/></b>
+				<h:selectOneMenu value="#{p.user}" required="false">
+					<s:selectItems value="#{ideator.evaluationAction.allUsers}" var="usr" label="#{usr}" noSelectionLabel="select any user" />
+				</h:selectOneMenu>
+			</s:div>
+			<div style="border:1px solid black;padding:10px;background-color:white">
+			<c:forEach items="#{p.criteria}" var="q">
+				<h3 style="margin-top:10px;margin-bottom:0;"><h:outputText value="#{q.title}" /></h3>
+				<h:selectOneRadio value="#{q.selected}" required="false">
+					 <f:selectItem itemLabel="keine Aussage" itemValue="-1" />
+					 <c:forEach items="#{q.ratings}" var="a" varStatus="status">
+					 	<f:selectItem itemLabel="#{a.title}" itemValue="#{status.index}" />
+					 </c:forEach>
+				</h:selectOneRadio>
+				<s:div rendered="#{q.comment != null}">
+					<b>Kommentar:</b><br />
+					<h:inputTextarea style="width:100%" value="#{q.comment}" />
+				</s:div>
+			</c:forEach>
+			</div>
+			</s:fragment>
+		</c:forEach>
+		</div>
+		<h:commandButton value="cancel" action="#{ideator.evaluationAction.cancel()}" />
+		<h:commandButton value="reset" action="#{ideator.evaluationAction.reset()}" />
+		<h:commandButton value="save" action="#{ideator.evaluationAction.save()}" />
+		</h:form>
+</ui:define>
+
+<ui:define name="right_content">
+	<ui:include src="pages/box/sample.xhtml" />
+</ui:define>
+
+</ui:composition>

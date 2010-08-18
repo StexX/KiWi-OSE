@@ -1,0 +1,37 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a="http://richfaces.org/a4j"
+	template="/layout/template-nocol.xhtml">
+
+    <ui:define name="header">
+       <!--<a:loadScript src="resource://jquery.js"/>
+
+       <link href="stylesheet/dashboard.css" rel="stylesheet" type="text/css" />-->
+
+    </ui:define>
+
+    <ui:define name="body">
+
+        <a:outputPanel layout="block" id="messages">
+            <rich:messages/>
+        </a:outputPanel>
+
+
+        <rich:panel>
+           <f:facet name="header">Import InterEduArticles</f:facet>
+            <h:form>
+                <h:inputText value="#{interEdu.interEduImportAction.path}" size="70"/>
+                <h:inputText value="#{interEdu.interEduImportAction.articleCount}" size="10"/>
+                <h:commandButton action="#{interEdu.interEduImportAction.submit}" value="load" />
+            </h:form>
+        </rich:panel>
+
+    </ui:define>
+
+</ui:composition>

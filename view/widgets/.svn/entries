@@ -1,0 +1,98 @@
+10
+
+dir
+5558
+https://svn.salzburgresearch.at/svn/kiwi/KiWi/trunk/view/widgets
+https://svn.salzburgresearch.at/svn/kiwi
+
+
+
+2010-08-16T09:20:01.198497Z
+5547
+lukasholy
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+df910b12-e4fe-467b-9c3d-147a02c1fe00
+
+README
+file
+
+
+
+
+2010-08-17T20:23:57.000000Z
+8da9af2270545d9c44c568ac3b2e91d5
+2010-07-27T08:32:21.196685Z
+5465
+sschaffe
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+386
+
+SN
+dir
+
+activity
+dir
+
+ceq
+dir
+
+explanation
+dir
+
+imagebrowser
+dir
+
+rating
+dir
+
+recommendations
+dir
+
+status
+dir
+
+sun
+dir
+
+sunSearch
+dir
+
+tagging
+dir
+
+tags
+dir
+

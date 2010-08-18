@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/src/action/kiwi/service/reasoning/reasonmaintenance
+END
+NeoIndexServiceFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/kiwi/!svn/ver/4684/KiWi/trunk/src/action/kiwi/service/reasoning/reasonmaintenance/NeoIndexServiceFactory.java
+END
+ReasonMaintenanceServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/src/action/kiwi/service/reasoning/reasonmaintenance/ReasonMaintenanceServiceImpl.java
+END
+NeoFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5065/KiWi/trunk/src/action/kiwi/service/reasoning/reasonmaintenance/NeoFactory.java
+END
+Justification.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5198/KiWi/trunk/src/action/kiwi/service/reasoning/reasonmaintenance/Justification.java
+END

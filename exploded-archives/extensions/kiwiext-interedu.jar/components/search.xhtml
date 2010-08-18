@@ -1,0 +1,68 @@
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+                xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf">
+    <div id="menu_portal_breadcrumb">
+		<h:outputText value="Sie befinden sich in: " />
+		<c:forEach items="#{interedu.searchAction.breadCrumb}" var="crumbVar" >
+			<h:commandLink action="#{interedu.searchAction.selectBreadCrumbConcept(crumbVar.concept)}" value="#{crumbVar.label}"/>
+			<h:outputText value=" > "/>
+		</c:forEach>
+		<!-- simple links seperated by > -->
+	</div>
+	<!-- subcategories of current breadcrumb -->
+	<div id="portal_navigationarea">
+		<ul id="menu_portal_categories" class="lastcategory">
+			<li><ul>
+				<li>
+				<c:forEach items="#{interedu.searchAction.subConcept}" var="concept" varStatus="status">
+					<h:commandLink value="#{concept.label}" action="#{interedu.searchAction.appendConcept(concept.concept)}"  />
+					
+					<!-- to make a new ul after 4 items -->
+					<h:outputText value="&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;ul&gt;&lt;li&gt;" rendered="#{(status.index+1) % 4 == 0}" escape="false"/>
+					<h:outputText value="&lt;/li&gt;&lt;li&gt;" rendered="#{(status.index+1) % 4 != 0}" escape="false"/>
+				</c:forEach>
+				</li>
+			</ul></li>
+		</ul>
+		<!-- free search  -->
+		<s:div id="search_textSearch">
+		<div id="portal_search">
+			<div id="container_portal_searchbox_filter_area">
+				<div id="portal_searchbox_filter_area" style="display:none">
+					<ui:repeat value="#{interedu.searchAction.getSearchAreas()}" var="area">
+						<a:commandLink action="#{interedu.searchAction.setSearchArea(area)}" value="#{area}" reRender="search_textSearch" /><br/>
+					</ui:repeat>
+				</div>
+				Suche in
+				<a id="portal_searchbox_filter_area_open" href="#" onclick="jQuery('#portal_searchbox_filter_area').fadeIn('slow');return false;" >
+					<img title="Suchbereich einstellen" alt="Suchbereich einstellen" src="images/portal_search_area_arrow_down.png"/>
+					<span id="portal_searchbox_filter_area_open_chosenarea">
+						<h:outputText value="#{interedu.searchAction.searchArea}" />
+					</span>
+				</a>
+			</div>
+			<div id="container_portal_searchbox">
+				<!-- <div id="portal_searchbox_results"> </div> -->
+				<h:inputText value="#{interedu.searchAction.searchString}" id="portal_searchbox" onclick="if(jQuery(this).val()=='Suchbegriff'){jQuery(this).attr({value:''});}" />
+				<a:commandLink action="#{interedu.searchAction.setSearchString('')}" reRender="portal_searchbox" id="portal_searchbox_reset" >
+					<h:graphicImage url="images/portal_search_reset.png" title="Suchfeld loeschen" alt="Suchfeld loeschen" />
+				</a:commandLink>
+			</div>
+			<div id="container_portal_search_submit">
+				<h:commandLink action="#{interedu.searchAction.doKeywordSearch()}" id="portal_search_submit" value="&#187; Suche" >
+					<s:defaultAction/>
+				</h:commandLink>
+			</div>
+			<div class="clearer"/>
+		</div>
+		</s:div>
+		<div class="clearer"/>
+	</div>
+</ui:composition>

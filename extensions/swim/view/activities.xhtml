@@ -1,0 +1,27 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a="http://richfaces.org/a4j" template="layout/template.xhtml">
+
+	<ui:define name="body">
+
+		<rich:tabPanel style="height: 100%" switchType="normal">
+			<rich:tab label="Activities" style="height: 100%">
+
+                <rich:dataTable value="#{activityAction.activities}" var="activity">
+                    <rich:column><h:outputText value="#{activity.created}" /></rich:column>
+                    <rich:column><h:outputText escape="false" value="#{messages[activity.getMessageIdentifier()]}"/></rich:column>
+                    
+                </rich:dataTable>
+
+			</rich:tab>
+		</rich:tabPanel>
+
+	</ui:define>
+</ui:composition>
+

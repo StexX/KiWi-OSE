@@ -1,0 +1,113 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+    xmlns:c="http://java.sun.com/jstl/core"
+    xmlns:a="http://richfaces.org/a4j"
+	template="/layout/template-2col.xhtml">   
+    
+    
+    
+        <ui:define name="header">
+       <a:loadScript src="resource://jquery.js"/>
+       
+       <link href="stylesheet/dashboard.css" rel="stylesheet" type="text/css" />
+    
+    </ui:define>
+
+    <ui:define name="navigation">
+        <ui:include src="layout/navigation.xhtml" />
+    </ui:define>
+
+   
+               
+    <ui:define name="body">
+     <rich:messages styleClass="message"/>
+    
+    
+    <h3>What does your tag mean?</h3>
+    <a:outputPanel id="streamOfTags" layout="block">
+        <div class="activity">
+          <div class="activityPhoto">
+              <img src="#{facesContext.externalContext.requestContextPath}/img/professor.png" />
+          </div>
+
+          
+         <div style="clear: left;"></div>
+        </div>
+
+    
+         <h:form >
+         <s:span id="tagListTest" rendered="#{setupTagList.getRowCount() &gt; 0}"> 
+         <rich:dataTable id = "purposePanel" value="#{setupTagList}" var="myTag">
+
+			<h:column>
+				<f:facet name="header">Tag</f:facet>
+								<strong>
+									<s:link view="/home.xhtml" value="#{myTag.tag.taggingResource.title}" propagation="none">
+										<f:param name="title" value="#{myTag.tag.taggingResource.title}"/>
+										<f:param name="uri"/>
+				                        <f:param name="id" /><!--
+				                        <f:param name="kiwiid" value="#{myTag.resource.kiwiIdentifier}"/>
+									--></s:link>	
+								</strong>
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">Meaning</f:facet>
+				
+			                   <rich:inplaceSelect id="role" value="#{myTag.purpose}" defaultLabel="#{myTag.purpose}">
+			                   				<f:selectItem itemValue="identifiesWhoOwns" itemLabel="identifies who owns"   />
+    										<f:selectItem itemValue="identifiesWhatIs" itemLabel="identifies what is"   />
+    										<f:selectItem itemValue="identifiesWhatIsAbout" itemLabel="identifies what is about"   />
+    										<f:selectItem itemValue="qualifies" itemLabel="qualifies"   />
+    										<f:selectItem itemValue="categorizes" itemLabel="categorizes"   />
+    										<f:selectItem itemValue="reminds" itemLabel="reminds"   />
+    										<f:selectItem itemValue="selfReference" itemLabel="self references"   />
+    										<f:selectItem itemValue="conceptualizes" itemLabel="conceptualizes"   /><!--
+											
+											 
+											<a:support id="send"
+											limitToList="true" action="#{taggingAction.loadTags()}"
+											 event="onchange"  /> 
+											   										
+							--></rich:inplaceSelect>
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Item</f:facet>
+								<strong>
+									<s:link view="/home.xhtml" value="#{myTag.contentItem.title}" propagation="none">
+										<f:param name="title" value="#{myTag.contentItem.title}"/>
+										<f:param name="uri"/>
+				                        <f:param name="id" />
+				                        
+									</s:link>	
+								</strong>
+			</h:column>			
+			
+		</rich:dataTable>
+	     
+	     <h:panelGrid columns="2">
+            <a:commandButton id = "btnLoad"
+                          value = "Load Tag Purpose" 
+                     
+                         action = "#{taggingAction.updateTagPurpose()}">
+            </a:commandButton>
+		</h:panelGrid>
+		
+		</s:span>
+		<s:span id="noTagListTest" rendered="#{setupTagList.getRowCount() &lt;= 0}">		
+					<h:outputText value="You have no tags."/>
+		</s:span>
+		
+		</h:form>
+	     
+    </a:outputPanel>
+  </ui:define>  
+</ui:composition>
+

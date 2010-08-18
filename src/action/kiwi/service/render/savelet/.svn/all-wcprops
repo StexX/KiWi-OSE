@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/kiwi/!svn/ver/5148/KiWi/trunk/src/action/kiwi/service/render/savelet
+END
+Savelet.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/service/render/savelet/Savelet.java
+END
+FragmentsSavelet.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/service/render/savelet/FragmentsSavelet.java
+END
+MediaContentSavelet.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/action/kiwi/service/render/savelet/MediaContentSavelet.java
+END
+ExtractLinksSavelet.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/3931/KiWi/trunk/src/action/kiwi/service/render/savelet/ExtractLinksSavelet.java
+END
+NavigationalLinksSavelet.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/4860/KiWi/trunk/src/action/kiwi/service/render/savelet/NavigationalLinksSavelet.java
+END
+HtmlCleanerSavelet.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/2196/KiWi/trunk/src/action/kiwi/service/render/savelet/HtmlCleanerSavelet.java
+END
+SourceSavelet.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/service/render/savelet/SourceSavelet.java
+END
+TextContentSavelet.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/service/render/savelet/TextContentSavelet.java
+END
+RdfaSavelet.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5148/KiWi/trunk/src/action/kiwi/service/render/savelet/RdfaSavelet.java
+END
+ComponentSavelet.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/service/render/savelet/ComponentSavelet.java
+END

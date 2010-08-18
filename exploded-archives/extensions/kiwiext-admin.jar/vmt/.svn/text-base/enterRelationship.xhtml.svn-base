@@ -1,0 +1,44 @@
+<rich:modalPanel
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+   	  xmlns:rich="http://richfaces.org/rich"
+ 	  xmlns:a4j="http://richfaces.org/a4j"
+ 	  width="300"
+ 	  height="150"
+      id="relationshipPanel">
+      <s:remote include="kiwiTreeAction"/>
+      	
+        <f:facet name="header">
+            <h:panelGroup>
+                <h:outputText value="Enter relationship"></h:outputText>
+            </h:panelGroup>
+        </f:facet>
+        
+      	 <h:form>
+      	 			<h:panelGrid>
+ 		            <center>
+ 		            <h:selectOneMenu value="#{relationBean.selectedRelationship}" required="true" immediate="true"  id = "rel">                        
+					<s:selectItems value="#{relationBean.relationshipTypes}" var="relTypes"                  
+                   label="#{relTypes}" noSelectionLabel="Select a relationship"/>
+      			   </h:selectOneMenu>
+ 		            
+ 		            <br/>
+ 		            
+ 		            <h:selectOneMenu value="#{relationBean.selectedLanguage}" required="true" immediate="true"  id = "lang" reRender = "lang">                        
+					<s:selectItems value="#{kiwiTreeAction.labels}" var="labs"                  
+                   label="#{labs}" noSelectionLabel="Select a language"/>
+    		    	</h:selectOneMenu>
+					</center>
+		            	
+		            </h:panelGrid>
+		            
+		           <div class="actionButtons">
+		            <h:commandButton value="OK" id="btnRelTypeLabelSubmit" action = "#{kiwiTreeAction.addDragConcept}"/>
+		            <h:commandButton value="Cancel" id="btnRelTypePrefLabelAbort"/>
+		           </div>		      		       
+	   	</h:form>
+
+</rich:modalPanel>

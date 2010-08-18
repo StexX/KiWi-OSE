@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/kiwi/!svn/ver/5309/KiWi/trunk/src/model/kiwi/model/informationextraction
+END
+Context.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/model/kiwi/model/informationextraction/Context.java
+END
+Example.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5309/KiWi/trunk/src/model/kiwi/model/informationextraction/Example.java
+END
+InstanceEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5309/KiWi/trunk/src/model/kiwi/model/informationextraction/InstanceEntity.java
+END
+Label.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5309/KiWi/trunk/src/model/kiwi/model/informationextraction/Label.java
+END
+ClassifierEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5309/KiWi/trunk/src/model/kiwi/model/informationextraction/ClassifierEntity.java
+END
+Suggestion.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5309/KiWi/trunk/src/model/kiwi/model/informationextraction/Suggestion.java
+END
+NaiveBayesClassifier.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5023/KiWi/trunk/src/model/kiwi/model/informationextraction/NaiveBayesClassifier.java
+END
+InstanceExtractorEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/5309/KiWi/trunk/src/model/kiwi/model/informationextraction/InstanceExtractorEntity.java
+END

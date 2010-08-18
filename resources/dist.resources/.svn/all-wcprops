@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/kiwi/!svn/ver/5554/KiWi/trunk/resources/dist.resources
+END
+start.bash
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/kiwi/!svn/ver/2170/KiWi/trunk/resources/dist.resources/start.bash
+END
+persistence-jboss.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/4004/KiWi/trunk/resources/dist.resources/persistence-jboss.xml
+END
+howToRun.txt
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/kiwi/!svn/ver/2279/KiWi/trunk/resources/dist.resources/howToRun.txt
+END
+h2.starter.jboss-service.xml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/2183/KiWi/trunk/resources/dist.resources/h2.starter.jboss-service.xml
+END
+run.conf
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/kiwi/!svn/ver/2170/KiWi/trunk/resources/dist.resources/run.conf
+END
+mail-service.xml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/resources/dist.resources/mail-service.xml
+END
+kiwi24.gif
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/kiwi/!svn/ver/2080/KiWi/trunk/resources/dist.resources/kiwi24.gif
+END
+start.bat
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/kiwi/!svn/ver/2168/KiWi/trunk/resources/dist.resources/start.bat
+END
+KiWi-jboss-ds.xml
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/resources/dist.resources/KiWi-jboss-ds.xml
+END
+kiwi16.gif
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/kiwi/!svn/ver/2080/KiWi/trunk/resources/dist.resources/kiwi16.gif
+END
+server.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/kiwi/!svn/ver/5554/KiWi/trunk/resources/dist.resources/server.xml
+END
+kiwi.service.sar
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/resources/dist.resources/kiwi.service.sar
+END
+server.keystore
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/kiwi/!svn/ver/5552/KiWi/trunk/resources/dist.resources/server.keystore
+END

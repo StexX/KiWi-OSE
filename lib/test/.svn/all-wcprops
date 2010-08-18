@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/kiwi/!svn/ver/3769/KiWi/trunk/lib/test
+END
+thirdparty-all.jar
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/lib/test/thirdparty-all.jar
+END
+jboss-embedded-all.jar
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/lib/test/jboss-embedded-all.jar
+END
+antlr-testing.jar
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/kiwi/!svn/ver/3769/KiWi/trunk/lib/test/antlr-testing.jar
+END

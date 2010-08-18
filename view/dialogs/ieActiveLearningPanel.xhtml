@@ -1,0 +1,151 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a="http://richfaces.org/a4j"
+	xmlns:kiwi="http://www.kiwi-project.eu/jsf">
+
+	<rich:panel id="activeLearning">
+		<h2>Suggestions</h2>
+
+		<s:div rendered="#{ie.activeLearning.enabled}">
+			<p><h:commandButton value="Disable suggestions"
+				action="#{ie.activeLearning.disable}" /></p>
+
+			<p>
+				<h:commandButton
+					value="Re-initiaze"
+					action="#{ie.activeLearning.init}" />
+				<h:commandButton
+					value="Recompute" 
+					action="#{ie.activeLearning.compute}" />
+				<h:commandButton
+					value="Refresh" 
+					action="#{ie.activeLearning.refresh}" />
+			</p>
+			
+			<style>
+				.ieSuggestionAccepted {
+					background-color: rgb(163, 236, 115);
+				}
+				
+				.ieSuggestionRejected {
+					background-color: rgb(236, 152, 115);
+				}
+			</style>
+
+			<div>
+				<ui:repeat var="suggestion" value="#{ie.activeLearning.suggestions}">
+					<s:div styleClass="#{suggestion.state == 0 ? 'ieSuggestionNone' : (suggestion.state == 1 ? 'ieSuggestionAccepted' : 'ieSuggestionRejected')}">
+					<b><h:outputText
+						value="#{suggestion.instance.sourceResource.contentItem.title}" /></b>
+					<s:div rendered="#{suggestion.instance.context.isFragment}">
+						<h:outputText value="#{suggestion.instance.context.leftContext}" />
+						<b><h:outputText
+							value="#{suggestion.instance.context.inContext}" /></b>
+						<h:outputText value="#{suggestion.instance.context.rightContext}" /> (score: <h:outputText value="#{suggestion.score}"/>)
+					</s:div> <s:div rendered="#{!suggestion.instance.context.isFragment}">
+						<h:outputText value="#{suggestion.snippet}" />
+					</s:div> 
+						<s:div rendered="#{suggestion.state == 0}" style="text-align:center">
+							<h:commandButton
+								action="#{ie.activeLearning.acceptSuggestion(suggestion)}"
+								value="Accept" style="backround-color: green;"/>
+							<h:commandButton
+								action="#{ie.activeLearning.rejectSuggestion(suggestion)}"
+								value="Reject" style="backround-color: red;" /> (score: <h:outputText value="#{suggestion.score}"/>)
+						</s:div>
+						<s:div rendered="#{suggestion.state == 1}" style="text-align:center;">
+							Accepted
+							<h:commandButton
+								action="#{ie.activeLearning.rejectSuggestion(suggestion)}"
+								value="Reject" /> (score: <h:outputText value="#{suggestion.score}"/>)
+						</s:div>
+						<s:div rendered="#{suggestion.state == 2}" style="text-align:center; ">
+							<h:commandButton
+								action="#{ie.activeLearning.acceptSuggestion(suggestion)}"
+								value="Accept" />
+							Rejected (score: <h:outputText value="#{suggestion.score}"/>)
+						</s:div>
+					</s:div>
+				</ui:repeat>
+			</div>
+			
+			<p style="text-align:center">
+				<h:commandButton
+					value="Accept All"
+					action="#{ie.activeLearning.acceptAll}" />
+				<h:commandButton
+					value="Reject All" 
+					action="#{ie.activeLearning.rejectAll}" />
+				<h:commandButton
+					value="Next" 
+					action="#{ie.activeLearning.compute}" />
+			</p>
+
+			<style>
+				.vertTop {
+					vertical-align: top;
+				}
+			</style>
+
+			<h:panelGrid columns="2" columnClasses="vertTop" width="100%">
+				<rich:panel>
+					<f:facet name="header">
+						Positive
+                	</f:facet>
+
+					<div>
+						<ui:repeat var="x" value="#{ie.activeLearning.positiveExamples}">
+							<div><b><h:outputText
+								value="#{x.suggestion.instance.sourceResource.contentItem.title}" /></b>
+							<s:div rendered="#{x.suggestion.instance.context.isFragment}">
+								<h:outputText
+									value="#{x.suggestion.instance.context.leftContext}" />
+								<b><h:outputText
+									value="#{x.suggestion.instance.context.inContext}" /></b>
+								<h:outputText
+									value="#{x.suggestion.instance.context.rightContext}" />
+							</s:div> <s:div rendered="#{!x.suggestion.instance.context.isFragment}">
+								<h:outputText value="#{x.snippet}" />
+							</s:div> <h:commandButton action="#{ie.activeLearning.removeExample(x)}"
+								value="Remove" /></div>
+						</ui:repeat>
+					</div>
+
+				</rich:panel>
+
+				<rich:panel>
+					<f:facet name="header">
+						Negative
+                	</f:facet>
+					<div>
+						<ui:repeat var="x" value="#{ie.activeLearning.negativeExamples}">
+							<div><b><h:outputText
+								value="#{x.suggestion.instance.sourceResource.contentItem.title}" /></b>
+							<s:div rendered="#{x.suggestion.instance.context.isFragment}">
+								<h:outputText
+									value="#{x.suggestion.instance.context.leftContext}" />
+								<b><h:outputText
+									value="#{x.suggestion.instance.context.inContext}" /></b>
+								<h:outputText
+									value="#{x.suggestion.instance.context.rightContext}" />
+							</s:div> <s:div rendered="#{!x.suggestion.instance.context.isFragment}">
+								<h:outputText value="#{x.snippet}" />
+							</s:div> <h:commandButton action="#{ie.activeLearning.removeExample(x)}"
+								value="Remove" /></div>
+						</ui:repeat>
+					</div>
+				</rich:panel>
+			</h:panelGrid>
+
+		</s:div>
+		<s:div rendered="#{!ie.activeLearning.enabled}">
+			<h:commandButton value="Enable suggestions"
+				action="#{ie.activeLearning.enable}" />
+		</s:div>
+	</rich:panel>
+</ui:composition>

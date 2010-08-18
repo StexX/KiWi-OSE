@@ -1,0 +1,59 @@
+<rich:modalPanel   
+       id="multiTagging" 
+       width="400" 
+       height="300"
+	   xmlns="http://www.w3.org/1999/xhtml"
+	   xmlns:ui="http://java.sun.com/jsf/facelets"
+	   xmlns:h="http://java.sun.com/jsf/html"
+	   xmlns:f="http://java.sun.com/jsf/core"
+	   xmlns:s="http://jboss.com/products/seam/taglib"
+	   xmlns:rich="http://richfaces.org/rich"
+	   xmlns:c="http://java.sun.com/jstl/core"
+	   xmlns:a="http://richfaces.org/a4j">
+     <f:facet name="header">Multitagging</f:facet>
+     <h:form>
+         <a:region>
+         	<s:div id="cilist" style="margin-top: 1em;">
+         		<ul>
+         			<ui:repeat value="#{interedu.artikelCollector.articleCollection}" var="art">
+         			<li><h:outputText value="#{art.title}" /></li>
+         			</ui:repeat>
+         		</ul>
+         	</s:div>
+            <s:div id="taginput" style="margin-top: 1em;">
+                <h3>New Tags:</h3>
+                <h:inputText value="#{interedu.taggingAction.tagLabel}" style="width: 300px" id="taglabel"/>
+                <rich:suggestionbox id="suggestionBoxId1" for="taglabel" tokens=",[]"
+                        suggestionAction="#{interedu.taggingAction.autocomplete}" 
+                        var="result"
+                        fetchValue="#{result}" 
+                        minChars="2"
+                        shadowOpacity="4"
+                        border="1"
+                        height="150"
+                        width="100"
+                        shadowDepth="3"
+                        cellpadding="2"
+                        nothingLabel="No tags found" 
+                        columnClasses="center"
+                        usingSuggestObjects="true" reRender="suggestionBoxId1">
+                        
+                        <h:column>
+                            <h:outputText value="#{result}" />
+                        </h:column>
+                </rich:suggestionbox>
+                <a:commandButton id="addTagBtn" action="#{interedu.taggingAction.addMultiTag}" value="Taggen" reRender="taginput,contentPanel">
+                    <s:defaultAction/>
+                </a:commandButton>
+                <a:status>
+                    <f:facet name="start">
+                        <h:graphicImage  value="#{facesContext.externalContext.requestContextPath}/img/busy-indicator.gif"/>
+                    </f:facet>
+                </a:status>
+            </s:div>
+            <div style="width: 100%" class="center footer">
+                <input type="button" value="Schliessen"  onclick="#{rich:component('multiTagging')}.hide();"/>
+            </div>
+         </a:region>
+     </h:form>
+</rich:modalPanel>

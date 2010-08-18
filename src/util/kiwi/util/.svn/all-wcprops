@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/kiwi/!svn/ver/5551/KiWi/trunk/src/util/kiwi/util
+END
+Transformer.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/kiwi/!svn/ver/2717/KiWi/trunk/src/util/kiwi/util/Transformer.java
+END
+JDBCUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/kiwi/!svn/ver/5002/KiWi/trunk/src/util/kiwi/util/JDBCUtils.java
+END
+TransformationException.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/2717/KiWi/trunk/src/util/kiwi/util/TransformationException.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/kiwi/!svn/ver/2717/KiWi/trunk/src/util/kiwi/util/package-info.java
+END
+JDBCTool.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/kiwi/!svn/ver/4989/KiWi/trunk/src/util/kiwi/util/JDBCTool.java
+END
+URLUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/kiwi/!svn/ver/5402/KiWi/trunk/src/util/kiwi/util/URLUtils.java
+END

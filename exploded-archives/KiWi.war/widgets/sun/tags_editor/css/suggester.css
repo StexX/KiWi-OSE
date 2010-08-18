@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+img{
+    border: none;
+}
+
+
+
+div.suggester{
+	position: relative;
+}
+	div.suggester div.resultsContainer{
+		visibility: hidden;
+		width: 240px;
+		max-height: 200px;
+		overflow: auto;
+		position: absolute;
+		left: 0;
+		top: 20px;
+		background-color: white;
+		padding: 5px 0 5px 0;
+		border: 1px solid lightGrey;
+	}
+		div.suggester div.resultsContainer span.progress_bar{
+			display: inline-block;
+			width: 100%;
+			height: 30px;
+			line-height: 30px;
+		}
+
+		div.suggester div.resultsContainer div.result_item{
+			height: 15px;
+		}
+			div.suggester div.resultsContainer .isControlled{
+				border: 1px solid white;
+				color: green;
+			}
+			div.suggester div.resultsContainer .isControlled > span:first-child,.isControlled > span:last-child{
+				visibility: hidden;
+			}
+
+			div.suggester div.resultsContainer .notControlled{
+				border: 1px solid white;
+				color: black;
+			}
+			div.suggester div.resultsContainer .notControlled > span:first-child,.notControlled > span:last-child{
+				visibility: hidden;
+			}
+
+			div.suggester div.resultsContainer .hasParent > span:first-child{
+				visibility: visible;
+			}
+
+			div.suggester div.resultsContainer .hasChildren > span:last-child{
+				visibility: visible;
+			}
+
+			div.suggester div.resultsContainer .highlighted{
+				border: 1px solid black;
+			}
+
+			div.suggester div.resultsContainer .selected{
+				background-color: lightGrey;
+			}
+
+			div.suggester div.resultsContainer div.result_item span.left_arrow{
+				width: 15px;
+				height: 15px;
+				background-image:url("../img/left_arrow.png");
+				margin-right: 10px;
+				cursor: pointer;
+				display: inline-block;
+			}
+
+			div.suggester div.resultsContainer div.result_item span.label{
+				width: 120px;
+				height: 15px;
+				margin-right: 10px;
+				vertical-align: top;
+				cursor: pointer;
+				display: inline-block;
+			}
+
+			div.suggester div.resultsContainer div.result_item span.result_wait_icon{
+				width: 15px;
+				height: 15px;
+				display: inline-block;
+				visibility: hidden;
+				background-image:url("../img/wait.gif");
+			}
+
+			div.suggester div.resultsContainer div.result_item span.right_arrow{
+				width: 15px;
+				height: 15px;
+				background-image:url("../img/right_arrow.png");
+				cursor: pointer;
+				display: inline-block;
+			}

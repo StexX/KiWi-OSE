@@ -1,0 +1,49 @@
+<rich:modalPanel
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+   	  xmlns:rich="http://richfaces.org/rich"
+ 	  xmlns:a4j="http://richfaces.org/a4j"
+ 	  width="300"
+ 	  height="250"
+      id="skosConceptPanel">
+      <s:remote include="kiwiTreeAction"/>
+      	
+        <f:facet name="header">
+            <h:panelGroup>
+                <h:outputText value="Create new Skos Concept"></h:outputText>
+            </h:panelGroup>
+        </f:facet>
+        
+      	 <h:form>
+      	 			<h:panelGrid>	
+      	 			<center>
+ 		            <h:outputLabel for="prefLabel">Label</h:outputLabel>
+		            <h:inputText id="prefLabel" 
+		                      value="#{kiwiTreeAction.preferredLabel}">
+		            </h:inputText>
+		            
+		            <h:outputLabel for="prefLabel">Language</h:outputLabel>
+		            <h:selectOneMenu value="#{relationBean.selectedLanguage}" required="true" immediate="true"  id = "lang" reRender = "lang">                        
+					<s:selectItems value="#{kiwiTreeAction.labels}" var="labs"                  
+                   label="#{labs}" noSelectionLabel="Select a language"/>
+    		    	</h:selectOneMenu>
+		            
+		           <h:outputLabel for="prefLabel">Enter relationship</h:outputLabel>
+		           <h:selectOneMenu value="#{relationBean.selectedRelationship}" required="true" immediate="true"  id = "rel">                        
+					<s:selectItems value="#{relationBean.relationshipTypes}" var="relTypes"                  
+                   label="#{relTypes}" noSelectionLabel="Select a relationship"/>
+      			   </h:selectOneMenu>
+		            
+		            </center>
+					</h:panelGrid>
+		            
+		           <div class="actionButtons">
+		            <h:commandButton action="#{kiwiTreeAction.addNewConcept}" value="OK" id="btnPrefLabelSubmit"/>
+		            <h:commandButton value="Cancel" id="btnPrefLabelAbort"/>	
+		           </div>		      		       
+	   	</h:form>
+
+</rich:modalPanel>

@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:rich="http://richfaces.org/rich"
+ 	  xmlns:c="http://java.sun.com/jstl/core"
+      xmlns:m="http://code.google.com/p/gmaps4jsf/"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+      xmlns:kiwi="http://www.kiwi-project.eu/jsf">
+<head>    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Logica meets KiWi</title>
+    <link href="stylesheet/theme.css" rel="stylesheet" type="text/css" />
+</head>   
+   
+    <body>
+    <rich:panel style="padding: 0; text-align: left; border: 1;">
+    
+    
+    <!-- login panel -->
+     <ui:include src="../dialogs/login.xhtml">
+        <ui:param name="projectName" value="KiWi"/>
+    </ui:include> 
+    
+    <!-- kiwilink panel -->
+    <ui:include src="../dialogs/kiwilink.xhtml">
+        <ui:param name="projectName" value="KiWi"/>
+    </ui:include>
+    		    
+    <ui:include src="header.xhtml">
+        <ui:param name="projectName" value="KiWi"/>
+    </ui:include>
+        
+    <h:panelGrid id="columnLayout" columns="3" style="height: 100%; width: 100%; border-collapse: collapse;"
+			columnClasses="border,centre,border">
+    
+  	    <h:form id="abc">
+			<rich:panel style="padding: 0; text-align: left; height: 700px; border: 1;" id="panel_left">
+
+    		<h:commandLink action="logica" id="logo"/> 
+    		
+			<center>
+    	<!--  	  <s:link view="/logica/index.xhtml" value="Riskmanagement" propagation="none">
+    		  	 <f:param name="title" value="Riskmanagement"/>
+			  </s:link>  -->
+
+ 			<!--  <h:commandButton type="submit" value="Register" action="#{formAction.go}"/> -->
+
+			  			    		  
+			</center>
+			
+			<table id="panel_left_data">
+					<c:forEach var="widget" items="#{logicaLayoutService.widgets}">
+						<ui:fragment rendered="#{logicaLayoutService.isWidgetForColumn(widget, 1)}">
+							<tr>
+								<td>
+									<kiwi:widget widget="#{widget}"/>
+								</td>
+							</tr>
+						</ui:fragment>
+					</c:forEach>
+			</table>
+    		
+    	   	</rich:panel>
+		</h:form>
+		
+		<h:form id="form_centre">
+				<rich:panel style="padding: 0; text-align: left; height: 700px; border: 1;" id="panel_centre">
+				<div id="widget-main">		
+					<ui:insert name="body"/>
+				</div>
+				</rich:panel>
+		</h:form>
+	    
+	    <h:form id="form_right">
+			<rich:panel style="padding: 0; text-align: left; height: 700px; border: 0;"
+				id="panel_right">
+
+				
+				<table id="panel_right_data">
+					<c:forEach var="widget" items="#{logicaLayoutService.widgets}">
+						<ui:fragment rendered="#{logicaLayoutService.isWidgetForColumn(widget, 2)}">
+							<tr>
+								<td>
+									<kiwi:widget widget="#{widget}"/>
+								</td>
+							</tr>
+						</ui:fragment>
+					</c:forEach>
+				</table>
+			</rich:panel>
+	    </h:form>
+	 </h:panelGrid>
+	   
+	    <ui:include src="footer.xhtml">
+	    <ui:param name="projectName" value="KiWi"/>
+	    </ui:include>
+	    
+  	</rich:panel> 
+	</body>
+</html>

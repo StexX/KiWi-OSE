@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/kiwi/!svn/ver/4925/KiWi/trunk/lib/solr/solr-home/conf
+END
+elevate.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/kiwi/!svn/ver/1922/KiWi/trunk/lib/solr/solr-home/conf/elevate.xml
+END
+protwords.txt
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/kiwi/!svn/ver/1922/KiWi/trunk/lib/solr/solr-home/conf/protwords.txt
+END
+solrconfig.test.xml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/kiwi/!svn/ver/2000/KiWi/trunk/lib/solr/solr-home/conf/solrconfig.test.xml
+END
+admin-extra.html
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/kiwi/!svn/ver/1922/KiWi/trunk/lib/solr/solr-home/conf/admin-extra.html
+END
+stopwords.txt
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/kiwi/!svn/ver/2302/KiWi/trunk/lib/solr/solr-home/conf/stopwords.txt
+END
+germanST.txt
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/kiwi/!svn/ver/2545/KiWi/trunk/lib/solr/solr-home/conf/germanST.txt
+END
+schema.xml
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/kiwi/!svn/ver/4925/KiWi/trunk/lib/solr/solr-home/conf/schema.xml
+END
+stopwords-semvector.txt
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/2418/KiWi/trunk/lib/solr/solr-home/conf/stopwords-semvector.txt
+END
+scripts.conf
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/kiwi/!svn/ver/1922/KiWi/trunk/lib/solr/solr-home/conf/scripts.conf
+END
+synonyms.txt
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/kiwi/!svn/ver/1922/KiWi/trunk/lib/solr/solr-home/conf/synonyms.txt
+END
+spellings.txt
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/kiwi/!svn/ver/1922/KiWi/trunk/lib/solr/solr-home/conf/spellings.txt
+END
+solrconfig.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/kiwi/!svn/ver/3284/KiWi/trunk/lib/solr/solr-home/conf/solrconfig.xml
+END

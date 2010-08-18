@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<components xmlns="http://jboss.com/products/seam/components"
+ 			xmlns:resteasy="http://jboss.com/products/seam/resteasy"
+            xmlns:core="http://jboss.com/products/seam/core"
+            xmlns:persistence="http://jboss.com/products/seam/persistence"
+            xmlns:drools="http://jboss.com/products/seam/drools"
+            xmlns:bpm="http://jboss.com/products/seam/bpm"
+            xmlns:security="http://jboss.com/products/seam/security"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns:transaction="http://jboss.com/products/seam/transaction"
+            xmlns:theme="http://jboss.com/products/seam/theme"
+            xmlns:pdf="http://jboss.com/products/seam/document"
+            xmlns:web="http://jboss.com/products/seam/web"
+            xmlns:cache="http://jboss.com/products/seam/cache"
+            xmlns:async="http://jboss.com/products/seam/async"
+            xsi:schemaLocation=
+                "http://jboss.com/products/seam/resteasy http://jboss.com/products/seam/resteasy-2.1.xsd
+                 http://jboss.com/products/seam/async http://jboss.com/products/seam/async-2.0.xsd 
+                 http://jboss.com/products/seam/core http://jboss.com/products/seam/core-2.1.xsd 
+                 http://jboss.com/products/seam/persistence http://jboss.com/products/seam/persistence-2.1.xsd 
+                 http://jboss.com/products/seam/drools http://jboss.com/products/seam/drools-2.1.xsd
+                 http://jboss.com/products/seam/bpm http://jboss.com/products/seam/bpm-2.1.xsd
+                 http://jboss.com/products/seam/security http://jboss.com/products/seam/security-2.1.xsd
+                 http://jboss.com/products/seam/transaction http://jboss.com/products/seam/transaction-2.1.xsd
+                 http://jboss.com/products/seam/theme http://jboss.com/products/seam/theme-2.0.xsd                 
+                 http://jboss.com/products/seam/web http://jboss.com/products/seam/web-2.1.xsd
+                 http://jboss.com/products/seam/resteasy http://jboss.com/products/seam/resteasy-2.1.xsd
+                 http://jboss.com/products/seam/jms http://jboss.com/products/seam/jms-2.1.xsd
+                 http://jboss.com/products/seam/components http://jboss.com/products/seam/components-2.1.xsd">
+
+   <core:init debug="true" jndi-pattern="KiWi/#{ejbName}/local"/>
+    
+   <core:manager concurrent-request-timeout="15000" 
+                 conversation-timeout="360000" 
+                 conversation-id-parameter="cid"
+                 default-flush-mode="MANUAL"
+                 parent-conversation-id-parameter="pid"/>
+    
+   <web:hot-deploy-filter url-pattern="*.seam"/>
+
+   <persistence:filter name="tagNotDeleted">
+        <persistence:name>tagNotDeleted</persistence:name>
+        <persistence:parameters>
+            <key>is_deleted</key>
+            <value>#{false}</value>
+        </persistence:parameters>
+   </persistence:filter>
+
+   <persistence:managed-persistence-context name="entityManager"
+                                     auto-create="true"
+                      persistence-unit-jndi-name="java:/KiWiEntityManagerFactory">
+        <persistence:filters>
+            <value>#{tagNotDeleted}</value>
+        </persistence:filters>
+   </persistence:managed-persistence-context>
+	
+   <factory name="hibernateSession" scope="STATELESS" auto-create="true" value="#{entityManager.delegate}"/>
+
+
+   <transaction:ejb-transaction />
+
+   <!-- KiWi permission management -->
+<!--    <security:identity-manager identity-store="#{kiwiIdentityStore}"/> -->
+   <security:identity-manager identity-store="#{jpaIdentityStore}"/>
+   <security:jpa-identity-store user-class="kiwi.model.user.User" role-class="kiwi.model.user.Role"/>
+   
+<!--   <security:jpa-permission-store user-permission-class="kiwi.model.security.Permission"/>-->
+ 
+ <!-- 
+   <security:jpa-permission-store user-permission-class="kiwi.model.user.Permission"/>
+-->
+<!-- 
+   <drools:rule-base name="securityRules">
+       <drools:rule-files>
+           <value>/security.drl</value>
+       </drools:rule-files>
+   </drools:rule-base>
+-->
+
+   <!--  when login required but not logged in, remember current view -->
+   <event type="org.jboss.seam.security.notLoggedIn">
+       <action execute="#{redirect.captureCurrentView}"/>
+   </event>
+ 
+   <event type="org.jboss.seam.security.postAuthenticate">
+       <action execute="#{redirect.returnToCapturedView}"/>
+   </event>
+    
+   <!--  when successfully logged in, refresh currentUser, log the login activity, and return to the
+         view previously captured -->
+   <event type="org.jboss.seam.security.loginSuccessful">
+   	   <action execute="#{currentUserFactory.refreshOnLogin()}" />
+   	   <action execute="#{activityLoggingService.userLogin(currentUser)}" />
+       <!--  <action execute="#{redirect.returnToCapturedView}"/> -->
+   </event>
+        
+   <!--  when user logs out, log the logout activity -->
+   <event type="org.jboss.seam.security.loggedOut">
+   	   <action execute="#{activityLoggingService.userLogout(currentUser)}" />
+   </event>
+
+	<theme:theme-selector cookie-enabled="true" theme="kiwiGreen">
+		<theme:available-themes>
+			<value>kiwiGreen</value>
+			<value>kiwiOrange</value>
+			<value>blueSky</value>
+			<value>emeraldTown</value>
+			<value>classic</value>
+		</theme:available-themes>
+	</theme:theme-selector>
+  
+  
+    <pdf:document-store use-extensions="true" />
+    
+
+
+    <web:multipart-filter create-temp-files="false" 
+                          max-request-size="10000000" 
+                          url-pattern="*.seam"/>   
+
+    <!-- 
+	<cache:jboss-cache-provider configuration="META-INF/treecache.xml" />
+	-->
+	
+	<cache:eh-cache-provider configuration="META-INF/ehcache.xml" />
+	
+	
+	<resteasy:application resource-path-prefix="/services"/>
+	
+	<!-- 
+	<async:timer-service-dispatcher/>
+	-->
+	<async:quartz-dispatcher/>
+
+ <!--   <bpm:jbpm>
+        <bpm:process-definitions>
+            <value>ideaWorkflow.jpdl.xml</value>
+        </bpm:process-definitions>
+        <bpm:pageflow-definitions>
+
+        </bpm:pageflow-definitions>
+    </bpm:jbpm> -->
+	
+</components>

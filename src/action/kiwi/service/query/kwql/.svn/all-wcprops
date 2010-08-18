@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/src/action/kiwi/service/query/kwql
+END
+kwql.xml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/kiwi/!svn/ver/4021/KiWi/trunk/src/action/kiwi/service/query/kwql/kwql.xml
+END
+KwqlServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/4625/KiWi/trunk/src/action/kiwi/service/query/kwql/KwqlServiceImpl.java
+END
+KWQLConstraintViolationException.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/service/query/kwql/KWQLConstraintViolationException.java
+END
+kwql.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/kiwi/!svn/ver/4021/KiWi/trunk/src/action/kiwi/service/query/kwql/kwql.xsd
+END
+KWQLComponent.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/src/action/kiwi/service/query/kwql/KWQLComponent.java
+END
+KwqlQueryServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/4908/KiWi/trunk/src/action/kiwi/service/query/kwql/KwqlQueryServiceImpl.java
+END
+KWQLQuery.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/4621/KiWi/trunk/src/action/kiwi/service/query/kwql/KWQLQuery.java
+END

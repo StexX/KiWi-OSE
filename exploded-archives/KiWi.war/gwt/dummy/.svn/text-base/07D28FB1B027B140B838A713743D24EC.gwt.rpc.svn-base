@@ -1,0 +1,14 @@
+com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException, true, true, true, true, com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException/3936916533, 3936916533
+java.lang.Exception, true, false, true, false, java.lang.Exception/1920171873, 1920171873
+java.lang.RuntimeException, true, false, true, false, java.lang.RuntimeException/515124647, 515124647
+java.lang.String, true, true, true, true, java.lang.String/2004016611, 2004016611
+java.lang.Throwable, true, false, true, false, java.lang.Throwable/2953622131, 2953622131
+java.util.ArrayList, true, true, true, true, java.util.ArrayList/3821976829, 3821976829
+java.util.Arrays$ArrayList, true, true, true, true, java.util.Arrays$ArrayList/1243019747, 1243019747
+java.util.LinkedList, true, true, true, true, java.util.LinkedList/1060625595, 1060625595
+java.util.Stack, true, true, true, true, java.util.Stack/1031431137, 1031431137
+java.util.Vector, true, true, true, true, java.util.Vector/3125574444, 3125574444
+kiwi.transport.client.KiWiSerializableException, true, true, false, false, kiwi.transport.client.KiWiSerializableException/3874117413, 3874117413
+kiwi.transport.client.WidgetConfig, true, true, true, true, kiwi.transport.client.WidgetConfig/206704303, 206704303
+[Lkiwi.transport.client.WidgetConfig;, true, true, true, true, [Lkiwi.transport.client.WidgetConfig;/1468230838, 1468230838
+kiwi.view.dashboard.client.DashboardGWTAction, false, false, false, false, _, 3663176772

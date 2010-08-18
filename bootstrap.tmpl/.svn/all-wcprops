@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/kiwi/!svn/ver/4584/KiWi/trunk/bootstrap.tmpl
+END
+oscache.properties
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/bootstrap.tmpl/oscache.properties
+END
+log4j.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/kiwi/!svn/ver/4584/KiWi/trunk/bootstrap.tmpl/log4j.xml
+END
+commons-logging.properties
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/bootstrap.tmpl/commons-logging.properties
+END
+jndi.properties
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/bootstrap.tmpl/jndi.properties
+END

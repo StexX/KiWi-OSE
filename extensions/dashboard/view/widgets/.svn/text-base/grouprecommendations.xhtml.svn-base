@@ -1,0 +1,40 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+    xmlns:c="http://java.sun.com/jstl/core"
+    xmlns:a="http://richfaces.org/a4j">
+
+    <h3>Group Recommendations</h3>
+    
+    <a:outputPanel id="groupRecommendations" layout="block">
+            <s:span id="grouprec" rendered="#{recommendationActionScope.groupRecommendations.size() &gt; 0}">
+                <div><ul>
+                    <ui:repeat var="groupRecs" value="#{recommendationActionScope.groupRecommendations}" >
+                    <li><b><h:outputText value="Group:"/><h:outputText value="#{groupRecs.getKey().name}"/></b>
+                        <ul>
+                        <ui:repeat var="contentitems" value="#{groupRecs.getValue()}">
+                            <li>
+                            <kiwi:link contentItem="#{contentitems}"/>
+                            <br/>
+                            <h:outputText value="by "/>
+                            <h:outputText value="#{contentitems.author.firstName} "/>
+                            <h:outputText value="#{contentitems.author.lastName}"/>
+                            </li>
+                        </ui:repeat>
+                        </ul>
+                    </li>
+                    </ui:repeat>
+                      </ul>
+                </div>
+            </s:span>
+            <s:span id="nogrouprec" rendered="#{recommendationActionScope.groupRecommendations.size() &lt;= 0}">
+                        <h:outputText value="No Grouped Recommendations."/>
+                        <h:outputText value="You must be member of a group."/>
+            </s:span>
+    </a:outputPanel>
+</ui:composition>

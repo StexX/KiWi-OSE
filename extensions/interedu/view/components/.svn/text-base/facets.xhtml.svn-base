@@ -1,0 +1,65 @@
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+                xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf">
+	<!-- include subComponents -->
+	<s:fragment rendered="#{searchAction.searchEngine.searchResults.resultCount > 0}">
+		<div class="box box-facets">
+			<h2 class="box-heading">
+				<img alt="Suche verfeinern" src="images/icon_keyword.png"/>
+				Suche verfeinern
+			</h2>
+			<div class="box-content">
+				<!-- other facets -->
+            	<ui:repeat value="#{interedu.searchAction.searchEngine.rdfFacets}" var="facet">
+                	<s:fragment rendered="#{interedu.searchAction.existsRdfFacetValue(facet)}">
+                	<h3><h:outputText value="#{facet.label}:" /></h3>
+                	<ul>
+  					<s:fragment rendered="#{facet.label ne 'Kategorie'}">
+	                <ui:repeat value="#{interedu.searchAction.getRdfFacetValues(facet)}" var="rdfFacet">
+	                   <li>
+                        <h:commandLink 
+                                action="#{interedu.searchAction.addRdfSearchProperty(facet,rdfFacet.content)}" 
+                                value="#{rdfFacet.content} (#{rdfFacet.resultCount})" 
+						/>
+	                   </li>
+	                </ui:repeat>
+	                </s:fragment>
+	                <!-- for kategories -->
+	                <s:fragment rendered="#{facet.label eq 'Kategorie'}">
+	                <ui:repeat value="#{interedu.searchAction.getRdfFacetValues(facet)}" var="rdfFacet">
+	                   <li>
+                        <h:commandLink 
+                                action="#{interedu.searchAction.addRdfSearchProperty(facet,rdfFacet.content)}" 
+                                value="#{interedu.articelFacadeService.getConcept(rdfFacet.content).preferredLabel} (#{rdfFacet.resultCount})" 
+                         />
+	                   </li>
+	                </ui:repeat>
+	                </s:fragment>
+                	</ul>
+                	</s:fragment>
+ 	           </ui:repeat>
+				<!-- Tags -->
+				<s:fragment rendered="#{interedu.searchAction.relevantTags.size > 0}">
+				<h3>Stichworte:</h3>
+				<ul>
+					<c:forEach var="tagFacet" items="#{interedu.searchAction.relevantTags}" varStatus="status">
+                	<li>
+                		<h:commandLink 
+                        	action="#{interedu.searchAction.addSearchTag(tagFacet.content.title)}" 
+                        	value="#{tagFacet.content.title} (#{tagFacet.resultCount})" 
+                        />
+                	</li>               
+            		</c:forEach>
+            	</ul>
+            	</s:fragment>
+			</div>
+		</div>
+	</s:fragment>
+</ui:composition>

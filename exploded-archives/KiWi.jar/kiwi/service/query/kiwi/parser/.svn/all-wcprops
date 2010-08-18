@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kiwi/parser
+END
+KiWiQueryParser.class
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kiwi/parser/KiWiQueryParser.class
+END
+KiWiQueryParser$JJCalls.class
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kiwi/parser/KiWiQueryParser$JJCalls.class
+END
+KiWiQueryParserConstants.class
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kiwi/parser/KiWiQueryParserConstants.class
+END
+SimpleCharStream.class
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kiwi/parser/SimpleCharStream.class
+END
+Token.class
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kiwi/parser/Token.class
+END
+TokenMgrError.class
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kiwi/parser/TokenMgrError.class
+END
+KiWiQueryParserTokenManager.class
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kiwi/parser/KiWiQueryParserTokenManager.class
+END
+ParseException.class
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kiwi/parser/ParseException.class
+END
+KiWiQueryParser$LookaheadSuccess.class
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kiwi/parser/KiWiQueryParser$LookaheadSuccess.class
+END
+KiWiQueryParser$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/exploded-archives/KiWi.jar/kiwi/service/query/kiwi/parser/KiWiQueryParser$1.class
+END

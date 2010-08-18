@@ -1,0 +1,179 @@
+10
+
+dir
+5565
+https://svn.salzburgresearch.at/svn/kiwi/KiWi/releases/0.9/build/kiwi
+https://svn.salzburgresearch.at/svn/kiwi
+
+
+
+2010-08-18T11:45:47.139629Z
+5565
+steffi
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+df910b12-e4fe-467b-9c3d-147a02c1fe00
+
+
+
+
+
+
+0
+empty
+
+ClosedException.class
+file
+
+
+
+
+2010-08-18T06:53:08.000000Z
+42239a9d87286b2f9eec9b81b2073425
+2010-08-18T11:45:47.139629Z
+5565
+steffi
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+499
+
+JavaVersionChecker.class
+file
+
+
+
+
+2010-08-18T06:53:08.000000Z
+a332dc37c978d2618f4e435094d302ee
+2010-08-18T11:45:47.139629Z
+5565
+steffi
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1369
+
+action
+dir
+
+admin
+dir
+
+api
+dir
+
+commons
+dir
+
+config
+dir
+
+context
+dir
+
+dashboard
+dir
+
+evaluation
+dir
+
+exception
+dir
+
+extension
+dir
+
+inspector
+dir
+
+interceptor
+dir
+
+kea
+dir
+
+logica
+dir
+
+mobile
+dir
+
+model
+dir
+
+service
+dir
+
+servlet
+dir
+
+test
+dir
+
+transport
+dir
+
+util
+dir
+
+view
+dir
+
+webservice
+dir
+
+widgets
+dir
+
+wiki
+dir
+

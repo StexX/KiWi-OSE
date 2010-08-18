@@ -1,0 +1,75 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+    xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:a="http://richfaces.org/a4j">
+	
+	<c:set value="#{interedu.articelFacadeService.getArtikelFacade(contentItem)}" var="art" />
+		<table><tr><td>
+	    <h1><h:selectBooleanCheckbox  value="#{interedu.artikelCollector.isSelected(art)}" readonly="true" >
+    			<a:support event="onchange" action="#{interedu.artikelCollector.setSelected(art)}" reRender="taggingPanel" ></a:support>
+    		</h:selectBooleanCheckbox>
+    		<h:outputText value=" #{contentItem.title} " />
+	    	<s:span style="font-size:65%;">(<kiwi:watcher contentItem="#{contentItem}" />)</s:span>
+	    </h1>
+        <span>
+            <h:outputText value="#{messages['wiki.createdon']} "/><h:outputText value="#{art.created}"><s:convertDateTime pattern="dd/MM/yyyy"/></h:outputText><h:outputText value=" - "/> 
+            <h:outputText value="#{messages['wiki.updateon']} "/><h:outputText value="#{art.modified}"><s:convertDateTime pattern="dd/MM/yyyy"/></h:outputText><h:outputText value=" "/> 
+            <h:outputText value="#{messages['wiki.by']} "/><kiwi:link resource="#{art.author.resource}" value=" #{contentItem.author.firstName} #{contentItem.author.lastName}"/>
+        </span>
+        </td><td><img src="../interedu/img/status#{art.state}.png" alt="ampel" border="0"/>
+        </td></tr>
+        </table>
+
+		<h:outputText value="Typ: " />
+		<ui:repeat value="#{kiwi.wiki.tagCloudAction.tagCloud}" var="tag">
+		<h:outputText value="#{tag.tagTitle} " />
+		</ui:repeat>
+		<a:commandLink value="[Edit]" reRender="singleTagging" oncomplete="#{rich:component('singleTagging')}.show();"></a:commandLink>
+		
+		<h:outputText value="Kategorie: " />
+		<ui:repeat value="#{interedu.treeSearchAction.categories}" var="cat">
+		<h:outputText value="#{cat} " />
+		</ui:repeat>
+			
+	    <s:div>
+	        <s:div rendered="#{contentItem.mediaContent != null}" >
+	            <center>
+					<kiwi:mediaContent contentItem="#{contentItem}" 
+							edit="true"
+							style="padding: 3px; margin:4px;border:solid 1px #ccc;">
+						<ui:define name="nomedia">
+							<h:outputText value="No image" />
+						</ui:define>
+						<s:transformImageSize 
+							maintainRatio="true"
+							width="400"/>
+					</kiwi:mediaContent>
+			    </center>
+			</s:div>
+	        
+	        <!-- include resource from webservice so that we can support JSF tags inside the content -->
+	        <kiwi:renderHtml contentItem="#{currentContentItem}"  user="#{currentUser}/>
+	    </s:div>
+	    <s:div>
+	    	<h2><h:outputText value="Zusatzinformationen:"/></h2>
+	    	
+	    	<ul>
+	    	<!-- TODO values should be in messages.properties -->
+	    		<li><h:outputText value="Autor: " /><h:outputText value="#{art.artikelAutor}"/></li>
+	    		<li><h:outputText value="Erscheindatum: " /><h:outputText value="#{art.erscheindatum}"/></li>
+	    		<li><h:outputText value="Verfallsdatum: " /><h:outputText value="#{art.verfallsdatum}"/></li>
+	    		<li><h:outputText value="Schulstufen: " /><h:outputText value="#{art.schulstufen}"/></li>
+	    		<li><h:outputText value="Schultyp: " /><h:outputText value="#{art.schultyp}"/></li>
+	    		<li><h:outputText value="Quelle: " /><h:outputLink value="#{art.quelle}" />#{art.quelle}</li>
+	    		<li><h:outputText value="Bildlink: " /><h:outputLink value="#{art.bildlink}">#{art.bildlink}</h:outputLink></li>
+	    	</ul>
+	    </s:div>
+	    <a:commandButton action="#{interedu.articelFacadeService.artikelToGreen(contentItem)}" value="Artikel ist OK" rendered="#{art.state lt 2}" >
+	    	<!-- TODO refresh -->
+	    </a:commandButton>
+</ui:composition>

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/extensions/admin/src/kiwi/action/vmt/importer
+END
+Tester.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/4687/KiWi/trunk/extensions/admin/src/kiwi/action/vmt/importer/Tester.java
+END
+ThesaurusUpdater.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/extensions/admin/src/kiwi/action/vmt/importer/ThesaurusUpdater.java
+END
+ThesaurusImporter.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/extensions/admin/src/kiwi/action/vmt/importer/ThesaurusImporter.java
+END
+ThesaurusImporterTester.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/extensions/admin/src/kiwi/action/vmt/importer/ThesaurusImporterTester.java
+END
+TesterX.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/4408/KiWi/trunk/extensions/admin/src/kiwi/action/vmt/importer/TesterX.java
+END

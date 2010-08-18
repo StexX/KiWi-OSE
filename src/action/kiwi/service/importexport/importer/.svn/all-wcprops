@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/kiwi/!svn/ver/5557/KiWi/trunk/src/action/kiwi/service/importexport/importer
+END
+SNImporterImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5557/KiWi/trunk/src/action/kiwi/service/importexport/importer/SNImporterImpl.java
+END
+ICALImporterImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/3571/KiWi/trunk/src/action/kiwi/service/importexport/importer/ICALImporterImpl.java
+END
+RDFImporterImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5220/KiWi/trunk/src/action/kiwi/service/importexport/importer/RDFImporterImpl.java
+END
+IkeWikiImporter.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/src/action/kiwi/service/importexport/importer/IkeWikiImporter.java
+END
+RSSImporterImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/src/action/kiwi/service/importexport/importer/RSSImporterImpl.java
+END

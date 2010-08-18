@@ -1,0 +1,305 @@
+/**
+CAP-KOM. Community Art Portal für kognitiv beeinträchtigte Menschen
+Mock-up Prototyp
+http://www.utilo.eu
+*/
+
+/* jedes Thema bzw. zusammengehörende Tätigkeiten
+   werden durch eine eigene Farbe identifiziert um deren Zusammengehörigkeit 
+   zu symbolisieren
+*/
+.page_margins{
+	margin:20px;
+}
+.roundBorders{
+	-moz-border-radius: 10px; /* Moziala */
+	border-radius: 10px; /* CSS 3 */
+	-khtml-border-radius: 10px; /* Konqueror */
+	-webkit-border-radius: 10px; /* Safari */
+}
+/* farbe für Login/Logout und deren Unterseiten */
+.loginCol {
+	text-align: center;
+}
+.simpleText{
+	text-transform: uppercase;
+	font-weight: bold;
+	padding:5px;
+	color:black;
+}
+/* farbe für Bildergallerie  und deren Unterseiten */
+.gallCol {
+	text-align: center;
+}
+/* farbe für Profil und deren Unterseiten */
+.profilCol {
+	text-align: center;
+}
+/* CAP-KOM organge */
+.capKomColor{
+	color: #FF9900;
+}
+.capKomBg{
+	background-color: #FF9900;
+}
+/* Rand im CAP-KOM orange */
+.capKomBorder{
+	border: 2px solid #FF9900;
+}
+.capKomHeaderHome{
+	background-image: url("../images/header/p.gif");
+	background-repeat: no-repeat; 
+	background-position:10px 1px;
+}
+/* Rand in Login Farbe */
+.capKomBorderLogin{
+	border: 2px solid #ed1a3b;
+}
+.capKomBgLogin{
+	background-color: #ed1a3b;
+}
+.capKomHeaderLogin{
+	background-image: url("../images/header/tuer.gif");
+	background-repeat: no-repeat; 
+}
+/* Rand in Profil Farbe */
+.capKomBorderProfil{
+	border: 2px solid #006cb8;
+}
+.capKomBorderProfilFreunde{
+	border: 2px solid #ffde00;
+}
+.capKomHeaderProfilFreunde{
+	background-image: url("../images/header/freunde.gif");
+	background-repeat: no-repeat; 
+	background-position: bottom left;
+}
+.capKomHeaderProfil{
+	background-image: url("../images/header/profil.gif");
+	background-repeat: no-repeat; 
+	background-position: bottom left;
+}
+.capKomBgProfil{
+	background-color: #006cb8;
+}
+.capKomBgProfilFreunde{
+	background-color: #ffde00;
+}
+/* Rand in Gallerie Farbe */
+.capKomBorderGall{
+	border: 2px solid #60bb46;
+}
+.capKomHeaderGall{
+	background-image: url("../images/header/galerie.gif");
+	background-repeat: no-repeat; 
+	background-position: bottom left;
+}
+.capKomBgGall{
+	background-color: #60bb46;
+}
+ /* footer in Login Farbe */
+ .loginFooter{
+ 	border-top:2px solid #ed1a3b;
+ }
+ /* footer in Profil Farbe */
+ .profilFooter{
+ 	border-top:2px solid #006cb8;
+ } 
+  /* footer in Gallerie Farbe */
+ .profilFooter{
+ 	border-top:2px solid #60bb46;
+ } 
+ /* footer in CAP-KOM organge */
+ .mainFooter{
+ 	border-top:2px solid #FF9900;
+ }
+ /* main nav in CAP-KOM organge */
+ .mainNav{
+ 	border-top:none;
+ 	border-bottom:2px solid #FF9900;
+ }
+  /* main nav in Login Farbe */
+ .mainNavLogin{
+ 	border-top:none;
+ 	border-bottom:2px solid #ed1a3b;
+ }
+  /* main nav in Profil Farbe */
+ .mainNavProfil{
+ 	border-top:none;
+ 	border-bottom:2px solid #006cb8;
+ }
+   /* main nav in Gallerie Farbe */
+ .mainNavGall{
+ 	border-top:none;
+ 	border-bottom:2px solid #60bb46;
+ }
+
+/* mock up von Buttons und Feldern */
+/* Menueleiste für Buttons */
+ #navButtons .hlist{
+ 	margin-top:10px;
+ 	float:left;
+ 	background:none;
+	border:0px solid #333333;
+	border-top:0px solid #333333; 	
+ }
+ #navButtons .hlist ul {
+	margin:0 0 0 0px;
+	border-left:0px solid #AAAAAA;
+	border-right:0px solid #FFFFFF;	
+ }
+ #navButtons .hlist ul li {
+	margin-right:10px;
+}
+ .button {
+	text-align: center;
+ }
+  .button img{
+ 	height:75px;
+	width: 75px;
+ }
+ .menubutton{
+ }
+ #newUser {
+	float:left;
+ }
+ td.newUserPic{
+  	width: 100px;
+ 	text-align: center;
+ }
+ td.newUserDaten{
+   	width: 240px;
+
+ }
+ #randomPic{
+ 	margin-left:410px;
+ 	text-align: center;
+ }
+ td.randomPic{
+ 	width: 320px;
+ 	text-align: center;
+ }
+ #registriert{
+	text-align: center; 
+	float:left;
+ }
+ #nregistriert{
+	text-align: center; 
+	float:left;
+	margin-left:10px;
+ }
+ #tiersymb{
+ 	float:left;
+
+ }
+ #gegenst{
+ 	margin-top:10px;
+ 	float:left;
+ 	clear: both;
+
+ }
+ .passSymb{
+ 	height:150px;
+	width: 150px;
+	text-align: center; 
+ }
+ .passSymbSmall{
+ 	height:75px;
+	width: 75px;
+	text-align: center; 
+ }
+ .passSymbSmall img{
+ 	height:75px;
+	width: 75px;
+ }
+ #buttonUpload{
+  	height:150px;
+	width: 150px;
+	text-align: center; 
+	margin-left:10px;
+ }
+ #bildKuenstler{
+  	height:250px;
+	width: 200px;
+	text-align: center; 
+ }
+ .kunstwerk{
+	text-align: center; 
+ }
+ .bewertung{
+	text-align: center; 
+	margin-top: 5px;
+ } 
+ td.gallElement{
+ 	padding:10px;
+ }
+ .loeschen, .bewertungSelect{
+	text-align: center; 
+ }
+ .myKunstwerk{
+	text-align: center; 
+ }
+
+/* stylesheetanpassungen für YAML */
+body {
+	font-family:Verdana,Arial,Helvetica,sans-serif;
+	font-size:1em;
+}
+.hlist {
+	background:white;
+	padding-top:5px;
+ 	padding-bottom:5px;
+}
+#header {
+	padding-left:10px;
+	padding-right:10px;
+	height:60px;
+}
+#nav_main{
+	margin-bottom:10px;
+}
+#main{
+	margin-top:10px;
+}
+#footer {
+	text-align: center;
+	font-size: 70%;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+#logo {
+	float:right
+}
+#headerText {
+	float:left;
+	font-size:20px;
+	margin-top:13px;
+	font-weight: bold;
+	margin-left:120px;
+}
+#col3 {
+	margin-top:10px;
+	margin-bottom:10px;
+	margin-left:10px;
+	margin-right:10px;
+	padding-top:10px;
+}
+#col1 {
+	width:50px;
+}
+#col2 {
+	width:50px;
+}
+.hlist ul {
+	border-left:0px;
+	border-right:0px;
+	margin:0 0 0 10px;
+}
+.hlist ul li a, .hlist ul li strong {
+	padding:0;
+}
+.hlist ul li {
+	border-left:0px;
+	border-right:0px;
+	padding-right:10px;
+}

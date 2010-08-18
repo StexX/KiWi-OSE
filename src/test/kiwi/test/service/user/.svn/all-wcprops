@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/kiwi/!svn/ver/4998/KiWi/trunk/src/test/kiwi/test/service/user
+END
+UserServiceTests.xml
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/3803/KiWi/trunk/src/test/kiwi/test/service/user/UserServiceTests.xml
+END
+ProfileServiceTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/4998/KiWi/trunk/src/test/kiwi/test/service/user/ProfileServiceTest.java
+END
+UserServiceTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/4198/KiWi/trunk/src/test/kiwi/test/service/user/UserServiceTest.java
+END
+PermissionServiceTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/4198/KiWi/trunk/src/test/kiwi/test/service/user/PermissionServiceTest.java
+END
+ProfileServiceTests.xml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/3803/KiWi/trunk/src/test/kiwi/test/service/user/ProfileServiceTests.xml
+END

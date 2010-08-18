@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/kiwi/!svn/ver/4811/KiWi/trunk/src/action/kiwi/service/query/kwql/parser
+END
+KWQL_KWQLHead.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/4811/KiWi/trunk/src/action/kiwi/service/query/kwql/parser/KWQL_KWQLHead.java
+END
+KWQLBody.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/4811/KiWi/trunk/src/action/kiwi/service/query/kwql/parser/KWQLBody.java
+END
+KWQLHead.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/4811/KiWi/trunk/src/action/kiwi/service/query/kwql/parser/KWQLHead.java
+END
+KWQLexer.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/4811/KiWi/trunk/src/action/kiwi/service/query/kwql/parser/KWQLexer.java
+END
+KWQL.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/4811/KiWi/trunk/src/action/kiwi/service/query/kwql/parser/KWQL.java
+END
+KWQL_KWQLBody.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/4811/KiWi/trunk/src/action/kiwi/service/query/kwql/parser/KWQL_KWQLBody.java
+END

@@ -1,0 +1,335 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer
+END
+person_first_name.lst
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/person_first_name.lst
+END
+lists_token_internal.def
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/lists_token_internal.def
+END
+time_key2.lst
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/time_key2.lst
+END
+country_cap.lst
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/country_cap.lst
+END
+time_day.lst
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/time_day.lst
+END
+organization_type_prefix.lst
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/organization_type_prefix.lst
+END
+location_suffix_exception.lst
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/location_suffix_exception.lst
+END
+city.lst
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/city.lst
+END
+time_key.lst
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/time_key.lst
+END
+organization_type_old.lst
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/organization_type_old.lst
+END
+ordinal.lst
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/ordinal.lst
+END
+government.lst
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/government.lst
+END
+time_period.lst
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/time_period.lst
+END
+organization.lst
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/organization.lst
+END
+annie_person_female.lst
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/annie_person_female.lst
+END
+orgtail.lst
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/orgtail.lst
+END
+annie_organization.lst
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/annie_organization.lst
+END
+city_caps.lst
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/city_caps.lst
+END
+location_key_external.lst
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/location_key_external.lst
+END
+annie_person_female_lower.lst
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/annie_person_female_lower.lst
+END
+organization_oldie.lst
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/organization_oldie.lst
+END
+first_name.lst
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/first_name.lst
+END
+location_key_suffix.lst
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/location_key_suffix.lst
+END
+profession.lst
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/profession.lst
+END
+year.lst
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/year.lst
+END
+company.lst
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/company.lst
+END
+company_with_ending.lst
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/company_with_ending.lst
+END
+person_rest.lst
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/person_rest.lst
+END
+person_all_names.lst
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/person_all_names.lst
+END
+person_full_names.lst
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/person_full_names.lst
+END
+stop.lst
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/stop.lst
+END
+annie_org_key.lst
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/annie_org_key.lst
+END
+initial.lst
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/initial.lst
+END
+organization_type.lst
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/organization_type.lst
+END
+country_adj_ending.lst
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/country_adj_ending.lst
+END
+person_verb.lst
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/person_verb.lst
+END
+number.lst
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/number.lst
+END
+lists.def
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/lists.def
+END
+date_key.lst
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/date_key.lst
+END
+time_month.lst
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/time_month.lst
+END
+annie_organization_nouns.lst
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/annie_organization_nouns.lst
+END
+geographical_rest.lst
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/geographical_rest.lst
+END
+currency.lst
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/currency.lst
+END
+organization_key.lst
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/organization_key.lst
+END
+last_name.lst
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/last_name.lst
+END
+person_full_names_elements.lst
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/person_full_names_elements.lst
+END
+location_key.lst
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/location_key.lst
+END
+time_hour.lst
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/time_hour.lst
+END
+country.lst
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/country.lst
+END
+number_letters.lst
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/number_letters.lst
+END
+title.lst
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/title.lst
+END
+surname.lst
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/surname.lst
+END
+orgtype.lst
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/orgtype.lst
+END
+time_point.lst
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/time_point.lst
+END
+orgtype_lower.lst
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/3509/KiWi/trunk/lib/gate/gate-home/plugins/german/resources/gazetteer/orgtype_lower.lst
+END

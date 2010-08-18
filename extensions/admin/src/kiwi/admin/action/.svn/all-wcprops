@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/kiwi/!svn/ver/5557/KiWi/trunk/extensions/admin/src/kiwi/admin/action
+END
+ActionType.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/4698/KiWi/trunk/extensions/admin/src/kiwi/admin/action/ActionType.java
+END
+KiWiApplicationConverter.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/1802/KiWi/trunk/extensions/admin/src/kiwi/admin/action/KiWiApplicationConverter.java
+END
+PerspectiveConfigurationAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/extensions/admin/src/kiwi/admin/action/PerspectiveConfigurationAction.java
+END
+IEConfigurationAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5557/KiWi/trunk/extensions/admin/src/kiwi/admin/action/IEConfigurationAction.java
+END
+ImportSunSpaceDataAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5316/KiWi/trunk/extensions/admin/src/kiwi/admin/action/ImportSunSpaceDataAction.java
+END
+CEQConfigurationAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/4631/KiWi/trunk/extensions/admin/src/kiwi/admin/action/CEQConfigurationAction.java
+END
+ApplicationConfigurationAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/4631/KiWi/trunk/extensions/admin/src/kiwi/admin/action/ApplicationConfigurationAction.java
+END
+ImportAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/extensions/admin/src/kiwi/admin/action/ImportAction.java
+END
+ImportSunSpaceDataWebService.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/5101/KiWi/trunk/extensions/admin/src/kiwi/admin/action/ImportSunSpaceDataWebService.java
+END
+SolrConfigurationAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5557/KiWi/trunk/extensions/admin/src/kiwi/admin/action/SolrConfigurationAction.java
+END
+TagITConfigurationAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/4860/KiWi/trunk/extensions/admin/src/kiwi/admin/action/TagITConfigurationAction.java
+END
+XMLImportAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/4860/KiWi/trunk/extensions/admin/src/kiwi/admin/action/XMLImportAction.java
+END

@@ -1,0 +1,130 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a="http://richfaces.org/a4j"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+	template="layout/template.xhtml">
+
+	<ui:define name="links">
+		<link
+			href="#{facesContext.externalContext.requestContextPath}/feed.seam?mode=MOSTRECENT&amp;format=RSS20"
+			type="application/rss+xml" rel="alternate"
+			title="Most Recently Changed" />
+		<link
+			href="#{facesContext.externalContext.requestContextPath}/feed.seam?mode=COMMENTS&amp;format=RSS20"
+			type="application/rss+xml" rel="alternate"
+			title="Comments for #{currentContentItem.title}" />
+		<link
+			href="#{facesContext.externalContext.requestContextPath}/activity-feed.seam?mode=ACTIVITIES&amp;format=RSS20"
+			type="application/rss+xml" rel="alternate"
+			title="Stream of Activities for #{currentContentItem.title}" />
+	</ui:define>
+
+
+	<ui:define name="content">
+
+
+		<h:form id="formWikiContent">
+
+			<ui:include
+				src="#{kiwi.wiki.ui.layoutAction.getContentItemTemplate(currentContentItem)}">
+				<ui:param name="contentItem" value="#{currentContentItem}" />
+			</ui:include>
+
+			<hr style="clear: left;" />
+			<!--  reasoning debugging -->
+			
+			<h2>Triples</h2>
+			
+			<s:span id="inferredTriples">
+
+				<rich:dataTable width="483" id="inferredTriplesTable" rows="20"
+					columnClasses="col" value="#{reasoning.inferredTriples}" var="triple">
+					<f:facet name="header">
+						<rich:columnGroup>
+							<h:column>
+								<h:outputText styleClass="headerText" value="Subject" />
+							</h:column>
+							<h:column>
+								<h:outputText styleClass="headerText" value="Property" />
+							</h:column>
+							<h:column>
+								<h:outputText styleClass="headerText" value="Object" />
+							</h:column>
+						</rich:columnGroup>
+					</f:facet>
+
+					<h:column>
+						<h:outputText value="#{triple.subject.label}" />
+					</h:column>
+
+					<h:column>
+						<h:outputText value="#{triple.property.shortName}" />
+					</h:column>
+
+					<h:column>
+						<h:outputText value="#{triple.object.shortName}" />
+					</h:column>
+				</rich:dataTable>
+
+				<rich:spacer height="30" />
+				<rich:datascroller id="inferredTriplesTableScroller" align="left"
+					for="inferredTriplesTable" maxPages="20" />
+			</s:span>			
+			
+			<s:span id="triples">
+				<!--            <div><ul>
+                <ui:repeat var="triple" value="#{reasoning.someTriples}" >
+                    <li>
+                    <h:outputText value="(#{triple.subject.label},#{triple.property.shortName},#{triple.object.shortName})"/> 
+                    </li>
+                </ui:repeat>
+                </ul>
+            </div>
+        
+-->
+				<!--  by #{triple.author.login} from #{triple.created} -->
+
+				<rich:dataTable width="483" id="triplesTable" rows="20"
+					columnClasses="col" value="#{reasoning.baseTriples}" var="triple">
+					<f:facet name="header">
+						<rich:columnGroup>
+							<h:column>
+								<h:outputText styleClass="headerText" value="Subject" />
+							</h:column>
+							<h:column>
+								<h:outputText styleClass="headerText" value="Property" />
+							</h:column>
+							<h:column>
+								<h:outputText styleClass="headerText" value="Object" />
+							</h:column>
+						</rich:columnGroup>
+					</f:facet>
+
+					<h:column>
+						<h:outputText value="#{triple.subject.label}" />
+					</h:column>
+
+					<h:column>
+						<h:outputText value="#{triple.property.shortName}" />
+					</h:column>
+
+					<h:column>
+						<h:outputText value="#{triple.object.shortName}" />
+					</h:column>
+				</rich:dataTable>
+
+				<rich:spacer height="30" />
+				<rich:datascroller id="triplesTableScroller" align="left"
+					for="triplesTable" maxPages="20" />
+			</s:span>
+		</h:form>
+
+	</ui:define>
+</ui:composition>

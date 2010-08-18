@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/recommendation
+END
+MySimilarRecommendation.class
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/recommendation/MySimilarRecommendation.class
+END
+ContactRecommendation.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/recommendation/ContactRecommendation.class
+END
+SocialCapital.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/recommendation/SocialCapital.class
+END
+RuleBasedRecommendation.class
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/recommendation/RuleBasedRecommendation.class
+END
+RecommendableUserBean.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/recommendation/RecommendableUserBean.class
+END
+SocialCapitalRecommendation.class
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/model/recommendation/SocialCapitalRecommendation.class
+END

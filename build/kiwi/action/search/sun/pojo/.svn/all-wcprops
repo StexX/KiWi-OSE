@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/search/sun/pojo
+END
+JSONSingleRecommendation.class
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/search/sun/pojo/JSONSingleRecommendation.class
+END
+JSONPersonResult.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/search/sun/pojo/JSONPersonResult.class
+END
+JSONSingleResult.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/search/sun/pojo/JSONSingleResult.class
+END
+JSONCommunityResult.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/search/sun/pojo/JSONCommunityResult.class
+END
+JSONContentResult.class
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/search/sun/pojo/JSONContentResult.class
+END
+JSONResults.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/search/sun/pojo/JSONResults.class
+END
+JSONQueryStr.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/search/sun/pojo/JSONQueryStr.class
+END
+JSONSearchResponse.class
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/search/sun/pojo/JSONSearchResponse.class
+END
+JSONRecommendations.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/search/sun/pojo/JSONRecommendations.class
+END
+JSONTemplate.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/action/search/sun/pojo/JSONTemplate.class
+END

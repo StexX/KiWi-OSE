@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/src/action/kiwi/api/transaction
+END
+KiWiSynchronization.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/api/transaction/KiWiSynchronization.java
+END
+TransactionService.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/src/action/kiwi/api/transaction/TransactionService.java
+END
+UpdateTransactionBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5531/KiWi/trunk/src/action/kiwi/api/transaction/UpdateTransactionBean.java
+END
+CIVersionBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/4860/KiWi/trunk/src/action/kiwi/api/transaction/CIVersionBean.java
+END

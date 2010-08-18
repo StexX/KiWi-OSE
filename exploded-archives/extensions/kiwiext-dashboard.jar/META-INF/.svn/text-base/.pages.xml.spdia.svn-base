@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram model-entity="SeamPagesDiagram">
+ <item ID="#dashboard#profile.xhtml" NAME="#xdashboard#xprofile.xhtml"
+  PATH="/dashboard/profile.xhtml" SHAPE="24,17,0,0" TYPE="page" model-entity="SeamPagesDiagramItem">
+  <output ID="/dashboard/*" NAME="output" PATH="/dashboard/*"
+   TARGET="#xdashboard#x*" model-entity="SeamPagesDiagramItemOutput"/>
+ </item>
+ <item ID="#dashboard#*" NAME="#xdashboard#x*" PATH="/dashboard/*"
+  SHAPE="344,17,0,0" TYPE="page" model-entity="SeamPagesDiagramItem"/>
+ <item ID="#dashboard#profile_edit.xhtml"
+  NAME="#xdashboard#xprofile_edit.xhtml"
+  PATH="/dashboard/profile_edit.xhtml" SHAPE="24,121,0,0" TYPE="page" model-entity="SeamPagesDiagramItem">
+  <output ID="/dashboard/profile.xhtml" NAME="output"
+   PATH="/dashboard/profile.xhtml" TARGET="#xdashboard#xprofile.xhtml" model-entity="SeamPagesDiagramItemOutput"/>
+ </item>
+</diagram>

@@ -1,0 +1,77 @@
+<!--
+	Copyright © Rolf Sint, Michael Schneider, Christian Osterrieder, 2010
+ */
+ -->
+
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+			 	xmlns:c="http://java.sun.com/jstl/core"
+                template="../../layout/box_template.xhtml">
+                	
+<ui:define name="box_header">
+		<h2>Laden Sie weitere Bilder hoch ...</h2>
+</ui:define>
+
+<ui:define name="box_header_links">
+	<li>
+		<a:commandLink onclick="jQuery('#uploadPictureChooser').fadeOut('fast')">
+			<img src="../../img/header_links/orange_dot.png" />
+		</a:commandLink>
+	</li>
+</ui:define>
+
+<ui:define name="box_content">
+
+	<style>
+	
+		#mask {
+			background:#ccc url(#{facesContext.externalContext.requestContextPath}/view/img/mask_gradient_1000.png) no-repeat;
+			background-position:-260px -79px;
+		}
+		
+		form.exposePopup {
+			/*border:1px outset #aaa; */
+			background:#fff url(#{facesContext.externalContext.requestContextPath}/view/img/h800.png) repeat-x;
+			padding:10px;
+			margin:10px 0;
+			text-align:center;
+			width:550px;
+			-moz-border-radius:4px;
+		}
+	</style>
+	
+	
+		<h:form class="exposePopup">
+				
+			<rich:fileUpload 
+						fileUploadListener="#{artWorkEditAction.listener}"
+						immediateUpload="false"
+						maxFilesQuantity="#{artWorkEditAction.uploadsAvailable}"
+						listHeight="200pt"
+						listWidth="auto"
+				        allowFlash="true"
+				        acceptedTypes="jpg, gif, png" 
+						addControlLabel="#{messages['artaround.addFile']}..." 
+						clearAllControlLabel="#{messages['artaround.clearAll']}" 
+						clearControlLabel="#{messages['artaround.clear']}"
+                        stopEntryControlLabel="#{messages['artaround.stopProcess']}" 
+						uploadControlLabel="#{messages['artaround.upload']}...">
+				        	
+			        <a:support event="onuploadcomplete" reRender="gal" />
+		            <f:facet name="label">
+		                <h:outputText value="#{messages['artaround.upload.state']}" />
+		        	</f:facet>					
+		   		</rich:fileUpload>	
+
+		</h:form>
+</ui:define>
+
+
+</ui:composition>

@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+
+<suite name="UnitTests" verbose="2" parallel="false">
+    <test name="FacadeUtils" junit="false">
+        <classes>
+            <class name="kiwi.test.unit.FacadeUtilsTest"/>
+        </classes>
+    </test>
+    <test name="KiWiQueryParser" junit="false">
+        <classes>
+            <class name="kiwi.test.unit.KiWiQueryParserTest"/>
+        </classes>
+    </test>
+<!--    <test name="LCStest" junit="true">
+        <classes>
+            <class name="kiwi.test.unit.LCStest"/>
+        </classes>
+    </test> -->
+</suite>

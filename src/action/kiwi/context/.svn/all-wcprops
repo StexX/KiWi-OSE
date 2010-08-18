@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/kiwi/!svn/ver/5557/KiWi/trunk/src/action/kiwi/context
+END
+CurrentKnowledgeSpaceFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/action/kiwi/context/CurrentKnowledgeSpaceFactory.java
+END
+KnowledgeSpaceBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/1821/KiWi/trunk/src/action/kiwi/context/KnowledgeSpaceBean.java
+END
+CurrentContentItemFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5557/KiWi/trunk/src/action/kiwi/context/CurrentContentItemFactory.java
+END
+CurrentUserFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/5557/KiWi/trunk/src/action/kiwi/context/CurrentUserFactory.java
+END
+ActiveKnowledgeSpacesFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/context/ActiveKnowledgeSpacesFactory.java
+END
+CurrentApplicationFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5298/KiWi/trunk/src/action/kiwi/context/CurrentApplicationFactory.java
+END

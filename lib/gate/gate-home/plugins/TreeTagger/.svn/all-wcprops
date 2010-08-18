@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/kiwi/!svn/ver/3527/KiWi/trunk/lib/gate/gate-home/plugins/TreeTagger
+END
+TreeTagger.jar
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/3527/KiWi/trunk/lib/gate/gate-home/plugins/TreeTagger/TreeTagger.jar
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/3527/KiWi/trunk/lib/gate/gate-home/plugins/TreeTagger/build.xml
+END
+creole.xml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/3527/KiWi/trunk/lib/gate/gate-home/plugins/TreeTagger/creole.xml
+END

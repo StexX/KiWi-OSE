@@ -1,0 +1,482 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+                xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                template="layout/template.xhtml">
+
+ 
+ 
+    <ui:define name="body">
+	<h:form>
+        <h1>Grant Permissions</h1>
+        
+        <h3>Global Permissions</h3>
+        
+	<!-- Add User link -->
+	<f:subview xmlns="http://www.w3.org/1999/xhtml"
+	      xmlns:ui="http://java.sun.com/jsf/facelets"
+	      xmlns:h="http://java.sun.com/jsf/html"
+	      xmlns:f="http://java.sun.com/jsf/core"
+	      xmlns:a4j="http://richfaces.org/a4j"
+	      xmlns:rich="http://richfaces.org/rich"> 
+	    <rich:modalPanel id="panel" height="60">
+	        <f:facet name="header">
+	            <h:panelGroup>
+	                <h:outputText value="Add User"></h:outputText>
+	            </h:panelGroup>
+	        </f:facet>
+	        <f:facet name="controls">
+	            <h:panelGroup>
+	            	<h:outputText value="Close" id="hidelink" />
+<!-- 	                <h:graphicImage value="close.png" styleClass="hidelink" id="hidelink"/> -->
+	                <rich:componentControl for="panel" attachTo="hidelink" operation="hide" event="onclick"/>
+	                <rich:componentControl for="panel" attachTo="addUserButton" operation="hide" event="onclick"/>
+	            </h:panelGroup>
+	        </f:facet>
+	        <h:selectOneMenu value="#{assignRoleAction.selectedUser}">
+	        	<s:selectItems value="#{assignRoleAction.allUsers}" var="user" 
+	        	label="#{user.firstName} #{user.lastName} (#{user.login})" noSelectionLabel="Please select ...">
+	        	</s:selectItems>
+	        	<s:convertEntity />
+	        </h:selectOneMenu>
+	        <rich:spacer />
+	        <h:commandButton id="addUserButton" value="Add" action="#{assignRoleAction.addToUsersWithRoles()}"/>
+	    </rich:modalPanel>
+	    <h:outputLink value="#" id="link" style="padding: 5px">
+	        Add User
+	        <rich:componentControl for="panel" attachTo="link" operation="show" event="onclick"/>
+	    </h:outputLink>
+	</f:subview>
+	
+	<!-- Add group -->
+	<f:subview xmlns="http://www.w3.org/1999/xhtml"
+	      xmlns:ui="http://java.sun.com/jsf/facelets"
+	      xmlns:h="http://java.sun.com/jsf/html"
+	      xmlns:f="http://java.sun.com/jsf/core"
+	      xmlns:a4j="http://richfaces.org/a4j"
+	      xmlns:rich="http://richfaces.org/rich"> 
+	    <rich:modalPanel id="panel" height="60">
+	        <f:facet name="header">
+	            <h:panelGroup>
+	                <h:outputText value="Add Group"></h:outputText>
+	            </h:panelGroup>
+	        </f:facet>
+	        <f:facet name="controls">
+	            <h:panelGroup>
+	            	<h:outputText value="Close" id="hidelink" />
+<!-- 	                <h:graphicImage value="close.png" styleClass="hidelink" id="hidelink"/> -->
+	                <rich:componentControl for="panel" attachTo="hidelink" operation="hide" event="onclick"/>
+	                <rich:componentControl for="panel" attachTo="addGroupButton" operation="hide" event="onclick"/>
+	            </h:panelGroup>
+	        </f:facet>
+	        <h:selectOneMenu value="#{assignRoleAction.selectedGroup}">
+	        	<s:selectItems value="#{assignRoleAction.allGroups}" var="group" 
+	        		label="#{group.name}" noSelectionLabel="Please select ...">
+	        	</s:selectItems>
+	        	<s:convertEntity />
+	        </h:selectOneMenu>
+	        <rich:spacer />
+	        <h:commandButton id="addGroupButton" value="Add" action="#{assignRoleAction.addToGroupsWithRoles()}"/>
+	    </rich:modalPanel>
+	    <h:outputLink value="#" id="link" style="padding: 5px">
+	        Add Group
+	        <rich:componentControl for="panel" attachTo="link" operation="show" event="onclick"/>
+	    </h:outputLink>
+	</f:subview>
+    
+    <rich:dataTable 
+			cellpadding="0" cellspacing="0" 
+			border="0" var="user" value="#{assignRoleAction.usersWithRoles}">
+ 
+		<f:facet name="header">
+			<rich:columnGroup>
+				<rich:column width="20">
+					<rich:spacer />
+				</rich:column>
+				<rich:column width="300">
+					<h:outputText value="users" />
+				</rich:column>
+				<rich:column width="150">
+					<h:outputText value="admin" />
+				</rich:column>
+				<rich:column width="150">
+					<h:outputText value="read access" />
+				</rich:column>
+				<rich:column width="150">
+					<h:outputText value="write access" />
+				</rich:column>
+				<rich:column width="150">
+					<h:outputText value="create knowledge spaces" />
+				</rich:column>
+			</rich:columnGroup>
+		</f:facet>
+		
+		<rich:column width="20">
+			<h:commandButton value="X" action="#{assignRoleAction.delUserWithRoles(user)}" style="padding: 5px;color: red; background-color: #cccccc" />
+		</rich:column>
+		<rich:column>
+			<h:outputText value="#{user.displayname}" />
+		</rich:column>
+		<rich:column style="text-align:center">
+			<h:selectBooleanCheckbox value="#{user.admin}" />
+		</rich:column>
+		<rich:column style="text-align:center">
+			<h:selectBooleanCheckbox value="#{user.read}" />
+		</rich:column>
+		<rich:column style="text-align:center">
+			<h:selectBooleanCheckbox value="#{user.write}" />
+		</rich:column>
+        <rich:column style="text-align:center">
+			<h:selectBooleanCheckbox value="#{user.createKnowledgeSpace}" onclick="this.form.submit();" />
+		</rich:column>
+	</rich:dataTable>
+	
+    <rich:dataTable 
+			cellpadding="0" cellspacing="0" 
+			border="0" var="group" value="#{assignRoleAction.groupsWithRoles}">
+ 
+		<f:facet name="header">
+			<rich:columnGroup>
+				<rich:column width="20">
+					<rich:spacer />
+				</rich:column>
+				<rich:column width="300">
+					<h:outputText value="groups" />
+				</rich:column>
+				<rich:column width="150">
+					<h:outputText value="admin" />
+				</rich:column>
+				<rich:column width="150">
+					<h:outputText value="read access" />
+				</rich:column>
+				<rich:column width="150">
+					<h:outputText value="write access" />
+				</rich:column>
+				<rich:column width="150">
+					<h:outputText value="create knowledge spaces" />
+				</rich:column>
+			</rich:columnGroup>
+		</f:facet>
+		
+		<rich:column width="20">
+			<h:commandButton value="X" action="#{assignRoleAction.delGroupWithRoles(group)}" style="padding: 5px;color: red; background-color: #cccccc" />
+		</rich:column>
+		<rich:column>
+			<h:outputText value="#{group.displayname}" />
+		</rich:column>
+		<rich:column style="text-align:center">
+			<h:selectBooleanCheckbox value="#{group.admin}" />
+		</rich:column>
+		<rich:column style="text-align:center">
+			<h:selectBooleanCheckbox value="#{group.read}" />
+		</rich:column>
+		<rich:column style="text-align:center">
+			<h:selectBooleanCheckbox value="#{group.write}" />
+		</rich:column>
+        <rich:column style="text-align:center">
+			<h:selectBooleanCheckbox value="#{group.createKnowledgeSpace}" onclick="this.form.submit();" />
+		</rich:column>
+	</rich:dataTable>
+	
+	<h:commandButton value="Save Changes" action="#{assignRoleAction.store()}" style="padding: 5px">
+	</h:commandButton>
+	
+	</h:form>
+	
+	<h:form>
+	
+	<h3>Type Permissions</h3>
+    
+    <!-- Add Type link -->
+	<f:subview xmlns="http://www.w3.org/1999/xhtml"
+	      xmlns:ui="http://java.sun.com/jsf/facelets"
+	      xmlns:h="http://java.sun.com/jsf/html"
+	      xmlns:f="http://java.sun.com/jsf/core"
+	      xmlns:a4j="http://richfaces.org/a4j"
+	      xmlns:rich="http://richfaces.org/rich"> 
+	    <rich:modalPanel id="panel" height="60">
+	        <f:facet name="header">
+	            <h:panelGroup>
+	                <h:outputText value="Add Type"></h:outputText>
+	            </h:panelGroup>
+	        </f:facet>
+	        <f:facet name="controls">
+	            <h:panelGroup>
+	            	<h:outputText value="Close" id="hidelink" />
+<!-- 	                <h:graphicImage value="close.png" styleClass="hidelink" id="hidelink"/> -->
+	                <rich:componentControl for="panel" attachTo="hidelink" operation="hide" event="onclick"/>
+	                <rich:componentControl for="panel" attachTo="addTypeButton" operation="hide" event="onclick"/>
+	            </h:panelGroup>
+	        </f:facet>
+	        <h:selectOneMenu value="#{grantTypePermissionAction.selectedType}">
+	        	<s:selectItems value="#{grantTypePermissionAction.allTypes}" var="type" 
+	        	label="#{type.resource.getNamespacePrefix()}:#{type.resource.getShortName()}" noSelectionLabel="Please select ...">
+	        	</s:selectItems>
+	        	<s:convertEntity />
+	        </h:selectOneMenu>
+	        <rich:spacer />
+	        <h:commandButton id="addTypeButton" value="Add" action="#{grantTypePermissionAction.addToTypesWithPermissions()}"/>
+	    </rich:modalPanel>
+	    <h:outputLink value="#" id="link" style="padding: 5px">
+	        Add Type
+	        <rich:componentControl for="panel" attachTo="link" operation="show" event="onclick"/>
+	    </h:outputLink>
+	</f:subview>
+    
+    <ui:repeat value="#{grantTypePermissionAction.typesWithPermissions}" var="types">
+        <h4>Permissions for type #{types.type.resource.getNamespacePrefix()}:#{types.type.resource.getShortName()}</h4>
+	    <h:selectBooleanCheckbox value="#{types.globalRead}" />
+	    <h:outputText value="Inherit global read permissions" style="padding-right: 10px"/>
+
+	    <h:selectBooleanCheckbox value="#{types.globalWrite}" />
+	    <h:outputText value="Inherit global write permissions" style="padding-right: 10px"/>
+
+	    <h:selectBooleanCheckbox value="#{types.inheritPermission}"/>
+	    <h:outputText value="Inherit type permissions"/>
+	    <br />
+        <!-- Add User link -->
+		<f:subview xmlns="http://www.w3.org/1999/xhtml"
+		      xmlns:ui="http://java.sun.com/jsf/facelets"
+		      xmlns:h="http://java.sun.com/jsf/html"
+		      xmlns:f="http://java.sun.com/jsf/core"
+		      xmlns:a4j="http://richfaces.org/a4j"
+		      xmlns:rich="http://richfaces.org/rich"> 
+		    <rich:modalPanel id="panel" height="60">
+		        <f:facet name="header">
+		            <h:panelGroup>
+		                <h:outputText value="Add User"></h:outputText>
+		            </h:panelGroup>
+		        </f:facet>
+		        <f:facet name="controls">
+		            <h:panelGroup>
+		            	<h:outputText value="Close" id="hidelink" />
+	<!-- 	                <h:graphicImage value="close.png" styleClass="hidelink" id="hidelink"/> -->
+		                <rich:componentControl for="panel" attachTo="hidelink" operation="hide" event="onclick"/>
+		                <rich:componentControl for="panel" attachTo="addUserButton" operation="hide" event="onclick"/>
+		            </h:panelGroup>
+		        </f:facet>
+		        <h:selectOneMenu value="#{types.selectedUser}">
+		        	<s:selectItems value="#{grantTypePermissionAction.allUsers}" var="user" 
+		        	label="#{user.firstName} #{user.lastName} (#{user.login})" noSelectionLabel="Please select ...">
+		        	</s:selectItems>
+		        	<s:convertEntity />
+		        </h:selectOneMenu>
+		        <rich:spacer />
+		        <h:commandButton id="addUserButton" value="Add" action="#{grantTypePermissionAction.addToUsersWithTypePermissions(types)}"/>
+		    </rich:modalPanel>
+		    <h:outputLink value="#" id="link" style="padding: 5px">
+		        Add User
+		        <rich:componentControl for="panel" attachTo="link" operation="show" event="onclick"/>
+		    </h:outputLink>
+		</f:subview>
+		
+		<!-- Add group -->
+		<f:subview xmlns="http://www.w3.org/1999/xhtml"
+		      xmlns:ui="http://java.sun.com/jsf/facelets"
+		      xmlns:h="http://java.sun.com/jsf/html"
+		      xmlns:f="http://java.sun.com/jsf/core"
+		      xmlns:a4j="http://richfaces.org/a4j"
+		      xmlns:rich="http://richfaces.org/rich"> 
+		    <rich:modalPanel id="panel" height="60">
+		        <f:facet name="header">
+		            <h:panelGroup>
+		                <h:outputText value="Add Group"></h:outputText>
+		            </h:panelGroup>
+		        </f:facet>
+		        <f:facet name="controls">
+		            <h:panelGroup>
+		            	<h:outputText value="Close" id="hidelink" />
+	<!-- 	                <h:graphicImage value="close.png" styleClass="hidelink" id="hidelink"/> -->
+		                <rich:componentControl for="panel" attachTo="hidelink" operation="hide" event="onclick"/>
+		                <rich:componentControl for="panel" attachTo="addGroupButton" operation="hide" event="onclick"/>
+		            </h:panelGroup>
+		        </f:facet>
+		        <h:selectOneMenu value="#{types.selectedGroup}">
+		        	<s:selectItems value="#{grantTypePermissionAction.allGroups}" var="group" 
+		        		label="#{group.name}" noSelectionLabel="Please select ...">
+		        	</s:selectItems>
+		        	<s:convertEntity />
+		        </h:selectOneMenu>
+		        <rich:spacer />
+		        <h:commandButton id="addGroupButton" value="Add" action="#{grantTypePermissionAction.addToGroupsWithTypePermissions(types)}"/>
+		    </rich:modalPanel>
+		    <h:outputLink value="#" id="link" style="padding: 5px">
+		        Add Group
+		        <rich:componentControl for="panel" attachTo="link" operation="show" event="onclick"/>
+		    </h:outputLink>
+		</f:subview>
+		
+		<!-- lists all users and groups that have type permissions assigned -->
+        <rich:dataTable 
+			    cellpadding="0" cellspacing="0" 
+			    border="0" var="user" value="#{types.usersWithPermissions}">
+ 
+			<f:facet name="header">
+				<rich:columnGroup>
+					<rich:column width="20">
+						<rich:spacer />
+					</rich:column>
+					<rich:column width="300">
+						<h:outputText value="users" />
+					</rich:column>
+					<rich:column width="150">
+						<h:outputText value="read" />
+					</rich:column>
+					<rich:column width="150">
+						<h:outputText value="write" />
+					</rich:column>
+					<rich:column width="150">
+						<h:outputText value="edit permissions" />
+					</rich:column>
+					<rich:column width="150">
+						<h:outputText value="annotate content" />
+					</rich:column>
+					<rich:column width="150">
+						<h:outputText value="tag content" />
+					</rich:column>
+					<rich:column width="150">
+						<h:outputText value="comment" />
+					</rich:column>
+					<rich:column width="150">
+						<h:outputText value="delete" />
+					</rich:column>
+				</rich:columnGroup>
+			</f:facet>
+			
+			<rich:column width="20">
+				<h:commandButton value="X" action="#{grantTypePermissionAction.delUserWithTypePermissions(types, user)}" 
+					style="padding: 5px;color: red; background-color: #cccccc" />
+			</rich:column>
+			<rich:column>
+				<h:outputText value="#{user.displayname}" />
+			</rich:column>
+			<rich:column style="text-align:center">
+				<h:selectBooleanCheckbox value="#{user.read}" />
+			</rich:column>
+			<rich:column style="text-align:center">
+				<h:selectBooleanCheckbox value="#{user.write}" />
+			</rich:column>
+			<rich:column style="text-align:center">
+				<h:selectBooleanCheckbox value="#{user.editPermissions}" />
+			</rich:column>
+			<rich:column style="text-align:center">
+				<h:selectBooleanCheckbox value="#{user.annotate}" />
+			</rich:column>
+			<rich:column style="text-align:center">
+				<h:selectBooleanCheckbox value="#{user.tag}" />
+			</rich:column>
+			<rich:column style="text-align:center">
+				<h:selectBooleanCheckbox value="#{user.comment}" />
+			</rich:column>
+			<rich:column style="text-align:center">
+				<h:selectBooleanCheckbox value="#{user.delete}" />
+			</rich:column>
+<!--			<rich:column style="text-align:center">-->
+<!--				<h:selectBooleanCheckbox value="#{user.admin}" />-->
+<!--			</rich:column>-->
+<!--			<rich:column style="text-align:center">-->
+<!--				<h:selectBooleanCheckbox value="#{user.read}" />-->
+<!--			</rich:column>-->
+<!--			<rich:column style="text-align:center">-->
+<!--				<h:selectBooleanCheckbox value="#{user.write}" />-->
+<!--			</rich:column>-->
+<!--	        <rich:column style="text-align:center">-->
+<!--				<h:selectBooleanCheckbox value="#{user.createKnowledgeSpace}" onclick="this.form.submit();" />-->
+<!--			</rich:column>-->
+			</rich:dataTable>
+		
+	    	<rich:dataTable 
+					cellpadding="0" cellspacing="0" 
+					border="0" var="group" value="#{types.groupsWithPermissions}">
+	 
+				<f:facet name="header">
+					<rich:columnGroup>
+						<rich:column width="20">
+							<rich:spacer />
+						</rich:column>
+						<rich:column width="300">
+							<h:outputText value="groups" />
+						</rich:column>
+						<rich:column width="150">
+							<h:outputText value="read" />
+						</rich:column>
+						<rich:column width="150">
+							<h:outputText value="write" />
+						</rich:column>
+						<rich:column width="150">
+							<h:outputText value="edit permissions" />
+						</rich:column>
+						<rich:column width="150">
+							<h:outputText value="annotate content" />
+						</rich:column>
+						<rich:column width="150">
+							<h:outputText value="tag content" />
+						</rich:column>
+						<rich:column width="150">
+							<h:outputText value="comment" />
+						</rich:column>
+						<rich:column width="150">
+							<h:outputText value="delete" />
+						</rich:column>
+					</rich:columnGroup>
+				</f:facet>
+			
+				<rich:column width="20">
+					<h:commandButton value="X" action="#{grantTypePermissionAction.delGroupWithTypePermissions(types, group)}" 
+						style="padding: 5px;color: red; background-color: #cccccc" />
+				</rich:column>
+				<rich:column>
+					<h:outputText value="#{group.displayname}" />
+				</rich:column>
+				<rich:column style="text-align:center">
+					<h:selectBooleanCheckbox value="#{group.read}" />
+				</rich:column>
+				<rich:column style="text-align:center">
+					<h:selectBooleanCheckbox value="#{group.write}" />
+				</rich:column>
+				<rich:column style="text-align:center">
+					<h:selectBooleanCheckbox value="#{group.editPermissions}" />
+				</rich:column>
+				<rich:column style="text-align:center">
+					<h:selectBooleanCheckbox value="#{group.annotate}" />
+				</rich:column>
+				<rich:column style="text-align:center">
+					<h:selectBooleanCheckbox value="#{group.tag}" />
+				</rich:column>
+				<rich:column style="text-align:center">
+					<h:selectBooleanCheckbox value="#{group.comment}" />
+				</rich:column>
+				<rich:column style="text-align:center">
+					<h:selectBooleanCheckbox value="#{group.delete}" />
+				</rich:column>
+<!--			<rich:column>-->
+<!--				<h:outputText value="#{group.displayname}" />-->
+<!--			</rich:column>-->
+<!--			<rich:column style="text-align:center">-->
+<!--				<h:selectBooleanCheckbox value="#{group.admin}" />-->
+<!--			</rich:column>-->
+<!--			<rich:column style="text-align:center">-->
+<!--				<h:selectBooleanCheckbox value="#{group.read}" />-->
+<!--			</rich:column>-->
+<!--			<rich:column style="text-align:center">-->
+<!--				<h:selectBooleanCheckbox value="#{group.write}" />-->
+<!--			</rich:column>-->
+<!--	        <rich:column style="text-align:center">-->
+<!--				<h:selectBooleanCheckbox value="#{group.createKnowledgeSpace}" onclick="this.form.submit();" />-->
+<!--			</rich:column>-->
+			</rich:dataTable>
+		</ui:repeat>
+	<h:commandButton value="Save Changes" action="#{grantTypePermissionAction.store()}" style="padding: 5px">
+	</h:commandButton>
+	</h:form>
+		
+	</ui:define>     
+</ui:composition>

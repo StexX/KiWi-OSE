@@ -1,0 +1,215 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision
+END
+DeleteContentItemServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision/DeleteContentItemServiceLocal.class
+END
+UpdateTextContentServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision/UpdateTextContentServiceRemote.class
+END
+UpdateTextContentServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision/UpdateTextContentServiceLocal.class
+END
+DeleteContentItemServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision/DeleteContentItemServiceRemote.class
+END
+RevisionService.class
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision/RevisionService.class
+END
+UpdateTextContentService$PreviewStyle.class
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision/UpdateTextContentService$PreviewStyle.class
+END
+UpdateMediaContentServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision/UpdateMediaContentServiceRemote.class
+END
+KiWiUpdateServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision/KiWiUpdateServiceRemote.class
+END
+CIVersionService.class
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision/CIVersionService.class
+END
+UpdateMetadataServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision/UpdateMetadataServiceRemote.class
+END
+RenameContentItemServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision/RenameContentItemServiceLocal.class
+END
+UpdateRulesService.class
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision/UpdateRulesService.class
+END
+UpdateTaggingService.class
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision/UpdateTaggingService.class
+END
+RevisionBean.class
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision/RevisionBean.class
+END
+RenameContentItemServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision/RenameContentItemServiceRemote.class
+END
+UpdateConfigurationServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision/UpdateConfigurationServiceRemote.class
+END
+UpdateMetadataServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision/UpdateMetadataServiceLocal.class
+END
+RevisionServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision/RevisionServiceLocal.class
+END
+UpdateTextContentService.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision/UpdateTextContentService.class
+END
+DeleteContentItemService.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision/DeleteContentItemService.class
+END
+UpdateMediaContentServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision/UpdateMediaContentServiceLocal.class
+END
+UpdateMediaContentService.class
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision/UpdateMediaContentService.class
+END
+KiWiUpdateService.class
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision/KiWiUpdateService.class
+END
+UpdateMetadataService.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision/UpdateMetadataService.class
+END
+RevisionServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision/RevisionServiceRemote.class
+END
+UpdateTaggingServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision/UpdateTaggingServiceLocal.class
+END
+UpdateConfigurationServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision/UpdateConfigurationServiceLocal.class
+END
+UpdateRulesServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision/UpdateRulesServiceLocal.class
+END
+RenameContentItemService.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision/RenameContentItemService.class
+END
+CIVersionServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision/CIVersionServiceLocal.class
+END
+UpdateConfigurationService.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision/UpdateConfigurationService.class
+END
+CIVersionServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision/CIVersionServiceRemote.class
+END
+UpdateRulesServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision/UpdateRulesServiceRemote.class
+END
+KiWiUpdateServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision/KiWiUpdateServiceLocal.class
+END
+UpdateTaggingServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/revision/UpdateTaggingServiceRemote.class
+END

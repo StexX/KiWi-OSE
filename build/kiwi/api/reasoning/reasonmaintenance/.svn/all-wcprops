@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/reasoning/reasonmaintenance
+END
+ReasonMaintenanceService.class
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/reasoning/reasonmaintenance/ReasonMaintenanceService.class
+END
+ReasonMaintenanceServiceRemote.class
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/reasoning/reasonmaintenance/ReasonMaintenanceServiceRemote.class
+END
+ReasonMaintenanceServiceLocal.class
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/api/reasoning/reasonmaintenance/ReasonMaintenanceServiceLocal.class
+END

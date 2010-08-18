@@ -1,0 +1,52 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+		    	xmlns:rich="http://richfaces.org/rich"
+		    	xmlns:a="http://richfaces.org/a4j"
+	            xmlns:kiwi="http://www.kiwi-project.eu/jsf">
+
+    <!-- the perspectives panel displays all perspectives attached to the current content item and lets the user
+         switch between them; when the perspective is switched, the content is rerendered using richfaces reRender
+         on the content div defined in /layout/template-XXcol.xhtml -->
+
+	<style type="text/css">
+		a.grayRoundButton {
+		    display: inline;
+		    padding: 6px;
+		    margin: 6px;
+		    text-align: center;
+		    font-weight: bold;
+		    border-left: 1px solid #ccc;
+		    border-right: 1px solid #ccc;
+		    border-bottom: 1px solid #ccc;
+		    background: #ddd;
+		    width: 100px;
+		    -moz-border-radius: 5px;
+		    -webkit-border-radius: 5px;
+		}
+	</style>
+
+	<h:form id="perspectivesPanel">
+    	<div>
+    		<a:region>
+		    	<ui:repeat var="perspective" value="#{kiwi.ui.perspectiveAction.listPerspectives()}">
+					<a:commandLink value="#{perspective.getName()}" 
+						action="#{kiwi.ui.perspectiveAction.setCurrentPerspective(perspective)}" 
+						rendered="#{kiwi.ui.perspectiveAction.currentPerspective.id != perspective.id}"
+						reRender="content" styleClass="grayRoundButton"/>
+					<s:fragment rendered="#{kiwi.ui.perspectiveAction.currentPerspective.id == perspective.id}">
+						<a class="grayRoundButton" style="color: blue; text-decoration:none;" name="currentPerspective">
+							<h:outputText value="#{perspective.getName()}"/>
+						</a>
+					</s:fragment>
+		    	</ui:repeat>
+	    		<a:commandLink oncomplete="#{rich:component('perspectivesDialog')}.show();" styleClass="grayRoundButton">+</a:commandLink>
+			</a:region>
+    	</div>
+   	</h:form>
+		    	
+</ui:composition>

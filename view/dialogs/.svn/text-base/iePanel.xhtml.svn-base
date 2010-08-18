@@ -1,0 +1,48 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a="http://richfaces.org/a4j"
+	xmlns:kiwi="http://www.kiwi-project.eu/jsf">
+
+		<rich:togglePanel id="iePanel" switchType="ajax"
+			stateOrder="closed,open">
+			<f:facet name="closed">
+				<rich:toggleControl>
+					<h2>Suggestions</h2>
+				</rich:toggleControl>
+			</f:facet>
+	
+			<f:facet name="open">
+				
+				<f:subview id="suggestions">
+				
+					<rich:toggleControl>
+						<h2>Suggestions</h2>
+					</rich:toggleControl>
+		
+					<p><h:commandButton value="Re-initiaze" action="#{ie.suggestions.init}"/> <h:commandButton value="Recompute" action="#{ie.suggestions.compute}"/></p>
+		
+					<ul>
+						<ui:repeat var="suggestion" value="#{ie.suggestions.suggestions}">
+							<li>
+							<b><h:outputText value="#{suggestion.taggingResource.title}"/></b>
+							<s:div rendered="#{suggestion.instance.context.isFragment}">
+								<h:outputText value="#{suggestion.instance.context.leftContext}"/>
+								<b><h:outputText value="#{suggestion.instance.context.inContext}"/></b>
+								<h:outputText value="#{suggestion.instance.context.rightContext}"/> 
+							</s:div>
+							
+							<h:commandButton action="#{ie.suggestions.acceptSuggestion(suggestion)}" value="Accept"/>
+							<h:commandButton action="#{ie.suggestions.rejectSuggestion(suggestion)}" value="Reject"/>
+							
+							</li>
+						</ui:repeat>
+					</ul>
+				</f:subview>
+			</f:facet>
+		</rich:togglePanel>
+</ui:composition>

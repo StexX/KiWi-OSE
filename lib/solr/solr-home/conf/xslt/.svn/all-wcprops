@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/kiwi/!svn/ver/1922/KiWi/trunk/lib/solr/solr-home/conf/xslt
+END
+example_rss.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/kiwi/!svn/ver/1922/KiWi/trunk/lib/solr/solr-home/conf/xslt/example_rss.xsl
+END
+luke.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/kiwi/!svn/ver/1922/KiWi/trunk/lib/solr/solr-home/conf/xslt/luke.xsl
+END
+example_atom.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/kiwi/!svn/ver/1922/KiWi/trunk/lib/solr/solr-home/conf/xslt/example_atom.xsl
+END
+example.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/kiwi/!svn/ver/1922/KiWi/trunk/lib/solr/solr-home/conf/xslt/example.xsl
+END

@@ -1,0 +1,275 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction
+END
+InformationExtractionServiceImpl$8.class
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/InformationExtractionServiceImpl$8.class
+END
+InformationExtractionServiceImpl$InformationExtractionTask.class
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/InformationExtractionServiceImpl$InformationExtractionTask.class
+END
+InformationExtractionServiceImpl$9.class
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/InformationExtractionServiceImpl$9.class
+END
+TermRecognitionServiceImpl$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/TermRecognitionServiceImpl$1.class
+END
+DocumentTagExtractlet.class
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/DocumentTagExtractlet.class
+END
+KiWiGATEServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/KiWiGATEServiceImpl.class
+END
+AbstractMLExtractlet.class
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/AbstractMLExtractlet.class
+END
+NounPhraseInstanceExtractor.class
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/NounPhraseInstanceExtractor.class
+END
+LabelServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/LabelServiceImpl.class
+END
+NumberExtractlet.class
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/NumberExtractlet.class
+END
+NounPhraseInstanceExtractor$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/NounPhraseInstanceExtractor$1.class
+END
+FeatureStoreServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/FeatureStoreServiceImpl.class
+END
+NounPhraseInstanceExtractor$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/NounPhraseInstanceExtractor$2.class
+END
+EnglishGateEntityExtractlet$1TermOffsets.class
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/EnglishGateEntityExtractlet$1TermOffsets.class
+END
+InformationExtractionController.class
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/InformationExtractionController.class
+END
+NumberExtractlet$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/NumberExtractlet$1.class
+END
+NumberExtractlet$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/NumberExtractlet$2.class
+END
+DocumentInstanceExtractor.class
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/DocumentInstanceExtractor.class
+END
+EnglishGateEntityExtractlet$1TermSuggestion.class
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/EnglishGateEntityExtractlet$1TermSuggestion.class
+END
+EnglishGateEntityExtractlet.class
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/EnglishGateEntityExtractlet.class
+END
+AbstractExtractlet.class
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/AbstractExtractlet.class
+END
+DeutschGateEntityExtractlet.class
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/DeutschGateEntityExtractlet.class
+END
+DateInstanceExtractor.class
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/DateInstanceExtractor.class
+END
+InformationExtractionServiceImpl$10.class
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/InformationExtractionServiceImpl$10.class
+END
+InformationExtractionServiceImpl$11.class
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/InformationExtractionServiceImpl$11.class
+END
+InformationExtractionServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/InformationExtractionServiceImpl.class
+END
+ActionItemExtractlet.class
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/ActionItemExtractlet.class
+END
+InformationExtractionServiceImpl$12.class
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/InformationExtractionServiceImpl$12.class
+END
+InformationExtractionServiceImpl$13.class
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/InformationExtractionServiceImpl$13.class
+END
+EnglishGateEntityExtractlet$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/EnglishGateEntityExtractlet$1.class
+END
+EnglishGateEntityExtractlet$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/EnglishGateEntityExtractlet$2.class
+END
+TermRecognitionServiceImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/TermRecognitionServiceImpl.class
+END
+DeutschGateEntityExtractlet$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/DeutschGateEntityExtractlet$1.class
+END
+DateInstanceExtractor$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/DateInstanceExtractor$1.class
+END
+DeutschGateEntityExtractlet$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/DeutschGateEntityExtractlet$2.class
+END
+DateInstanceExtractor$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/DateInstanceExtractor$2.class
+END
+DocumentTypeExtractlet.class
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/DocumentTypeExtractlet.class
+END
+InformationExtractionServiceImpl$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/InformationExtractionServiceImpl$1.class
+END
+InformationExtractionServiceImpl$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/InformationExtractionServiceImpl$2.class
+END
+InformationExtractionServiceImpl$3.class
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/InformationExtractionServiceImpl$3.class
+END
+GateEntityRecognizer.class
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/GateEntityRecognizer.class
+END
+InformationExtractionServiceImpl$4.class
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/InformationExtractionServiceImpl$4.class
+END
+InformationExtractionServiceImpl$5.class
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/InformationExtractionServiceImpl$5.class
+END
+InformationExtractionServiceImpl$6.class
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/InformationExtractionServiceImpl$6.class
+END
+InformationExtractionServiceImpl$7.class
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/kiwi/!svn/ver/5565/KiWi/releases/0.9/build/kiwi/service/informationextraction/InformationExtractionServiceImpl$7.class
+END

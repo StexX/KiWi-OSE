@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/kiwi/!svn/ver/5276/KiWi/trunk/src/action/kiwi/webservice
+END
+DataUnit.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/webservice/DataUnit.java
+END
+ImageWebService.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/4999/KiWi/trunk/src/action/kiwi/webservice/ImageWebService.java
+END
+ExhibitExporterWebService.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/3543/KiWi/trunk/src/action/kiwi/webservice/ExhibitExporterWebService.java
+END
+DataStructured.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/webservice/DataStructured.java
+END
+FieldSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/webservice/FieldSet.java
+END
+DataAccessServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5276/KiWi/trunk/src/action/kiwi/webservice/DataAccessServiceImpl.java
+END
+DataSpecialFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/webservice/DataSpecialFormat.java
+END
+TemplateDescription.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/4406/KiWi/trunk/src/action/kiwi/webservice/TemplateDescription.java
+END

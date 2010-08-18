@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/kiwi/!svn/ver/4860/KiWi/trunk/src/test/kiwi/test/service/query
+END
+KWQLServiceTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/4860/KiWi/trunk/src/test/kiwi/test/service/query/KWQLServiceTest.java
+END
+KWQLexTests.xml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/3770/KiWi/trunk/src/test/kiwi/test/service/query/KWQLexTests.xml
+END
+SparqlServiceTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/3570/KiWi/trunk/src/test/kiwi/test/service/query/SparqlServiceTest.java
+END
+QueryTests.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/3034/KiWi/trunk/src/test/kiwi/test/service/query/QueryTests.xml
+END
+KWQLParseTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/4621/KiWi/trunk/src/test/kiwi/test/service/query/KWQLParseTest.java
+END
+KWQLTests.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/3770/KiWi/trunk/src/test/kiwi/test/service/query/KWQLTests.xml
+END
+KWQLexTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/4022/KiWi/trunk/src/test/kiwi/test/service/query/KWQLexTest.java
+END
+KWQLTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/4621/KiWi/trunk/src/test/kiwi/test/service/query/KWQLTest.java
+END
+IANTLRFrontEntImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/4022/KiWi/trunk/src/test/kiwi/test/service/query/IANTLRFrontEntImpl.java
+END
+KWQLServiceTests.xml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/3867/KiWi/trunk/src/test/kiwi/test/service/query/KWQLServiceTests.xml
+END
+KWQLParseTests.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/3770/KiWi/trunk/src/test/kiwi/test/service/query/KWQLParseTests.xml
+END

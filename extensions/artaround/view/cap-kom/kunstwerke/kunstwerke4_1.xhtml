@@ -1,0 +1,135 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                             	
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+			 	xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                template="../layout/template-kunstwerke.xhtml">
+                	  
+	 <ui:define name="navigation">
+
+			<ui:include src="../layout/menuLoggedIn.xhtml" />
+
+	 </ui:define>
+
+	 <ui:define name="body">
+          
+			<!-- begin: Kunstwerke Gallerie: -->
+			<div id="myKunstwerke">
+				<div class="subcolumns">
+					<div class="c50l">
+						<div class="subcl">
+							<table>
+								<tr>
+									<td>							
+										<div class="myKunstwerk">
+											<img src="../images/artworks/artwork1.jpg" title="Kunstwerk 1" alt="Kunstwerk 1" />
+											<div class="simpleText">
+												"Der Berg"
+											</div>	
+										</div>
+									</td>
+									<td valign="top">							
+										<div class="loeschen">
+											<a href="#" onClick="JavaScript:submitOkForm();" title="Kunstwerk löschen">			  						
+												<img src="../images/icons/kunstwerkLoeschen75px.gif" title="Kunstwerk löschen" alt="Kunstwerk löschen"/>
+												<div class="simpleText">
+													Kunstwerk löschen
+												</div>	
+											</a>
+										</div>
+										<div class="bewertung">
+											<img src="../images/icons/bewertung_4_25px.gif" title="Bewertung 4 Punkte" alt="Bewertung 4 Punkte" />
+											<div class="simpleText">
+												4 Punkte
+											</div>											
+										</div>
+									</td>
+								</tr>
+							</table>	
+						</div>
+					</div>
+					<div class="c50r">
+						<div class="subcr">
+							<table>
+								<tr>
+									<td>							
+										<div class="myKunstwerk">
+											<img src="../images/artworks/artwork2.jpg" title="Kunstwerk 2" alt="Kunstwerk 2" />
+											<div class="simpleText">
+												"Das Tal"
+											</div>												
+										</div>
+									</td>
+									<td valign="top">							
+										<div class="loeschen">
+											<a href="#" onClick="JavaScript:submitOkForm();" title="Kunstwerk löschen">	
+												<img src="../images/icons/kunstwerkLoeschen75px.gif" title="Kunstwerk löschen" alt="Kunstwerk löschen"/>
+												<div class="simpleText">
+													Kunstwerk löschen
+												</div>	
+											</a>
+										</div>
+										<div class="bewertung">
+											<img src="../images/icons/bewertung_5_25px.gif" title="Bewertung 5 Punkte" alt="Bewertung 5 Punkte" />
+											<div class="simpleText">
+												5 Punkte
+											</div>	
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>					
+			</div>
+			<!-- end: Kunstwerke Gallerie -->
+			<!-- begin: buttons -->
+			<div id="navButtons">
+		    	<div class="hlist">
+		  			<ul>
+		  				<li class="button">
+		  					<a href="#" title="#{messages['artaround.cap-kom.einfacheSprache.zurueckBlaettern']}">
+								<img src="../images/icons/zurueck75px.gif" 
+									title="#{messages['artaround.cap-kom.einfacheSprache.zurueckBlaettern']}" 
+									alt="#{messages['artaround.cap-kom.einfacheSprache.zurueckBlaettern']}"/>
+								<div class="simpleText">
+									#{messages['artaround.cap-kom.einfacheSprache.zurueckBlaettern']}
+								</div>									
+							</a>
+		  				</li>
+		  				<li class="button">
+							<a href="#" title="#{messages['artaround.cap-kom.einfacheSprache.kunstwerkHochladen']}">		  						
+								<img src="../images/icons/hochladen75px.gif" 
+									title="#{messages['artaround.cap-kom.einfacheSprache.kunstwerkHochladen']}" 
+									alt="#{messages['artaround.cap-kom.einfacheSprache.kunstwerkHochladen']}"/>
+								<div class="simpleText">
+									#{messages['artaround.cap-kom.einfacheSprache.kunstwerkHochladen']}
+								</div>									
+							</a>
+		  				</li>						
+						<li class="button">
+							<a href="#" title="#{messages['artaround.cap-kom.einfacheSprache.weiterBlaettern']}">
+								<img src="../images/icons/weiter75px.gif" 
+									title="#{messages['artaround.cap-kom.einfacheSprache.weiterBlaettern']}" 
+									alt="#{messages['artaround.cap-kom.einfacheSprache.weiterBlaettern']}"/>
+								<div class="simpleText">
+									#{messages['artaround.cap-kom.einfacheSprache.weiterBlaettern']}
+								</div>									
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- end: buttons -->		
+			
+	 </ui:define>   
+	 
+</ui:composition>	 

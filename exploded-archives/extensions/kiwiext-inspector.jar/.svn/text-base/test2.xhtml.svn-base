@@ -1,0 +1,25 @@
+<html>
+<head></head>
+<body>
+
+    <h2>Heading 1</h2>
+    
+    <ul>
+        <li><a href="http://localhost/" xmlns:kiwi="http://www.kiwi-project.eu/kiwi/html/">Link</a>
+            <ul>
+                <li>Subitem 1</li>
+                <li>Subitem 2</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>Heading 2</h2>
+    
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+
+</body>
+</html>
+

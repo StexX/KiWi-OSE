@@ -1,0 +1,26 @@
+<!DOCTYPE div PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+      			xmlns:m="http://code.google.com/p/gmaps4jsf/"
+                xmlns:rich="http://richfaces.org/rich">
+	<s:div id="locationPanel">
+		<div id="gmap" style="width: 100%; height: 100%"/>
+	    <script
+			src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=#{locationAction.key}"
+			type="text/javascript">
+		</script>  
+		<m:map     	width     = "135px"
+					height    = "200px"
+					latitude  = "#{locationAction.location.latitude}"
+					longitude = "#{locationAction.location.longitude}"
+					zoom      = "#{locationAction.zoom}" 
+					renderOnWindowLoad="false"
+					enableDragging = "false">
+			<m:marker longitude="#{locationAction.location.longitude}" latitude="#{locationAction.location.latitude}" />
+		</m:map>
+	</s:div>
+</ui:composition>
