@@ -1,0 +1,2 @@
+CALL run.bat
+

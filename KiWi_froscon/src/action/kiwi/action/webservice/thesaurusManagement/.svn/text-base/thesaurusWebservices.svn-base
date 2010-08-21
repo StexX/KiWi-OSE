@@ -1,0 +1,36 @@
+Poolparty Integration in KiWi (3. Mai 2010)
+
+-------------------------------------------------------------------------------
+
+1: Show all Thesaurus Resources
+
+	* show all
+	 
+	 http://localhost:8080/KiWi/seam/resource/services/thesaurus/top/html
+	 bzw. in JSON
+	 http://localhost:8080/KiWi/seam/resource/services/thesaurus/top/json
+	 
+	 Java Implementation: kiwi.action.webservice.thesaurusManagement.ThesaurusResource.java
+	 
+	 * show a particular Resource
+	 
+	 e.g.
+	 http://localhost:8080/KiWi/seam/resource/services/extConcepts/http/www.kiwi-project.eu/tagit/Wandern
+	 
+	 Java Implementation: kiwi.action.webservice.thesaurusManagement.ExtConcepts.java
+	 
+	 
+2: Import Poolparty Thesaurus
+	
+	* use the VMT Tool (non GWT version) and click the Import Poolparty Thesaurus Button
+	
+	 Java Implementation: extension/admin/src/ThesaurusImporter.java
+	
+3: KiWi Concept Update Service 
+	
+	call: http://jboss.punkt.at/KiWi/seam/resource/services/updateWebService/all?isoTime=2010-05-10T18:00
+	
+	Java Implementation: kiwi.action.webservice.thesaurusManagement.UpdateWebService.java	
+	
+	
+	 

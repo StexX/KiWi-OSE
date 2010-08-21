@@ -1,0 +1,161 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+    xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:a="http://richfaces.org/a4j">
+
+
+	<style>
+        .inplace{
+            border: none;
+            cursor:pointer; 
+        }
+        .hover {
+            color: #{a4jSkin.generalTextColor};
+            background-color :#{a4jSkin.tipBorderColor};
+        }   
+  
+    </style> 
+	
+	    <h1>
+	    	#{contentItem.title}
+	    	<h:outputText value=" " />
+	    	<s:span style="font-size:65%;">(<kiwi:watcher contentItem="#{contentItem}" />)</s:span>
+	    </h1>
+        <span>
+            <h:outputText value="#{messages['wiki.createdon']} "/><h:outputText value="#{contentItem.created}"><s:convertDateTime pattern="dd/MM/yyyy"/></h:outputText><h:outputText value=" - "/> 
+            <h:outputText value="#{messages['wiki.updateon']} "/><h:outputText value="#{contentItem.modified}"><s:convertDateTime pattern="dd/MM/yyyy"/></h:outputText><h:outputText value=" "/> 
+            <h:outputText value="#{messages['wiki.by']} "/><kiwi:link resource="#{contentItem.author.resource}" value=" #{contentItem.author.firstName} #{contentItem.author.lastName}"/>
+        </span>
+       	<br/>
+
+
+       	<s:span id="recSocial"  rendered="#{currentUser.id > 1}">
+	 	     <h:outputText value="Recommend it !"/>
+		 		 <rich:inplaceSelect value="#{recommendationAction.userLogin}" defaultLabel="  Choose a friend"
+		 		showControls="true" controlsHorizontalPosition="left" controlClass="rich-inplace-select-control" controlsVerticalPosition="bottom" id="inplaceSelect" viewClass="inplace" changedClass="inplace"
+	            changedHoverClass="hover" viewHoverClass="hover" reRender="recSocial,inplaceSelect">
+	            <s:selectItems value="#{recommendationActionScope.recommendableUsers}" var="contact" label="#{contact}"/>
+	            		<f:facet name="controls">
+		                    <button onmousedown="#{rich:component('inplaceSelect')}.save();" class="hover" type="button">Recommend</button>
+		                    <button onmousedown="#{rich:component('inplaceSelect')}.cancel();" class="hover" type="button">Cancel</button>
+		                </f:facet>
+		                <a:support id="send" action="#{recommendationAction.recommendItem(contentItem)}" event="onviewactivated" reRender="recSocial,inplaceSelect" />
+				</rich:inplaceSelect>
+			<br />
+		</s:span> 
+
+		     
+		<kiwi:tagListEditor label="Tags: " 
+			tagItems="#{kiwi.wiki.tagCloudAction.tagCloud}" />
+		
+		<div id="rating"></div>
+		<br />
+
+        <script>
+	        jQuery(document).ready(function(){
+		        jQuery('#rating').rating({
+		            label:		   'Rating: ',
+                    uri:           '#{currentContentItem.resource.uri}',
+				    user:          '#{currentUser.login}',
+				    webServiceUrl: '#{facesContext.externalContext.requestContextPath}/seam/resource/services/widgets/rating'
+				});
+	        });  
+        </script>
+ 
+		<!-- Display fragments in the view.  -->
+        <script type="text/javascript">
+// <![CDATA[        
+            fragmentJSLib={};
+            fragmentJSLib.showFragmentsPanel = function (context, fragment) {
+                var argString = 
+                        (context == null ? "" : context) + " " + 
+                        (fragment == null ? "" : fragment);
+                
+                fragmentSet(argString);
+                #{rich:component('fragmentsPanel')}.show();
+            }
+            
+            fragmentJSLib.onCreateOrUpdate = function (fragmentJS) {
+                #{rich:component('fragmentsPanel')}.hide();
+            }
+            
+            fragmentJSLib.onCancel = function () {
+                #{rich:component('fragmentsPanel')}.hide();
+            }
+
+            fragmentJSLib.onDelete = function () {
+                #{rich:component('fragmentsPanel')}.hide();
+            }
+
+			setFragmentStyle = function(id, style) {
+				var spans = document.getElementsByTagName("span");
+				for (var i = 0; i < spans.length; ++i) {
+					var span = spans[i];
+					if (span.hasAttribute("fragment_ids")) {
+						var ids = span.getAttribute("fragment_ids").split(" ");
+						for (var j = 0; j < ids.length; ++j) {
+							if (ids[j] == id) {
+								for (var property in style) {
+									span.style[property] = style[property];
+								}
+							}
+						}
+					}
+				}
+			};
+
+        	jQuery(document).ready(function(){
+				var bookmarks = document.getElementsByTagName("kiwi:bookmarkstart");
+				for (var i = 0; i < bookmarks.length; i++) { 
+					var bookmark = bookmarks[i];
+
+					var img = document.createElement("img");
+					img.setAttribute("src", "img/bullet.gif");
+					// img.appendChild(document.createTextNode("[fragment]"));
+
+					bookmark.appendChild (img);
+
+					jQuery(img).click(function(eventObject) {
+						var id = this.parentNode.getAttribute("id");
+						// TODO: get the context as the nearest "about" element...
+						fragmentJSLib.showFragmentsPanel(null, id);
+					});
+
+					jQuery(img).hover(function() {
+						var id = this.parentNode.getAttribute("id");
+						setFragmentStyle(id, {backgroundColor:"#8bc53e"});
+					},function() {
+						var id = this.parentNode.getAttribute("id");
+					    setFragmentStyle(id, {backgroundColor:null});	
+					});
+				}
+            });
+// ]]>
+        </script>
+		
+			
+	        <s:div rendered="#{contentItem.mediaContent != null}" >
+	            <center>
+					<kiwi:mediaContent contentItem="#{contentItem}" 
+							edit="true"
+							style="padding: 3px; margin:4px;border:solid 1px #ccc;">
+						<ui:define name="nomedia">
+							<h:outputText value="No image" />
+						</ui:define>
+						<s:transformImageSize 
+							maintainRatio="true"
+							width="400"/>
+					</kiwi:mediaContent>
+			    </center>
+			</s:div>
+	        
+	        <!-- include resource from webservice so that we can support JSF tags inside the content -->
+	        
+	        <kiwi:renderHtml contentItem="#{contentItem}" user="#{currentUser}/>     
+	        <kiwi:microformats contentItem="#{contentItem}"/>
+</ui:composition>

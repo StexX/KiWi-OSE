@@ -1,0 +1,976 @@
+# Enerjy Software baseline data (files=97, problems=878).
+path: /KiWi/src/action/kiwi/action/content/ContentItemListService.java
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0137:JAVA0137 Non-abstract class 'ContentItemListService' missing constructor
+path: /KiWi/src/action/kiwi/action/content/ContentRenderService.java
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0137:JAVA0137 Non-abstract class 'ContentRenderService' missing constructor
+path: /KiWi/src/action/kiwi/action/content/CreateContentItemAction.java
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0137:JAVA0137 Non-abstract class 'CreateContentItemAction' missing constructor
+problem: JAVA0098:JAVA0098 Minimize use of implicit field initializers
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+problem: JAVA0177:JAVA0177 Variable declaration 'tagLabel' missing initializer
+problem: JAVA0177:JAVA0177 Variable declaration 'meaningUri' missing initializer
+problem: JAVA0171:JAVA0171 Unused local variable 'availableMeanings'
+problem: JAVA0049:JAVA0049 Nested block at depth '6' (maximum: '5')
+problem: JAVA0049:JAVA0049 Nested block at depth '6' (maximum: '5')
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+path: /KiWi/src/action/kiwi/action/search/Search.java
+problem: JAVA0173:JAVA0173 Unused method parameter 'txt'
+path: /KiWi/src/action/kiwi/action/user/Authenticator.java
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0137:JAVA0137 Non-abstract class 'Authenticator' missing constructor
+problem: JAVA0098:JAVA0098 Minimize use of implicit field initializers
+path: /KiWi/src/action/kiwi/action/user/CreateUserAction.java
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0118:JAVA0118 Missing javadoc: type 'CreateUserAction'
+problem: JAVA0137:JAVA0137 Non-abstract class 'CreateUserAction' missing constructor
+problem: JAVA0098:JAVA0098 Minimize use of implicit field initializers
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+path: /KiWi/src/action/kiwi/action/user/EditUserHome.java
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0234:JAVA0234 Class 'EditUserHome' is Serializable but does not define serialVersionUID
+path: /KiWi/src/action/kiwi/backend/admin/GroupConverter.java
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0118:JAVA0118 Missing javadoc: type 'GroupConverter'
+problem: JAVA0177:JAVA0177 Variable declaration 'tmpGroup' missing initializer
+path: /KiWi/src/action/kiwi/backend/admin/GroupHandler.java
+problem: JAVA0080:JAVA0080 Import declaration 'java.util.HashSet' not used
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0137:JAVA0137 Non-abstract class 'GroupHandler' missing constructor
+problem: JAVA0254:JAVA0254 Use enhanced for loop construct instead of Iterator
+path: /KiWi/src/action/kiwi/backend/admin/GroupHandlerLocal.java
+problem: JAVA0080:JAVA0080 Import declaration 'javax.faces.model.SelectItem' not used
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'initGroups' in interface 'GroupHandlerLocal'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getGroups' in interface 'GroupHandlerLocal'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'delete' in interface 'GroupHandlerLocal'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'store' in interface 'GroupHandlerLocal'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'destroy' in interface 'GroupHandlerLocal'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'configure' in interface 'GroupHandlerLocal'
+path: /KiWi/src/action/kiwi/backend/admin/PermissionHandler.java
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0137:JAVA0137 Non-abstract class 'PermissionHandler' missing constructor
+problem: JAVA0254:JAVA0254 Use enhanced for loop construct instead of Iterator
+problem: JAVA0254:JAVA0254 Use enhanced for loop construct instead of Iterator
+problem: JAVA0254:JAVA0254 Use enhanced for loop construct instead of Iterator
+problem: JAVA0254:JAVA0254 Use enhanced for loop construct instead of Iterator
+path: /KiWi/src/action/kiwi/backend/admin/PermissionHandlerLocal.java
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'init' in interface 'PermissionHandlerLocal'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'saveNewGroup' in interface 'PermissionHandlerLocal'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getConverter' in interface 'PermissionHandlerLocal'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'destroy' in interface 'PermissionHandlerLocal'
+path: /KiWi/src/action/kiwi/backend/admin/UserHandler.java
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0080:JAVA0080 Import declaration 'org.jboss.seam.annotations.In' not used
+problem: JAVA0137:JAVA0137 Non-abstract class 'UserHandler' missing constructor
+problem: JAVA0030:JAVA0030 Private field 'selectedUser' not used
+path: /KiWi/src/action/kiwi/backend/admin/UserHandlerLocal.java
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'initUsers' in interface 'UserHandlerLocal'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'destroy' in interface 'UserHandlerLocal'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'editIt' in interface 'UserHandlerLocal'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getUsers' in interface 'UserHandlerLocal'
+path: /KiWi/src/action/kiwi/backend/context/ContentItemHome.java
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0137:JAVA0137 Non-abstract class 'ContentItemHome' missing constructor
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0177:JAVA0177 Variable declaration 'contentItem' missing initializer
+path: /KiWi/src/action/kiwi/backend/context/CurrentUserHome.java
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0137:JAVA0137 Non-abstract class 'CurrentUserHome' missing constructor
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+path: /KiWi/src/action/kiwi/backend/context/PerspectiveHome.java
+problem: JAVA0024:JAVA0024 Empty class 'PerspectiveHome'
+path: /KiWi/src/action/kiwi/backend/kspace/KiWiKnowledgeSpace.java
+problem: JAVA0080:JAVA0080 Import declaration 'java.util.HashMap' not used
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.ManyToOne' not used
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.OneToMany' not used
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.model.kbase.KiWiNode' not used
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.model.revision.ContentUpdate' not used
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.model.user.KSpaceMember' not used
+problem: JAVA0080:JAVA0080 Import declaration 'org.apache.commons.beanutils.BeanUtils' not used
+problem: JAVA0136:JAVA0136 95 methods defined in class 'KiWiKnowledgeSpace' (maximum: 20)
+problem: JAVA0058:JAVA0058 Constructor 'KiWiKnowledgeSpace' calls super()
+problem: JAVA0285:JAVA0285 Dereference of potentially null variable 'version'
+problem: JAVA0126:JAVA0126 Method 'searchFields' declares unchecked exception 'IllegalArgumentException' in throws
+problem: JAVA0254:JAVA0254 Use enhanced for loop construct instead of Iterator
+problem: JAVA0049:JAVA0049 Nested block at depth '6' (maximum: '5')
+problem: JAVA0166:JAVA0166 Generic exception 'java.lang.Exception' caught
+problem: JAVA0029:JAVA0029 Private method 'refreshJPA' not used
+problem: JAVA0166:JAVA0166 Generic exception 'java.lang.Exception' caught
+problem: JAVA0166:JAVA0166 Generic exception 'java.lang.Exception' caught
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0108:JAVA0108 Incorrect javadoc: no @param tag for 'createdUser'
+problem: JAVA0166:JAVA0166 Generic exception 'java.lang.Exception' caught
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0286:JAVA0286 Dereference of null variable 'u'
+problem: JAVA0286:JAVA0286 Dereference of null variable 'u'
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0108:JAVA0108 Incorrect javadoc: no @param tag for 'detailedLoad'
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+problem: JAVA0126:JAVA0126 Method 'setFields' declares unchecked exception 'SecurityException' in throws
+problem: JAVA0126:JAVA0126 Method 'setFields' declares unchecked exception 'IllegalArgumentException' in throws
+problem: JAVA0171:JAVA0171 Unused local variable 'c2'
+problem: JAVA0177:JAVA0177 Variable declaration 'argument' missing initializer
+problem: JAVA0254:JAVA0254 Use enhanced for loop construct instead of Iterator
+problem: JAVA0049:JAVA0049 Nested block at depth '6' (maximum: '5')
+problem: JAVA0254:JAVA0254 Use enhanced for loop construct instead of Iterator
+problem: JAVA0049:JAVA0049 Nested block at depth '6' (maximum: '5')
+problem: JAVA0254:JAVA0254 Use enhanced for loop construct instead of Iterator
+problem: JAVA0049:JAVA0049 Nested block at depth '6' (maximum: '5')
+problem: JAVA0049:JAVA0049 Nested block at depth '6' (maximum: '5')
+problem: JAVA0126:JAVA0126 Method 'loadDataFromTripleStore' declares unchecked exception 'SecurityException' in throws
+problem: JAVA0126:JAVA0126 Method 'loadDataFromTripleStore' declares unchecked exception 'IllegalArgumentException' in throws
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0175:JAVA0175 Successive assignment to variable 'nd'
+problem: JAVA0171:JAVA0171 Unused local variable 'nd'
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0082:JAVA0082 Unnecessary widening cast ((FullTextQuery)fullTextEntityManager.createFullTextQuery(luceneQuery,ContentItem.class))
+problem: JAVA0166:JAVA0166 Generic exception 'java.lang.Exception' caught
+problem: JAVA0108:JAVA0108 Incorrect javadoc: no @param tag for 'loadAdditionalData'
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0108:JAVA0108 Incorrect javadoc: no @param tag for 'title'
+problem: JAVA0108:JAVA0108 Incorrect javadoc: no @param tag for 'loadAdditionalData'
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+problem: JAVA0108:JAVA0108 Incorrect javadoc: no @param tag for 'loadAdditionalData'
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0108:JAVA0108 Incorrect javadoc: no @param tag for 'kiwiId'
+problem: JAVA0108:JAVA0108 Incorrect javadoc: no @param tag for 'loadAdditionalData'
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0108:JAVA0108 Incorrect javadoc: no @param tag for 'label'
+problem: JAVA0108:JAVA0108 Incorrect javadoc: no @param tag for 'loadAdditionalData'
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0108:JAVA0108 Incorrect javadoc: no @param tag for 'uri'
+problem: JAVA0108:JAVA0108 Incorrect javadoc: no @param tag for 'loadAdditionalData'
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0108:JAVA0108 Incorrect javadoc: no @param tag for 'kiwiId'
+problem: JAVA0075:JAVA0075 Method parameter 'baseUri' hides field
+problem: JAVA0174:JAVA0174 Assigned local variable 'problem' never used
+path: /KiWi/src/action/kiwi/backend/kspace/KiWiTripleStore.java
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0136:JAVA0136 46 methods defined in class 'KiWiTripleStore' (maximum: 20)
+problem: JAVA0058:JAVA0058 Constructor 'KiWiTripleStore' calls super()
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+problem: JAVA0049:JAVA0049 Nested block at depth '6' (maximum: '5')
+problem: JAVA0049:JAVA0049 Nested block at depth '6' (maximum: '5')
+problem: JAVA0166:JAVA0166 Generic exception 'java.lang.Exception' caught
+problem: JAVA0049:JAVA0049 Nested block at depth '6' (maximum: '5')
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+problem: JAVA0166:JAVA0166 Generic exception 'java.lang.Exception' caught
+problem: JAVA0049:JAVA0049 Nested block at depth '6' (maximum: '5')
+problem: JAVA0177:JAVA0177 Variable declaration 'bindingSet' missing initializer
+problem: JAVA0108:JAVA0108 Incorrect javadoc: no @param tag for 'qLang'
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0032:JAVA0032 Switch statement missing default
+problem: JAVA0253:JAVA0253 Not all enum constants consumed in switch statement
+problem: JAVA0075:JAVA0075 Method parameter 'baseUri' hides field
+problem: JAVA0032:JAVA0032 Switch statement missing default
+problem: JAVA0075:JAVA0075 Method parameter 'baseUri' hides field
+problem: JAVA0123:JAVA0123 Use all three components of for loop
+problem: JAVA0123:JAVA0123 Use all three components of for loop
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0177:JAVA0177 Variable declaration 'language' missing initializer
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+path: /KiWi/src/action/kiwi/backend/kspace/QueryBinding.java
+problem: JAVA0005:JAVA0005 Imports not in specified order
+path: /KiWi/src/action/kiwi/backend/layout/LayoutDefinitionAction.java
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0118:JAVA0118 Missing javadoc: type 'LayoutDefinitionAction'
+problem: JAVA0137:JAVA0137 Non-abstract class 'LayoutDefinitionAction' missing constructor
+problem: JAVA0030:JAVA0030 Private field 'log' not used
+problem: JAVA0130:JAVA0130 Non-static method 'writeHead' does not use instance fields
+problem: JAVA0130:JAVA0130 Non-static method 'writeTail' does not use instance fields
+problem: JAVA0130:JAVA0130 Non-static method 'writeLayoutSettings' does not use instance fields
+problem: JAVA0130:JAVA0130 Non-static method 'writeComponent' does not use instance fields
+problem: JAVA0138:JAVA0138 8 parameters defined for method 'writeComponent' (maximum: 5)
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+problem: JAVA0177:JAVA0177 Variable declaration 'i' missing initializer
+problem: JAVA0177:JAVA0177 Variable declaration 'content' missing initializer
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+path: /KiWi/src/action/kiwi/backend/layout/LayoutService.java
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.model.layout.UserPref' not used
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0080:JAVA0080 Import declaration 'org.jboss.seam.annotations.In' not used
+problem: JAVA0030:JAVA0030 Private field 'em' not used
+problem: JAVA0098:JAVA0098 Minimize use of implicit field initializers
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+problem: JAVA0254:JAVA0254 Use enhanced for loop construct instead of Iterator
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+problem: JAVA0057:JAVA0057 Unnecessary default constructor 'LayoutService'
+problem: JAVA0058:JAVA0058 Constructor 'LayoutService' calls super()
+path: /KiWi/src/action/kiwi/backend/layout/SimpleLayoutRuleEngine.java
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0171:JAVA0171 Unused local variable 'user'
+problem: JAVA0171:JAVA0171 Unused local variable 'perspective'
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+path: /KiWi/src/action/kiwi/backend/render/RenderingPipeline.java
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0130:JAVA0130 Non-static method 'initRenderlet' does not use instance fields
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+problem: JAVA0166:JAVA0166 Generic exception 'java.lang.Exception' caught
+problem: JAVA0171:JAVA0171 Unused local variable 'media'
+problem: JAVA0171:JAVA0171 Unused local variable 'media'
+problem: JAVA0171:JAVA0171 Unused local variable 'media'
+path: /KiWi/src/action/kiwi/backend/render/StoringPipeline.java
+problem: JAVA0080:JAVA0080 Import declaration 'javax.ejb.PrePassivate' not used
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0137:JAVA0137 Non-abstract class 'StoringPipeline' missing constructor
+problem: JAVA0130:JAVA0130 Non-static method 'initSavelet' does not use instance fields
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+problem: JAVA0166:JAVA0166 Generic exception 'java.lang.Exception' caught
+path: /KiWi/src/action/kiwi/backend/render/renderlet/HtmlLinkRenderlet.java
+problem: JAVA0005:JAVA0005 Imports not in specified order
+path: /KiWi/src/action/kiwi/backend/render/renderlet/Renderlet.java
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'apply' in interface 'Renderlet'
+path: /KiWi/src/action/kiwi/backend/render/savelet/ExtractLinksSavelet.java
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+problem: JAVA0057:JAVA0057 Unnecessary default constructor 'ExtractLinksSavelet'
+problem: JAVA0058:JAVA0058 Constructor 'ExtractLinksSavelet' calls super()
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+path: /KiWi/src/action/kiwi/backend/render/savelet/HtmlCleanerSavelet.java
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0057:JAVA0057 Unnecessary default constructor 'HtmlCleanerSavelet'
+problem: JAVA0058:JAVA0058 Constructor 'HtmlCleanerSavelet' calls super()
+path: /KiWi/src/action/kiwi/backend/render/savelet/Savelet.java
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'apply' in interface 'Savelet'
+path: /KiWi/src/action/kiwi/ejb/KnowledgeSpace.java
+problem: JAVA0080:JAVA0080 Import declaration 'java.util.Date' not used
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.model.revision.ContentUpdate' not used
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.model.revision.TextContent.TextContentUpdate' not used
+problem: JAVA0136:JAVA0136 65 methods defined in class 'KnowledgeSpace' (maximum: 20)
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'initialise' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'shutdown' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getBaseUri' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'getBaseUri' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getNSUri' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'getNSUri' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'createUser' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'createUser' in interface 'KnowledgeSpace'
+problem: JAVA0108:JAVA0108 Incorrect javadoc: no @param tag for 'password'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'createUser' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'createUser' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getAnonymousUser' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'getAnonymousUser' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'storeUser' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'storeUser' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'storeAddress' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'storeAddress' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'userExists' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'userExists' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'contentItemExists' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'contentItemExists' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getUserByLogin' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'getUserByLogin' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getUserByName' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'getUserByName' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getUserByUri' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'getUserByUri' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'removeUser' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'removeUser' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'createAddress' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'createAddress' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getAddressByUri' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'getAddressByUri' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'storeGroup' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'storeGroup' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'removeGroup' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'removeGroup' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'createContentItem' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'createContentItem' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'createTextContent' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'createTextContent' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'createExternContent' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'createExternContent' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'createMediaContent' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'createMediaContent' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'storeContentItem' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'storeContentItem' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'storeContent' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'storeContent' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'listContentItemsByKeyword' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'listContentItemsByKeyword' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'listContentItems' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'listContentItems' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getContentItemByUri' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'getContentItemByUri' in interface 'KnowledgeSpace'
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getContentItemByTitle' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'getContentItemByTitle' in interface 'KnowledgeSpace'
+problem: JAVA0108:JAVA0108 Incorrect javadoc: no @param tag for 'title'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getContentItemByAnonId' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'getContentItemByAnonId' in interface 'KnowledgeSpace'
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getContentItemByKiwiId' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'getContentItemByKiwiId' in interface 'KnowledgeSpace'
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0108:JAVA0108 Incorrect javadoc: no @param tag for 'kiwiId'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'removeContentItem' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'removeContentItem' in interface 'KnowledgeSpace'
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'createTag' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'createTag' in interface 'KnowledgeSpace'
+problem: JAVA0108:JAVA0108 Incorrect javadoc: no @param tag for 'tagName'
+problem: JAVA0108:JAVA0108 Incorrect javadoc: no @param tag for 'meaning'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getMeaningsByTagLabel' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'getMeaningsByTagLabel' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getTagsByLabel' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'getTagsByLabel' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getTagByUri' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'getTagByUri' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getTagByMeaning' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'getTagByMeaning' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'storeTag' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'storeTag' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'removeTag' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'removeTag' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'meaningExists' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'meaningExists' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'tagExists' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'tagExists' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'tagLabelExists' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'tagLabelExists' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'tagContentItem' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'tagContentItem' in interface 'KnowledgeSpace'
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'queryResource' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'queryResource' in interface 'KnowledgeSpace'
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0108:JAVA0108 Incorrect javadoc: no @param tag for 'qString'
+problem: JAVA0108:JAVA0108 Incorrect javadoc: no @param tag for 'qLang'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'queryLiteral' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'queryLiteral' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getUriResource' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'getUriResource' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getSpecialResource' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'getSpecialResource' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'createLiteral' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'createLiteral' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'createLiteral' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'createLiteral' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getAnonResource' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'getAnonResource' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'createAnonResource' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'createAnonResource' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'createAnonResource' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'createAnonResource' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'importData' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'importData' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'exportData' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'exportData' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getKiwiDatabase' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'getKiwiDatabase' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getTripleStore' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'getTripleStore' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'setKiwiDatabase' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'setKiwiDatabase' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'updateTextContent' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'updateTextContent' in interface 'KnowledgeSpace'
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'undo' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'undo' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'createRevision' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'createRevision' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'renameContentItem' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'renameContentItem' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'deleteContentItem' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'deleteContentItem' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'storeObject' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'storeObject' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getConfiguration' in interface 'KnowledgeSpace'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'setConfiguration' in interface 'KnowledgeSpace'
+path: /KiWi/src/action/kiwi/ejb/LayoutRuleEngine.java
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getLayoutClass' in interface 'LayoutRuleEngine'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'addRule' in interface 'LayoutRuleEngine'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'removeRule' in interface 'LayoutRuleEngine'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'updateRule' in interface 'LayoutRuleEngine'
+path: /KiWi/src/action/kiwi/ejb/LayoutServiceBase.java
+problem: JAVA0080:JAVA0080 Import declaration 'java.util.Collection' not used
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.model.layout.LayoutClass' not used
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'init' in interface 'LayoutServiceBase'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'destroy' in interface 'LayoutServiceBase'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'updateWidgets' in interface 'LayoutServiceBase'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'processDropLeft' in interface 'LayoutServiceBase'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'processDropCentre' in interface 'LayoutServiceBase'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'processDropRight' in interface 'LayoutServiceBase'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getWidgets' in interface 'LayoutServiceBase'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'closeWidget' in interface 'LayoutServiceBase'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'showWidgetSetup' in interface 'LayoutServiceBase'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'toggleWidget' in interface 'LayoutServiceBase'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getWidgetVisibilityClass' in interface 'LayoutServiceBase'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getBgStyle' in interface 'LayoutServiceBase'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'isWidgetForColumn' in interface 'LayoutServiceBase'
+path: /KiWi/src/action/kiwi/ejb/RenderingService.java
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'initialise' in interface 'RenderingService'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'shutdown' in interface 'RenderingService'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'renderHTML' in interface 'RenderingService'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'renderEditor' in interface 'RenderingService'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'renderPreview' in interface 'RenderingService'
+path: /KiWi/src/action/kiwi/ejb/StoringService.java
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'initialise' in interface 'StoringService'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'shutdown' in interface 'StoringService'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'processHtmlSource' in interface 'StoringService'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'processTextContent' in interface 'StoringService'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'processMediaContent' in interface 'StoringService'
+path: /KiWi/src/action/kiwi/ejb/TripleStore.java
+problem: JAVA0136:JAVA0136 34 methods defined in class 'TripleStore' (maximum: 20)
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'size' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'size' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'iterator' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'iterator' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'listTriples' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'listTriples' in interface 'TripleStore'
+problem: JAVA0108:JAVA0108 Incorrect javadoc: no @param tag for 'inferred'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getResourcesByPropertyValue' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'getResourcesByPropertyValue' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getResourcesByPropertyValue' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'getResourcesByPropertyValue' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'query' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'query' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'queryTriple' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'queryTriple' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'queryResource' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'queryResource' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'queryLiteral' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'queryLiteral' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'queryLiteralValue' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'queryLiteralValue' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'queryNode' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'queryNode' in interface 'TripleStore'
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'createTriple' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'createTriple' in interface 'TripleStore'
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0108:JAVA0108 Incorrect javadoc: no @param tag for 'subject'
+problem: JAVA0108:JAVA0108 Incorrect javadoc: no @param tag for 'property'
+problem: JAVA0108:JAVA0108 Incorrect javadoc: no @param tag for 'object'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'createUriResource' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'createUriResource' in interface 'TripleStore'
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'createSpecialResource' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'createSpecialResource' in interface 'TripleStore'
+problem: JAVA0108:JAVA0108 Incorrect javadoc: no @param tag for 'kiwiId'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'createProperty' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'createProperty' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'createUriResourceBySPARQLId' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'createUriResourceBySPARQLId' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'createAnonResource' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'createAnonResource' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'createAnonResource' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'createAnonResource' in interface 'TripleStore'
+problem: JAVA0108:JAVA0108 Incorrect javadoc: no @param tag for 'id'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'createLiteral' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'createLiteral' in interface 'TripleStore'
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'createLiteral' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'createLiteral' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'removeTriple' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'removeTriple' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'removeTriple' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'removeTriple' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'exportData' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'exportData' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'exportData' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'exportData' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'importData' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'importData' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'clear' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'clear' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getNamespaceUri' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'getNamespaceUri' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getNamespace' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'getNamespace' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'setNamespace' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'setNamespace' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'setNamespace' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'setNamespace' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'shutdown' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'shutdown' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'removeNamespace' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'removeNamespace' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'listNamespaces' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'listNamespaces' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getXSDType' in interface 'TripleStore'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'abstract' for method 'getXSDType' in interface 'TripleStore'
+path: /KiWi/src/action/kiwi/ejb/TripleStoreUtil.java
+problem: JAVA0014:JAVA0014 Class 'TripleStoreUtil' with only static members has non-private constructor
+path: /KiWi/src/action/kiwi/uidescriptor/ContentItemDescriptor.java
+problem: JAVA0057:JAVA0057 Unnecessary default constructor 'ContentItemDescriptor'
+problem: JAVA0058:JAVA0058 Constructor 'ContentItemDescriptor' calls super()
+path: /KiWi/src/action/kiwi/uidescriptor/HtmlDescriptor.java
+problem: JAVA0058:JAVA0058 Constructor 'HtmlDescriptor' calls super()
+path: /KiWi/src/action/kiwi/widgets/editor/Editor.java
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0137:JAVA0137 Non-abstract class 'Editor' missing constructor
+problem: JAVA0138:JAVA0138 6 parameters defined for method 'hintsModifyText' (maximum: 5)
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+problem: JAVA0174:JAVA0174 Assigned local variable 'ci' never used
+path: /KiWi/src/action/kiwi/widgets/editor/EditorLocal.java
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getContent' in interface 'EditorLocal'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'setContent' in interface 'EditorLocal'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getAnnotationTypes' in interface 'EditorLocal'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'hintsRestart' in interface 'EditorLocal'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'hintsModifyText' in interface 'EditorLocal'
+problem: JAVA0138:JAVA0138 6 parameters defined for method 'hintsModifyText' (maximum: 5)
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'hintsUpdateContent' in interface 'EditorLocal'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'setAnnotationTypes' in interface 'EditorLocal'
+path: /KiWi/src/model/kiwi/config/Configuration.java
+problem: JAVA0058:JAVA0058 Constructor 'Configuration' calls super()
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0108:JAVA0108 Incorrect javadoc: no @param tag for 'kiwikey'
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+path: /KiWi/src/model/kiwi/exception/InconsistentStateException.java
+problem: JAVA0051:JAVA0051 Class 'InconsistentStateException' derives from java.lang.RuntimeException
+problem: JAVA0234:JAVA0234 Class 'InconsistentStateException' is Serializable but does not define serialVersionUID
+path: /KiWi/src/model/kiwi/exception/KiWiConfigurationException.java
+problem: JAVA0234:JAVA0234 Class 'KiWiConfigurationException' is Serializable but does not define serialVersionUID
+path: /KiWi/src/model/kiwi/exception/KiWiException.java
+problem: JAVA0234:JAVA0234 Class 'KiWiException' is Serializable but does not define serialVersionUID
+path: /KiWi/src/model/kiwi/exception/MappingException.java
+problem: JAVA0234:JAVA0234 Class 'MappingException' is Serializable but does not define serialVersionUID
+path: /KiWi/src/model/kiwi/exception/ResourceConversionException.java
+problem: JAVA0234:JAVA0234 Class 'ResourceConversionException' is Serializable but does not define serialVersionUID
+problem: JAVA0058:JAVA0058 Constructor 'ResourceConversionException' calls super()
+path: /KiWi/src/model/kiwi/model/Constants.java
+problem: JAVA0014:JAVA0014 Class 'Constants' with only static members has non-private constructor
+problem: JAVA0116:JAVA0116 Missing javadoc: field 'NS_KIWI_HTML'
+problem: JAVA0116:JAVA0116 Missing javadoc: field 'NS_KIWI_CORE'
+problem: JAVA0116:JAVA0116 Missing javadoc: field 'NS_KIWI_SPECIAL'
+problem: JAVA0116:JAVA0116 Missing javadoc: field 'NS_KIWI_TRIPLE'
+problem: JAVA0116:JAVA0116 Missing javadoc: field 'NS_XSD'
+problem: JAVA0116:JAVA0116 Missing javadoc: field 'NS_XML'
+problem: JAVA0116:JAVA0116 Missing javadoc: field 'NS_RDF'
+problem: JAVA0116:JAVA0116 Missing javadoc: field 'NS_RDFS'
+problem: JAVA0116:JAVA0116 Missing javadoc: field 'NS_OWL'
+problem: JAVA0116:JAVA0116 Missing javadoc: field 'NS_FOAF'
+problem: JAVA0116:JAVA0116 Missing javadoc: field 'NS_CONT'
+problem: JAVA0116:JAVA0116 Missing javadoc: field 'NS_GEO'
+problem: JAVA0116:JAVA0116 Missing javadoc: field 'NS_SIOC'
+problem: JAVA0116:JAVA0116 Missing javadoc: field 'NS_MOAT'
+problem: JAVA0116:JAVA0116 Missing javadoc: field 'NS_HGTAGS'
+problem: JAVA0116:JAVA0116 Missing javadoc: field 'NS_DC'
+path: /KiWi/src/model/kiwi/model/content/Content.java
+problem: JAVA0080:JAVA0080 Import declaration 'java.util.Locale' not used
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.Column' not used
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.Transient' not used
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.model.Constants' not used
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.model.annotations.RDF' not used
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.model.kbase.KiWiEntity' not used
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.model.kbase.KiWiResource' not used
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.model.kbase.KiWiSpecialResource' not used
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.model.kbase.KiWiUriResource' not used
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0011:JAVA0011 Abstract class 'Content' does not contain an abstract method
+problem: JAVA0016:JAVA0016 Abstract class 'Content' contains public constructor
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+path: /KiWi/src/model/kiwi/model/content/ContentItem.java
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.ManyToOne' not used
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.model.kbase.KiWiSpecialResource' not used
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0100:JAVA0100 Class contains 11 non-final fields (maximum: 8)
+problem: JAVA0136:JAVA0136 27 methods defined in class 'ContentItem' (maximum: 20)
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0076:JAVA0076 Use of magic number '29'
+problem: JAVA0076:JAVA0076 Use of magic number '29'
+path: /KiWi/src/model/kiwi/model/content/ExternContent.java
+problem: JAVA0080:JAVA0080 Import declaration 'java.util.Locale' not used
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.CascadeType' not used
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.OneToOne' not used
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.model.kbase.KiWiResource' not used
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.model.kbase.KiWiSpecialResource' not used
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0234:JAVA0234 Class 'ExternContent' is Serializable but does not define serialVersionUID
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0108:JAVA0108 Incorrect javadoc: no @param tag for 'url'
+path: /KiWi/src/model/kiwi/model/content/MediaContent.java
+problem: JAVA0080:JAVA0080 Import declaration 'java.util.Locale' not used
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.CascadeType' not used
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.OneToOne' not used
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.model.kbase.KiWiResource' not used
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.model.kbase.KiWiSpecialResource' not used
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0234:JAVA0234 Class 'MediaContent' is Serializable but does not define serialVersionUID
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+path: /KiWi/src/model/kiwi/model/content/TextContent.java
+problem: JAVA0080:JAVA0080 Import declaration 'java.util.Locale' not used
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.CascadeType' not used
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.GeneratedValue' not used
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.GenerationType' not used
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.Id' not used
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.OneToOne' not used
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.model.kbase.KiWiResource' not used
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.model.kbase.KiWiSpecialResource' not used
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.model.kbase.KiWiUriResource' not used
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.model.revision.Revision' not used
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.model.revision.TextContent.TextContentUpdate' not used
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0234:JAVA0234 Class 'TextContent' is Serializable but does not define serialVersionUID
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0061:JAVA0061 Inaccessible member 'i' in anonymous class
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+path: /KiWi/src/model/kiwi/model/content/TextFragment.java
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+path: /KiWi/src/model/kiwi/model/kbase/KiWiAnonResource.java
+problem: JAVA0234:JAVA0234 Class 'KiWiAnonResource' is Serializable but does not define serialVersionUID
+problem: JAVA0058:JAVA0058 Constructor 'KiWiAnonResource' calls super()
+problem: JAVA0071:JAVA0071 Strings compared with == (this.anonId != other.anonId)
+path: /KiWi/src/model/kiwi/model/kbase/KiWiClass.java
+problem: JAVA0054:JAVA0054 Inheritance depth 4 exceeds maximum 3
+problem: JAVA0234:JAVA0234 Class 'KiWiClass' is Serializable but does not define serialVersionUID
+path: /KiWi/src/model/kiwi/model/kbase/KiWiEntity.java
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'getResource' in interface 'KiWiEntity'
+problem: JAVA0141:JAVA0141 Unnecessary modifier 'public' for method 'setResource' in interface 'KiWiEntity'
+path: /KiWi/src/model/kiwi/model/kbase/KiWiExtendedTriple.java
+problem: JAVA0098:JAVA0098 Minimize use of implicit field initializers
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+problem: JAVA0173:JAVA0173 Unused method parameter 'author'
+problem: JAVA0076:JAVA0076 Use of magic number '29'
+problem: JAVA0076:JAVA0076 Use of magic number '29'
+problem: JAVA0076:JAVA0076 Use of magic number '29'
+problem: JAVA0076:JAVA0076 Use of magic number '29'
+path: /KiWi/src/model/kiwi/model/kbase/KiWiFragmentResource.java
+problem: JAVA0054:JAVA0054 Inheritance depth 5 exceeds maximum 3
+problem: JAVA0234:JAVA0234 Class 'KiWiFragmentResource' is Serializable but does not define serialVersionUID
+problem: JAVA0173:JAVA0173 Unused method parameter 'fragment'
+path: /KiWi/src/model/kiwi/model/kbase/KiWiLiteral.java
+problem: JAVA0076:JAVA0076 Use of magic number '89'
+problem: JAVA0076:JAVA0076 Use of magic number '89'
+problem: JAVA0076:JAVA0076 Use of magic number '89'
+path: /KiWi/src/model/kiwi/model/kbase/KiWiProperty.java
+problem: JAVA0054:JAVA0054 Inheritance depth 4 exceeds maximum 3
+problem: JAVA0234:JAVA0234 Class 'KiWiProperty' is Serializable but does not define serialVersionUID
+path: /KiWi/src/model/kiwi/model/kbase/KiWiResource.java
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.GeneratedValue' not used
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.GenerationType' not used
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.Id' not used
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.Inheritance' not used
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.InheritanceType' not used
+problem: JAVA0136:JAVA0136 26 methods defined in class 'KiWiResource' (maximum: 20)
+problem: JAVA0016:JAVA0016 Abstract class 'KiWiResource' contains public constructor
+problem: JAVA0057:JAVA0057 Unnecessary default constructor 'KiWiResource'
+problem: JAVA0058:JAVA0058 Constructor 'KiWiResource' calls super()
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+problem: JAVA0254:JAVA0254 Use enhanced for loop construct instead of Iterator
+problem: JAVA0254:JAVA0254 Use enhanced for loop construct instead of Iterator
+problem: JAVA0173:JAVA0173 Unused method parameter 'loc'
+problem: JAVA0173:JAVA0173 Unused method parameter 'loc'
+problem: JAVA0173:JAVA0173 Unused method parameter 'identifier'
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0173:JAVA0173 Unused method parameter 'type'
+path: /KiWi/src/model/kiwi/model/kbase/KiWiSpecialResource.java
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.OneToOne' not used
+problem: JAVA0080:JAVA0080 Import declaration 'org.hibernate.annotations.Index' not used
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.backend.kspace.KiWiTripleStore' not used
+problem: JAVA0054:JAVA0054 Inheritance depth 4 exceeds maximum 3
+problem: JAVA0234:JAVA0234 Class 'KiWiSpecialResource' is Serializable but does not define serialVersionUID
+problem: JAVA0173:JAVA0173 Unused method parameter 'ke'
+path: /KiWi/src/model/kiwi/model/kbase/KiWiUriResource.java
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.Transient' not used
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.backend.kspace.KiWiKnowledgeSpace' not used
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.backend.kspace.KiWiTripleStore' not used
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0080:JAVA0080 Import declaration 'org.jboss.seam.annotations.In' not used
+problem: JAVA0234:JAVA0234 Class 'KiWiUriResource' is Serializable but does not define serialVersionUID
+problem: JAVA0071:JAVA0071 Strings compared with == (this.uri != other.uri)
+problem: JAVA0171:JAVA0171 Unused local variable 'triple'
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+problem: JAVA0108:JAVA0108 Incorrect javadoc: no @param tag for 'property'
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+path: /KiWi/src/model/kiwi/model/layout/Layout.java
+problem: JAVA0024:JAVA0024 Empty class 'Layout'
+path: /KiWi/src/model/kiwi/model/layout/LayoutClass.java
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+problem: JAVA0098:JAVA0098 Minimize use of implicit field initializers
+problem: JAVA0057:JAVA0057 Unnecessary default constructor 'LayoutClass'
+problem: JAVA0058:JAVA0058 Constructor 'LayoutClass' calls super()
+problem: JAVA0254:JAVA0254 Use enhanced for loop construct instead of Iterator
+path: /KiWi/src/model/kiwi/model/layout/UserPref.java
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.CascadeType' not used
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.OneToOne' not used
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.model.kbase.KiWiResource' not used
+problem: JAVA0234:JAVA0234 Class 'UserPref' is Serializable but does not define serialVersionUID
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+path: /KiWi/src/model/kiwi/model/layout/Widget.java
+problem: JAVA0080:JAVA0080 Import declaration 'java.util.Collection' not used
+problem: JAVA0080:JAVA0080 Import declaration 'java.util.LinkedList' not used
+problem: JAVA0080:JAVA0080 Import declaration 'java.util.Set' not used
+problem: JAVA0136:JAVA0136 21 methods defined in class 'Widget' (maximum: 20)
+problem: JAVA0234:JAVA0234 Class 'Widget' is Serializable but does not define serialVersionUID
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+problem: JAVA0034:JAVA0034 Missing braces in if statement
+path: /KiWi/src/model/kiwi/model/revision/ContentUpdate.java
+problem: JAVA0011:JAVA0011 Abstract class 'ContentUpdate' does not contain an abstract method
+problem: JAVA0118:JAVA0118 Missing javadoc: type 'ContentUpdate'
+problem: JAVA0016:JAVA0016 Abstract class 'ContentUpdate' contains public constructor
+problem: JAVA0057:JAVA0057 Unnecessary default constructor 'ContentUpdate'
+problem: JAVA0058:JAVA0058 Constructor 'ContentUpdate' calls super()
+path: /KiWi/src/model/kiwi/model/revision/DeletionUpdate.java
+problem: JAVA0080:JAVA0080 Import declaration 'java.io.Serializable' not used
+problem: JAVA0080:JAVA0080 Import declaration 'java.util.Set' not used
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.GeneratedValue' not used
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.GenerationType' not used
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.Id' not used
+problem: JAVA0080:JAVA0080 Import declaration 'org.hibernate.search.annotations.DocumentId' not used
+problem: JAVA0118:JAVA0118 Missing javadoc: type 'DeletionUpdate'
+problem: JAVA0057:JAVA0057 Unnecessary default constructor 'DeletionUpdate'
+problem: JAVA0058:JAVA0058 Constructor 'DeletionUpdate' calls super()
+path: /KiWi/src/model/kiwi/model/revision/KiWiUpdate.java
+problem: JAVA0118:JAVA0118 Missing javadoc: type 'KiWiUpdate'
+problem: JAVA0016:JAVA0016 Abstract class 'KiWiUpdate' contains public constructor
+path: /KiWi/src/model/kiwi/model/revision/MediaContentUpdate.java
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.model.content.TextContent' not used
+problem: JAVA0118:JAVA0118 Missing javadoc: type 'MediaContentUpdate'
+problem: JAVA0058:JAVA0058 Constructor 'MediaContentUpdate' calls super()
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0108:JAVA0108 Incorrect javadoc: no @param tag for 'prevData'
+problem: JAVA0025:JAVA0025 Method override 'setDate' is empty
+problem: JAVA0025:JAVA0025 Method override 'setResource' is empty
+problem: JAVA0025:JAVA0025 Method override 'setRevision' is empty
+path: /KiWi/src/model/kiwi/model/revision/MetadataUpdate.java
+problem: JAVA0118:JAVA0118 Missing javadoc: type 'MetadataUpdate'
+problem: JAVA0057:JAVA0057 Unnecessary default constructor 'MetadataUpdate'
+problem: JAVA0058:JAVA0058 Constructor 'MetadataUpdate' calls super()
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0108:JAVA0108 Incorrect javadoc: no @param tag for 'currentDBentry'
+path: /KiWi/src/model/kiwi/model/revision/RenamingUpdate.java
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.GeneratedValue' not used
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.GenerationType' not used
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.Id' not used
+problem: JAVA0080:JAVA0080 Import declaration 'org.hibernate.search.annotations.DocumentId' not used
+problem: JAVA0118:JAVA0118 Missing javadoc: type 'RenamingUpdate'
+problem: JAVA0234:JAVA0234 Class 'RenamingUpdate' is Serializable but does not define serialVersionUID
+problem: JAVA0057:JAVA0057 Unnecessary default constructor 'RenamingUpdate'
+problem: JAVA0058:JAVA0058 Constructor 'RenamingUpdate' calls super()
+problem: JAVA0109:JAVA0109 Incorrect javadoc: no parameter '@param'
+problem: JAVA0108:JAVA0108 Incorrect javadoc: no @param tag for 'kiWiResource'
+path: /KiWi/src/model/kiwi/model/revision/Revision.java
+problem: JAVA0118:JAVA0118 Missing javadoc: type 'Revision'
+problem: JAVA0058:JAVA0058 Constructor 'Revision' calls super()
+path: /KiWi/src/model/kiwi/model/revision/RuleUpdate.java
+problem: JAVA0080:JAVA0080 Import declaration 'java.util.Set' not used
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.GeneratedValue' not used
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.GenerationType' not used
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.Id' not used
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.OneToMany' not used
+problem: JAVA0080:JAVA0080 Import declaration 'org.hibernate.annotations.CollectionOfElements' not used
+problem: JAVA0080:JAVA0080 Import declaration 'org.hibernate.search.annotations.DocumentId' not used
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.model.user.AbstractPermission' not used
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.model.user.Permission' not used
+problem: JAVA0118:JAVA0118 Missing javadoc: type 'RuleUpdate'
+problem: JAVA0234:JAVA0234 Class 'RuleUpdate' is Serializable but does not define serialVersionUID
+problem: JAVA0173:JAVA0173 Unused method parameter 'permissionOwnerResource'
+problem: JAVA0058:JAVA0058 Constructor 'RuleUpdate' calls super()
+path: /KiWi/src/model/kiwi/model/revision/TextContent/DiffNode.java
+problem: JAVA0001:JAVA0001 Package name 'kiwi.model.revision.TextContent' does not contain only lower case letters
+problem: JAVA0080:JAVA0080 Import declaration 'java.util.List' not used
+problem: JAVA0080:JAVA0080 Import declaration 'java.util.Set' not used
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.OneToMany' not used
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.OneToOne' not used
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.Transient' not used
+problem: JAVA0080:JAVA0080 Import declaration 'nu.xom.Node' not used
+problem: JAVA0057:JAVA0057 Unnecessary default constructor 'DiffNode'
+path: /KiWi/src/model/kiwi/model/revision/TextContent/LCS.java
+problem: JAVA0001:JAVA0001 Package name 'kiwi.model.revision.TextContent' does not contain only lower case letters
+problem: JAVA0014:JAVA0014 Class 'LCS' with only static members has non-private constructor
+problem: JAVA0138:JAVA0138 6 parameters defined for method 'readDiffsfromBackTrack' (maximum: 5)
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+path: /KiWi/src/model/kiwi/model/revision/TextContent/TextContentUpdate.java
+problem: JAVA0001:JAVA0001 Package name 'kiwi.model.revision.TextContent' does not contain only lower case letters
+problem: JAVA0080:JAVA0080 Import declaration 'java.io.Serializable' not used
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.Id' not used
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.Transient' not used
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.model.kbase.KiWiSpecialResource' not used
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0080:JAVA0080 Import declaration 'org.hibernate.annotations.AccessType' not used
+problem: JAVA0058:JAVA0058 Constructor 'TextContentUpdate' calls super()
+problem: JAVA0110:JAVA0110 Incorrect javadoc: no @return tag
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+problem: JAVA0177:JAVA0177 Variable declaration 'newList' missing initializer
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+path: /KiWi/src/model/kiwi/model/tagging/Tag.java
+problem: JAVA0080:JAVA0080 Import declaration 'java.util.Collection' not used
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.OneToMany' not used
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.model.kbase.KiWiSpecialResource' not used
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0234:JAVA0234 Class 'Tag' is Serializable but does not define serialVersionUID
+problem: JAVA0076:JAVA0076 Use of magic number '59'
+problem: JAVA0076:JAVA0076 Use of magic number '59'
+path: /KiWi/src/model/kiwi/model/user/AbstractPermission.java
+problem: JAVA0011:JAVA0011 Abstract class 'AbstractPermission' does not contain an abstract method
+problem: JAVA0098:JAVA0098 Minimize use of implicit field initializers
+path: /KiWi/src/model/kiwi/model/user/Group.java
+problem: JAVA0080:JAVA0080 Import declaration 'javax.persistence.OneToOne' not used
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.model.kbase.KiWiEntity' not used
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.model.kbase.KiWiResource' not used
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.model.kbase.KiWiSpecialResource' not used
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0137:JAVA0137 Non-abstract class 'Group' missing constructor
+problem: JAVA0234:JAVA0234 Class 'Group' is Serializable but does not define serialVersionUID
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+path: /KiWi/src/model/kiwi/model/user/Permission.java
+problem: JAVA0137:JAVA0137 Non-abstract class 'Permission' missing constructor
+problem: JAVA0234:JAVA0234 Class 'Permission' is Serializable but does not define serialVersionUID
+path: /KiWi/src/model/kiwi/model/user/PermissionOwner.java
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.model.kbase.KiWiEntity' not used
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0011:JAVA0011 Abstract class 'PermissionOwner' does not contain an abstract method
+path: /KiWi/src/model/kiwi/model/user/Perspective.java
+problem: JAVA0234:JAVA0234 Class 'Perspective' is Serializable but does not define serialVersionUID
+problem: JAVA0057:JAVA0057 Unnecessary default constructor 'Perspective'
+problem: JAVA0058:JAVA0058 Constructor 'Perspective' calls super()
+path: /KiWi/src/model/kiwi/model/user/Restriction.java
+problem: JAVA0137:JAVA0137 Non-abstract class 'Restriction' missing constructor
+problem: JAVA0234:JAVA0234 Class 'Restriction' is Serializable but does not define serialVersionUID
+path: /KiWi/src/model/kiwi/model/user/User.java
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0100:JAVA0100 Class contains 13 non-final fields (maximum: 8)
+problem: JAVA0136:JAVA0136 29 methods defined in class 'User' (maximum: 20)
+problem: JAVA0064:JAVA0064 1 variation of identifier name 'lastname' (maximum: 0)
+path: /KiWi/src/model/kiwi/util/KiWiCollections.java
+problem: JAVA0014:JAVA0014 Class 'KiWiCollections' with only static members has non-private constructor
+path: /KiWi/src/test/kiwi/test/action/RegisterTest.java
+problem: JAVA0080:JAVA0080 Import declaration 'javax.faces.context.FacesContext' not used
+problem: JAVA0118:JAVA0118 Missing javadoc: type 'RegisterTest'
+path: /KiWi/src/test/kiwi/test/backend/ContentItemTest.java
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.model.content.TextContent' not used
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0080:JAVA0080 Import declaration 'org.mvel.ast.AssertNode' not used
+problem: JAVA0177:JAVA0177 Variable declaration 'user' missing initializer
+problem: JAVA0177:JAVA0177 Variable declaration 'ci' missing initializer
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+path: /KiWi/src/test/kiwi/test/backend/RDFAddressTest.java
+problem: JAVA0005:JAVA0005 Imports not in specified order
+path: /KiWi/src/test/kiwi/test/backend/RevisionTest.java
+problem: JAVA0080:JAVA0080 Import declaration 'java.util.HashSet' not used
+problem: JAVA0080:JAVA0080 Import declaration 'java.util.Set' not used
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0080:JAVA0080 Import declaration 'kiwi.model.revision.TextContent.TextContentUpdate' not used
+problem: JAVA0118:JAVA0118 Missing javadoc: type 'RevisionTest'
+problem: JAVA0276:JAVA0276 Unnecessary use of String constructor String(String)
+problem: JAVA0276:JAVA0276 Unnecessary use of String constructor String(String)
+problem: JAVA0177:JAVA0177 Variable declaration 'ru' missing initializer
+problem: JAVA0171:JAVA0171 Unused local variable 'rev2'
+problem: JAVA0166:JAVA0166 Generic exception 'java.lang.Exception' caught
+path: /KiWi/src/test/kiwi/test/backend/TaggingTest.java
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0177:JAVA0177 Variable declaration 'user' missing initializer
+problem: JAVA0177:JAVA0177 Variable declaration 'tagger' missing initializer
+problem: JAVA0174:JAVA0174 Assigned local variable 'tagger' never used
+problem: JAVA0177:JAVA0177 Variable declaration 'ci' missing initializer
+problem: JAVA0174:JAVA0174 Assigned local variable 'tc' never used
+problem: JAVA0177:JAVA0177 Variable declaration 'ci2' missing initializer
+problem: JAVA0174:JAVA0174 Assigned local variable 'tc2' never used
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+problem: JAVA0177:JAVA0177 Variable declaration 'ci3' missing initializer
+problem: JAVA0174:JAVA0174 Assigned local variable 'tc3' never used
+path: /KiWi/src/test/kiwi/test/backend/UserTest.java
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0177:JAVA0177 Variable declaration 'user' missing initializer
+problem: JAVA0177:JAVA0177 Variable declaration 'friend1' missing initializer
+problem: JAVA0177:JAVA0177 Variable declaration 'friend2' missing initializer
+problem: JAVA0177:JAVA0177 Variable declaration 'friend3' missing initializer
+problem: JAVA0177:JAVA0177 Variable declaration 'friend4' missing initializer
+problem: JAVA0177:JAVA0177 Variable declaration 'friend5' missing initializer
+problem: JAVA0254:JAVA0254 Use enhanced for loop construct instead of Iterator
+path: /KiWi/src/test/kiwi/test/backend/render/savelet/ExtractLinksSaveletTest.java
+problem: JAVA0005:JAVA0005 Imports not in specified order
+path: /KiWi/src/test/kiwi/test/backend/render/savelet/HTMLCleanerSaveletTest.java
+problem: JAVA0005:JAVA0005 Imports not in specified order
+problem: JAVA0144:JAVA0144 Line exceeds maximum 132 characters
+path: /KiWi/src/view/kiwi/view/gwt/client/TestModule.java
+problem: JAVA0118:JAVA0118 Missing javadoc: type 'TestModule'

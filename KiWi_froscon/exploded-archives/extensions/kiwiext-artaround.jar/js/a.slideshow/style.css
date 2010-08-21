@@ -1,0 +1,13 @@
+
+body {
+   width:1000px;
+   margin:0 auto;
+}
+blockquote p, pre{
+    padding:6px;
+    border:1px solid #999;
+    background:#f4f4ff;
+}
+.textcenter {
+    text-align:center;
+}

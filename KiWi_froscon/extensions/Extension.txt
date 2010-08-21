@@ -1,0 +1,115 @@
+This document presents briefly KiWi (a possible) extension mechanism.
+
+
+There are two main kind of possibilities to extend/change the kiwi functionality :
+    a.the server side modules
+    b.the middle ware modules.
+
+I choose to divide the extend/change feature in two because of the client server
+nature of the KiWi application. If some client install on the server side a plugin
+all the other client can see and possibly interact with it and this can create
+undesirable effects. E.G. a client can add an interceptor which accomplish a certain
+specific task; if the interceptor is placed on the server side (in the container
+classpath) all the other clients will be intercepted - even if this is not need/wish.
+It is true you can develop interceptors using special rules to avoid this kind of
+problem but this will only make the extension development more complicated. More,
+the interceptor are only one component from many others - more details about this
+in the "The server side modules" sequence.
+
+
+The server side modules
+=======================
+This are nothing more than classical ejb-jar, ear, war or rar archives. This are
+placed in the application server classpath and they are accessible for all the
+clients.
+In most of the cases this "modules" this are installed once and only sometimes
+updated.
+The application server (and some times Seam) will take care of this them - no
+code is necessary.
+TODO : add some links for the docs.
+
+Example of modules : 
+KiWi Persistence Layer - it contains all the KiWi EM related classes.
+KiWi Transaction mechanism -  
+KiWi Front End - 
+
+
+The client side modules
+=======================
+
+Each client can download on its local machine modules and in this way to
+customize its KiWi. Here is important to note that this client modules are only
+valid for the client where this modules are installed. All the other client
+behavior remains unchanged. This provide a hight degree of client flexibility.
+
+The client side modules architecture consists form the folloing parts :
+    Installer - the part which accept/do the install 
+    Installed - the component to install.
+TODO : It is discutable here if the client side modules can have a recursive
+install behavior.
+
+
+The Installer (IR)
+
+Its first purpose is to decide if it can install (support) the installed
+component.
+If it can install then :
+it must provide allow the installed component to access its resources - I call
+this the template (because it is based on the template pattern). 
+More details about this on : http://c2.com/cgi/wiki?TemplateMethodPattern.
+Optionaly this can provide a helper components (like classes or tag librarys).
+If the installed component provides a graphic interface then the Installer must
+provide support for this in a form of a mediator and optional tag libs.
+More details about this on : http://c2.com/cgi/wiki?MediatorPattern
+
+The tag libs provides a very eays way to extend/share ui realted functionality
+so I think that this is a point where we need to provide some basic set of tags.
+More details avout this in the Tag Libs sequnece.
+
+
+The Installed (ID)
+
+It purpose is to add some new functionality to a give installer.
+The ID knows how to install it self on the IR and what are its requirenments (what
+it require to run properly). If the ID decide that the IR can not support it then
+it does not install it self on the given target.
+
+The ID knows how (where) to install it self on the IR and it also know how to
+uninstall it self if this is necessary.
+
+It is important to know that the client can install an uninstall modules.
+A very important aspect to note is that the ID will only use with the server side
+component but it can not add/remove them. It can only customize the way how a
+certain server side component interact (is used) with the client.
+
+It is not necessary that a ID has a graphic representation.
+
+
+How it works ?
+
+The server side modules are instalation conform the EE rules together with the
+application server custom rules. For this there is already a lot of documentation.  
+
+The client side modules are instaltion contains two steeps :
+    download (e.g. via REST)
+    install, in most of the cases you download one or more jars. This jars are
+    download in a certain location - From this location are loaded with the
+    classloader mechanism.
+    
+Extend the classloader mechanism - 
+
+There are more possibilities to do this.
+
+1.A custom classloader - the URLClassLoader, this cl. allows you to load resources
+with the classloader from location which you can define runtime.
+
+2.ClassPathException - this is jBoss specific and this makes the solution dependent
+on a certain application server.
+see the for more details : http://docs.jboss.org/jbossas/javadoc/4.0.3SP1/system/org/jboss/deployment/ClasspathExtension.html
+
+once a class/reource is loaded with the class loader then all the other related
+class/reource will be loaded with the same class loader.
+On this point I still make experiments.
+
+A thrid solution will a "user/home" location. This feature is supported by the
+most operatrion systems.  

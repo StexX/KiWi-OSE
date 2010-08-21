@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmarks>
+   <site url="http://download.eclipse.org/technology/epp/updates/1.0/" selected="false" name="EPP Usage Data Collector Update Site"/>
+   <site url="http://download.eclipse.org/birt/update-site/2.3" selected="false" name=""/>
+   <site url="http://download.eclipse.org/datatools/updates" selected="false" name=""/>
+   <site url="http://download.eclipse.org/dsdp/tm/updates/3.0" selected="false" name=""/>
+   <site url="http://download.eclipse.org/eclipse/updates/3.4" selected="false" name=""/>
+   <site url="http://download.eclipse.org/modeling/emf/updates/" selected="false" name=""/>
+   <site url="http://download.eclipse.org/modeling/emft/updates/" selected="false" name=""/>
+   <site url="http://download.eclipse.org/modeling/mdt/updates/" selected="false" name=""/>
+   <site url="http://download.eclipse.org/releases/ganymede" selected="false" name=""/>
+   <site url="http://download.eclipse.org/technology/subversive/0.7/update-site/" selected="false" name="http://download.eclipse.org/technology/subversive/0.7/update-site/"/>
+   <site url="http://download.eclipse.org/tools/gef/update-site/releases/site.xml" selected="false" name=""/>
+   <site url="http://download.eclipse.org/tools/mylyn/update/extras" selected="false" name=""/>
+   <site url="http://download.jboss.org/jbosstools/updates/development" selected="false" name=""/>
+   <site url="http://download.jboss.org/jbosstools/updates/stable" selected="false" name="http://download.jboss.org/jbosstools/updates/stable"/>
+   <site url="http://download.jboss.org/updates/development" selected="false" name=""/>
+   <site url="http://eclipse-cs.sourceforge.net/update" selected="false" name="http://eclipse-cs.sourceforge.net/update"/>
+   <site url="http://eclipse-tools.sourceforge.net/updates/" selected="false" name="http://pydev.sourceforge.net/updates/"/>
+   <site url="http://pydev.sourceforge.net/updates/" selected="false" name="http://pydev.sourceforge.net/updates/"/>
+   <site url="http://www.apache.org/dist/incubator/uima/eclipse-update-site/" selected="false" name="http://www.apache.org/dist/incubator/uima/eclipse-update-site/"/>
+   <site url="http://www.fabioz.com/pydev/updates" selected="false" name=""/>
+   <site url="http://www.polarion.org/projects/subversive/download/eclipse/2.0/update-site/" selected="false" name="http://www.polarion.org/projects/subversive/download/eclipse/2.0/update-site/"/>
+   <site url="https://ajax.dev.java.net/eclipse/" selected="false" name=""/>
+   <site url="http://download.eclipse.org/tools/mylyn/update/e3.4" selected="false" name="Mylyn for Eclipse 3.4"/>
+   <site url="http://download.eclipse.org/webtools/updates/" selected="false" name="Web Tools (WTP) Update Site"/>
+</bookmarks>

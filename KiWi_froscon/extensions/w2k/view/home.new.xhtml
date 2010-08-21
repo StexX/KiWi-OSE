@@ -1,0 +1,87 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a="http://richfaces.org/a4j" template="layout/template.xhtml">
+
+<ui:define name="content">
+
+    <h:form id="formWikiMain">
+	    <h1>#{currentContentItem.resource.label}</h1>
+	    
+	    <s:div style="padding-bottom: 10px;">
+	        Type(s): 
+	        <ui:repeat value="#{annotateAction.types}" var="type">
+                <s:link view="/home.xhtml" value="#{type.res.label} (#{type.res.namespacePrefix})" 
+                		rendered="#{not type.inferred}"
+                		style="font-weight: bold;"
+                		propagation="none">
+                    <f:param name="title"/>
+                    <f:param name="uri"/>
+                    <f:param name="id" />
+                    <f:param name="kiwiid" value="#{type.res.kiwiIdentifier}"/>
+                </s:link>
+                <s:link view="/home.xhtml" value="#{type.res.label} (#{type.res.namespacePrefix})"
+                		rendered="#{type.inferred}"
+                		style="font-weight: italic;"
+                		propagation="none">
+                    <f:param name="title"/>
+                    <f:param name="uri"/>
+                    <f:param name="id" />
+                    <f:param name="kiwiid" value="#{type.res.kiwiIdentifier}"/>
+                </s:link>
+	            <rich:spacer width="1px"/>
+	            <h:commandLink action="#{annotateAction.removeType(type)}">
+	                <h:graphicImage value="img/type_delete.png" style="border:0;padding:0 4px;"/>
+	            </h:commandLink>
+	            <rich:spacer width="5px"/>
+	        </ui:repeat>
+	
+	        <!-- Add Content type functionality -->
+	        <h:outputLink value="#" render="true">
+	            <h:graphicImage value="img/type_add.png" style="border:0;padding:0 4px;"/>
+	            <rich:componentControl for="addTypeDialog" operation="show" event="onclick"/>
+	        </h:outputLink>
+	    </s:div>
+	    
+	    <s:div rendered="#{currentContentItem.mediaContent != null}" style="width: 100%; margin: 10px; text-align: center">
+	        <center>
+	            <s:graphicImage style="padding: 3px; border: 1px solid black;"
+	                            value="#{currentContentItem.mediaContent.data}" 
+	                            fileName="#{currentContentItem.mediaContent.fileName}">
+	                <s:transformImageSize width="400" maintainRatio="true"/>
+	            </s:graphicImage>
+	        </center>
+	    </s:div>
+	    
+		<rich:editor id="wikiContent"
+		             required = "true"
+		             width    = "600"
+		             height   = "400"
+		             style    = "width: 100%"
+		             theme    = "advanced"
+		             customPlugins = "kiwiPlugins"
+		             configuration = "tinymce-full"
+		             plugins  = "safari,pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,kiwilink"
+		             value    = "#{viewAction.currentContentHtml}">
+		</rich:editor>
+		
+		<script type="text/javascript">
+		   function toggleEditor() {
+			   if(tinyMCE.getParam("readonly") == true) {
+				   tinyMCE.defParam("readonly",false);
+				   // load editor content and place in editor
+			   } else {
+                   tinyMCE.defParam("readonly",true);
+                   // load view content and place in editor
+			   }
+		   }
+		</script>
+    </h:form>
+
+</ui:define>
+</ui:composition>

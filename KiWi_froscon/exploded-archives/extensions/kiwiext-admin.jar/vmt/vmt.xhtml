@@ -1,0 +1,258 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a="http://richfaces.org/a4j" template="../layout/template.xhtml">
+
+
+	<ui:define name="header">
+		<link href="../stylesheet/vmt-style.css" rel="stylesheet"
+			type="text/css" />
+	</ui:define>
+
+	<ui:define name="body">
+
+		<ui:include src="enterPrefLabel.xhtml" />
+		<ui:include src="enterRelationship.xhtml" />
+		<ui:include src="enterSynonym.xhtml" />
+
+		<rich:dragIndicator id="indicator2"/>
+		<rich:dragIndicator id="indicator3"/>
+		
+		
+			<rich:toolBar>
+			<h:form>
+				<rich:dropDownMenu>
+					<f:facet name="label">
+						<h:panelGroup>
+							<h:outputText value="Operations" />
+						</h:panelGroup>
+					</f:facet>
+					
+					
+					<rich:menuItem submitMode="ajax" value="Add new Thesaurus" />
+					<rich:menuItem submitMode="ajax" value="Add new Top Concept " />
+
+					<rich:menuItem submitMode="ajax" value="Add new Sub Category"
+						id="prefLabelLink">
+						<rich:componentControl for="skosConceptPanel"
+							attachTo="prefLabelLink" operation="show" event="onclick" />
+					</rich:menuItem>
+					
+					<rich:menuItem submitMode="ajax" value="Delete selected Concept"
+						action="#{kiwiTreeAction.deleteSelectedConcept}" />
+					<rich:menuItem submitMode="ajax"
+						value="Define 2 concepts as related"
+						action="#{kiwiTreeAction.defineRelated}" />
+				</rich:dropDownMenu>
+
+				<rich:dropDownMenu>
+					<f:facet name="label1">
+						<h:panelGrid cellpadding="0" cellspacing="0" columns="2"
+							style="vertical-align:middle">
+							<h:outputText value="Help" />
+						</h:panelGrid>
+					</f:facet>
+
+					<rich:menuItem submitMode="ajax" value="Manual" />
+				</rich:dropDownMenu>
+				</h:form>
+			</rich:toolBar>
+
+			<br />
+
+			<h:panelGrid columns="3">
+			<s:div style="height:100%;vertical-align:top;">
+				<h:form>
+					<center>
+					<table>
+						<tr>
+							<td style="vertical-align:top">
+							<center>
+							<a:commandButton image="img/add.jpg" size = "10" id = "addConcept">
+							<rich:componentControl for="skosConceptPanel"
+							attachTo="addConcept" operation="show" event="onclick" />
+							</a:commandButton>
+							
+							<br/>
+							<h:outputText value="Add Concept" />
+							</center>
+							</td>
+						</tr>
+						<tr>
+							<td>
+							<center>
+							<a:commandButton image="img/synonym.jpg" id = "entSynonym">
+							<rich:componentControl for="synonymPanel"
+							attachTo="entSynonym" operation="show" event="onclick" />
+							</a:commandButton>
+							
+							<br/>
+							<h:outputText value = "Add alternative Label" /> 
+							</center>
+							</td>
+						</tr>
+						<tr>
+							<td>
+							<center>
+							<a:commandButton image="img/delete.jpg" action="#{kiwiTreeAction.deleteSelectedConcept}"/> <br/>
+							<h:outputText value = "Remove Concept" /> 
+							</center>
+							</td>
+						</tr>
+						<tr>
+							<td>
+							<center>
+							<a:commandButton image="img/related.jpg"/><br/>
+							<h:outputText value = "Set 2 Concepts related" /> 
+							</center>
+							</td>
+						</tr>
+					</table>
+					</center>
+				</h:form>
+				</s:div>
+				<h:form>
+				<rich:panel bodyClass="inpanelBody1">
+
+					<a:outputPanel layout="block" id="messages">
+						<rich:messages styleClass="message" />
+					</a:outputPanel>
+
+					<rich:tree ajaxSubmitSelection="true" switchType="ajax"
+						id="iptcTree" nodeSelectListener="#{kiwiTreeAction.onSelect}"
+						dragIndicator="indicator2"
+						ondragend = "#{rich:component('relationshipPanel')}.show();"
+						dropListener="#{kiwiTreeAction.dropListener}"
+						reRender="conceptInfo,src">
+
+<!--dropListener="#{kiwiTreeAction.dropListener}"-->
+
+						<rich:recursiveTreeNodesAdaptor
+							roots="#{kiwiTreeAction.sourceRoots}" var="item"
+							nodes="#{item.children}">
+							<rich:treeNode dragType="iptcConcepts" 
+								acceptedTypes="iptcConcepts">#{item}  
+							    <rich:dndParam name="label" type="drag"
+									value="Category: #{item}" />
+							</rich:treeNode>
+						</rich:recursiveTreeNodesAdaptor>
+					</rich:tree>
+				</rich:panel>
+				</h:form>
+				
+				<rich:panel bodyClass="inpanelBody2">
+					<rich:tabPanel id="conceptInfo">
+						
+						<rich:tab label="Selected Concept">
+							<h:form>
+							<h:outputText value="PrefLabel " />
+							<br />
+							<h:inputText
+								value="#{conceptInformation.preferedLabel}" size = "30"/>
+							<br />
+							<br />
+							<h:outputText value="Description " />
+							<br />
+    						  <h:inputTextarea value="#{conceptInformation.definition}"  rows="5" cols="25" />
+							<br />
+							<br />
+							<h:outputText value="Author " />
+							<br />
+							<h:inputText value="#{conceptInformation.author}" />
+							<br />
+							<br />
+							
+							<h:commandButton action="#{vmtFormAction.saveForm}" value="Save"
+								id="saveBtn"/>
+							</h:form>
+							
+							<rich:panel>
+								
+								<h:outputText value="Alternative Labels " />
+								<br />
+							<h:form>
+							 <h:selectOneListbox value="#{kiwiTreeAction.selectedAltLabel}" required="true" id = "al">                       
+								<s:selectItems value="#{conceptInformation.altLabels}" var="altLabel"                  
+	                   			label="#{altLabel}" noSelectionLabel="-"/>
+	              			  </h:selectOneListbox>
+		              		
+	              			  	<h:commandButton value="Delete" id="saveBtn" action="#{kiwiTreeAction.deleteAltLabel}"/>
+	              			 </h:form>
+	              			  	
+	              			  	<h:form>
+	              			  	<h:inputText value="#{kiwiTreeAction.altLabel}" />
+								<h:commandButton action="#{kiwiTreeAction.addAltLabel}" value="Add" id="addBtn" reRender ="al"/>
+								<br />
+								</h:form>
+							</rich:panel>
+
+						</rich:tab>
+
+						<rich:tab label="FreeTags to StructuredTags">
+							
+
+							<!--						<rich:dataList var="cI" value="#{freeTagMapper.freeContentItems}">-->
+							<!--							<h:outputText value="#{cI.title} " />-->
+							<!--						</rich:dataList>         -->
+
+							<f:facet name="header">
+								<h:outputText value="AllFreeTags" />
+							</f:facet>
+							
+						   	<a:poll interval="3500" reRender="src"/>
+
+
+							<h:dataTable id="src" columns="1"
+								value="#{freeTagMapper.freeContentItems}" var="fm"
+								footerClass="footerClass">
+								<h:column>
+									<a:outputPanel
+										style="width:100px;border:1px solid gray;padding:2px"
+										layout="block">
+<!--										<rich:dragSupport dragIndicator=":indicator3" dragValue="#{fm.title}"-->
+<!--											dragType="iptcConcepts">-->
+										<rich:dragSupport dragIndicator=":indicator3" dragValue="#{fm}"
+											dragType="iptcConcepts" ondragend="#{rich:component('relationshipPanel')}.show();" >
+											<rich:dndParam name="label1" value="Tag: #{fm.title}"/>
+										</rich:dragSupport>
+										<h:outputText value="#{fm.title}"></h:outputText>
+									</a:outputPanel>
+																		
+								</h:column>
+	
+							</h:dataTable>
+<!--							 Tester -->
+<!--							<rich:panel styleClass="dropTargetPanel">-->
+<!--										<f:facet name="header">-->
+<!--											<h:outputText value="Drop test" />-->
+<!--										</f:facet>-->
+<!--										<rich:dropSupport id="ggg" acceptedTypes="text" dropValue="ggg">-->
+<!--										</rich:dropSupport>-->
+<!--							</rich:panel>	-->
+							<!--  -->
+						</rich:tab>
+					</rich:tabPanel>
+				</rich:panel>
+			</h:panelGrid>
+		
+		
+		<a:form>
+		<h:selectOneMenu value="#{kiwiTreeAction.language}" required="true" immediate="true"  id = "lang" reRender = "lang">                        
+			<s:selectItems value="#{kiwiTreeAction.labels}" var="labs"                  
+                   label="#{labs}" noSelectionLabel="Select a language"/>
+        </h:selectOneMenu>
+        <h:commandButton value="Change language" reRender = "iptcTree"/>
+		</a:form>
+	
+		
+		<h:form>
+			<h:commandButton value="Visualize" action="#{thesaurusVisualizer.generateXml}"/>
+		</h:form>
+		
+	</ui:define>
+</ui:composition>

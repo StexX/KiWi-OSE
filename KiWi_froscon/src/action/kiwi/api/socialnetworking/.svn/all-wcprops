@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/socialnetworking
+END
+FacebookService.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/socialnetworking/FacebookService.java
+END
+FacebookServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/socialnetworking/FacebookServiceLocal.java
+END
+TwitterServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/socialnetworking/TwitterServiceLocal.java
+END
+TwitterServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/socialnetworking/TwitterServiceRemote.java
+END
+FacebookServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/socialnetworking/FacebookServiceRemote.java
+END
+SocialNetworkingService.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/socialnetworking/SocialNetworkingService.java
+END
+TwitterService.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/socialnetworking/TwitterService.java
+END

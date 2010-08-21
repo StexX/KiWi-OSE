@@ -1,0 +1,55 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+		    	xmlns:rich="http://richfaces.org/rich"
+		    	xmlns:a="http://richfaces.org/a4j"
+                template="template2.xhtml">
+
+<ui:define name="body">
+    <h1>Bei TagIT registrieren</h1>
+    
+    <rich:messages styleClass="message"/>
+    
+	<h:form id="formSignup">
+
+       <center>
+            <div id="loginDialog">
+                <p><strong>Bitte hier registrieren:</strong></p>
+			   <div class="dialog">
+		            <s:validateAll>
+		               <h:panelGrid columns="2" rowClasses="prop" columnClasses="name,value">
+		                  <h:outputLabel for="login">Benutzername:<!--  <s:decorate id="loginDecoration" template="layout/edit.xhtml"> --></h:outputLabel>
+			              <h:inputText id="login" value="#{registerAction.login}" required="true"><!--     	<a:support event="onblur" reRender="loginDecoration" bypassUpdates="true"/> -->
+			              </h:inputText>
+		                  <h:outputLabel for="fn">Vorname:</h:outputLabel> 
+		                  <h:inputText id="fn" value="#{registerAction.firstName}" required="true"/>
+		                  <h:outputLabel for="ln">Nachname:</h:outputLabel> 
+		                  <h:inputText id="ln" value="#{registerAction.lastName}" required="true"/>
+		                  <h:outputLabel for="password">Passwort:</h:outputLabel> 
+		                  <h:inputSecret id="password" value="#{registerAction.password}" required="true"/>
+		                  <h:outputLabel for="validate">Wiederholung:</h:outputLabel> 
+		                  <h:inputSecret id="validate" value="#{registerAction.validatePassword}" required="true"/>
+		                  <h:outputLabel for="email">E-Mail:</h:outputLabel> 
+		                  <h:inputText id="email" value="#{registerAction.email}"  required="true"/>
+		
+						  <h:graphicImage value="/seam/resource/captcha"/>
+						  <h:inputText id="verifyCaptcha" value="#{captcha.response}" required="true">
+		 							<s:validate />
+						  </h:inputText>
+						  <h:message for="verifyCaptcha"/>		               
+						</h:panelGrid>
+		            </s:validateAll>
+		            <h:commandButton value="Registrieren" action="#{registerAction.register}"/>
+		        </div>
+		    </div>
+        </center>
+        
+     </h:form>
+
+</ui:define> 
+</ui:composition>
+

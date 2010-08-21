@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pages xmlns="http://jboss.com/products/seam/pages"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://jboss.com/products/seam/pages http://jboss.com/products/seam/pages-2.0.xsd"
+
+       no-conversation-view-id="/home.xhtml"
+       login-view-id="/tagit2/layout/sn/login.xhtml">
+
+    <page view-id="/tagit2/*">
+        <action execute="#{currentApplicationFactory.switchApplication('tagit2')}"/>
+
+        <!--  SN Configuration -->
+        <!-- 
+        <navigation>
+	        <rule if-outcome="home">
+	            <end-conversation before-redirect="true"/>
+	            <redirect view-id="/tagit2/home.xhtml">
+	                <param name="uri" value="#{configurationService.startPage}"/>
+	                <param name="title" value=""/>
+	                <param name="kiwiid" value=""/>
+	                <param name="id" value=""/>
+	             </redirect>
+	        </rule>
+	        
+	        <rule if-outcome="login">
+	            <redirect view-id="/tagit2/layout/sn/login.xhtml"/>
+	        </rule>
+	        <rule if-outcome="register">
+	            <redirect view-id="/tagit2/layout/sn/register.xhtml"/>
+	        </rule>
+	        </navigation>
+        
+        <navigation from-action="#{identity.login}">
+            <rule if="#{identity.loggedIn}">
+                <end-conversation before-redirect="true"/>
+                <redirect view-id="/tagit2/home.xhtml"/>
+            </rule>
+        </navigation>
+
+        <navigation from-action="#{identity.logout}">
+            <rule>
+                <end-conversation before-redirect="true"/>
+                <redirect view-id="/tagit2/home.xhtml"/>
+            </rule>
+        </navigation>
+        -->
+    </page>
+    
+	<page view-id="tagit2/login.xhtml">
+		<!-- strange, but the navigation works only if the from-action 
+		definition is not set. -->
+		<navigation>
+			<rule if="#{not (currentUser.getLogin() eq 'anonymous')}">
+                <end-conversation before-redirect="true"/>
+				<redirect view-id="/tagit2/index.xhtml"/>
+			</rule>
+		</navigation>
+    </page>
+	
+	<page view-id="/tagit2/registration.xhtml">
+	   <navigation from-action="#{Registration.registration}">
+	      <rule if="#{not identity.loggedIn}">
+	         <redirect view-id="/tagit2/login.xhtml"/>
+	      </rule>
+	   </navigation>
+	</page>
+    
+</pages>

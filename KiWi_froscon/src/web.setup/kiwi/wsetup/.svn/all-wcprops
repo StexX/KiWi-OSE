@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/web.setup/kiwi/wsetup
+END
+JDBCUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/web.setup/kiwi/wsetup/JDBCUtil.java
+END
+JarUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/web.setup/kiwi/wsetup/JarUtil.java
+END
+GeneralSetupAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/web.setup/kiwi/wsetup/GeneralSetupAction.java
+END
+JDBCParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/web.setup/kiwi/wsetup/JDBCParser.java
+END
+DatabaseParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/web.setup/kiwi/wsetup/DatabaseParser.java
+END
+DatabaseSystem.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/web.setup/kiwi/wsetup/DatabaseSystem.java
+END
+KiWiDatabseSetupAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/web.setup/kiwi/wsetup/KiWiDatabseSetupAction.java
+END
+XMLUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/web.setup/kiwi/wsetup/XMLUtil.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/web.setup/kiwi/wsetup/package-info.java
+END
+KiWiSetupFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/web.setup/kiwi/wsetup/KiWiSetupFilter.java
+END
+KiWiApplicationSetupAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/web.setup/kiwi/wsetup/KiWiApplicationSetupAction.java
+END
+Authenticator.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/web.setup/kiwi/wsetup/Authenticator.java
+END
+KiWiSetupConstants.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/web.setup/kiwi/wsetup/KiWiSetupConstants.java
+END
+ApplicationsParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/web.setup/kiwi/wsetup/ApplicationsParser.java
+END

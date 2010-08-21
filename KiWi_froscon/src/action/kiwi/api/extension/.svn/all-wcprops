@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/extension
+END
+KiWiApplication.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/extension/KiWiApplication.java
+END
+KiWiExtension.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/extension/KiWiExtension.java
+END
+ExtensionServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/extension/ExtensionServiceRemote.java
+END
+KiWiAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/extension/KiWiAction.java
+END
+ExtensionService.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/extension/ExtensionService.java
+END
+KiWiService.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/extension/KiWiService.java
+END
+ExtensionServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/extension/ExtensionServiceLocal.java
+END
+KiWiWidget.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/extension/KiWiWidget.java
+END

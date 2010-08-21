@@ -1,0 +1,143 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/ANNIE/resources/schema
+END
+TokenSchema.xml
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/ANNIE/resources/schema/TokenSchema.xml
+END
+GpeSchema.xml
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/ANNIE/resources/schema/GpeSchema.xml
+END
+EmailSchema.xml
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/ANNIE/resources/schema/EmailSchema.xml
+END
+MoneySchema.xml
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/ANNIE/resources/schema/MoneySchema.xml
+END
+InternetSchema.xml
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/ANNIE/resources/schema/InternetSchema.xml
+END
+SentenceSchema.xml
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/ANNIE/resources/schema/SentenceSchema.xml
+END
+FacilitySchema.xml
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/ANNIE/resources/schema/FacilitySchema.xml
+END
+StreetSchema.xml
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/ANNIE/resources/schema/StreetSchema.xml
+END
+SyntaxTreeNodeSchema.xml
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/ANNIE/resources/schema/SyntaxTreeNodeSchema.xml
+END
+EntitySchema.xml
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/ANNIE/resources/schema/EntitySchema.xml
+END
+EntityHeadSchema.xml
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/ANNIE/resources/schema/EntityHeadSchema.xml
+END
+PercentSchema.xml
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/ANNIE/resources/schema/PercentSchema.xml
+END
+EntityMentionSchema.xml
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/ANNIE/resources/schema/EntityMentionSchema.xml
+END
+CorefSchema.xml
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/ANNIE/resources/schema/CorefSchema.xml
+END
+IdentifierSchema.xml
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/ANNIE/resources/schema/IdentifierSchema.xml
+END
+PhoneSchema.xml
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/ANNIE/resources/schema/PhoneSchema.xml
+END
+DateSchema.xml
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/ANNIE/resources/schema/DateSchema.xml
+END
+UtteranceSchema.xml
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/ANNIE/resources/schema/UtteranceSchema.xml
+END
+OrganizationSchema.xml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/ANNIE/resources/schema/OrganizationSchema.xml
+END
+PosSchema.xml
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/ANNIE/resources/schema/PosSchema.xml
+END
+AddressSchema.xml
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/ANNIE/resources/schema/AddressSchema.xml
+END
+PersonSchema.xml
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/ANNIE/resources/schema/PersonSchema.xml
+END
+LocationSchema.xml
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/ANNIE/resources/schema/LocationSchema.xml
+END

@@ -1,0 +1,43 @@
+10
+
+dir
+5584
+https://svn.salzburgresearch.at/svn/kiwi/KiWi/tags/froscon/view/gwt/modules
+https://svn.salzburgresearch.at/svn/kiwi
+
+
+
+2010-06-08T17:06:46.838712Z
+5229
+szaby_gruenwald
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+df910b12-e4fe-467b-9c3d-147a02c1fe00
+
+kiwi.view.dashboard.Dashboard
+dir
+
+kiwi.view.dashboard.dummy.Dummy
+dir
+
+kiwi.view.dashboard.profile.Profile
+dir
+
+kiwi.view.vmt.Vmt
+dir
+
+kiwi.view.widgets.references.ReferencesWidget
+dir
+

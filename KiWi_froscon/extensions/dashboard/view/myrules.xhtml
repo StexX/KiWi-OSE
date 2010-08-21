@@ -1,0 +1,66 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+                xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                template="/layout/template-2col.xhtml">
+
+
+    <ui:define name="header">
+       <a:loadScript src="resource://jquery.js"/>
+       
+       <link href="stylesheet/dashboard.css" rel="stylesheet" type="text/css" />
+    
+    </ui:define>
+
+    <ui:define name="navigation">
+        <ui:include src="layout/navigation.xhtml" />
+    </ui:define>
+
+   
+               
+    <ui:define name="body">
+     <rich:messages styleClass="message"/>
+        <h2>Rules</h2>
+         <h:form id="addRuleForm">
+            <a:outputPanel id="ruleList" layout="block">
+		       
+	                
+		             <h4><h:outputText value="Create your own rules:" /></h4>
+		             <h:outputText value="Recommend me pages with tags: " />
+		             <h:inputText  value="#{kiwi.dashboard.ruleAction.sentence}" />
+						        <h:commandButton action="#{kiwi.dashboard.ruleAction.createRule}" value="Save" id="saveBtn" reRender="ruleList" />
+		  			<h:outputText value=" " />
+		         
+	            
+	                <h3>My rules</h3>
+					<s:span id="myRuleSpan" rendered="#{kiwi.dashboard.ruleAction.ruleBasedRecommendations.size() &gt; 0}">	                
+					<c:forEach var="rule" items="#{kiwi.dashboard.ruleAction.ruleBasedRecommendations}" id="myrules">
+						
+						<div class="myRule" style="padding:10px 0;">
+				             
+				                 <h:outputText value="Recommend me pages with tag '#{rule.sentence}'."/>
+			                     <h:outputText value=" " />
+			                     <a:commandLink action="#{kiwi.dashboard.ruleAction.removeRule(rule)}" value="Remove" reRender="ruleList"/>
+			                     <h:outputText value=" " />
+			                     <a:commandLink action="#{kiwi.dashboard.ruleAction.generateRule(rule)}" value="Enable it!" reRender="ruleList"/>
+			                 
+			                 <h:outputText value=" " />
+						</div>	                 
+		                
+				 </c:forEach>
+			    </s:span>
+			     <s:span id="myNonRuleSpan" rendered="#{kiwi.dashboard.ruleAction.ruleBasedRecommendations.size() == 0}">
+			             <h:outputText value="You still have no personal rules."/>
+			     </s:span>
+        </a:outputPanel>
+        </h:form>
+    </ui:define>       
+ </ui:composition>

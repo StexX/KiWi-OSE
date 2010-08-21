@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelationViewerData>
+
+<!-- ------------------- Nodes ------------------------------ -->	
+
+
+	<Nodes>
+		<!--  
+			Define all occurring nodes
+			The tag name defines the class AND movieclip symbol to be used to display the node
+			
+			Available parameters are:
+				id:			Unique identifier for the node (case-sensitive). 
+				name:		Node title (displayed in center of the node)
+				
+			Additionally, you can add a description text as a child node. 
+			Make sure to add <![CDATA[ at the beginning and ]]> at the end of the description.
+			In actionscript, it will be available as _text property of the corresponding class instance.
+			
+			You can add any parameter you like; they will automatically be copied into the 
+			corresponding class instance. In this example, I added a URL property to some of the nodes.
+			In order to make these show up in the detail view, modify the getDetails() function in the
+			corresponding node class (see NodeClasses.as for an example).
+		
+		-->
+		<Node id="Add1" name="Additional Node 1">
+			
+			<![CDATA[This node was loaded to demonstrate the new progressive loading features.]]>
+		</Node>
+
+		<Node id="Add2" name="Additional Node 2">
+			<![CDATA[This node was loaded to demonstrate the new progressive loading features.]]>
+		</Node>
+
+		<Node id="Add3" name="Additional Node 3">
+			<![CDATA[This node was loaded to demonstrate the new progressive loading features.]]>
+		</Node>
+
+	</Nodes>
+
+<!-- ------------------- Relations ------------------------------ -->	
+
+	<Relations>
+    	<!--  
+    		Define all relations between the above defined nodes
+    		The tag name defines the class to be used to display the relation
+ 
+    		Available parameters are:
+    			fromID:		Unique identifier of the source node of the relation (case-sensitive). 
+    			toID:		Unique identifier of the target node of the relation (case-sensitive).
+ 
+ 			You can overwrite any of the parameters set in RelationTypes (like lineSize etc.)
+			per relation instance.
+    	-->
+		
+		<MyCustomRelation fromID="RB" toID="Add1"/>
+		<DirectedRelation fromID="RB" toID="Add2"/>
+		<UndirectedRelation fromID="RB" toID="Add3"/>
+		<DirectedRelation fromID="CC" toID="Add1"/>
+		<DirectedRelation fromID="CC" toID="Add2"/>
+		<DirectedRelation fromID="CC" toID="Add3"/>
+		<DirectedRelation fromID="Add1" toID="Add3"/>		
+		<DirectedRelation fromID="Add2" toID="Add3"/>		
+	</Relations>
+	
+	
+<!-- Do not change anything below. -->	
+</RelationViewerData>
+

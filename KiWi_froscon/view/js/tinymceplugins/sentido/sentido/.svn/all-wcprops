@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/view/js/tinymceplugins/sentido/sentido
+END
+context_to_parse_stylesheet.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/view/js/tinymceplugins/sentido/sentido/context_to_parse_stylesheet.xsl
+END
+sentido-embedded-html.css
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/view/js/tinymceplugins/sentido/sentido/sentido-embedded-html.css
+END
+om_to_pmml.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/view/js/tinymceplugins/sentido/sentido/om_to_pmml.xsl
+END
+parse_tree_to_openmath.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/view/js/tinymceplugins/sentido/sentido/parse_tree_to_openmath.xsl
+END
+sentido_logo_horizontal_40px.png
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/view/js/tinymceplugins/sentido/sentido/sentido_logo_horizontal_40px.png
+END
+sentido-icon_64x64.png
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/view/js/tinymceplugins/sentido/sentido/sentido-icon_64x64.png
+END
+cmml_to_om.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/view/js/tinymceplugins/sentido/sentido/cmml_to_om.xsl
+END
+om_to_cmml.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/view/js/tinymceplugins/sentido/sentido/om_to_cmml.xsl
+END

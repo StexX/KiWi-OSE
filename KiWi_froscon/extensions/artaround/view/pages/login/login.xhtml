@@ -1,0 +1,111 @@
+<!--
+	Copyright © Rolf Sint, Michael Schneider, Christian Osterrieder, 2010
+ */
+ -->
+
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                template="../../layout/template-3col.xhtml">
+                	
+	<ui:define name="breadcrumps">
+		<ul>
+			<li class="first">				 			
+				<s:link view="/artaround/home.xhtml" value="#{messages['artaround.breadcrumps.home']}"/>
+			</li>
+			<li>				 			
+				<s:link view="/artaround/pages/login/login.xhtml" value="#{messages['artaround.breadcrumps.login']}"/>
+			</li>		
+		</ul>
+	</ui:define>					
+	
+	<ui:define name="body">
+
+    <script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php/#{locale.language}_#{locale.country}" type="text/javascript"></script>
+    
+    <script>
+	    function facebook_onlogin() {
+	        FB.Connect.ifUserConnected("loginFB.seam?cid=#{conversation.id}");
+	    }
+    </script>
+    
+    <style>
+    	#cover {
+			margin-left:30px;
+			margin-top:23px;
+			width:400px;
+		}
+		#mask {
+			background:#ccc url(#{facesContext.externalContext.requestContextPath}/view/img/mask_gradient_1000.png) no-repeat;
+			background-position:-260px -79px;
+		}
+		
+		form.expose {
+			/*border:1px outset #aaa;*/
+			background:#fff url(#{facesContext.externalContext.requestContextPath}/view/img/h300.png) repeat-x;
+			padding:10px;
+			margin:5px 0;
+			text-align:center;
+			width:370px;
+			-moz-border-radius:4px;
+		}
+    </style>
+    
+    <script type="text/javascript">
+        FB.init("@facebook.key@", "fbconnect/xd_receiver.htm");
+    </script>
+    
+    <div id="cover">
+
+    <fieldset class="fieldsetborder">		 
+	<legend>#{messages['artaround.login.insertUserData']}</legend>
+	
+		<p><h:outputText value=" " /></p>
+		<rich:messages styleClass="message" />	
+		<h:form class="expose">	 
+		        <div id="loginDialog">			
+					<div class="dialog">
+					  <h:panelGrid columns="2" rowClasses="prop" columnClasses="name,value">
+						<h:outputLabel for="username">#{messages['artaround.login.username']}</h:outputLabel>
+						<h:inputText id="username" value="#{credentials.username}" />
+						<h:outputLabel for="password">#{messages['artaround.login.password']}</h:outputLabel>
+						<h:inputSecret id="password" value="#{credentials.password}" />
+						<h:outputLabel for="rememberMe">#{messages['artaround.login.rememberMe']}</h:outputLabel>
+						<h:selectBooleanCheckbox id="rememberMe" value="#{rememberMe.enabled}" />
+						<h:outputLabel for="loginButton"></h:outputLabel>
+						<h:commandButton id="loginButton" value="#{messages['artaround.login']}" action="#{identity.login}" />					
+					  </h:panelGrid>
+					</div>						
+			        <div class="registerText">
+						<s:link view="/artaround/pages/login/forgotPassword.xhtml" value="#{messages['artaround.login.forgotPassword']}"/>
+					</div>				
+			        <div class="registerText">#{messages['artaround.login.notRegisteredYet']}
+						<h:outputText value=" " /><s:link view="/artaround/pages/login/register.xhtml" value="#{messages['artaround.login.register']}"/>
+					</div>					
+		            <div class="alternative-login">
+		                <table>
+		                    <tr>
+		                        <td><img src="../../img/facebook-logo-small.png" /></td>
+		                        <td>
+		                            <a href="#" onclick="FB.Connect.requireSession(facebook_onlogin); return false;">#{messages['login.facebook']}</a>.
+		                        </td>
+		                    </tr>
+		                    <tr>
+		                        <td><img src="../../img/foaf-logo-small.png" /></td>
+		                        <td>
+		                            <s:link view="/loginFOAFSSL.xhtml" value="#{messages['login.foaf']}"/>.
+		                        </td>
+		                    </tr>
+		                </table>
+		            </div>						
+				</div>	
+	    </h:form>
+	   </fieldset>
+	 </div>
+	</ui:define> 
+</ui:composition>

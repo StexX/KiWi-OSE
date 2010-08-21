@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/test/service/search
+END
+SearchTests.xml
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/test/service/search/SearchTests.xml
+END
+SolrServiceTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/test/service/search/SolrServiceTest.java
+END

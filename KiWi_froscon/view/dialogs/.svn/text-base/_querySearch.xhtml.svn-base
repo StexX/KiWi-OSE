@@ -1,0 +1,194 @@
+<ui:component xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:rich="http://richfaces.org/rich"
+		    	xmlns:a="http://richfaces.org/a4j">
+	<s:div id="article2" style="float:left;width:80%;">
+        <h1><h:outputText value="#{messages['hdr.search']}"/></h1>
+        <rich:messages styleClass="message" />
+
+           
+            <div id="searchbar">
+                    <h:inputText value="#{queryWizardAction.searchEngine.searchQuery}" size="65" id="searchField"/>
+                    <!-- 
+                    <rich:suggestionbox for="searchField" suggestionAction="#{queryWizardAction.searchEngine.autocomplete}" var="result">
+	                    <h:column>
+	                        <h:outputText value="#{result}" />
+	                    </h:column>
+                    </rich:suggestionbox>
+                    -->
+                    <a:commandButton 
+                    	id="queryWizardSearchButton"
+                        action="#{queryWizardAction.searchEngine.runSearch()}"
+                        style="border: 0; margin-bottom: -5px; margin-right: 5px;margin-left: 5px;" 
+                        image="#{facesContext.externalContext.requestContextPath}/img/search.png" 
+                        value="#{messages['hdr.search']}"
+                        reRender="#{queryWizardAction.renderedSearchPageParts()}">
+                        <s:defaultAction/>
+                    </a:commandButton>
+            </div>
+
+			<div id="search_numberofresults">
+				<s:span id="nrOfResults">
+					<s:span rendered="#{queryWizardAction.searchEngine.searchResults.resultCount>1}">
+						Results #{(queryWizardAction.searchEngine.page-1) * queryWizardAction.searchEngine.pageSize + 1} - 
+						#{queryWizardAction.searchEngine.min(queryWizardAction.searchEngine.searchResults.resultCount, (queryWizardAction.searchEngine.page * queryWizardAction.searchEngine.pageSize))}
+						out of #{queryWizardAction.searchEngine.searchResults.resultCount} total.
+					</s:span>
+					<s:span rendered="#{2 > queryWizardAction.searchEngine.searchResults.resultCount }">
+						#{queryWizardAction.searchEngine.searchResults.resultCount} result found.
+					</s:span>
+					<br/>
+				</s:span>
+			</div>
+			<div id="search_view_sort">
+           		View: 
+           		<rich:inplaceSelect id="searchviewmode" value="#{kiwi.wiki.ui.layoutAction.viewMode}"
+        			defaultLabel="Click here to edit">
+	           		<a:support event="onviewactivated" 
+	           			actionListener="#{queryWizardAction.searchEngine.runSearch}" 
+	           			reRender="searchviewmode,searchresults" />
+	           		<s:selectItems value="#{kiwi.wiki.ui.layoutAction.viewModes}" var="mode" label="#{mode}"/>
+        		</rich:inplaceSelect>
+        		
+        		Sort by:
+				<rich:inplaceSelect id="searchsortby" value="#{searchAction.searchEngine.orderBy}"
+        			defaultLabel="Click here to edit">
+					<a:support event="onviewactivated" 
+						action="#{queryWizardAction.searchEngine.changeSortBy()}" 
+						reRender="searchsortby,searchresults"/>
+	           		<s:selectItems value="#{searchAction.searchEngine.orderBys}" var="orderBy" label="#{orderBy}"/>
+	           	</rich:inplaceSelect>
+			</div>
+			<br/>
+			<hr style="clear:both;"/>
+			
+			<!--  the search results in the left column -->
+			<s:div id="searchresults" style="clear:left;">
+				<c:forEach items="#{queryWizardAction.searchEngine.searchResults.results}" var="r" >
+					<!-- include template to show one result item. -->
+					<ui:include src="/#{kiwi.wiki.ui.layoutAction.getSearchResultItemTemplate(r.item)}">
+						<ui:param name="ci" value="#{r.item}" />
+						<ui:param name="mode" value="#{kiwi.wiki.ui.layoutAction.viewMode}" />
+						<ui:param name="score" value="#{r.score}" />
+						<ui:param name="preview" value="#{r.highlightPreview}"/>
+					</ui:include>
+					<br/>
+					<hr style="clear:both;"/>
+				</c:forEach> 
+			</s:div>
+		
+			<s:div id="resultNavigation">
+			   <!-- result navigation -->
+               <table width="100%">
+                   <tr>
+                       <td width="20%">
+                           <a:commandButton action="#{queryWizardAction.searchEngine.prevPage()}" 
+                           		value="previous page" 
+                           		reRender="#{queryWizardAction.renderedSearchPageParts()}" 
+                           		disabled="#{queryWizardAction.searchEngine.page eq 1}"/>
+                       </td>
+                       <td style="text-align: center; font-size: 140%;">
+                           <c:forEach items="#{queryWizardAction.searchEngine.pages}" var="page">
+                            	
+                            	<s:span rendered="#{ page eq 1 and queryWizardAction.searchEngine.page > 5 }">
+                            		<a:commandLink action="#{queryWizardAction.searchEngine.setPage(page)}" 
+                            			value="#{page}" 
+                            			reRender="#{queryWizardAction.renderedSearchPageParts()}" />
+                            		<h:outputText value=" ... " />	                            	
+                            	</s:span>
+
+                            	<s:span rendered="#{page eq queryWizardAction.searchEngine.page}">
+                            		<strong>
+		                            	<h:outputText value="#{page}"/>
+		                            </strong>
+                            	</s:span>
+                            	
+                            	<s:span rendered="#{ (page eq queryWizardAction.searchEngine.pages.size) and ((page-queryWizardAction.searchEngine.page) > 5) }">
+                            		<h:outputText value=" ... " />	                            	
+                            		<a:commandLink action="#{queryWizardAction.searchEngine.setPage(page)}" 
+                            			value="#{page}" 
+                            			reRender="#{queryWizardAction.renderedSearchPageParts()}" />
+                            	</s:span>
+
+                            	<s:span rendered="#{(page != queryWizardAction.searchEngine.page) and (5 > page - queryWizardAction.searchEngine.page) and (page - queryWizardAction.searchEngine.page > -5) }">
+                            		<a:commandLink action="#{queryWizardAction.searchEngine.setPage(page)}" 
+                            			value="#{page}" 
+                            			reRender="#{queryWizardAction.renderedSearchPageParts()}" />
+                            	</s:span>
+                           		
+                           		<h:outputText value=" " />
+                           </c:forEach>
+                       </td>
+                       <td style="text-align: right" width="20%">
+                           <a:commandButton action="#{queryWizardAction.searchEngine.nextPage()}" 
+                           		value="next page" 
+                           		reRender="#{queryWizardAction.renderedSearchPageParts()}" 
+                           		disabled="#{queryWizardAction.searchEngine.page eq queryWizardAction.searchEngine.pages.size}"/>
+                       </td>    
+                   </tr>
+               </table>
+			</s:div>
+    </s:div>
+   
+    <s:div id="articlemeta" style="float:right;width:18%;border-left: solid #ccc 1px; padding:5px;">
+           <h2>Refine your Search</h2> 
+           <h3>Tags</h3> 
+           <a:form>
+           <c:forEach var="tagFacet" items="#{queryWizardAction.searchEngine.relevantTags}" varStatus="status">
+               
+               <a:commandLink 
+                       action="#{queryWizardAction.searchEngine.addSearchTag(tagFacet.content.title)}" 
+                       value="#{tagFacet.content.title} (#{tagFacet.resultCount})" 
+                       reRender="#{queryWizardAction.renderedSearchPageParts()}"/>
+               <h:outputText value=", " rendered="#{not status.last}"/>                
+           </c:forEach>
+           </a:form>
+           
+           <h3>Types</h3>
+           <a:form>
+           <ul>
+            <c:forEach var="typeFacet" items="#{queryWizardAction.searchEngine.relevantTypes}">
+               <li>
+	                <a:commandLink 
+	                        action="#{queryWizardAction.searchEngine.addSearchType(typeFacet.content)}" 
+	                        value="#{typeFacet.content.label} (#{typeFacet.resultCount})" 
+	                        reRender="#{queryWizardAction.renderedSearchPageParts()}"/>
+               </li>	               
+            </c:forEach>
+           </ul>
+           </a:form>
+           <h3>Persons</h3>
+           <a:form>
+           <ul>
+               <c:forEach var="personFacet" items="#{queryWizardAction.searchEngine.relevantPersons}">
+                  <li>
+                       <a:commandLink 
+                               action="#{queryWizardAction.searchEngine.addSearchPerson(personFacet.content.login)}" 
+                               value="#{personFacet.content.firstName} #{personFacet.content.lastName} (#{personFacet.resultCount})" 
+                               reRender="#{queryWizardAction.renderedSearchPageParts()}"/>
+                  </li>                   
+               </c:forEach>
+           </ul>
+           </a:form>
+           
+           <c:forEach items="#{queryWizardAction.searchEngine.rdfFacets}" var="facet">
+               <h3><h:outputText value="#{facet.label}" /></h3>
+               <a:form>
+               <ul>
+                <c:forEach items="#{queryWizardAction.searchEngine.getRdfFacetValues(facet)}" var="rdfFacet">
+                   <li>
+                       <a:commandLink 
+                               action="#{queryWizardAction.searchEngine.addRdfSearchProperty(facet,rdfFacet.content)}" 
+                               value="#{rdfFacet.content} (#{rdfFacet.resultCount})" 
+                               reRender="#{queryWizardAction.renderedSearchPageParts()}"/>
+                   </li>
+                </c:forEach>
+               </ul>
+               </a:form>
+           </c:forEach>
+       </s:div>
+</ui:component>

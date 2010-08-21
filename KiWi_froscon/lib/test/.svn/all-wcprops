@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/test
+END
+thirdparty-all.jar
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/test/thirdparty-all.jar
+END
+jboss-embedded-all.jar
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/test/jboss-embedded-all.jar
+END
+antlr-testing.jar
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/test/antlr-testing.jar
+END

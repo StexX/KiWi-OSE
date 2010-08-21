@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/util
+END
+KiWiStringUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/util/KiWiStringUtils.java
+END
+MD5.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/util/MD5.java
+END
+ConcurrentHashSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/util/ConcurrentHashSet.java
+END
+KiWiXomUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/util/KiWiXomUtils.java
+END
+KiWiFormatUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/util/KiWiFormatUtils.java
+END
+KiWiCollections.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/util/KiWiCollections.java
+END

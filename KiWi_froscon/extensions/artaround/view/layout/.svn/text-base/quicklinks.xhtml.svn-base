@@ -1,0 +1,93 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:c="http://java.sun.com/jstl/core">	
+	
+
+	
+	<style>
+		/* root element for vert_accordion. decorated with rounded borders and gradient background image */
+		#vert_accordion {
+		
+			/*background:#fff url(#{facesContext.externalContext.requestContextPath}/view/img/h300.png) ;*/
+			background:#fff;
+			width: 200px;
+			/*border:1px solid #eee;	*/
+			-background:#666;
+			margin-top:20px;
+			margin-left:-10px;
+			
+		}
+		
+		/* vert_accordion header */
+		#vert_accordion h2 {
+		
+			/*background:#fff url(#{facesContext.externalContext.requestContextPath}/view/img/h30.png);*/
+			background:#fff;
+			margin:0;
+			padding:5px 15px;
+			font-size:14px;
+			font-weight:normal;
+			/*border:1px solid #eee; */
+			border-bottom:1px solid #eee;
+			cursor:pointer;		
+			color:#452;
+		}
+		
+		/* currently active header */
+		#vert_accordion h2.current {
+		
+			cursor:default;
+			background-color:#eee;
+		}
+		
+		/* vert_accordion pane */
+		#vert_accordion div.pane {
+		
+			/*border:1px solid #eee;*/
+			border-width:0 2px;
+			display:none;
+			height:180px;
+			padding:15px;
+			color:#aaa;
+			font-size:12px;
+		}		
+		
+		#vert_accordion div.pane p {			
+			margin:0 0 5px 0;
+			
+		}
+		
+	</style>
+	
+	<!-- vert_accordion -->	
+	<div id="vert_accordion">
+			
+			<!--  Lupe  -->
+			<img src="#{facesContext.externalContext.requestContextPath}/view/img/lupe_30.png"  style="margin:0 0 10px 15px;"/>
+			<br/>
+			<c:if test="#{identity.loggedIn}">
+			<!--  Tab 0 Mein Artaround -->
+			<h2>Mein ArtAround</h2>
+			<!--  Tab 0 Content -->
+			<div class="pane" style="display:block">		
+				<h:form>
+					<ul>
+						<li><h:commandLink  value="#{messages['artaround.myProfil']}" action="profil" style="text-decoration:none;"/></li>
+						<li><h:commandLink  value="#{messages['artaround.myProfil.newArtwork']}" action="#{artWorkAction.neuesKunstwerk}" style="text-decoration:none;"/></li>
+						<li><h:commandLink  value="#{messages['artaround.myProfil.myArtworks']}" action="myArtWorks" style="text-decoration:none"/></li>
+						<li><h:commandLink  value="#{messages['artaround.myProfil.myContacts']}" style="text-decoration:none"/></li>
+						<li><h:commandLink  value="#{messages['artaround.myProfil.myBlog']}" action = "myBlog" style="text-decoration:none"/></li>
+						<li><h:commandLink  value="#{messages['artaround.myProfil.myEvents']}" style="text-decoration:none"/>	</li>								
+					</ul>
+				</h:form>
+			</div>	
+		</c:if>			
+	</div>	
+	
+	
+</ui:composition>

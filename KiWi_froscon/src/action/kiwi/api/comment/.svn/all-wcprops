@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/comment
+END
+CommentServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/comment/CommentServiceRemote.java
+END
+CommentService.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/comment/CommentService.java
+END
+CommentServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/comment/CommentServiceLocal.java
+END

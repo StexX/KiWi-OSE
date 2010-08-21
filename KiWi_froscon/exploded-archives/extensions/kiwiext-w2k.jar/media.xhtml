@@ -1,0 +1,51 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+		    	xmlns:a4j="http://richfaces.org/a4j"
+		    	template="layout/template.xhtml">
+
+    <ui:define name="content">
+
+	  	<h1>#{currentContentItem.title}</h1>
+	  	
+	  	<h:form>
+		  	<div style="text-align: center; margin-top: 2em;">
+				<s:div id="media_content">
+				   	<s:div rendered="#{mediaAction.mediaContent == null}" style="width: 96%; margin: 1%; padding: 10px; border:1px solid red; text-align: center;">
+				   		No media content associated with this content item.
+				    </s:div>
+				   	<s:div rendered="#{mediaAction.unsaved}" style="width: 96%; margin: 1%; padding: 10px; border:1px solid red; text-align: center;">
+				   		There are unsaved changes, please click on "Save" to make them permanent.
+				    </s:div>
+				    <s:div rendered="#{mediaAction.mediaContent != null}" style="width: 100%; margin: 10px; text-align: center">
+				    	<center>
+					    	<s:graphicImage style="padding: 3px; border: 1px solid black;"
+					    					value="#{mediaAction.mediaContent.data}" 
+					    	                fileName="#{mediaAction.mediaContent.fileName}"/>
+				    	</center>
+				    </s:div>
+			    </s:div>
+			
+				<rich:fileUpload 
+						fileUploadListener="#{mediaAction.listener}"
+						immediateUpload="true"
+						listHeight="60"
+						listWidth="100%"
+				        allowFlash="true">
+			        <a4j:support event="onuploadcomplete" reRender="media_content" />
+		            <f:facet name="label">
+		                <h:outputText value="{_KB}KB from {KB}KB uploaded --- {mm}:{ss}" />
+		        	</f:facet>
+			    </rich:fileUpload>
+	
+	            <h:commandButton action="#{mediaAction.storeContentItem}" value="Save" />
+	            <s:button action="#{mediaAction.cancel}" value="Cancel" rendered="#{conversation.nested}" />
+		   </div>
+	   </h:form>
+    </ui:define>
+</ui:composition>

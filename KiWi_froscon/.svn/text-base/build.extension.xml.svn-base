@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+
+<!--
+This ant build file allows you to compile and deploy kiwi extension(s)
+placed outside of the kiwi project.
+
+NOTE : The extension deployed in this form exist only on your ditribution
+and they WILL BE NOT PART OF THE MAIN KIWI DISTRIBUTION.
+
+For the moment is in the experimantal form.
+
+The prohect name is your extension name.
+-->
+<project name="ceqTest" default="explode" basedir=".">
+
+    <property name="kiwi.dir" value="/labo/kiwi.ws/KiWi" />
+    <property name="extensionName" value="ceqTest" />
+    <property name="class.dir" value="${extensionName}/classes" />
+
+    <property name="javac.debug" value="true" />
+    <property name="javac.deprecation" value="false" />
+
+    <property name="lib.dir" value="lib" />
+    <property name="dest.dir" value="destination" />
+
+    <property name="view.dir" value="extensions/ceqTest/view" />
+    <property name="src.dir" value="extensions/ceqTest/src" />
+
+    <property name="jboss.home" value="/jBoss.4" />
+    <property name="deploy.dir" value="${jboss.home}/server/default/deploy" />
+    <property name="ear.deploy.dir" value="${deploy.dir}/KiWi.ear" />
+    <property name="ejb-jar.deploy.dir" value="${ear.deploy.dir}/${extensionName}.jar" />
+
+    <fileset id="lib" dir="${lib.dir}">
+        <include name="*.jar" />
+    </fileset>
+
+    <path id="build.classpath">
+        <fileset refid="lib" />
+        <pathelement location="${kiwi.dir}/exploded-archives/KiWi.jar"/>
+    </path>
+
+    <target name="buidExtension" description="build only this extension">
+        <mkdir dir="${class.dir}"/>
+
+        <javac classpathref="build.classpath"
+               destdir="${class.dir}"
+               debug="${javac.debug}"
+               deprecation="${javac.deprecation}"
+               nowarn="on">
+            <src path="${src.dir}" />
+        </javac>
+
+        <copy todir="${class.dir}" failonerror="false">
+            <fileset dir="${src.dir}/META-INF"/>
+        </copy>
+
+    </target>
+
+    <target name="cleanExplode" depends="cleanExtension, undeployExtension, buidExtension">
+
+        <mkdir dir="${jar.deploy.dir}" />
+        <mkdir dir="${war.deploy.dir}" />
+
+    </target>
+
+    <target name="explode" description="build only this extension">
+        <mkdir dir="${ejb-jar.deploy.dir}"/>
+
+        <copy todir="${ejb-jar.deploy.dir}" failonerror="false">
+            <fileset dir="${view.dir}"/>
+        </copy>
+
+        <copy todir="${ejb-jar.deploy.dir}">
+            <fileset dir="${class.dir}"/>
+        </copy>
+
+        <property name="extensionPalceHoler" value="&lt;!--kex-->" />
+
+        <replace file="${ear.deploy.dir}/META-INF/application.xml">
+            <replacefilter token="${extensionPalceHoler}"
+                           value="&lt;module>&lt;ejb>${extensionName}.jar&lt;/ejb>&lt;/module>${extensionPalceHoler}"/>
+        </replace>
+
+    </target>
+
+    <target name="undeployExtension" description="build only this extension">
+        <delete dir="${ejb-jar.deploy.dir}"/>
+    </target>
+
+    <target name="cleanExtension" description="build only this extension">
+        <delete dir="${class.dir}"/>
+    </target>
+
+</project>

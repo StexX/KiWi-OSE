@@ -1,0 +1,108 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:a="http://richfaces.org/a4j"
+    xmlns:c="http://java.sun.com/jstl/core"
+    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+    template="layout/template.xhtml">
+
+	<ui:define name="links">
+		<a:loadScript src="resource://jquery.js"/>
+        <script type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/js/jquery-ui-1.7.2.min.js"></script>
+		<link rel="stylesheet" href="http://jquery-ui.googlecode.com/svn/tags/latest/themes/base/jquery-ui.css" type="text/css" media="all" />
+		<script type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/widgets/ceq/widget.ceqchart.js" />
+		<style type="text/css">
+			.ui-datepicker{
+				z-index:100;
+			}
+		</style>
+	</ui:define>
+
+    <ui:define name="body">
+        <h1>CEQ Information</h1>
+        <s:span>
+            <rich:tabPanel width="100%" headerAlignment="left">
+
+                <rich:tab label="Content Item Equity">
+                    <img src="#{facesContext.externalContext.requestContextPath}/seam/resource/services/widgets/ceq/buble/image?uri=http://localhost/content/FrontPage"/>
+                    <rich:panel>
+                        <h:outputText value="Infomation Equity Value : " />
+                        <ui:repeat value="#{ceqAction.getContentItemEquityList(currentContentItem)}"
+                                   var="app">
+                            <h:outputText value="#{app}" />
+                        </ui:repeat>
+
+                        <h:outputText value="(#{ceqAction.getContentItemEquity(currentContentItem)})" /> <br/>
+                        <h:outputText value="Item Hits : #{ceqAction.getHits(currentContentItem)}" /> <br/>
+                    </rich:panel>
+
+                    <rich:panel>
+                        <h:outputText value="Best : #{ceqAction.getBestItem()}" /><br/>
+                        <h:outputText value="Worst : #{ceqAction.getWorstItem()}" /><br/>
+                    </rich:panel>
+
+                    <div id="ceqchart_placeholder"
+                         style="height:300px;"></div>
+                    <div id="ceqchart" 
+                         style="background-color:white;position:absolute;margin-left:5px;margin-top:-300px;"></div>
+                    <script type="text/javascript">
+                        jQuery(document).ready(function(){
+                        jQuery('#ceqchart').ceqchart({
+                    		uri:           '#{currentContentItem.resource.uri}',
+                                webServiceUrl: '#{facesContext.externalContext.requestContextPath}/seam/resource/services/widgets/ceq/chart'
+			});
+                        });
+                    </script>
+            
+                    <rich:panel>
+            
+                    <table border="1">
+                        <ui:repeat value="#{ceqAction.getActivityValues(currentContentItem)}"
+                                    var="equities">
+                            <tr>
+                                <th>#{equities}</th>
+                            </tr>
+                        </ui:repeat>
+                    </table>
+
+                </rich:panel>
+                
+                
+                </rich:tab>
+
+
+                <rich:tab label="User Equity">
+
+                    <rich:panel>
+                        <h:outputText value="User equity #{ceqAction.getUserEquity(currentUser)}" /><br/>
+                        <h:outputText value="User Hits : #{ceqAction.getHits(currentContentItem)}" /><br/>
+                    </rich:panel>
+
+                    <rich:panel>
+                        <h:outputText value="Best : #{ceqAction.getBestUser()}" /><br/>
+                        <h:outputText value="Worst : #{ceqAction.getWorstUser()}" /><br/>
+                    </rich:panel>
+
+                </rich:tab>
+
+                <rich:tab label="Tag Equity">
+
+                    <rich:panel>
+                        <h:outputText value="Tag Equity Value : " />
+                        <h:outputText value="#{ceqAction.getTagEquity(currentContentItem)}" /> <br/>
+                    </rich:panel>
+
+                </rich:tab>
+            </rich:tabPanel>
+            
+            
+        </s:span>
+        
+        
+    </ui:define>
+</ui:composition>

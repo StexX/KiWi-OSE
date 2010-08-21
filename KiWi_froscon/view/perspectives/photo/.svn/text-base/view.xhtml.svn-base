@@ -1,0 +1,52 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+    xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:a="http://richfaces.org/a4j">
+	    <h1>
+	    	#{contentItem.title}
+	    </h1>
+        <span>
+            <h:outputText value="#{messages['wiki.createdon']} "/><h:outputText value="#{contentItem.created}"><s:convertDateTime pattern="dd/MM/yyyy"/></h:outputText><h:outputText value=" - "/> 
+            <h:outputText value="#{messages['wiki.updateon']} "/><h:outputText value="#{contentItem.modified}"><s:convertDateTime pattern="dd/MM/yyyy"/></h:outputText><h:outputText value=" "/> 
+            <h:outputText value="#{messages['wiki.by']} "/><kiwi:link resource="#{contentItem.author.resource}" value=" #{contentItem.author.firstName} #{contentItem.author.lastName}"/>
+        </span>
+        <br />
+
+        <s:div rendered="#{contentItem.mediaContent != null}" >
+            <center>
+				<kiwi:mediaContent contentItem="#{contentItem}" 
+						edit="true"
+						style="padding: 3px; margin:4px;border:solid 1px #ccc;">
+					<ui:define name="nomedia">
+						<h:outputText value="No image" />
+					</ui:define>
+					<s:transformImageSize 
+						maintainRatio="true"
+						width="400"/>
+				</kiwi:mediaContent>
+		    </center>
+		    
+		</s:div>
+		<center>
+		    <s:div rendered="#{currentContentItem.textContent==null}" style="color:#ccc;">
+		    	No description yet.
+		    </s:div>
+        	<s:span rendered="#{currentContentItem.textContent!=null}" 
+        		styleClass="ImageDescription">
+		    	<kiwi:renderHtml contentItem="#{currentContentItem}" user="#{currentUser}"/>
+        	</s:span>
+	    </center>
+        <!-- include resource from webservice so that we can support JSF tags inside the content -->
+ 
+	    <!--  commenting functionality -->
+	    <hr style="clear:left;" />
+        <ui:include src="/panels/commenting.xhtml">
+			<ui:param name="editable" value="true" />
+		</ui:include>
+        
+</ui:composition>

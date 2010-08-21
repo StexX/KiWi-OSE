@@ -1,0 +1,32 @@
+span.annotation{
+	color:white;
+	margin: 0px 1px;
+	font-family: arial;
+	/*background-color: rgb(28, 116, 31 );	*/
+}
+
+span.annotation-start{
+	padding: 0px 5px 0px 1px;
+	background-image: url('../img/annotstart.gif');
+	background-repeat: no-repeat;
+	background-position: right;
+}
+
+span.annotation-end{
+	padding: 0px 1px 0px 5px;
+	background-image: url('../img/annotend.gif');
+	background-repeat: no-repeat;
+	background-position: left;
+}
+
+span.annot-emph-uncommited{
+	border-bottom: dashed 1px blue;
+}
+
+span.annot-emph-commited{
+	border-bottom: solid 1px blue;
+}
+
+
+/* panel stylesheet*/
+.panel_wrapper div.current {height:200px;}

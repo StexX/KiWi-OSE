@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/solr
+END
+apache-solr-1.4-dev.war
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/solr/apache-solr-1.4-dev.war
+END
+web.xml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/solr/web.xml
+END

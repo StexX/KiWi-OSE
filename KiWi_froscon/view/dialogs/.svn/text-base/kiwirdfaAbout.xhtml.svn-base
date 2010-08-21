@@ -1,0 +1,62 @@
+<rich:modalPanel
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+   	  xmlns:rich="http://richfaces.org/rich"
+ 	  xmlns:a4j="http://richfaces.org/a4j"
+ 	  width="400"
+ 	  height="250"
+      id="kiwirdfaAboutPanel">
+        <f:facet name="header">
+            <h:panelGroup>
+                <h:outputText value="RDFa Create Component"></h:outputText>
+            </h:panelGroup>
+        </f:facet>
+        
+        <p style="margin-top: 20px; margin-left: 10px; margin-right: 10px;" class="help">
+        	Here you can embed a page that is related to the current page. 
+        </p>
+        
+       	<a4j:region renderRegionOnly="true">
+       	    
+       	    <h:form id="kiwirdfaAboutForm">
+       	    	<rich:messages styleClass="message"/>
+       	    	<h:panelGrid columns="2" rowClasses="prop" columnClasses="name,value">
+       	    	
+       	    		<h:outputLabel for="rdfaComponentRelation">Relation</h:outputLabel>
+		            
+		            <h:selectOneMenu value="#{kiwirdfaAction.selectedComponentRelation}" id="rdfaComponentRelation">
+						<s:selectItems value="#{kiwirdfaAction.possibleComponentRelations}" var="item" label="#{item.label}" itemValue="#{item.value}" noSelectionLabel="Please select ..."/>
+					</h:selectOneMenu>
+		            
+		        </h:panelGrid>
+		
+		        <div class="actionButtons center">
+		            <a4j:commandButton value="Create/Update" id="btnCreateRdfaAbout" 
+		            	action="#{kiwirdfaAction.createOrUpdateComponent}"
+		            	data="#{kiwirdfaAction.componentJS}"
+		            	oncomplete="kiwirdfaJSLib.onCreateOrUpdateAbout(data)" />
+		            	
+		            <a4j:commandButton value="Delete" id="btnDeleteRdfaAbout" 
+		            	action="#{kiwirdfaAction.deleteComponent}"
+		            	oncomplete="kiwirdfaJSLib.onDeleteAbout()" />
+		            	
+		            <a4j:commandButton value="Cancel" id="btnKiwirdfaCancelAbout"
+		            	action="#{kiwirdfaAction.cancelComponent}" 
+		            	oncomplete="kiwirdfaJSLib.onCancelAbout()" />
+		            	
+		            <a4j:jsFunction name="kiwirdfaSetAbout" reRender="rdfaComponentRelation">
+		        		<a4j:actionparam name="Param1" assignTo="#{kiwirdfaAction.componentJS}"/>
+		        	</a4j:jsFunction>
+		        
+		        	<!--  <a4j:jsFunction name="onKiWiRDFaCreateOrUpdate"
+		            	data="#{kiwirdfaAction.property}" 
+	                	oncomplete="kiwirdfaJSLib.onCreateOrUpdate(data)" /> -->
+	                	
+		        </div>
+			</h:form>
+		</a4j:region>
+
+</rich:modalPanel>

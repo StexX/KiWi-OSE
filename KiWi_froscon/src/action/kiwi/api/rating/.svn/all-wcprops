@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/rating
+END
+RatingServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/rating/RatingServiceRemote.java
+END
+RatingService.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/rating/RatingService.java
+END
+RatingFacade.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/rating/RatingFacade.java
+END
+RatingServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/rating/RatingServiceLocal.java
+END
+RatingDataFacade.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/rating/RatingDataFacade.java
+END

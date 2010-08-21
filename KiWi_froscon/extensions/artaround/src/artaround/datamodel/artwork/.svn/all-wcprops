@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/artaround/src/artaround/datamodel/artwork
+END
+ArtWorkFacade.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/artaround/src/artaround/datamodel/artwork/ArtWorkFacade.java
+END
+ArtWorkTextFacade.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/artaround/src/artaround/datamodel/artwork/ArtWorkTextFacade.java
+END
+MultimediaFacade.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/artaround/src/artaround/datamodel/artwork/MultimediaFacade.java
+END
+MultimediaTextFacade.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/artaround/src/artaround/datamodel/artwork/MultimediaTextFacade.java
+END

@@ -1,0 +1,80 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+<!ENTITY hgtags "http://www.holygoat.co.uk/owl/redwood/0.1/tags/">
+<!ENTITY sioc "http://rdfs.org/sioc/ns#">
+<!ENTITY foaf "http://xmlns.com/foaf/0.1/">
+<!ENTITY cont "http://www.w3.org/2000/10/swap/pim/contact#">
+<!ENTITY geo "http://www.w3.org/2003/01/geo/wgs84_pos#">
+<!ENTITY kiwi "http://www.kiwi-project.eu/kiwi/core/">
+<!ENTITY test "http://www.kiwi-project.eu/kiwi/test/">
+<!ENTITY dc "http://purl.org/dc/elements/1.1/">]>
+<rdf:RDF 
+    xmlns:rdf="&rdf;"
+    xmlns:rdfs="&rdfs;"
+    xmlns:owl="&owl;"
+    xmlns:dc="&dc;"
+    xmlns:foaf="&foaf;"
+    xmlns:kiwi="&kiwi;"
+    xmlns:geo="&geo;"
+    xmlns:cont="&cont;"
+    xmlns:hgtags="&hgtags;"
+    xmlns:test="&test;"
+    xmlns:sioc="&sioc;"
+    xml:base="&test;">
+
+    <owl:Ontology rdf:about="">
+        <rdfs:comment>This is an ontology designed for integration testing the KiWi core system</rdfs:comment>
+        <rdfs:label>KiWi Test</rdfs:label>
+    </owl:Ontology>
+    
+    <owl:Class rdf:about="&test;C1">
+        <rdfs:label>C1</rdfs:label>
+    </owl:Class>
+    
+    <owl:Class rdf:about="&test;C2">
+        <rdfs:label>C2</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&test;C1"/>
+    </owl:Class>
+    <owl:Class rdf:about="&test;C3">
+        <rdfs:label>C3</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&test;C1"/>
+    </owl:Class>
+    
+    <owl:Class rdf:about="&test;D1">
+        <rdfs:label>D1</rdfs:label>
+    </owl:Class>
+    
+    <owl:Class rdf:about="&test;D2">
+        <rdfs:label>D2</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&test;D1"/>
+    </owl:Class>
+
+    <owl:ObjectProperty rdf:about="&test;c1d1">
+        <rdfs:label>C1 to D1</rdfs:label>
+        <rdfs:domain rdf:resource="&test;C1"/>
+        <rdfs:range rdf:resource="&test;D1"/>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="&test;c1c2">
+        <rdfs:label>C1 to C2</rdfs:label>
+        <rdfs:domain rdf:resource="&test;C1"/>
+        <rdfs:range rdf:resource="&test;C2"/>
+    </owl:ObjectProperty>
+    
+    <owl:DatatypeProperty rdf:about="&test;prop1">
+        <rdfs:label>property 1 (Domain C1)</rdfs:label>
+        <rdfs:domain rdf:resource="&test;C1"/>
+    </owl:DatatypeProperty>
+    
+    
+    <test:C1 rdf:about="&test;instance1">
+        <rdfs:label>Instance 1</rdfs:label>
+    </test:C1>
+    <test:D1 rdf:about="&test;instance2">
+        <rdfs:label>Instance 2</rdfs:label>
+    </test:D1>
+</rdf:RDF>

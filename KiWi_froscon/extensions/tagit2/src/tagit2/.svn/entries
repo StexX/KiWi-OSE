@@ -1,0 +1,46 @@
+10
+
+dir
+5584
+https://svn.salzburgresearch.at/svn/kiwi/KiWi/tags/froscon/extensions/tagit2/src/tagit2
+https://svn.salzburgresearch.at/svn/kiwi
+
+
+
+2010-08-16T15:36:05.160681Z
+5557
+steffi
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+df910b12-e4fe-467b-9c3d-147a02c1fe00
+
+action
+dir
+
+api
+dir
+
+cfg
+dir
+
+service
+dir
+
+util
+dir
+
+webservice
+dir
+

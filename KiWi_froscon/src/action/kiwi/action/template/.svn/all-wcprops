@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/action/template
+END
+SFormManage.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/action/template/SFormManage.java
+END
+SFormTemplAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/action/template/SFormTemplAction.java
+END
+TemplateEditingAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/action/template/TemplateEditingAction.java
+END
+SFormInstanceAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/action/template/SFormInstanceAction.java
+END
+SFormLink.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/action/template/SFormLink.java
+END
+SFormFacade.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/action/template/SFormFacade.java
+END

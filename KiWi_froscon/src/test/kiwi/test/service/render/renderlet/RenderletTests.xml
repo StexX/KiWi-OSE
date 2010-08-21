@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+
+<suite name="RenderletTests" verbose="2" parallel="false">
+    <test name="RdfaRenderlet" junit="false">
+        <classes>
+            <class name="kiwi.test.service.render.renderlet.RdfaRenderletTest"/>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,50 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+			 	xmlns:c="http://java.sun.com/jstl/core"
+                template="../../layout/box_template.xhtml">
+                	
+	<ui:define name="box_header">
+		<h2><h:outputText value="#{messages['ideator.search.facets.title']}" /></h2>
+	</ui:define>
+	
+	<ui:define name="box_content">
+		<div class="line_box right_box">
+			<h3><h:outputText value="#{messages['ideator.search.facets.tags']}" /></h3>
+			<h:form styleClass="box_facets">
+				<ui:repeat value="#{ideator.searchAction.tagFacetList}" var="tag">
+					<h:commandLink value="#{tag.content.title}(#{tag.resultCount})" action="#{ideator.searchAction.addTag(tag.content.title)}"/>
+					<h:outputText value=" " />
+				</ui:repeat>
+				<h:outputText rendered="#{ideator.searchAction.tagFacetList.size == 0}" value="#{messages['ideator.search.facets.none']}" />
+			</h:form>
+			
+			<h3><h:outputText value="#{messages['ideator.search.facets.state']}" /></h3>
+			<h:form styleClass="box_facets">
+				<ui:repeat value="#{ideator.searchAction.statusFacet}" var="stat">
+					<h:commandLink value="#{ideator.searchAction.getStatusFacetString(stat.content)}(#{stat.resultCount})" action="#{ideator.searchAction.setStatus(stat.content)}"/>
+					<h:outputText value=" " />
+				</ui:repeat>
+				<h:outputText rendered="#{ideator.searchAction.statusFacet.size == 0}" value="#{messages['ideator.search.facets.none']}" />
+			</h:form>
+		</div>
+		<!--
+		<div class="line_box right_box">
+			<h3>Other</h3>
+			<h:form styleClass="box_facets">
+				<a href="#">eins(0)</a>
+				<h:outputText value=" " />
+				<a href="#">zwei(0)</a>
+			</h:form>
+		</div>
+		-->
+	</ui:define>
+
+</ui:composition>

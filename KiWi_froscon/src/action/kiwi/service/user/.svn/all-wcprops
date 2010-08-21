@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/user
+END
+MailServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/user/MailServiceImpl.java
+END
+PasswordGeneratorServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/user/PasswordGeneratorServiceImpl.java
+END
+ProfileServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/user/ProfileServiceImpl.java
+END
+UserServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/user/UserServiceImpl.java
+END
+IdentityManagerService.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/user/IdentityManagerService.java
+END

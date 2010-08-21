@@ -1,0 +1,46 @@
+1.Introduction
+
+2.KiWi-WiKi - describe the concept& functionality of kiwi-wiki.
+
+3.Putting KiWi to work
+    3.1.System requirements/settings (Eclipse, eclipse plug-ins, external tools)
+    
+4.Introduce the most important technologies (e.g. Seam, Facelests, etc)
+    4.1. bijection (how/why)
+    4.2. seam contexts (seam components scopes)
+    4.3. view life cycle
+    4.4. useful tools
+
+5.Introduce the KiWi main view
+    5.1.General rules.
+    5.1.Where you hang your view.
+ 
+6.How to store information in a KiWi system using the Facade mechanism.
+    6.1.How to allow the user to interact with the information stored in to a Facade
+    6.2.how to develop your own kiwi view - introduce the kiwi template.
+    6.3.Which test are required 
+    6.4.Which test are required.
+    
+7.Advance data manipulation
+    7.1.Introduce the ContentItem (and the Tag)
+    7.2.Persist, retrieve and Alter operation using the KiWi EM
+    7.2.Retrieve information using the KiWi Entity Manager and different query types.
+    7.2.1.Short overview JPQL, HPQL, SPARQL 
+    7.3.Retrieve information using the KiWi Entity Manager using search (?)
+    7.4.Import extern information (and transform it in ContentItem)
+
+8.Ontology
+    8.1.Short overview over OWL/RDF files
+    8.2.Extending an existing OWL file
+    8.3.Using the the new (extended) Ontology together with the ContentItem.
+
+9.KiWi Services
+
+
+10.Define KiWi borders
+    10.1.Where starts the kiwi and where starts the FCP.
+    10.2.How You can extend the KiWi.
+    
+11.The KiWi addons (plug-in or extensions) concept.
+
+

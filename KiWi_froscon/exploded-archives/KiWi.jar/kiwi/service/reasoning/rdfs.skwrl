@@ -1,0 +1,8 @@
+@prefix rdf : <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+@prefix holygoat: <http://www.holygoat.co.uk/owl/redwood/0.1/tags/>
+
+rdf-type: ($1 rdf:type $2), ($2 rdfs:subClassOf $3) ->	($1 rdf:type $3)
+rdf-subclass: ($1 rdfs:subClassOf $2), ($2 rdfs:subClassOf $3) -> ($1 rdfs:subClassOf $3)
+
+

@@ -1,0 +1,92 @@
+<rich:modalPanel
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+   	  xmlns:rich="http://richfaces.org/rich"
+ 	  xmlns:a4j="http://richfaces.org/a4j"
+ 	  width="400"
+ 	  height="250"
+      id="kiwilinkPanel">
+      	<s:remote include="kiwilinkAction"/>
+        <f:facet name="header">
+            <h:panelGroup>
+                <h:outputText value="Link Editor"></h:outputText>
+            </h:panelGroup>
+        </f:facet>
+        
+   	    <h:form id="kiwilinkForm">
+	       	<a4j:region renderRegionOnly="true">
+       	    	<h:panelGrid columns="2" rowClasses="prop" columnClasses="name,value">
+		            
+		            <h:outputLabel for="linkLabel">Label</h:outputLabel>
+		            <h:inputText id="linkLabel" 
+		                      value="#{kiwilinkAction.linkLabel}">
+		            	<a4j:support event="onkeyup" 
+		            		reRender="linkPreview" 
+		            		requestDelay="1000" 
+		            		limitToList="true"/>
+		            </h:inputText>
+		            
+		            <h:outputLabel for="linkTarget"><b>Target</b><br/></h:outputLabel>
+	            	<h:inputText id="linkTarget" 
+	                        value="#{kiwilinkAction.linkTarget}">
+	                </h:inputText>
+	                   <a4j:support event="onkeyup" 
+		            		reRender="linkPreview" 
+		            		requestDelay="1000" 
+		            		limitToList="true"/>
+		            <rich:suggestionbox id="linkTargetSuggest" for="linkTarget" tokens=",[]"
+	                    suggestionAction="#{searchAction.autocomplete}" 
+	                    var="result"
+	                    fetchValue="#{result}" 
+	                    minChars="2"
+	                    shadowOpacity="4"
+	                    border="1"
+	                    height="150"
+	                    width="140"
+	                    shadowDepth="3"
+	                    cellpadding="2"
+	                    nothingLabel="No content item found" 
+	                    columnClasses="center"
+	                    usingSuggestObjects="true" requestDelay="2000">
+	                    
+	                    <h:column>
+	                        <h:outputText value="#{result}" />
+	                    </h:column>
+	            	</rich:suggestionbox>
+		            
+		        </h:panelGrid>
+	            <h:outputLabel for="linkPreview">LinkPreview</h:outputLabel>:
+	            <h:outputText id="linkPreview" value="#{kiwilinkAction.replacementHTML}"/>
+		
+		        <div class="actionButtons center">
+		            <a4j:commandButton value="Ok" id="btnCreateLink" 
+		            	action="#{kiwilinkAction.createLink}"
+		            	onclick="insertLinkHTML()" 
+		            	oncomplete="#{rich:component('kiwilinkPanel')}.hide()" />
+		            <a4j:commandButton value="Abort" id="btnKiwilinkAbort"
+		            	action="#{kiwilinkAction.abortLinkCreation}" 
+		            	oncomplete="#{rich:component('kiwilinkPanel')}.hide();" />
+
+
+					<!-- Helper jsFunctions -->
+	                <a4j:jsFunction name="kiwilinkFormActivate" 
+	                	reRender="linkLabel,linkTarget,linkTargetSuggest,linkPreview"
+	                	action="#{kiwilinkAction.formActivate}" />
+
+		            <a4j:jsFunction name="insertLinkHTML"
+		            	data="#{kiwilinkAction.replacementHTML}" 
+	                	oncomplete="kiwilinkJSLib.kiwilinkCreate(data);"
+	                	reRender="linkLabel,linkTarget,linkTargetSuggest,linkPreview" />
+	                
+	                <a4j:jsFunction name="setSelectionHTML" 
+	                	oncomplete="kiwilinkJSLib.showKiwilinkPanel();" 
+	                	reRender="kiwilinkPanel">
+	                	<a4j:actionparam name="param1" assignTo="#{kiwilinkAction.selectionHTML}" />
+	                </a4j:jsFunction>
+		        </div>
+			</a4j:region>
+		</h:form>
+</rich:modalPanel>

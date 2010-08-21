@@ -1,0 +1,57 @@
+<rich:modalPanel
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+   	  xmlns:rich="http://richfaces.org/rich"
+ 	  xmlns:a4j="http://richfaces.org/a4j"
+ 	  width="400"
+ 	  height="250"
+      id="kiwirdfaLinkPanel">
+        <f:facet name="header">
+            <h:panelGroup>
+                <h:outputText value="RDFa Link"></h:outputText>
+            </h:panelGroup>
+        </f:facet>
+        
+        <p style="margin-top: 20px; margin-left: 10px; margin-right: 10px;" class="help">
+        	Here you can define a semantic link.  
+        </p>
+        
+       	<a4j:region renderRegionOnly="true">
+       	    
+       	    <h:form id="kiwirdfaLinkForm">
+       	    	<rich:messages styleClass="message"/>
+       	    	<h:panelGrid columns="2" rowClasses="prop" columnClasses="name,value">
+       	    	
+       	    		<h:outputLabel for="rdfaLinkRelation">Relation</h:outputLabel>
+		            
+		            <h:selectOneMenu value="#{kiwirdfaAction.selectedLinkRelation}" id="rdfaLinkRelation">
+						<s:selectItems value="#{kiwirdfaAction.possibleLinkRelations}" var="item" label="#{item.label}" itemValue="#{item.value}" noSelectionLabel="Please select ..."/>
+					</h:selectOneMenu>
+		            
+		        </h:panelGrid>
+		
+		        <div class="actionButtons center">
+		            <a4j:commandButton value="Create/Update" id="btnCreateRdfaLink" 
+		            	action="#{kiwirdfaAction.createOrUpdateLink}"
+		            	data="#{kiwirdfaAction.linkJS}"
+		            	oncomplete="kiwirdfaJSLib.onCreateOrUpdateLink(data)" />
+		            	
+		            <a4j:commandButton value="Delete" id="btnDeleteRdfaLink" 
+		            	action="#{kiwirdfaAction.deleteLink}"
+		            	oncomplete="kiwirdfaJSLib.onDeleteLink()" />
+		            	
+		            <a4j:commandButton value="Cancel" id="btnKiwirdfaCancelLink"
+		            	action="#{kiwirdfaAction.cancelLink}" 
+		            	oncomplete="kiwirdfaJSLib.onCancelLink()" />
+		            	
+		            <a4j:jsFunction name="kiwirdfaSetLink" reRender="kiwirdfaLinkForm">
+		        		<a4j:actionparam name="Param1" assignTo="#{kiwirdfaAction.linkJS}"/>
+		        	</a4j:jsFunction>
+		        </div>
+			</h:form>
+		</a4j:region>
+
+</rich:modalPanel>

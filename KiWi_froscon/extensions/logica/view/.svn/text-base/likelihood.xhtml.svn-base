@@ -1,0 +1,58 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+		    	xmlns:a4j="http://richfaces.org/a4j">
+		    	
+		    	<h:form>
+		    	
+		    	<rich:panel>
+				<f:facet name = "header">Risk Information</f:facet>
+				
+				<h:dataTable value="#{risks}" var="thisRisk">
+				<h:column>
+				<f:facet name = "header">RiskTitle</f:facet>
+				
+			    <s:link view="/logica/index.xhtml" value="#{thisRisk.title}" propagation="none">
+    		  	  <f:param name="title" value="#{thisRisk.title}"/>
+			    </s:link>  
+				
+					 
+				</h:column>
+				<h:column>
+				<f:facet name = "header">Risk Category</f:facet>
+					 #{thisRisk.riskGroup}
+				</h:column>
+				
+				<h:column>
+				<f:facet name = "header">Likelihood</f:facet>
+					       <rich:comboBox defaultLabel="Enter some value" value ="#{thisRisk.likelihood}">
+           							 <f:selectItem itemValue="10%"/>
+            						 <f:selectItem itemValue="40%"/>
+           							 <f:selectItem itemValue="70%"/>
+            						 <f:selectItem itemValue="100%"/>
+       						</rich:comboBox>
+				</h:column>
+				
+		    	</h:dataTable>
+		    	</rich:panel>
+		    	
+		    	<div class="actionButtons">
+	            <h:commandButton value="Save" id="btnLoginSubmit" action="#{formRisk.update}"/>
+                <rich:componentControl for="loginPanel" attachTo="btnLoginAbort" operation="hide" event="onclick"/>
+       	        </div>
+		    	</h:form>
+		    	
+		    	<h:form>
+			    <div class="navigationButtons">
+	            	<h:commandButton value="Step Beore" id="btnBefore" action= "#{formRisk.showIt}"/>
+	            	<h:commandButton value="Next Step" id="btnNext" action="#{formAction.go('Risk Overview','overview.xhtml')}"/>
+                <rich:componentControl for="loginPanel" attachTo="btnLoginAbort" operation="hide" event="onclick"/>
+	        	</div>
+				</h:form>
+		    			    	
+</ui:composition>

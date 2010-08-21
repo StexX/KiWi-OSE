@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pages xmlns="http://jboss.com/products/seam/pages"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://jboss.com/products/seam/pages http://jboss.com/products/seam/pages-2.0.xsd"
+
+       no-conversation-view-id="/home.xhtml"
+       login-view-id="/login.xhtml">
+
+    <page view-id="/admin/*" login-required="true">
+    	<restrict>#{permissionAction.hasRole('admin')}</restrict>
+        <action execute="#{currentApplicationFactory.switchApplication('admin')}"/>
+    </page>
+    
+    <page view-id="/admin/home.xhtml">
+        <begin-conversation join="true"/>
+    </page>
+
+    <page view-id="/admin/ontology/select.xhtml" action="#{ontologyAction.start}">
+        <description>Load initial ontologies</description>
+        <navigation>
+            <rule if-outcome="success">
+                <redirect view-id="/admin/ontology/finish.xhtml"/>
+            </rule>
+            <rule>
+                <redirect view-id="/admin/ontology/select.xhtml"/>
+            </rule>
+        </navigation>
+        
+    </page>
+
+    <page view-id="/admin/applications.xhtml" action="#{kiwi.admin.applicationConfigurationAction.start}">
+        <description>Configure applications</description>
+        <navigation>
+            <rule if-outcome="success">
+                <redirect view-id="/admin/home.xhtml"/>
+            </rule>
+            <rule>
+                <redirect view-id="/admin/applications.xhtml"/>
+            </rule>
+        </navigation>
+        
+    </page>
+
+    <page view-id="/admin/tagit.xhtml">
+        <description>Configure TagIT</description>
+        <navigation>
+            <rule if-outcome="success">
+                <redirect view-id="/admin/home.xhtml"/>
+            </rule>
+            <rule>
+                <redirect view-id="/admin/tagit.xhtml"/>
+            </rule>
+        </navigation>
+        
+    </page>
+
+
+    <page view-id="/admin/ontology/finish.xhtml">
+        <description>Finish Ontology Setup</description>
+        <navigation>
+            <rule if-outcome="success">
+                <redirect view-id="/home.xhtml"/>
+            </rule>
+        </navigation>
+        
+    </page>
+    
+    <page view-id="/admin/reasoning.xhtml">
+        <description>Reasoning finished</description>
+        <navigation>
+            <rule if-outcome="success">
+                <redirect view-id="/home.xhtml"/>
+            </rule>
+        </navigation>
+        
+    </page>    
+</pages>

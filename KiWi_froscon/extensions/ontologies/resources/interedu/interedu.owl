@@ -1,0 +1,77 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+<!ENTITY hgtags "http://www.holygoat.co.uk/owl/redwood/0.1/tags/">
+<!ENTITY sioc "http://rdfs.org/sioc/ns#">
+<!ENTITY foaf "http://xmlns.com/foaf/0.1/">
+<!ENTITY cont "http://www.w3.org/2000/10/swap/pim/contact#">
+<!ENTITY geo "http://www.w3.org/2003/01/geo/wgs84_pos#">
+<!ENTITY kiwi "http://www.kiwi-project.eu/kiwi/core/">
+<!ENTITY interedu "http://interedu.salzburgresearch.at/">
+<!ENTITY skos "http://www.w3.org/2004/02/skos/core#">
+<!ENTITY dc "http://purl.org/dc/elements/1.1/">]>
+<rdf:RDF 
+	xmlns:rdf="&rdf;"
+	xmlns:rdfs="&rdfs;"
+	xmlns:owl="&owl;"
+	xmlns:dc="&dc;"
+	xmlns:foaf="&foaf;"
+	xmlns:kiwi="&kiwi;"
+	xmlns:geo="&geo;"
+	xmlns:cont="&cont;"
+	xmlns:hgtags="&hgtags;"
+	xmlns:sioc="&sioc;"
+	xmlns:interedu="&interedu;"
+    xmlns:skos="&skos;"
+	xml:base="http://users.fh-salzburg.ac.at/~fhs12575/ontology/">
+
+	<owl:Ontology rdf:about="">
+		<rdfs:comment>This ontology describes the KiWi Interedu datamodel</rdfs:comment>
+		<rdfs:label>KiWi</rdfs:label>
+		<owl:imports>
+			<owl:Ontology rdf:about="ontology_kiwi.owl"/>
+		</owl:imports>
+	</owl:Ontology>
+	
+	<!-- a skos category id -->
+	<owl:DatatypeProperty rdf:about="&interedu;categoryid">
+		<rdfs:label>Kategorie</rdfs:label>
+		<rdfs:comment>Each Artikel has 0..n categories.</rdfs:comment>
+		<rdfs:domain rdf:resource="&interedu;Artikel"/>
+		<rdfs:range rdf:resource="&xsd;long"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&interedu;hauptGegenstand">
+		<rdfs:label>Gegenstand</rdfs:label>
+		<rdfs:comment>Each Artikel has 1 hauptGegenstand.</rdfs:comment>
+		<rdfs:domain rdf:resource="&interedu;Artikel"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&interedu;dokumentArt">
+		<rdfs:label>Dokumentenart</rdfs:label>
+		<rdfs:comment>Each Artikel has 1 dokument Art (Software, Bild etc).</rdfs:comment>
+		<rdfs:domain rdf:resource="&interedu;Artikel"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<!-- Class 'Artikel' ... -->
+	<owl:Class rdf:about="&interedu;Artikel">
+		<rdfs:label>Artikel</rdfs:label>
+		<rdfs:comment>An article in the interedu system</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="&kiwi;ContentItem"/>
+	</owl:Class>
+
+	<!-- maybe all other properties ? -->
+	<!--
+    <owl:ObjectProperty rdf:about="&interedu;autor">
+        <rdfs:label>autor</rdfs:label>
+        <rdfs:comment>autor of an Artikel (maybe not an user in the system)</rdfs:comment>
+        <rdfs:domain rdf:resource="&interedu;Artikel"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:ObjectProperty>
+    -->
+</rdf:RDF>

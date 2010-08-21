@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/cluster
+END
+ClusterServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/cluster/ClusterServiceLocal.java
+END
+ClusterService.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/cluster/ClusterService.java
+END
+ClusterServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/cluster/ClusterServiceRemote.java
+END

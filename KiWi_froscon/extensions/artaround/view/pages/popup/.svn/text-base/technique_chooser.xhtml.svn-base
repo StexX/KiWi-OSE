@@ -1,0 +1,95 @@
+<!--
+	Copyright © Rolf Sint, Michael Schneider, Christian Osterrieder, 2010
+ */
+ -->
+
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+			 	xmlns:c="http://java.sun.com/jstl/core"
+                template="../../layout/box_template.xhtml">
+                	
+<ui:define name="box_header">
+		<h2>#{messages['artaround.technique.title']}</h2>
+</ui:define>
+
+<ui:define name="box_header_links">
+	<li>
+		<a:commandLink onclick="jQuery('#technique_chooser').fadeOut('fast');" reRender="technique">
+			<img src="../../img/header_links/orange_dot.png" />
+		</a:commandLink>
+	</li>
+</ui:define>
+
+<ui:define name="box_content">
+
+	<style>
+	
+		#mask {
+			background:#ccc url(#{facesContext.externalContext.requestContextPath}/view/img/mask_gradient_1000.png) no-repeat;
+			background-position:-260px -79px;
+		}
+		
+		form.exposePopup {
+			/*border:1px outset #aaa; */
+			background:#fff url(#{facesContext.externalContext.requestContextPath}/view/img/h800.png) repeat-x;
+			padding:10px;
+			margin:10px 0;
+			text-align:center;
+			width:550px;
+			-moz-border-radius:4px;
+		}
+	</style>
+	
+	
+		<h:form class="exposePopup">
+		<center>		
+		
+		<div style="width:540px;margin-top:20px;height:220px;">
+			<p id="technique_chooser_message" class="message popupmessage"></p>
+			<div class="popupInnerBox" style="top:55px;left:35px;width:200px;height:200px;overflow:auto;">
+			<rich:tree styleClass="tree" style="width:200px" switchType="ajax" nodeSelectListener="#{techniqueAction.onNodeSelect}">
+	            			<rich:recursiveTreeNodesAdaptor roots="#{techniqueAction.treeRoots}" var="item" nodes="#{item.children}" switchType="ajax">
+	            				<rich:treeNode>
+	            					<h:outputText value="#{item.concept.preferredLabel}" />
+	        					</rich:treeNode>
+							</rich:recursiveTreeNodesAdaptor>
+	        </rich:tree>
+	        </div>
+	        <div style="position:absolute;top:130px;left:240px;width:75px;text-align:center; margin:5px;">
+					<a:commandButton value = "#{messages['ideator.btn.add']}  &gt;&gt;" style="width:80px;margin-left:12px;" reRender="techniqueList" data="#{techniqueAction.addChosenConcept()}" oncomplete="if(data==null)data='';jQuery('#technique_chooser_message').text(data);">
+					</a:commandButton><br/><br/>
+					
+					<a:commandButton value = " &lt;&lt; #{messages['ideator.btn.remove']}" style="width:80px;margin-left:12px;" reRender="techniqueList" data="#{techniqueAction.removeChosenConcept()}" oncomplete="if(data==null)data='';jQuery('#technique_chooser_message').text(data);">
+					</a:commandButton>
+			</div>
+			<s:div styleClass="popupInnerBox" id="techniqueList"  style="top:55px;left:359px;width:200px;height:200px;overflow:auto; margin:5px">
+					<ui:repeat value="#{techniqueAction.chosenConcepts}" var="pos">
+						<div class="selectedTechniqueBox" style="margin:5px">
+							<h3><a:commandLink action="#{techniqueAction.setSelectedConcept(pos)}" onclick="jQuery('.selectedTechniqueBox').css('background-color','white');jQuery(this).parent().parent().css('background-color','lightgray')">
+								#{pos.preferredLabel}
+							</a:commandLink>
+							</h3>
+							<p>#{pos.definition}</p>
+						</div>
+					</ui:repeat>
+			</s:div>
+				
+		</div>
+		
+		<a:commandLink styleClass="button" onclick="jQuery('#technique_chooser').fadeOut('fast');" title="#{messages['ideator.btn.close']}" style="margin-top:20px;margin-left:247px;margin-bottom:10px;" reRender="technique">
+			<span>#{messages['ideator.btn.close']}</span>
+		</a:commandLink>
+		</center>
+		</h:form>
+</ui:define>
+
+
+</ui:composition>

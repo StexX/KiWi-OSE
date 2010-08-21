@@ -1,0 +1,179 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/activity
+END
+RateActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/activity/RateActivity.java
+END
+Activity.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/activity/Activity.java
+END
+ShareActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/activity/ShareActivity.java
+END
+CommentActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/activity/CommentActivity.java
+END
+AccessDeniedActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/activity/AccessDeniedActivity.java
+END
+AddFriendActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/activity/AddFriendActivity.java
+END
+FriendActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/activity/FriendActivity.java
+END
+UserCreatedActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/activity/UserCreatedActivity.java
+END
+CreateActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/activity/CreateActivity.java
+END
+AddTypeActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/activity/AddTypeActivity.java
+END
+ChangeAuthorActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/activity/ChangeAuthorActivity.java
+END
+GroupRemvedActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/activity/GroupRemvedActivity.java
+END
+AddTagActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/activity/AddTagActivity.java
+END
+RelationsActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/activity/RelationsActivity.java
+END
+RemoveTagActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/activity/RemoveTagActivity.java
+END
+TaggingActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/activity/TaggingActivity.java
+END
+TweetActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/activity/TweetActivity.java
+END
+ContentItemActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/activity/ContentItemActivity.java
+END
+AnnotateActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/activity/AnnotateActivity.java
+END
+VisitActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/activity/VisitActivity.java
+END
+DeleteActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/activity/DeleteActivity.java
+END
+EditActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/activity/EditActivity.java
+END
+LogoutActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/activity/LogoutActivity.java
+END
+GroupCreatedActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/activity/GroupCreatedActivity.java
+END
+LoginActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/activity/LoginActivity.java
+END
+SearchActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/activity/SearchActivity.java
+END
+UserRemvedActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/activity/UserRemvedActivity.java
+END
+RegisterActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/activity/RegisterActivity.java
+END
+RemoveFriendActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/activity/RemoveFriendActivity.java
+END

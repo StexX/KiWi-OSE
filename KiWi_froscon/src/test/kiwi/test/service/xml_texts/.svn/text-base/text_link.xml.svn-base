@@ -1,0 +1,5 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:kiwi="http://www.kiwi-project.eu/kiwi/html/" kiwi:type="page">
+	<p>
+		test <a href="" kiwi:kind="intlink" kiwi:target="uri::http://127.0.0.1:8080/KiWi/content/2eefd353-44a1-4259-b13b-67923bb8a4d5"> link </a>
+	</p>
+</div>

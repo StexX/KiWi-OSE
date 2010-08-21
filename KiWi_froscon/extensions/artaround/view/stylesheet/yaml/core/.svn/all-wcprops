@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/artaround/view/stylesheet/yaml/core
+END
+base.css
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/artaround/view/stylesheet/yaml/core/base.css
+END
+slim_base.css
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/artaround/view/stylesheet/yaml/core/slim_base.css
+END
+print_base.css
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/artaround/view/stylesheet/yaml/core/print_base.css
+END
+slim_iehacks.css
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/artaround/view/stylesheet/yaml/core/slim_iehacks.css
+END
+slim_print_base.css
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/artaround/view/stylesheet/yaml/core/slim_print_base.css
+END
+iehacks.css
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/artaround/view/stylesheet/yaml/core/iehacks.css
+END

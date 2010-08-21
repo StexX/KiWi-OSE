@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/webservice/utility
+END
+FieldBracket.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/webservice/utility/FieldBracket.java
+END
+DataDefinition.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/webservice/utility/DataDefinition.java
+END
+ContentItemHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/webservice/utility/ContentItemHelper.java
+END
+DataAccessWebServicePropertiesHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/webservice/utility/DataAccessWebServicePropertiesHandler.java
+END
+FieldCombination.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/webservice/utility/FieldCombination.java
+END
+TemplateData.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/webservice/utility/TemplateData.java
+END
+FieldData.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/webservice/utility/FieldData.java
+END
+CheckData.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/webservice/utility/CheckData.java
+END
+TemplateCreator.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/webservice/utility/TemplateCreator.java
+END

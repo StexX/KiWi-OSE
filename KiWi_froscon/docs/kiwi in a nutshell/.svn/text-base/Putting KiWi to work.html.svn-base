@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type">
+  <title>Putting KiWi to work</title>
+</head>
+<body>
+<big><span style="font-weight: bold;">Putting KiWi to work</span></big><br>
+<br>
+What do I need to be able to compile/deploy/run and debug the KiWi
+project ?<br>
+<ul>
+  <li>Java JDK (JRE) 1.6.0 .** </li>
+  <li>Eclipse 3.4.1. (or NetBeans).</li>
+  <li>JBoss application server 4.2.3 or 5.0.0, please take care you
+need a
+JBoss version which runs with java 6.0. </li>
+  <li>Apache ant 1.7.0 or bigger.</li>
+  <li>JBoss Seam 2.1 or bigger (optional).</li>
+</ul>
+<br>
+System requirements : <br>
+Insert here the minimum techinal requirements.<br>
+<br>
+<big><span style="font-weight: bold;">How you can obtain the KiWi
+project ?</span></big><br>
+&nbsp;&nbsp;&nbsp; The KiWi project can be found in the SVN repository
+: <span style="font-style: italic;">https://svn.salzburgresearch.at/svn/kiwi/KiWi</span>.
+Because the big
+variety of SVN clients I will not explain in detail the SVN check out
+steep
+from the point of view of a specific SVN client. The SVN command line
+look like : <br>
+<br>
+<span style="font-weight: bold;">svn -co
+'https://svn.salzburgresearch.at/svn/kiwi/KiWi/trunk myDir</span><br>
+<br>
+the <span style="font-style: italic;">myDir</span> is the directory
+were the entire kiwi project will be
+extracted. <br>
+<span style="font-style: italic;">Note :</span> the KiWi project has
+approx. 600 Mb, so be sure that you have
+enough available storage place. The reason for this huge pack of data are the
+ontologies files( the ontologies files and other related subjects will
+explained in detail later in this document). <br>
+<br>
+<big><span style="font-weight: bold;">What you obtain form the
+repository ? <br>
+<br>
+</span></big>&nbsp;&nbsp;&nbsp; The answer is pretty simple: an eclipse
+project. With some small
+adjustments you can be able to compile/deploy/run and debug it. <br>
+&nbsp;&nbsp;&nbsp; The first steps are :
+<ul>
+  <li>create a directory kiwi.ws , this will be project workspace
+(after the eclipse workspace philosophy).
+  </li>
+  <li>check out the KiWi project in this directory - the SVN trunk
+contains a
+KiWi directory - this is your project directory.</li>
+  <li>go in the KiWi directory and&nbsp; run from the console&nbsp; : <span
+ style="font-style: italic;">ant -buildfile build.xml
+prepareProject</span></li>
+  <li>start eclipse and change the workspace in to the new created
+kiwi.ws directory</li>
+</ul>
+If all the previous steeps was successfully, executed the eclipse shows
+the KiWi project&nbsp; <br>
+<br>
+<img style="width: 420px; height: 212px;" alt="kiwi project start"
+ title="kiwi project start" src="images/kiwi.project.start.jpg"><br>
+<br>
+<span style="font-style: italic;">Troubleshooting :</span> in this
+stage the the eclipse can report a class not found exception. The
+reason could be, that the library list (stored in the .classpath) is not
+up to date
+anymore. To handle this, you must be sure that the eclipse's
+projects&nbsp;classpath&nbsp;includes all the&nbsp; jars from
+the&nbsp; KiWi/lib directory:
+<ul>
+  <li>select the&nbsp; project properties( project menu-&gt;properties)
+  </li>
+  <li>go in the Java Build Path and select the libraries tab, here take
+care that no jar is marked as missing jar</li>
+</ul>
+<img style="width: 520px; height: 300px;" alt="missing jar"
+ title="missing jar" src="images/kiwi.project.missingJar.jpg"><br>
+<br>
+Sometimes is possible that a needed class is packed into a jar file that  is not part of any library. In this case you
+must locate the jar which contains the needed class and add it to
+the&nbsp; libraries jars. <br>
+<br>
+If the prepare step was successfu, you can
+develop your own
+classes, but after this you must be able to run/debug them together
+with the rest of the KiWi project. To be able to do this, you must know
+more details about the KiWi project, like configuration files,
+application server, bootstrap,data base, etc.<br><br>
+KiWi is an enterprise application. It was
+developed to run together
+with JBoss and in the future it will be also possible to run it on other
+application servers. Like most of the EE application it has 4 layers
+(presentation, business, persistence and data base) and each of them must be configurated to run properly. Later in this document I
+will provide more technical details about this layers, but
+for the
+moment the only one thing that you need to know is that you have to do
+whit a EE application. For the first steps we included a HyperDrive database  (details on
+http://www.h2database.com/) in the  KiWi package, so you don't have to be worried about this layer at the beginning. But, to mention it, The KiWi system is able to run with various databases, which is described later in this document.<br>
+<br>
+<big><span style="font-weight: bold;">Configure the KiWi project and
+run it together with the apache ant build.xml file.</span></big><br>
+<br>As I mention before, you deal with a EE application,
+so in a very
+simplistic way your classes (together with all the other KiWi classes)
+will run on a application server inside of a enterprise container
+(more details about this on
+http://java.sun.com/j2ee/tutorial/1_3-fcs/doc/Overview3.html). So
+before a class runs, it
+must be deployed on the application server. The deploy is done with an
+ant script named build.xml, which is placed in the Kiwi root
+directory. Under normal circumstances you are not allowed to modify this
+file. The <span style="font-style: italic;">build.xml</span> has a
+configuration file named : <span style="font-style: italic;">build.properties</span>
+-
+its content looks like : <br>
+<br>
+jboss.home = /labo/jBoss/jboss-5.0.0.GA<br>
+jboss.version=5.0.0.GA<br>
+#jboss.version=4.2.3<br>
+<br>There you have to specify location and version of your application server. The "#" is used to comment(ignore) a line.<br>
+<br>
+<big><span style="font-weight: bold;">The first </span></big><big><span
+ style="font-weight: bold;">KiWi</span></big><big><span
+ style="font-weight: bold;"> start<br>
+<br>
+</span></big>If the configuration is done then you
+are ready for the first test.
+For this you need to 
+<ul>
+  <li>deploy the kiwi project. For this run from the command line :
+ant explode</li>
+  <li>start the database (remember we had included one because it is necessary for  a EE application).  To start the hiperdrive database&nbsp; go
+in the KiWi/lib
+and run from the command line java -jar h2-1.1.100.jar, this will also
+start the h2 client (which appears like a yellow icon in your
+notification area) in your default web browser - this client requires
+java script.</li>
+  <li>go in to your JBoss directory and run from the command line :
+run.XXX (XXX - this depends on which operation system you are). The
+JBoss will produce a lot of messages on the console,  but the server is completely started
+after you see the an output similar to "<span style="font-style: italic;">[ServerImpl]
+JBoss (Microcontainer)
+[5.0.0.GA (build: SVNTag=JBoss_5_0_0_GA date=200812042120)] Started in
+....</span>"
+  </li>
+  <li>open your web browser and enter the URL : <span
+ style="font-style: italic;">http://localhost:8080/</span>&nbsp;
+to see the JBoss start page (a prove that
+the JBoss is running)
+  </li>
+  <li>after you enter the URL : <span
+ style="font-style: italic;">http://localhost:8080/KiWi/</span> you should see 
+the kiwi start page (this page requires java
+script)</li>
+</ul>
+To stop the JBoss server (and together with  it KiWi) go in the
+terminal where you startet JBoss and interrupt it with
+<span style="font-style: italic;">crtl-c</span>.<br>
+Alternative to run the JBoss in to&nbsp; terminal you can start it from
+the eclipse (See the JBoss and&nbsp; Eclipse).<br>
+<br>By now you are able to deploy and run the KiWi project.
+Unfortunately
+for developing you need a little bit more. In the next section we will
+describe in detail the configuration and the deployment features.<br>
+<br>
+<big style="font-weight: bold;">Advanced configurations </big><br>
+<br>
+Lots of configuration files are are in the
+KiWi/resource
+directory. The most important are :<br>
+<br>
+<span style="font-weight: bold;">The DataSource configuration files</span><br>
+          This files are located in the <span
+ style="font-style: italic;">KiWi/resource</span> and they follow the
+pattern
+KiWi-*-ds.xml. There are three of them&nbsp; - dev, prod and test. Each
+of this covers a certain application life cycle aspect (e.g.
+developing). The DataSorces are used to configurate the
+connection
+with data base. Every time you persist an instance of an entity
+the persistence provider will open&nbsp; (or reuse) a pooled connection
+to the database - in the majority of cases each data source is commonly
+associated with a connection pool that contains
+the information for connecting the database.<br>Usually  you won't interact with any of this files.
+But you have to  change it if you want to use other databases (e.g.
+postgres instead of H2). By default this files are using the H2
+database.<br>
+<br>
+<span style="color: rgb(51, 51, 255);">TODO :&nbsp; create more
+template for each of the database.</span><br>
+<br>
+<span style="font-weight: bold;">The EE configuration files</span><br>
+    This files are placed in the <span
+ style="font-style: italic;">KiWi/resources/META-INF</span> directory.
+Some of the most
+important files are:
+<ul>
+  <li>application.xml - the deployment descriptor - it describes which
+Java EE modules are placed in which ear(jar or war) file. For the
+moment there is only one web module and only one ejb module. As far as
+you don't plan to add/remove new modules you don't&nbsp; need to access
+this file.</li>
+  <li>ejb-jar.xml - deployment descriptor for only one ejb module. In this file you can add new interceptors, filters, environment
+variables, etc. if you need them.</li>
+  <li>jboss-app.xml - the JBoss deployment descriptor, here you can
+configure JBoss vendor specific issues, this can differ from a server
+version to an other. Please consult the JBoss documentation for more
+details.<br>
+  </li>
+  <li>persistence-*.xml  - the persistence descriptor is used to configurate
+the Entity Manager. A reason to change this file can be to change the
+database dialect or to specify some vendor specific database properties
+(hibernate properties in this case). Don't mix the <span
+ style="font-style: italic;">persistence-*.xml</span> files with <span
+ style="font-style: italic;">DataSource
+configuration files</span>! Instead of DataSource configuration files this file configure the entity manager
+(like which dialect the Entity Manager uses) and not te way how the Entity Manager connect to the database.</li>
+  <li>MANIFEST.MF - this is the jars manifest file for the kiwi.ejb-jar.
+This file contains basic information about the KiWi&nbsp; project like
+version, vendor or dependencies. The dependencies can be considerated the
+main information contained in this file, practically the
+classpath
+dependencies or which classes(packed in jars) are required to run KiWi.</li>
+</ul>
+<span style="font-weight: bold;">The Web / presentation layer
+configuration files</span><br>
+&nbsp;&nbsp;&nbsp; This files are are placed in the <span
+ style="font-style: italic;">KiWi/resources/WEB-INF</span> directory.
+Some of the most
+important are :
+<ul>
+  <li>web.xml -&nbsp; the web container deployment descriptor - mostly you don't interact directly with this file. Because the
+JBoss seam and Facelets use this file for framework configuration don't
+change it without a serious reason.
+  </li>
+  <li>pages.xml - the Facelets configuration files - it contains the
+main navigation rules for most of the presentation layers. A
+navigation rule describes in which condition the user can navigate
+between two pages.  A  reason for altering could be a major change in a navigation rule. Complementary with this file are the&nbsp;
+individual&nbsp; page configuration files&nbsp; (a.k.a. .page.xml
+files)- these are in the same directory with the xhtml files
+(KiWi/view) and will be described in more detail later in this document.
+  </li>
+  <li>faces-config.xml - the configuration for Facelets - usually you don't interact with this file.
+  </li>
+</ul>
+<big><span style="font-weight: bold;">Advanced compile and deploy using
+the build.xml apache ant file</span></big><br>
+<br>
+&nbsp;&nbsp;&nbsp; The compile and deploy task is accomplished with a
+ant file named
+build.xml, placed in the KiWi project root directory. With this ant
+file you are able to execute the compile&amp;deploy
+tasks as well as the code generation tasks. In this section we will describe
+the compile&amp;deploy tasks.<br>
+&nbsp;&nbsp;&nbsp; I organized the tasks after them
+importance.
+<ul>
+  <li><span style="font-weight: bold;">explode</span> - by far the
+most important tasks - it is used to compile, pack and deploy the
+KiWi application to&nbsp; the application server. Basically this task
+only performs an incremental hot deployment of web artifacts and java
+classes. For the compile and pack it uses other existent ant targets
+like jar, war, ear or datasource. One important thing to notice here:
+this task deploys the exploded archives to the application server, it
+does not pack the application in ear files.</li>
+  <li><span style="font-weight: bold;">explodeandtest</span> - similar to  the explode task, but it also compiles and prepares the test
+classes. One important thing to notice here: this task is designed to
+work from eclipse, if you use this script from the command line
+(using a normal ant syntax) you may run in problems (<span
+ style="color: rgb(51, 51, 255);">TODO : I am not shore here I still
+must do some experiments</span>). This is the default task (TO Discuss
+this default task bring a strong eclipse dependency so I am not shore
+that it must be default).</li>
+  <li><span style="font-weight: bold;">cleanExplode</span> - it cleans
+the entire environment for classes and other generated files produced
+with a previous (ant) session. After that it compiles and explodes the
+application and also explicit informs the server that new resources are
+available. You should use this task when you need to be sure if your
+classes (and other resources) are deployed and loaded from the
+application server.</li>
+  <li><span style="font-weight: bold;">clean</span> - it cleans all the
+compiled classes, the test output and the test report directories. You
+should use this task if you have doubts about a compiled class file -
+in this case was the class will be deleted and ???
+  </li>
+  <li><span style="font-weight: bold;">unexplode</span> - this is the
+complement to the explode task - more precisely it removes 
+your application from the application server  (deployed with a previous
+session)</li>
+  <li style="font-weight: bold;">doTest<span
+ style="font-weight: normal;"> - prepares the test environment, runs
+the tests and creates test reports for the entire project. This task
+requires a running HiperDrive database. You can start it manually : <span
+ style="font-style: italic;">java -jar h2-1.1.100.jar</span> (the jar
+is in the lib direcotry). This task can take a while so don't run it
+unleast you don't really need it.</span>
+  </li>
+  <li><span style="font-weight: bold;">test</span> - it only builds the
+test and runs them, but it does not prepare&nbsp;(or clean) the <span
+ style="font-weight: normal;">test environment. This can cause various problems if the test environment is not yet prepared (more
+details about the test environment later in this document).</span></li>
+  <li><span style="font-weight: normal;"><span
+ style="font-weight: bold;">validateConfiguration</span> - this task is
+used to prove that your changes in the xml (configuration) files are
+also correct. Use this task if you have&nbsp;doubt about your changes. If this task fails, that the application server will crash
+your application very likely(during deployment or run time).</span></li>
+  <li><span style="font-weight: normal;"><span
+ style="font-weight: bold;">prepareProject</span> - this task prepares
+your project for developing after you check out the project from SVN.
+Take care, this task is designed to work one time when you just checked out the project from SVN, don't run it after.</span></li>
+  <li><span style="font-weight: bold;">deploy - </span></li>
+  <li><span style="font-weight: bold;">undeploy -</span> </li>
+</ul>
+&nbsp;&nbsp;&nbsp; This are the most common used task, the build.xml
+contains more, but most of them are hided by one of this main
+task. Every main task delegates work to other small tasks.<br>
+&nbsp;&nbsp;&nbsp; You can find more details about apache ant on
+(http://ant.apache.org/)<br>
+<br>
+<span style="font-weight: bold;">Directory Structure, where/how to
+organize your files</span><br>
+<br>
+<big><span style="font-weight: bold;"></span></big>JBoss and&nbsp;
+Eclipse<br>
+<br>
+<br>
+<br>
+</body>
+</html>

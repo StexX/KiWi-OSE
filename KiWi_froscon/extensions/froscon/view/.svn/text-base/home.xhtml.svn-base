@@ -1,0 +1,70 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:a="http://richfaces.org/a4j"
+    xmlns:c="http://java.sun.com/jstl/core"
+    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+    template="layout/template.xhtml">
+
+    <ui:define name="links">
+        <link href="#{facesContext.externalContext.requestContextPath}/feed.seam?mode=MOSTRECENT&amp;format=RSS20" type="application/rss+xml" rel="alternate" title="Most Recently Changed" />
+        <link href="#{facesContext.externalContext.requestContextPath}/feed.seam?mode=COMMENTS&amp;format=RSS20" type="application/rss+xml" rel="alternate" title="Comments for #{currentContentItem.title}" />
+        <link href="#{facesContext.externalContext.requestContextPath}/activity-feed.seam?mode=ACTIVITIES&amp;format=RSS20" type="application/rss+xml" rel="alternate" title="Stream of Activities for #{currentContentItem.title}" />
+    </ui:define>
+
+
+<ui:define name="body">
+<!--    <h:graphicImage value="froscon_logo.jpg"/>-->
+    <h1>FrosCon Extension</h1>
+    <h:form id="form_import">
+    	<h:outputText value="Project name:"/>
+    	<h:inputText value="#{frosconAction.projectName}" size="30"/> <br/>
+    	<h:outputText value="Project stage:"/>
+		<h:selectOneMenu value="#{frosconAction.stage}">
+        	<s:selectItems value="#{frosconAction.allStages}" var="state" label="#{state.toString()}" noSelectionLabel="Please select ...">
+        	</s:selectItems>
+        </h:selectOneMenu>
+	    <br/>
+    	<h:outputText value="Project bugs:"/>
+        <rich:dataTable 
+			cellpadding="0" cellspacing="0" 
+			border="0" var="bug" value="#{frosconAction.bugs}">
+			<f:facet name="header">
+			<rich:columnGroup>
+				<rich:column width="150">
+					<h:outputText value="Bug Title"/>
+				</rich:column>
+				<rich:column width="300">
+					<h:outputText value="Bug Description"/>
+				</rich:column>
+				<rich:column width="300">
+					<h:outputText value="Bug Status"/>
+				</rich:column>
+			</rich:columnGroup>
+			</f:facet>
+			
+			<rich:column style="text-align:center">
+    			<h:inputText value="#{bug.title}" size="20"/>
+			</rich:column>
+			<rich:column style="text-align:center">
+    			<h:inputText value="#{bug.description}" size="80"/>
+			</rich:column>
+			<rich:column style="text-align:center">
+			<h:selectOneMenu value="#{bug.status}">
+        		<s:selectItems value="#{frosconAction.allStates}" var="state" label="#{state.toString()}" noSelectionLabel="Please select ...">
+        		</s:selectItems>
+        	</h:selectOneMenu>
+			</rich:column>
+		</rich:dataTable>
+		<h:commandButton value="Add Bug" action="#{frosconAction.addABug()}"/>
+		<h:commandButton value="Store" action="#{frosconAction.store()}"/>
+    </h:form>
+
+
+</ui:define>
+</ui:composition>

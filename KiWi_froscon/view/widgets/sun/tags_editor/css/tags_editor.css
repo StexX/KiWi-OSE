@@ -1,0 +1,180 @@
+body{
+	font-family:arial,helvetica,sans-serif;
+	color: black;
+	font-size: 12px;
+}
+
+img{
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+h1,h2,h3,h4{
+	color: #EB8000;
+	margin: 0;
+	padding: 0;
+}
+
+a{
+	cursor: pointer;
+}
+
+#tags_editor{
+	width: 400px;
+	padding: 10px;
+	margin: 0 auto 0 auto;
+	border: 1px solid lightGray;
+}
+	div.tagsEditor{
+		position: relative;
+	}
+		div.tagsEditor_loading{
+			width: 16px;
+			height: 16px;
+			position: absolute;
+			right: 8px;
+			top: 8px;
+			background-image: url('../../common/img/wait.gif');	
+		}
+
+		div.tagsEditor_requiredTags{
+			margin-top: 5px;
+		}
+			div.tagsEditor_requiredTags img{
+				cursor: pointer;
+				margin: 0 10px 0 2px;
+				width: 8px;
+				height: 8px;
+			}
+			div.tagsEditor_requiredTags select{
+				margin-right: 10px;
+			}
+
+		div.tagsEditor_freeTags{
+			margin-top: 20px;
+		}
+			div.tagsEditor_freeTags img{
+				cursor: pointer;
+				margin: 0 10px 0 2px;
+				width: 8px;
+				height: 8px;
+			}
+		div.tagsEditor_freeTagsEditor #tagsEditor_inputText{
+			border: 1px solid lightGrey;
+			margin-right: 5px;
+		}
+		div.tagsEditor_freeTagsEditor #tagsEditor_submitButton{
+			border: 1px solid lightGrey;
+			cursor: pointer;
+		}
+
+		div.tagsEditor_addTags{
+			color: grey;
+			margin-top: 20px;
+		}
+		div.tagsEditor_recommendTags{
+			color: grey;
+			margin-top: 5px;
+		}
+		div.tagsEditor_optional{
+			color: grey;
+			margin-top: 5px;
+		}
+			/*TagCloud*/
+			div.tagsEditor_optional div a{
+				color: #666666;
+				margin-right: 10px;
+			}
+
+			div.tagsEditor_optional div a.selectedTag{
+				color: black;
+			}
+
+				/*Must be for orange color of .tagsEditor_controlled class inside <a> (wich has grey color from line 76*/
+				div.tagsEditor_optional div a.tagsEditor_controlled{
+					color: #EB8000;
+				}
+				div.tagsEditor_optional div a.selectedTag.tagsEditor_controlled{
+					color: #EB5020;
+				}
+		
+		.tagsEditor_controlled{
+			color: #EB8000;
+		}
+
+div.overlay {
+    /* growing background image */
+    background-image:url(../img/white.png);
+
+	/* dimensions after the growing animation finishes  */
+    width:540px;
+    height:400px;
+
+    /* initially overlay is hidden */
+    display:none;
+
+    /* some padding to layout nested elements nicely  */
+    padding:55px;
+}
+
+/* default close button positioned on upper right corner */
+div.overlay a.close {
+    background-image:url(../img/close.png);
+    position:absolute;
+    right:5px;
+    top:5px;
+    cursor:pointer;
+    height:35px;
+    width:35px;
+}
+
+
+div.categoryContainer{
+
+}
+	div.categoryContainer div.categoryName{
+		text-align: left;
+		margin-right: 5px;
+		float: left;
+		
+	}
+	div.categoryContainer div.categoryTags{
+		width: 435px;
+		float: left;
+	}
+
+		div.categoryContainer div.categoryTags span.add{
+			display: none;
+		}
+		div.categoryContainer div.categoryTags span.none{
+			display: none;
+		}
+		div.categoryContainer div.categoryTags.empty span.none{
+			display: inline;
+		}
+		/* on hover above empty category, show "add" and hide "none" */
+		div.categoryContainer div.categoryTags:hover span.add {
+			display: inline;
+		}
+		div.categoryContainer div.categoryTags:hover span.none{
+			display: none;
+		}
+
+
+			div.categoryContainer div.categoryTags span.add a{
+				color: black;
+			}
+			div.categoryContainer div.categoryTags span.add button{
+				cursor: pointer;
+				height: 15px;
+				font-size: 8px;
+				vertical-align: text-bottom;
+			}
+
+	div.categoryContainer div.categoryClear{
+		clear: both;
+		width: 100%;
+		height: 1px;
+		visibility: hidden;
+	}

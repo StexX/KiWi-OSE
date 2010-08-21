@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/fragment
+END
+FragmentServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/fragment/FragmentServiceRemote.java
+END
+FragmentFacade.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/fragment/FragmentFacade.java
+END
+FragmentServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/fragment/FragmentServiceLocal.java
+END
+FragmentService.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/fragment/FragmentService.java
+END

@@ -1,0 +1,97 @@
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+                xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf">
+	<div id="editKat_panel" style="display:none">
+		<div class="editPanel" id="article_addTag" style="height:460px;width:700px;margin-left:-350px;">
+			<div class="editPanel_header" style="width: 688px;">
+				<h4>Verwandte Artikel hinzuf&#xFC;gen / entfernen</h4>
+			</div>
+			<div class="editPanel_content" style="height:400px;width:688px;">
+				<h3 style="width:400px">Artikel zum hinzuf&#xFC;gen anklicken:</h3>
+				<br />
+				<div class="editPanelSubbox">
+				<div class="editPanelLeft2">
+					<h2 style="margin:0 !important;padding:0 !important;">Vorgeschlagene Artikel:</h2>
+					<div style="overflow:auto;width:100%;height:140px;border:1px solid black;">
+						<ul>
+						<ui:repeat value="#{interedu.articleAction.recommandations}" var="rec">
+							<li style="margin-left:10px">
+								<a:commandLink action="#{interedu.articleAction.addRelatedArticle(rec)}" value="#{rec.title}" reRender="relArts_all" />
+							</li>
+						</ui:repeat>
+						</ul>
+					</div>
+				</div>
+				<s:div styleClass="editPanelRight2" id="relArts_all" style="border:none;overflow:hidden;">
+					<h3>Ausgew&#xE4;hlte Artikel:</h3>
+					<div style="overflow:auto;width:100%;height:140px;border:1px solid black;">
+					<ul>
+					<ui:repeat value="#{interedu.articleAction.allRelatedArticles}" var="relArt">
+						<li style="margin-left:10px">
+							<h:outputText value="#{relArt.title} " />
+							<h:commandLink action="#{interedu.articleAction.deleteRelatedArticle(relArt)}" >
+								<img src="images/icon_bin.png" alt="entfernen" style="border:none" />
+							</h:commandLink>
+						</li>
+					</ui:repeat>
+					</ul>
+					</div>
+				</s:div>
+				</div>
+				<!-- bottom -->
+				<div class="editPanelSubbox">
+				<div class="editPanelLeft2">
+					<h2 style="margin:0 !important;padding:0 !important;">Titelsuche:</h2>
+					<h:inputText id="relArtLabel" value="#{interedu.articleAction.relArtFreeText}" autocomplete="off" onkeyup="if(jQuery(this).val().length > 2) {setAutoComplete();} else {jQuery('#tagAddArticle\\:relArtSug').html('');}" style="width:310px;margin-top:5px;margin-bottom:5px;"/>
+					<a:jsFunction name="setAutoComplete" action="#{interedu.articleAction.autocompleteRelArtFreeText()}" reRender="relArtSug" />
+					<s:div id="relArtSug" style="overflow:auto;height:100px;border:1px solid black;padding:5px;">
+						<ul>
+							<ui:repeat value="#{interedu.articleAction.autoc}" var="ac">
+							<li>
+								<a:commandLink action="#{interedu.articleAction.addRelArtFreeText(ac)}" value="#{ac}" reRender="relArts_all" />
+							</li>
+							</ui:repeat>
+						</ul>
+					</s:div>
+				</div>
+				<s:div styleClass="editPanelRight2">
+					<h2 style="margin:0 !important;padding:0 !important;">Gesammelte Artikel:</h2>
+					<div style="overflow:auto;width:100%;height:140px;border:1px solid black;">
+						<ul>
+						<ui:repeat value="#{interedu.artikelCollector.articleCollection}" var="col">
+							<li style="margin-left:10px">
+								<a:commandLink action="#{interedu.articleAction.addRelatedArticle(col)}" value="#{col.title}" reRender="relArts_all" />
+							</li>
+						</ui:repeat>
+						</ul>
+					</div>
+				</s:div>
+				</div>
+			</div>
+			<div class="editPanel_buttons" style="width:678px;">
+				<table width="100%">
+					<tr>
+						<td><a:commandButton value="&#xC4;nderungen zur&#xFC;cknehmen" onclick="closeBackground();" action="#{interedu.articleAction.setEditMode('none')}" reRender="article_relatedarticles" style="width:330px;"/></td>
+						<td align="right">
+							<a:commandButton value="&#xC4;nderungen speichern" onclick="closeBackground();" action="#{interedu.articleAction.saveRelArts()}" reRender="content_middle_complete" style="width:330px;"/>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+	/* <![CDATA[ */
+	openEditPanel('editKat_panel');
+
+	/* ]]> */
+</script>
+</ui:composition>

@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/Stemmer/src/org/tartarus/snowball/ext
+END
+turkishStemmer.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/Stemmer/src/org/tartarus/snowball/ext/turkishStemmer.java
+END
+germanStemmer.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/Stemmer/src/org/tartarus/snowball/ext/germanStemmer.java
+END
+dutchStemmer.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/Stemmer/src/org/tartarus/snowball/ext/dutchStemmer.java
+END
+danishStemmer.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/Stemmer/src/org/tartarus/snowball/ext/danishStemmer.java
+END
+porterStemmer.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/Stemmer/src/org/tartarus/snowball/ext/porterStemmer.java
+END
+norwegianStemmer.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/Stemmer/src/org/tartarus/snowball/ext/norwegianStemmer.java
+END
+englishStemmer.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/Stemmer/src/org/tartarus/snowball/ext/englishStemmer.java
+END
+russianStemmer.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/Stemmer/src/org/tartarus/snowball/ext/russianStemmer.java
+END
+spanishStemmer.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/Stemmer/src/org/tartarus/snowball/ext/spanishStemmer.java
+END
+portugueseStemmer.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/Stemmer/src/org/tartarus/snowball/ext/portugueseStemmer.java
+END
+romanianStemmer.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/Stemmer/src/org/tartarus/snowball/ext/romanianStemmer.java
+END
+frenchStemmer.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/Stemmer/src/org/tartarus/snowball/ext/frenchStemmer.java
+END
+swedishStemmer.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/Stemmer/src/org/tartarus/snowball/ext/swedishStemmer.java
+END
+finnishStemmer.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/Stemmer/src/org/tartarus/snowball/ext/finnishStemmer.java
+END
+hungarianStemmer.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/Stemmer/src/org/tartarus/snowball/ext/hungarianStemmer.java
+END
+italianStemmer.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/Stemmer/src/org/tartarus/snowball/ext/italianStemmer.java
+END

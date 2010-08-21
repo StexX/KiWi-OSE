@@ -1,0 +1,374 @@
+KiWi Coding Guidelines
+======================
+
+This document contains some important generic rules for writing code in 
+KiWi. These rules are meant to simplify our lives and your lives, and not 
+just to annoy you!
+
+We are all lazy and I know that documenting is a time-consuming task. I am
+not asking you to write an architecture document, a software design or even
+full-flegded documentation for every piece of code you write, but I am 
+asking you to put little snippets of documentation and thought into your 
+code even during first writing. 
+
+What you find below are therefore not really big issues. Each of the rules
+only takes a small amount of time to realise, which pays of later 100
+times. You should adapt each of the rules as a general pattern that you
+always apply without even thinking about it.
+
+Because we are always lazy, here is a summary of the rules (read below 
+nonetheless!):
+
+- Rule 1: Comment Your Code!
+- Rule 2: Check your Arguments and Consider All Cases
+- Rule 3: Write Self-Documenting Code
+- Rule 4: Modularize!
+- Rule 5: Consider and Test All Cases
+- Rule 6: Use Logging Extensively
+- Rule 7: Learn what your Framework can do for you
+
+
+
+Rule 1: Comment Your Code!
+--------------------------
+
+Writing comments is extremely important. A typical scenario: someone checks
+in a new piece of code which contains an unexpected error that someone else 
+discovers and could easily fix. However, since the code is so complicated 
+and undocumented, it is not easy to find out what the right behaviour would 
+be (writing a log entry, returning a default value, ...). In this situation 
+it is absolutely necessary that the code is commented. 
+
+Another scenario: a new developer wants to write a KiWi plugin, but he has 
+no idea how to use a certain method. A Javadoc comment at the beginning of 
+each method could help.
+
+Commenting not only helps others. It also helps YOU. Both, afterwards when
+fixing bugs, and also immediately when writing the code, because it helps
+you think about how your code is supposed to perform.
+
+
+Here are some common commenting patterns:
+1. JavaDoc comment in front of each method; in the Javadoc comment, describe 
+   at least what the method is supposed to do, which arguments it takes and 
+   what values these might have, and what return values can be expected. A 
+   nice plus, particularly for complicated methods, would also be to describe
+   how the method is expected to work like (algorithm ...) so that someone 
+   else can more easily fix bugs.
+2. 1-line comment in front of each variable declaration; this comment 
+   should briefly describe what values this variable will hold and what it
+   will be used for - particularly for generic types like "Object" or "List".
+3. 1-line comment in front of each for- or while-loop; this comment
+   should briefly describe what the loop does
+4. 1-line comment in each branch of an if-then-else or switch; this comment
+   should briefly describe what the case is (declaratively!) and what is
+   supposed to happen in that case
+5. large comment in front of each "algorithm" or functional block; e.g. if
+   you are writing a method that issues several queries and merges the 
+   results afterwards, describe before each query in several lines what 
+   the code is going to do.
+   
+
+Here is an example of a method that is properly commented according to these
+guidelines:
+
+------ 8< ------ 8< ------
+	/**
+	 * Perform a joined fulltext search, SPARQL query, and HQL search on the data repositories. The search criteria
+	 * are passed by an appropriate KiWiSearchCriteria object that contains the query specification. As in other
+	 * methods, the parameter type indicates the KiWiFacade or KiWiEntity to use as return type.
+	 * 
+	 * This method is optimized for typical website searches using paging and is faster for the first page, a bit 
+	 * slower for the second page, ... Note that a pure fulltext query is very efficient even for huge datasets, but
+	 * every combination with HQL or SPARQL is much slower, because currently the join needs to be computed manually
+	 * in Java.
+	 * 
+	 * TODO: should at some point be merged with createQuery
+	 * 
+	 * @param params the search criteria to use for the search
+	 * @param type the KiWiEntity or KiWiFacade to use as element type of the result list
+	 * @return a list of search results of the type passed as argument
+	 */
+	public <C extends KiWiEntity> List<C> search(KiWiSearchCriteria params, Class<C> type) {
+		
+		long start = System.currentTimeMillis();
+		
+		// holds the final results, might be facaded
+		List<C> searchResults;
+		
+		// holds the ContentItem results
+		List<ContentItem> queryResults;
+		
+		// the prefix for all named queries related to search
+		String queryName = "kiwiEntityManager.search";
+		
+		/* the itemIds are where the actual join takes place:
+		 * - if a fulltext search is issued, itemIds initially holds the ids of all content items that matched the search
+		 * - if a RDF query is issued and itemIds is non-null, only the ids returned by the 
+		 *   RDF query are retained; otherwise, itemIds is the list of ids returned by the RDF query
+		 * - if a HQL query is issued and itemIds is non-null, only the ids returned by the
+		 *   HQL query are retained; otherwise, itemIds is the list of ids returned by the HQL query
+		 *   
+		 * finally, we iterate over the resulting list of ids and fetch the corresponding ContentItems one-by-one using 
+		 * entityManager.find; this is efficient for reasonably small page sizes but probably a bit slow for unpaged searches
+		 * 
+		 * TODO: is there any way to improve the performance of retainAll?
+		 */ 
+		LinkedHashSet<Long> itemIds = new LinkedHashSet<Long>();
+		
+		//
+		if(params.getSearchString() != null && !params.getSearchString().equals("")) {
+			// a search string has been given, perform a fulltext search
+			// searches the following fields:
+			// - textContent.content is the XML string of the text content object associated with the item
+			// - title is the title of the content item
+			QueryParser parser = new MultiFieldQueryParser(
+					new String[] { "title", "textContent.content" }, new StopAnalyzer());
+			
+	
+			itemIds = new LinkedHashSet<Long>();
+			try {
+				org.apache.lucene.search.Query luceneQuery = parser.parse(params.getSearchString());
+				
+				
+				FullTextEntityManager fullTextEntityManager = (FullTextEntityManager)entityManager;
+				FullTextQuery fullTextQuery = (FullTextQuery) fullTextEntityManager
+						.createFullTextQuery(luceneQuery, ContentItem.class);
+				fullTextQuery.setProjection("id");
+	
+				
+				// if there is no HQL criterion and no RDF query, we can directly do the pagination here
+				// and improve performance dramatically (avoid join)
+				// TODO: Lucene could even do time searches by appropriate filters
+				if(!params.isHqlCriterionSet() && !params.isRdfCriterionSet()) {
+					fullTextQuery.setFirstResult(params.getOffset());
+					if(params.getLimit() > 0) {
+						fullTextQuery.setMaxResults(params.getLimit());
+					}
+				}
+				
+				
+				// eliminate duplicates by storing in a set
+				for(Object[] objs : (List<Object[]>)fullTextQuery.getResultList()) {
+					itemIds.add((Long)objs[0]);
+				}
+			} catch (Exception ex) {
+				log.error("error while executing full text query", ex);
+			}
+		}
+		log.info("fulltext search: #0 results (accumulated time: #1ms)",itemIds.size(), System.currentTimeMillis() - start);
+		
+		// now perform a RDF query if given in the search criteria
+		if(params.getRdfQuery() != null) {
+....
+------ 8< ------ 8< ------
+
+
+
+
+
+Rule 2: Check your Arguments 
+-----------------------------
+
+Most bugs (I would guess 80%) stem from not properly checking all possible 
+values of a variable (especially arguments passed in from somewhere else)
+when writing the code. Sometimes this is not easy or not even possible, 
+but most of the time it is just laziness which costs 100 times the time 
+afterwards when trying to fix the bug. 
+
+So the general rule is: when doing something with a variable, consider all
+values that variable might have. For values that you consider errors,
+write some error handling code. If you don't know how to handle the error,
+at least write an explanatory message to the log file!
+
+A little anecdote is from the Linux kernel. For many years, it contained a
+logging statement that said "warning: printer is on fire". It was issued
+upon a certain signal from the parallel port that could in principle occur
+(so a possible variable state), but actually never did (it was meant for 
+1970s printers who actually could start burning!). The message is: the
+kernel programmer did a good job because he considered a case that could
+occur even though he did not really know when it would occur.
+
+Typical scenarios when this happens is when working with collections, when
+working with strings, and when working with objects that might or might not
+be null. Examples:
+
+1. You have some object passed as argument (or worse: injected into the
+   component), e.g. a User, and you want to print out the first and last 
+   name (or call any other method). In this case you should always 
+   take into account that the value of the parameter might also be
+   null. Example:
+   Instead of 
+
+public void printName(User u) {
+   System.out.println(u.getFirstName() + " " + u.getLastName()); 
+}
+
+   you should always (few exceptions!) write:
+
+public void printName(User u) {
+   if(u != null) {
+      System.out.println(u.getFirstName() + " " + u.getLastName()); 
+   } else {
+      System.put.println("unknown user");
+   }
+}
+       
+
+2. You have a list, e.g. passed as argument and want to get one of its 
+   elements. For example, a method could look as follows:
+   
+public void processList(List list) {
+	Object o = list.get(0);
+}
+
+   The problem here is that you do not know whether the list contains an
+   element at all, even if it does in your test cases! So when working with
+   lists, always do the following pattern (adapt as necessary):
+   
+public void processList(List list) {
+  if(list != null && list.size() > 0) {
+     Object o = list.get(0);
+  } else {
+    log.error("processList: list was empty");   
+  }
+}    
+
+3. You have a string that you need for further processing. In this case 
+   you would often check both, whether the string is null and whether it is 
+   empty. The common pattern is
+   if(s != null && !s.equals("")) {
+      ...
+   }
+   
+   
+   
+
+Rule 3: Write Self-Documenting Code
+-----------------------------------
+
+Even when comments are there it is still necessary to keep your code 
+readable and as self-explanatory as possible. Sub-rules are therefore:
+
+Rule 3a: keep code as simple as possible
+         because simple is easier to understand and less error-prone;
+         always try to find a simple and nice-looking solution as
+         early as possible
+         
+Rule 3b: modularize your code if it is too complex
+         because several functional modules are easier to understand
+         
+Rule 3c: properly name your variables and methods
+         a variable named "result" is always better than a variable named "x"
+         apply a common naming convention, and adopt the Java conventions
+         when writing Java code
+
+Rule 3d: use formatting and indenting to make your code readable
+         Eclipse has an auto-formatting feature, but actually it often
+         makes the code less readable, so be carefull with that                 
+
+Remember: programming is an art, and your code needs to be *beautiful*!
+
+
+
+Rule 4: Modularize!
+-------------------
+   
+Modularize your code as much as possible, and leave coupling with other
+parts as low as possible. Modular code is easier to understand and
+easier to debug, and it lets you keep your code separate from the code
+written by others.
+
+Practically, this means: don't add connecting code to someone else's 
+methods if it is not strictly necessary and could be solved by other means.
+
+
+
+Rule 5: Consider and Test All Cases
+------------------------------------
+
+As programmers, we tend to test only with cases that seem sensible to US.
+But be aware that non-programmers don't have the same sense of "sensible".
+When programming, you often adopt a certain set of test cases that you
+always run, but sometimes open your mind and try something else,
+something "naive".
+
+Example: in a project we had to implement a search engine for a news
+website, and it ran well in all search tests. The problem was, that every
+test was done with very specific search criteria (e.g. searching for the
+name of a person), but as soon as you searched something more general
+(like "Salzburg") the performance broke down to the point where it was
+unacceptable - simply because the search returned so many results that
+even sorting them would take too long.
+
+The message is thus: always consider and test all cases, even if you
+think that they will never occur. Make an informed choice: try to think
+about situations where your algorithm will fail and test them.
+
+
+Rule 6: Use Logging Extensively
+-------------------------------
+
+Modern Java frameworks provide really simple and very efficient and
+fine-grained ways to send debugging, information, warning, or error
+output to either the console or to some logfile. Make use of it 
+extensively, because it helps others to figure out what is happening,
+and use sensible logging messages.
+
+Logging can be configured in certain configuration files. Learn how to use
+them to get fine-grained control over what is logged and where it is logged.
+Most frameworks let you configure logging to the class level, so I can say
+that I want debugging messages for a certain class, but only warnings for
+all other code.
+
+Use logging correctly so that it provides no performance penalties. Many 
+frameworks (like Seam) make this very easy, because they provide parameter
+substitutions. Remember that Java uses eager evaluation for method
+parameters, so a logging statement like
+
+log.debug("processed object "+object.toString()+" in " + 
+          (System.currentTimeMillis() - start) + "ms ");
+
+is computationally expensive even when it is not shown because debugging is
+turned off. The reason is that String concatenations are still calculated
+even if the method debug() does not do anything. In many frameworks (like
+Seam) you can instead use:
+
+log.debug("processed object #0 in #1ms", object.toString(),
+          System.currentTimeMillis() - start);
+          
+to avoid expensive computations. Most logging frameworks also allow to
+pass Exceptions as arguments, which causes the exception to be properly
+printed to the logfile.
+
+
+Rule 6a: A corrollary to the rule is: don't use System.out.println when it 
+is not strictly necessary (because no logging is available). Compared to 
+logging, System.out.println is not configurable and plainly annoying, because
+it cannot be turned off.
+
+
+
+Rule 7: Learn what your Framework can do for you
+------------------------------------------------
+
+When programming Java, you are always surrounded by and using many frameworks.
+At the very least, it means the Java API, which already contains an abundance
+of functionality that can help you achieve things more easily. Often, you
+can also make use of many additional frameworks like Apache commons, Java EE,
+Seam, Hibernate, ...
+
+Learn your frameworks in-and-out, because many things have already been 
+solved by others. Have a good overview over the Java API and look there 
+whether certain core functionality (collections, string manipulation, 
+concurrency, etc) are already provided. Personally, I always have my browser 
+open pointing to the API docs of the frameworks I am using.
+
+Particularly, have a look at the different Java collections (in java.util) and
+learn their different properties (read and update performance, memory 
+consumption).
+
+In KiWi, it also means that you should read the "Seam in Action" book until
+the end, just to get an idea what Seam can already do for you.
+
+

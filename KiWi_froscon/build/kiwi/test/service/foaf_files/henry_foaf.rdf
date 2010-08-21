@@ -1,0 +1,482 @@
+<!-- Processed by Id: cwm.py,v 1.197 2007/12/13 15:38:39 syosi Exp -->
+<!--     using base file:///Users/hjs/Documents/card/card.n3-->
+
+
+<rdf:RDF xmlns="http://xmlns.com/foaf/0.1/"
+    xmlns:cert="http://www.w3.org/ns/auth/cert#"
+    xmlns:contact="http://www.w3.org/2000/10/swap/pim/contact#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+    xmlns:iana="http://www.iana.org/assignments/relation/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:rsa="http://www.w3.org/ns/auth/rsa#">
+
+    <Person rdf:about="http://axel.deri.ie/~axepol/foaf.rdf#me">
+        <name>Axel Polleres</name>
+    </Person>
+
+    <Person rdf:about="http://b4mad.net/FOAF/goern.rdf#goern">
+
+        <name>Christoph  Görn</name>
+    </Person>
+
+    <PersonalProfileDocument rdf:about="http://bblfish.net/people/henry/card">
+        <iana:alternate rdf:resource="http://bblfish.net/people/henry/card.n3"/>
+        <iana:alternate rdf:resource="http://bblfish.net/people/henry/card.rdf"/>
+        <maker rdf:resource="http://bblfish.net/people/henry/card#me"/>
+        <primaryTopic rdf:resource="http://bblfish.net/people/henry/card#me"/>
+        <title>Henry Story's FOAF file</title>
+
+    </PersonalProfileDocument>
+
+    <Person rdf:about="http://bblfish.net/people/henry/card#me">
+        <contact:home rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#ContactLocation"/>
+            <contact:address rdf:parseType="Resource">
+                <contact:city>Fontainebleau</contact:city>
+                <contact:country>France</contact:country>
+
+                <contact:postalCode>77300</contact:postalCode>
+                <contact:street>21 rue Saint Honore</contact:street>
+            </contact:address>
+            <geo:lat>48.404532</geo:lat>
+            <geo:long>2.700448</geo:long>
+        </contact:home>
+        <sameAs xmlns="http://www.w3.org/2002/07/owl#"
+            rdf:resource="http://sixiron.sfbay.sun.com:8080/FoafServer/services/people/155492#HS"/>
+
+        <aimChatID>unbabelfish</aimChatID>
+        <birthday>07-29</birthday>
+        <currentProject rdf:resource="http://bblfish.net/work/atom-owl/2006-06-06/"/>
+        <currentProject rdf:resource="https://bloged.dev.java.net/"/>
+        <currentProject rdf:resource="https://sommer.dev.java.net/"/>
+        <depiction rdf:resource="http://farm1.static.flickr.com/164/373663745_e2066a4950.jpg"/>
+        <family_name>Story</family_name>
+
+        <gender>male</gender>
+        <givenname>Henry</givenname>
+        <holdsAccount rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/OnlineAccount"/>
+            <rdfs:label xml:lang="en">Henry Story's skype account</rdfs:label>
+            <accountName>bblfish</accountName>
+            <accountServiceHomepage rdf:resource="http://www.skype.com/"/>
+
+        </holdsAccount>
+        <holdsAccount rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/OnlineAccount"/>
+            <rdfs:label xml:lang="en">Henry Story's flickr pictures account</rdfs:label>
+            <accountName>bblfish</accountName>
+            <accountProfilePage rdf:resource="http://www.flickr.com/people/bblfish"/>
+            <accountServiceHomepage rdf:resource="http://www.flickr.com/"/>
+        </holdsAccount>
+
+        <holdsAccount rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/OnlineAccount"/>
+            <rdfs:label xml:lang="en">Henry Story's last.fm music account</rdfs:label>
+            <accountName>bblfish</accountName>
+            <accountProfilePage rdf:resource="http://www.last.fm/user/bblfish"/>
+            <accountServiceHomepage rdf:resource="http://www.last.fm/"/>
+        </holdsAccount>
+        <holdsAccount rdf:parseType="Resource">
+
+            <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/OnlineAccount"/>
+            <rdfs:label xml:lang="en">Henry Story's delicious bookmarking account</rdfs:label>
+            <accountName>bblfish</accountName>
+            <accountProfilePage rdf:resource="http://delicious.com/bblfish"/>
+            <accountServiceHomepage rdf:resource="http://delicious.com/"/>
+        </holdsAccount>
+        <holdsAccount rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/OnlineAccount"/>
+
+            <rdfs:label xml:lang="en">Henry Story's java.net developer account</rdfs:label>
+            <accountName>bblfish</accountName>
+            <accountServiceHomepage rdf:resource="http://java.net/"/>
+        </holdsAccount>
+        <holdsAccount rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/OnlineAccount"/>
+            <rdfs:label xml:lang="en">Henry Story's twitter micro blogging account</rdfs:label>
+
+            <accountName>bblfish</accountName>
+            <accountProfilePage rdf:resource="http://twitter.com/bblfish"/>
+            <accountServiceHomepage rdf:resource="http://twitter.com/"/>
+        </holdsAccount>
+        <holdsAccount rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/OnlineAccount"/>
+            <rdfs:label xml:lang="en">Henry Story's twine semantic aggregation account</rdfs:label>
+            <accountName>bblfish</accountName>
+
+            <accountProfilePage rdf:resource="http://www.twine.com/user/bblfish"/>
+            <accountServiceHomepage rdf:resource="http://twine.com/"/>
+        </holdsAccount>
+        <holdsAccount rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/OnlineAccount"/>
+            <rdfs:label xml:lang="en">Henry Story's facebook social networking account</rdfs:label>
+            <accountName>bblfish</accountName>
+            <accountServiceHomepage rdf:resource="http://www.facebook.com/"/>
+
+        </holdsAccount>
+        <holdsAccount rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/OnlineAccount"/>
+            <rdfs:label xml:lang="en">Henry Story's linked in business social network account</rdfs:label>
+            <accountName>bblfish</accountName>
+            <accountProfilePage rdf:resource="http://www.linkedin.com/pub/0/482/680"/>
+            <accountServiceHomepage rdf:resource="http://www.linkedin.com/"/>
+        </holdsAccount>
+
+        <homepage rdf:resource="http://bblfish.net/"/>
+        <interest rdf:resource="http://en.wikipedia.org/wiki/Go_%28game%29"/>
+        <interest rdf:resource="http://wikipedia.org/wiki/Cycling"/>
+        <interest rdf:resource="http://wikipedia.org/wiki/Philosophy"/>
+        <interest rdf:resource="http://wikipedia.org/wiki/Semantic_Web"/>
+        <jabberID>bblfish@jabber.org</jabberID>
+        <knows rdf:resource="http://axel.deri.ie/~axepol/foaf.rdf#me"/>
+        <knows rdf:resource="http://b4mad.net/FOAF/goern.rdf#goern"/>
+
+        <knows rdf:resource="http://bigasterisk.com/foaf.rdf#drewp"/>
+        <knows rdf:resource="http://crschmidt.net/foaf.rdf#crschmidt"/>
+        <knows rdf:resource="http://danbri.org/foaf.rdf#danbri"/>
+        <knows rdf:resource="http://data.boab.info/david/foaf.rdf#me"/>
+        <knows rdf:resource="http://davelevy.info/foaf.rdf#me"/>
+        <knows rdf:resource="http://dblp.l3s.de/d2r/page/authors/Christian_Bizer"/>
+        <knows rdf:resource="http://dbpedia.org/resource/James_Gosling"/>
+        <knows rdf:resource="http://dbpedia.org/resource/Roy_Fielding"/>
+        <knows rdf:resource="http://dbpedia.org/resource/Tim_Bray"/>
+
+        <knows rdf:resource="http://dbpedia.org/resource/Yochai_Benkler"/>
+        <knows rdf:resource="http://foafbuilder.qdos.com/people/asyd.myopenid.com/foaf.rdf#me"/>
+        <knows rdf:resource="http://foafbuilder.qdos.com/people/tboudreau.myopenid.com/foaf.rdf#me"/>
+        <knows rdf:resource="http://handtwerk.de/foaf.rdf#arne"/>
+        <knows rdf:resource="http://heddley.com/edd/foaf.rdf#edd"/>
+        <knows rdf:resource="http://kashori.com/JohnBlack/foaf.rdf#jpb"/>
+        <knows rdf:resource="http://metacognition.info/profile/webwho.xrdf#chime"/>
+        <knows rdf:resource="http://purl.oclc.org/NET/gearon/people/PaulGearon/foaf.rdf#me"/>
+        <knows rdf:resource="http://purl.org/captsolo/semweb/foaf-captsolo.rdf#Uldis_Bojars"/>
+
+        <knows rdf:resource="http://richard.cyganiak.de/foaf.rdf#cygri"/>
+        <knows rdf:resource="http://sebastian.dietzold.de/terms/me"/>
+        <knows rdf:resource="http://semedia.deit.univpm.it/people/christian/foaf.rdf#me"/>
+        <knows rdf:resource="http://swordfish.rdfweb.org/people/libby/rdfweb/webwho.xrdf#me"/>
+        <knows rdf:resource="http://torrez.us/who#elias"/>
+        <knows rdf:resource="http://www.aifb.uni-karlsruhe.de/Personen/viewPersonOWL/id2076instance"/>
+        <knows rdf:resource="http://www.anjeve.de/foaf.rdf#AnjaJentzsch"/>
+        <knows rdf:resource="http://www.dfki.uni-kl.de/~grimnes/foaf.rdf#ggrimnes"/>
+        <knows rdf:resource="http://www.fosi.org/people/philarcher/foaf.rdf#me"/>
+
+        <knows rdf:resource="http://www.ibiblio.org/hhalpin/#me"/>
+        <knows rdf:resource="http://www.ifi.unizh.ch/ddis/fileadmin/user_upload/kiefer/foaf.rdf#christophkiefer"/>
+        <knows rdf:resource="http://www.ifi.uzh.ch/ddis/fileadmin/user_upload/avi/#me"/>
+        <knows rdf:resource="http://www.informatik.uni-leipzig.de/~auer/foaf.rdf#me"/>
+        <knows rdf:resource="http://www.pipian.com/rdf/tami/juliette.n3#juliette"/>
+        <knows rdf:resource="http://www.semantic-web.at/people/blumauer/card#me"/>
+        <knows rdf:resource="http://www.sw-app.org/foaf/mic.rdf#mic"/>
+        <knows rdf:resource="http://www.topquadrant.com/people/dallemang/foaf.rdf#me"/>
+        <knows rdf:resource="http://www.uni-koblenz.de/~sschenk/foaf.rdf#me"/>
+
+        <knows rdf:resource="http://www.w3.org/People/Berners-Lee/card#i"/>
+        <knows rdf:resource="http://www.w3.org/People/Connolly/#me"/>
+        <knows rdf:resource="http://xircles.codehaus.org/users/evenisse/foaf#me"/>
+        <knows rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            <rdfs:seeAlso rdf:resource="http://www.webmink.net/foaf.rdf"/>
+            <homepage rdf:resource="http://www.webmink.net/"/>
+            <mbox_sha1sum>4e377376e6977b765c1e78b2d0157a933ba11167</mbox_sha1sum>
+
+            <name>Simon Phipps</name>
+        </knows>
+        <knows rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            <rdfs:seeAlso rdf:resource="http://dannyayers.com/me.rdf"/>
+            <homepage rdf:resource="http://dannyayers.com/"/>
+            <name>Danny Ayers</name>
+        </knows>
+
+        <knows rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            <homepage rdf:resource="http://g1o.net/"/>
+            <name>Giovanni Tummarello</name>
+        </knows>
+        <knows rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            <homepage rdf:resource="http://www.pst.ifi.lmu.de/people/staff/rauschmayer/axel-rauschmayer/"/>
+
+            <name>Axel Rauschmayer</name>
+        </knows>
+        <knows rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            <rdfs:seeAlso rdf:resource="http://www.openrdf.org/people/foaf-jeen.rdf"/>
+            <homepage rdf:resource="http://wwwis.win.tue.nl/~jbroekst/"/>
+            <name>Jeen Broekstra</name>
+        </knows>
+
+        <knows rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            <rdfs:seeAlso rdf:resource="http://www.w3.org/People/Eric/ericP-foaf.rdf"/>
+            <homepage rdf:resource="http://www.w3.org/People/Eric/"/>
+            <name>Eric Prud'hommeaux</name>
+        </knows>
+        <knows rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+
+            <rdfs:seeAlso rdf:resource="http://bitworking.org/foaf.rdf"/>
+            <homepage rdf:resource="http://bitworking.org/"/>
+            <name>Joe Gregorio</name>
+        </knows>
+        <knows rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            <rdfs:seeAlso rdf:resource="http://novaspivack.typepad.com/foaf.rdf"/>
+            <mbox rdf:resource="mailto:nova@radarnetworks.com"/>
+
+            <name>Spivack Nova</name>
+        </knows>
+        <knows rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            <homepage rdf:resource="http://www.j-paine.org/"/>
+            <name>Jocelyn Paine</name>
+        </knows>
+        <knows rdf:parseType="Resource">
+
+            <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            <homepage rdf:resource="http://catbauer.com/"/>
+            <name>Cat Bauer</name>
+        </knows>
+        <knows rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            <rdfs:seeAlso rdf:resource="http://kronkltd.net/data/foaf.rdf"/>
+            <homepage rdf:resource="http://kronkltd.net/"/>
+
+            <name>Renfer Daniel</name>
+        </knows>
+        <knows rdf:parseType="Resource">
+            <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            <rdfs:seeAlso rdf:resource="http://www.openrdf.org/people/foaf-arjohn.rdf"/>
+            <name>Arjohn Kampman</name>
+        </knows>
+        <knows rdf:parseType="Resource">
+
+            <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            <rdfs:seeAlso rdf:resource="http://aeim.niij.org/about/me.n3"/>
+            <homepage rdf:resource="http://niij.org/"/>
+            <name>Michael Zeltner</name>
+        </knows>
+        <logo rdf:resource="/pix/bfish.large.jpg"/>
+        <mbox rdf:resource="mailto:henry.story@bblfish.net"/>
+        <mbox rdf:resource="mailto:henry.story@gmail.com"/>
+
+        <mbox rdf:resource="mailto:henry.story@sun.com"/>
+        <name>Henry J. Story</name>
+        <nick>bblfish</nick>
+        <openid rdf:resource="http://bblfish.net/"/>
+        <openid rdf:resource="http://openid.sun.com/bblfish"/>
+        <pastProject rdf:resource="http://babelfish.altavista.com/"/>
+        <phone rdf:resource="tel:+1-510-931-5491"/>
+        <phone rdf:resource="tel:+33-9-70-44-86-64"/>
+
+        <schoolHomepage rdf:resource="http://www.bbk.ac.uk/phil/"/>
+        <schoolHomepage rdf:resource="http://www.doc.ic.ac.uk/"/>
+        <schoolHomepage rdf:resource="http://www.kcl.ac.uk/kis/schools/hums/philosophy/"/>
+        <title>Mr</title>
+        <weblog rdf:resource="http://bblfish.net/blog/"/>
+        <weblog rdf:resource="http://blogs.sun.com/bblfish/"/>
+        <weblog rdf:resource="http://del.icio.us/bblfish"/>
+        <weblog rdf:resource="http://www.flickr.com/photos/bblfish/"/>
+
+        <workplaceHomepage rdf:resource="http://sun.com"/>
+    </Person>
+
+    <Person rdf:about="http://bigasterisk.com/foaf.rdf#drewp">
+        <homepage rdf:resource="http://bigasterisk.com/"/>
+        <name>Drew Perttula</name>
+    </Person>
+
+    <Person rdf:about="http://crschmidt.net/foaf.rdf#crschmidt">
+
+        <homepage rdf:resource="http://crschmidt.net/"/>
+        <name>Christopher Schmidt</name>
+    </Person>
+
+    <Person rdf:about="http://danbri.org/foaf.rdf#danbri">
+        <homepage rdf:resource="http://danbri.org/"/>
+        <name>Dan Brickley</name>
+    </Person>
+
+    <Person rdf:about="http://data.boab.info/david/foaf.rdf#me">
+        <name>David Peterson</name>
+    </Person>
+
+    <Person rdf:about="http://davelevy.info/foaf.rdf#me">
+        <name>Dave Levy</name>
+    </Person>
+
+    <Person rdf:about="http://dblp.l3s.de/d2r/page/authors/Christian_Bizer">
+        <homepage rdf:resource="http://www.bizer.de"/>
+        <name>Chris Bizer</name>
+    </Person>
+
+    <Person rdf:about="http://dbpedia.org/resource/James_Gosling">
+        <name>James Gosling</name>
+    </Person>
+
+    <Person rdf:about="http://dbpedia.org/resource/Roy_Fielding">
+        <homepage rdf:resource="http://roy.gbiv.com/"/>
+        <name>Roy Fielding</name>
+    </Person>
+
+    <Person rdf:about="http://dbpedia.org/resource/Tim_Bray">
+        <name>Tim Bray</name>
+    </Person>
+
+    <Person rdf:about="http://dbpedia.org/resource/Yochai_Benkler">
+        <name>Yochai Benkler</name>
+    </Person>
+
+    <Person rdf:about="http://foafbuilder.qdos.com/people/asyd.myopenid.com/foaf.rdf#me">
+        <name>Bruno Bonfils</name>
+    </Person>
+
+    <Person rdf:about="http://foafbuilder.qdos.com/people/tboudreau.myopenid.com/foaf.rdf#me">
+        <name>Tim Boudreau</name>
+        <weblog rdf:resource="http://weblogs.java.net/blog/timboudreau/"/>
+    </Person>
+
+    <Person rdf:about="http://handtwerk.de/foaf.rdf#arne">
+        <homepage rdf:resource="http://www.handtwerk.de"/>
+        <name>Arne Handt</name>
+
+    </Person>
+
+    <Person rdf:about="http://heddley.com/edd/foaf.rdf#edd">
+        <homepage rdf:resource="http://heddley.com/edd/"/>
+        <name>Edd Dumbill</name>
+    </Person>
+
+    <Person rdf:about="http://kashori.com/JohnBlack/foaf.rdf#jpb">
+        <homepage rdf:resource="http://kashori.com/JohnBlack"/>
+
+        <name>John Black</name>
+    </Person>
+
+    <Person rdf:about="http://metacognition.info/profile/webwho.xrdf#chime">
+        <name>Chimezie Ogbuji</name>
+    </Person>
+
+    <Person rdf:about="http://purl.oclc.org/NET/gearon/people/PaulGearon/foaf.rdf#me">
+        <name>Paul Gearon</name>
+
+    </Person>
+
+    <Person rdf:about="http://purl.org/captsolo/semweb/foaf-captsolo.rdf#Uldis_Bojars">
+        <homepage rdf:resource="http://kaste.lv/~captsolo"/>
+        <name>Uldis Bojars</name>
+    </Person>
+
+    <Person rdf:about="http://richard.cyganiak.de/foaf.rdf#cygri">
+        <homepage rdf:resource="http://richard.cyganiak.de/"/>
+
+        <name>Richard Cyganiak</name>
+    </Person>
+
+    <Person rdf:about="http://sebastian.dietzold.de/terms/me">
+        <name>Sebastian Dietzold</name>
+    </Person>
+
+    <Person rdf:about="http://semedia.deit.univpm.it/people/christian/foaf.rdf#me">
+        <name>Christian Morbidoni</name>
+
+    </Person>
+
+    <Person rdf:about="http://swordfish.rdfweb.org/people/libby/rdfweb/webwho.xrdf#me">
+        <homepage rdf:resource="http://nicecupoftea.org/"/>
+        <name>Libby Miller</name>
+    </Person>
+
+    <Person rdf:about="http://torrez.us/who#elias">
+        <name>Elias Torres</name>
+
+        <name>Torres Elias</name>
+    </Person>
+
+    <Person rdf:about="http://www.aifb.uni-karlsruhe.de/Personen/viewPersonOWL/id2076instance">
+        <name>Max Völkel</name>
+    </Person>
+
+    <Person rdf:about="http://www.anjeve.de/foaf.rdf#AnjaJentzsch">
+        <homepage rdf:resource="http://www.anjeve.de/"/>
+
+        <name>Anja Jentzsch</name>
+    </Person>
+
+    <Person rdf:about="http://www.dfki.uni-kl.de/~grimnes/foaf.rdf#ggrimnes">
+        <homepage rdf:resource="http://www.dfki.uni-kl.de/~grimnes/"/>
+        <name>Gunnar AAstrand Grimnes</name>
+    </Person>
+
+    <Person rdf:about="http://www.fosi.org/people/philarcher/foaf.rdf#me">
+
+        <name>Archer Phil</name>
+    </Person>
+
+    <Person rdf:about="http://www.ibiblio.org/hhalpin/#me">
+        <homepage rdf:resource="http://www.ibiblio.org/hhalpin/"/>
+        <name>Halpin Harry</name>
+    </Person>
+
+    <Person rdf:about="http://www.ifi.unizh.ch/ddis/fileadmin/user_upload/kiefer/foaf.rdf#christophkiefer">
+
+        <homepage rdf:resource="http://www.ifi.unizh.ch/ddis/christophkiefer.html"/>
+        <name>Christoph Kiefer</name>
+    </Person>
+
+    <Person rdf:about="http://www.ifi.uzh.ch/ddis/fileadmin/user_upload/avi/#me">
+        <name>Abraham Bernstein</name>
+    </Person>
+
+    <Person rdf:about="http://www.informatik.uni-leipzig.de/~auer/foaf.rdf#me">
+
+        <name>Sören Auer</name>
+    </Person>
+
+    <Person rdf:about="http://www.semantic-web.at/people/blumauer/card#me">
+        <name>Andreas Blumauer</name>
+    </Person>
+
+    <Person rdf:about="http://www.sw-app.org/foaf/mic.rdf#mic">
+        <homepage rdf:resource="http://www.sw-app.org/"/>
+
+        <name>Michael G. Hausenblas</name>
+    </Person>
+
+    <Person rdf:about="http://www.topquadrant.com/people/dallemang/foaf.rdf#me">
+        <name>Dean Allemang</name>
+    </Person>
+
+    <Person rdf:about="http://www.uni-koblenz.de/~sschenk/foaf.rdf#me">
+        <name>Simon Schenk</name>
+
+    </Person>
+
+    <Person rdf:about="http://www.w3.org/People/Berners-Lee/card#i">
+        <name>Tim Berners Lee</name>
+    </Person>
+
+    <Person rdf:about="http://www.w3.org/People/Connolly/#me">
+        <name>Dan Connolly</name>
+    </Person>
+
+    <Person rdf:about="http://xircles.codehaus.org/users/evenisse/foaf#me">
+        <name>Venisse Emmanuel</name>
+    </Person>
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/ns/auth/rsa#RSAPublicKey"/>
+        <cert:identity rdf:resource="http://bblfish.net/people/henry/card#me"/>
+        <rsa:modulus rdf:parseType="Resource">
+
+            <cert:hex>862d6e0b8c3252a79d6eb82966f14e495c839ec2d57983ec39bfac79f8a99f887a3ca559cfee438e90f73da143cefc0a849509d8d91e7093a94c1a39863a5bed78a0f0234a372f12dce0a9535b14d92d56827b3791352b5817681ad7949aa7831911d51827a57e46bad9190d73a69ce56ada74a59ddc0df2a7a31247bbd67445</cert:hex>
+        </rsa:modulus>
+        <rsa:public_exponent rdf:parseType="Resource">
+            <cert:decimal>65537</cert:decimal>
+        </rsa:public_exponent>
+    </rdf:Description>
+</rdf:RDF>
+

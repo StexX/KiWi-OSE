@@ -1,0 +1,21 @@
+tinyMCE.addI18n('en.annotation_dlg',{
+	title: "Annotation style configurator",
+	text_size: "Text size",
+	text_style: "Text style",
+	text_weight: "Weight",
+	text_case: "Text case",
+	background_color: "Background color",
+	text_color: "Text color",
+	underline: "Underline",
+	style: "Style",
+	width: "Width",
+	color: "Color",
+	annot_type: "Annotation type",
+	settsaved: "Settings has been saved!",
+	exampletext: "Example text",
+	create: "Create/Update",
+	new_annot_title: "Create/edit annotation",
+	annot_note: "Note/Comment",
+	uri: "URI",
+	label: "Label"
+});

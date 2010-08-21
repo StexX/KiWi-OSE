@@ -1,0 +1,148 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a="http://richfaces.org/a4j" 
+	template="layout/template-setup.xhtml">
+
+<ui:define name="body">
+
+	<s:remote include="kiwi.setup.setupOntologiesAction"/>    
+
+	<h1>2. Setup Ontologies</h1>
+
+    <s:fragment rendered="#{not kiwi.setup.setupOntologiesAction.loading}">
+	<a:form id="formSetup">
+	  <h:panelGrid columns="2" columnClasses="form,help" styleClass="setupPanel">
+		 <s:div styleClass="dialog" style="width: 600px">
+			<rich:dataTable value="#{kiwi.setup.setupOntologiesAction.setupOntologyList}" var="ontology" id="ontologyTable">
+				<h:column>
+					<h:selectBooleanCheckbox value="#{ontology.load}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Name</f:facet>
+					<h:outputText value="#{ontology.name}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Type</f:facet>
+					<h:outputText value="#{ontology.format}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Description</f:facet>
+					<h:outputText value="#{ontology.description} " />
+					<s:span rendered="#{ontology.mandatory}">(Loading this ontology is mandatory, the system will not function properly without it)</s:span>
+				</h:column>
+				
+			</rich:dataTable>
+			<h:panelGrid columns="4">
+	            <a:commandButton id = "btnSelectall"
+	                          value = "Select all" 
+	                       reRender = "ontologyTable"
+	                         action = "#{kiwi.setup.setupOntologiesAction.selectAll()}">
+	            </a:commandButton>
+	            <a:commandButton id = "btnSelectmandatory"
+	                          value = "Select mandatory" 
+	                       reRender = "ontologyTable"
+	                         action = "#{kiwi.setup.setupOntologiesAction.selectMandatory()}">
+	            </a:commandButton>
+	            <a:commandButton id = "btnDeselectall"
+	                          value = "Deselect all" 
+	                       reRender = "ontologyTable"
+	                         action = "#{kiwi.setup.setupOntologiesAction.deselectAll()}">
+	            </a:commandButton>
+	            <a:commandButton id = "btnReset"
+	                          value = "Reset form" 
+	                       reRender = "ontologyTable"
+	                         action = "#{kiwi.setup.setupOntologiesAction.reset()}">
+	            </a:commandButton>
+			</h:panelGrid>
+			
+		    <div class="setupActionButtons">
+	            <h:commandButton id = "btnLoad"
+	                          value = "Next" 
+	                         action = "#{kiwi.setup.setupOntologiesAction.loadOntologies()}">
+					<s:defaultAction />
+	            </h:commandButton>
+			</div>
+		</s:div>
+		
+		     <s:div styleClass="dialog">
+		     	<p>
+			     	The second step is to preload ontologies into the KiWi system. The preselected ontologies are
+			     	required to run the KiWi system. The unselected ontologies are optional and may be selected in
+			     	addition to the preselected ontologies. 
+		     	</p>
+		     	<p>
+		     		When you have selected all relevant ontologies, simply click on next. Ontology import will then
+		     		start as a background process and you are redirected to the next screen. Note that ontology
+		     		import can take some time to finish, depending on the size of the ontologies you have selected
+		     		(up to 15 minutes). During this time, you should not perform any critical tasks in the system.
+		     	</p>
+		     </s:div>
+		
+		
+		</h:panelGrid>
+	</a:form>
+	</s:fragment>
+
+    <s:fragment rendered="#{kiwi.setup.setupOntologiesAction.loading}">
+    
+    	<h2>Please wait while loading ontologies ...</h2>
+    
+    	<center style="padding: 30px">
+			<a:form id="formProgress">
+    			<div id="progressBar"></div>
+    			
+    			<div id="progressMessage" style="font-size: 120%; margin-top: 10px;">
+    			</div>
+    			
+			    <div class="setupActionButtons">
+		            <h:commandButton id = "btnLoad"
+		                          value = "Next" 
+		                         action = "#{kiwi.setup.setupOntologiesAction.next()}">
+		            </h:commandButton>
+				</div>
+			</a:form>
+    	
+    	</center>
+    
+    	<script type="text/javascript">
+	    	jQuery(document).ready(function() {
+	    	    jQuery("#progressBar").progressbar({ value: 0});
+	    	    jQuery("#formProgress\\:btnLoad").attr("disabled","disabled");
+	    	});    
+
+			Seam.Remoting.getContext().setConversationId( #{conversation.id} );
+			
+			var i = setInterval(function() { 
+
+				Seam.Remoting.startBatch();
+				Seam.Component.getInstance("kiwi.setup.setupOntologiesAction").getProgress(
+					function(data) {
+						jQuery("#progressBar").progressbar( 'option', 'value', data );
+						if(data == 100) {
+							clearInterval(i);
+							jQuery("#formProgress\\:btnLoad").removeAttr("disabled");
+						}
+					}
+				);
+				Seam.Component.getInstance("kiwi.setup.setupOntologiesAction").getProgressMessage(
+					function(data) {
+						jQuery("#progressMessage").html(data);
+					}
+				);
+				Seam.Remoting.executeBatch();
+				
+			}, 1500);
+    		
+    	</script>
+        
+	</s:fragment>
+
+</ui:define>
+</ui:composition>
+

@@ -1,0 +1,34 @@
+The KiWi DataAccess Webservice
+
+URL:  http://localhost:8080/KiWi/data_access
+WSDL: http://localhost:8080/KiWi/data_access?wsdl
+
+Document Version: 1.0 - Mar 27th 2009, Karsten Jahn
+
+WebService interface is defined in the class kiwi.api.webservice.DataAccessService 
+and implemented in kiwi.webservice.DataAccessServiceImpl - by now it provides 
+three different methods for data import:
+   public boolean insertData(String source, StructuredData[] data);
+   public boolean insertDataCollection(String source, DataCollection dc);
+   public boolean insertDataRepresentation(String source, DataRepresentation dr);
+
+If you look into the data objects you can see that StructuredData is a simple 
+name-value combination. This is encapsuled with further table information and 
+references to other data sets in DataCollection, which is also the object that is 
+used internally. The third method takes a DataRepresentation object wich is a 
+more relational view of a data set. As DataCollection could include circular 
+references, which is not acceptable for SOAP, this view is preferred for generated 
+data transmission without further computing.
+
+Internally all three methods transform the data to a DataCollection and use the 
+kiwi.webservice.utilityDataInserterServiceImpl for insertion tasks. This Service 
+creates an XHTML representation of the provided information and creates a 
+ContentItem out of it. This content is tagged with the name of the main table and 
+with the tag “Imported Data”. Each data value is also created as a fragment with 
+its name. The author of all the creations mentioned above is the Import User.
+
+The import methods return true, when the import worked, or false otherwise. 
+Internally an DataImportException is thrown with a short explaination. This will 
+not be sent to the client, but to the server’s logs.
+
+For further explainations please refer to the code, as the JavaDocs are set.

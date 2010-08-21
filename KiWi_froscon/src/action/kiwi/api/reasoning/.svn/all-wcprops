@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/reasoning
+END
+RuleLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/reasoning/RuleLoader.java
+END
+ProgramProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/reasoning/ProgramProcessor.java
+END
+ProgramProcessorLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/reasoning/ProgramProcessorLocal.java
+END
+ReasoningServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/reasoning/ReasoningServiceRemote.java
+END
+ReasoningService.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/reasoning/ReasoningService.java
+END
+ProgramLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/reasoning/ProgramLoader.java
+END
+ReasoningServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/reasoning/ReasoningServiceLocal.java
+END
+ProgramProcessorRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/reasoning/ProgramProcessorRemote.java
+END

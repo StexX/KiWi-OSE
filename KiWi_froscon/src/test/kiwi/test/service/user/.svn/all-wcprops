@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/test/service/user
+END
+UserServiceTests.xml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/test/service/user/UserServiceTests.xml
+END
+ProfileServiceTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/test/service/user/ProfileServiceTest.java
+END
+UserServiceTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/test/service/user/UserServiceTest.java
+END
+PermissionServiceTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/test/service/user/PermissionServiceTest.java
+END
+ProfileServiceTests.xml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/test/service/user/ProfileServiceTests.xml
+END

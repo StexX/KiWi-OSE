@@ -1,0 +1,15 @@
+#footer{
+	visibility: hidden;
+}
+#navButtons{
+	visibility: hidden;
+}
+#header{
+	visibility: hidden;
+}
+.capKomBorderLogin, .mainNavLogin  {
+	border:none;
+}
+.roundBorders {
+	border:none;
+}

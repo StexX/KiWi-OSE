@@ -1,0 +1,390 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+			    xmlns:a="http://richfaces.org/a4j" 
+			    xmlns:c="http://java.sun.com/jstl/core"
+			    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                xmlns:rich="http://richfaces.org/rich"
+ >
+
+<h:form>
+<script type="text/javascript">
+	/* <![CDATA[ */
+	
+	function activateImageBox(){
+		//activate imageSlides
+		jQuery(".tabs").tabs(".personImages > div", {
+	        // enable "cross-fading" effect 
+	        effect: 'fade', 
+	        fadeOutSpeed: "slow", 
+	        // start from the beginning after the last tab 
+	        rotate: true
+	    // use the slideshow plugin. It accepts its own configuration 
+	    }).slideshow();
+
+		//activate mouseoverfunction
+		jQuery(".personimageBox").mouseover(function(){
+			jQuery(".imageoverlay").show();
+		}).mouseout(function(){
+			jQuery(".imageoverlay").hide();
+		});
+
+	}
+	
+	/* ]]> */
+</script>
+<div id="PersonBox">
+	
+	<div id="pointContentBackground">
+
+	<div id="pointHeader">
+		<div id="pointHeaderTitle" style="color:#a91d1d">
+			<!-- text image -->
+			<img src="img/person/personBig.png" />
+			<!-- text title -->
+			<span id="pointHeaderTitleText">
+			<h:outputText value="#{tagit2.personAction.firstName} #{tagit2.personAction.lastName}" rendered="#{!tagit2.personAction.curUsr}" />
+			<h:outputText value="Mein Profil" rendered="#{tagit2.personAction.curUsr}" />
+			</span>
+		</div>
+		<div id="pointHeaderCloser" style="margin-left:782px" onclick="closePersonWindow();">
+		</div>
+		<div class="clear"></div>
+	</div>
+		<div id="PersonContent">
+		
+		<ul class="tabs">
+			<li><a href="#">Profil</a></li>
+			<li><a href="#">Bilder</a></li>
+			<li><a href="#">Tweets</a></li>
+			<li><a href="#">Blogs</a></li>
+			<li><a href="#">Karte</a></li>
+		</ul>
+		
+		<div class="personPanes">
+		
+			<div>
+			<h2>Allgemein:</h2>
+			<div class="profileImage" >
+			<c:choose>
+				<c:when test="#{tagit2.personAction.profilePhoto ne null}">
+			    <s:graphicImage value="#{tagit2.personAction.profilePhoto.mediaContent.data}" style="padding:0">
+	       			<s:transformImageSize height="#{tagit2.imageSizeService.getImageHeight(tagit2.personAction.profilePhoto.mediaContent, 150, 150)}" maintainRatio="true"/>
+	        	</s:graphicImage>
+	        	</c:when>
+	        	<c:otherwise>
+	        		<img title="kein Bild" alt="kein Bild" src="img/person/no_profile_image.png" style="padding:0"/>
+	        	</c:otherwise>
+	        </c:choose>
+			
+			</div>
+			<div style="width:300px;">
+			<table width="100%">
+				<tr>
+				<td class="bold">Geschlecht:</td>
+				<td><h:outputText value="#{tagit2.personAction.gender}" /></td>
+				</tr>
+				<tr>
+				<td class="bold">Geburtstag:</td>
+				<td><h:outputText value="#{tagit2.personAction.birthday}" /></td>
+				</tr>
+				<tr>
+				<td class="bold">Strasse:</td>
+				<td><h:outputText value="#{tagit2.personAction.street}" /></td>
+				</tr>
+				<tr>
+				<td class="bold">Stadt:</td>
+				<td><h:outputText value="#{tagit2.personAction.cityPostalCode} #{tagit2.personAction.cityName}" /></td>
+				</tr>
+				<tr>
+				<td class="bold">Land:</td>
+				<td><h:outputText value="#{tagit2.personAction.country}" /></td>
+				</tr>
+			</table>
+			</div>
+			<h2>Beschreibung:</h2>
+			<b>Interessen:</b>
+			<c:forEach items="#{tagit2.personAction.interests}" var="interest">
+				<h:outputText value=" #{interest.title}," />
+			</c:forEach>
+			<br />
+			<br />
+			<b>Das sagt <h:outputText value=" #{tagit2.personAction.firstName} #{tagit2.personAction.lastName}" /> &#xFC;ber sich:</b>
+			<div class="personAbout">
+			<h:outputText value="#{tagit2.personAction.about}" escape="false" />
+			</div>
+			
+			<h2>Kontaktdaten:</h2>
+			<table width="100%" style="float:left;">
+			<tr>
+			<td colspan="3"><b>E-Mail:</b><h:outputText value=" #{tagit2.personAction.email}" /></td>
+			</tr>
+			<tr>
+			<td ><b>Festnetz:</b><h:outputText value=" #{tagit2.personAction.phone}" /></td>
+			<td ><b>Handy:</b><h:outputText value=" #{tagit2.personAction.mobile}" /></td>
+			<td ><b>Skype:</b><h:outputText value=" #{tagit2.personAction.skype}" /></td>
+			</tr>
+			</table>
+			
+			
+			</div>
+			
+			<!-- images -->
+			<div>
+				<s:div styleClass="personimageBox" rendered="#{!tagit2.personAction.images.isEmpty()}">
+				<a class="backward backwardButton imagebuttons imageoverlay">&lt;</a> 
+ 
+				<!-- container for the slides --> 
+				<div class="personImages"> 
+ 				<ui:repeat value="#{tagit2.personAction.images}" var="img">
+ 					<div>
+    					<s:graphicImage rendered="#{img.mediaContent ne null}" value="#{img.mediaContent.data}">
+	        				<s:transformImageSize height="#{tagit2.imageSizeService.getImageHeight(img.mediaContent, 760, 370)}" maintainRatio="true"/>
+	        			</s:graphicImage>
+    				</div>
+ 				</ui:repeat>
+				</div> 
+ 
+				<!-- "next slide" button --> 
+				<a class="forward forwardButton imagebuttons imageoverlay" style="left:756px">&gt;</a> 
+ 
+				<!-- the tabs --> 
+				<div class="persontabs">
+					<c:forEach begin="1" end="#{tagit2.personAction.images.size}">
+						<a href="#"></a> 
+					</c:forEach>
+				</div>
+				</s:div>
+				<s:div styleClass="noBlog" rendered="#{tagit2.personAction.images.isEmpty()}">
+					Keine Bilder vorhanden
+				</s:div>
+			</div>
+			
+			<!-- microblogs -->
+			<div>
+				<div style="height:380px;overflow: auto;">
+				<table width="100%">
+				<ui:repeat value="#{tagit2.personAction.microBlogPosts}" var="post">
+					<tr>
+						<td width="30px" valign="top">
+							<img style="padding:0;margin:3px;margin-top:0;" title="#{post.type}" src="image/icon16x16/#{post.type}.png" />
+						</td>
+						<td class="microBlogPost">
+						<h3><h:outputText value="#{post.modified}" /></h3>
+						<h:outputText value="#{post.content}" escape="false" />
+						</td>
+					</tr>
+				</ui:repeat>
+				</table>
+				<s:div styleClass="noBlog" rendered="#{tagit2.personAction.microBlogPosts.isEmpty()}">
+					Keine Tweets vorhanden
+				</s:div>
+				</div>
+			</div>
+			
+			<!-- Blogs -->
+			<div>
+				<div style="height:380px;overflow: auto;" id="scrollBolg">
+
+				<c:forEach items="#{tagit2.personAction.blogPosts}" var="post" varStatus="count">
+					<div class="blogEntry" >
+						<div class="blogEntryHeader">
+							<a name="blogEntry#{post.id}" href="#blogEntry#{post.id}" id="blogEntry#{post.id}" />
+							<div class="blogEntryHeaderImg">
+								<img style="padding:0;margin:3px;margin-top:0;" title="#{post.type}" src="image/icon16x16/#{post.type}" />
+							</div>
+							<div class="blogEntryHeaderTitle">
+								<h2 title="Klicken, um gesamten Inhalt anzuzeigen" style="cursor: pointer;" onclick="openBlog(#{post.id})"><h:outputText value="#{post.title}" /></h2>
+								<h3><h:outputText value="#{post.modified}" /></h3>
+							</div>
+						</div>
+						<div class="blogEntryBody" id="blogEntryDesc#{post.id}">
+						<h:outputText value="#{post.content}" escape="false" />
+						<p style="text-align: right;margin-top:10px;">
+							<b title="Klicken, um Inhalt zu schliessen" style="cursor: pointer;" onclick="closeBlog(#{post.id})" class="closeBlog">schliessen</b>
+						</p>
+						</div>
+					</div>
+				</c:forEach>
+
+				<s:div styleClass="noBlog" rendered="#{tagit2.personAction.blogPosts.isEmpty()}">
+					Keine Blogs vorhanden
+				</s:div>
+				</div>
+			</div>
+			
+			<div>
+				<div id="innerMapPerson_canvas">
+				</div>
+			</div>
+		
+		</div>
+		
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+	/* <![CDATA[ */
+	
+	var personInnerMap;
+	var innerMapCurPoint;
+	
+	//activate tabs
+	var tabApi = jQuery(".persontabs").tabs(".personPanes > div", {
+					onClick: function(event, tabIndex) {
+						if(tabIndex == 4) {
+							loadInnerMap();
+						}},
+					api:true
+	});
+	//fade in
+	jQuery("#point").css('margin-left','-400px');
+
+	activateImageBox();
+
+	var curPersonMarker;
+	var pbounds;
+	var ms;
+	//set map
+	function loadInnerMap() {
+		personInnerMap = new GMap2(document.getElementById("innerMapPerson_canvas"));
+		personInnerMap.setUIToDefault();
+		if( ms == null) {
+			ajaxGetBlogEntries();
+		} else {
+			setBlogMarkers();
+		}
+	}
+	
+	function setBlogEntries(markers) {
+		//set basic bound
+		if( markers.length > 0 ) {
+			ms = new Array();
+			pbounds = new GLatLngBounds(curPersonMarker.getLatLng(), curPersonMarker.getLatLng());
+			for( var i = 0; i < markers.length; i++ ) {
+				if(markers[i].latitude != 0 || markers[i].longitude != 0) {
+					createMarker(markers[i]);
+				}
+			}
+		} else {
+			ms = new Array();
+			pbounds = null;
+		}
+		setBlogMarkers();
+	}
+
+	function createMarker(jm) {
+		var micon = createIcon(jm.type);
+		var m = new GMarker(new GLatLng(jm.latitude,jm.longitude),{icon:micon,title:jm.title});
+		GEvent.addListener(m,"click",function(point){
+			openBlogContent(jm.id);
+		});
+		ms.push(m);
+		pbounds.extend(m.getLatLng());
+	}
+
+	function openBlogContent(id) {
+		//$(ziel)
+		tabApi.click(3);
+		//jump to blog
+		//jQuery('#blogEntry'+id).click();
+		//TODO scroll down
+		if (jQuery('#blogEntryDesc'+id).is(":hidden")) {
+    		jQuery('#blogEntryDesc'+id).slideDown("fast");
+    	}
+		
+	}
+
+	function setBlogMarkers() {
+		//get bounds and fill blog array
+		if(ms.length != 0) {
+				personInnerMap.setCenter( pbounds.getCenter(), personInnerMap.getBoundsZoomLevel(pbounds) -1 );
+		} else {
+				personInnerMap.setCenter( curPersonMarker.getLatLng(),13);
+		}
+
+		//set markers
+		personInnerMap.addOverlay(curPersonMarker);
+
+		for(var i = 0; i < ms.length; i++) {
+			personInnerMap.addOverlay(ms[i]);
+		}
+	}
+
+	
+    if(openByClick) {
+    	openByClick = false;
+    	openPointWindow();
+    }
+
+    function openPointWindow() {
+    	//initBlogOpener();
+    	//change background color
+    	jQuery("#back").css("background-color","#339933");
+    	jQuery("#back").css("background-image","url(img/person/person.png)");
+		jQuery('#pointHeaderCloser').css('background-image','url("img/person/close.png")');
+		jQuery(".tabs a").css('background-image','url("img/person/tabs.png")');
+
+		curPersonMarker = new GMarker(curPoint.point,{icon:personIcon,title:"Das bist du!"});
+		
+		jQuery("#back").fadeIn("slow",function(){
+			jQuery("#point").fadeIn("slow");
+		});
+    }
+
+    function closePersonWindow() {
+    	ajaxClosePersonWindow();
+    }
+
+    function openBlog(index) {
+    	if (jQuery('#blogEntryDesc'+index).is(":hidden")) {
+    		jQuery('#blogEntryDesc'+index).slideDown("fast");
+    	} else {
+    		jQuery('#blogEntryDesc'+index).slideUp("fast");
+    	}
+    }
+
+    function closeBlog(index) {
+    	jQuery('#blogEntryDesc'+index).slideUp("fast");
+    }
+/*
+    function initBlogOpener() {
+    	jQuery(".blogEntryHeaderTitle h2").each(function(index) {
+    		jQuery(this).click(function(){
+    			openCloseBlog(index);
+        	});
+    	});        
+    	jQuery(".blogEntryBody").each(function(index) {
+    		jQuery(this).addClass("blogOpener"+index);
+    	});
+    	jQuery(".closeBlog").each(function(index) {
+    		jQuery(this).click(function(){
+    			openCloseBlog(index);
+        	});
+    	}); 
+    }
+
+    function openCloseBlog(index) {
+    	if (jQuery('.blogOpener'+index).is(":hidden")) {
+    		jQuery('.blogOpener'+index).slideDown("fast");
+    	} else {
+    		jQuery('.blogOpener'+index).slideUp("fast");
+    	}
+    }
+
+    function openBlogFromMap(index) {
+		alert("Open blog "+index);
+    }
+
+    */
+    /* ]]> */
+	</script>
+	
+	<a:jsFunction name="ajaxClosePersonWindow" action="#{tagit2.personAction.close()}" oncomplete="closePoint();" />
+	<a:jsFunction name="ajaxGetBlogEntries" data="#{tagit2.personAction.blogPosts}" oncomplete="setBlogEntries(data);"></a:jsFunction>
+</div>
+</h:form>
+
+</ui:composition>

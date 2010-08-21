@@ -1,0 +1,41 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                template="template2.xhtml">
+
+<ui:define name="body">
+
+    <h1>Bei TagIT anmelden</h1>
+	<rich:messages styleClass="message" />
+
+	<h:form id="formLogin">
+        <center>
+	        <div id="loginDialog">
+				<p><strong>Bitte hier anmelden:</strong></p>
+		
+				<div class="dialog">
+				  <h:panelGrid columns="2" rowClasses="prop" columnClasses="name,value">
+					<h:outputLabel for="username">Benutzername</h:outputLabel>
+					<h:inputText id="username" value="#{credentials.username}" />
+					<h:outputLabel for="password">Passwort</h:outputLabel>
+					<h:inputSecret id="password" value="#{credentials.password}" />
+					<h:outputLabel for="rememberMe">Angemeldet bleiben</h:outputLabel>
+					<h:selectBooleanCheckbox id="rememberMe" value="#{rememberMe.enabled}" />
+				  </h:panelGrid>
+				</div>
+		
+		        <div class="registerText">Noch nicht registriert?<h:outputText value=" " /><s:link view="/tagit/layout/sn/register.xhtml" value="Hier registrieren"/>.</div>
+				<div class="actionButtons">
+				  <h:commandButton value="Anmelden" action="#{identity.login}" />
+				</div>
+			</div>
+	    </center>
+    </h:form>
+
+</ui:define> 
+</ui:composition>

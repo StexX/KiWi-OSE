@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/util/kiwi/util
+END
+Transformer.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/util/kiwi/util/Transformer.java
+END
+JDBCUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/util/kiwi/util/JDBCUtils.java
+END
+TransformationException.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/util/kiwi/util/TransformationException.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/util/kiwi/util/package-info.java
+END
+JDBCTool.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/util/kiwi/util/JDBCTool.java
+END
+URLUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/util/kiwi/util/URLUtils.java
+END

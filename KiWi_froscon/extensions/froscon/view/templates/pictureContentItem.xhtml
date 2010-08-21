@@ -1,0 +1,76 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+    xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:a="http://richfaces.org/a4j">
+	
+	    <h1>
+	    	#{contentItem.title}
+	    	<h:outputText value=" " />
+	    	<s:span style="font-size:65%;">(<kiwi:watcher contentItem="#{contentItem}" />)</s:span>
+	    </h1>
+        <span>
+            <h:outputText value="#{messages['wiki.createdon']} "/><h:outputText value="#{contentItem.created}"><s:convertDateTime pattern="dd/MM/yyyy"/></h:outputText><h:outputText value=" - "/> 
+            <h:outputText value="#{messages['wiki.updateon']} "/><h:outputText value="#{contentItem.modified}"><s:convertDateTime pattern="dd/MM/yyyy"/></h:outputText><h:outputText value=" "/> 
+            <h:outputText value="#{messages['wiki.by']} "/><kiwi:link resource="#{contentItem.author.resource}" value=" #{contentItem.author.firstName} #{contentItem.author.lastName}"/>
+        </span>
+       	<br/>
+       	<kiwi:tagListEditor label="Tags: " 
+			tagItems="#{kiwi.wiki.tagCloudAction.tagCloud}" />
+       	<div id="rating"></div>
+		<br />
+
+        <script>
+	        jQuery(document).ready(function(){
+		        jQuery('#rating').rating({
+		            label:		   'Rating: ',
+                    uri:           '#{currentContentItem.resource.uri}',
+				    user:          '#{currentUser.login}',
+				    webServiceUrl: '#{facesContext.externalContext.requestContextPath}/seam/resource/services/widgets/rating'
+				});
+	        });  
+        </script>
+        
+        <c:set value="#{mars.pictureAction.facade}" var="pic"/>
+        <div style="width:700px;margin-top:10px;">
+        	<div style="width:300px;overflow: hidden;float:right;text-align:right;heigth:200px;">
+        		<img src="#{pic.pictureURL}"></img>
+        	</div>
+            <div style="padding:10px;width:370px;border:1px solid #aaa;font-size:14px;min-height: 180px;">
+        		<table width="100%">
+        			<tr>
+        				<td><b>Caption:</b></td>
+        				<td>#{pic.caption}</td>
+        			</tr>
+        			<tr>
+        				<td><b>Shelfnumber:</b></td>
+        				<td>#{pic.shelfnumber}</td>
+        			</tr>
+        			<tr>
+        				<td><b>Copyright:</b></td>
+        				<td>#{pic.copyright}</td>
+        			</tr>
+        			<tr>
+        				<td><b>Originator:</b></td>
+        				<td>#{pic.originator}</td>
+        			</tr>
+        			<tr>
+        				<td><b>TakeCity:</b></td>
+        				<td>#{pic.takeCity}</td>
+        			</tr>
+        			<tr>
+        				<td><b>TakeCountry:</b></td>
+        				<td>#{pic.takeCountry}</td>
+        			</tr>
+        		</table>
+        	</div>
+        </div>
+        <div style="width:680px;margin-top:10px;border:1px solid #aaa;padding:10px;font-size:14px;">
+        	<kiwi:renderHtml contentItem="#{contentItem}"  user="#{currentUser}/>
+        </div>
+	
+</ui:composition>

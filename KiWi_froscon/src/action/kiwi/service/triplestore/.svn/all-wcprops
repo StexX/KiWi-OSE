@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/triplestore
+END
+RepositoryFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/triplestore/RepositoryFactory.java
+END
+TripleStorePersisterImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/triplestore/TripleStorePersisterImpl.java
+END
+ConnectionFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/triplestore/ConnectionFactory.java
+END
+TripleStoreUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/triplestore/TripleStoreUtil.java
+END
+TripleStoreImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/triplestore/TripleStoreImpl.java
+END

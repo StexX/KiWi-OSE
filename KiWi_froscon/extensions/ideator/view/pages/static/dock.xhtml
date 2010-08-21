@@ -1,0 +1,31 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:ui="http://java.sun.com/jsf/facelets"
+				xmlns:s="http://jboss.com/products/seam/taglib"
+				xmlns:h="http://java.sun.com/jsf/html">
+
+	<div class="dock-container">
+		<s:link action="home" styleClass="dock-item">
+			<img src="img/newIcons/home.png" alt="home" /><span><h:outputText value="#{messages['ideator.navi.home']}" /></span>
+		</s:link>
+		<s:link action="new_idea" styleClass="dock-item">
+			<!-- TODO should be displayed if this is current page -->
+			<!--<img src="img/link_icons/current.png" style="position:absolute;margin-top:1px;" alt="new idea" />-->
+			<img src="img/newIcons/light_bulb.png" alt="new idea" /><span><h:outputText value="#{messages['ideator.navi.new_idea']}" /></span>
+		</s:link>
+		<s:link action="/ideator/userProfile.xhtml" styleClass="dock-item" rendered="#{identity.loggedIn}">
+			<img src="img/newIcons/user.png" alt="userprofile" /><span><h:outputText value="Benutzerprofil"/></span>
+		</s:link>
+		<s:link action="/ideator/admin.xhtml" styleClass="dock-item" rendered="#{permissionAction.hasRole('admin')}">
+			<img src="img/newIcons/tools.png" alt="admin" /><span><h:outputText value="Adminkonsole"/></span>
+		</s:link>
+		<s:link action="login" styleClass="dock-item" rendered="#{!identity.loggedIn}">
+			<img src="img/newIcons/lock.png" alt="login" /><span><h:outputText value="#{messages['ideator.navi.login']}" /></span>
+		</s:link>
+		<s:link action="#{identityManagerService.logout}" styleClass="dock-item" rendered="#{identity.loggedIn}">
+			<img src="img/newIcons/unlock.png" alt="logout" /><span><h:outputText value="#{messages['ideator.navi.logout']}" /></span>
+		</s:link>
+	</div>
+
+</ui:composition>

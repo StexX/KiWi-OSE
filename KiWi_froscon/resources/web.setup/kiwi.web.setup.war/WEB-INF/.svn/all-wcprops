@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF
+END
+faces-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/faces-config.xml
+END
+jboss-web.xml
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/jboss-web.xml
+END
+web.xml
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/web.xml
+END
+pages.xml
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/pages.xml
+END
+components.xml
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/components.xml
+END

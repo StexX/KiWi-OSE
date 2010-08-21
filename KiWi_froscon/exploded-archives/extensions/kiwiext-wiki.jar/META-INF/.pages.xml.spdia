@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram model-entity="SeamPagesDiagram">
+ <item ID="#wiki#home.xhtml" NAME="#xwiki#xhome.xhtml"
+  PATH="/wiki/home.xhtml" SHAPE="24,17,0,0" TYPE="page" model-entity="SeamPagesDiagramItem">
+  <output ID="/wiki/*" NAME="output" PATH="/wiki/*" TARGET="#xwiki#x*" model-entity="SeamPagesDiagramItemOutput"/>
+ </item>
+ <item ID="#wiki#media.xhtml" NAME="#xwiki#xmedia.xhtml"
+  PATH="/wiki/media.xhtml" SHAPE="24,121,0,0" TYPE="page" model-entity="SeamPagesDiagramItem">
+  <output ID="/wiki/home.xhtml" NAME="output" PATH="/wiki/home.xhtml"
+   TARGET="#xwiki#xhome.xhtml" model-entity="SeamPagesDiagramItemOutput"/>
+ </item>
+ <item ID="#wiki#edit.xhtml" NAME="#xwiki#xedit.xhtml"
+  PATH="/wiki/edit.xhtml" SHAPE="344,121,0,0" TYPE="page" model-entity="SeamPagesDiagramItem">
+  <output ID="/wiki/home.xhtml" NAME="output" PATH="/wiki/home.xhtml"
+   TARGET="#xwiki#xhome.xhtml" model-entity="SeamPagesDiagramItemOutput"/>
+ </item>
+ <item ID="#wiki#activities.xhtml" NAME="#xwiki#xactivities.xhtml"
+  PATH="/wiki/activities.xhtml" SHAPE="664,121,0,0" TYPE="page" model-entity="SeamPagesDiagramItem"/>
+ <item ID="#wiki#history.xhtml" NAME="#xwiki#xhistory.xhtml"
+  PATH="/wiki/history.xhtml" SHAPE="24,225,0,0" TYPE="page" model-entity="SeamPagesDiagramItem"/>
+ <item ID="#wiki#metadata.xhtml" NAME="#xwiki#xmetadata.xhtml"
+  PATH="/wiki/metadata.xhtml" SHAPE="344,225,0,0" TYPE="page" model-entity="SeamPagesDiagramItem"/>
+ <item ID="#wiki#*" NAME="#xwiki#x*" PATH="/wiki/*" SHAPE="344,329,0,0"
+  TYPE="page" model-entity="SeamPagesDiagramItem">
+  <output ID="/wiki/reasoningFinished.xhtml" NAME="output"
+   PATH="/wiki/reasoningFinished.xhtml"
+   TARGET="#xwiki#xreasoningFinished.xhtml" model-entity="SeamPagesDiagramItemOutput"/>
+  <output ID="/wiki/base.xhtml" NAME="output1" PATH="/wiki/base.xhtml"
+   TARGET="#xwiki#xbase.xhtml" model-entity="SeamPagesDiagramItemOutput"/>
+ </item>
+ <item ID="#wiki#home.mobile.xhtml" NAME="#xwiki#xhome.mobile.xhtml"
+  PATH="/wiki/home.mobile.xhtml" SHAPE="24,561,0,0" TYPE="page" model-entity="SeamPagesDiagramItem"/>
+ <item NAME="#xwiki#xbase.xhtml" PATH="/wiki/base.xhtml"
+  SHAPE="56,329,0,0" TYPE="page" model-entity="SeamPagesDiagramItem">
+  <output ID="/wiki/*" NAME="output" PATH="/wiki/*" TARGET="#xwiki#x*" model-entity="SeamPagesDiagramItemOutput"/>
+ </item>
+ <item NAME="#xwiki#xreasoningFinished.xhtml"
+  PATH="/wiki/reasoningFinished.xhtml" SHAPE="56,457,0,0" TYPE="page" model-entity="SeamPagesDiagramItem">
+  <output ID="/wiki/*" NAME="output" PATH="/wiki/*" TARGET="#xwiki#x*" model-entity="SeamPagesDiagramItemOutput"/>
+ </item>
+ <item ID="#wiki#information_extraction.xhtml"
+  NAME="#xwiki#xinformation_extraction.xhtml"
+  PATH="/wiki/information_extraction.xhtml" SHAPE="88,665,0,0"
+  TYPE="page" model-entity="SeamPagesDiagramItem">
+  <output ID="/wiki/home.xhtml" NAME="output" PATH="/wiki/home.xhtml"
+   TARGET="#xwiki#xhome.xhtml" model-entity="SeamPagesDiagramItemOutput"/>
+ </item>
+ <item ID="#wiki#annotate.xhtml" NAME="#xwiki#xannotate.xhtml"
+  PATH="/wiki/annotate.xhtml" SHAPE="24,769,0,0" TYPE="page" model-entity="SeamPagesDiagramItem"/>
+</diagram>

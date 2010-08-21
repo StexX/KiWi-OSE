@@ -1,0 +1,57 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:rich="http://richfaces.org/rich"
+    xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+    xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:a4j="http://richfaces.org/a4j">
+
+
+    <div id="header">
+	    <div id="logo">
+		    <s:link view="/tagit2/home.xhtml">
+		        <f:param name="title" />
+	            <f:param name="uri" value="#{configurationService.startPage}"/>
+	            <f:param name="id" />
+	            <f:param name="kiwiid"/>
+	            <img src="#{facesContext.externalContext.requestContextPath}/tagit2/img/header_scom3.gif" alt="KiWi Logo" />
+	        </s:link>	    
+	   </div>
+	    <div id="mainnav">
+	        <h:form id="formHdrApplications">
+		        <ul>
+                    <s:fragment  rendered="#{identity.loggedIn}">
+		            	<li><a4j:commandLink action="#{tagit2.explorerAction.startCreateLocation()}" value="TagIt" reRender="point" onclick="openByClick = true;" /></li>
+                    </s:fragment>
+                    
+                    <s:fragment  rendered="#{not identity.loggedIn}">
+                       <li>logged out</li>
+                    </s:fragment>
+                    
+		            
+		        </ul>   
+	        </h:form>
+	    </div>
+
+    </div>
+
+    <div id="navbar">
+        <h:form id="formHdrNavigation">
+		    <div id="history">
+		        <!-- 
+		        <ui:insert name="actions"/>
+		        -->
+		    
+		        <h:outputText value="History: " />
+		        <c:forEach items="#{kiwi.ui.historyAction.lastItems}" var="item" varStatus="status">
+		            <h:outputText value=" - " rendered="#{not status.first}"/>
+		            <kiwi:link contentItem="#{item}" value="#{kiwi.ui.historyAction.ellipseString(item.title)}"/>
+		        </c:forEach>
+		    </div>
+	    </h:form>
+    </div>
+	
+</ui:composition>

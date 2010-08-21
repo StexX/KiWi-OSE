@@ -1,0 +1,121 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+		    	xmlns:rich="http://richfaces.org/rich"
+		    	xmlns:a="http://richfaces.org/a4j"
+                template="layout/template-setup.xhtml">
+
+<ui:define name="body">
+    <h1>1. Setup KiWi System Users</h1>
+    
+    <rich:messages styleClass="message" globalOnly="true"/>
+    
+    <div class="jqTooltip"></div>
+    
+	<a:form id="formSetup">
+		<h:panelGrid columns="2" columnClasses="form,help" styleClass="setupPanel">
+		    <s:div styleClass="dialog" style="width: 400px">
+		        <h3>Admin User Settings</h3>
+	               <h:panelGrid columns="2" rowClasses="prop" columnClasses="name,value">
+	                  <h:outputLabel for="fn">First Name:</h:outputLabel>
+                 	  <h:inputText id="fn" value="#{kiwi.setup.setupUserAction.firstName}"
+                 	 			   styleClass="formField" 
+                 	               title="Insert the first name of the admin user">
+                 	  </h:inputText>
+	                  
+	                  <h:outputLabel for="ln">Last Name:</h:outputLabel> 
+	                  <h:inputText id="ln" value="#{kiwi.setup.setupUserAction.lastName}" 
+                   	 			   styleClass="formField" 
+	                               title="Insert the last name of the admin user">
+	                  </h:inputText>
+	                  
+	                  <h:outputLabel for="password">Password:</h:outputLabel> 
+                  	  <h:inputSecret id="password" value="#{kiwi.setup.setupUserAction.password}" 
+                 	 			     styleClass="formField" 
+                  	                 title="Insert the password of the admin user">
+                  	  </h:inputSecret>
+	                  
+	                  <h:outputLabel for="validate">Validate:</h:outputLabel> 
+                  	  <h:inputSecret id="validate" value="#{kiwi.setup.setupUserAction.verify}" 
+                 	 			     styleClass="formField" 
+                  	                 title="Repeat the password of the admin user (for verification)">
+                  	  </h:inputSecret>
+	 
+					</h:panelGrid>
+			     	<div class="setupActionButtons">
+				    	<h:commandButton value="Skip Setup" action="#{kiwi.setup.setupUserAction.skip}" title="Click to skip the setup process (at your own risk)"/>
+				    	<h:commandButton value="Next" action="#{kiwi.setup.setupUserAction.submit}" title="Click to create user" id="nextBtn">
+				    		<s:defaultAction />
+				    	</h:commandButton>
+			     	</div>
+	         </s:div>
+	         
+	         
+	     
+		     <s:div styleClass="dialog">
+		     	<p>
+			     	The first step is to create the system users 'admin' and 'anonymous', who are needed for the proper
+			     	operation of the KiWi system.
+		     	</p>
+		     	<ul>
+		     		<li>
+		     			The user <string>admin</string> is the superuser of the KiWi system. Currently, only the admin 
+		     			user may perform administrative tasks in the KiWi system.
+		     		</li>
+		     		<li>
+		     			The user <string>anonymous</string> is the default user of the KiWi system when the user
+		     			visiting the KiWi system is not logged in with his account. The anonymous user has less
+		     			rights than an ordinary user, and only some of his activities will be logged.
+		     		</li>
+		     	</ul>
+		     	<p>
+			     	In the form on the left, please fill in first name, last name, and two times the password (fields 
+			     	"Password" and "Validate") for the user admin. The user anonymous is configured automatically with 
+			     	default values.
+		     	</p>
+		     	<p>
+		     		When you click on "next", the admin and anonymous users will be created in the KiWi system. You can 
+		     		then later login as user <strong>admin</strong> using the password you have provided in case
+		     		you want to perform administrative tasks in the KiWi system.
+		     	</p>
+		     	<p>
+		     		You can optionally skip the whole setup process and continue using the KiWi system without setup by
+		     		clicking on the "skip setup" button. Do this only if you know what you are doing. The system will
+		     		probably not run correctly without the setup process. Note that you will again be redirected to
+		     		the setup when you restart the server.
+		     	</p>
+		     </s:div>
+	     
+     	</h:panelGrid>
+     	
+     </a:form>
+
+	<script type="text/javascript">
+	// select all desired input fields and attach tooltips to them 
+	jQuery("#formSetup :input.formField").tooltip({ 
+	 
+	    // place tooltip on the right edge 
+	    position: "center right", 
+	 
+	    // a little tweaking of the position 
+	    offset: [-2, 10], 
+	 
+	    // use the built-in fadeIn/fadeOut effect 
+	    effect: "fade", 
+	 
+	    // custom opacity setting 
+	    opacity: 0.7, 
+	 
+	    // use this single tooltip element 
+	    tip: '.jqTooltip' 
+	 
+	});	
+	</script>
+
+</ui:define> 
+</ui:composition>
+

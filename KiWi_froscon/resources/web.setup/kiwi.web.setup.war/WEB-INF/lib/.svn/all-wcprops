@@ -1,0 +1,155 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/lib
+END
+mvel14.jar
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/lib/mvel14.jar
+END
+janino.jar
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/lib/janino.jar
+END
+richfaces-impl.jar
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/lib/richfaces-impl.jar
+END
+jboss-seam.jar
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/lib/jboss-seam.jar
+END
+commons-digester.jar
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/lib/commons-digester.jar
+END
+drools-compiler.jar
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/lib/drools-compiler.jar
+END
+drools-core.jar
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/lib/drools-core.jar
+END
+antlr-runtime.jar
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/lib/antlr-runtime.jar
+END
+jboss-seam-rss.jar
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/lib/jboss-seam-rss.jar
+END
+jboss-seam-pdf.jar
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/lib/jboss-seam-pdf.jar
+END
+jboss-seam-debug.jar
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/lib/jboss-seam-debug.jar
+END
+jboss-seam-remoting.jar
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/lib/jboss-seam-remoting.jar
+END
+commons-beanutils.jar
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/lib/commons-beanutils.jar
+END
+jboss-el.jar
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/lib/jboss-el.jar
+END
+jxl.jar
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/lib/jxl.jar
+END
+jboss-seam-excel.jar
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/lib/jboss-seam-excel.jar
+END
+core.jar
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/lib/core.jar
+END
+jboss-seam-ioc.jar
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/lib/jboss-seam-ioc.jar
+END
+jsf-facelets.jar
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/lib/jsf-facelets.jar
+END
+jbpm-jpdl.jar
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/lib/jbpm-jpdl.jar
+END
+richfaces-api.jar
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/lib/richfaces-api.jar
+END
+richfaces-ui.jar
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/lib/richfaces-ui.jar
+END
+jboss-seam-jul.jar
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/lib/jboss-seam-jul.jar
+END
+jboss-seam-ui.jar
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/lib/jboss-seam-ui.jar
+END
+jboss-seam-mail.jar
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/lib/jboss-seam-mail.jar
+END

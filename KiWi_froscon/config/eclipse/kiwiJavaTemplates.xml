@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="java" deleted="false" description="Inserts a log field" enabled="true" name="logF">/**
+ * The Logger instance. All log messages from this class
+ * are routed through this member. The Logger name space
+ * is &lt;code&gt;${enclosing_package}.${enclosing_type}&lt;/code&gt;.
+ */
+private final Log log;</template><template autoinsert="true" context="java" deleted="false" description="initialise the log field" enabled="true" name="LOGFI">log = LogFactory.getLog(getClass());</template><template autoinsert="true" context="java" deleted="false" description="print  to standard out" enabled="true" name="sop">System.out.println(${cursor});</template></templates>

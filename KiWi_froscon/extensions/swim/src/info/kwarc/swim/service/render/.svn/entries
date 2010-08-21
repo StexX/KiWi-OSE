@@ -1,0 +1,34 @@
+10
+
+dir
+5584
+https://svn.salzburgresearch.at/svn/kiwi/KiWi/tags/froscon/extensions/swim/src/info/kwarc/swim/service/render
+https://svn.salzburgresearch.at/svn/kiwi
+
+
+
+2009-05-15T17:31:21.818851Z
+2314
+christoph_lange
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+df910b12-e4fe-467b-9c3d-147a02c1fe00
+
+renderlet
+dir
+
+savelet
+dir
+

@@ -1,0 +1,69 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+    xmlns:c="http://java.sun.com/jstl/core"
+    xmlns:a="http://richfaces.org/a4j">
+
+
+    <h3>Stream of Activities</h3>
+    <h:form>
+    <a:outputPanel id="streamOfActivities" layout="block">
+        <div class="activity">
+          <div class="activityPhoto">
+              <img src="#{facesContext.externalContext.requestContextPath}/img/professor.png" />
+          </div>
+
+          <div class="activityContent">
+              <h4>What's on your mind?</h4>
+              <div>
+                
+                    <h:panelGrid columns="2" columnClasses="activityMind, activityShare" style="width: 90%;">
+	                    <h:inputTextarea value="#{kiwi.dashboard.tweetAction.tweet}" rows="2" cols="40" style="width: 100%"/>
+	                    <a:commandButton action="#{kiwi.dashboard.tweetAction.submitTweet()}" value="Share" reRender="streamOfActivities"/>
+                    </h:panelGrid>
+                
+              </div>
+          </div>
+          
+          <!--<div style="clear: left;"></div>
+        --></div>
+        
+        <div>
+        	<h:outputText value="Show only my friend activities"/>
+	          <h:selectBooleanCheckbox title="Check to follow your friend activities" value="#{kiwi.dashboard.preferenceAction.showFriendActivity}" id="checkboxFriendsID">
+	  		     <a:support id="checkboxSupport" event="onchange" reRender="streamOfActivities" action="#{kiwi.dashboard.preferenceAction.saveUserPreference()}" />
+              </h:selectBooleanCheckbox>
+		</div>	               
+    
+	    <ui:repeat value="#{kiwi.dashboard.streamOfActivitiesAction.activities}" var="activity">
+ 		  
+ 		  <s:span id="activitySpan" rendered="#{(kiwi.dashboard.preferenceAction.showFriendActivity and (currentUser.id != activity.user.id))||(!kiwi.dashboard.preferenceAction.showFriendActivity)}">	    
+		        <div class="activity">
+		           
+	               <div class="activityPhoto">
+	                   <img src="#{facesContext.externalContext.requestContextPath}/img/professor.png" />
+	               </div>
+	               
+		           <div class="activityContent">
+		               <strong><kiwi:link resource="#{activity.user.resource}" value=" #{activity.user.firstName} #{activity.user.lastName}"/></strong> 
+	                   <h:outputText value=" "/>
+	                   <h:outputText escape="false" value="#{kiwi.dashboard.streamOfActivitiesAction.getMessageIdentifier(activity)}" /> 
+	<!--                   <s:convertEntity />-->
+		           </div>
+		        
+		           <div class="activityFooter">
+		               on <h:outputText value=" "/><h:outputText value="#{activity.created}" ><s:convertDateTime pattern="dd/MM/yyyy, HH:mm"/></h:outputText>
+		           </div>
+		           
+		           <div style="clear: left;"></div>
+		        </div>
+	        </s:span>
+	    </ui:repeat>
+    </a:outputPanel>
+  </h:form>    
+</ui:composition>

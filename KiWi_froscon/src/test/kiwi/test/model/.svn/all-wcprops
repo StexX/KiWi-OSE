@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/test/model
+END
+ContentItemTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/test/model/ContentItemTest.java
+END
+foaf.owl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/test/model/foaf.owl
+END
+ontology_kiwi.owl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/test/model/ontology_kiwi.owl
+END
+TaggingTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/test/model/TaggingTest.java
+END

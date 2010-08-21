@@ -1,0 +1,39 @@
+<!DOCTYPE div PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- author: Peter Dolog -->
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:a="http://richfaces.org/a4j" 
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                xmlns:rich="http://richfaces.org/rich">
+  	<a:region renderRegionOnly="true">
+	    <s:span id="recombytags" rendered="#{currentContentItem != null}">
+	    <s:span id="recomlistbytags" rendered="#{recommendationActionScope.groupedRecommendations.size() &gt; 0}">
+			<div><ul>
+				<ui:repeat var="recommendationbytags" value="#{recommendationActionScope.groupedRecommendations}" >
+				<li><h:outputText value="#{recommendationbytags.getKey().title}"/>
+					<ul>
+					<ui:repeat var="contentitems" value="#{recommendationbytags.getValue()}">
+						<li>
+						<kiwi:link contentItem="#{contentitems}"/>
+                        <br/>
+						<h:outputText value="by "/>
+						<h:outputText value="#{contentitems.author.firstName} "/>
+						<h:outputText value="#{contentitems.author.lastName}"/>
+						</li>
+					</ui:repeat>
+					</ul>
+				</li>
+				</ui:repeat>
+			      </ul>
+			</div>
+		</s:span>
+		<s:span id="norecomlistbytags" rendered="#{recommendationActionScope.groupedRecommendations.size() &lt;= 0}">
+					<h:outputText value="No Recommendations"/>
+		</s:span>
+		</s:span>
+	</a:region>
+</ui:composition>

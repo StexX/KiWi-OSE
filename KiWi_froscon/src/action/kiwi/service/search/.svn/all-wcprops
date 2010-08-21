@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/search
+END
+SemanticIndexingServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/search/SemanticIndexingServiceImpl.java
+END
+PersonalizedSearchServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/search/PersonalizedSearchServiceImpl.java
+END
+SemanticIndexingScheduleController.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/search/SemanticIndexingScheduleController.java
+END
+SemanticIndexingScheduleProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/search/SemanticIndexingScheduleProcessor.java
+END
+SolrServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/search/SolrServiceImpl.java
+END

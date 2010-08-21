@@ -1,0 +1,25 @@
+<r:feed 
+    xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:r="http://jboss.com/products/seam/rss" 
+	title="#{rssAction.feedTitle}"		
+	feedFormat="RSS20"
+	subtitle="#{rssAction.feedSubtitle}"
+	updated="#{rssAction.feedUpdated}" 
+	link="#{rssAction.feedLink}">
+
+	<ui:repeat value="#{rssAction.feedEntries}" var="entry">
+
+		<r:entry 
+		    uid="#{entry.kiwiIdentifier}" 
+		    title="#{entry.title}"
+			link="#{rssAction.feedLink}/home.seam?kiwiid=#{entry.kiwiIdentifier}" 
+			author="#{entry.author.firstName} #{entry.author.lastName}"
+			summary="#{rssAction.renderEntry(entry)}" 
+			published="#{entry.created}"
+			updated="#{entry.modified}" />
+
+	</ui:repeat>
+
+</r:feed>
+

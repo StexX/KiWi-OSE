@@ -1,0 +1,49 @@
+<table xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:rich="http://richfaces.org/rich"
+ 	  xmlns:c="http://java.sun.com/jstl/core"
+      xmlns:m="http://code.google.com/p/gmaps4jsf/"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+      xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+	  xmlns:a4j="http://richfaces.org/a4j" class="mbox">
+	<!-- To define:
+				box_header: Header of box (e.g. <h2>Box x</h2>)
+				box_header_links: Links in Boxheader (e.g. <li><a href="#"><img src="test.png" /></a></li>...)
+				box_content: Content of the box (e.g. <p>Some text</p>)
+	-->
+	<tr>
+		<td class="mbox_header_left"></td>
+		<td class="mbox_header_middle">
+			<div class="mbox_header_title">
+				<ui:insert name="box_header" />
+			</div>
+			<div class="mbox_header_links">
+				<h:form>
+				<ul>
+					<ui:insert name="box_header_links" />
+					<li style="margin-left:-8px">
+						<img src="img/header_links/blank.png" />
+					</li>			
+				</ul>
+				</h:form>
+			</div>
+		</td>
+		<td class="mbox_header_right"></td>
+	</tr>
+	<tr>
+		<td class="mbox_body_left"></td>
+		<td class="mbox_body_middle">
+			<div id="center_content" style="min-height:100px;">
+				<ui:insert name="box_content" />
+			</div>
+		</td>
+		<td class="mbox_body_right"></td>
+	</tr>
+	<tr>
+		<td class="mbox_footer_left"></td>
+		<td class="mbox_footer_middle"></td>
+		<td class="mbox_footer_right"></td>
+	</tr>
+</table>

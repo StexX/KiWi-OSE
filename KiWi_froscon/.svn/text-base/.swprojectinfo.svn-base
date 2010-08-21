@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project id="KiWi">
+<documents>
+<document external="false" id="/KiWi/classes/action/kiwi/ontologies/ontology_kiwi.owl">
+<uri>http://users.fh-salzburg.ac.at/~fhs12575/ontology/</uri>
+</document>
+<document external="false" id="/KiWi/classes/action/kiwi/ontologies/imports/contact.owl">
+<uri>file:/U:/workspace/ontology/imports/contact.owl</uri>
+</document>
+<document external="false" id="/KiWi/classes/action/kiwi/ontologies/imports/foaf.owl">
+<uri>file:/home/stexx/Desktop/sr/workspace/KiWi/classes/action/kiwi/ontologies/imports/foaf.owl</uri>
+</document>
+<document external="false" id="/KiWi/classes/action/kiwi/ontologies/imports/hgtags.owl">
+<uri>file:/home/stexx/Desktop/sr/workspace/KiWi/classes/action/kiwi/ontologies/imports/hgtags.owl</uri>
+</document>
+<document external="false" id="/KiWi/classes/action/kiwi/ontologies/imports/moat.owl">
+<uri>file:/home/stexx/Desktop/sr/workspace/KiWi/classes/action/kiwi/ontologies/imports/moat.owl</uri>
+</document>
+<document external="false" id="/KiWi/classes/action/kiwi/ontologies/imports/sioc.owl">
+<uri>file:/home/stexx/Desktop/sr/workspace/KiWi/classes/action/kiwi/ontologies/imports/sioc.owl</uri>
+</document>
+<document external="false" id="/KiWi/classes/test/kiwi/test/model/foaf.owl">
+<uri>file:/home/stexx/Desktop/sr/workspace/KiWi/classes/test/kiwi/test/model/foaf.owl</uri>
+</document>
+<document external="false" id="/KiWi/classes/test/kiwi/test/model/ontology_kiwi.owl">
+<uri>http://users.fh-salzburg.ac.at/~fhs12575/ontology/</uri>
+</document>
+<document external="false" id="/KiWi/src/action/kiwi/ontologies/ontology_kiwi.owl">
+<uri>http://users.fh-salzburg.ac.at/~fhs12575/ontology/</uri>
+</document>
+<document external="false" id="/KiWi/src/action/kiwi/ontologies/imports/contact.owl">
+<uri>file:/U:/workspace/ontology/imports/contact.owl</uri>
+</document>
+<document external="false" id="/KiWi/src/action/kiwi/ontologies/imports/foaf.owl">
+<uri>file:/home/stexx/Desktop/sr/workspace/KiWi/src/action/kiwi/ontologies/imports/foaf.owl</uri>
+</document>
+<document external="false" id="/KiWi/src/action/kiwi/ontologies/imports/hgtags.owl">
+<uri>file:/home/stexx/Desktop/sr/workspace/KiWi/src/action/kiwi/ontologies/imports/hgtags.owl</uri>
+</document>
+<document external="false" id="/KiWi/src/action/kiwi/ontologies/imports/moat.owl">
+<uri>file:/home/stexx/Desktop/sr/workspace/KiWi/src/action/kiwi/ontologies/imports/moat.owl</uri>
+</document>
+<document external="false" id="/KiWi/src/action/kiwi/ontologies/imports/sioc.owl">
+<uri>file:/home/stexx/Desktop/sr/workspace/KiWi/src/action/kiwi/ontologies/imports/sioc.owl</uri>
+</document>
+<document external="false" id="/KiWi/src/test/kiwi/test/model/foaf.owl">
+<uri>file:/home/stexx/Desktop/sr/workspace/KiWi/src/test/kiwi/test/model/foaf.owl</uri>
+</document>
+<document external="false" id="/KiWi/src/test/kiwi/test/model/ontology_kiwi.owl">
+<uri>http://users.fh-salzburg.ac.at/~fhs12575/ontology/</uri>
+</document>
+</documents>
+<libraries/>
+</project>

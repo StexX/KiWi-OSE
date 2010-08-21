@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/ontologies/resources/umbel
+END
+umbel.n3
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/ontologies/resources/umbel/umbel.n3
+END
+umbel_subject_concepts.n3
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/ontologies/resources/umbel/umbel_subject_concepts.n3
+END
+umbel_abstract_concepts.n3
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/ontologies/resources/umbel/umbel_abstract_concepts.n3
+END
+umbel_external_ontologies_linkage.n3
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/ontologies/resources/umbel/umbel_external_ontologies_linkage.n3
+END

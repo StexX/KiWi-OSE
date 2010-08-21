@@ -1,0 +1,66 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+			 	xmlns:c="http://java.sun.com/jstl/core"
+                template="layout/template_2col.xhtml">
+              
+<ui:define name="main_header">
+ 	<h2>Pre-Evaluation of idea "#{currentContentItem.title}"</h2>
+ 	
+ 	<script type="text/javascript">
+	//<![CDATA[
+		jQuery(document).ready(function(){
+				jQuery("#preEval\\:quest1").slideDown('slow');
+		});
+		
+		function changeShowPlus1(s, n){
+			n = n + 1;
+			jQuery("#preEval\\:"+s+n).slideDown('slow');
+		}
+		//]]>
+		
+	</script>
+ 	
+</ui:define>
+
+<ui:define name="main_header_links">
+<!-- maybe later-->
+</ui:define>
+
+<ui:define name="main_content">
+
+		<a:form id ="preEval">
+		
+		<div style="margin:10px;padding:10px;padding-top:0;" class="line_box">
+		
+		<!--   <input type="checkbox"  id="attachments" onclick="changeShow('quest',1);"/> -->
+		
+		<c:forEach items="#{ideator.preEvaluationAction.criterias}" var="c">
+			<!-- #{ideator.preEvaluationAction.values[c.preEvalStatus-1]} -->
+			<s:span id = "quest#{c.preEvalStatus}" style="display:none;">
+			<br/>
+			<br/>
+			<h:outputText value = "#{c.question}"/>
+			<br/>
+			<a:commandButton value="Yes" action="#{ideator.preEvaluationAction.accept(c.preEvalStatus)}" onclick="changeShowPlus1('quest',#{c.preEvalStatus});"/>
+			<a:commandButton value="No" action="#{ideator.preEvaluationAction.reject(c.preEvalStatus)}" />
+			<br/>
+			</s:span>
+		</c:forEach>
+		</div>
+		
+		</a:form>
+</ui:define>
+
+<ui:define name="right_content">
+	<ui:include src="pages/box/sample.xhtml" />
+</ui:define>
+
+</ui:composition>

@@ -1,0 +1,48 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+                xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                template="/layout/template-3col.xhtml">
+
+
+    <ui:define name="header">
+       <a:loadScript src="resource://jquery.js"/>
+       <script type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/js/jquery-ui-1.7.2.min.js"></script>
+       <link href="stylesheet/dashboard.css" rel="stylesheet" type="text/css" />
+    
+    </ui:define>
+
+    <ui:define name="navigation">
+        <ui:include src="layout/navigation.xhtml" />
+    </ui:define>
+
+           
+    <ui:define name="leftcolumn">
+        <div class="roundedBox widget">
+            <ui:include src="widgets/streamofactivities.xhtml" />
+        </div>
+    </ui:define>       
+                
+                
+    <ui:define name="rightcolumn">
+        <div class="roundedBox widget" style="min-height: 200px;">
+            <!--<ui:include src="widgets/recommendations.xhtml" />
+            --><ui:include src="widgets/rec.xhtml" />
+            
+        </div>
+        <div class="roundedBox widget" style="min-height: 200px;">
+            <ui:include src="widgets/tagcloud.xhtml" />
+        </div>
+        <div class="roundedBox widget" style="min-height: 200px;">
+            <ui:include src="widgets/history.xhtml" />
+        </div>
+    </ui:define>            
+</ui:composition>

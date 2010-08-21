@@ -1,0 +1,191 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+                xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                template="layout/template.xhtml">
+
+ 
+ 
+    <ui:define name="body">
+
+		<style type="text/css">
+			.perspectiveTable .rich-inplace-view,.perspectiveTable .rich-inplace-changed {
+				border: none;
+				white-space: normal;
+			}
+			
+			.perspectiveTable .rich-inplace-view-hover,.perspectiveTable .rich-inplace-changed-hover
+				{
+				background-color: #F0F8FF;
+				white-space: normal;
+			}
+		</style>
+
+        <h1>Configure Perspectives</h1>
+
+        <rich:messages/>
+
+    	<div class="jqTooltip"></div>
+
+        <h:form id="formPerspectiveConf">
+			<rich:dataTable value="#{kiwi.admin.perspectiveConfigurationAction.perspectives}" var="perspective" 
+				onRowMouseOver="this.style.backgroundColor='#F1F1F1'"
+				onRowMouseOut="this.style.backgroundColor='#{a4jSkin.tableBackgroundColor}'"
+				rowKeyVar="row" id="perspectiveTable" styleClass="perspectiveTable">
+				<f:facet name="header">
+					Configure Perspectives
+				</f:facet>		
+				
+				<rich:column>
+					<f:facet name="header">
+						<!-- <span title="The name of the perspective. Used in the tabs to switch perspectives" class="tooltip"> -->
+							<h:outputText value="Name" />
+						<!--  </span> -->
+					</f:facet>
+					<rich:inplaceInput value="#{perspective.name}" selectOnEdit="true">
+						<a:support event="onviewactivated" reRender="perspectiveTable" />
+					</rich:inplaceInput>
+				</rich:column>	
+
+				<rich:column>
+					<f:facet name="header">
+						<!--  <span title="A longer description of the functionalities of the perspective. Used e.g. in tooltips" class="tooltip"> -->
+							<h:outputText value="Description" />
+<!--						</span>-->
+					</f:facet>
+					<rich:inplaceInput value="#{perspective.description}" selectOnEdit="true">
+						<a:support event="onviewactivated" reRender="perspectiveTable" />
+					</rich:inplaceInput>
+				</rich:column>	
+				
+				<rich:column>
+					<f:facet name="header">
+<!--						<span title="The path to the XHTML files that define the perspective, relative to the /perspectives directory in the KiWi view. The directory must contain at least one of view.xhtml, edit.xhtml, search.xhtml. and may contain also widgets.xhtml" class="tooltip">-->
+							<h:outputText value="Path" />
+<!--						</span>-->
+					</f:facet>
+					<rich:inplaceInput value="#{perspective.path}" selectOnEdit="true">
+						<a:support event="onviewactivated" reRender="perspectiveTable" />
+					</rich:inplaceInput>
+				</rich:column>	
+				
+				<rich:column>
+					<f:facet name="header">
+<!--						<span title="Check if the perspective contains a view.xhtml template for displaying content or data" class="tooltip">-->
+							<h:outputText value="View?" />
+<!--						</span>-->
+					</f:facet>
+					<h:selectBooleanCheckbox value="#{perspective.view}">
+						<a:support event="onviewactivated" reRender="perspectiveTable" />
+					</h:selectBooleanCheckbox>
+				</rich:column>	
+				
+				<rich:column>
+					<f:facet name="header">
+<!--						<span title="Check if the perspective contains a edit.xhtml template for editing content or data" class="tooltip">-->
+							<h:outputText value="Edit?" />
+<!--						</span>-->
+					</f:facet>
+					<h:selectBooleanCheckbox value="#{perspective.edit}">
+						<a:support event="onviewactivated" reRender="perspectiveTable" />
+					</h:selectBooleanCheckbox>
+				</rich:column>	
+				
+				<rich:column>
+					<f:facet name="header">
+<!--						<span title="Check if the perspective contains a search.xhtml template for displaying content as search result" class="tooltip">-->
+							<h:outputText value="Search?" />
+<!--						</span>-->
+					</f:facet>
+					<h:selectBooleanCheckbox value="#{perspective.search}">
+						<a:support event="onviewactivated" reRender="perspectiveTable" />
+					</h:selectBooleanCheckbox>
+				</rich:column>	
+				
+				<rich:column>
+					<f:facet name="header">
+<!--						<span title="Check if the perspective contains a widgets.xhtml template to display additional widgets to the main content" class="tooltip">-->
+							<h:outputText value="Widgets?" />
+<!--						</span>-->
+					</f:facet>
+					<h:selectBooleanCheckbox value="#{perspective.widget}">
+						<a:support event="onviewactivated" reRender="perspectiveTable" />
+					</h:selectBooleanCheckbox>
+				</rich:column>	
+				
+				<rich:column>
+					<f:facet name="header">
+						<h:outputText value="Action" />
+					</f:facet>
+					<h:commandButton action="#{kiwi.admin.perspectiveConfigurationAction.removePerspective(perspective)}" value="Delete" disabled="false" />
+				</rich:column>	
+				
+
+				<f:facet name="footer">
+					<rich:columnGroup>
+						<rich:column>
+							<h:inputText value="#{kiwi.admin.perspectiveConfigurationAction.newPerspective.name}" />
+						</rich:column>
+						<rich:column>
+							<h:inputText value="#{kiwi.admin.perspectiveConfigurationAction.newPerspective.description}" />
+						</rich:column>
+						<rich:column>
+							<h:inputText value="#{kiwi.admin.perspectiveConfigurationAction.newPerspective.path}" />
+						</rich:column>
+						<rich:column>
+							<h:selectBooleanCheckbox value="#{kiwi.admin.perspectiveConfigurationAction.newPerspective.view}"/>
+						</rich:column>	
+						<rich:column>
+							<h:selectBooleanCheckbox value="#{kiwi.admin.perspectiveConfigurationAction.newPerspective.edit}"/>
+						</rich:column>	
+						<rich:column>
+							<h:selectBooleanCheckbox value="#{kiwi.admin.perspectiveConfigurationAction.newPerspective.search}"/>
+						</rich:column>	
+						<rich:column>
+							<h:selectBooleanCheckbox value="#{kiwi.admin.perspectiveConfigurationAction.newPerspective.widget}"/>
+						</rich:column>	
+						<rich:column>
+							<h:commandButton action="#{kiwi.admin.perspectiveConfigurationAction.addPerspective()}" value="Add" reRender="perspectivesTable"/>
+						</rich:column>
+					</rich:columnGroup>
+				</f:facet>
+
+			</rich:dataTable>	        
+	        
+	        <h:commandButton action="#{kiwi.admin.perspectiveConfigurationAction.commit()}" value="Save" />
+        </h:form>
+        
+        
+        <script type="text/javascript">
+			// select all desired input fields and attach tooltips to them 
+			jQuery("#formPerspectiveConf :span.tooltip").tooltip({ 
+			 
+			    // place tooltip on the right edge 
+			    position: "center top", 
+			 
+			    // a little tweaking of the position 
+			    offset: [-2, 10], 
+			 
+			    // use the built-in fadeIn/fadeOut effect 
+			    effect: "fade", 
+			 
+			    // custom opacity setting 
+			    opacity: 0.7, 
+			 
+			    // use this single tooltip element 
+			    tip: '.jqTooltip' 
+			 
+			});	
+		</script>
+        
+    </ui:define>         
+                
+</ui:composition>

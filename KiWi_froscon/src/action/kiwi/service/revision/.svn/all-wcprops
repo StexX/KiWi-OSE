@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/revision
+END
+UpdateMetadataServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/revision/UpdateMetadataServiceImpl.java
+END
+LCS.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/revision/LCS.java
+END
+RevisionServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/revision/RevisionServiceImpl.java
+END
+UpdateTaggingServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/revision/UpdateTaggingServiceImpl.java
+END
+UpdateConfigurationServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/revision/UpdateConfigurationServiceImpl.java
+END
+UpdateMediaContentServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/revision/UpdateMediaContentServiceImpl.java
+END
+UpdateRulesServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/revision/UpdateRulesServiceImpl.java
+END
+RenameContentItemServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/revision/RenameContentItemServiceImpl.java
+END
+DeleteContentItemServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/revision/DeleteContentItemServiceImpl.java
+END
+CIVersionServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/revision/CIVersionServiceImpl.java
+END
+UpdateTextContentServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/revision/UpdateTextContentServiceImpl.java
+END

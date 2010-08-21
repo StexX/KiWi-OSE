@@ -1,0 +1,88 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a="http://richfaces.org/a4j"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+	template="layout/template.xhtml">
+
+	<ui:define name="body">
+
+
+		<h:form>
+
+			<!--  reasoning debugging -->
+			
+			<h2>Inferred triples</h2>
+			
+			<s:span id="inferredTriples">
+
+				<h:dataTable width="500" id="inferredTriplesTable" rows="20"
+					columnClasses="col" value="#{reasoningAction.tableModelInferred}" var="triple" binding="#{ra.uidataWrapper.UIData}">
+					<f:facet name="header">
+						<rich:columnGroup>
+							<h:column>
+								<b><h:outputText styleClass="columnHeader" value="Triple id" /></b>
+							</h:column>
+							<h:column>
+								<b><h:outputText styleClass="columnHeader" value="Subject" /></b>
+							</h:column>
+							<h:column>
+								<b><h:outputText styleClass="columnHeader" value="Property" /></b>
+							</h:column>
+							<h:column>
+								<b><h:outputText styleClass="columnHeader" value="Object" /></b>
+							</h:column>
+							<h:column>
+								<b><h:outputText styleClass="columnHeader" value="" /></b>
+							</h:column>
+						</rich:columnGroup>
+					</f:facet>
+
+					<h:column filterBy="#{triple.id}">
+						<h:outputText value="#{triple.id}" />
+					</h:column>
+
+					<h:column filterBy="#{triple.subject}">
+						<h:outputText value="#{triple.subject.shortName}" title="#{triple.subject}" />
+					</h:column>
+
+					<h:column filterBy="#{triple.property}">
+						<h:outputText value="#{triple.property.shortName}" title="#{triple.property}" />
+					</h:column>
+
+					<h:column  filterBy="#{triple.object}">
+						<h:outputText value="#{triple.object.shortName}" title="#{triple.object}" />
+					</h:column>
+
+					<h:column>
+						<h:commandButton value="Explain" action="#{explanationAction.explainTriple(triple.id)}" />								
+					</h:column>
+				</h:dataTable>
+
+				<rich:spacer height="30" />
+				<rich:datascroller id="inferredTriplesTableScroller" align="left"
+					for="inferredTriplesTable" page="#{reasoningAction.inferredTriplesCurrentPage}" maxPages="20" />
+					
+			    <h:panelGrid>		
+			        <h:panelGroup>
+			            <h:outputText value="Set current page number:" />
+			
+			            <h:inputText value="#{reasoningAction.inferredTriplesCurrentPage}" id="sc1" size="3"/>
+			
+			            <h:commandButton value="Set" />
+			        </h:panelGroup>
+			    </h:panelGrid>
+
+					
+			</s:span>			
+			
+		</h:form>
+
+	</ui:define>
+</ui:composition>

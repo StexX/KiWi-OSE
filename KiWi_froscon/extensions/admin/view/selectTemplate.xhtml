@@ -1,0 +1,39 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:a="http://richfaces.org/a4j"
+    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+    xmlns:c="http://java.sun.com/jstl/core">
+    
+<rich:modalPanel   
+       id="selectTemplate" width="400" height="600">
+     <f:facet name="header">Select a template</f:facet>
+	 <h:form>
+
+			    <h:outputText value="Select a template: " /> 
+			    <br/> <br/>
+				<h:selectOneListbox value="#{sFormInstanceAction.selectedTemplate}" required="true" id = "templates">                        
+					<s:selectItems value="#{sFormTemplAction.templates}" var="template"                  
+                   label="#{template.title}" noSelectionLabel="Please Select..."/>
+                  <kiwi:convertEntity/>
+                </h:selectOneListbox>
+
+			    
+				<br/><br/>
+       			<a:commandButton value="Delete selected Template" action = "#{sFormInstanceAction.deleteSelectedTemplate}" reRender = "templates"/>
+       			<h:commandButton value="Create new Instance" action = "#{sFormInstanceAction.createNewInstance}"/>	
+	</h:form>
+	<br/>
+	<h:form>
+			 <h:outputText value="Create new template" />
+			 <h:inputText value="#{sFormTemplAction.templateTitle}"/>
+			 <br/><br/>
+			 <h:commandButton value="Create new Template" action = "#{sFormTemplAction.createNewTemplate}" reRender = "templates"/>
+			 <h:commandButton value="Cancel"/>		
+	</h:form>
+		
+</rich:modalPanel>
+</ui:composition>

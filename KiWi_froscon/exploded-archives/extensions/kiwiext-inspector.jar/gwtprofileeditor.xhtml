@@ -1,0 +1,27 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="layout/template.xhtml">
+
+	<ui:define name="links">
+
+		<script>
+		  var isomorphicDir = "#{facesContext.externalContext.requestContextPath}/gwt/dashboardprofile/sc/";
+		</script>
+		<script src="#{facesContext.externalContext.requestContextPath}/gwt/dashboardprofile/sc/initsc.js"></script>
+		<script language="javascript" src="#{facesContext.externalContext.requestContextPath}/gwt/dashboardprofile/dashboardprofile.nocache.js"></script>
+
+	</ui:define>
+
+<ui:define name="body">
+
+	<h1>User profile editor using gwt + smartGWT (uncomplete)</h1>
+	
+	
+	<hr />
+
+	<div id="gwtcontent">make sure you called "ant gwtExplode" before.. this task might be still deactivated.</div>	
+   
+</ui:define>     
+</ui:composition>

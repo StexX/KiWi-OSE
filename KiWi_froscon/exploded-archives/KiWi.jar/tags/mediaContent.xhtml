@@ -1,0 +1,53 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:kiwi="http://www.kiwi-project.eu/jsf">
+	<!-- parameters: contentItem, width, height, decreaseOnly, edit, style,
+		 styleClass -->
+	<c:if test="#{empty lightbox}">
+		<c:set var="lightbox" value="true" />
+	</c:if>
+	<s:div style="#{style}">
+		<s:span rendered="#{contentItem.mediaContent != null}">
+			<c:if test="#{lightbox==true}">
+				<s:link styleClass="lightbox"
+					action="#{kiwi.ui.downloadAction.download}">
+					<f:param name="contentItemId" value="#{contentItem.id}" />
+					<s:graphicImage value="#{contentItem.mediaContent.data}"
+						fileName="#{contentItem.mediaContent.fileName}#{salt}">
+						
+						<ui:insert />
+					</s:graphicImage>
+				</s:link>
+				<rich:jQuery selector="a.lightbox" timing="onload" query="lightBox()" />
+			</c:if>
+			<c:if test="#{lightbox!=true}">
+				<s:graphicImage value="#{contentItem.mediaContent.data}"
+					fileName="#{contentItem.mediaContent.fileName}#{salt}">
+					
+					<ui:insert />
+				</s:graphicImage>
+			</c:if>
+		</s:span>
+
+		<c:if test="#{contentItem.mediaContent == null}">
+			<ui:insert name="nomedia" />
+		</c:if>
+		<c:if test="#{edit}">
+			<center><a4j:commandButton value="edit"
+				action="#{mediaAction.init(contentItem.id, onSaveEvent, onCancelEvent, onRemoveEvent)}"
+				reRender="mediaUploadPanel"
+				oncomplete="#{rich:component('mediaUploadPanel')}.show();">
+			</a4j:commandButton></center>
+
+		</c:if>
+	</s:div>
+	<!-- 
+		    			<s:conversationPropagation type="nest" />
+		oncomplete="#{rich:component('mediaUploadPanel')}.show();" -->
+</ui:composition>

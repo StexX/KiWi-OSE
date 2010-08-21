@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/datasource
+END
+KiWi-dev-ds.mysql.xml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/datasource/KiWi-dev-ds.mysql.xml
+END
+KiWi-prod-ds.postgresql.xml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/datasource/KiWi-prod-ds.postgresql.xml
+END
+KiWi-test-ds.h2.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/datasource/KiWi-test-ds.h2.xml
+END
+KiWi-prod-ds.mysql.xml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/datasource/KiWi-prod-ds.mysql.xml
+END
+KiWi-dev-ds.postgresql.xml
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/datasource/KiWi-dev-ds.postgresql.xml
+END
+KiWi-prod-ds.h2.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/datasource/KiWi-prod-ds.h2.xml
+END
+KiWi-test-ds.mysql.xml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/datasource/KiWi-test-ds.mysql.xml
+END
+KiWi-dev-ds.h2.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/datasource/KiWi-dev-ds.h2.xml
+END
+KiWi-test-ds.postgresql.xml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/datasource/KiWi-test-ds.postgresql.xml
+END

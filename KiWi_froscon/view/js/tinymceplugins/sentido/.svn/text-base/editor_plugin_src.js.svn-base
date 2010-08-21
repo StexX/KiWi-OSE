@@ -1,0 +1,218 @@
+/** -*- tab-width:4; indent-tabs-mode:nil;  -*-
+ * $Id: editor_plugin_src.js 763 2008-05-27 15:07:47Z alberto $
+ *
+ * @author Moxiecode
+ * @author Alberto González Palomo
+ * @copyright Copyright © 2004-2008, Moxiecode Systems AB, All rights reserved.
+ * @copyright Copyright © 2008, Alberto González Palomo, All rights reserved.
+ */
+
+(function() {
+    var each = tinymce.each;
+    var dom_parser = new DOMParser();
+    var xml_serializer = new XMLSerializer();
+    // var u = tinymce.baseURL + '/plugins/sentido/js/sentido.js';
+    // KiWi uses a different path "thanks" to RichFaces
+    var u = './js/tinymceplugins/sentido/js/sentido.js';
+    var s = tinymce.EditorManager.settings;
+
+    if (s) {
+      if (!tinymce.dom.Event.domLoaded && !s.strict_mode)
+    tinymce.ScriptLoader.load(u);
+      else
+        tinymce.ScriptLoader.add(u);
+    }
+
+    tinymce.create('tinymce.plugins.SentidoPlugin', {
+        init : function(ed, url) {
+            var t = this;
+
+            t.editor = ed;
+            t.url = url;
+
+            function isSentidoElm(n) {
+                return /^mceItemSentido$/.test(n.className);
+            };
+
+            if (ed.settings.language) {
+              var u = url;
+              if (u && ed.settings.language) {
+                u += '/langs/' + ed.settings.language + '.js';
+                if (!tinymce.ScriptLoader.isDone(u)) {
+                  tinymce.ScriptLoader.load(u);
+                  tinymce.ScriptLoader.markDone(u);
+                }
+              }
+            }
+
+            // Register commands
+            ed.addCommand('mceSentido', function() {
+                ed.windowManager.open({
+                    file : url + '/sentido.xhtml',
+                    width : 600 + parseInt(ed.getLang('sentido.delta_width', 0)),
+                    height : 400 + parseInt(ed.getLang('sentido.delta_height', 0)),
+                    inline : 1
+                }, {
+                    plugin_url : url
+                });
+            });
+
+            // Register buttons
+            ed.addButton('sentido', {title : 'sentido.desc', cmd : 'mceSentido'});
+
+            ed.onNodeChange.add(function(ed, cm, n) {
+                cm.setActive('sentido', n.nodeName == 'SPAN' && isSentidoElm(n));
+            });
+
+            ed.onInit.add(function() {
+                if (ed.settings.content_css !== false)
+                    ed.dom.loadCSS(url + "/css/content.css");
+                tinymce.DOM.loadCSS(url + "/css/ui.css");
+
+                if (ed.theme.onResolveName) {
+                    ed.theme.onResolveName.add(function(th, o) {
+                        if (o.name == 'span') {
+                          if (ed.dom.hasClass(o.node, "mceItemSentido")) {
+                            o.name = "formula";
+                            o.title = ed.dom.getAttrib(o.node, 'title');
+                            return false;
+                          }
+                        }
+                    });
+                }
+
+                if (ed && ed.plugins.contextmenu) {
+                    ed.plugins.contextmenu.onContextMenu.add(function(th, m, e) {
+                        if (e.nodeName == 'SPAN' && isSentidoElm(e)) {
+                            m.add({title : 'sentido.edit', icon : 'sentido', cmd : 'mceSentido'});
+                        }
+                    });
+                }
+            });
+
+            ed.onSetContent.add(function() {
+                t._spansToFormulas(ed.getBody());
+            });
+
+            ed.onPostProcess.add(function(ed, o) {
+                if (!o.content.match(/class=.mceItemSentido./)) {
+                  o.content = o.content.replace(/lang=["'](x-qmath-[^"']+)["']/g, 'class="mceItemSentido" lang="$1"');
+                }
+            });
+
+            ed.onSaveContent.add(function(ed, o) {
+              each(ed.dom.select('SPAN', o.node), function(n) {
+                     var ci, cb, mt;
+                     if (isSentidoElm(n) && n.getAttribute("lang") != "x-xml-openmath") {
+                       //n.textContent = n.getAttribute("openmath");
+                       t._encodeFormula(n);
+                       n.removeAttribute("title");
+                       n.setAttribute("lang", "x-xml-openmath");
+                     }
+                   });
+              o.content = tinymce.trim(ed.getContent());
+            });
+
+            var parser_path, contexts_path;
+            parser_path = url + "/sentido";
+            contexts_path = url + "/sentido/contexts";
+            var props = [];
+            // ["editors", "i18n", "activeEditor", "preInit", "init", "get", "getInstanceById", "add", "remove", "execCommand", "execInstanceCommand", "triggerSave", "addI18n", "_setActive", "baseURI", "onBeforeUnload", "settings", "selectedInstance"]
+            for (var p in window.tinyMCE.activeEditor.windowManager) props.push(p);
+            this.qmath = new QMath(parser_path);
+            if (window.context) this.context = window.context;
+            else                this.context = "en";
+            this.contexts_directory_url = contexts_path;
+            if (this.contexts_directory_url[this.contexts_directory_url.length - 1] != "/") {
+                this.contexts_directory_url += "/";
+              }
+            this.qmath.rebuild_context(this.contexts_directory_url + this.context + ".xml");
+        },
+
+        getInfo : function() {
+            return {
+                longname : 'Sentido',
+                author : 'Alberto González Palomo',
+                authorurl : 'http://www.matracas.org',
+                infourl : 'http://www.matracas.org/sentido/',
+                version : "1.0"
+            };
+        },
+
+        // Private methods
+
+        _spansToFormulas : function(p) {
+            var t = this, dom = t.editor.dom;
+
+            each(dom.select('span', p), function(n) {
+              // Convert string into formula
+              if (dom.getAttrib(n, 'lang') == 'x-xml-openmath') {
+                dom.replace(t._createFormula(n), n);
+              }
+            });
+        },
+
+        _createFormula : function(n) {
+            var formula, dom = this.editor.dom;
+
+            // Create formula
+            var serialized_omobj = n.textContent;
+            var formula_title;
+            switch (this.context) {
+            case "en":
+              formula_title = "Syntax: QMath/English";
+              break;
+            case "maxima":
+              formula_title = "Syntax: Maxima";
+              break;
+            case "yacas":
+              formula_title = "Syntax: Yacas";
+              break;
+            case "mma":
+              formula_title = "Syntax: Mathematica\u00AE";
+              break;
+            case "mpl":
+              formula_title = "Syntax: Maple\u2122";
+              break;
+            }
+            formula = dom.create('span', {
+                title : formula_title,
+                lang :  "x-qmath-" + this.context,
+                openmath: serialized_omobj,
+                'class' : 'mceItemSentido'
+            });
+            var omobj;
+            //omobj = n.firstChild;
+            omobj = dom_parser.parseFromString(serialized_omobj, "text/xml");
+            //alert(xml_serializer.serializeToString(omobj));
+            formula.textContent = this.qmath.openmath_to_linear(omobj);;
+
+            return formula;
+        },
+
+        _encodeFormula : function(n) {
+          if (n.hasAttribute("lang")) {
+            var context = n.getAttribute("lang").replace(/^x-qmath-/, "");
+            if (context != this.context) {
+              this.context = context;
+              this.qmath.rebuild_context(this.contexts_directory_url + this.context + ".xml");
+            }
+            var omobj;
+            omobj = this.qmath.linear_to_openmath(n.textContent);
+            n.textContent = xml_serializer.serializeToString(omobj);//n.getAttribute("openmath");
+            n.removeAttribute("title");
+            n.setAttribute("lang", "x-xml-openmath");
+          }
+        },
+        _parse : function(s) {
+            return tinymce.util.JSON.parse('{' + s + '}');
+        },
+
+        _serialize : function(o) {
+            return tinymce.util.JSON.serialize(o).replace(/[{}]/g, '');
+        }
+    });
+
+    // Register plugin
+    tinymce.PluginManager.add('sentido', tinymce.plugins.SentidoPlugin);
+})();

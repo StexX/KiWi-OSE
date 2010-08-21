@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/bootstrap.tmpl
+END
+oscache.properties
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/bootstrap.tmpl/oscache.properties
+END
+log4j.xml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/bootstrap.tmpl/log4j.xml
+END
+commons-logging.properties
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/bootstrap.tmpl/commons-logging.properties
+END
+jndi.properties
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/bootstrap.tmpl/jndi.properties
+END

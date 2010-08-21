@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gwt2
+END
+readme.txt
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gwt2/readme.txt
+END
+gwt-user.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gwt2/gwt-user.jar
+END
+smartgwt-skins.jar
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gwt2/smartgwt-skins.jar
+END
+smartgwt.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gwt2/smartgwt.jar
+END
+gwt-dev.jar
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gwt2/gwt-dev.jar
+END
+gwt-servlet.jar
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gwt2/gwt-servlet.jar
+END

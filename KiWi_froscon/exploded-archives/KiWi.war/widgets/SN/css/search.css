@@ -1,0 +1,304 @@
+
+/***********  Positioning  **************/
+#search {
+    width:940px;
+    position:relative;
+}
+
+#center {
+    width:640px;
+    float:left;
+}
+
+#right {
+    width:300px;
+    float:right;
+    position:relative;
+    left:20px;
+}
+
+/************  LOADING  ********************/
+#loading {
+    position: absolute;
+    left:525px;
+    top:29px;
+    width:16px;
+    height:16px;
+    background-image:url('../img/wait.gif');
+    background-color:white;
+}
+
+/************   SEARCH BAR   **************/
+
+#search_bar {
+    width:625px;
+    height:80px;
+    text-align:center;
+    background-image:url('../img/bg.jpg');
+    background-repeat:no-repeat;
+    margin-left:5px;
+}
+
+#search_bar table {
+    position:relative;
+    width:585px;
+    top: 20px;
+    border-spacing:0;
+    border-bottom: 1px solid #700606;
+    border-right: 1px solid #700606; /* #e7e7e7 */
+    background-color:white;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+#search_button_td {
+    border-top: 1px solid #CCC;
+    border-right: 1px solid #999;
+    border-bottom: 1px solid #999;
+    border-left: 1px solid #CCC;
+    width:60px;
+}
+
+#search_field_td {
+    border-top: 1px solid #CCC;
+    border-bottom: 1px solid #999;
+    border-left: 1px solid #CCC;
+}
+
+#search_bar input {
+    border:none;
+    height:26px;
+    width:100%;
+}
+
+#search_field_input {   
+    font:18px arial,sans-serif;
+    padding-left:4px;
+}
+
+#search_button_input {
+    background: none repeat scroll 0 0 #EEEEEE;
+    font:16px arial,sans-serif;
+    cursor:pointer;
+}
+
+#search_menu {
+    font:12px arial,sans-serif;
+    text-align:right;
+    color:white;
+    list-style:none;
+    margin:3px 0 0;
+    padding-right: 23px;
+    position:relative;
+    top:23px;
+}
+
+#search_menu li {
+    display:inline;
+}
+
+#search_menu li a{
+    color:white;
+    text-decoration:none;
+}
+
+
+/*************  Type Tabs  ************/
+#type_tabs {
+    list-style:none;
+    margin: 20px 0 0 5px;
+    padding:0 0 0 9px;
+    min-height: 19px;
+}
+
+#type_tabs li {
+    display: inline;
+    padding: 5px 5px 2px;
+    margin: 2px;
+    cursor: pointer;
+}
+
+#type_tabs li a {
+    font:14px arial,sans-serif;
+    color: black;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+.type_tab_inactive {
+    background-color:white;
+    border: 2px solid #E2EAF5;
+    border-bottom:none;
+}
+
+.type_tab_active {
+    background-color:#E2EAF5;
+    border: 2px solid #bcc3cc;
+    border-bottom:none;
+}
+
+/***************  Search Results  **************/
+#search_results {
+    background-image: url('../img/bg2.jpg');
+    background-repeat: no-repeat;
+    position:relative;
+    top:0;
+    padding:5px 15px 15px;
+}
+
+#no_result {
+    font-weight:bold;
+    margin-left:10px;
+    color: #C03025;
+}
+
+/***************  Placeholder  ****************/
+.placeholder {
+    margin: 10px 0;
+    width:610px;
+    background-color:white;
+    border: 1px solid lightgrey;
+}
+
+/************** Single Result  *****************/
+.single_result {
+    margin: 10px 0;
+    width:610px;
+    border: 1px dashed lightgrey;
+}
+
+.single_result h2 {
+    margin: 5px;
+    font:bold 20px arial,sans-serif;
+}
+
+.single_result h2 a {
+    color: black;
+    cursor: pointer;
+}
+
+.single_result div.description p{
+    margin: 10px 5px 0;
+    font:14px arial,sans-serif;
+}
+
+.single_result div.description a {
+    color: #c03025;
+    text-decoration:none;
+    font:bold 11px arial,sans-serif;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.single_result p.info {
+    margin: 10px 5px;
+    font:12px arial,sans-serif;
+    color: grey;
+}
+
+span.red {
+    color: #c03025;
+}
+
+span.highlight {
+    background-color:yellow;
+}
+
+/**************** Facets *********************/
+#selected_facets {
+    min-height: 112px;
+    margin-left:5px;
+    margin-bottom: 7px;
+}
+
+#selected_facets img {
+    border:none;
+    margin-right: 5px;
+    margin-left: 1px;
+}
+
+#selected_facets table {
+    width: 100%;
+    border-left: 2px solid #E2EAF5;
+}
+
+#selected_facets td.title {
+    font:bold 12px arial,sans-serif;
+    width: 70px;
+}
+
+#selected_facets td.value {
+    font:12px arial,sans-serif;
+}
+
+#facets {
+    background-image:url('../img/bg2-short.jpg');
+    background-repeat:no-repeat;
+    padding:5px 15px 15px;
+    min-height: 20px;
+}
+
+.right_box {
+    background-color:white;
+    border: 1px solid lightgrey;
+    width:270px;
+    margin: 10px 0;
+}
+
+.right_box h3{
+    margin:3px;
+    font:bold 14px arial,sans-serif;
+}
+
+.right_box p {
+    margin:3px;
+    font:12px arial,sans-serif;
+}
+
+.right_box p a{
+    color: black;
+    text-decoration:none;
+    cursor: pointer;
+}
+
+/*************   Paging  **************/
+#search_paging {
+    margin-top:40px;
+    padding-top:5px;
+    border-top:1px solid #E2EAF5;
+    text-align:center;
+    font:bold 12px arial,sans-serif;
+}
+
+#search_paging a {
+    margin:5px;
+    cursor: pointer;
+}
+
+#search_paging a.active{
+    color: #c03025;
+}
+
+#search_paging a.inactive{
+    color: #5388af;
+}
+
+#search_paging a.prev{
+    color: #5388af;
+}
+
+#search_paging a.next{
+    color: #5388af;
+}
+
+#search_paging span.disabled {
+    color: lightgray;
+}
+
+#search_paging_top {
+	float: right;
+	margin-top: 24px;
+	margin-right: 16px;
+	font:bold 11px arial,sans-serif;
+}

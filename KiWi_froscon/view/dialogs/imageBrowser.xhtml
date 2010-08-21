@@ -1,0 +1,30 @@
+<ui:component xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+   	  xmlns:rich="http://richfaces.org/rich"
+ 	  xmlns:a="http://richfaces.org/a4j"
+      xmlns:kiwi="http://www.kiwi-project.eu/jsf">
+
+	<h:form>
+		<rich:tabPanel switchType="ajax">
+			<rich:tab label="Image Finder">
+				<h:outputText value="Search" /><h:inputText value="#{imageBrowserAction.query}" />
+				<a:commandButton action="#{imageBrowserAction.runSearch}" value="search" reRender="imageBrowserResults" />
+				<br/>
+				<rich:panel id="imageBrowserResults">
+					<ui:repeat value="#{imageBrowserAction.searchEngine.searchResults.results}" var="r">
+						<kiwi:mediaContent contentItem="#{r.item}" lightbox="false">
+							<s:transformImageSize width="150" maintainRatio="true" />
+						</kiwi:mediaContent>
+					</ui:repeat>
+				</rich:panel>
+			</rich:tab>
+			<rich:tab label="Upload..">
+				<h:outputText value="here comes the upload panel..." />
+			</rich:tab>
+		</rich:tabPanel>
+	</h:form>
+	
+</ui:component>

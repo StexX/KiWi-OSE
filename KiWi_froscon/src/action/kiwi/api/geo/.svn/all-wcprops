@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/geo
+END
+GeoCodingServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/geo/GeoCodingServiceRemote.java
+END
+GeoCodingService.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/geo/GeoCodingService.java
+END
+GeoCodingFailedException.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/geo/GeoCodingFailedException.java
+END
+Location.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/geo/Location.java
+END
+GeoCodingServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/geo/GeoCodingServiceLocal.java
+END

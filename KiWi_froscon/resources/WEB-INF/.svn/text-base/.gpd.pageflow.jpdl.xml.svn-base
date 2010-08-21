@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root-container name="pageflow.jpdl" width="766" height="530">
+  <node name="start-page1" x="172" y="56" width="132" height="36"/>
+  <node name="page1" x="170" y="162" width="132" height="36"/>
+</root-container>

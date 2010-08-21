@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/bootstrap.tmpl/deployers
+END
+security-deployer-beans.xml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/bootstrap.tmpl/deployers/security-deployer-beans.xml
+END
+ejb-deployer-beans.xml
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/bootstrap.tmpl/deployers/ejb-deployer-beans.xml
+END
+ejb3-deployers-beans.xml
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/bootstrap.tmpl/deployers/ejb3-deployers-beans.xml
+END
+aspect-deployer-beans.xml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/bootstrap.tmpl/deployers/aspect-deployer-beans.xml
+END
+jca-deployers-beans.xml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/bootstrap.tmpl/deployers/jca-deployers-beans.xml
+END
+jboss-aspect-library-beans.xml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/bootstrap.tmpl/deployers/jboss-aspect-library-beans.xml
+END
+metadata-beans.xml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/bootstrap.tmpl/deployers/metadata-beans.xml
+END

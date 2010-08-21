@@ -1,0 +1,110 @@
+Phase: Number
+Input: Lookup Token
+Options: control = appelt
+
+
+Rule: Number1
+(
+	({Lookup.majorType == "number"})+
+
+):NumberName
+-->
+:NumberName.NMB = {kind = "number", subtype= "number", rule = "Number1"}
+
+/*
+// commented this rule out as it uses TIME and DATE not specified in input
+// headers, and I have no idea if adding them will mess other rules up
+
+Rule: Number1_exception
+Priority: 50
+(
+	(
+	({TIME.kind == "time"})+
+	|
+	({DATE.kind == "date"})+
+	)
+
+)
+-->
+{}
+*/
+
+Rule: Number2
+(
+	({Lookup.majorType == "number"})+
+	(
+	{Token.string == "."}
+	|
+//	{Token.string == "\-"}
+//	|
+	{Token.string == ","}
+	)
+	({Lookup.majorType == "number"})+
+):NumberName2
+-->
+:NumberName2.NMB = {kind = "NMB", subtype= "number", rule = "Number2"}
+
+Rule: Prozent
+Priority: 20
+(
+	({Lookup.majorType == "number"})+
+	(
+	(
+	{Token.string == "."}
+	|
+	{Token.string == ","}
+	)
+	({Lookup.majorType == "number"})+
+	)?
+	({Token.string == "Prozent"})
+):NumberName3
+-->
+:NumberName3.PRC = {kind = "PRC", subtype= "percent", rule = "Prozent"}
+
+Rule: PercentSpan
+
+(
+	({Lookup.majorType == "number"})+
+	(
+	(
+	{Token.string == "."}
+	|
+	{Token.string == ","}
+	)
+	({Lookup.majorType == "number"})+
+	)?
+	{Token.string == "bis"}
+		({Lookup.majorType == "number"})+
+	(
+	(
+	{Token.string == "."}
+	|
+	{Token.string == ","}
+	)
+	({Lookup.majorType == "number"})+
+	)?
+	{Token.string == "Prozent"}
+):tag
+-->
+:tag.PRC = {kind = "PRC", subtype= "percent", rule = "PercentSpan"}
+
+	
+Rule: Telephone
+(
+   (
+    {Token.string == "Tel"}
+    |
+    {Token.string == "Tel."}
+   )
+   ({Lookup.majorType == "number"})+
+):Tele
+-->
+:Tele.NMB = {kind = "NMB", subtype= "telephone_number", rule = "Telephone"}
+
+Rule: Number_address
+(
+{Token.kind == "LOC"}
+{Token.kind == "NMB"}
+):kl
+-->
+:kl.LOC = {kind = "LOC", subtype="address", rule = "Number_address"}

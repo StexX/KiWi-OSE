@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/admin/src/kiwi/admin/service/sunspace
+END
+SunSpaceLogSaxParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/admin/src/kiwi/admin/service/sunspace/SunSpaceLogSaxParser.java
+END
+SunSpaceSpaceSaxParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/admin/src/kiwi/admin/service/sunspace/SunSpaceSpaceSaxParser.java
+END
+DateParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/admin/src/kiwi/admin/service/sunspace/DateParser.java
+END
+SunSpaceSpaceKeywordSaxParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/admin/src/kiwi/admin/service/sunspace/SunSpaceSpaceKeywordSaxParser.java
+END
+ActivityFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/admin/src/kiwi/admin/service/sunspace/ActivityFactory.java
+END
+SunSpaceKeywordSaxParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/admin/src/kiwi/admin/service/sunspace/SunSpaceKeywordSaxParser.java
+END
+SunSpacePersonSaxParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/admin/src/kiwi/admin/service/sunspace/SunSpacePersonSaxParser.java
+END
+SunSpaceSpaceInformationSaxParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/admin/src/kiwi/admin/service/sunspace/SunSpaceSpaceInformationSaxParser.java
+END
+SunSpaceInfoKeywordSaxParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/admin/src/kiwi/admin/service/sunspace/SunSpaceInfoKeywordSaxParser.java
+END
+SunSpaceSpacePersonSaxParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/admin/src/kiwi/admin/service/sunspace/SunSpaceSpacePersonSaxParser.java
+END
+SunSpaceInformationSaxParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/admin/src/kiwi/admin/service/sunspace/SunSpaceInformationSaxParser.java
+END
+SunSpaceImportServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/admin/src/kiwi/admin/service/sunspace/SunSpaceImportServiceImpl.java
+END
+ImportMonitor.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/admin/src/kiwi/admin/service/sunspace/ImportMonitor.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/admin/src/kiwi/admin/service/sunspace/package-info.java
+END

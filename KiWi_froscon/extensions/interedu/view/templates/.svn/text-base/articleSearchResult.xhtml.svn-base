@@ -1,0 +1,40 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+    xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:a="http://richfaces.org/a4j">
+		<div class="searchResultItem">
+		<!-- set facade -->
+		<c:set value="#{interedu.articelFacadeService.getArtikelFacade(ci)}" var="art"></c:set>
+			<table width="100%"><tr>
+			<td align="left">
+			<h2 class="draggableSearchResult">
+			<h:commandLink action="#{interedu.currentArticleSelector.selectArticle(art)}" value=" #{ci.title}" rendered="#{!interedu.artikelCollector.isSelected(art.id)}"/>
+			<h:commandLink action="#{interedu.currentArticleSelector.selectArticle(art)}" value=" #{ci.title}" rendered="#{interedu.artikelCollector.isSelected(art.id)}" style="color:#DF7401"/>
+			<input type="hidden" name="id" value="#{ci.id}" />
+			</h2>
+			<h3>Relevanz: #{score}</h3>
+			<h:outputText value="#{interedu.articelFacadeService.getRenderedDescription(art)}" escape="false" />
+			</td>
+			<td align="right"  valign="top" style="padding-top:10px">
+
+			<c:choose>
+				<c:when test="#{art.state == 0}">
+				<img src="img/status_n_0.png" alt="Dieser Artikel wurde noch nicht bearbeitet." title="Dieser Artikel wurde noch nicht bearbeitet." border="0"/>
+				</c:when>
+				<c:when test="#{art.state == 1}">
+				<img src="img/status_n_1.png" alt="Dieser Artikel ist in Bearbeitung." title="Dieser Artikel ist in Bearbeitung." border="0"/>
+				</c:when>
+				<c:otherwise>
+				<img src="img/status_n_2.png" alt="Dieser Artikel wurde freigegeben." title="Dieser Artikel wurde freigegeben." border="0"/>
+				</c:otherwise>
+			</c:choose>
+
+		   </td>
+		   </tr></table>
+		</div>
+</ui:composition>

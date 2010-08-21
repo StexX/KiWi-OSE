@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/.externalToolBuilders
+END
+sf.eclipse.javacc.javaccbuilder.launch
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/.externalToolBuilders/sf.eclipse.javacc.javaccbuilder.launch
+END
+org.jboss.tools.jst.web.kb.kbbuilder.launch
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/.externalToolBuilders/org.jboss.tools.jst.web.kb.kbbuilder.launch
+END
+org.hibernate.eclipse.console.hibernateBuilder.launch
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/.externalToolBuilders/org.hibernate.eclipse.console.hibernateBuilder.launch
+END
+org.codehaus.groovy.eclipse.groovyBuilder.launch
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/.externalToolBuilders/org.codehaus.groovy.eclipse.groovyBuilder.launch
+END
+com.bbn.swede.core.configbuilder.launch
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/.externalToolBuilders/com.bbn.swede.core.configbuilder.launch
+END
+com.bbn.swede.core.syntaxbuilder.launch
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/.externalToolBuilders/com.bbn.swede.core.syntaxbuilder.launch
+END

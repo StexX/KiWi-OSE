@@ -1,0 +1,145 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+			 	xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                template="layout/template-interedu.xhtml">
+
+	<ui:define name="search">
+		<s:div id="search_complete">
+			<ui:include src="components/search.xhtml" />
+		</s:div>
+	</ui:define>
+	
+	<ui:define name="content-middle">
+		<s:div id="content_middle_complete">
+		<div id="portal_content">
+			<h:form>
+				<h2>Suchresultate</h2>
+				<div id="search_numberofresults">
+					<s:span id="nrOfResults">
+						<s:span rendered="#{interedu.searchAction.searchEngine.searchResults.resultCount>1}">
+							Artikel #{(interedu.searchAction.searchEngine.page-1) * interedu.searchAction.searchEngine.pageSize + 1} - 
+							#{interedu.searchAction.searchEngine.min(interedu.searchAction.searchEngine.searchResults.resultCount, (interedu.searchAction.searchEngine.page * interedu.searchAction.searchEngine.pageSize))}
+							von insgesamt #{interedu.searchAction.searchEngine.searchResults.resultCount} Treffern.
+						</s:span>
+						<s:span rendered="#{2 > searchAction.searchEngine.searchResults.resultCount }">
+							#{interedu.searchAction.searchEngine.searchResults.resultCount} Artikel gefunden.
+						</s:span>
+						<br/>
+					</s:span>
+				</div>
+				<div id="container_portal_searchresults_filter_area">
+		       		<div id="portal_searchresults_filter_area" style="display:none">
+						<ui:repeat value="#{interedu.searchAction.getSearchStates()}" var="state">
+							<a:commandLink action="#{interedu.searchAction.setSearchStatus(state)}" value="#{state}" reRender="#{interedu.searchAction.renderedSearchPageParts()}"/><br/>
+						</ui:repeat>
+					</div>
+					<a id="portal_searchresults_filter_area_open" href="#" onclick="jQuery('#portal_searchresults_filter_area').fadeIn('slow');return false;" >
+						<img title="Suchbereich einstellen" alt="Suchbereich einstellen" src="images/portal_search_area_arrow_down.png"/>
+						<span id="portal_searchresults_filter_area_open_chosenarea">
+							<h:outputText value="#{interedu.searchAction.searchStatus}" />
+						</span>
+					</a>
+		           	anzeigen.
+					</div>
+				<br/>
+
+
+				<s:div id="searchresults" style="clear:left;">
+					<c:forEach items="#{interedu.searchAction.searchEngine.searchResults.results}" var="r" >
+						<hr style="clear:both;"/>
+					
+						<ui:include src="templates/articleSearchResult.xhtml">
+							<ui:param name="ci" value="#{r.item}" />
+							<ui:param name="score" value="#{r.score}" />
+						</ui:include>
+						<br/>
+					</c:forEach>
+					<script type="text/javascript">
+					/* <![CDATA[ */
+		
+					//set dragable
+					jQuery('.draggableSearchResult').draggable({helper:'clone', opacity:0.7 });
+		
+					/* ]]> */
+					</script>
+				</s:div>
+			
+				<s:div id="resultNavigation" rendered="#{searchAction.searchEngine.pages.size > 1}">
+				   
+	               <table width="100%">
+	                   <tr>
+	                       <td width="20%">
+	                           <h:commandButton action="#{interedu.searchAction.searchEngine.prevPage()}" 
+	                           		value="previous page" 
+	                           		disabled="#{interedu.searchAction.searchEngine.page eq 1}"/>
+	                       </td>
+	                       <td style="text-align: center; font-size: 140%;">
+                       		   <c:forEach items="#{interedu.searchAction.searchEngine.pages}" var="page">
+	                            	<s:span rendered="#{ page eq 1 and interedu.searchAction.searchEngine.page > 5 }">
+	                            		<h:commandLink action="#{interedu.searchAction.searchEngine.setPage(page)}" 
+	                            			value="#{page}" 
+	                            			/>
+	                            		<h:outputText value=" ... " />	                            	
+	                            	</s:span>
+
+	                            	<s:span rendered="#{page eq interedu.searchAction.searchEngine.page}">
+	                            		<strong>
+			                            	<h:outputText value="#{page}"/>
+			                            </strong>
+	                            	</s:span>
+	                            	
+	                            	<s:span rendered="#{ (page eq interedu.searchAction.searchEngine.pages.size) and ((page-interedu.searchAction.searchEngine.page) > 5) }">
+	                            		<h:outputText value=" ... " />	                            	
+	                            		<h:commandLink action="#{interedu.searchAction.searchEngine.setPage(page)}" 
+	                            			value="#{page}" 
+	                            			/>
+	                            	</s:span>
+
+	                            	<s:span rendered="#{(page != interedu.searchAction.searchEngine.page) and (5 > page - interedu.searchAction.searchEngine.page) and (page - interedu.searchAction.searchEngine.page > -5) }">
+	                            		<h:commandLink action="#{interedu.searchAction.searchEngine.setPage(page)}" 
+	                            			value="#{page}" 
+	                            			 />
+	                            	</s:span>
+	                           		
+	                           		<h:outputText value=" " />
+	                           </c:forEach>
+	                       </td>
+	                       <td style="text-align: right" width="20%">
+	                           <h:commandButton action="#{interedu.searchAction.searchEngine.nextPage()}" 
+	                           		value="next page" 
+	                           		disabled="#{interedu.searchAction.searchEngine.page eq interedu.searchAction.searchEngine.pages.size}"/>
+	                       </td>    
+	                   </tr>
+	               </table>
+				</s:div>
+			</h:form>
+		</div>
+		</s:div>
+	</ui:define>
+	
+	<ui:define name="content-right">
+		<s:div id="content_right_complete">
+			<div id="portal_content_right">
+					<ui:include src="components/facets.xhtml" />
+					<ui:include src="components/selector.xhtml" />
+			</div>
+		</s:div>
+	</ui:define>
+	
+	<ui:define name="jsFunctions">
+		<!-- some jsFunctions -->
+		<a:jsFunction name="ajaxAddToSelector" action="#{interedu.artikelCollector.select()}" reRender="content_middle_complete,selector_box">
+			<a:actionparam name="currentId" assignTo="#{interedu.artikelCollector.currentId}"/>
+		</a:jsFunction>
+	</ui:define>
+	
+</ui:composition>

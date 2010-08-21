@@ -1,0 +1,208 @@
+<rich:modalPanel
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+   	  xmlns:rich="http://richfaces.org/rich"
+ 	  xmlns:a="http://richfaces.org/a4j"
+ 	  xmlns:c="http://java.sun.com/jstl/core"
+ 	  width="700"
+ 	  height="500"
+      id="querywizardPanel">
+      	<s:remote include="queryWizardAction"/>
+        <f:facet name="header">
+            <h:panelGroup>
+                <h:outputText value="Query Editor"></h:outputText>
+            </h:panelGroup>
+        </f:facet>
+        
+   	    <h:form id="querywizardForm">
+	       	<a:region renderRegionOnly="true">
+				<rich:panel>
+					Format: 
+					<rich:inplaceSelect id="fmt" value="#{queryWizardAction.format}">
+						<s:selectItems value="#{queryWizardAction.formats}" var="mode" label="#{mode}"/>
+					</rich:inplaceSelect>
+					<br/>
+					Language: <h:inputText id="lng" value="#{queryWizardAction.lang}" />
+					<br/>
+					Query: <h:inputText id="qry" value="#{queryWizardAction.query}" />
+					<br/>
+
+
+		<a:region rendered="false">
+			<div id="article">
+		        <h1><h:outputText value="#{messages['hdr.search']}"/></h1>
+		        <rich:messages styleClass="message" />
+	
+	            <h:form>
+	                <a:queue />
+		            <div id="searchbar">
+		                    <h:inputText value="#{queryWizardAction.searchEngine.searchQuery}" size="65" id="searchField"/>
+		                    <!-- 
+		                    <rich:suggestionbox for="searchField" suggestionAction="#{queryWizardAction.searchEngine.autocomplete}" var="result">
+			                    <h:column>
+			                        <h:outputText value="#{result}" />
+			                    </h:column>
+		                    </rich:suggestionbox>
+		                    -->
+		                    <a:commandButton 
+		                        action="#{queryWizardAction.searchEngine.runSearch()}"
+		                        style="border: 0; margin-bottom: -5px; margin-right: 5px;" 
+		                        image="#{facesContext.externalContext.requestContextPath}/img/search.png" 
+		                        value="#{messages['hdr.search']}"
+		                        reRender="searchresults,articlemeta,search-keyword"
+		                    />
+		            </div>
+		
+		           <div id="search_numberofresults">#{queryWizardAction.searchEngine.searchResults.resultCount} results found</div>
+					<div id="search_view_sort">
+		           		View: 
+		           		<rich:inplaceSelect id="searchviewmode" value="#{kiwi.wiki.ui.layoutAction.viewMode}"
+		        			defaultLabel="Click here to edit">
+			           		<a:support event="onchange" 
+			           			actionListener="#{queryWizardAction.searchEngine.runSearch}" 
+			           			reRender="searchviewmode,searchresults" />
+			           		<s:selectItems value="#{kiwi.wiki.ui.layoutAction.viewModes}" var="mode" label="#{mode}"/>
+		        		</rich:inplaceSelect>
+		        		
+		        		Sort by:
+						<rich:inplaceSelect id="searchsortby" value="#{kiwi.wiki.ui.layoutAction.sortBy}"
+		        			defaultLabel="Click here to edit">
+							<a:support event="onchange" 
+								action="#{queryWizardAction.searchEngine.changeSortBy()}" 
+								reRender="searchsortby,searchresults"/>
+			           		<s:selectItems value="#{kiwi.wiki.ui.layoutAction.sortBys}" var="sortBy" label="#{sortBy}"/>
+			           	</rich:inplaceSelect>
+					</div>
+	            </h:form>
+				<br/>
+	
+				<!--  the search results in the left column -->
+				<s:div id="searchresults">
+					<c:forEach items="#{queryWizardAction.searchEngine.searchResults.results}" var="r" >
+					<!-- include template to show one result item. -->
+						<ui:include src="#{kiwi.wiki.ui.layoutAction.getSearchResultItemTemplate(r.item)}">
+							<ui:param name="ci" value="#{r.item}" />
+							<ui:param name="mode" value="#{kiwi.wiki.ui.layoutAction.viewMode}" />
+							<ui:param name="score" value="#{r.score}" />
+							<ui:param name="preview" value="#{r.highlightPreview}"/>
+						</ui:include>
+						<br/>
+						<hr style="clear:both;"/>
+					</c:forEach> 
+				</s:div>
+				
+	
+	               <!-- result navigation -->
+	               <table width="100%">
+	                   <tr>
+	                       <td width="20%">
+	                           <a:commandButton action="#{queryWizardAction.searchEngine.prevPage()}" value="previous page" reRender="searchresults" disabled="#{queryWizardAction.searchEngine.page eq 1}"/>
+	                       </td>
+	                       <td style="text-align: center">
+	                           <!-- TODO: should list actual pages -->
+	                           <ui:repeat value="#{queryWizardAction.searchEngine.pages}" var="page">
+	                               <a:commandLink action="#{queryWizardAction.searchEngine.setPage(page)}" value="#{page}" reRender="searchresults" />
+	                               <h:outputText value=" " />
+	                           </ui:repeat>
+	                       </td>
+	                       <td style="text-align: right" width="20%">
+	                           <a:commandButton action="#{queryWizardAction.searchEngine.nextPage()}" value="next page" reRender="searchresults" />
+	                       </td>    
+	                   </tr>
+	               </table>
+				
+				
+				
+		    </div>
+		    
+		    <div id="articlemeta">
+	            <h2>Refine your Search</h2> 
+	            <h3>Tags</h3> 
+	            <a:form>
+	            <c:forEach var="tagFacet" items="#{queryWizardAction.searchEngine.relevantTags}" varStatus="status">
+	                
+	                <h:commandLink 
+	                        action="#{queryWizardAction.searchEngine.addSearchTag(tagFacet.content.title)}" 
+	                        value="#{tagFacet.content.title} (#{tagFacet.resultCount})" 
+	                        reRender="searchresults,articlemeta"/>
+	                <h:outputText value=", " rendered="#{not status.last}"/>                
+	            </c:forEach>
+	            </a:form>
+	            
+	            <h3>Types</h3>
+	            <a:form>
+	            <ul>
+		            <c:forEach var="typeFacet" items="#{queryWizardAction.searchEngine.relevantTypes}">
+		               <li>
+			                <h:commandLink 
+			                        action="#{queryWizardAction.searchEngine.addSearchType(typeFacet.content)}" 
+			                        value="#{typeFacet.content.label} (#{typeFacet.resultCount})" 
+			                        reRender="searchresults,articlemeta"/>
+		               </li>	               
+		            </c:forEach>
+	            </ul>
+	            </a:form>
+	            <h3>Persons</h3>
+	            <a:form>
+	            <ul>
+	                <c:forEach var="personFacet" items="#{queryWizardAction.searchEngine.relevantPersons}">
+	                   <li>
+	                        <h:commandLink 
+	                                action="#{queryWizardAction.searchEngine.addSearchPerson(personFacet.content.login)}" 
+	                                value="#{personFacet.content.firstName} #{personFacet.content.lastName} (#{personFacet.resultCount})" 
+	                                reRender="searchresults,articlemeta"/>
+	                   </li>                   
+	                </c:forEach>
+	            </ul>
+	            </a:form>
+	            
+	            <ui:repeat value="#{queryWizardAction.searchEngine.rdfFacets}" var="facet">
+	                <h3><h:outputText value="#{facet.label}" /></h3>
+	                <a:form>
+	                <ul>
+		                <ui:repeat value="#{queryWizardAction.searchEngine.getRdfFacetValues(facet)}" var="rdfFacet">
+		                   <li>
+	                        <h:commandLink 
+	                                action="#{queryWizardAction.searchEngine.addRdfSearchProperty(facet,rdfFacet.content)}" 
+	                                value="#{rdfFacet.content} (#{rdfFacet.resultCount})" 
+	                                reRender="searchresults,articlemeta"/>
+		                   </li>
+		                </ui:repeat>
+	                </ul>
+	                </a:form>
+	            </ui:repeat>
+	        </div>
+		</a:region>
+	    
+
+
+
+				</rich:panel>
+		        <div class="actionButtons center">
+		            <a:commandButton value="Ok" id="btnCreateLink" 
+		            	onclick="insertLinkHTML()" 
+		            	oncomplete="#{rich:component('querywizardPanel')}.hide()" />
+		            <a:commandButton value="Abort" id="btnquerywizardAbort"
+		            	oncomplete="#{rich:component('querywizardPanel')}.hide();" />
+
+					<!-- Helper jsFunctions -->
+					<a:jsFunction name="wizardSetQuery"
+	                	oncomplete="queryWizardJSLib.showQuerywizardPanel();"
+	                	reRender="fmt,lng,qry">
+	                	<a:actionparam name="param1" assignTo="#{queryWizardAction.format}" />
+	                	<a:actionparam name="param2" assignTo="#{queryWizardAction.query}" />
+	                	<a:actionparam name="param3" assignTo="#{queryWizardAction.lang}" />
+	                </a:jsFunction>
+	                
+					<a:jsFunction name="insertLinkHTML"
+						data="#{queryWizardAction.queryParameters}" 
+						oncomplete="queryWizardJSLib.createQuery(data);"
+						 />
+	                
+		        </div>
+			</a:region>
+		</h:form>
+</rich:modalPanel>

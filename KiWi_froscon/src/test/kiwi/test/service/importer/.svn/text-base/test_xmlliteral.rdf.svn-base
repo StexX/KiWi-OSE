@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:ex="http://example.org/stuff/1.0/">
+	<rdf:Description rdf:about="http://example.org/item01">
+	    <rdfs:label>Item 1</rdfs:label>
+		<rdfs:comment rdf:parseType="Literal" xmlns="http://www.w3.org/1999/xhtml">
+		    <h1>This is a heading</h1>
+			<p>This is a paragraph</p>
+		</rdfs:comment>
+	</rdf:Description>
+</rdf:RDF>

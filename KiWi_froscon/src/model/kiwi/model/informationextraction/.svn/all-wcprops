@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/informationextraction
+END
+Context.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/informationextraction/Context.java
+END
+Example.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/informationextraction/Example.java
+END
+InstanceEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/informationextraction/InstanceEntity.java
+END
+Label.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/informationextraction/Label.java
+END
+ClassifierEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/informationextraction/ClassifierEntity.java
+END
+Suggestion.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/informationextraction/Suggestion.java
+END
+NaiveBayesClassifier.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/informationextraction/NaiveBayesClassifier.java
+END
+InstanceExtractorEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/informationextraction/InstanceExtractorEntity.java
+END

@@ -1,0 +1,61 @@
+<rich:modalPanel
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+   	  xmlns:rich="http://richfaces.org/rich"
+ 	  xmlns:a4j="http://richfaces.org/a4j"
+ 	  width="400"
+ 	  height="300"
+      id="intereduExtendedSearchPanel">
+     <!--   <s:remote include="kiwiTreeAction"/> -->
+      	
+        <f:facet name="header">
+            <h:panelGroup>
+                <h:outputText value="Erweiterte Suche"></h:outputText>
+            </h:panelGroup>
+        </f:facet>
+        
+      	 <h:form>
+      	 			<h:panelGrid columns="2" rowClasses="prop" columnClasses="name,value">
+      	 
+ 		            <h:outputLabel for="prefLabel">Suchbegriff</h:outputLabel>
+		            <h:inputText id="prefLabel"></h:inputText>
+		            <h:outputLabel for="prefLabel">Autor</h:outputLabel>
+		            <h:inputText id="Autor"></h:inputText>
+		            
+		            <h:outputLabel for="prefLabel">Gegenstand</h:outputLabel>
+					       <rich:comboBox defaultLabel="Choose a category">
+           							 <f:selectItem itemValue="Mathematik"/>
+            						 <f:selectItem itemValue="Geschichte"/>
+           							 <f:selectItem itemValue="Geometrie"/>
+           							 <f:selectItem itemValue="Musik"/>
+            						 <f:selectItem itemValue="Physik"/>            						
+       						</rich:comboBox>
+		            
+		            <h:outputLabel for="prefLabel">Dokumenttyp</h:outputLabel>
+					       <rich:comboBox defaultLabel="Choose a category">
+           							 <f:selectItem itemValue="Software"/>
+          				   </rich:comboBox>
+
+
+		            <h:outputLabel for="prefLabel">Kategorie</h:outputLabel>
+		            <h:inputText id="Kategorie"></h:inputText>
+		            <h:outputLabel for="prefLabel">Schulstufe</h:outputLabel>
+		            <h:inputText id="Schulstufe"></h:inputText>
+		            <h:outputLabel for="prefLabel">Schultyp</h:outputLabel>
+		            <rich:comboBox defaultLabel="Choose a category">
+           							 <f:selectItem itemValue="Gymnasium"/>
+          			</rich:comboBox>
+		            	
+		            </h:panelGrid>
+		            
+		           <div class="actionButtons">
+		            <h:commandButton value="OK" id="btnLoginSubmit"/>
+		            <h:commandButton value="Cancel" id="btnLoginAbort"/>
+		            <rich:componentControl for="loginPanel" attachTo="btnLoginAbort" operation="hide" event="onclick"/>	
+		           </div>		      		       
+	   	</h:form>
+
+</rich:modalPanel>

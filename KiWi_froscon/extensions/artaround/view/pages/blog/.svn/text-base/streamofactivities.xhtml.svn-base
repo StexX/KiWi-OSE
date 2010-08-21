@@ -1,0 +1,119 @@
+<!--
+	Copyright © Rolf Sint, Michael Schneider, Christian Osterrieder, 2010
+ */
+ -->
+
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                             	
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+			 	xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                template="../../layout/template-3col.xhtml">
+                
+  <ui:define name="breadcrumps">
+		<ul>
+			<li class="first">				 			
+				<s:link view="/artaround/home.seam" 
+					value="#{messages['artaround.breadcrumps.home']}"/>
+			</li>
+			<li>				 			
+				<s:link view="/artaround/pages/profil/meinProfil.seam" 
+					value="#{messages['artaround.breadcrumps.myPage']}"/>
+			</li>
+			<li>				 			
+				<s:link view="/artaround/pages/profil/streamofactivities.seam" 
+					value="meine Kunstblog"/>
+			</li>	
+					
+		</ul>
+	</ui:define>
+    
+       
+    <ui:define name="body">
+    	
+	<style>
+		#blogLine{
+			margin:10px;
+			border-bottom:1px solid #ddd;
+			color:#EB6D0E;
+			font-size:12px;
+			
+		}
+		
+		#lspace {
+			
+		margin-top:30px;	
+		
+		}
+		
+		
+		
+		
+	</style>
+    			
+    <a:outputPanel id="streamOfActivities" layout="block">
+    	
+        <div class="activity">
+
+          <div class="activityContent">
+			  <p>#{messages['artaround.myProfil.blog.whatsOnYourMind']}</p><br/>
+              <div>
+                <h:form>
+
+	                 <h:inputTextarea value="#{kiwi.dashboard.tweetAction.tweet}" rows="2" 
+							cols="40" style="width: 100%"/>
+							
+	                 <a:commandButton action="#{kiwi.dashboard.tweetAction.submitTweet()}" 
+							value="#{messages['artaround.myProfil.blog.share']}" reRender="streamOfActivities" style="margin-top:5px;">
+							<s:defaultAction />
+					 </a:commandButton>
+
+                </h:form>
+              </div>
+			  
+          </div>
+          
+          
+        </div>
+    	<br/>
+		<div id="lspace"/>
+		
+		<fieldset class="fieldsetborder">			
+	    <ui:repeat value="#{kiwi.dashboard.streamOfActivitiesAction.tweetActivities}" var="activity" >
+	    	
+	        <div id="blogLine">
+	                          
+	           <div>
+	               <strong>
+	               	<s:graphicImage style="padding: 3px; border: 1px solid black; height: 50px"
+	    					value="#{artaround.profileService.getDataFromUser(activity.user)}" 
+	    	                fileName="#{activity.user.contentItem.mediaContent.fileName}"/>
+	               	<s:link resource="#{activity.user.resource}" 
+						value=" #{activity.user.firstName} #{activity.user.lastName}" style="font-size:14px; color:#456;"/>
+				   </strong> 
+                   <h:outputText value=" "/>
+                   <h:outputText escape="false" value="#{messages.get(activity.getMessageIdentifier())}" style="font-size:14px; color:#EB6D0E;"/>
+	           </div>
+	        
+	           <div class="activityFooter">
+	               #{messages['artaround.on']} <h:outputText value=" "/>
+				   			<h:outputText value="#{activity.created}" >
+	               	  		<s:convertDateTime pattern="yyyy-MM-dd, HH:mm" style="font-size:10px; color:#EB6D0E;"/>
+					  </h:outputText>
+	           </div><br/>
+	           
+	        </div>
+			
+	    </ui:repeat>
+		</fieldset>
+    </a:outputPanel>
+    </ui:define>
+</ui:composition>

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/context
+END
+CurrentKnowledgeSpaceFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/context/CurrentKnowledgeSpaceFactory.java
+END
+KnowledgeSpaceBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/context/KnowledgeSpaceBean.java
+END
+CurrentContentItemFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/context/CurrentContentItemFactory.java
+END
+CurrentUserFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/context/CurrentUserFactory.java
+END
+ActiveKnowledgeSpacesFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/context/ActiveKnowledgeSpacesFactory.java
+END
+CurrentApplicationFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/context/CurrentApplicationFactory.java
+END

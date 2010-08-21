@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+
+<suite name="SearchTests" verbose="2" parallel="tests">
+    <test name="SolrServiceTest" junit="false">
+        <classes>
+            <class name="kiwi.test.service.search.SolrServiceTest"/>
+        </classes>
+    </test>
+</suite>

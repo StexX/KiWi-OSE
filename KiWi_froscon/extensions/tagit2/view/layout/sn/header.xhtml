@@ -1,0 +1,87 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:rich="http://richfaces.org/rich"
+    xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+    xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:a4j="http://richfaces.org/a4j">
+
+
+    <div id="header">
+	    <div id="logo">
+		    <s:link view="/tagit2/home.xhtml">
+		        <f:param name="title" />
+	            <f:param name="uri" value="#{configurationService.startPage}"/>
+	            <f:param name="id" />
+	            <f:param name="kiwiid"/>
+	            <img src="#{facesContext.externalContext.requestContextPath}/tagit2/img/header_scom3.gif" alt="KiWi Logo" />
+	        </s:link>	    
+	   </div>
+	    <div id="mainnav">
+	        <h:form id="formHdrApplications">
+		        <ul>
+                    <s:fragment  rendered="#{identity.loggedIn and currentApplication.identifier eq 'tagit2'}">
+		            	<li><a4j:commandLink action="#{tagit2.explorerAction.startCreateLocation()}" reRender="point" onclick="openByClick = true;" >
+		            			<img src="img/add_tag.png" title="Ort zur Karte hinzuf&#xFC;gen" style="border:0;"/>
+		            		</a4j:commandLink>
+		            	</li>
+						<li><a4j:commandLink action="#{tagit2.newRouteAction.start()}" oncomplete="Richfaces.showModalPanel('addRoutePanel');" >
+		            			<img src="img/add_route.png" title="Route zur Karte hinzuf&#xFC;gen" style="border:0;"/>
+		            		</a4j:commandLink>
+		            	</li>
+                    </s:fragment>
+                    
+                    <s:fragment  rendered="#{not identity.loggedIn  and currentApplication.identifier eq 'tagit2'}">
+		            	<li><s:link action="login">
+		            			<img src="img/add_tag.png" title="Anmelden, um Punkt hinzuzuf&#xFC;gen" style="border:0;"/>
+		            		</s:link>
+		            	</li>
+						<li><s:link action="login">
+		            			<img src="img/add_route.png" title="Anmelden, um Punkt hinzuzuf&#xFC;gen" style="border:0;"/>
+		            		</s:link>
+		            	</li>
+                    </s:fragment>
+                    
+		            <!--
+		            <ui:repeat value="#{kiwi.ui.headerAction.applications}" var="app">
+		                <li>
+		                    <h:commandLink action="#{kiwi.ui.headerAction.switchApplication(app)}" rendered="#{app.isVisible()}">
+		                        <span class="mainnav_title"><h:outputText value="#{app.name}" /></span>
+		                        <span class="mainnav_subtitle"><h:outputText value="#{messages[fn:join(fn:join('app.',app.identifier),'.description')]}"/></span>
+		                    </h:commandLink>
+		                </li>
+		            </ui:repeat>-->
+		            
+		        </ul>   
+	        </h:form>
+	    </div>
+	    <s:div id="tagcloud">
+	    	<h:form id="taglCoudForm">
+	    		<ui:repeat value="#{tagit2.explorerAction.tagCloud}" var="cloudItem">
+	    			<a4j:commandLink action="#{tagit2.searchAction.addTagFacet(cloudItem.title)}"  value="#{cloudItem.title} " styleClass="#{cloudItem.styleClass}" title="#{cloudItem.value} Punkte" reRender="formHdrSearch:hdrSearchBox" oncomplete="search();" />
+	    		</ui:repeat>
+	    	</h:form>
+	    </s:div>
+
+    </div>
+
+    <div id="navbar">
+        <h:form id="formHdrNavigation">
+		    <div id="history">
+		        <!-- 
+		        <ui:insert name="actions"/>
+		        -->
+		    
+		        <h:outputText value="History: " />
+		        <c:forEach items="#{kiwi.ui.historyAction.lastItems}" var="item" varStatus="status">
+		            <h:outputText value=" - " rendered="#{not status.first}"/>
+		            <kiwi:link contentItem="#{item}" value="#{kiwi.ui.historyAction.ellipseString(item.title)}"/>
+		        </c:forEach>
+		    </div>
+	    </h:form>
+    </div>
+	
+</ui:composition>

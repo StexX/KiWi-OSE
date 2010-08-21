@@ -1,0 +1,179 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon
+END
+explode.launch
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/explode.launch
+END
+debug-jboss-KiWi.launch
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/debug-jboss-KiWi.launch
+END
+deployed-jars-ear.list
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/deployed-jars-ear.list
+END
+config_new.txt
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/config_new.txt
+END
+articles.xml
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/articles.xml
+END
+doxygen-report.sh
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/doxygen-report.sh
+END
+build.extension.xml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/build.extension.xml
+END
+KiWi.iml
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/KiWi.iml
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/.project
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/COPYING
+END
+build.properties.test
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/build.properties.test
+END
+hibernate.properties
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/hibernate.properties
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/.classpath
+END
+newKiWiDB.macos.bash
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/newKiWiDB.macos.bash
+END
+build.properties.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/build.properties.tmpl
+END
+deployed-jars-war.list
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/deployed-jars-war.list
+END
+newKiWiDB.bash
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/newKiWiDB.bash
+END
+.classpath.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/.classpath.tmpl
+END
+.swprojectinfo
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/.swprojectinfo
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/build.xml
+END
+.checkstyle
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/.checkstyle
+END
+build-dev.properties.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/build-dev.properties.tmpl
+END
+.project.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/.project.tmpl
+END
+build-prod.properties.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/build-prod.properties.tmpl
+END
+.pmd
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/.pmd
+END
+doTest.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/doTest.py
+END
+data-access-webservice.properties
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/data-access-webservice.properties
+END
+.classpath.tmpl1
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/.classpath.tmpl1
+END
+.escabaseline
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/.escabaseline
+END

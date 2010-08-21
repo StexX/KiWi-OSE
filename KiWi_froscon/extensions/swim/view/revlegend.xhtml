@@ -1,0 +1,31 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+		    	xmlns:a4j="http://richfaces.org/a4j">
+   	
+<!--    <s:div rendered="#{currentContentItem.mediaContent != null}" style="width: 100%; margin: 10px; text-align: center">
+    	<center>
+	    	<s:graphicImage style="padding: 3px; border: 1px solid black;"
+	    					value="#{currentContentItem.mediaContent.data}" 
+	    	                fileName="#{currentContentItem.mediaContent.fileName}"/>
+    	</center>
+    </s:div> -->
+
+  	
+    <s:div style="width:200px">
+        <rich:dataTable var="l" value="#{colourLegend}">
+        	<f:facet name="header">
+       			<h:outputText value="Legend"/>
+			</f:facet>
+			<rich:column>
+				<h:outputText value="#{l}" escape="false"/>
+			</rich:column>
+        </rich:dataTable>
+    </s:div>
+    
+</ui:composition>

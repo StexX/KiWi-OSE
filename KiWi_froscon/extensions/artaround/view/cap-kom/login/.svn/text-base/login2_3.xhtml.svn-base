@@ -1,0 +1,342 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                             	
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+			 	xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                template="../layout/template-login.xhtml">   			
+				
+	<ui:define name="body"> 
+	
+	<script type="text/javascript">
+	/* <![CDATA[ */
+
+		YAHOO.namespace("example.container");
+
+		function init() {
+			
+			// Instantiate a Panel from markup
+			YAHOO.example.container.panel1 = new YAHOO.widget.Panel("panel1", 
+				{ width:"170px", visible:false, constraintoviewport:true, fixedcenter:true, modal:true   } );
+			YAHOO.example.container.panel1.render();
+
+		}
+		
+		var i = 1;
+		var j = 1;
+		
+		var passSelected = false;
+		var userSelected = false;
+		
+		function submitForm(){
+			if (passSelected == true && userSelected == true){
+				YAHOO.example.container.panel1.show();
+				setTimeout(function(){document.submitForm.submit();},4000);
+			}
+	
+		}
+		
+		function selectedPassword(filename){
+		
+			if (i <= 5) {
+				var pdiv = $('password' + i);
+				pdiv.innerHTML = "<img src='../images/icons/" + filename + "' />";
+				i++;
+			}
+			if (i > 5){
+				passSelected = true;
+			}
+			
+			submitForm();
+				
+		}
+		
+		function selectedUsername(filename){
+		
+			if (j <= 5) {
+				var pdiv = $('username' + j);
+				pdiv.innerHTML = "<img src='../images/icons/" + filename + "' />";
+				j++;
+			}
+			if (j > 5){
+				userSelected = true;
+			}
+					
+			submitForm();
+				
+		}			
+
+		YAHOO.util.Event.addListener(window, "load", init);
+
+	/* ]]> */
+	</script>		
+          
+		  	<form action="../index.seam" id="submitForm" name="submitForm" method="post"></form>
+			<!-- begin: Passworteingabe: -->
+			<div id="tiersymb" class="loginCol capKomBorderLogin">
+				<div class="simpleText">
+					#{messages['artaround.cap-kom.einfacheSprache.passwort']}
+				</div>
+				<table>
+					<tr>
+						<td class="passSymbSmall">
+							<a href="javascript:selectedUsername('kirsche.gif');">
+								<img src="../images/icons/kirsche75px.gif" title="Kirsche" alt="Kirsche" />
+							</a>
+						</td>
+						<td class="passSymbSmall">
+							<a href="javascript:selectedUsername('apfel.gif');">
+								<img src="../images/icons/apfel75px.gif" title="Apfel" alt="Apfel" />
+							</a>
+						</td>
+						<td class="passSymbSmall">
+							<a href="javascript:selectedUsername('stuhl.gif');">
+								<img src="../images/icons/stuhl75px.gif" title="Stuhl" alt="Stuhl" />
+							</a>
+						</td>
+						<td class="passSymbSmall">
+							<a href="javascript:selectedUsername('gitarre.gif');">
+								<img src="../images/icons/gitarre75px.gif" title="Gitarre" alt="Gitarre" />
+							</a>
+						</td>
+						<td class="passSymbSmall">
+							<a href="javascript:selectedUsername('blume.gif');">
+								<img src="../images/icons/blume75px.gif" title="Blume" alt="Blume" />
+							</a>
+						</td>
+						<td class="passSymbSmall">
+							<a href="javascript:selectedUsername('ball.gif');">
+								<img src="../images/icons/ball75px.gif" title="Ball" alt="Ball" />
+							</a>
+						</td>
+						<td class="passSymbSmall">
+							<a href="javascript:selectedUsername('stern.gif');">
+								<img src="../images/icons/stern75px.gif" title="Stern" alt="Stern" />
+							</a>
+						</td>
+						<td class="passSymbSmall">
+							<a href="javascript:selectedUsername('schuh.gif');">
+								<img src="../images/icons/schuh75px.gif" title="Schuh" alt="Schuh" />
+							</a>
+						</td>															
+					</tr>
+					<tr>
+						<td class="passSymbSmall">
+							<a href="javascript:selectedUsername('schirm.gif');">
+								<img src="../images/icons/schirm75px.gif" title="Schirm" alt="Schirm" />
+							</a>
+						</td>
+						<td class="passSymbSmall">
+							<a href="javascript:selectedUsername('handschuhe.gif');">
+								<img src="../images/icons/handschuhe75px.gif" title="Handschuhe" alt="Handschuhe" />
+							</a>
+						</td>	
+						<td class="passSymbSmall">
+							<a href="javascript:selectedUsername('kamm.gif');">
+								<img src="../images/icons/kamm75px.gif" title="Kamm" alt="Kamm" />
+							</a>
+						</td>
+						<td class="passSymbSmall">
+							<a href="javascript:selectedUsername('flasche.gif');">
+								<img src="../images/icons/flasche75px.gif" title="Flasche" alt="Flasche" />
+							</a>
+						</td>
+						<td class="passSymbSmall">
+							<a href="javascript:selectedUsername('tisch.gif');">
+								<img src="../images/icons/tisch75px.gif" title="Tisch" alt="Tisch" />
+							</a>
+						</td>
+						<td class="passSymbSmall">
+							<a href="javascript:selectedUsername('trauben.gif');">
+								<img src="../images/icons/trauben75px.gif" title="Trauben" alt="Trauben" />
+							</a>
+						</td>
+						<td class="passSymbSmall">
+							<a href="javascript:selectedUsername('mond.gif');">
+								<img src="../images/icons/mond75px.gif" title="Mond" alt="Mond" />
+							</a>
+						</td>
+						<td class="passSymbSmall">
+							<a href="javascript:selectedUsername('sonneWolken.gif');">
+								<img src="../images/icons/sonneWolken75px.gif" title="Sonne und Wolken" alt="Sonne und Wolken" />
+							</a>
+						</td>			
+					</tr>					
+				</table>
+			</div>
+			<div id="panel1">
+				<!--div class="hd">Panel #1 from Markup &mdash; This Panel is Draggable</div-->
+				<div class="bd">          
+					<div id="loggedInSuccess">
+						<a href="../indexLoggedIn.html">
+				      		<img src="../images/icons/ja.gif" title="Erfolgreich eingeloggt" 
+								alt="Erfolgreich eingeloggt" width="150" height="150"/>
+						</a>
+			        </div>
+				</div>
+				<!--div class="ft">End of Panel #1</div-->
+			</div>			
+			<div id="gegenst" class="loginCol capKomBorderProfil">
+				<div class="simpleText">
+					#{messages['artaround.cap-kom.einfacheSprache.passwort']}
+				</div>
+				<table>
+					<tr>
+						<td class="passSymbSmall">
+							<a href="javascript:selectedPassword('hund.gif');">
+								<img src="../images/icons/hund75px.gif" title="Hund" alt="Hund" />
+							</a>
+						</td>
+						<td class="passSymbSmall">
+							<a href="javascript:selectedPassword('kuh.gif');">
+								<img src="../images/icons/kuh75px.gif" title="Kuh" alt="Kuh" />
+							</a>
+						</td>
+						<td class="passSymbSmall">
+							<a href="javascript:selectedPassword('katze.gif');">
+								<img src="../images/icons/katze75px.gif" title="Katze" alt="Katze" />
+							</a>
+						</td>
+						<td class="passSymbSmall">
+							<a href="javascript:selectedPassword('hahn.gif');">
+								<img src="../images/icons/hahn75px.gif" title="Hahn" alt="Hahn" />
+							</a>
+						</td>
+						<td class="passSymbSmall">
+							<a href="javascript:selectedPassword('fisch.gif');">
+								<img src="../images/icons/fisch75px.gif" title="Fisch" alt="Fisch" />
+							</a>
+						</td>
+						<td class="passSymbSmall">
+							<a href="javascript:selectedPassword('schwein.gif');">
+								<img src="../images/icons/schwein75px.gif" title="Schwein" alt="Schwein" />
+							</a>
+						</td>
+						<td class="passSymbSmall">
+							<a href="javascript:selectedPassword('seestern.gif');">
+								<img src="../images/icons/seestern75px.gif" title="Seestern" alt="Seestern" />
+							</a>
+						</td>
+						<td class="passSymbSmall">
+							<a href="javascript:selectedPassword('igel.gif');">
+								<img src="../images/icons/igel75px.gif" title="Igel" alt="Igel" />
+							</a>
+						</td>									
+					</tr>
+					<tr>
+						<td class="passSymbSmall">
+							<a href="javascript:selectedPassword('elefant.gif');">
+								<img src="../images/icons/elefant75px.gif" title="Elefant" alt="Elefant" />
+							</a>
+						</td>
+						<td class="passSymbSmall">
+							<a href="javascript:selectedPassword('marienkaefer.gif');">
+								<img src="../images/icons/marienkaefer75px.gif" title="Marienkaefer" alt="Marienkaefer" />
+							</a>
+						</td>		
+						<td class="passSymbSmall">
+							<a href="javascript:selectedPassword('eisbaer.gif');">
+								<img src="../images/icons/eisbaer75px.gif" title="Eisbaer" alt="Eisbaer" />
+							</a>
+						</td>
+						<td class="passSymbSmall">
+							<a href="javascript:selectedPassword('maus.gif');">
+								<img src="../images/icons/maus75px.gif" title="Maus" alt="Maus" />
+							</a>
+						</td>
+						<td class="passSymbSmall">
+							<a href="javascript:selectedPassword('schmetterling.gif');">
+								<img src="../images/icons/schmetterling75px.gif" title="Maus" alt="Maus" />
+							</a>
+						</td>
+						<td class="passSymbSmall">
+							<a href="javascript:selectedPassword('schaf.gif');">
+								<img src="../images/icons/schaf75px.gif" title="Maus" alt="Maus" />
+							</a>
+						</td>
+						<td class="passSymbSmall">
+							<a href="javascript:selectedPassword('papagei.gif');">
+								<img src="../images/icons/papagei75px.gif" title="Maus" alt="Maus" />
+							</a>
+						</td>
+						<td class="passSymbSmall">
+							<a href="javascript:selectedPassword('loewe.gif');">
+								<img src="../images/icons/loewe75px.gif" title="Maus" alt="Maus" />
+							</a>
+						</td>						
+					</tr>					
+				</table>				
+			</div>
+			<div style="clear:both;"/>
+			<div class="loginCol" style="margin-top:10px;">
+				<table>
+					<tr>
+						<td class="passSymb capKomBorderLogin">
+							<div id="username1"/>
+						</td>
+						<td class="passSymb capKomBorderLogin">
+							<div id="username2"/>
+						</td>
+						<td class="passSymb capKomBorderLogin">
+							<div id="username3"/>
+						</td>
+						<td class="passSymb capKomBorderLogin">
+							<div id="username4"/>
+						</td>
+						<td class="passSymb capKomBorderLogin">
+							<div id="username5"/>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="loginCol">
+				<table>
+					<tr>
+						<td class="passSymb capKomBorderProfil">
+							<div id="password1"/>
+						</td>
+						<td class="passSymb capKomBorderProfil">
+							<div id="password2"/>
+						</td>
+						<td class="passSymb capKomBorderProfil">
+							<div id="password3"/>
+						</td>
+						<td class="passSymb capKomBorderProfil">
+							<div id="password4"/>
+						</td>
+						<td class="passSymb capKomBorderProfil">
+							<div id="password5"/>
+						</td>
+					</tr>
+				</table>				
+			</div>				
+		<!-- end: Passworteingabe -->
+		<!-- begin: buttons -->
+		<div id="navButtons">
+	    	<div class="hlist">
+	  			<ul>
+	  				<li class="button">
+	  					<a href="../indexLoggedIn.seam" title="#{messages['artaround.cap-kom.einfacheSprache.weiter']}">
+	  						<img src="../images/icons/weiter75px.gif" 
+								title="#{messages['artaround.cap-kom.einfacheSprache.weiter']}" 
+								alt="#{messages['artaround.cap-kom.einfacheSprache.weiter']}" />
+							<div class="simpleText">
+								#{messages['artaround.cap-kom.einfacheSprache.weiter']}
+							</div>	
+						</a>
+	  				</li>		  							
+				</ul>
+			</div>
+		</div>
+		<!-- end: buttons -->
+		
+	</ui:define>
+	
+ </ui:composition>		

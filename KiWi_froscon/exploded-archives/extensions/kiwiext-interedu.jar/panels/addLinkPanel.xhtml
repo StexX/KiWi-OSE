@@ -1,0 +1,39 @@
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+                xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf">
+	<div id="addLink_panel" style="display:none">
+		<div class="editPanel" id="article_addTag" style="height:140px;">
+			<div class="editPanel_header">
+				<h4>Neuen Link eintragen</h4>
+			</div>
+			<div class="editPanel_content" style="height:80px;">
+				<h3 style="width:500px;">URL des Links eingeben:</h3>
+				<br /><br />
+				<h:inputText value="#{interedu.articleAction.linkUrl}" style="width:480px;" />
+			</div>
+			<div class="editPanel_buttons">
+				<table width="100%">
+					<tr>
+						<td><a:commandButton value="Verlinken abbrechen" onclick="closeBackground();" action="#{interedu.articleAction.setEditMode('none')}" reRender="article_links" /></td>
+						<td align="right">
+							<a:commandButton value="Link speichern" onclick="closeBackground();" action="#{interedu.articleAction.addLink()}" reRender="content_middle_complete"/>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+	/* <![CDATA[ */
+	openEditPanel('addLink_panel');
+	/* ]]> */
+</script>
+</ui:composition>

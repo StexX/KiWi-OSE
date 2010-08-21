@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/informationextraction/classification
+END
+Iteration.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/informationextraction/classification/Iteration.java
+END
+LuceneTraining.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/informationextraction/classification/LuceneTraining.java
+END
+LuceneClassification.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/informationextraction/classification/LuceneClassification.java
+END
+Classifier.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/informationextraction/classification/Classifier.java
+END

@@ -1,0 +1,89 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+                xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                template="/layout/template-2col.xhtml">
+
+
+    <ui:define name="header">
+       <a:loadScript src="resource://jquery.js"/>
+       
+       <link href="stylesheet/dashboard.css" rel="stylesheet" type="text/css" />
+    
+    </ui:define>
+
+    <ui:define name="navigation">
+        <ui:include src="layout/navigation.xhtml" />
+    </ui:define>
+
+   
+               
+    <ui:define name="body">
+     <rich:messages styleClass="message"/>
+        <h2>Groups</h2>
+            <a:outputPanel id="groupList" layout="block">
+		        <h:form id="addGroupForm">
+	                <div id="addGroup">
+		             <h4><h:outputText value="Create your own group:" /></h4><h:inputText  value="#{kiwi.dashboard.groupAction.name}" />
+						        <h:commandButton action="#{kiwi.dashboard.groupAction.store}" value="Save" id="saveBtn" reRender="groupList" />
+		
+		        	   </div>
+	            </h:form>
+              
+				<c:forEach var="group" items="#{kiwi.dashboard.groupAction.allMyGroups}" id="mygroup">
+	        	<!-- <ui:repeat var="group" value="#{kiwi.dashboard.groupAction.myGroups}" id="mygroup"> -->
+	                   <h:form>
+		         <div id="addContact">
+		                        <h4>
+
+		                        <!--<a:commandLink action="#{kiwi.dashboard.myGroupAction.visualiseMyGroup(group)}" value="#{group.name}"/>-->
+		                        
+		                         <kiwi:link contentItem="#{group.resource.contentItem}" value="#{group.name}"/>
+										                        
+
+		                        </h4>
+		                            <s:span id="isMyGroup" rendered="#{!kiwi.dashboard.groupAction.isUserMemberOfGroup(group)}">
+		                               <a:commandLink action="#{kiwi.dashboard.groupAction.addMeToGroup(group)}" value="Add me" reRender="groupList"/>
+		                            </s:span>
+		                            <h:outputText value=" " />
+		                            <a:commandLink action="#{kiwi.dashboard.groupAction.removeGroup(group)}" value="Remove" reRender="groupList"/>
+		                    
+					                    <h2>Add a person to this group</h2>
+					                    
+					                    <h:panelGrid columns="2">
+						                    <rich:comboBox defaultLabel="Enter user name" value="#{kiwi.dashboard.groupAction.selectedUser}" style="width: 200px;">
+						                        <s:selectItems value="#{kiwi.dashboard.groupAction.allUsers}" var="selectedUser" label="#{user}"/>
+						                     </rich:comboBox>
+						                    <a:commandButton action="#{kiwi.dashboard.groupAction.addToGroup(group)}" value="Add" reRender="groupList"/>
+					                    </h:panelGrid>
+					                </div>
+
+		  
+		                    <ul>
+		                    <s:span id="groupUsers" rendered="#{group.users != null}">
+								<ui:repeat var="user" value="#{groupAction.getUsersInGroup(group)}">
+									<li>
+									<h:outputText value="#{user.firstName} "/>
+									<a:commandLink action="#{kiwi.dashboard.groupAction.removeUserFromGroup(user,group)}"  value="remove" reRender="groupList"/>
+									</li>
+								</ui:repeat>
+							</s:span>
+							</ul>  
+						</h:form>
+			<!-- </ui:repeat> -->
+			 </c:forEach>
+        </a:outputPanel>
+        
+       
+        
+    </ui:define>       
+                
+ </ui:composition>

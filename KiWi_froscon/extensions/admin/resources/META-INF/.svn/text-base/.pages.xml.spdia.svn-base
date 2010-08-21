@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram model-entity="SeamPagesDiagram">
+ <item ID="#admin#ontology#select.xhtml"
+  NAME="#xadmin#xontology#xselect.xhtml"
+  PATH="/admin/ontology/select.xhtml" SHAPE="344,121,0,0" TYPE="page" model-entity="SeamPagesDiagramItem">
+  <output ID="/admin/ontology/finish.xhtml" NAME="output"
+   PATH="/admin/ontology/finish.xhtml"
+   TARGET="#xadmin#xontology#xfinish.xhtml" model-entity="SeamPagesDiagramItemOutput"/>
+  <output ID="/admin/ontology/select.xhtml" NAME="output1"
+   PATH="/admin/ontology/select.xhtml"
+   TARGET="#xadmin#xontology#xselect.xhtml" model-entity="SeamPagesDiagramItemOutput"/>
+ </item>
+ <item ID="#admin#ontology#finish.xhtml"
+  NAME="#xadmin#xontology#xfinish.xhtml"
+  PATH="/admin/ontology/finish.xhtml" SHAPE="984,121,0,0" TYPE="page" model-entity="SeamPagesDiagramItem">
+  <output ID="/home.xhtml" NAME="output" PATH="/home.xhtml"
+   TARGET="#xhome.xhtml" model-entity="SeamPagesDiagramItemOutput"/>
+ </item>
+ <item NAME="#xhome.xhtml" PATH="/home.xhtml" SHAPE="344,17,0,0"
+  TYPE="page" model-entity="SeamPagesDiagramItem"/>
+ <item ID="#admin#*" NAME="#xadmin#x*" PATH="/admin/*"
+  SHAPE="24,249,0,0" TYPE="page" model-entity="SeamPagesDiagramItem"/>
+ <item ID="#admin#applications.xhtml" NAME="#xadmin#xapplications.xhtml"
+  PATH="/admin/applications.xhtml" SHAPE="24,353,0,0" TYPE="page" model-entity="SeamPagesDiagramItem">
+  <output ID="/admin/home.xhtml" NAME="output" PATH="/admin/home.xhtml"
+   TARGET="#xadmin#xhome.xhtml" model-entity="SeamPagesDiagramItemOutput"/>
+  <output ID="/admin/applications.xhtml" NAME="output1"
+   PATH="/admin/applications.xhtml" TARGET="#xadmin#xapplications.xhtml" model-entity="SeamPagesDiagramItemOutput"/>
+ </item>
+ <item ID="#admin#home.xhtml" NAME="#xadmin#xhome.xhtml"
+  PATH="/admin/home.xhtml" SHAPE="376,249,0,0" TYPE="page" model-entity="SeamPagesDiagramItem"/>
+ <item ID="#admin#tagit.xhtml" NAME="#xadmin#xtagit.xhtml"
+  PATH="/admin/tagit.xhtml" SHAPE="24,481,0,0" TYPE="page" model-entity="SeamPagesDiagramItem">
+  <output ID="/admin/home.xhtml" NAME="output" PATH="/admin/home.xhtml"
+   TARGET="#xadmin#xhome.xhtml" model-entity="SeamPagesDiagramItemOutput"/>
+  <output ID="/admin/tagit.xhtml" NAME="output1"
+   PATH="/admin/tagit.xhtml" TARGET="#xadmin#xtagit.xhtml" model-entity="SeamPagesDiagramItemOutput"/>
+ </item>
+</diagram>

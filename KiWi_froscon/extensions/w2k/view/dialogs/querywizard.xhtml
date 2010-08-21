@@ -1,0 +1,92 @@
+<ui:component id="panel" xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:a="http://richfaces.org/a4j">
+    <s:div id="querywizardPanel">
+      	<s:remote include="queryWizardAction"/>
+        <f:facet name="header">
+            <h:panelGroup>
+                <h:outputText value="Query Editor"></h:outputText>
+            </h:panelGroup>
+        </f:facet>
+   	    <h:form id="querywizardForm">
+   	    	<a:queue />
+	       	<a:region> 
+	       	  <s:div>
+	        	<rich:panel 
+	        		style="position:absolute;top:30px;right:10px;bottom:40px;left:10px;overflow:auto;">
+					
+					<s:div id="queryFormatSelector">
+						<h:outputText value="Format: "/> 
+						<rich:inplaceSelect id="fmt" value="#{queryWizardAction.format}">
+							<s:selectItems value="#{queryWizardAction.formats}" var="mode" label="#{mode}"/>
+							<a:support reRender="fmt" event="onviewactivated"></a:support>
+							<a:support event="onchange"></a:support>
+						</rich:inplaceSelect>
+					</s:div>
+					
+					<br/>
+
+					<rich:togglePanel id="queryWizardPreviewToggle" 
+						switchType="ajax" 
+						stateOrder="QueryEdit,QueryPreview"
+						initialState="QueryEdit">
+					
+						<f:facet name="QueryEdit">
+							<s:div>
+								<ui:include src="_querySearch.xhtml" />
+							</s:div>
+					    </f:facet>
+					    <f:facet name="QueryPreview">
+					    	<a:commandButton value="without this button the preview cannot rerender. seems to be a bug." rendered="false" />
+						    <s:div id="queryWizardPreview">
+						    	<ui:include src="#{configurationService.baseUri}/seam/resource/services/query/renderpreview/#{currentUser.id}" />
+					    	</s:div>
+					    </f:facet>
+					</rich:togglePanel>
+				</rich:panel>
+		      </s:div>
+		      <s:div id="queryWizardButtons"  
+		      	styleClass="actionButtons center" 
+		      	style="position:absolute;height:27px; bottom:10px;">
+
+			    	<rich:toggleControl for="queryWizardPreviewToggle"
+		            	switchToState="QueryEdit" 
+		            	style="text-decoration:none;"
+		            	>
+		            	<a:commandButton value="Edit" reRender="queryWizardButtons" requestDelay="500"
+		            		rendered="#{true or (queryWizardAction.previewToggleState != 'QueryEdit')}"
+		            		/>
+		            </rich:toggleControl>
+
+		            <rich:toggleControl for="queryWizardPreviewToggle"
+		            	switchToState="QueryPreview" 
+		            	style="text-decoration:none;">
+		            	<a:commandButton value="Preview" 
+		            		rendered="#{true or (queryWizardAction.previewToggleState != 'QueryPreview')}"
+		            		reRender="queryWizardPreview,queryWizardButtons"
+		            		requestDelay="500" 
+		            		/>
+		            </rich:toggleControl>
+		            
+					<a:commandButton value="Ok" id="queryWizardOk" 
+						action="#{queryWizardAction.submit}"
+						oncomplete="insertQuery();hideKiwiDialogbox();" />
+					<a:commandButton value="Abort" id="btnquerywizardAbort"
+						oncomplete="hideKiwiDialogbox();" />
+						
+					
+					<!-- Helper jsFunctions -->
+					<a:jsFunction name="insertQuery"
+						data="#{queryWizardAction.myQueryParameters}" 
+						oncomplete="queryWizardJSLib.createQuery(data);"
+						 />
+	                
+		      </s:div>
+			</a:region>
+		</h:form>
+	</s:div>
+</ui:component>

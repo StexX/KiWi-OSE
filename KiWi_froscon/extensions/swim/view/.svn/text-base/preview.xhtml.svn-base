@@ -1,0 +1,68 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+		    	xmlns:a4j="http://richfaces.org/a4j"
+                template="layout/template.xhtml">
+
+    <ui:define name="content">
+
+	<script src="styles.js" type="text/javascript">
+    </script>
+	<style type="text/css">
+.info{
+    position:relative; /*this is the key*/
+    z-index:24;
+    text-decoration:none}
+
+.info:hover{/*z-index:25;*/}
+
+.info span.text{display: none}
+
+.info:hover span.text{ /*the span will display just on :hover state*/
+    display:block;
+    position:absolute;
+    top:2px; right:2px;
+    width:140px;
+    border-style:double;
+    background-color:#ffffff; color:#000;
+    text-align:center;
+    padding: 20px;
+    </style>
+    
+	    <h:form id="formWikiPreview">
+   
+		    <ui:repeat var="revision" value="#{kiwi.action.revision.revisions}">
+				<script type="text/javascript">createRevisionStyle('#{revision.version.versionId}','#{revision.version.colour}')</script>
+		<!-- //		<script type="text/javascript">//createRevisionStyle('#{revision.id}','#{revision.colour}')</script>  -->
+			</ui:repeat>
+		    
+			<s:div>
+				<h:commandLink action="#{kiwi.action.revision.previewAction.restore}" value="Replace current state with this version" style="padding-right:30px;"/>
+				<h:commandLink action="#{kiwi.action.revision.viewRevisionsAction.end}" value="Back to revision list" style="padding-right:30px;"/>
+				<a4j:region>
+					<h:selectBooleanCheckbox value="#{kiwi.action.revision.previewAction.showDeleted}">
+						<a4j:support id="preview_support" event="onchange" reRender="preview">
+							<!-- <a4j:ajaxListener type="kiwi.action.revision.PreviewAction"/> -->
+						</a4j:support>
+					</h:selectBooleanCheckbox>
+					Show deleted words
+				</a4j:region>
+				<h:selectOneMenu value="#{kiwi.action.revision.previewAction.selectedStyle}" style="margin-left:30px;margin-right:30px">
+					<f:selectItem itemValue="1" itemLabel="Last changes" />
+					<f:selectItem itemValue="2" itemLabel="All Revisions" />
+					<f:selectItem itemValue="3" itemLabel="All Authors" />
+				</h:selectOneMenu>
+		    </s:div>
+			<h1>#{kiwi.action.revision.previewAction.title}</h1>
+		    <s:div id="preview">
+		        <f:verbatim escape="#{false}">#{kiwi.action.revision.previewAction.previewContentHtml}</f:verbatim>
+		    </s:div>
+	    </h:form>
+    </ui:define>
+    
+</ui:composition>

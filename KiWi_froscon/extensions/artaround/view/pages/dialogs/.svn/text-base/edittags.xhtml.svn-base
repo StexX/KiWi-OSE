@@ -1,0 +1,105 @@
+<rich:modalPanel   
+       id="artaroundTaggingPanel" 
+       width="400" 
+       height="200"
+	   xmlns="http://www.w3.org/1999/xhtml"
+	   xmlns:ui="http://java.sun.com/jsf/facelets"
+	   xmlns:h="http://java.sun.com/jsf/html"
+	   xmlns:f="http://java.sun.com/jsf/core"
+	   xmlns:s="http://jboss.com/products/seam/taglib"
+	   xmlns:rich="http://richfaces.org/rich"
+	   xmlns:c="http://java.sun.com/jstl/core"
+	   xmlns:a="http://richfaces.org/a4j">
+     <f:facet name="header">#{messages['artaround.artworks.addTags']}</f:facet>
+     <h:form>
+         <a:region>
+            <s:div id="tagcloud">
+                <h3>#{messages['artaround.artworks.existingTags']}:</h3>
+                <c:forEach var="tag" items="#{kiwi.wiki.tagCloudAction.tagCloud}" >
+                    <!-- TODO: instead, create a "red" link that redirects the user to a page where he can associate a meaning -->
+                    <span style="font-size: #{tag.size}%;">
+                    <s:link view="/search.xhtml" value="#{tag.tag.title}" style="color: rgb(100,#{tag.colorCode},100);">
+                        <f:param name="q" value="tag:#{tag.tag.title}" />
+                    </s:link>
+                    </span>
+                    <s:span rendered="#{!tag.ownTag}">
+                        <a:commandButton action="#{taggingAction.addTag(tag.tag)}" image="../../img/type_add.png" reRender="taglist,tagcloud,articlemeta"/>
+                    </s:span>
+                    <s:span rendered="#{tag.ownTag}">
+                        <a:commandButton action="#{taggingAction.removeTag(tag.tag)}" image="../../img/type_delete.png" reRender="taglist,tagcloud,articlemeta"/>
+                    </s:span>
+                    <h:outputText value=", " /> 
+                </c:forEach>
+            </s:div>
+            <!--
+           <s:div id="recommendedTags">
+                <h3>Recommended Tags:</h3>
+                <c:forEach var="rec" items="#{kiwi.wiki.tagCloudAction.tagRecommendations}" >
+                    <s:span rendered="#{!rec.existingTag}">
+                        <span style="color: red"><h:outputText value="#{rec.label} " /></span>
+                        <a:commandButton action="#{taggingAction.addTagLine(rec.label)}" image="img/type_add.png" reRender="taginput,recommendedTags"/>
+                    </s:span>
+                    <s:span rendered="#{rec.existingTag}">
+                        <span style="color: orange"><h:outputText value="#{rec.label} " /></span>
+                        <a:commandButton action="#{taggingAction.addTagLine(rec.label)}" image="img/type_add.png" reRender="taginput,recommendedTags"/>
+                    </s:span>
+                    <h:outputText value=", " /> 
+                </c:forEach>
+            </s:div> 
+               -->
+            <s:div id="extractedTags">
+            	<h3>#{messages['artaround.artworks.recommendedTags']}:</h3>
+            	<c:forEach var="entry" items="#{kiwi.wiki.tagCloudAction.tagRecommendationGroups}" >
+            		<h4><h:outputText value="#{entry.key}"/></h4>
+            		
+            		<c:forEach var="rec" items="#{entry.value}" >
+                    	<s:span rendered="#{!rec.existingTag}">
+                        	<span style="color: red"><h:outputText value="#{rec.label} " /></span>
+                        	<a:commandButton action="#{taggingAction.addTagLine(rec.label)}" image="img/type_add.png" reRender="taginput,recommendedTags"/>
+                    	</s:span>
+                    	<s:span rendered="#{rec.existingTag}">
+                        	<span style="color: orange"><h:outputText value="#{rec.label} " /></span>
+                        	<a:commandButton action="#{taggingAction.addTagLine(rec.label)}" image="img/type_add.png" reRender="taginput,recommendedTags"/>
+                    	</s:span>
+                    	<h:outputText value=", " /> 
+                	</c:forEach>
+                </c:forEach>
+            </s:div>
+            <s:div id="taginput" style="margin-top: 1em;">
+                <h3>#{messages['artaround.artworks.newTags']}:</h3>
+                <h:inputText value="#{taggingAction.tagLabel}" style="width: 200px; margin-right:20px;" id="taglabel"/>
+                <rich:suggestionbox id="suggestionBoxId" for="taglabel" tokens=",[]"
+                        suggestionAction="#{taggingAction.autocomplete}" 
+                        var="result"
+                        fetchValue="#{result}" 
+                        minChars="2"
+                        shadowOpacity="4"
+                        border="1"
+                        height="150"
+                        width="100"
+                        shadowDepth="3"
+                        cellpadding="2"
+                        nothingLabel="No tags found" 
+                        columnClasses="center"
+                        usingSuggestObjects="true" reRender="suggestionBoxId">
+                        
+                        <h:column>
+                            <h:outputText value="#{result}" />
+                        </h:column>
+                </rich:suggestionbox>
+                <a:commandButton id="addTagBtn" action="#{taggingAction.addTag}" 
+					value="#{messages['artaround.add']}" reRender="taglist,tagcloud,taginput,articlemeta">
+                <s:defaultAction/>
+                </a:commandButton>
+                <a:status>
+                    <f:facet name="start">
+                        <h:graphicImage  value="#{facesContext.externalContext.requestContextPath}/img/busy-indicator.gif"/>
+                    </f:facet>
+                </a:status>
+            </s:div>
+            <div style="width: 100%; margin-bottom:10px;" class="center footer">
+                <input type="button" value="#{messages['btn.close']}"  onclick="#{rich:component('artaroundTaggingPanel')}.hide();"/>
+            </div>
+         </a:region>
+     </h:form>
+</rich:modalPanel>

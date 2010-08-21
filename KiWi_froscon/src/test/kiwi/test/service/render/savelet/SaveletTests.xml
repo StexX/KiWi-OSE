@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+
+<suite name="SaveletTests" verbose="2" parallel="false">
+    <test name="ExtractLinksSavelet" junit="false">
+        <classes>
+            <class name="kiwi.test.service.render.savelet.ExtractLinksSaveletTest"/>
+        </classes>
+    </test>
+    <test name="HTMLCleanerSavelet" junit="false">
+        <classes>
+            <class name="kiwi.test.service.render.savelet.HTMLCleanerSaveletTest"/>
+        </classes>
+    </test>
+</suite>

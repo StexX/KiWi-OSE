@@ -1,0 +1,31 @@
+<rich:modalPanel   
+       id="perspectivesDialog" 
+       width="500" 
+       height="300"
+	   xmlns="http://www.w3.org/1999/xhtml"
+	   xmlns:ui="http://java.sun.com/jsf/facelets"
+	   xmlns:h="http://java.sun.com/jsf/html"
+	   xmlns:f="http://java.sun.com/jsf/core"
+	   xmlns:s="http://jboss.com/products/seam/taglib"
+	   xmlns:rich="http://richfaces.org/rich"
+	   xmlns:c="http://java.sun.com/jstl/core"
+	   xmlns:a="http://richfaces.org/a4j">
+     <f:facet name="header">Edit Perspectives</f:facet>
+     <h:form>
+     	Select the currently active perspectives from the list below. At least one perspective has to be selected.
+     	
+     	<rich:listShuttle targetValue="#{kiwi.ui.perspectiveAction.selectedPerspectives}"
+     	                  sourceValue="#{kiwi.ui.perspectiveAction.availablePerspectives}"
+     	                  var="item" sourceRequired="false" targetRequired="true"
+     	                  sourceCaptionLabel="Available Perspectives"
+     	                  targetCaptionLabel="Selected Perspectives">
+     		<rich:column><h:outputText value="#{item}"/></rich:column>
+     	</rich:listShuttle>
+     	<center>
+	     	<a:commandButton value="Submit" action="#{kiwi.ui.perspectiveAction.saveSelectedPerspectives()}" 
+	     	                                reRender="perspectivesPanel"
+	     	                                onclick="#{rich:component('perspectivesDialog')}.hide();">
+	     	</a:commandButton>
+     	</center>
+     </h:form>
+</rich:modalPanel>

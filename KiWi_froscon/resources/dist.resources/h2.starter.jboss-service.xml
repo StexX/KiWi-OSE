@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Service used to start the h2 database
+-->
+<server>
+  <mbean code="kiwi.service.H2StartupService" name="acme.com:service=H2StartupService"/>
+
+</server>

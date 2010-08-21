@@ -1,0 +1,56 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:c="http://java.sun.com/jstl/core"
+    xmlns:a="http://richfaces.org/a4j" 
+    xmlns:m="http://code.google.com/p/gmaps4jsf/"
+    xmlns:rich="http://richfaces.org/rich"
+    >
+    
+        <script
+            src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=#{tagit.explorer.gmapkey}"
+            type="text/javascript">
+        </script>
+    
+    
+    <!--  possible parameters:
+          * query: the search string containing the query
+          * lang: the query language type to use (KIWI or SPARQL)
+          * width: the width of the table
+          * rows: the number of rows to display (default: 15)
+     -->
+
+    <c:if test="${empty lang}">
+        <c:set var="lang" value="KIWI" />
+    </c:if>
+
+    <c:if test="${empty width}">
+        <c:set var="width" value="500px"/>
+    </c:if>
+    
+    <c:if test="${empty height}">
+        <c:set var="height" value="350px"/>
+    </c:if>
+
+    <c:if test="${empty zoom}">
+        <c:set var="zoom" value="1"/>
+    </c:if>
+
+    <c:set var="qResult" value="#{queryAction.query(query, lang)}"/>
+
+    <h:form>
+        <m:map width="#{width}" height="#{height}" 
+               zoom="#{zoom}"
+               latitude="#{queryAction.getAvgLat(qResult)}" 
+               longitude="#{queryAction.getAvgLong(qResult)}">
+            <c:forEach items="#{qResult}" var="item">
+                <m:marker latitude="#{item['geo:lat']}" longitude="#{item['geo:long']}" />
+            </c:forEach>
+            <m:mapControl name="GLargeMapControl" position="G_ANCHOR_BOTTOM_RIGHT"/>
+            <m:mapControl name="GMapTypeControl"/>              
+        </m:map>
+    </h:form>
+</ui:composition>

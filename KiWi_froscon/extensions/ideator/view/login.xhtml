@@ -1,0 +1,54 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+			 	xmlns:c="http://java.sun.com/jstl/core"
+                template="layout/template_1col.xhtml">
+              
+<ui:define name="main_header">
+ 	<h2>#{messages['ideator.login.title']}</h2>
+</ui:define>
+
+<ui:define name="main_content">
+	<h:form id="formLogin">
+	<center>
+	<rich:messages styleClass="message" />
+	<div class="line_box" style="margin-top:30px;margin-bottom:30px;width:330px;padding:10px;">
+				  <h:panelGrid columns="2" rowClasses="prop" columnClasses="login_name,value">
+					<h:outputLabel for="username">#{messages['ideator.login.username']}</h:outputLabel>
+					<h:inputText id="username" value="#{loginAction.login}" />
+					<h:outputLabel for="password">#{messages['ideator.login.password']}</h:outputLabel>
+					<h:inputSecret id="password" value="#{loginAction.password}" />
+					<h:outputLabel for="rememberMe">#{messages['ideator.login.remember']}</h:outputLabel>
+					<h:selectBooleanCheckbox id="rememberMe" styleClass="rememberMe" value="#{rememberMe.enabled}" />
+				  </h:panelGrid>
+				
+				<div style="padding-top:20px;">
+					#{messages['ideator.login.registered']}<h:outputText value=" " /><s:link action="register" value="#{messages['ideator.login.register']}"/><br />
+					#{messages['ideator.login.forgotten']}<h:outputText value=" " /><s:link value="#{messages['ideator.login.forget']}" action="password" />
+				</div>
+	</div>
+	</center>
+				<ul class="buttons_center" style="width:181px;padding-bottom: 30px; margin-top:-10px;">
+					<li>
+						<s:link action="home" styleClass="button">
+							<span>#{messages['ideator.btn.cancel']}</span>
+						</s:link>
+					</li>
+					<li>
+						<h:commandLink id="loginButton" action="#{loginAction.login}" styleClass="button">
+							<s:defaultAction />
+							<span>#{messages['ideator.btn.login']}</span>
+						</h:commandLink>
+					</li>
+				</ul>
+	</h:form>
+</ui:define>
+
+</ui:composition>

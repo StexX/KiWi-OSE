@@ -1,0 +1,61 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+			 	xmlns:c="http://java.sun.com/jstl/core"
+                template="../../layout/box_template.xhtml">
+                	
+	<ui:define name="box_header">
+		<h2>Collector</h2>
+	</ui:define>
+	
+	<ui:define name="box_content">
+		
+		<div class="line_box right_box" id="collector_box_drop" style="min-height:85px;margin-top:5px;">
+			<h:form id="collector_box">
+				<s:fragment rendered="#{ideator.collector.articleCollectionEmpty}">
+					No Item selected. Drag and Drop Items in this box.
+				</s:fragment>
+				<s:fragment rendered="#{!ideator.collector.articleCollectionEmpty}">
+					<ul>
+					<ui:repeat value="#{ideator.collector.articleCollection}" var="item">
+						<li>
+						<h:outputText value=" #{item.title} " />
+						<a:commandLink title="delete from list" action="#{ideator.collector.unselect(item)}" reRender="collector_box">
+							<img src="img/small_icons/icon_bin.png" alt="delete" style="border:none" />
+						</a:commandLink>
+						</li>
+					</ui:repeat>
+					</ul>
+					<h3>Operations:</h3>
+					<ul class="right_actions">
+						<li><h:commandLink style="color:#DF7401;font-weight:bold;" action="#{ideator.collector.clearAll()}" value="delete all" /></li>
+						<li><s:link style="color:#DF7401;font-weight:bold;" view="/ideator/portfolio.xhtml" value="show portfolio" /></li>
+					</ul>
+				</s:fragment>
+				<a:jsFunction name="ajaxAddToSelector" action="#{ideator.collector.select()}" reRender="collector_box">
+					<a:actionparam name="id" assignTo="#{ideator.collector.id}"/>
+				</a:jsFunction>
+			</h:form>
+		</div>
+		
+		<script type="text/javascript">
+					/* <![CDATA[ */
+					jQuery('#collector_box_drop').droppable({drop: function (event, ui) {
+							var t = ui.draggable.find("input").val();
+							ajaxAddToSelector(t);
+						},
+						tolerance: 'touch'
+					});
+		
+					/* ]]> */
+		</script>
+	</ui:define>
+
+</ui:composition>

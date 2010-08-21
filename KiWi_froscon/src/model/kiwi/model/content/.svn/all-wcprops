@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/content
+END
+ContentItemI.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/content/ContentItemI.java
+END
+TextFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/content/TextFragment.java
+END
+TextContent.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/content/TextContent.java
+END
+ContentItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/content/ContentItem.java
+END
+Content.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/content/Content.java
+END
+TextContentSchema.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/content/TextContentSchema.xsd
+END
+MediaContent.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/model/kiwi/model/content/MediaContent.java
+END

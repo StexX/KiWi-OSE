@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/skill/parser
+END
+CustomTermTokenizer.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/skill/parser/CustomTermTokenizer.java
+END
+stopwords_en.xml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/skill/parser/stopwords_en.xml
+END

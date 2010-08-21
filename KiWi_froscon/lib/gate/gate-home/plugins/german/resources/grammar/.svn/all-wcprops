@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/german/resources/grammar
+END
+main.jape
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/german/resources/grammar/main.jape
+END
+number.jape
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/german/resources/grammar/number.jape
+END
+person.jape
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/german/resources/grammar/person.jape
+END
+location.jape
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/german/resources/grammar/location.jape
+END
+org.jape
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/german/resources/grammar/org.jape
+END
+compound_analysis.jape
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/german/resources/grammar/compound_analysis.jape
+END
+money.jape
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/german/resources/grammar/money.jape
+END
+time_date.jape
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/german/resources/grammar/time_date.jape
+END
+profession.jape
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/german/resources/grammar/profession.jape
+END

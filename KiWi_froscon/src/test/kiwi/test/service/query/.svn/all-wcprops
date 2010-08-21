@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/test/service/query
+END
+KWQLServiceTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/test/service/query/KWQLServiceTest.java
+END
+KWQLexTests.xml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/test/service/query/KWQLexTests.xml
+END
+SparqlServiceTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/test/service/query/SparqlServiceTest.java
+END
+QueryTests.xml
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/test/service/query/QueryTests.xml
+END
+KWQLParseTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/test/service/query/KWQLParseTest.java
+END
+KWQLTests.xml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/test/service/query/KWQLTests.xml
+END
+KWQLexTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/test/service/query/KWQLexTest.java
+END
+KWQLTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/test/service/query/KWQLTest.java
+END
+IANTLRFrontEntImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/test/service/query/IANTLRFrontEntImpl.java
+END
+KWQLServiceTests.xml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/test/service/query/KWQLServiceTests.xml
+END
+KWQLParseTests.xml
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/test/service/query/KWQLParseTests.xml
+END

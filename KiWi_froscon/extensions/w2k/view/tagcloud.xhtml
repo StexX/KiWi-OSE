@@ -1,0 +1,52 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:a="http://richfaces.org/a4j" 
+    xmlns:c="http://java.sun.com/jstl/core"
+    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+    template="layout/navigationpage-template.xhtml">
+
+    <ui:define name="links">
+        <link href="#{facesContext.externalContext.requestContextPath}/feed.seam?mode=MOSTRECENT&amp;format=RSS20" type="application/rss+xml" rel="alternate" title="Most Recently Changed" />
+        <link href="#{facesContext.externalContext.requestContextPath}/feed.seam?mode=COMMENTS&amp;format=RSS20" type="application/rss+xml" rel="alternate" title="Comments for #{currentContentItem.title}" />
+        <link href="#{facesContext.externalContext.requestContextPath}/activity-feed.seam?mode=ACTIVITIES&amp;format=RSS20" type="application/rss+xml" rel="alternate" title="Stream of Activities for #{currentContentItem.title}" />
+    </ui:define>
+
+
+<ui:define name="content">
+	<rich:panel id="tagCloud" layout="block">
+		<f:facet name="header">
+	        Tag cloud
+	    </f:facet>
+        <div>
+	        <ui:repeat var="tag" value="#{tagCloudService.portalTagCloud()}" >
+	            <span style="font-size: #{tag.size}%;">
+	            <!--  TODO: the links should query for tags by that user, not for all tags in the system! -->
+	            <s:link view="/search.xhtml" value="#{tag.tag.title}" style="color: rgb(100,#{tag.colorCode},100);">
+	                <f:param name="q" value="tag:&quot;#{tag.tag.title}&quot;"/>
+	            </s:link>
+	            <s:link view="/w2k/tagInfo.xhtml" value="[i]">
+	            	<f:param name="t" value="#{tag.tag.title}"/>
+	            </s:link>
+	            </span>
+	            <h:outputText value=", " /> 
+	        </ui:repeat>
+        </div>
+    </rich:panel>
+
+<!-- 
+    <h:form id="formWikiContent">
+    	<ui:include src="#{kiwi.wiki.ui.layoutAction.getContentItemTemplate(currentContentItem)}">
+    		<ui:param name="contentItem" value="#{currentContentItem}" />
+    	</ui:include>
+    	
+    	<hr style="clear:left;" />
+    </h:form>
+ -->    	
+</ui:define>
+</ui:composition>

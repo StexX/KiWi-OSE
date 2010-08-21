@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:a4j="http://richfaces.org/a4j"
+	  xmlns:s="http://jboss.com/products/seam/taglib"
+	  xmlns:h="http://java.sun.com/jsf/html">		
+	 <body>			
+	 		<h:messages/>
+				<h:form>
+						<h:outputLabel for="mitarbeiter">Name des Mitarbeiters:</h:outputLabel>
+					  	<h:inputText id="mitarbeiter" style="width:200px;" value = "#{mitarbeiterLoginHandler.mitarbeiter}"/>	
+						
+						<h:commandButton action ="#{mitarbeiterLoginHandler.login}" styleClass="button"></h:commandButton>
+											  
+				</h:form>			
+	</body>
+
+</html>

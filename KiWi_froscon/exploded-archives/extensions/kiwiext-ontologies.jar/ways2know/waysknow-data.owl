@@ -1,0 +1,796 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY waysknow "http://www.ways2go.at/2009/waysknow.owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY waysknow-data "http://www.ways2go.at/2009/waysknow-data.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.ways2go.at/2009/waysknow-data.owl#"
+     xml:base="http://www.ways2go.at/2009/waysknow-data.owl"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:waysknow="http://www.ways2go.at/2009/waysknow.owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:waysknow-data="http://www.ways2go.at/2009/waysknow-data.owl#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:Ontology rdf:about="">
+        <owl:imports rdf:resource="http://www.ways2go.at/2009/waysknow.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&dc;description"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#affiliation -->
+
+    <owl:ObjectProperty rdf:about="&waysknow;affiliation"/>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#expertise -->
+
+    <owl:ObjectProperty rdf:about="&waysknow;expertise"/>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#has-coordinator -->
+
+    <owl:ObjectProperty rdf:about="&waysknow;has-coordinator"/>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#has-result -->
+
+    <owl:ObjectProperty rdf:about="&waysknow;has-result"/>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#has-team -->
+
+    <owl:ObjectProperty rdf:about="&waysknow;has-team"/>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#location -->
+
+    <owl:ObjectProperty rdf:about="&waysknow;location"/>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#research-area -->
+
+    <owl:ObjectProperty rdf:about="&waysknow;research-area"/>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#target-group -->
+
+    <owl:ObjectProperty rdf:about="&waysknow;target-group"/>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#theme -->
+
+    <owl:ObjectProperty rdf:about="&waysknow;theme"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#ends-at -->
+
+    <owl:DatatypeProperty rdf:about="&waysknow;ends-at"/>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#starts-at -->
+
+    <owl:DatatypeProperty rdf:about="&waysknow;starts-at"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#Conference -->
+
+    <owl:Class rdf:about="&waysknow;Conference"/>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#Consultancy -->
+
+    <owl:Class rdf:about="&waysknow;Consultancy"/>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#Document -->
+
+    <owl:Class rdf:about="&waysknow;Document"/>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#Expert -->
+
+    <owl:Class rdf:about="&waysknow;Expert"/>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#FederalState -->
+
+    <owl:Class rdf:about="&waysknow;FederalState"/>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#FinalReport -->
+
+    <owl:Class rdf:about="&waysknow;FinalReport"/>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#Place -->
+
+    <owl:Class rdf:about="&waysknow;Place"/>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#PublicEvent -->
+
+    <owl:Class rdf:about="&waysknow;PublicEvent"/>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#ResearchOrganisation -->
+
+    <owl:Class rdf:about="&waysknow;ResearchOrganisation"/>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#ResearchProject -->
+
+    <owl:Class rdf:about="&waysknow;ResearchProject"/>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#Topic -->
+
+    <owl:Class rdf:about="&waysknow;Topic"/>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#Workshop -->
+
+    <owl:Class rdf:about="&waysknow;Workshop"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#andreasgruber -->
+
+    <owl:Thing rdf:about="#andreasgruber">
+        <rdf:type rdf:resource="&waysknow;Expert"/>
+        <rdfs:label>Andreas Gruber</rdfs:label>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >Pers&#246;nliche Daten von Andreas Gruber</rdfs:comment>
+        <waysknow:affiliation rdf:resource="#salzburgresearch"/>
+        <waysknow:expertise rdf:resource="&waysknow;wissensmanagement"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#arsenal -->
+
+    <waysknow:ResearchOrganisation rdf:about="#arsenal">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label rdf:datatype="&rdf;XMLLiteral"
+            >&#214;sterreichisches Forschungs- und Pr&#252;fzentrum Arsenal GmhH</rdfs:label>
+        <dc:description rdf:datatype="&rdf;XMLLiteral"
+            >&#214;sterr. Forschungs- und Pr&#252;fzentrum Arsenal GmbH,
+Gesch&#228;ftsfeld Human Centered Mobility Technologies
+Giefinggasse 2, 1210 Wien
++43 050550-6672</dc:description>
+        <waysknow:location rdf:resource="#vienna"/>
+    </waysknow:ResearchOrganisation>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#autobahn -->
+
+    <owl:Thing rdf:about="#autobahn">
+        <rdf:type rdf:resource="&waysknow;ResearchProject"/>
+        <rdfs:label>AutoBahn</rdfs:label>
+        <waysknow:starts-at rdf:datatype="&xsd;date">2008-10-01</waysknow:starts-at>
+        <waysknow:ends-at rdf:datatype="&xsd;date">2009-12-31</waysknow:ends-at>
+        <dc:description rdf:datatype="&rdf;XMLLiteral"
+            >Entwicklung einer autonom fahrenden Eisenbahn als Individualverkehrsl&#246;sung f&#252;r Nebenbahnen
+
+Das &quot;Auto-Bahn&quot;-Projekt erforscht die radikale Neugestaltung der Eisenbahn in Richtung eines autonom fahrenden, fahrplanlos verkehrenden Individualverkehrsmittels und entwickelt L&#246;sungen f&#252;r die zentralen Probleme autonomen Fahrens auf der Schiene. Anstatt den bisherigen Systems Zug sollen dabei kleine, mit eigenem Antrieb ausgestattete Schienenfahrzeuge (&quot;Trainlets&quot;) eingesetzt werden.
+
+
+An der prinzipiellen Konzeption der Eisenbahn hat sich nichts Grundlegendes ge&#228;ndert.  Eisenbahn wird immer noch als &#246;ffentliches Massenverkehrsmittel betrieben, mit allen Nachteilen der im Vergleich zum Strassenverkehr geringeren Akzeptanz, die durch den Fahrplanverkehr mit Zwischenhalten, Umsteigeerfordernissen etc. entsteht. Dar&#252;ber hinaus ist der Aufwand f&#252;r die Wartung und Instandhaltung der Schieneninfrastruktur aufgrund der hohen Gewichte und Achslasten erheblich. Angesichts des massiv gestiegenen Personen- und Frachtverkehrsaufkommens kann auch die geringe Auslastung vorhandener Schieneninfrastruktur, bezogen auf die maximal m&#246;glichen Z&#252;ge pro Strecke, nicht befriedigen Optimierungspotenzial.
+ 
+Mit den heutigen M&#246;glichkeiten der Informationstechnologie besteht die Chance, durch die Umwandlung der bisher zwingend notwendigen Konzeption Lokomotive &#8211;Waggons zu einem autonom fahrenden Individualverkehrsmittel, die Attraktivit&#228;t und Leistungsf&#228;higkeit der Bahn, sowie die Auslastung vorhandener Schieneninfrastruktur erheblich zu verbessern. Die dazu notwendige Technologie muss an die Erfordernisse der Bahn angepasst werden. Vorbild daf&#252;r k&#246;nnten die Entwicklungen der Automobilindustrie sein, deren erfolgreiche Forschungen ebenfalls in Richtung einer weitreichenden Fahrerunterst&#252;tzung bzw. sogar eines vollst&#228;ndig automatisierten Fahrbetriebs gehen. Da die Fahrspur bei der Bahn durch die Schiene vorgegeben ist, und somit die Komplexit&#228;t wesentlich reduziert wird, eignet sich dieses Transportsystem gut f&#252;r autonomes Fahren. Dazu m&#252;ssen durch Telemetrie und Datenfunk rein computergesteuerte Fahrzeuge in Echtzeit zentral kontrolliert werden. 
+
+Ziel der Forschungsarbeiten im Rahmen des &quot;Auto-Bahn&quot;-Projektes ist es, die technischen, algorithmischen, rechtlichen und wirtschaftlichen Grundlagen zu erarbeiten, um die Bahn - in einem ersten Schritt insbesondere Regionalbahnen - f&#252;r den Nutzer wesentlich attraktiver zu machen. Das kann durch die Konzeption kleiner, autonom fahrender Schienenfahrzeuge (&#8222;Trainlets&#8220;) mit eigenem Antrieb und automatisierter Steuerung sowie moderner Telekommunikations- und Zugsicherungstechnik erreicht werden. Durch die stark verringerten Achslasten, die niedrigere Wartungs- und Instandhaltungskosten zur Folge h&#228;tten, sowie den Entfall von Personalkosten f&#252;r den  Fahrdienst, sollen neben der funktionalen Verbesserungen auch wirtschaftliche Vorteile  f&#252;r den Kunden und den Betreiber erzielt werden. &#8232;</dc:description>
+        <waysknow:theme rdf:resource="#innovativeindividualverkehrsloesungen"/>
+        <waysknow:theme rdf:resource="#neuefahrzeugkonzepte"/>
+        <waysknow:theme rdf:resource="#selbststeuerndeschienenfahrzeuge"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#bahnbarrierefrei -->
+
+    <owl:Thing rdf:about="#bahnbarrierefrei">
+        <rdf:type rdf:resource="&waysknow;ResearchProject"/>
+        <rdfs:label
+            >BahnFreiBarrierefrei</rdfs:label>
+        <waysknow:starts-at rdf:datatype="&xsd;date">2007-01-01</waysknow:starts-at>
+        <waysknow:ends-at rdf:datatype="&xsd;date">2007-12-31</waysknow:ends-at>
+        <dc:description rdf:datatype="&rdf;XMLLiteral"
+            >Technologiescreening und Technologieforesight barrierefreie Systeme f&#252;r den neuen Wiener Hauptbahnhof
+
+Technologiescreening und Technologieforesight barrierefreie Personeninformations-, Leit- und Orientierungstechnologien f&#252;r den neuen Wiener Hauptbahnhof zur Ableitung von Gestaltungsanforderungen und von Themenvorschl&#228;gen f&#252;r die Programmlinie ways2go
+
+Zielsetzung der vorliegenden Arbeit ist zum einen die internationale Untersuchung aktueller und zu erwartender technologischer Trends, Systeme und Designs zum Zweck der Identifikation barrierefreier Informations-, Leit- und Orientierungstechnologien f&#252;r den neuen Wiener Hauptbahnhof. Dabei sind erste wichtige Empfehlungen f&#252;r die Ber&#252;cksichtigung in der Grobplanung des Bahnhofsgeb&#228;udes zu entwickeln.
+
+Zum anderen sollen Empfehlungen f&#252;r die thematische Konsolidierung der Programmlinie ways2go (Forschungsbedarf barrierefreie Systeme f&#252;r den Wiener Hauptbahnhof) identifiziert werden.</dc:description>
+        <waysknow:has-coordinator rdf:resource="#arsenal"/>
+        <waysknow:theme rdf:resource="#chancengleichheit"/>
+        <waysknow:has-result rdf:resource="#endberichtbahnbarrierefrei"/>
+        <waysknow:research-area rdf:resource="&waysknow;barrierefreieinformationssysteme"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#bunt -->
+
+    <owl:Thing rdf:about="#bunt">
+        <rdf:type rdf:resource="&waysknow;ResearchProject"/>
+        <rdfs:label>b.unt</rdfs:label>
+        <waysknow:starts-at rdf:datatype="&xsd;date">2006-06-30</waysknow:starts-at>
+        <waysknow:ends-at rdf:datatype="&xsd;date">2007-12-31</waysknow:ends-at>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >Barrierefrei unterwegs &#8211; barrierefreie Information im Verkehrssystem
+
+Information ist die wichtigste Massenware in &#246;ffentlichen Verkehrssystemen. Als Rohstoff generiert und nach bestimmten Kriterien verfeinert wird Information in den verschiedensten Formen an unterschiedliche Benutzer zu unterschiedlichen Zwecken verteilt. Dadurch ergeben sich unterschiedliche Informationsebenen f&#252;r die jeweils zu definieren ist, was &#8222;benutzerfreundlich&#8220; und &#8222;barrierefrei&#8220; bedeuten.</rdfs:comment>
+        <waysknow:theme rdf:resource="#chancengleichheit"/>
+        <waysknow:has-coordinator rdf:resource="#iiid"/>
+        <waysknow:theme rdf:resource="#personenverkehr"/>
+        <waysknow:has-result rdf:resource="#studiebunt"/>
+        <waysknow:theme rdf:resource="#verkehrsundreiseinformationssysteme"/>
+        <waysknow:research-area rdf:resource="&waysknow;barrierefreieinformationssysteme"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#burkhardtstadelmann -->
+
+    <owl:Thing rdf:about="#burkhardtstadelmann">
+        <rdf:type rdf:resource="&waysknow;Expert"/>
+        <rdfs:label xml:lang="de"
+            >Dr. Burkhard Stadlmann</rdfs:label>
+        <waysknow:affiliation rdf:resource="#fhooefe"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#busstop30 -->
+
+    <owl:Thing rdf:about="#busstop30">
+        <rdf:type rdf:resource="&waysknow;ResearchProject"/>
+        <rdfs:label xml:lang="de">Bus Stop 3.0</rdfs:label>
+        <dc:description rdf:datatype="&rdf;XMLLiteral"
+            >Bus Stop 3.0 &#8211; &#214;V-Haltestellen als multifunktionale Zentren innovativer Stadt- und Regionalentwicklung
+
+&#8222;Bus Stop 3.0&quot; entwickelt Perspektiven f&#252;r die Erweiterungder stadtr&#228;umlichen Funktionalit&#228;ten von &#214;PNV-Haltestellen, die durch Technologie-Nutzung (wieder) multifunktionale Treffpunkte, Interaktions-, Informations- und Nahversorgungsorte werden sollen. Die &quot;Gr&#228;tzel-Zentrums-Funktion&quot; der Haltestelle soll Akzeptanz und Nutzung des &#214;PNV erh&#246;hen. Voraussetzungen, Anund Herausforderungen werden im Rahmen eines &quot;Living-Lab-Settings&quot; untersucht.</dc:description>
+        <waysknow:theme rdf:resource="#chancengleichheit"/>
+        <waysknow:has-result rdf:resource="#presentationbusstop30"/>
+        <waysknow:theme rdf:resource="#verkehrsundreiseinformationssysteme"/>
+        <waysknow:research-area rdf:resource="&waysknow;oeffentlicherverkehr"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#ceit -->
+
+    <owl:Thing rdf:about="#ceit">
+        <rdf:type rdf:resource="&waysknow;ResearchOrganisation"/>
+        <rdfs:label xml:lang="de"
+            >CEIT ALANOVA gemeinn&#252;tzige GmbH</rdfs:label>
+        <dc:description rdf:datatype="&rdf;XMLLiteral"
+            >CEIT ALANOVA gemeinn&#252;tzige GmbH
+DI Manfred Schrenk
+Am Concordepark 2/F
+2320 Schwechat
+01 / 90 360 - 1241</dc:description>
+        <waysknow:has-result rdf:resource="#realcorp2010"/>
+        <waysknow:location rdf:resource="#schwechat"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#chancengleichheit -->
+
+    <owl:Thing rdf:about="#chancengleichheit">
+        <rdf:type rdf:resource="&waysknow;Topic"/>
+        <rdfs:label xml:lang="de"
+            >Chancengleichheit</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#ecomob -->
+
+    <owl:Thing rdf:about="#ecomob">
+        <rdf:type rdf:resource="&waysknow;ResearchProject"/>
+        <rdfs:label>ECOMOB</rdfs:label>
+        <waysknow:starts-at rdf:datatype="&xsd;date">2009-01-01</waysknow:starts-at>
+        <waysknow:ends-at rdf:datatype="&xsd;date">2010-06-30</waysknow:ends-at>
+        <dc:description rdf:datatype="&rdf;XMLLiteral"
+            >Equal Chances of Mobility in Rural Space. Planerischer Beitrag zur Gew&#228;hrleistung einer sicheren und sozialvertr&#228;glichen Mobilit&#228;t
+
+Eine exemplarische Darstellung der Mobilit&#228;tsbed&#252;rfnisse im Alltag von Jugendlichen im L&#228;ndlichen Raum soll eine Einsch&#228;tzung der Potenziale und Ma&#223;nahmen und M&#246;glichkeiten zur Verbesserung der Chancengleichheit in
+der Mobilit&#228;tsteilhabe liefern.</dc:description>
+        <waysknow:theme rdf:resource="#chancengleichheit"/>
+        <waysknow:has-coordinator rdf:resource="#martinajauchneglandschaftsplanung"/>
+        <waysknow:theme rdf:resource="#mobilitaetvonkindernundjugendlichen"/>
+        <waysknow:target-group rdf:resource="&waysknow;jugendliche"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#endberichtbahnbarrierefrei -->
+
+    <waysknow:FinalReport rdf:about="#endberichtbahnbarrierefrei">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="de"
+            >Endbericht BAHNbarriereFrei</rdfs:label>
+    </waysknow:FinalReport>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#fhooefe -->
+
+    <owl:Thing rdf:about="#fhooefe">
+        <rdf:type rdf:resource="&waysknow;ResearchOrganisation"/>
+        <rdfs:label xml:lang="de"
+            >FH O&#214; Forschungs &amp; Entwicklungs GmbH</rdfs:label>
+        <waysknow:location rdf:resource="#oberoesterreich"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#iiid -->
+
+    <owl:Thing rdf:about="#iiid">
+        <rdf:type rdf:resource="&waysknow;ResearchOrganisation"/>
+        <rdfs:label xml:lang="de"
+            >Internationales Institut f&#252;r Informations-Design (IIID)</rdfs:label>
+        <dc:description rdf:datatype="&rdf;XMLLiteral"
+            >Internationales Institut f&#252;r Informations-Design (IIID)
+Dr Veronika Egger
+Palffygasse 27/17, 1170 Wien/Vienna, Austria, Europe
++43 (0)1 4036662
+info@iiid.net</dc:description>
+        <waysknow:location rdf:resource="#vienna"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#informationssysteme -->
+
+    <waysknow:Topic rdf:about="#informationssysteme">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="de"
+            >Informationssysteme</rdfs:label>
+    </waysknow:Topic>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#innovativeindividualverkehrsloesungen -->
+
+    <waysknow:Topic rdf:about="#innovativeindividualverkehrsloesungen">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="de"
+            >Innovative Individualverkehrsl&#246;sungen</rdfs:label>
+    </waysknow:Topic>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#katjaschechtner -->
+
+    <waysknow:Expert rdf:about="#katjaschechtner">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label
+            >Katja Schechtner</rdfs:label>
+        <waysknow:affiliation rdf:resource="#arsenal"/>
+    </waysknow:Expert>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#manfredschrenk -->
+
+    <waysknow:Expert rdf:about="#manfredschrenk">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label>Manfred Schrenk</rdfs:label>
+        <waysknow:affiliation rdf:resource="#ceit"/>
+    </waysknow:Expert>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#martinajauchneglandschaftsplanung -->
+
+    <owl:Thing rdf:about="#martinajauchneglandschaftsplanung">
+        <rdf:type rdf:resource="&waysknow;Consultancy"/>
+        <rdfs:label xml:lang="de"
+            >DI Martina Jauschneg Landschaftsplanung e. U.</rdfs:label>
+        <dc:description rdf:datatype="&rdf;XMLLiteral"
+            >1200 Wien, Klosterneuburgerstra&#223;e 15/5
+http://www.jauschneg.at/index.html</dc:description>
+        <waysknow:location rdf:resource="#vienna"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#mobilitaetvonkindernundjugendlichen -->
+
+    <owl:Thing rdf:about="#mobilitaetvonkindernundjugendlichen">
+        <rdf:type rdf:resource="&waysknow;Topic"/>
+        <rdfs:label xml:lang="de"
+            >Mobilit&#228;t von Kindern und Jugendlichen</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#mofa -->
+
+    <waysknow:ResearchProject rdf:about="#mofa">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="de">MofA</rdfs:label>
+        <rdfs:comment xml:lang="de"
+            >Projekthomepage: http://www.is.tuwien.ac.at/mofa/index.html</rdfs:comment>
+    </waysknow:ResearchProject>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#neuefahrzeugkonzepte -->
+
+    <owl:Thing rdf:about="#neuefahrzeugkonzepte">
+        <rdf:type rdf:resource="&waysknow;Topic"/>
+        <rdfs:label rdf:datatype="&rdfs;Literal"
+            >Neue Fahrzeugkonzepte</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#oberoesterreich -->
+
+    <owl:Thing rdf:about="#oberoesterreich">
+        <rdf:type rdf:resource="&waysknow;FederalState"/>
+        <rdfs:label xml:lang="de">Ober&#246;sterreich</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#personenverkehr -->
+
+    <waysknow:Topic rdf:about="#personenverkehr">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="de">Personenverkehr</rdfs:label>
+    </waysknow:Topic>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#presentationbusstop30 -->
+
+    <owl:Thing rdf:about="#presentationbusstop30">
+        <rdf:type rdf:resource="&waysknow;PublicEvent"/>
+        <rdfs:label xml:lang="de"
+            >Pr&#228;sentation Bus Stop 3.0</rdfs:label>
+        <waysknow:ends-at rdf:datatype="&xsd;date">2009-09-29</waysknow:ends-at>
+        <waysknow:starts-at rdf:datatype="&xsd;date">2009-09-29</waysknow:starts-at>
+        <dc:description rdf:datatype="&rdf;XMLLiteral"
+            >http://www.flickr.com/photos/manfred_schrenk/sets/72157622486487656/</dc:description>
+        <waysknow:location rdf:resource="#schwechat"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#realcorp2010 -->
+
+    <owl:Thing rdf:about="#realcorp2010">
+        <rdf:type rdf:resource="&waysknow;Conference"/>
+        <rdfs:label>REALCORP 2010</rdfs:label>
+        <waysknow:starts-at rdf:datatype="&xsd;date">2010-05-18</waysknow:starts-at>
+        <waysknow:ends-at rdf:datatype="&xsd;date">2010-05-20</waysknow:ends-at>
+        <rdfs:comment rdf:datatype="&rdf;XMLLiteral"
+            >REAL CORP 2010 - 15th International Conference on Urban Planning, Regional Development and Information Society
+
+CITIES FOR EVERYONE: Liveable, Healthy, Prosper
+Promising vision or unrealistic phantasy?
+The role of Urban Planning and Urban Technologies on the path towards improved Quality of Live, Health, Sustainability and Prosperity in our Cities
+
+Vienna / Austria, 18 - 20 May 2010
+www.corp.at
+
+The CALL FOR PAPERS will be open until 23 December 2009 
+(abstract approx. 1000 characters; full paper until 28 February 2010).
+
+CITIES FOR EVERYONE: Liveable, Healthy, Prosper!
+Promising Vision or Unrealistic Phantasy?
+
+Cities are places of competition, stress, inequalities, traffic jams, environmental stress and strains and permanent struggle.
+Cities often are an aggressive environment, not only for children, the elderly and the weak.
+
+But even more then that cities are the centers of economy, culture, creativity, science and innovation and therefore provide the best perspectives and biggest chances for many people&#8212;CITIES ARE ATTRACTIVE!
+Meanwhile more then 50 percent of world population lives in cities, soon it will be about 70 percent.
+
+REAL CORP 2010 asks for CITIES FOR EVERYONE, that are LIVEABLE, HEALTHY and PROSPER!
+Is this a promising vision we should work on or is it an unrealistic phantasy? Is it possible to keep and even improve the advantages of cities and reduce the negative effects? Or does the one require the other?
+
+What are the possibilities and contributions of URBAN PLANNING and REAL ESTATE DEVELOPMENT?
+And where can ICT, URBAN-, TRANSPORT- and ENVIRONMENTAL TECHNOLOGIES help to improve quality of live, health, sustainability and prosperity in cities.
+
+Some of the major aspects and questions to be dealt with and on which we invite you for high-quality paper submissions are:
+
+&#183;  Examples and Visions of &#8222;Liveable Cities for Everyone&#8220;
+&#183;  Keeping Balance: Managing Complex Urban Infrastructures
+&#183;  Housing and Real Estate perspectives, High-Tech &amp; Low-Cost Housing
+&#183;  Perspectives for Future Transport and Mobility
+&#183;  Re-mixing the Urban Fabric, Future Housing and Working Environs
+&#183;  Urban and Environmental Technologies to improve Quality of Life
+&#183;  Ambient Assisted Living (AAL) in the Urban Context
+&#183;  Healthy Cities / Health in Cities
+&#183;  Safety and Security vs. Privacy and Total Surveillance
+&#183;  Data, Information and Knowledge Infrastructures for
+   Planning, Management and Decision Support
+&#183;  Understanding Cities: Tools and Technologies to support Decision 
+   Makers, Citizens and Experts in their Understanding of Cities
+
+As REAL CORP 2010 is co-organized with ISOCARP, the International Society of City and Regional Planners (www.isocarp.org) and REAL VIENNA, the CEE/SEE-focused Real Estate and Investment fair (www.realvienna.at), it is an explicit goal to enhance the experts-dialogue between Real Estate Business, Urban Planning and Technology Providers.
+
+There will also be a buisness-exhibition and possibilities to present companies and products - if interested please contact us per email at office@corp.at
+</rdfs:comment>
+        <waysknow:location rdf:resource="#vienna"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#salzburg -->
+
+    <owl:Thing rdf:about="#salzburg">
+        <rdf:type rdf:resource="&waysknow;Place"/>
+        <rdfs:label xml:lang="de">Salzburg</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#salzburgresearch -->
+
+    <waysknow:ResearchOrganisation rdf:about="#salzburgresearch">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label
+            >Salzburg Research</rdfs:label>
+        <waysknow:location rdf:resource="#salzburg"/>
+    </waysknow:ResearchOrganisation>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#schwechat -->
+
+    <owl:Thing rdf:about="#schwechat">
+        <rdf:type rdf:resource="&waysknow;Place"/>
+        <rdfs:label xml:lang="de">Schwechat</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#selbststeuerndeschienenfahrzeuge -->
+
+    <waysknow:Topic rdf:about="#selbststeuerndeschienenfahrzeuge">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="de"
+            >Selbststeuernde Schienenfahrzeuge</rdfs:label>
+    </waysknow:Topic>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#studiebunt -->
+
+    <owl:Thing rdf:about="#studiebunt">
+        <rdf:type rdf:resource="&waysknow;FinalReport"/>
+        <rdfs:label
+            >Studie barrierefrei unterwegs</rdfs:label>
+        <dc:description rdf:datatype="&rdf;XMLLiteral"
+            >Barrierefreie Information im Verkehrssystem
+Studie im Auftrag des Bundesministeriums f&#252;r Verkehr, Innovation und Technologie zur Vorbereitung der Programmlinie ways2go</dc:description>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#szabygruenwald -->
+
+    <owl:Thing rdf:about="#szabygruenwald">
+        <rdf:type rdf:resource="&waysknow;Expert"/>
+        <rdfs:label>Szaby Gr&#252;nwald</rdfs:label>
+        <waysknow:expertise rdf:resource="#informationssysteme"/>
+        <waysknow:affiliation rdf:resource="#salzburgresearch"/>
+        <waysknow:expertise rdf:resource="&waysknow;wissensmanagement"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#verkehrsundreiseinformationssysteme -->
+
+    <waysknow:Topic rdf:about="#verkehrsundreiseinformationssysteme">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="de"
+            >Verkehrs- und Reiseinformationssysteme</rdfs:label>
+    </waysknow:Topic>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#veronikaegger -->
+
+    <waysknow:Expert rdf:about="#veronikaegger">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label>Veronika Egger</rdfs:label>
+        <waysknow:affiliation rdf:resource="#iiid"/>
+    </waysknow:Expert>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#vienna -->
+
+    <waysknow:Place rdf:about="#vienna">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="de">Wien</rdfs:label>
+        <rdfs:label xml:lang="en">Vienna</rdfs:label>
+    </waysknow:Place>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#ways2know -->
+
+    <waysknow:ResearchProject rdf:about="#ways2know">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label>Ways2Know</rdfs:label>
+        <waysknow:starts-at rdf:datatype="&xsd;date">2008-11-01</waysknow:starts-at>
+        <waysknow:ends-at rdf:datatype="&xsd;date">2009-10-31</waysknow:ends-at>
+        <dc:description rdf:datatype="&rdf;XMLLiteral"
+            >ways2know ist eine Machbarkeitsstudie mit Software-Demonstrator, um zu zeigen, wie eine Plattform f&#252;r wissenschaftliches Wissensmanagement im Bereich Mobilit&#228;tsforschung aufgebaut sein k&#246;nnte. Die Plattform wird semantische Technologien zur Wissensstrukturierung verwenden, das Bilden einer Forscher- und Nutzer Community unterst&#252;tzen, und wird in enger Zusammenarbeit mit den Schl&#252;sselakteuren entwickelt.
+
+Ein Demonstrator als Ziel
+
+Im Rahmen der Verkehrsforschung hat das BMVIT eine neue Programmlinie zum Thema Mobilit&#228;tsforschung initiiert. Eine Begleitma&#223;nahme dieser Linie soll eine innovative Form eines Wissensmanagement Werkzeugs erarbeiten, das in der Folge die Schl&#252;sselakteure dieser Programmlinie besser vernetzt und ihnen besseren Zugang zum Wissen in diesem Bereich geben soll. Der hierzu vorgelegte Antrag ways2know verfolgt das Ziel, innerhalb von acht Monaten einen Demonstrator f&#252;r die angestrebte Wissensplattform zu entwickeln.
+
+Die Ausschreibung weist ausdr&#252;cklich auf innovative Anwendungen hin, um Wissen nicht nur zu sammeln und zug&#228;nglich zu machen, sondern auch um Hilfestellung bei der Suche nach L&#252;cken in der gegenw&#228;rtigen Forschung zu erhalten (research gaps) und um eine bessere Vernetzung der Schl&#252;sselakteure zu gew&#228;hrleisten.
+
+Die ways2know Plattform wird sowohl mit Semantic-Web Technologien als auch mit Social-Software Funktionen ausgestattet sein, um diesen Anforderungen Gen&#252;ge tun zu k&#246;nnen. Dar&#252;ber hinaus werden aber auch traditionelle Content Management Funktionen zum Einsatz kommen, um die Interoperabilit&#228;t mit existierenden Systemen weiter zu gew&#228;hrleisten und auch, um traditionellen Nutzererwartungen ebenfalls zu entsprechen.
+
+Wichtig ist uns die Verwendung eines Benutzer-zentrierten Entwicklungsansatzes und wir werden daher die Schl&#252;sselakteure unter Anwendung des &quot;Experience Prototyping&quot; sehr stark in die Entwicklung der Benutzeroberfl&#228;che und der Systemfunktionalit&#228;t einbeziehen.</dc:description>
+        <waysknow:has-team rdf:resource="#andreasgruber"/>
+        <waysknow:has-coordinator rdf:resource="#salzburgresearch"/>
+        <waysknow:has-result rdf:resource="#ways2knowworkshop"/>
+        <waysknow:has-result rdf:resource="#ways2knowzwischenbericht"/>
+        <waysknow:research-area rdf:resource="&waysknow;wissensmanagement"/>
+    </waysknow:ResearchProject>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#ways2knowworkshop -->
+
+    <waysknow:Workshop rdf:about="#ways2knowworkshop">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="de"
+            >Workshop Ways2Know</rdfs:label>
+        <waysknow:starts-at rdf:datatype="&xsd;date">2009-02-16</waysknow:starts-at>
+        <waysknow:location rdf:resource="#vienna"/>
+    </waysknow:Workshop>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow-data.owl#ways2knowzwischenbericht -->
+
+    <owl:Thing rdf:about="#ways2knowzwischenbericht">
+        <rdf:type rdf:resource="&waysknow;Document"/>
+        <rdfs:label xml:lang="de"
+            >Zwischenbericht Ways2Know</rdfs:label>
+        <dc:description xml:lang="de"
+            >Im Rahmen des FFG Projektes 819165 &#8222;ways2know&#8220; wurden Anforderungen f&#252;r ein Wissensmanagementsystem zur Unterst&#252;tzung der Verkehrs&#8208; und Mobilit&#228;tsforschung im Rahmen der Programmlinie ways2go erhoben, User&#8208;Interfaces und Wissensmodelle erarbeitet sowie erste &#220;berlegungen hinsichtlich eines Betreibermodells gemacht. Der vorliegende Zwischenbericht umfasst die in den ersten sechs Monaten des Projektes.</dc:description>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#barrierefreieinformationssysteme -->
+
+    <owl:Thing rdf:about="&waysknow;barrierefreieinformationssysteme"/>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#jugendliche -->
+
+    <owl:Thing rdf:about="&waysknow;jugendliche"/>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#oeffentlicherverkehr -->
+
+    <owl:Thing rdf:about="&waysknow;oeffentlicherverkehr"/>
+    
+
+
+    <!-- http://www.ways2go.at/2009/waysknow.owl#wissensmanagement -->
+
+    <owl:Thing rdf:about="&waysknow;wissensmanagement"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+

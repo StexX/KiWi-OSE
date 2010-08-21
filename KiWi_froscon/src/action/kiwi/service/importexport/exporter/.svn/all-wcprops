@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/importexport/exporter
+END
+README-KiWiExporter.txt
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/importexport/exporter/README-KiWiExporter.txt
+END
+RDFExporterImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/importexport/exporter/RDFExporterImpl.java
+END
+KiWiExporterImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/importexport/exporter/KiWiExporterImpl.java
+END

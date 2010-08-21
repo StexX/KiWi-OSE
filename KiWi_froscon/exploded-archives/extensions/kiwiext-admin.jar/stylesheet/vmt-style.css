@@ -1,0 +1,24 @@
+.inpanelBody1 {
+height:600px;
+width: 350px;
+overflow:auto;
+}
+
+.inpanelBody2 {
+height:600px;
+width: 500px;
+overflow:auto;
+}
+
+.message {
+  border: 1px solid #FFCC00;
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: #F0F8FF;
+  font-size: 12px;
+}
+
+.test {
+	margin-top: 5px;
+}

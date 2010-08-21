@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/META-INF
+END
+standard-jaxws-endpoint-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/META-INF/standard-jaxws-endpoint-config.xml
+END
+ehcache.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/META-INF/ehcache.xml
+END
+persistence-test.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/META-INF/persistence-test.xml
+END
+hibernate-test.cfg.xml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/META-INF/hibernate-test.cfg.xml
+END
+treecache.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/META-INF/treecache.xml
+END
+MANIFEST-ear.MF
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/META-INF/MANIFEST-ear.MF
+END
+hibernate.cfg.xml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/META-INF/hibernate.cfg.xml
+END
+kiwi.taglib.xml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/META-INF/kiwi.taglib.xml
+END
+orm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/META-INF/orm.xml
+END
+jbpm.cfg.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/META-INF/jbpm.cfg.xml
+END
+jboss-app.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/META-INF/jboss-app.xml
+END
+ejb-jar.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/META-INF/ejb-jar.xml
+END
+MANIFEST.MF
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/META-INF/MANIFEST.MF
+END
+application.xml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/META-INF/application.xml
+END
+gmaps4jsf.taglib.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/META-INF/gmaps4jsf.taglib.xml
+END
+persistence.xml.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/META-INF/persistence.xml.tmpl
+END

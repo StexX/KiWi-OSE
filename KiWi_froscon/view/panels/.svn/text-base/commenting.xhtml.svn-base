@@ -1,0 +1,167 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a="http://richfaces.org/a4j"
+	xmlns:kiwi="http://www.kiwi-project.eu/jsf">
+
+
+  <!--  commenting functionality -->
+  <style type="text/css">
+		#formComments\:comments a {
+		    color: #000000; 
+		}
+		
+		.commentsClosed {
+		    padding-left: 20px;
+		    background: url(../img/arrowRight.gif) no-repeat scroll left top;
+		}
+		
+		.commentsOpen {
+		    padding-left: 20px;
+		    background: url(../img/arrowDown.gif) no-repeat scroll left top;
+		}
+		
+		#formComments\:commentPanel\:newcomment {
+			margin: 5px;
+		    margin-top: 15px;
+		}
+		
+		#formComments\:commentPanel\:newcomment\:newCommentPanel {
+		    border: 1px solid #ccc;
+		}
+		
+		a#formComments\:commentPanel\:addComment,
+		a#formComments\:commentPanel\:newCommentPanel\:addComment,
+		a#formComments\:commentPanel\:newCommentPanel\:commentCancel, 
+		#formComments\:commentPanel\:newcomment a.grayRoundButton {
+		    display: inline;
+		    padding: 6px;
+		    margin: 6px;
+		    text-align: center;
+		    font-weight: bold;
+		    border-left: 1px solid #ccc;
+		    border-right: 1px solid #ccc;
+		    border-bottom: 1px solid #ccc;
+		    background: #ddd;
+		    width: 100px;
+		    -moz-border-radius: 5px;
+		    -webkit-border-radius: 5px;
+		    
+		}
+		
+		#formComments\:commentPanel\:newCommentPanel\:newcommentEditor {
+		    margin: 10px 0;	
+		}
+		
+		#formComments\:commentPanel\:newCommentPanel\:newcommentEditorTextArea {
+			width: 98%;
+		}
+			
+		.comment {
+			margin-bottom: 15px;
+			margin: 5px;
+		    border: 1px solid #ccc;
+		    background-color: #fefefe;
+		}
+		
+		.comment-title {
+		    font-size: 120%;
+		    font-weight: bold;
+		    padding: 2px;
+		    background-color: #eeeeee;
+		}
+		
+		.comment-meta {
+		    border-bottom: 1px solid #ccc;
+		    padding: 2px;
+		    background-color: #eeeeee;
+		}
+		
+		.comment-body {
+		    padding: 2px;
+		}  
+  </style>
+ 
+  <h:form id="formComments">
+	<rich:togglePanel id="comments" switchType="ajax"
+		stateOrder="closed,open">
+		<f:facet name="closed">
+			<rich:toggleControl>
+				<h2 class="commentsClosed">
+                    Comments
+                    (#{commentService.listComments(currentContentItem).size()})
+                </h2>
+			</rich:toggleControl>
+		</f:facet>
+
+		<f:facet name="open">
+			<f:subview id="commentPanel">
+				<rich:toggleControl>
+					<h2 class="commentsOpen">Comments</h2>
+				</rich:toggleControl>
+
+				<c:if
+					test="#{commentService.listComments(currentContentItem).isEmpty()}">
+					<div class="nocomments">No comments</div>
+				</c:if>
+
+				<ui:repeat var="comment" value="#{commentService.listComments(currentContentItem)}">
+					<div class="comment">
+					<div class="comment-title"><h:outputText
+						value="#{comment.title}" /></div>
+					<div class="comment-meta"><h:outputText
+						value="#{comment.created}">
+						<s:convertDateTime pattern="dd/MM/yyyy" />
+					</h:outputText> <h:outputText value=" by " /> <kiwi:link
+						resource="#{comment.author.resource}"
+						value=" #{comment.author.firstName} #{comment.author.lastName}" />
+					</div>
+					<div class="comment-body"><h:outputText
+						value="#{kiwi.wiki.CommentAction.getCommentHtml(comment)}"
+						escape="false" /></div>
+					</div>
+				</ui:repeat>
+
+				<rich:togglePanel rendered="#{editable}" id="newcomment" switchType="ajax"
+					stateOrder="closed,open">
+					<!-- this one doesn't work for some reason, would be nice though for
+						hiding the editor when a comment was created. Now the CommentAction alone takes care of it. 
+					binding="#{kiwi.wiki.CommentAction.newCommentTogglePanel}" -->
+					<f:facet name="closed">
+						<rich:toggleControl id="addComment" value="Add Comment" />
+					</f:facet>
+
+					<f:facet name="open">
+						<f:subview id="newCommentPanel">
+							<hr />
+
+							<strong>Title:</strong>
+							<h:inputText value="#{kiwi.wiki.CommentAction.title}"
+								style="margin-left: 10px; width: 90%" />
+							<rich:editor id="newcommentEditor" height="100" required="false"
+								theme="advanced" configuration="tinymce-small"
+								plugins="safari,pagebreak,style,layer,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,visualchars,nonbreaking,xhtmlxtras"
+								value="#{kiwi.wiki.CommentAction.comment}">
+							</rich:editor>
+							
+							<a:commandLink value="Add" id="addComment" 
+								action="#{kiwi.wiki.CommentAction.addComment}" 
+								reRender="comments,articlemeta" styleClass="grayRoundButton">
+								<rich:componentControl for="newcomment" 
+									operation="switchToState('closed')">
+								</rich:componentControl>
+							</a:commandLink>
+							<rich:toggleControl id="commentCancel" process="comments"
+								value="Cancel" styleClass="grayRoundButton" />
+						</f:subview>
+					</f:facet>
+				</rich:togglePanel>
+			</f:subview>
+		</f:facet>
+	</rich:togglePanel>
+  </h:form>
+</ui:composition>

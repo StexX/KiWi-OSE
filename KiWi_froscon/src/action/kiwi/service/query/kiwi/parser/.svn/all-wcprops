@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/query/kiwi/parser
+END
+ParseException.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/query/kiwi/parser/ParseException.java
+END
+KiWiQueryParserTokenManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/query/kiwi/parser/KiWiQueryParserTokenManager.java
+END
+Token.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/query/kiwi/parser/Token.java
+END
+TokenMgrError.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/query/kiwi/parser/TokenMgrError.java
+END
+KiWiQueryParser.jj
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/query/kiwi/parser/KiWiQueryParser.jj
+END
+KiWiQueryParserConstants.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/query/kiwi/parser/KiWiQueryParserConstants.java
+END
+SimpleCharStream.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/query/kiwi/parser/SimpleCharStream.java
+END
+KiWiQueryParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/query/kiwi/parser/KiWiQueryParser.java
+END

@@ -1,0 +1,41 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:c="http://java.sun.com/jstl/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    >
+    
+    <!--  possible parameters:
+          contentItem: the content item to render
+     -->
+    
+     <ui:repeat value="#{renderJSFWebService.getType(contentItem,'http://xmlns.com/foaf/0.1/Person')}" var="p">
+<!--      <div class="vcard" style="display:none;">-->
+      <div class="vcard" style="visibility:hidden;">
+  
+       <p class="fn n">
+       <span class="given-name">#{renderJSFWebService.getProperty(p, 'http://xmlns.com/foaf/0.1/firstName')}</span>
+       <span class="family-name">#{renderJSFWebService.getProperty(p, 'http://xmlns.com/foaf/0.1/surname')}</span></p>
+       <span class="adr"><span class="locality">#{renderJSFWebService.getProperty(p, 'http://www.kiwi-project.eu/kiwi/core/cityName')}</span>, <span class="country-name">#{renderJSFWebService.getProperty(p, 'http://www.kiwi-project.eu/kiwi/core/countryName')}</span></span>
+	   <a class="email" href="mailto:#{renderJSFWebService.getProperty(p, 'http://xmlns.com/foaf/0.1/mbox_sha1sum')}"/>
+	
+	
+   
+      </div>
+     </ui:repeat>
+        
+     <ui:repeat value="#{renderJSFWebService.getType(contentItem,'http://www.kiwi-project.eu/kiwi/calendar/Event')}" var="p">
+     <div class="vevent" style="visibility:hidden;">
+ 		<a class="url" href="#{renderJSFWebService.getProperty(p, 'http://www.kiwi-project.eu/kiwi/calendar/eventUrl')}">#{renderJSFWebService.getProperty(p, 'http://www.kiwi-project.eu/kiwi/calendar/eventUrl')}</a>
+ 		 <span class="summary">#{renderJSFWebService.getProperty(p, 'http://www.kiwi-project.eu/kiwi/calendar/summary')}</span>: 
+ 		 <abbr class="dtstart" title="#{renderJSFWebService.getProperty(p, 'http://www.kiwi-project.eu/kiwi/calendar/startTime')}">#{renderJSFWebService.getProperty(p, 'http://www.kiwi-project.eu/kiwi/calendar/startTime')}</abbr>-
+ 		 <abbr class="dtend" title="#{renderJSFWebService.getProperty(p, 'http://www.kiwi-project.eu/kiwi/calendar/endTime')}">#{renderJSFWebService.getProperty(p, 'http://www.kiwi-project.eu/kiwi/calendar/endTime')}</abbr>,
+		 at the <span class="location">#{renderJSFWebService.getProperty(p, 'http://www.kiwi-project.eu/kiwi/calendar/location')}</span>
+ 	</div>
+ 	 </ui:repeat>
+     
+   
+
+</ui:composition>

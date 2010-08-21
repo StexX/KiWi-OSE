@@ -1,0 +1,45 @@
+Java Settings
+=============
+
+KiWi requires Java 6.0 (1.6).
+
+Because KiWi must run on a lot of different platforms and because the Java
+install location can vary very wildly, you must take care of this detail
+(right Java installation) yourself.
+
+After Java is installed, you must make sure that the JAVA_HOME environment
+variable is set correctly.
+
+For Mac OS:
+In a terminal, run the following commands:
+
+echo $JAVA_HOME
+
+If the result is a path to the right Java version, then you don't need the
+next steps.
+
+JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6.XXX/Home
+export JAVA_HOME
+
+Replace the XXX with your right java version
+
+For Linux :
+The same steeps as on Mac OS.  The only difference is the Java install
+location (/usr/lib/jvm/java-6-sun-XXXX on many Linux systems).
+
+
+
+Start KiWi
+==========
+
+To start KiWi, follow these steps:
+
+1. Go into the bin directory and run the start.xxx script, xxx is depending
+   you your operation system (for Mac OS and linux xxx=sh, and for Windows
+   xxx=bat).  2. Wait until the terminal window where start.xxx runs shows an
+   output similar to:
+[org.jboss.system.server.Server] JBoss (MX MicroKernel) [4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181439)] Started in ........
+3. Open the web browser and use the URL : http://localhost:8080/KiWi/home.seam
+
+Alternative to point 3: After the server was started, you can do a double
+click on the KiWi symbol placed in the notification area.

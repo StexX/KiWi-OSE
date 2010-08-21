@@ -1,0 +1,34 @@
+<rich:modalPanel
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+   	  xmlns:rich="http://richfaces.org/rich"
+ 	  xmlns:a4j="http://richfaces.org/a4j"
+ 	  width="400"
+ 	  height="125"
+      id="synonymPanel">
+      <s:remote include="kiwiTreeAction"/>
+      	
+        <f:facet name="header">
+            <h:panelGroup>
+                <h:outputText value="Add new alternative Label"></h:outputText>
+            </h:panelGroup>
+        </f:facet>
+        
+      	 <h:form>
+      	 			<h:panelGrid columns="2" rowClasses="prop" columnClasses="name,value">
+      	 
+ 		            <h:outputLabel for="prefLabel">Label</h:outputLabel>
+		            <h:inputText value="#{kiwiTreeAction.altLabel}" />
+		            	
+		            </h:panelGrid>
+		            
+		           <div class="actionButtons">
+		           <h:commandButton action="#{kiwiTreeAction.addAltLabel}" value="Add" id="addBtn" reRender ="al"/>
+		            <h:commandButton value="Cancel" id="btnPrefLabelAbort"/>	
+		           </div>		      		       
+	   	</h:form>
+
+</rich:modalPanel>

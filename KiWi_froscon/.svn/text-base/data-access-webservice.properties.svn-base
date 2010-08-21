@@ -1,0 +1,4 @@
+##### The definition of text and format for inserting data #####
+kiwi.data.import.text.headline = Structured Data from Import
+kiwi.data.import.text.intro = This is the auto generated view of imported data.
+kiwi.data.import.text.source = Imported through\: 

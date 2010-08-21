@@ -1,0 +1,161 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources
+END
+ideator.properties
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/ideator.properties
+END
+messages_fr.properties
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/messages_fr.properties
+END
+seam.properties
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/seam.properties
+END
+kiwiOrange.properties
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/kiwiOrange.properties
+END
+messages_en.properties
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/messages_en.properties
+END
+KiWi-dev-ds.tmpl.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/KiWi-dev-ds.tmpl.xml
+END
+messages_bg.properties
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/messages_bg.properties
+END
+import-dev-words.sql
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/import-dev-words.sql
+END
+emeraldTown.properties
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/emeraldTown.properties
+END
+components.properties
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/components.properties
+END
+import-dev.sql
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/import-dev.sql
+END
+messages_de.properties
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/messages_de.properties
+END
+KiWi-test-ds.xml.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/KiWi-test-ds.xml.tmpl
+END
+kiwiGreen.properties
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/kiwiGreen.properties
+END
+classic.properties
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/classic.properties
+END
+messages_tr.properties
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/messages_tr.properties
+END
+security.drl
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/security.drl
+END
+seam-gen.reveng.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/seam-gen.reveng.xml
+END
+KiWi-prod-ds.xml.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/KiWi-prod-ds.xml.tmpl
+END
+KiWi-destinations-service.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/KiWi-destinations-service.xml
+END
+KiWi-dev-ds.xml.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/KiWi-dev-ds.xml.tmpl
+END
+components-test.properties
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/components-test.properties
+END
+import-test.sql
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/import-test.sql
+END
+blueSky.properties
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/blueSky.properties
+END
+.gpd.createuser.jpdl.xml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/.gpd.createuser.jpdl.xml
+END
+import-prod.sql
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/import-prod.sql
+END

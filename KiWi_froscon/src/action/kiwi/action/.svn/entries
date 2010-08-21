@@ -1,0 +1,82 @@
+10
+
+dir
+5584
+https://svn.salzburgresearch.at/svn/kiwi/KiWi/tags/froscon/src/action/kiwi/action
+https://svn.salzburgresearch.at/svn/kiwi
+
+
+
+2010-08-17T12:59:57.225699Z
+5561
+steffi
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+df910b12-e4fe-467b-9c3d-147a02c1fe00
+
+ceq
+dir
+
+debug
+dir
+
+explanation
+dir
+
+interaction
+dir
+
+kqb
+dir
+
+lod
+dir
+
+query
+dir
+
+reasoning
+dir
+
+recommendation
+dir
+
+rss
+dir
+
+search
+dir
+
+setup
+dir
+
+skill
+dir
+
+tagging
+dir
+
+template
+dir
+
+ui
+dir
+
+user
+dir
+
+webservice
+dir
+

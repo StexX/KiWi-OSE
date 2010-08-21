@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/importexport
+END
+ImportServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/importexport/ImportServiceImpl.java
+END
+KiWiImportException.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/importexport/KiWiImportException.java
+END
+ImportScheduleController.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/importexport/ImportScheduleController.java
+END
+ImportScheduleProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/importexport/ImportScheduleProcessor.java
+END
+ExportServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/importexport/ExportServiceImpl.java
+END

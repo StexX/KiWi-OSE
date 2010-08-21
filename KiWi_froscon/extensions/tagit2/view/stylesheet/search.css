@@ -1,0 +1,63 @@
+#tagcloud {
+	margin-left:550px;
+	padding-top:10px;
+	width:400px;
+	
+}
+
+#searchbox {
+	border : 1px solid black;
+	padding: 5px 10px 0 5px;
+	margin-top:10px;
+	z-index:10;
+	left:100%;
+	margin-left:-300px;
+	position: absolute;
+	background-color: white;
+}
+
+#searchbox input {
+	background-color:#FFFFFF;
+	border:1px solid #999999;
+	color:#999999;
+	font-size:10px;
+	font-style:italic;
+}
+
+#formHdrSearch\:hdrSearchBox {
+    height:19px;
+    margin-top:2px;
+    padding:2px 0 0 4px;
+    width:180px;	
+}
+
+#extendedSearchHead {
+
+}
+
+#layers {
+}
+
+#layersHead {
+height:20px;
+padding-top:5px;
+}
+
+#layersHeadLeft {
+float:left;
+}
+
+#layersHeadRight {
+float:right;
+}
+
+#layersBody {
+padding-left:15px;
+}
+
+#extSearchOpener {
+background-color: gray;
+height: 10px;
+margin-left:-5px;
+margin-right:-10px;
+}

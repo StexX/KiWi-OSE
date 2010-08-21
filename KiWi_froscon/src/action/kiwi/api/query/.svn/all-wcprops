@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/query
+END
+QueryServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/query/QueryServiceLocal.java
+END
+QueryService.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/query/QueryService.java
+END
+KiWiQueryResult.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/query/KiWiQueryResult.java
+END
+QueryServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/query/QueryServiceRemote.java
+END

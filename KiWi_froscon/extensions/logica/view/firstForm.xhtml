@@ -1,0 +1,58 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+		    	xmlns:a4j="http://richfaces.org/a4j">
+		    	
+        <h:form>
+	        <h:panelGrid columns="2" rowClasses="prop" columnClasses="name,value">
+	            <h:outputLabel id="risknamef">Risk Title</h:outputLabel>
+	            <h:inputText id="riskname" 
+	                      value="#{formRisk.riskTitle}"/>
+	            <h:outputLabel id="riskgroupf">Risk Group</h:outputLabel>
+	            <h:inputText id="riskgroup" 
+	                        value="#{formRisk.riskGroup}"/>
+	           	<h:outputLabel id="riskstatusf">Risk Status</h:outputLabel>
+	           	<rich:comboBox defaultLabel="riskstatus ..." value="#{formRisk.riskStatus}" id="riskstatus">
+           							 <f:selectItem itemValue="Low"/>
+           							 <f:selectItem itemValue="Medium"/>
+           							 <f:selectItem itemValue="High"/>
+           		</rich:comboBox>
+           		
+           		<h:outputLabel id="dateIdentifiedf">Date Identified</h:outputLabel>
+       			<a4j:outputPanel id="calendar" layout="block">
+                    <rich:calendar value="#{formRisk.dateIdentified}"
+                         cellWidth="24px" cellHeight="22px" style="width:200px"/>
+                </a4j:outputPanel>
+	            
+	            <h:outputLabel id="dateLastReviewf">Last Reviewed</h:outputLabel>
+       			<a4j:outputPanel id="calendar1" layout="block">
+                    <rich:calendar value="#{formRisk.dateLastReview}"
+                         cellWidth="24px" cellHeight="22px" style="width:200px"/>
+                </a4j:outputPanel>
+       			
+
+
+	        </h:panelGrid>
+	
+	        <div class="actionButtons">
+	            <h:commandButton value="Save" id="btnLoginSubmit" action="#{formRisk.save}"/>
+                <rich:componentControl for="loginPanel" attachTo="btnLoginAbort" operation="hide" event="onclick"/>
+                
+	        </div>
+		</h:form>
+		
+		<h:form>
+			    <div class="navigationButtons">
+	            	
+	            	<h:commandButton value="Next Step" id="btnNext" action="#{formAction.go('Categorize risks','categorizeRisks.xhtml')}"/>
+                <rich:componentControl for="loginPanel" attachTo="btnLoginAbort" operation="hide" event="onclick"/>
+	        </div>
+		</h:form>
+		
+		
+</ui:composition>

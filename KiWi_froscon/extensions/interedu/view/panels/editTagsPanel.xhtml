@@ -1,0 +1,62 @@
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+                xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf">
+	<div id="addTags_panel" style="display:none">
+		<div class="editPanel" id="article_addTag" style="height:auto;">
+			<div class="editPanel_header">
+				<h4>Neue Stichworte eintragen</h4>
+			</div>
+			<div class="editPanel_content" style="height:auto;">		
+				<s:fragment id="existingTags">
+				<h3 style="width: 500px;color:black !important;">Der Artikel hat bereits folgenden Stichworte:</h3>
+				<p style="margin:5px">
+					<ui:repeat value="#{interedu.articleAction.allTags}" var="tag">
+						<h:outputText value="#{tag.taggingResource.title}, " />
+					</ui:repeat>
+				</p>
+				</s:fragment>
+				<s:fragment id="recommendedTags1" rendered="#{!interedu.articleAction.tagRecommendationGroups.isEmpty()}">
+            	<h3 style="width: 500px;color:black !important;">F&#xFC;r den Artikel schlagen wir diese Tags vor (Auswahl durch click):</h3>
+            	<c:forEach var="entry" items="#{interedu.articleAction.tagRecommendationGroups}" >
+            		<h4 style="margin-left:5px;margin-top:5px;color:grey;"><h:outputText value="#{entry.key}"/></h4>
+            		<p style="margin: 15px;margin-top:0;margin-bottom:5px">
+            		<c:forEach var="rec" items="#{entry.value}" >
+                    	<a href="#" onclick="var t = jQuery('#tagAddForm\\:inputTagList').attr('value'); jQuery('#tagAddForm\\:inputTagList').attr({value:t+' ,#{rec.label}'});return false;">
+							#{rec.label}
+						</a>
+						<h:outputText value=", " />
+                	</c:forEach>
+                	</p>
+                </c:forEach>
+               
+            	</s:fragment>
+				<h3 style="width:500px;color:black !important;">Stichworte durch Komma getrennt eingeben:</h3>
+				<br /><br />
+				<h:inputText id="inputTagList" value="#{interedu.articleAction.tags}" style="width:480px;" />
+			</div>
+			<div class="editPanel_buttons">
+				<table width="100%">
+					<tr>
+						<td><a:commandButton value="Taggen abbrechen" onclick="closeBackground();" action="#{interedu.articleAction.setEditMode('none')}" reRender="article_keywords" /></td>
+						<td align="right">
+							<a:commandButton value="Artikel taggen" onclick="closeBackground();" action="#{interedu.articleAction.addTags()}" reRender="content_middle_complete"/>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+	/* <![CDATA[ */
+	openEditPanel('addTags_panel');
+	/* ]]> */
+</script>
+</ui:composition>

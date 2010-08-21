@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/ceq.resources/stored_procedures/postgresql
+END
+createAging.sql
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/ceq.resources/stored_procedures/postgresql/createAging.sql
+END
+calculate_equity_start.sql
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/ceq.resources/stored_procedures/postgresql/calculate_equity_start.sql
+END
+addtypeAging.sql
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/ceq.resources/stored_procedures/postgresql/addtypeAging.sql
+END
+calculate_equityfor.sql
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/ceq.resources/stored_procedures/postgresql/calculate_equityfor.sql
+END
+calculate_equityfornow.sql
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/ceq.resources/stored_procedures/postgresql/calculate_equityfornow.sql
+END
+tweetAging.sql
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/ceq.resources/stored_procedures/postgresql/tweetAging.sql
+END
+select_equity_times.sql
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/ceq.resources/stored_procedures/postgresql/select_equity_times.sql
+END
+readMe.txt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/ceq.resources/stored_procedures/postgresql/readMe.txt
+END
+annotateAging.sql
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/ceq.resources/stored_procedures/postgresql/annotateAging.sql
+END
+visitAging.sql
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/ceq.resources/stored_procedures/postgresql/visitAging.sql
+END
+deleteAging.sql
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/ceq.resources/stored_procedures/postgresql/deleteAging.sql
+END
+editAging.sql
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/ceq.resources/stored_procedures/postgresql/editAging.sql
+END
+generalAging.sql
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/ceq.resources/stored_procedures/postgresql/generalAging.sql
+END
+commentAging.sql
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/ceq.resources/stored_procedures/postgresql/commentAging.sql
+END
+shareAging.sql
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/ceq.resources/stored_procedures/postgresql/shareAging.sql
+END

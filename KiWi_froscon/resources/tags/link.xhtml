@@ -1,0 +1,65 @@
+<ui:composition
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:c="http://java.sun.com/jstl/core"
+	>
+	
+	<!--  possible parameters:
+	   (1) either: contentItem, passing a contentItem object which the link will point to; value
+	           is optional in this case, using contentItem.title if not given
+	   (2) or: a combination of value and uri, where uri is a resource uri to display and value
+	           the text to show
+	   (3) or: resource, passing a KiWiResource object which the link will point to; value is
+	           optional in this case, defaulting to resource.getLabel(null)
+	 -->
+	
+	<!--  The propagation attribute is optional. Generate it if it is missing. -->
+    <c:if test="${empty propagation}">
+        <c:set var="propagation" value="none" />
+    </c:if>
+	
+	
+	<c:if test="${empty refView}">
+        <c:set var="refView" value="/home.xhtml" />
+    </c:if>
+	
+    <!--  The value attribute is optional. Generate it if it is missing. -->
+    <c:if test="${empty value}">
+        <c:choose>
+           <c:when test="${!empty resource}">
+               <c:set var="value" value="#{resource.label}" />
+           </c:when> 
+           <c:otherwise>
+	           <c:set var="value" value="#{contentItem.title}" />
+	       </c:otherwise>
+        </c:choose>
+    </c:if>
+	
+	
+	<!--  create a link, unsetting all parameters but setting kiwiid to content item id -->
+	<s:link view="#{refView}" value="#{value}" propagation="#{propagation}" styleClass="#{styleClass}">
+	   <c:choose>
+         <c:when test="${!empty uri}">
+			<f:param name="title" />
+			<f:param name="uri" value="#{uri}"/>
+			<f:param name="id" />
+			<f:param name="kiwiid"/>
+	     </c:when>
+         <c:when test="${!empty resource}">
+            <f:param name="title" />
+            <f:param name="uri"/>
+            <f:param name="id" />
+            <f:param name="kiwiid" value="#{resource.kiwiIdentifier}"/>
+         </c:when>
+         <c:otherwise>
+            <f:param name="title" />
+            <f:param name="uri" />
+            <f:param name="id" />
+            <f:param name="kiwiid" value="#{contentItem.kiwiIdentifier}"/>
+         </c:otherwise>
+	  </c:choose>
+	  <ui:insert />
+	</s:link>
+</ui:composition>

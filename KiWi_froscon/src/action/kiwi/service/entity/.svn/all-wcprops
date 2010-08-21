@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/entity
+END
+KiWiEntityConverter.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/entity/KiWiEntityConverter.java
+END
+KiWiInvocationHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/entity/KiWiInvocationHandler.java
+END
+KiWiEntityManagerImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/entity/KiWiEntityManagerImpl.java
+END
+KiWiQuery.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/entity/KiWiQuery.java
+END
+FacadeUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/entity/FacadeUtils.java
+END

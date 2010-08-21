@@ -1,0 +1,122 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+		    	xmlns:rich="http://richfaces.org/rich"
+		    	xmlns:a4j="http://richfaces.org/a4j"
+		    	xmlns:kiwi="http://www.kiwi-project.eu/jsf">
+
+	<ui:insert name="editHeader"/>
+	
+	<h:form id="formWikiEdit">
+		<s:validateAll>
+			<ui:insert name="MetadataEdit">
+			    <h1><rich:inplaceInput value="#{editorAction.title}" defaultLabel="click to edit title" required="true"/></h1>
+			    <s:div style="padding-bottom: 10px;">
+		            Type(s): 
+		            <!-- should be c:forEach? -->
+		            <ui:repeat value="#{annotateAction.types}" var="type">
+		                <kiwi:link resource="#{type.res}"/>
+		            </ui:repeat>
+		        </s:div>
+			</ui:insert>
+
+			<ui:insert name="ContentEdit"/>
+
+        </s:validateAll>
+	
+		<ui:insert name="Buttons">
+	        <h:commandButton action="#{editorAction.storeContentItem}" value="#{messages['btn.save']}" />
+	        <h:selectBooleanCheckbox value="#{editorAction.sign}"/> <h:outputText value="Sign Content"/>
+	        <h:selectBooleanCheckbox value="#{editorAction.encrypt}"/> <h:outputText value="Encrypt Content"/>
+	        <s:button action="#{editorAction.cancel}" value="#{messages['btn.cancel']}" rendered="#{conversation.nested}" />
+	    </ui:insert>
+	    
+	    <rich:fileUpload 
+	    	addControlLabel="Upload your key file (.pem)"
+	    	fileEntryClass="display:none"
+	    	fileEntryClassDisabled="diplay:none"
+	    	listHeight="58px" listWidth="260px"
+	    	cleanButtonClass="display:none"
+	    	disabled="false"
+	    	
+	    	fileUploadListener="#{editorAction.listener}" 
+            immediateUpload="true"
+            acceptedTypes="pem" style="width:70px;height:50px" >
+            <a4j:support event="onuploadcomplete" for="panel" operation="show" />
+        </rich:fileUpload>
+        
+        <f:subview xmlns="http://www.w3.org/1999/xhtml"
+		      xmlns:ui="http://java.sun.com/jsf/facelets"
+		      xmlns:h="http://java.sun.com/jsf/html"
+		      xmlns:f="http://java.sun.com/jsf/core"
+		      xmlns:a4j="http://richfaces.org/a4j"
+		      xmlns:rich="http://richfaces.org/rich"> 
+		    <rich:modalPanel id="panel" height="60">
+		        <f:facet name="header">
+		            <h:panelGroup>
+		                <h:outputText value="Insert Passphrase"></h:outputText>
+		            </h:panelGroup>
+		        </f:facet>
+		        <f:facet name="controls">
+		            <h:panelGroup>
+		            	<h:outputText value="Close" id="hidelink" />
+	<!-- 	                <h:graphicImage value="close.png" styleClass="hidelink" id="hidelink"/> -->
+		                <rich:componentControl for="panel" attachTo="hidelink" operation="hide" event="onclick"/>
+		                <rich:componentControl for="panel" attachTo="passphraseButton" operation="hide" event="onclick"/>
+		            </h:panelGroup>
+		        </f:facet>
+		        
+		        <h:outputLabel for="passphrase" value="Enter your import passphrase: "/><h:inputSecret id="passphrase" value="#{editorAction.passphrase}"></h:inputSecret>
+		        <rich:spacer />
+		        <h:commandButton id="passphraseButton" value="Ok" action="#{editorAction.checkPEMfile()}"/>
+		    </rich:modalPanel>
+		    <h:outputLink value="#" id="link" style="padding: 5px">
+		    	Insert passphrase
+		        <rich:componentControl for="panel" attachTo="link" operation="show" event="onclick"/>
+		    </h:outputLink>
+		</f:subview>
+		
+		<h3>The encryption key should be provided to: </h3>
+		<!-- Add User link -->
+		<f:subview xmlns="http://www.w3.org/1999/xhtml"
+		      xmlns:ui="http://java.sun.com/jsf/facelets"
+		      xmlns:h="http://java.sun.com/jsf/html"
+		      xmlns:f="http://java.sun.com/jsf/core"
+		      xmlns:a4j="http://richfaces.org/a4j"
+		      xmlns:rich="http://richfaces.org/rich"> 
+		    <rich:modalPanel id="panelUser" height="60">
+		        <f:facet name="header">
+		            <h:panelGroup>
+		                <h:outputText value="Add User"></h:outputText>
+		            </h:panelGroup>
+		        </f:facet>
+		        <f:facet name="controls">
+		            <h:panelGroup>
+		            	<h:outputText value="Close" id="hidelink" />
+	<!-- 	                <h:graphicImage value="close.png" styleClass="hidelink" id="hidelink"/> -->
+		                <rich:componentControl for="panelUser" attachTo="hidelink" operation="hide" event="onclick"/>
+		                <rich:componentControl for="panelUser" attachTo="addUserButton" operation="hide" event="onclick"/>
+		            </h:panelGroup>
+		        </f:facet>
+		        <h:selectOneMenu value="#{editorAction.selectedUser}">
+		        	<s:selectItems value="#{editorAction.allUsers}" var="user" 
+		        	label="#{user.firstName} #{user.lastName} (#{user.login})" noSelectionLabel="Please select ...">
+		        	</s:selectItems>
+		        	<s:convertEntity />
+		        </h:selectOneMenu>
+		        <rich:spacer />
+		        <h:commandButton id="addUserButton" value="Add" action="#{editorAction.addToEncryptionUsers()}"/>
+		    </rich:modalPanel>
+		    <h:outputLink value="#" id="link" style="padding: 5px">
+		        Add User
+		        <rich:componentControl for="panelUser" attachTo="link" operation="show" event="onclick"/>
+		    </h:outputLink>
+		</f:subview>
+		
+		<rich:dataList var="user" value="#{editorAction.encryptionUsers}" rows="10">
+	        <h:outputText value="#{user.firstName} #{user.lastName} (#{user.login})"/><br/>
+        </rich:dataList>
+    </h:form>
+</ui:composition>

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/multimedia
+END
+MultimediaServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/multimedia/MultimediaServiceRemote.java
+END
+MultimediaService.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/multimedia/MultimediaService.java
+END
+MultimediaServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/multimedia/MultimediaServiceLocal.java
+END

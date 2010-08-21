@@ -1,0 +1,57 @@
+<rich:modalPanel
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+   	  xmlns:rich="http://richfaces.org/rich"
+ 	  xmlns:a4j="http://richfaces.org/a4j"
+ 	  width="400"
+ 	  height="250"
+      id="kiwirdfaPanel">
+      	<s:remote include="kiwirdfaAction"/>
+        <f:facet name="header">
+            <h:panelGroup>
+                <h:outputText value="RDFa Editor"></h:outputText>
+            </h:panelGroup>
+        </f:facet>
+        
+        <p style="margin-top: 20px; margin-left: 10px; margin-right: 10px;" class="help">
+        	Here you can set the RDF property the selected text should represent, e.g. foaf:firstName
+        </p>
+        
+       	<a4j:region renderRegionOnly="true">
+       	    
+       	    <h:form id="kiwirdfaForm">
+       	    	<h:panelGrid columns="2" rowClasses="prop" columnClasses="name,value">
+		            
+		            <h:outputLabel for="rdfaProperty">Property</h:outputLabel>
+		            <h:inputText id="rdfaProperty" 
+		                      value="#{kiwirdfaAction.property}">
+		            </h:inputText>
+		            
+		        </h:panelGrid>
+		
+		        <div class="actionButtons center">
+		            <a4j:commandButton value="Create/Update" id="btnCreateRdfa" 
+		            	action="#{kiwirdfaAction.create}"
+		            	data="#{kiwirdfaAction.property}"
+		            	oncomplete="kiwirdfaJSLib.onCreateOrUpdate(data)" />
+		            	
+		            <a4j:commandButton value="Delete" id="btnDeleteRdfa" 
+		            	action="#{kiwirdfaAction.delete}"
+		            	oncomplete="kiwirdfaJSLib.onDelete()" />
+		            	
+		            <a4j:commandButton value="Cancel" id="btnKiwirdfaCancel"
+		            	action="#{kiwirdfaAction.cancel}" 
+		            	oncomplete="kiwirdfaJSLib.onCancel()" />
+		        
+		        	<!--  <a4j:jsFunction name="onKiWiRDFaCreateOrUpdate"
+		            	data="#{kiwirdfaAction.property}" 
+	                	oncomplete="kiwirdfaJSLib.onCreateOrUpdate(data)" /> -->
+	                	
+		        </div>
+			</h:form>
+		</a4j:region>
+
+</rich:modalPanel>

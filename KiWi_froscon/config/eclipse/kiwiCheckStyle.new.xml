@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    This configuration file was written by the eclipse-cs plugin configuration editor
+-->
+<!--
+    Checkstyle-Configuration: KiWi check style
+    Description: none
+-->
+<!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.2//EN" "http://www.puppycrawl.com/dtds/configuration_1_2.dtd">
+<module name="Checker">
+    <property name="severity" value="warning"/>
+    <module name="TreeWalker">
+        <module name="LineLength">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="KiWi Max Line Length is 100 characters"/>
+            <property name="severity" value="ignore"/>
+            <property name="max" value="100"/>
+            <property name="tabWidth" value="4"/>
+        </module>
+        <module name="JavadocMethod">
+            <property name="allowUndeclaredRTE" value="true"/>
+            <property name="logLoadErrors" value="true"/>
+            <property name="suppressLoadErrors" value="true"/>
+        </module>
+        <module name="JavadocStyle">
+            <property name="checkEmptyJavadoc" value="true"/>
+        </module>
+        <module name="JavadocType">
+            <property name="authorFormat" value="[A-Z]|a-z]+\s+[A-Z]|a-z]+"/>
+        </module>
+        <module name="JavadocVariable">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="variable documentation is required"/>
+        </module>
+        <module name="MemberName">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="fields always start with lower case and may contain lower and upper case characters"/>
+        </module>
+        <module name="TypeName"/>
+        <module name="StaticVariableName"/>
+        <module name="ParameterName"/>
+        <module name="PackageName">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="package names are all lower case"/>
+            <property name="format" value="^[a-z]+(\.[a-z_][a-z0-9_]*)*$"/>
+        </module>
+        <module name="MethodName"/>
+        <module name="ConstantName">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="constants are all upper case"/>
+        </module>
+        <module name="Header">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="check that files start with copyright"/>
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.customMessage" value="The file must contian a valid kiwi header"/>
+            <property name="header" value="/*  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.  *   * Copyright 2008 The KiWi Project. All rights reserved.  * http://www.kiwi-project.eu  *  "/>
+        </module>
+        <module name="AvoidStarImport"/>
+        <module name="UnusedImports"/>
+        <module name="ParameterNumber">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="maximum of 5 parameters to a method"/>
+            <property name="max" value="5"/>
+        </module>
+        <module name="MethodLength"/>
+        <module name="ModifierOrder"/>
+        <module name="EmptyBlock"/>
+        <module name="LeftCurly"/>
+        <module name="NeedBraces"/>
+        <module name="RightCurly"/>
+        <module name="BooleanExpressionComplexity">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="Add by mihai"/>
+            <property name="max" value="5"/>
+        </module>
+        <module name="CyclomaticComplexity">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="add by mihai"/>
+        </module>
+        <module name="NPathComplexity">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="add by mihai"/>
+        </module>
+        <module name="JavaNCSS">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="add my mihai"/>
+        </module>
+        <module name="ClassFanOutComplexity">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="add by mihai"/>
+        </module>
+        <module name="HideUtilityClassConstructor">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="add by mihai"/>
+        </module>
+        <module name="InterfaceIsType">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="add by mihai"/>
+            <property name="severity" value="info"/>
+        </module>
+        <module name="AnonInnerLength">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="add my mihai"/>
+        </module>
+    </module>
+</module>

@@ -1,0 +1,67 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+<!ENTITY hgtags "http://www.holygoat.co.uk/owl/redwood/0.1/tags/">
+<!ENTITY sioc "http://rdfs.org/sioc/ns#">
+<!ENTITY foaf "http://xmlns.com/foaf/0.1/">
+<!ENTITY cont "http://www.w3.org/2000/10/swap/pim/contact#">
+<!ENTITY geo "http://www.w3.org/2003/01/geo/wgs84_pos#">
+<!ENTITY kiwi "http://www.kiwi-project.eu/kiwi/core/">
+<!ENTITY logica "http://www.kiwi-project.eu/kiwi/logica/">
+<!ENTITY artaround "http://www.artaround.at/">
+<!ENTITY dc "http://purl.org/dc/elements/1.1/">]>
+
+
+<rdf:RDF 
+	xmlns:rdf="&rdf;"
+	xmlns:rdfs="&rdfs;"
+	xmlns:owl="&owl;"
+	xmlns:dc="&dc;"
+	xmlns:foaf="&foaf;"
+	xmlns:kiwi="&kiwi;"
+	xmlns:geo="&geo;"
+	xmlns:cont="&cont;"
+	xmlns:hgtags="&hgtags;"
+	xmlns:sioc="&sioc;"
+	xmlns:artaround="&artaround;"
+	xml:base="http://users.fh-salzburg.ac.at/~fhs12575/ontology/">
+
+	<owl:Ontology rdf:about="">
+		<rdfs:comment>This ontology describes the KiWi artaround ontology</rdfs:comment>
+		<rdfs:label>ArtAround</rdfs:label>
+		<owl:imports>
+			<owl:Ontology rdf:about="ontology_kiwi.owl"/>
+		</owl:imports>
+	</owl:Ontology>
+		
+	<owl:Class rdf:about="&artaround;ArtWork">
+		<rdfs:label>ArtWork</rdfs:label>
+		<rdfs:comment>ArtWork</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="&kiwi;ContentItem"/>
+	</owl:Class>
+		
+	<owl:DatatypeProperty rdf:about="&artaround;techniques">
+		<rdfs:label>techniques</rdfs:label>
+		<rdfs:comment>techniques</rdfs:comment>
+		<rdfs:domain rdf:resource="&artaround;ArtWork"/>
+		<rdfs:range rdf:resource="&rdfs;Literal"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&artaround;location">
+		<rdfs:label>location</rdfs:label>
+		<rdfs:comment>location</rdfs:comment>
+		<rdfs:domain rdf:resource="&artaround;ArtWork"/>
+		<rdfs:range rdf:resource="&rdfs;Literal"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&artaround;price">
+		<rdfs:label>price</rdfs:label>
+		<rdfs:comment>price</rdfs:comment>
+		<rdfs:domain rdf:resource="&artaround;ArtWork"/>
+		<rdfs:range rdf:resource="&rdfs;Literal"/>
+	</owl:DatatypeProperty>
+		
+</rdf:RDF>

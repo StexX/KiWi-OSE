@@ -1,0 +1,257 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning
+END
+ProgramProcessorImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/ProgramProcessorImpl.java
+END
+TriplestoreTBoxLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/TriplestoreTBoxLoader.java
+END
+ClasspathRuleLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/ClasspathRuleLoader.java
+END
+TBoxLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/TBoxLoader.java
+END
+StringProgramLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/StringProgramLoader.java
+END
+VariablePosition.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/VariablePosition.java
+END
+ProgramCompiler.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/ProgramCompiler.java
+END
+ReasoningTask.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/ReasoningTask.java
+END
+ProgramParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/ProgramParser.java
+END
+CompiledRuleInstance.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/CompiledRuleInstance.java
+END
+StringRuleLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/StringRuleLoader.java
+END
+ReasoningImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/ReasoningImpl.java
+END
+SemiNaiveOneRoundResult.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/SemiNaiveOneRoundResult.java
+END
+CantorsPairing.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/CantorsPairing.java
+END
+RuleCompiler.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/RuleCompiler.java
+END
+RuleBodyResult.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/RuleBodyResult.java
+END
+RuleInstantiator.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/RuleInstantiator.java
+END
+ClasspathProgramLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/ClasspathProgramLoader.java
+END
+TBox.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/TBox.java
+END
+RemoveTriplesTask.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/RemoveTriplesTask.java
+END
+CompiledProgram.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/CompiledProgram.java
+END
+ProgramUpdateTask.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/ProgramUpdateTask.java
+END
+VariablePositions.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/VariablePositions.java
+END
+CompiledRule.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/CompiledRule.java
+END
+owl2-rl.skwrl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/owl2-rl.skwrl
+END
+ConfigurationChangeTask.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/ConfigurationChangeTask.java
+END
+AbstractSummaryStatistics.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/AbstractSummaryStatistics.java
+END
+ReasoningTaskStatistics.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/ReasoningTaskStatistics.java
+END
+rdfs.skwrl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/rdfs.skwrl
+END
+AbstractStatistics.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/AbstractStatistics.java
+END
+ReasoningStatistics.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/ReasoningStatistics.java
+END
+TriplestoreProgramPersister.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/TriplestoreProgramPersister.java
+END
+AddTriplesTask.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/AddTriplesTask.java
+END
+RunReasoningTask.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/RunReasoningTask.java
+END
+ReasoningConfiguration.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/ReasoningConfiguration.java
+END
+RuleBodyProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/RuleBodyProcessor.java
+END
+TriplestoreProgramLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/TriplestoreProgramLoader.java
+END
+RDFList.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/RDFList.java
+END
+ProgramComparer.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/ProgramComparer.java
+END
+RoundStatistics.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/RoundStatistics.java
+END
+ReasoningException.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/ReasoningException.java
+END
+ReasoningConstants.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/reasoning/ReasoningConstants.java
+END

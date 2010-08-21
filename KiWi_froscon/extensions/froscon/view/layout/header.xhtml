@@ -1,0 +1,128 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:rich="http://richfaces.org/rich"
+    xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+    xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:a4j="http://richfaces.org/a4j">
+
+    <div id="header_froscon">
+
+	    <div id="logo_froscon">
+		    <s:link view="/home.xhtml">
+		        <f:param name="title" />
+	            <f:param name="uri" value="#{configurationService.startPage}"/>
+	            <f:param name="id" />
+	            <f:param name="kiwiid"/>
+	            <img src="img/kiwi_froscon.png" alt="KiWi Logo" />
+	        </s:link>	    
+	   </div>
+	    <div id="mainnav">
+	        <h:form id="formHdrApplications">
+		        <ul>
+		            <ui:repeat value="#{kiwi.ui.headerAction.applications}" var="app">
+		            	<li>
+		                    <h:commandLink action="#{kiwi.ui.headerAction.switchApplication(app)}" rendered="#{kiwi.ui.headerAction.isVisible(app)}">
+		                        <span class="mainnav_title"><h:outputText value="#{app.name}" /></span>
+		                        <span class="mainnav_subtitle"><h:outputText value="#{messages[fn:join(fn:join('app.',app.identifier),'.description')]}"/></span>
+		                    </h:commandLink>
+		                </li>
+		            </ui:repeat>
+		        </ul>   
+	        </h:form>
+	    </div>
+	    <div id="searchbox">
+	       <h:form id="formHdrSearch">
+	           <a4j:queue />
+	           <!--BEGIN: interedu hack -->
+	           <s:fragment rendered="#{currentApplication.identifier ne 'interedu'}">
+		       <h:inputText id="hdrSearchBox" value="#{searchAction.searchQuery}"/>
+		       <!-- 
+               <rich:suggestionbox for="hdrSearchBox" suggestionAction="#{searchAction.autocomplete}" var="result" >
+               <h:column>
+                    <h:outputText value="#{result}" />
+               </h:column>
+               </rich:suggestionbox>	          
+               -->
+               <a4j:commandButton id="hdrSearchBtn" action="#{searchAction.getSearchView()}"  style="border: 0" image="/img/search.png" value="#{messages['hdr.search']}" type="submit">
+	               <s:defaultAction/>
+	           </a4j:commandButton>
+	           
+	           </s:fragment>
+	           <!-- 
+	           <s:fragment rendered="#{currentApplication.identifier eq 'interedu'}">
+	           		       <h:inputText id="hdrIntereduSearchBox" value="#{interedu.searchAction.searchQuery}"/>
+               <a4j:commandButton id="hdrIntereduSearchBtn" action="#{interedu.searchAction.getSearchView()}" style="border: 0" image="/img/search.png" value="#{messages['hdr.search']}" type="submit">
+	               <s:defaultAction/>
+	           </a4j:commandButton>
+	           </s:fragment>
+	           -->
+	        
+	       <br/>    
+		           <!-- END: interedu hack -->
+           </h:form>
+           
+			<h:commandButton value="Erweiterte Suche" id = 'intereduExtendedSearch' rendered="#{currentApplication.identifier eq 'interedu'}">
+	           <rich:componentControl for="intereduExtendedSearchPanel"
+							attachTo="intereduExtendedSearch" operation="show" event="onclick" />
+	        </h:commandButton>
+	       
+	    </div>
+    </div>
+
+    <div id="navbar">
+        <h:form id="formHdrNavigation">
+            <a4j:queue/>
+		    <div id="history">
+		        <ui:insert name="actions"/>
+		    
+		        <h:outputText value="History: " />
+		        <c:forEach items="#{kiwi.ui.historyAction.lastItems}" var="item" varStatus="status">
+		            <h:outputText value=" - " rendered="#{not status.first}"/>
+		            <kiwi:link contentItem="#{item}" value="#{kiwi.ui.historyAction.ellipseString(item.title)}"/>
+		        </c:forEach>
+		    </div>
+		    <div id="user">
+		    
+		    
+	            <h:outputText value="#{messages['hdr.welcome']}, #{currentUser.firstName} #{currentUser.lastName}!"
+	                       rendered="#{not (currentUser.login eq 'anonymous') }" />
+            
+                <s:fragment rendered="#{currentUser.login eq 'anonymous'}">
+		            <s:link action="login" 
+		                     value="#{messages['hdr.login']}" />
+                </s:fragment>	
+                                    
+	            <h:outputText value=" - " />
+	
+	            <s:link action="register" 
+	                     value="#{messages['hdr.signup']}"
+	                  rendered="#{currentUser.login eq 'anonymous'}" />
+	        
+	            <s:link action="#{identityManagerService.logout}" 
+	                     value="#{messages['hdr.logout']}"
+	                  rendered="#{not (currentUser.login eq 'anonymous')}" />	    
+	   			
+				<!-- status messages -->
+<!--				<div id="status">-->
+<!--	       			<b>bla</b>-->
+<!--				</div>-->
+				<script src="#{facesContext.externalContext.requestContextPath}/widgets/status/widget.status.js" type="text/javascript"></script>
+   				<script>
+   					jQuery(document).ready(function(){
+						jQuery('#status').status({
+							webServiceUrl: '#{facesContext.externalContext.requestContextPath}/seam/resource/services/widgets/status',
+							frequence: 5000,
+							img_running: '#{facesContext.externalContext.requestContextPath}/img/status-running.gif',
+							img_stopped: '#{facesContext.externalContext.requestContextPath}/img/status-stopped.gif'
+						});
+					});
+				</script>
+		    </div>
+	    </h:form>
+	</div>
+	
+</ui:composition>

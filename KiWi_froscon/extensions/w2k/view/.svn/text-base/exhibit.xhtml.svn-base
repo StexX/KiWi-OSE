@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:a="http://richfaces.org/a4j" 
+    xmlns:c="http://java.sun.com/jstl/core"
+    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+    xmlns:ex="http://simile.mit.edu/2006/11/exhibit#"
+    template="layout/template-fullwidth.xhtml">
+    <ui:define name="links">
+    <link href="#{facesContext.externalContext.requestContextPath}/feed.seam?mode=MOSTRECENT&amp;format=RSS20" type="application/rss+xml" rel="alternate" title="Most Recently Changed" />
+    <link href="#{facesContext.externalContext.requestContextPath}/feed.seam?mode=COMMENTS&amp;format=RSS20" type="application/rss+xml" rel="alternate" title="Comments for #{currentContentItem.title}" />
+    <link href="#{facesContext.externalContext.requestContextPath}/activity-feed.seam?mode=ACTIVITIES&amp;format=RSS20" 
+       	  type="application/rss+xml" 
+       	  rel="alternate" 
+       	  title="Stream of Activities for #{currentContentItem.title}" />
+
+    <link href="#{facesContext.externalContext.requestContextPath}/seam/resource/services/widgets/exhibit/query.json?typemask=(waysknow:.*)&amp;q=type:waysknow:Event&amp;limit=10000&amp;jsonpCallback=" 
+    	  type="application/jsonp"
+    	  ex:converter="w2kConverter"
+    	  rel="exhibit/data" />
+
+    <link href="#{facesContext.externalContext.requestContextPath}/seam/resource/services/widgets/exhibit/query.json?typemask=(waysknow:.*)&amp;q=type:waysknow:SocialObject&amp;limit=10000&amp;jsonpCallback=" 
+    	  type="application/jsonp"
+    	  ex:converter="w2kConverter"
+    	  rel="exhibit/data" />
+
+    <link href="exhibitSchema.json" type="application/json" rel="exhibit/data" />
+      
+    <script src="exhibit-w2k.js"
+    		type="text/javascript"></script>
+    <script src="http://static.simile.mit.edu/exhibit/api-2.0/exhibit-api.js"
+    		type="text/javascript"></script>
+	<script src="http://static.simile.mit.edu/exhibit/extensions-2.0/time/time-extension.js"
+			type="text/javascript"></script>
+			
+    <script src="http://api.simile-widgets.org/exhibit/2.2.0/extensions/map/map-extension.js?gmapkey=#{tagit2.explorerAction.gmapkey}"></script>
+	<script src="#{facesContext.externalContext.requestContextPath}/js/exhibit/mapfix.js" />
+	<script>
+		var kiwiRootPath = "#{facesContext.externalContext.requestContextPath}";
+	</script>
+    </ui:define>
+
+
+<ui:define name="content">
+
+    <h1>KiWi exhibit data export</h1>
+    <table width="100%">
+        <tr valign="top">
+            <td ex:role="viewPanel">
+                <div ex:role="view"
+                	 ex:label="Detail"></div>
+				<div ex:role="view" 
+					ex:viewClass="Timeline" 
+					ex:label="Zeiteiste"
+					ex:start=".waysknow:starts-at,.kiwi:modifiedOn"
+					ex:topBandUnit="month"
+					ex:bottomBandUnit ="year"
+					ex:end=".waysknow:ends-at"></div>
+						<div ex:role="view"
+	                         ex:viewClass="Map"
+	                         ex:label="Karte"
+	                         ex:latlng=".latlong"
+	                         ex:mapHeight="600"></div>
+				
+				<!-- 
+				<table ex:role="lens" class="" border="1">
+					<tr>
+					<td>
+					label: <span ex:content=".label" class="name"></span><br/>
+					content: <span ex:content=".kiwi:hasTextContent" class="textContent"></span><br/>
+					autor: <span ex:content=".kiwi:Author" class="textContent"></span><br/>
+					start: <span ex:content=".waysknow:starts-at" class="textContent"></span><br/>
+					end: <span ex:content=".waysknow:ends-at" class="textContent"></span><br/>
+					tags: <span ex:content=".tags" class="textContent"></span><br/>
+					last modified: <span ex:content=".kiwi:modifiedOn" class="textContent"></span><br/>
+					<span ex:content=".kiwi:modifiedOn" class="textContent"></span><br/>
+					<span ex:content=".kiwi:modifiedOn" class="textContent"></span><br/>
+					</td>
+					</tr>
+				</table>
+				 -->
+				
+				
+ 
+				
+			</td>
+            <td width="25%">
+            	<div ex:role="facet" 
+            		ex:facetClass="TextSearch"
+            		ex:facetLabel="Text search"></div>
+            	<div ex:role="facet" 
+            		ex:expression=".type"
+            		ex:showMissing="false"
+					 ex:scroll="false"
+					ex:facetLabel="Type"></div>
+<!-- 
+            	<div ex:role="facet" 
+            		ex:expression=".hgtags:taggedWithTag"
+					ex:showMissing="false"
+					ex:facetLabel="UserTags"></div>
+ -->
+				<div ex:role="facet" 
+					 ex:expression=".tags"
+					 ex:showMissing="false"
+					 ex:scroll="false"
+					 ex:facetLabel="Tag"></div>
+<!-- 
+				<div ex:role="facet" 
+					 ex:expression=".waysknow:theme"
+					ex:showMissing="false"
+					ex:facetLabel="Thema"></div>
+ -->
+				<div ex:role="facet" 
+					 ex:expression=".waysknow:research-area"
+					 ex:showMissing="false"
+					 ex:scroll="false"
+					 ex:facetLabel="Forschungsfeld"></div>
+					 
+				<div ex:role="facet" 
+					 ex:expression=".waysknow:target-group"
+					 ex:showMissing="false"
+					 ex:scroll="false"
+					 ex:facetLabel="Zielgruppe"></div>
+					
+				<div ex:role="facet" 
+					 ex:expression=".startYear"
+					 ex:showMissing="false"
+					 ex:scroll="false"
+					 ex:facetLabel="Anfangsjahr"></div>
+					 
+				<div ex:role="facet" 
+					 ex:expression=".endYear"
+					 ex:showMissing="false"
+					 ex:scroll="false"
+					 ex:facetLabel="Abschlussjahr"></div>
+					 
+				<div ex:role="facet" 
+					 ex:expression=".waysknow:location"
+					 ex:showMissing="false"
+					 ex:scroll="false"
+					 ex:facetLabel="Location"></div>
+					 
+				<div ex:role="facet" 
+					 ex:expression=".kiwi:Author"
+					 ex:showMissing="false"
+					 ex:scroll="false"
+					 ex:facetLabel="Autor"></div>
+				
+				
+<!-- 
+				<div ex:role="facet" 
+					 ex:expression=".kiwi:language" ex:facetLabel="Language"></div>
+ -->
+
+		</td>
+        </tr>
+    </table>
+
+        
+</ui:define>
+</ui:composition>

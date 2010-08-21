@@ -1,0 +1,156 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:c="http://java.sun.com/jstl/core">
+		
+	<!-- default set of jQuery Tools + jQuery 1.3.2 -->
+	<script src="#{facesContext.externalContext.requestContextPath}/view/js/jQueryMain/jquery.tools.min.js"></script>
+	
+	<!-- activate tabs with JavaScript -->
+	<script>
+	
+		jQuery(function() { 
+	
+		jQuery("#vert_accordion").tabs("#vert_accordion div.pane", {tabs: 'h2', effect: 'slide', initialIndex: null});
+	});
+		
+	</script>
+
+	<style>
+		/* root element for vert_accordion. decorated with rounded borders and gradient background image */
+		#vert_accordion {
+		
+			/*background:#fff url(#{facesContext.externalContext.requestContextPath}/view/img/h300.png) ;*/
+			background:#fff;
+			width: 200px;
+			/*border:1px solid #eee;	*/
+			-background:#666;
+			margin-top:20px;
+			margin-left:-10px;
+			
+		}
+		
+		/* vert_accordion header */
+		#vert_accordion h2 {
+		
+			/*background:#fff url(#{facesContext.externalContext.requestContextPath}/view/img/h30.png);*/
+			background:#fff;
+			margin:0;
+			padding:5px 15px;
+			font-size:14px;
+			font-weight:normal;
+			/*border:1px solid #eee; */
+			border-bottom:1px solid #eee;
+			cursor:pointer;		
+			color:#452;
+		}
+		
+		/* currently active header */
+		#vert_accordion h2.current {
+		
+			cursor:default;
+			background-color:#eee;
+		}
+		
+		/* vert_accordion pane */
+		#vert_accordion div.pane {
+		
+			/*border:1px solid #eee;*/
+			border-width:0 2px;
+			display:none;
+			height:180px;
+			padding:15px;
+			color:#aaa;
+			font-size:12px;
+		}		
+		
+		#vert_accordion div.pane p {			
+			margin:0 0 5px 0;
+			
+		}
+		
+	</style>
+	
+	<!-- vert_accordion -->	
+	<div id="vert_accordion">
+			<!--  Lupe  -->
+			<img src="#{facesContext.externalContext.requestContextPath}/view/img/lupe_30.png"  style="margin:0 0 10px 15px;"/>
+			<br/>
+			<c:if test="#{identity.loggedIn}">
+			<!--  Tab 0 Mein Artaround -->
+			<h2>Mein ArtAround</h2>
+			<!--  Tab 0 Content -->
+			<div class="pane" style="height:100px; display:block">		
+				<h:form>
+					<ul>
+						<li><h:commandLink  value="#{messages['artaround.myProfil']}" action="profil" style="text-decoration:none;"/></li>
+						<li><h:commandLink  value="#{messages['artaround.myProfil.newArtwork']}" action="#{artWorkAction.neuesKunstwerk}" style="text-decoration:none;"/></li>
+						<li><h:commandLink  value="#{messages['artaround.myProfil.myArtworks']}" action="myArtWorks" style="text-decoration:none"/></li>
+						<li><h:commandLink  value="#{messages['artaround.myProfil.myContacts']}" action = "acontacts" style="text-decoration:none"/></li>
+						<li><h:commandLink  value="#{messages['artaround.myProfil.myBlog']}" action = "myBlog" style="text-decoration:none"/></li>
+						<li><h:commandLink  value="#{messages['artaround.myProfil.myEvents']}" style="text-decoration:none"/>	</li>								
+					</ul>
+				</h:form>
+			</div>	
+			</c:if>	
+			<!--  Tab 1 Header -->
+			<h2>#{messages['artaround.artworks.artworks']}</h2>
+			<!--  Tab 1 Content -->
+			<div class="pane">		
+				<p style="clear:both">#{messages['artaround.artworks.showArtworks']}: </p>
+				<h:form>
+					<ul>
+						<li><h:commandLink  value="#{messages['artaround.artworks.lastUploaded']}" action="#{artWorkAction.showArtWorksLastUploaded()}" style="text-decoration:none;"/></li>
+						<li><h:commandLink  value="#{messages['artaround.artworks.lastObserved']}" style="text-decoration:none"/></li>
+						<li><h:commandLink  value="#{messages['artaround.artworks.bestRated']}" style="text-decoration:none"/></li>
+						<li><h:commandLink  value="#{messages['artaround.artworks.yourFriends']}" style="text-decoration:none"/>	</li>								
+					</ul>
+				</h:form><br/>
+				<p style="clear:both">#{messages['artaround.artworks.searchByCategories']} </p>
+				<h:form>
+					<ul>
+						<li><h:commandLink  value="#{messages['artaround.artworks.techniques']}" style="text-decoration:none"/></li>
+						<li><h:commandLink  value="#{messages['artaround.artworks.facettedSearch']}" style="text-decoration:none"/></li>				
+					</ul>
+				</h:form>
+			</div>			
+			<h2>Personen</h2>	
+			<div class="pane">					
+				<p>#{messages['artaround.showAuthors']}:</p>
+				<h:form>
+					<ul>
+						<li><h:commandLink  value="#{messages['artaround.artworks.lastRegistered']}" style="text-decoration:none"/></li>
+						<li><h:commandLink  value="#{messages['artaround.yourFriends']}" style="text-decoration:none"/></li>		
+					</ul>
+				</h:form><br/>
+				<p>#{messages['artaround.showFriends']}:</p>
+				<h:form>
+					<ul>
+						<li><h:commandLink  value="#{messages['artaround.artworks.showAll']}" style="text-decoration:none"/></li>
+						<li><h:commandLink  value="#{messages['artaround.artworks.newRegistered']}" style="text-decoration:none"/></li>
+						</ul>
+				</h:form>
+			</div>
+			<h2>Events</h2>	
+			<div class="pane">				
+				<p>#{messages['artaround.AuthorEvents']}:</p>
+				<h:form>
+					<ul>
+						<li><h:commandLink  value="#{messages['artaround.artworks.showAll']}" style="text-decoration:none"/></li>
+						<li><h:commandLink  value="#{messages['artaround.artworks.yourFriends']}" style="text-decoration:none"/></li>				
+					</ul>
+				</h:form><br/>
+				<p>#{messages['artaround.ArtaroundEvents']}:</p>
+				<h:form>
+					<ul>
+						<li><h:commandLink  value="#{messages['artaround.artworks.showAll']}" style="text-decoration:none"/></li>
+						<li><h:commandLink  value="#{messages['artaround.artworks.yourFriends']}" style="text-decoration:none"/></li>				
+					</ul>
+				</h:form>
+			</div>		
+		</div>	
+</ui:composition>

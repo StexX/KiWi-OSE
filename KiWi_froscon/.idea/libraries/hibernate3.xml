@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="hibernate3">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/asm.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

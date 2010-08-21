@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/classes
+END
+messages_fr.properties
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/classes/messages_fr.properties
+END
+seam.properties
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/classes/seam.properties
+END
+messages_it.properties
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/classes/messages_it.properties
+END
+MYSQL.ds.xml
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/classes/MYSQL.ds.xml
+END
+messages_en.properties
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/classes/messages_en.properties
+END
+default.ds.xml
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/classes/default.ds.xml
+END
+import.sql
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/classes/import.sql
+END
+HYPERDRIVE.ds.xml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/classes/HYPERDRIVE.ds.xml
+END
+messages_bg.properties
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/classes/messages_bg.properties
+END
+components.properties
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/classes/components.properties
+END
+default.application.xml
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/classes/default.application.xml
+END
+POSTGRESS.ds.xml
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/classes/POSTGRESS.ds.xml
+END
+messages_de.properties
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/classes/messages_de.properties
+END
+security.drl
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/classes/security.drl
+END
+messages_tr.properties
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/classes/messages_tr.properties
+END
+KiWi-destinations-service.xml
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/classes/KiWi-destinations-service.xml
+END
+POSTGRESS.persisntece.xml
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/classes/POSTGRESS.persisntece.xml
+END
+HYPERDRIVE.persisntece.xml
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/classes/HYPERDRIVE.persisntece.xml
+END
+default.persisntece.xml
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/classes/default.persisntece.xml
+END
+MYSQL.persisntece.xml
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/classes/MYSQL.persisntece.xml
+END

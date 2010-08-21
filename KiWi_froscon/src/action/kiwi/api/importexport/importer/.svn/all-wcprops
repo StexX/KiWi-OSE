@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/importexport/importer
+END
+RDFImporterRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/importexport/importer/RDFImporterRemote.java
+END
+ImporterLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/importexport/importer/ImporterLocal.java
+END
+ImporterRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/importexport/importer/ImporterRemote.java
+END
+RDFImporter.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/importexport/importer/RDFImporter.java
+END
+RDFImporterLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/importexport/importer/RDFImporterLocal.java
+END
+Importer.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/importexport/importer/Importer.java
+END

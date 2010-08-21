@@ -1,0 +1,246 @@
+<!--
+	Copyright © Rolf Sint, Michael Schneider, Christian Osterrieder, 2010
+ */
+ -->
+
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                             	
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+			 	xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                template="../../layout/template-2col.xhtml">		    		
+
+	<ui:define name="breadcrumps">
+		<ul>
+			<li class="first">				 			
+				<s:link view="/artaround/home.seam" 
+					value="#{messages['artaround.breadcrumps.home']}"/>
+			</li>
+			<li>				 			
+				<s:link view="/artaround/pages/profil/meinProfil.seam" 
+					value="#{messages['artaround.breadcrumps.myPage']}"/>
+			</li>
+			<li>				 			
+				<s:link view="/artaround/pages/profil/neuesKunstwerk.seam" 
+					value="neues Kunstwerk"/>
+			</li>		
+		</ul>
+	</ui:define>
+	
+	<ui:define name="navigation">
+	    
+	<script>
+
+	// execute your scripts when the DOM is ready. this is a good habit
+	jQuery(function() {
+	
+		// expose the form when it's clicked or cursor is focused
+		jQuery("form.expose").bind("click keydown", function() {
+	
+			jQuery(this).expose({
+	
+				// custom mask settings with CSS
+				maskId: 'mask',
+	
+				// when exposing is done, change form's background color
+				onLoad: function() {
+					this.getExposed().css({backgroundColor: '#ddd'});
+				},
+	
+				// when "unexposed", return to original background color
+				onClose: function() {
+					this.getExposed().css({backgroundColor: null});
+					window.location.reload(); 
+				},
+	
+				api: true
+	
+			}).load();
+		});
+	});
+	</script>	
+	<style>		
+		
+		#cover a {
+			color:#EB6D0E;
+		}
+		
+		h3 {
+			font-size:16px;
+			color:#456;
+			font-weight:normal;
+			text-align: left;
+		}
+		
+		h4 {
+			font-size:14px;
+			color:#456;
+			font-weight:bold;
+			text-align: left;
+		}    
+		
+		#cover {
+			margin-left:15px;
+			margin-top:15px;
+		}
+		
+		#mask {
+			background:#ccc url(#{facesContext.externalContext.requestContextPath}/view/img/mask_gradient_1000.png) no-repeat;
+			background-position:-260px -79px;
+		}
+		
+		div.expose {
+			/*border:1px outset #aaa; */
+			background:#fff url(#{facesContext.externalContext.requestContextPath}/view/img/h300.png) repeat-x;
+			padding:10px;
+			margin:5px 0;
+			text-align:center;
+			width:300px;
+			-moz-border-radius:4px;
+		}  
+	
+	</style>	
+	 
+	</ui:define>
+	  
+		
+	<ui:define name="body">	
+	
+	<h:form styleClass="formBorderHighlight" id="newArtworkForm" name="newArtworkForm">
+		
+	<div id="cover">			
+		<table cellpadding="10px" cellspacing="10px">	
+	  		<tr>
+    			<td valign="top" width="300px"> 
+    				<fieldset class="fieldsetborder">
+						<legend>#{messages['artaround.information']}</legend>
+						<div style="background:#fff url(#{facesContext.externalContext.requestContextPath}/view/img/h300.png) repeat-x;
+							padding:10px; width:300px; -moz-border-radius:4px;">
+						<p style="margin-bottom:10px;">
+						#{messages['artaround.artworks.artworkCreation.title']}
+						</p>
+						<p style="margin-bottom:10px;">
+						#{messages['artaround.artworks.artworkCreation.step1Legend']}
+						</p>
+						<img src="#{facesContext.externalContext.requestContextPath}/view/img/li.gif"/>&#160;
+						<h4>#{messages['artaround.artworks.artworkCreation.step1']}</h4>
+						</div>
+					</fieldset>
+				</td>			  
+	 		    <td valign="top" width="350">					
+					<h:messages/>			
+		            <s:validateAll>			           	
+					   <fieldset class="fieldsetborder">
+					   <legend>#{messages['artaround.artworks.artwork']}</legend>
+					   	 <div style="background:#fff url(#{facesContext.externalContext.requestContextPath}/view/img/h300.png) repeat-x;
+							padding:10px; width:320px; -moz-border-radius:4px;">
+			               <h:panelGrid columns="2" rowClasses="prop" columnClasses="name,value">			               	
+			                  <h:outputLabel for="artWorkName">
+			                  		Titel: 
+			                  </h:outputLabel>
+				              <h:inputText id="artWorkName" 
+							  	style="width:200px;"
+								required="true" 
+							  	value = "#{artWorkBean.artWorkName}"/>				              
+ 					          <h:outputLabel for="technique">#{messages['artaround.artworks.technique']}: </h:outputLabel>
+						      <s:div id="technique" >
+							      <ul>
+									<ui:repeat value="#{techniqueAction.chosenConcepts}" var="technique">
+											<li><h:outputText value="#{technique.preferredLabel}" /></li>
+									</ui:repeat>
+								  </ul>							      
+							      <a href="#" id = "techniquex" onclick="jQuery('#technique_chooser').fadeIn('fast');">Auswahl</a>
+							  </s:div>	       					  		       				       					  
+	       					  <h:outputLabel for="artWorkLocation">
+			                  		#{messages['artaround.artworks.artworkLocation']}: 
+			                  </h:outputLabel>				              
+<!--					              <h:inputText id="artWorkLocation" -->
+<!--								  	style="width:200px;"-->
+<!--									required="true" -->
+<!--								  	value = "#{artWorkController.location}"/>-->
+	       					 <a href="#" id = "techniquex" onclick="jQuery('#map_chooser').fadeIn('fast',function(){initialize()})">Karte</a>	
+		       				 <h:outputLabel for="kunstbeschreibung">
+	       					  		#{messages['artaround.artworks.artworkDescription']}:&#160; &#160;
+							  </h:outputLabel>
+				              <h:inputTextarea style="width:200px;" rows="5" id="kunstbeschreibung" value = "#{artWorkBean.description}" />	       						 
+				            </h:panelGrid>
+				           </div>
+					   </fieldset>
+					   <br/>
+					   <fieldset class="fieldsetborder">
+					   <legend>#{messages['artaround.artworks.activatePublicAccess']}</legend>
+					     <div style="background:#fff url(#{facesContext.externalContext.requestContextPath}/view/img/h180.png) repeat-x;
+							padding:10px; width:320px; -moz-border-radius:4px;">	       						
+	       					  <h:outputLabel for="oeffentlich" style="font-weight:bold">
+							  		nicht veroeffentlichen&#160;&#160;&#160;
+							  </h:outputLabel>
+							  <h:selectBooleanCheckbox id="oeffentlich" onclick="changeShowSelling();"   value = "#{artWorkBean.publicAccess}"/>							  
+	 					 </div>
+					   </fieldset>	
+					   <br/>				   						
+					   <fieldset class="fieldsetborder">
+					   <legend>#{messages['artaround.artworks.selling']}</legend>
+					   	  <div style="background:#fff url(#{facesContext.externalContext.requestContextPath}/view/img/h180.png) repeat-x;
+							padding:10px; width:320px; -moz-border-radius:4px;">
+			               <h:panelGrid columns="2" rowClasses="prop" columnClasses="name,value">							  
+							  <h:outputLabel for="selling" id="sellingLabel">
+							  		#{messages['artaround.artworks.sellArtwork']}&#160; &#160;
+							  </h:outputLabel>
+	 						  <h:selectBooleanCheckbox  id="selling" checked="checked" value = "#{artWorkBean.sellingState}"  />								 
+							  
+							  <h:outputLabel for="price">
+							  		#{messages['artaround.price']}:
+							  </h:outputLabel>
+	 						  <h:inputText id="price" 
+							  	style="width:100px;"
+								required="false" 
+							  	value = "#{artWorkBean.price}"/>
+								
+							  <h:outputLabel for="waehrung">
+							  		#{messages['artaround.currency']}:
+							  </h:outputLabel>								
+						      <rich:comboBox defaultLabel="EUR" 
+							  	id = "waehrung" value = "#{artWorkBean.currency}" width="100px">
+						      			 <f:selectItem itemValue="USD"/>
+						      			 <f:selectItem itemValue="EUR"/>
+						      			 <f:selectItem itemValue="Alpen $"/>
+	       					  </rich:comboBox>							
+					        </h:panelGrid>  
+					      </div> 							
+						</fieldset>							
+						<br/>	
+						<h:panelGrid columns="2" rowClasses="prop" columnClasses="name,value">
+						  <h:outputLabel for="submitArtwork"></h:outputLabel>
+						  <h:commandButton id="submitArtwork" value="#{messages['artaround.forward']}" action = "#{artWorkAction.next()}"/> 						  
+			        </h:panelGrid>						
+		            </s:validateAll>			     
+				</td> 
+			</tr>	  
+		</table> 
+	  </div> <!-- end cover -->	
+  
+ 	  <!-- Popup Windows -->  
+	  <div id="map_chooser" style="display:none" class="popup_600">
+		<ui:include src="../popup/map_chooser.xhtml" />	
+	  </div>		     
+	   
+
+	
+	</h:form>
+	
+	<div id="technique_chooser" style="display:none" class="popup_600">
+		<ui:include src="../popup/technique_chooser.xhtml" />	
+	 </div>
+	  <!-- end popup Windows -->
+  
+  </ui:define>
+
+</ui:composition> 

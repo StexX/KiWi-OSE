@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/ceq.resources/stored_procedures/h2
+END
+createAging.sql
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/ceq.resources/stored_procedures/h2/createAging.sql
+END
+readMe.txt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/ceq.resources/stored_procedures/h2/readMe.txt
+END
+annotateAging.sql
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/ceq.resources/stored_procedures/h2/annotateAging.sql
+END
+visitAging.sql
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/ceq.resources/stored_procedures/h2/visitAging.sql
+END
+deleteAging.sql
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/ceq.resources/stored_procedures/h2/deleteAging.sql
+END
+addtypeAging.sql
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/ceq.resources/stored_procedures/h2/addtypeAging.sql
+END
+editAging.sql
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/ceq.resources/stored_procedures/h2/editAging.sql
+END
+generalAging.sql
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/ceq.resources/stored_procedures/h2/generalAging.sql
+END
+calculate_equityfor.sql
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/ceq.resources/stored_procedures/h2/calculate_equityfor.sql
+END
+calculate_equityfornow.sql
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/ceq.resources/stored_procedures/h2/calculate_equityfornow.sql
+END
+tweetAging.sql
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/ceq.resources/stored_procedures/h2/tweetAging.sql
+END
+commentAging.sql
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/ceq.resources/stored_procedures/h2/commentAging.sql
+END
+shareAging.sql
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/ceq.resources/stored_procedures/h2/shareAging.sql
+END
+select_equity_times.sql
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/ceq.resources/stored_procedures/h2/select_equity_times.sql
+END

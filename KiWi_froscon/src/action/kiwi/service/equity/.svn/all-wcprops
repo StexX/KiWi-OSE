@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/equity
+END
+EquityServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/equity/EquityServiceImpl.java
+END
+StoringProcedureProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/equity/StoringProcedureProcessor.java
+END
+EquityChartService.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/equity/EquityChartService.java
+END
+H2ProcedureProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/equity/H2ProcedureProcessor.java
+END
+StoredProcedureLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/equity/StoredProcedureLoader.java
+END
+PostgresqlProcedureProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/equity/PostgresqlProcedureProcessor.java
+END
+StoringProcedureProcessorException.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/equity/StoringProcedureProcessorException.java
+END

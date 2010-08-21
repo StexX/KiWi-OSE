@@ -1,0 +1,47 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+   	  xmlns:rich="http://richfaces.org/rich"
+ 	  xmlns:a4j="http://richfaces.org/a4j"
+ 	  xmlns:c="http://java.sun.com/jsp/jstl/core"
+ 	  xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+      >
+
+<body>
+	
+
+    
+
+	    
+
+			<h:form>
+		
+	
+		             
+		               	
+		
+							  
+										
+						<rich:fileUpload 
+									fileUploadListener="#{profileUploadAction.listener}"
+									immediateUpload="true"
+									maxFilesQuantity="3"
+									listHeight="50pt"
+									listWidth="auto"
+									allowFlash="true"
+									acceptedTypes="jpg, gif, png"> 
+									
+											        	
+										</rich:fileUpload>
+						
+	
+		            
+		      
+		        
+		     </h:form>
+	
+</body>
+</html>
+

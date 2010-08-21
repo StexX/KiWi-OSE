@@ -1,0 +1,240 @@
+#pointHeader {
+	width:698px;
+	height:30px;
+	background-color:white;
+	border-left: 
+	font-family:Helvetica,Helv;
+	-moz-border-radius-topleft: 5px;
+	border: 1px solid #666;
+	border-bottom:none;
+	padding-top:2px;
+	padding-left:2px;
+}
+
+#pointHeaderTitle {
+	width:100%;
+	float:left;
+	overflow: hidden;
+	height:31px;
+}
+
+#pointHeaderTitleText {
+	font-size: 18px;
+	font-weight: bold;
+	vertical-align: super;
+	color: black;
+}
+
+.pointDate {
+	text-align: right;
+	height:10px;
+	font-size: 12px;
+}
+
+.titleFix {
+	position:absolute;
+	left:5px;
+	top:5px;
+	font-weight: bold;
+	font-size: 18px;
+	width:640px;
+}
+
+.pointHeaderTitleTextDivClass {
+	position:absolute;
+	top:5px;
+	left:35px;
+	font-size: 18px;
+	font-weight: bold;
+	color: black;
+	width:540px;
+}
+
+/*title*/
+.titleInput {
+	width:640px;
+	font-size: 18px;
+	font-weight: bold;
+	padding:0;
+}
+
+#pointHeaderCloser {
+	position:absolute;
+	width:35px;
+	height:35px;
+	background-image: url("../img/point/close.png");
+	margin-left:682px;
+	margin-top:-20px;
+	cursor: pointer;
+}
+
+#pointContentBackground {
+	-moz-box-shadow: 0 15px 90px 5px #000000;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-bottomright: 5px;
+	font-family:Helvetica,Helv;
+	line-height: 1.2;
+}
+
+/*********** TABS ***************/
+/* everything is constructed with a single background image */
+/* root element for tabs  */
+ul.tabs { 
+	list-style:none; 
+	margin:0;
+	margin-left:10px;
+	margin-right:10px; 
+	padding:0;
+	padding-top:10px;
+	height:30px;
+	border-bottom:1px solid #aaa;
+}
+
+/* single tab */
+ul.tabs li { 
+	float:left;	 
+	text-indent:0;
+	padding:0;
+	margin:0 !important;
+	list-style-image:none !important; 
+}
+
+/* link inside the tab. uses a background image */
+ul.tabs a { 
+	background: url(../img/point/tabs.png) no-repeat -652px 0;
+	font-size:11px;
+	display:block;
+	height: 30px;  
+	line-height:30px;
+	width: 111px;
+	text-align:center;	
+	text-decoration:none;
+	color:#000;
+	padding:0px;
+	margin:0px;	
+	position:relative;
+	top:1px;
+	font-size: 14px;
+}
+
+ul.tabs a:active {
+	outline:none;		
+}
+
+/* when mouse enters the tab move the background image */
+ul.tabs a:hover {
+	background-position: -652px -31px;	
+	color:#fff;	
+}
+
+/* active tab uses a class name "current". it's highlight is also done by moving the background image. */
+ul.tabs a.current, ul.tabs a.current:hover, ul.tabs li.current a {
+	background-position: -652px -62px;		
+	cursor:default !important; 
+	color:#000 !important;
+	font-weight: bold;
+}
+
+/* Different widths for tabs: use a class name: w1, w2, w3 or w2 */
+
+
+/* width 1 */
+ul.tabs a.w1 			{ background-position: -519px 0; width:134px; }
+ul.tabs a.w1:hover 	{ background-position: -519px -31px; }
+ul.tabs a.w1.current { background-position: -519px -62px; }
+
+/* width 2 */
+ul.tabs a.w2 			{ background-position: -366px -0px; width:154px; }
+ul.tabs a.w2:hover 	{ background-position: -366px -31px; }
+ul.tabs a.w2.current { background-position: -366px -62px; }
+
+
+/* width 3 */
+ul.tabs a.w3 			{ background-position: -193px -0px; width:174px; }
+ul.tabs a.w3:hover 	{ background-position: -193px -31px; }
+ul.tabs a.w3.current { background-position: -193px -62px; }
+
+/* width 4 */
+ul.tabs a.w4 			{ background-position: -0px -0px; width:194px; }
+ul.tabs a.w4:hover 	{ background-position: -0px -31px; }
+ul.tabs a.w4.current { background-position: -0px -62px; }
+
+
+/* initially all panes are hidden */ 
+div.panes div.pane {
+	display:none;		
+}
+
+div.panes {
+	height:380px;
+	margin-left:10px;
+	margin-right:10px;
+	padding:5px;
+	border-left: 1px solid #aaa;
+	text-align: justify;
+	font-size: 16px;
+}
+
+/**message Panel **/
+.panel {
+	width: 400px;
+	background-color: white;
+	-moz-box-shadow: 0 15px 90px 5px #000000;
+	-moz-border-radius-bottomright: 5px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-topleft: 5px;
+	position: absolute;
+	top:10px;
+	left:50%;
+	margin-left:-200px;
+	display:none;
+	z-index: 200;
+	padding:5px;
+	border:1px solid #666;
+	background-color: #eee;
+}
+
+.messagePanelContent {
+	width: 100%;
+}
+
+.messagePanelButtons {
+	margin-bottom: 10px;
+	margin-top: 40px;
+}
+
+.messagePanelButtons a {
+	-moz-border-radius-bottomright: 5px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-topleft: 5px;
+	background-color: black;
+	opacity:0.7;
+	color:white;
+	padding:5px;
+	cursor: pointer;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+/*Buttons*/
+ul.contextButtons {
+	text-align: right;
+	list-style: none;
+	padding:0;
+	margin:0;
+}
+
+ul.contextButtons li {
+	display: inline;
+	margin-left:10px;
+}
+
+ul.contextButtons li a img {
+	border:none;
+	padding:0;
+	width: 30px;
+	height: 30px;
+}

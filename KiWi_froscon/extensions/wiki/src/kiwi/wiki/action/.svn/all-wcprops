@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/wiki/src/kiwi/wiki/action
+END
+LocationFacade.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/wiki/src/kiwi/wiki/action/LocationFacade.java
+END
+TaggingAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/wiki/src/kiwi/wiki/action/TaggingAction.java
+END
+QueryWizardAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/wiki/src/kiwi/wiki/action/QueryWizardAction.java
+END
+FragmentAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/wiki/src/kiwi/wiki/action/FragmentAction.java
+END
+MetadataAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/wiki/src/kiwi/wiki/action/MetadataAction.java
+END
+PermissionAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/wiki/src/kiwi/wiki/action/PermissionAction.java
+END
+EditorAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/wiki/src/kiwi/wiki/action/EditorAction.java
+END
+AnnotateAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/wiki/src/kiwi/wiki/action/AnnotateAction.java
+END
+ContentItemAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/wiki/src/kiwi/wiki/action/ContentItemAction.java
+END
+KiwilinkAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/wiki/src/kiwi/wiki/action/KiwilinkAction.java
+END
+ViewAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/wiki/src/kiwi/wiki/action/ViewAction.java
+END
+CommentAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/wiki/src/kiwi/wiki/action/CommentAction.java
+END
+BarcodeExport.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/wiki/src/kiwi/wiki/action/BarcodeExport.java
+END
+KiwirdfaAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/wiki/src/kiwi/wiki/action/KiwirdfaAction.java
+END
+TagCloudAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/wiki/src/kiwi/wiki/action/TagCloudAction.java
+END

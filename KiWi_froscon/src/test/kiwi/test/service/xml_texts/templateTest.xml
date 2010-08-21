@@ -1,0 +1,17 @@
+<div>
+    <p>
+        <span property="uri::http://xmlns.com/foaf/0.1/name">Jamie Zawinski</span>
+        has the email address 
+        <span property="uri::http://xmlns.com/foaf/0.1/mbox">jwz@jwz.org</span>.
+        and the gender
+        <span property="uri::http://xmlns.com/foaf/0.1/gender">male</span>.
+    </p>
+    <p>
+        <strong>Friends:</strong>
+        <br/>
+        <div kiwi:component="uri::http://localhost/TrentReznor" 
+              rel="uri::http://xmlns.com/foaf/0.1/knows" xmlns:kiwi="http://www.kiwi-project.eu/kiwi/html/">
+        </div>
+        <br/>
+    </p>
+</div>

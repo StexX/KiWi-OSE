@@ -1,0 +1,291 @@
+body {
+  font-size: 12px;
+  padding: 2px;
+}
+
+a:active, a:link, a:visited {
+  color: #0D5798;
+}
+a:hover {
+  color: #8CAFCD;
+}
+
+input, textarea {
+  border: 1px solid #BBBBBB;
+  font-size: 10px;
+  background: #F0F8FF;
+  color: black;
+}
+
+input[type='submit'], input[type='button'] {
+  background: #FFCC00;
+  color: black;
+  margin: 5px;
+  border-color: black;
+}
+
+.tableControl, .actionButtons {
+  width: 100%;
+}
+
+.tableControl a {
+  padding-left: 10px;
+}
+
+.tableControl {
+  text-align: right;
+}
+
+.footer {
+  text-align: center;
+  font-size: 10px;
+  background: #ffcc00;
+  color: black;
+}
+
+.rich-table {
+  width:100%;
+}
+
+h1 {
+  font-family: Arial,sans-serif;
+  color: #578BB8;
+  font-size: 1.6em;
+  margin-top: 0;
+}
+
+body {
+  margin: 0px;
+  font-family: Arial,sans-serif;
+  color: #616161;
+}
+
+.body {
+  padding: 30px;
+}
+
+.columnHeader:hover
+{
+  color: #FF6600;
+}
+
+.message {
+  border: 1px solid #FFCC00;
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: #F0F8FF;
+  font-size: 12px;
+}
+
+.name {
+  vertical-align: top;
+  font-weight: bold;
+  width: 115px;
+  float: left;
+  padding: 5px;
+  margin-top: 3px;
+  clear: left;
+}
+.value {
+  float: left;
+  padding: 5px;
+}
+
+.error {
+  float: left;
+  padding: 5px;
+}
+.errors {
+  color: red;
+  vertical-align: middle;
+}
+img.errors {
+  padding-right: 5px;
+}
+.errors input {
+  border: 1px solid red;
+}
+.errors textarea {
+  border: 1px solid red;
+}
+
+.required {
+  color: red;
+  padding-left: 2px;
+}
+
+.rich-stglpanel-body {
+  overflow: auto;
+}
+
+.dr-toolbar-int {
+	color: black;
+}
+
+/* 3-column layout */
+#columnLayout {
+	
+}
+
+#toolbar {
+	background: #ffcc00;
+	border: 0;
+}
+
+#loginLinkx {
+	color: black;
+}
+
+#signUp {
+	color: black;
+}
+
+#abc\:logo {
+        display: block;
+        width: 136px;
+        height: 100px;
+        background: transparent url(../img/logica.png) 0 0 no-repeat;
+}
+
+
+#form_left\:panel_left_body {
+	padding-top: -20px;
+	padding: 0px;
+	text-align: centre;
+}
+
+#form_left\:panel_left_data {
+	width: 100%;
+	text-align: left;
+}
+
+
+#form_centre\:panel_centre_body {
+	padding: 0px;
+	height: 100%;
+}
+
+#form_centre\:panel_centre_data {
+	width: 100%;
+}
+
+#form_right\:panel_right_body {
+	padding: 0px;
+	padding-top: 19px;
+}
+
+#form_right\:panel_right_data {
+	width: 100%;
+}
+
+#widget-main {
+	height: 100%;
+}
+
+.border {
+	width: 150px;
+	text-align: left;
+	padding: 0;
+}
+
+.centre {
+	width: auto;
+	text-align: left;
+	padding: 0;
+}
+.hidden {
+	display: none;
+}
+
+.dr-pnl-b {
+	padding: 5px;
+}
+
+/* Widget Content Layout */
+ul {
+	line-height: 1.5em;
+	list-style-type: square;
+	margin: .3em 0 0 1.5em;
+	padding: 0;
+	list-style-image: url(../img/bullet.gif);
+}
+
+ol {
+	line-height: 1.5em;
+	margin: .3em 0 0 3.2em;
+	padding: 0;
+	list-style-image: none;
+}
+
+li {
+	margin-bottom: .1em;
+}
+
+a {
+	text-decoration: none;
+	color: #002bb8;
+	background: none;
+}
+
+a:visited {
+	color: #5a3696;
+}
+
+a:active {
+	color: #faa700;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+
+/* Wiki Text Layout */
+h1,h2,h3,h4,h5,h6 {
+        color: black;
+        background: none;
+        font-weight: normal;
+        margin: 0;
+        padding-top: .5em;
+        padding-bottom: .17em;
+        border-bottom: 1px solid #aaa;
+}
+
+h1 {
+        font-size: 188%;
+}
+
+h2,h3.heading-1 {
+        font-size: 150%;
+}
+
+h3,h4,h5,h6 {
+        border-bottom: none;
+        font-weight: bold;
+}
+
+/* search */
+input.searchRemoveTag,input.searchAddTag {
+	background-color: #ccc;
+	margin: 2px;
+	border:none;
+}
+
+input.searchRemoveTag {
+	background-color: #ccc;
+	color:black;
+}
+
+input.searchAddTag {
+	background-color: green;
+}
+
+.searchResults {
+	vertical-align: top;	
+}
+
+.searchInput {
+	width: 150px;
+	vertical-align: top;
+}

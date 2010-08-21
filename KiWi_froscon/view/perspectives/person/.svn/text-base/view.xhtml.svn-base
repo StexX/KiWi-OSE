@@ -1,0 +1,39 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+    xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:a="http://richfaces.org/a4j">
+	    <h1>
+	    	#{contentItem.title}
+	    	<span style="font-size:65%;">(<kiwi:watcher contentItem="#{contentItem}" />)</span>
+	    </h1>
+        <span>
+            <h:outputText value="#{messages['wiki.createdon']} "/><h:outputText value="#{contentItem.created}"><s:convertDateTime pattern="dd/MM/yyyy"/></h:outputText><h:outputText value=" - "/> 
+            <h:outputText value="#{messages['wiki.updateon']} "/><h:outputText value="#{contentItem.modified}"><s:convertDateTime pattern="dd/MM/yyyy"/></h:outputText><h:outputText value=" "/> 
+            <h:outputText value="#{messages['wiki.by']} "/><kiwi:link resource="#{contentItem.author.resource}" value=" #{contentItem.author.firstName} #{contentItem.author.lastName}"/>
+        </span>
+        <br />
+
+		<kiwi:tagListEditor label="Interests: " 
+			tagItems="#{kiwi.wiki.tagCloudAction.tagCloud}" />
+			
+	    
+	    <s:div>
+	    	<!-- TODO: we need the user here somehow and pass #{user.profilePhoto} -->
+			<kiwi:mediaContent contentItem="#{contentItem.author.profilePhoto}" 
+					edit="false"
+					style="float:left;padding: 3px; margin:4px;border:solid 1px #ccc;">
+				<ui:define name="nomedia">
+					<h:outputText value="No image" />
+				</ui:define>
+				<s:transformImageSize 
+					maintainRatio="true"
+					width="180"/>
+			</kiwi:mediaContent>
+	        <f:verbatim>#{viewAction.currentContentHtml}</f:verbatim>
+	    </s:div>
+</ui:composition>

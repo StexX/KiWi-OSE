@@ -1,0 +1,120 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a="http://richfaces.org/a4j"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+	template="/layout/template-2col.xhtml">
+
+	<ui:define name="header">
+		<a:loadScript src="resource://jquery.js" />
+		<link href="stylesheet/dashboard.css" rel="stylesheet" type="text/css" />
+
+		<ui:include src="/wiki/dialogs/mediaupload.xhtml" />
+	</ui:define>
+
+	<ui:define name="navigation">
+		<ui:include src="layout/navigation.xhtml" />
+	</ui:define>
+
+	<ui:define name="body">
+        <h:form id="formUserProfileEdit">
+        		
+            <h3>General</h3>
+            <div id="profileGeneral" class="profileSection">
+                <h:panelGrid columns="2" columnClasses="label,value">
+                    <h:outputText value="Name: "/>
+                    <h:panelGroup>
+                           <rich:inplaceInput value="#{kiwi.dashboard.profileAction.firstName}" defaultLabel="click to enter your first name" showControls="true"/>
+                           <h:outputText value=" "/>
+                           <rich:inplaceInput value="#{kiwi.dashboard.profileAction.lastName}" defaultLabel="click to enter your last name" showControls="true"/>
+                    </h:panelGroup>
+                
+                    <h:outputText value="Gender: "/>
+                    <rich:inplaceSelect value="#{kiwi.dashboard.profileAction.gender}" 
+                        defaultLabel="select ..." 
+                        selectWidth="200"
+                        showControls="true">
+				        <f:selectItem itemValue="male" itemLabel="male" />
+				        <f:selectItem itemValue="female" itemLabel="female" />
+                    </rich:inplaceSelect>
+                    
+                    <h:outputText value="Birthday: "/>
+                    <rich:calendar value="#{kiwi.dashboard.profileAction.birthday}"
+                        locale="#{locale}" popup="true" showApplyButton="false" 
+                        datePattern="dd. MMM. yyyy"
+                        cellWidth="24px" cellHeight="22px" style="width:200px"/>
+                    
+                    <h:outputText value="Street: "/>
+                    <!--  todo: should be autocomplete... -->
+                    <rich:inplaceInput value="#{kiwi.dashboard.profileAction.street}" 
+                        defaultLabel="street name/number ..." 
+                        inputWidth="200"
+                        showControls="true"/>
+                        
+                    <h:outputText value="City: "/>
+                    <!--  todo: should be autocomplete... -->
+                    <rich:inplaceInput value="#{kiwi.dashboard.profileAction.cityName}" 
+                        defaultLabel="city name ..." 
+                        inputWidth="200"
+                        showControls="true"/>
+                </h:panelGrid>
+            </div>
+
+            <h3>Personal</h3>
+            <div id="profileDescription" class="profileSection">
+                <h:panelGrid columns="1">
+                    <h:outputText value="Interests:"/>
+                    <rich:inplaceInput value="#{kiwi.dashboard.profileAction.interests}"
+                        defaultLabel="enter interests ..."
+                        inputWidth="400"
+                        showControls="true"
+                    />
+                    
+                    <h:outputText value="About Me:"/>
+                    <rich:editor id="profileDescriptionEditor"
+                                 required = "false"
+                                 width    = "500"
+                                 height   = "60"
+                                 theme    = "advanced"
+                                 configuration = "tinymce-small"
+                                 plugins  = "safari,pagebreak,style,layer,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,visualchars,nonbreaking,xhtmlxtras"
+                                 value    = "#{kiwi.dashboard.profileAction.description}">
+                    </rich:editor>
+                    
+                
+                </h:panelGrid>
+            </div>
+            
+            <h3>Contact</h3>
+            <div id="profileContact" class="profileSection">
+                <h:panelGrid columns="2" columnClasses="label,value">
+                    <h:outputText value="E-Mail: "/>
+                    <rich:inplaceInput value="#{kiwi.dashboard.profileAction.email}" defaultLabel="email address" showControls="true"/>
+
+                    <h:outputText value="Mobile: "/>
+                    <rich:inplaceInput value="#{kiwi.dashboard.profileAction.mobile}" defaultLabel="mobile phone number" showControls="true"/>
+
+                    <h:outputText value="Phone: "/>
+                    <rich:inplaceInput value="#{kiwi.dashboard.profileAction.phone}" defaultLabel="landline phone number" showControls="true"/>
+
+                    <h:outputText value="Skype: "/>
+                    <rich:inplaceInput value="#{kiwi.dashboard.profileAction.skypeAccount}" defaultLabel="Skype ID" showControls="true"/>
+
+                    <h:outputText value="Facebook: "/>
+                    <rich:inplaceInput value="#{kiwi.dashboard.profileAction.facebookAccount}" defaultLabel="Facebook ID" showControls="true"/>
+
+                    <h:outputText value="Twitter: "/>
+                    <rich:inplaceInput value="#{kiwi.dashboard.profileAction.twitterAccount}" defaultLabel="Twitter ID" showControls="true"/>
+
+                </h:panelGrid>
+            </div>
+		    <h:commandButton value="#{messages['profile.save']}" action="#{kiwi.dashboard.profileAction.save()}" />
+        </h:form>
+	</ui:define>
+</ui:composition>

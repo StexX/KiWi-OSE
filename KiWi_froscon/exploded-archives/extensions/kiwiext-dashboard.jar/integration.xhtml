@@ -1,0 +1,219 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+                xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                template="/layout/template-2col.xhtml">
+
+
+    <ui:define name="header">
+       <a:loadScript src="resource://jquery.js"/>
+       
+       <link href="stylesheet/dashboard.css" rel="stylesheet" type="text/css" />
+    
+    </ui:define>
+
+    <ui:define name="navigation">
+        <ui:include src="layout/navigation.xhtml" />
+    </ui:define>
+
+           
+    <ui:define name="body">
+        <h2>My Subscriptions</h2>
+        
+        <script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php/#{locale.language}_#{locale.country}" type="text/javascript"></script>
+
+        <rich:messages styleClass="message"/>
+        
+        <p>
+            In this part of the dashboard, you can integrate your KiWi account with your other
+            social software applications on the Web. Currently, you can connect your Facebook and Twitter accounts
+            to KiWi, as well as subscribe to the RSS feeds of your blogs.
+        </p>
+        
+        <h3>Existing subscriptions</h3>
+        
+        
+        <h:form id="schedulesForm">
+            <rich:dataTable id="taskList"
+                onRowMouseOver="this.style.backgroundColor='#F1F1F1'"
+                onRowMouseOut="this.style.backgroundColor='#{a4jSkin.tableBackgroundColor}'"
+                cellpadding="0" cellspacing="0" 
+                width="700" border="0" var="task" value="#{kiwi.dashboard.integrationAction.tasks}">
+                   
+                <f:facet name="header">
+                    <rich:columnGroup>
+                        <rich:column>
+                            <h:outputText value="Type" />
+                        </rich:column>
+                        <rich:column>
+                            <h:outputText value="Description" />
+                        </rich:column>
+                        <rich:column>
+                            <h:outputText value="URL" />
+                        </rich:column>
+                        <rich:column>
+                            <h:outputText value="Last Executed" />
+                        </rich:column>
+                        <rich:column>
+                            <h:outputText value="Interval" />
+                        </rich:column>
+                        <rich:column>
+                            <h:outputText value="Action" />
+                        </rich:column>
+                    </rich:columnGroup>
+                </f:facet>
+                
+                <rich:column>
+                    <img src="#{facesContext.externalContext.requestContextPath}#{kiwi.dashboard.integrationAction.getTaskIcon(task)}"  />
+                 </rich:column>
+                <rich:column>
+                    <h:outputText value="#{task.description}"/>
+                </rich:column>
+                <rich:column>
+                    <h:outputText value="#{kiwi.dashboard.integrationAction.formatUrl(task.url)}"/>
+                </rich:column>
+                <rich:column>
+                    <h:outputText value="#{task.lastExecuted}">
+                        <s:convertDateTime pattern="dd/MM/yyyy HH:mm"/>
+                    </h:outputText>
+                </rich:column>
+                <rich:column>
+                    <h:outputText value="#{task.interval.time / 1000 / 60}">
+                        <f:convertNumber integerOnly="true" />
+                    </h:outputText>
+                    <h:outputText value=" min"/>
+                </rich:column>
+                 <rich:column>
+                    <a:commandButton action="#{kiwi.dashboard.integrationAction.removeTask(task)}" value="Remove" reRender="taskList"/>
+                </rich:column>
+            </rich:dataTable>
+        </h:form>
+        
+        
+        
+       <h3>Add new subscription</h3> 
+        
+       <h:form id="subscriptionForm">
+		    <rich:tabPanel switchType="client">
+		        <rich:tab label="Blog">
+                   <table>
+                     <tr>
+	                   <td>
+	                       <img src="#{facesContext.externalContext.requestContextPath}/img/rss_logo.png" style="margin-top: 5px; margin-right: 10px;" />
+                       </td>		
+                       <td>	           
+                        <div class="integrationLoginBox">
+			               <h3>Subscribe to Blog / RSS Feed</h3>
+			               <h:panelGrid columns="2">
+			                    <h:outputText value="RSS Feed URL: "/>
+			                    <h:inputText value="#{kiwi.dashboard.integrationAction.blogRSSUrl}" size="60" />
+			               </h:panelGrid>
+			               <a:commandButton action="#{kiwi.dashboard.integrationAction.addBlogSubscription()}" value="Subscribe to Feed"/>
+			            </div>
+			           </td>
+		             </tr>
+		           </table>
+		        </rich:tab>
+		        <rich:tab label="Facebook">
+                    <table>
+                     <tr>
+                       <td>
+	                       <img src="#{facesContext.externalContext.requestContextPath}/img/facebook-logo.png" style="margin-top: 5px; margin-right: 10px;" />
+                       </td>        
+                       <td>            
+			           <div class="integrationLoginBox">
+			               <a:jsFunction name="addFacebookSubscription" action="#{kiwi.dashboard.integrationAction.addFacebookSubscription()}"/>
+			               <script type="text/javascript">
+			                    FB.init("190a903512661358a6e73b787aaa2a85", "fbconnect/xd_receiver.htm");
+			                    var permissionCallback = function (permissions) {
+			                        if(permissions) {
+			                            addFacebookSubscription();
+			                        }
+			                    }
+			               </script>
+			               <h3>Subscribe to Facebook Status Updates</h3>
+			               <a:commandButton onclick="FB.Connect.showPermissionDialog('read_stream',permissionCallback);" value="Subscribe to Feed"/>
+			           </div>
+                       </td>
+                     </tr>
+                   </table>
+		        </rich:tab>
+		        <rich:tab label="Twitter">
+                   <table>
+                     <tr>
+                       <td>
+	                       <img src="#{facesContext.externalContext.requestContextPath}/img/twitter-logo.png" style="margin-top: 5px; margin-right: 10px;" />
+                       </td>        
+                       <td>            
+			           <div class="integrationLoginBox">
+			               <h3>Subscribe to Twitter Tweets</h3>
+			               <h:panelGrid columns="2">
+			                    <h:outputText value="Twitter Login: "/>
+			                    <h:inputText value="#{kiwi.dashboard.integrationAction.twitterLogin}" size="10" />
+			                    <h:outputText value="Twitter Password: "/>
+			                    <h:inputSecret value="#{kiwi.dashboard.integrationAction.twitterPassword}" size="10" />
+			               </h:panelGrid>
+			               <a:commandButton action="#{kiwi.dashboard.integrationAction.addTwitterSubscription()}" value="Subscribe to Feed"/>
+			           </div>
+                       </td>
+                     </tr>
+                   </table>
+		        </rich:tab>
+		    </rich:tabPanel>
+
+       </h:form>
+            
+            <!-- 
+         <a:outputPanel id="feedList" layout="block">
+        
+            <h:form id="addContactForm">
+                <div id="addContact">
+                    <h4>Add a Friend</h4>
+                    <h:panelGrid columns="2">
+	                    <rich:comboBox defaultLabel="Enter user name" value="#{kiwi.dashboard.contactsAction.selectedUser}" style="width: 200px;">
+	                        <s:selectItems value="#{kiwi.dashboard.contactsAction.allUsers}" var="contact" label="#{contact}"/>
+	                     </rich:comboBox>
+	                    <a:commandButton action="#{kiwi.dashboard.contactsAction.addFriend}" value="Add" reRender="contactList"/>
+                    </h:panelGrid>
+                </div>
+            </h:form>
+        
+            <ui:repeat var="contact" value="#{kiwi.dashboard.contactsAction.friends}">
+            
+                <div class="contact">
+                    <div class="contactPhoto">
+                        <kiwi:mediaContent contentItem="#{contact.profilePhoto}">
+							<ui:define name="nomedia">
+								<img src="#{facesContext.externalContext.requestContextPath}/img/professor.png" />
+							</ui:define>
+                        	<s:transformImageSize width="180" maintainRatio="true" />
+                        </kiwi:mediaContent>
+                    </div>
+                    
+                    <div class="contactContent">
+                        <h:outputText value="#{contact.firstName} #{contact.lastName}" />
+                    </div>
+                    
+                    <div class="contactActions">
+                        <h:form>
+                            <a:commandLink action="#{kiwi.dashboard.contactsAction.removeFriend(contact)}" value="Remove" reRender="contactList"/>
+                        </h:form>
+                    </div>
+                    
+                    <div style="clear: left;"/>
+                </div>
+            
+            </ui:repeat>
+        </a:outputPanel>
+        -->
+    </ui:define>       
+                
+ </ui:composition>

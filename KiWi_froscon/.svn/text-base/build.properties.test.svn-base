@@ -1,0 +1,18 @@
+# WARNING: This is a generated file. Do not edit it but use the Ant target 'local-settings' instead
+
+kiwi.version = 0.7
+
+jboss.home = /tmp/jboss-4.2.3.GA
+jboss.version = 4.2.3
+solr.home = /tmp/kiwidev/solr
+gate.home = /tmp/kiwidev/gate
+
+facebook.appid=142094553610
+facebook.key=190a903512661358a6e73b787aaa2a85
+facebook.secret=928be2b9d43f58a958f7f010354ac229
+
+
+database=postgresql
+
+#jboss.version=5.0.0.GA
+#jboss.version=4.2.3

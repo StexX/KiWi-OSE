@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+   	  xmlns:rich="http://richfaces.org/rich"
+ 	  xmlns:a4j="http://richfaces.org/a4j"
+ 	  xmlns:c="http://java.sun.com/jsp/jstl/core"
+ 	  xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+      >
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>#{messages['artaround.site.title']}</title>
+	<link href="#{facesContext.externalContext.requestContextPath}/artaround/stylesheet/artaround.css" rel="stylesheet" type="text/css" />
+	<!--[if IE 6]>
+		<link href="#{facesContext.externalContext.requestContextPath}/artaround/stylesheet/patches/ie6patch.css" rel="stylesheet" type="text/css" />
+	<![endif]-->
+	<!--[if gt IE 7]>
+		<link href="#{facesContext.externalContext.requestContextPath}/artaround/stylesheet/patches/ie7patch.css" rel="stylesheet" type="text/css" />
+	<![endif]-->
+    <link rel="shortcut icon" href="#{facesContext.externalContext.requestContextPath}/artaround/img/favicon.ico" type="image/x-icon" />
+    <ui:insert name="links"/>
+	<!-- artaround js -->
+	<script type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/artaround/js/artaround.js"></script>
+	<!-- slideshow for picture details -->
+	<link href="#{facesContext.externalContext.requestContextPath}/artaround/js/a.slideshow/js/jquery.aslideshow/simple/styles.css" media="screen" rel="stylesheet" type="text/css" />
+	<script  type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/artaround/js/a.slideshow/js/jquery.aslideshow.js"></script>
+	<!-- lightbox -->
+	<link rel="stylesheet" href="#{facesContext.externalContext.requestContextPath}/artaround/js/lightbox/css/prettyPhoto.css" type="text/css" media="screen" charset="utf-8" />
+	<script src="#{facesContext.externalContext.requestContextPath}/artaround/js/lightbox/js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+	
+	
+
+	
+	
+	<script type="text/javascript" src="js/lib/interface.js"></script>
+	
+		<script type="text/javascript">
+	/* <![CDATA[ */
+	
+		var sellingChecked = false;
+
+		function changeShowSelling(){
+			if (sellingChecked) {
+				jQuery("#sellingOptions").slideDown("slow");
+				sellingChecked = false;
+			}
+			else{
+				jQuery("#sellingOptions").slideUp("slow");
+				sellingChecked = true;
+			}
+		}
+		
+		jQuery(document).ready(function(){
+			if (jQuery('#j_id136:newArtworkForm:publicAccess').attr('checked') == 'checked') {
+				jQuery("#sellingOptions").slideUp("slow");
+				sellingChecked = true;
+			}
+			else{
+				jQuery("#sellingOptions").slideDown("slow");
+				sellingChecked = false;
+			}
+		});
+
+	/* ]]> */
+	</script>
+
+
+</head>
+
+<body>
+<div class="page_margins">
+  <div class="page">
+  	
+    <div id="globalStatusDiv" style="display:none;">
+        <img src="#{facesContext.externalContext.requestContextPath}/artaround/img/spinner.gif" alt="Loading ..." />
+    </div>    
+    
+    <a4j:status
+        onstart="jQuery('#globalStatusDiv').fadeIn('fast')"
+        onstop="jQuery('#globalStatusDiv').fadeOut('slow')"
+    />	
+	
+	<ui:include src="header.xhtml" />
+	
+	<div id="breadcrumps">
+		<ui:insert name="breadcrumps" />
+	</div>
+
+    <!-- begin: main content area #main -->
+    <div id="main">
+
+      <!-- begin: #col1 - first float column -->
+      <div id="col1">
+        <div id="col1_content" class="clearfix">
+          	<ui:include src="navigation.xhtml"/>
+        </div>
+      </div>
+      <!-- end: #col1 -->
+
+      <!-- begin: #col2 second float column -->
+      <!--  <div id="col2">
+        <div id="col2_content" class="clearfix">
+			<ui:include src="advertising.xhtml" />
+        </div>
+      </div>  -->
+      <!-- end: #col2 -->
+
+      <!-- begin: #col3 static column -->
+      <div id="col3">
+        <div id="col3_content" class="clearfix borderLeftRight">
+       	  <ui:insert name="navigation"/>
+          <ui:insert name="body"/>
+        </div>
+<!--         <ui:insert name="popups"/>-->
+        <!-- IE Column Clearing -->
+        <div id="ie_clearing">&nbsp;</div>
+      </div>
+      <!-- end: #col3 -->
+    </div>
+    <!-- end: #main -->
+
+    <!-- begin: #footer -->
+    <ui:include src="footer.xhtml" />
+    <!-- end: #footer -->
+  </div>
+</div>
+
+</body>
+</html>

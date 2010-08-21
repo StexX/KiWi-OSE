@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/query/kwql/parser
+END
+KWQL_KWQLHead.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/query/kwql/parser/KWQL_KWQLHead.java
+END
+KWQLBody.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/query/kwql/parser/KWQLBody.java
+END
+KWQLHead.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/query/kwql/parser/KWQLHead.java
+END
+KWQLexer.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/query/kwql/parser/KWQLexer.java
+END
+KWQL.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/query/kwql/parser/KWQL.java
+END
+KWQL_KWQLBody.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/query/kwql/parser/KWQL_KWQLBody.java
+END

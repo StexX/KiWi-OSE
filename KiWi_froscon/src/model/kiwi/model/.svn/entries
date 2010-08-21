@@ -1,0 +1,122 @@
+10
+
+dir
+5584
+https://svn.salzburgresearch.at/svn/kiwi/KiWi/tags/froscon/src/model/kiwi/model
+https://svn.salzburgresearch.at/svn/kiwi
+
+
+
+2010-08-21T10:18:59.024252Z
+5583
+steffi
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+df910b12-e4fe-467b-9c3d-147a02c1fe00
+
+Constants.java
+file
+
+
+
+
+2010-08-21T11:21:14.000000Z
+9f194b53b75fb7d6a0cfc7608dba2212
+2010-08-21T10:18:59.024252Z
+5583
+steffi
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9112
+
+activity
+dir
+
+annotations
+dir
+
+ceq
+dir
+
+cluster
+dir
+
+content
+dir
+
+facades
+dir
+
+importexport
+dir
+
+informationextraction
+dir
+
+interaction
+dir
+
+kbase
+dir
+
+ontology
+dir
+
+personalization
+dir
+
+perspective
+dir
+
+recommendation
+dir
+
+revision
+dir
+
+security
+dir
+
+skill
+dir
+
+status
+dir
+
+tagging
+dir
+
+user
+dir
+

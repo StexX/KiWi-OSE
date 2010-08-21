@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/interedu/src/interedu/action/dataimport
+END
+ParserException.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/interedu/src/interedu/action/dataimport/ParserException.java
+END
+MsWordParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/interedu/src/interedu/action/dataimport/MsWordParser.java
+END
+Parser.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/interedu/src/interedu/action/dataimport/Parser.java
+END
+ParserManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/interedu/src/interedu/action/dataimport/ParserManager.java
+END
+TextFileParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/interedu/src/interedu/action/dataimport/TextFileParser.java
+END
+UploadAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/interedu/src/interedu/action/dataimport/UploadAction.java
+END
+InterEduImportAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/interedu/src/interedu/action/dataimport/InterEduImportAction.java
+END

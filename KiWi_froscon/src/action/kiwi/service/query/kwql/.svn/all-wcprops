@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/query/kwql
+END
+kwql.xml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/query/kwql/kwql.xml
+END
+KwqlServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/query/kwql/KwqlServiceImpl.java
+END
+KWQLConstraintViolationException.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/query/kwql/KWQLConstraintViolationException.java
+END
+kwql.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/query/kwql/kwql.xsd
+END
+KWQLComponent.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/query/kwql/KWQLComponent.java
+END
+KwqlQueryServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/query/kwql/KwqlQueryServiceImpl.java
+END
+KWQLQuery.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/query/kwql/KWQLQuery.java
+END

@@ -1,0 +1,36 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+		    	xmlns:rich="http://richfaces.org/rich"
+		    	xmlns:a="http://richfaces.org/a4j"
+	            xmlns:kiwi="http://www.kiwi-project.eu/jsf">
+
+	<s:span id="testShowClusterMenu" rendered="#{currentUser.userPreference != null and currentUser.userPreference.showTagClusterMenu}">
+	<h2>Tag Cluster Menu</h2>
+			<s:span id="tagClusterSpan" rendered="#{clusterWidget.clusterNode.size() &gt; 0}">	            
+  			<div style="margin-top: 1em;">
+                <rich:tree style="width:150px" switchType="client">
+                    <rich:recursiveTreeNodesAdaptor roots="#{clusterWidget.clusterNode}" var="node" nodes="#{node.children}">
+                        <rich:treeNode>
+    						<h:outputText style="font-weight: bold;" value="#{clusterWidget.ellipseString(node.tagKeys)}" />                            
+                            <s:link view="/home.xhtml" style="font-style: italic;" value="#{node.data.title}"  propagation="none">
+                                <f:param name="title"/>
+                                <f:param name="uri"/>
+                                <f:param name="id" />
+                                <f:param name="kiwiid" value="#{node.data.kiwiIdentifier}"/>
+                            </s:link>
+                        </rich:treeNode>
+                    </rich:recursiveTreeNodesAdaptor>
+                </rich:tree>
+            </div> 
+			</s:span>
+			<s:span id="nonTagClusterSpan" rendered="#{clusterWidget.clusterNode.size() == 0}">
+						<h:outputText value="Tag-cluster menu not available."/>
+			</s:span>
+		</s:span>                                  
+	            
+</ui:composition>

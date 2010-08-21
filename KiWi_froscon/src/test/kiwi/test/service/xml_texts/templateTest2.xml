@@ -1,0 +1,6 @@
+<div>
+    <p>
+        My name is <span property="uri::http://xmlns.com/foaf/0.1/name">Trent Reznor</span>
+        My birthday is the <span property="uri::http://xmlns.com/foaf/0.1/birthday">17. Mai 1965</span>
+    </p>
+</div>

@@ -1,0 +1,133 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:a="http://richfaces.org/a4j"
+    xmlns:rich="http://richfaces.org/rich"
+    template="layout/template.xhtml">
+
+    <ui:define name="body">
+
+        <h:messages styleClass="message"/>
+
+        <h1>KiWi  Setup Admin</h1>
+
+        <p>Database Information</p>
+        <rich:panel>
+            <h:form>
+                <h:panelGrid columns="2">
+
+                    Current database system is :
+                    <h:selectOneMenu value="#{kiwiDatabseSetupAction.databaseSystem}" required="true">
+                        <s:selectItems value="#{kiwiDatabseSetupAction.databaseSystems}"
+                                       var="labs"
+                                       label="#{labs}"/>
+                    </h:selectOneMenu>
+
+                    KiWi DB Name :
+                    <h:inputText value="#{kiwiDatabseSetupAction.kiWiDatabaseName}"
+                                 size="70"/>
+
+                    KiWi DB URL :
+                    <h:outputText value="#{kiwiDatabseSetupAction.kiWiConnectionURL}"
+                                  size="70"/>
+
+                    KiWi DB user :
+                    <h:inputText value="#{kiwiDatabseSetupAction.kiWiUser}"
+                                  size="70"/>
+
+                    KiWi DB password :
+                    <h:inputText value="#{kiwiDatabseSetupAction.kiWiPassword}"
+                                  size="70" />
+
+
+                    CEQ DB Name :
+                    <h:inputText value="#{kiwiDatabseSetupAction.CEQDatabaseName}"
+                                 size="70"/>
+
+                    CEQ DB URL :
+                    <h:outputText value="#{kiwiDatabseSetupAction.CEQURL}"
+                                  size="70"/>
+
+                    CEQ DB user :
+                    <h:inputText value="#{kiwiDatabseSetupAction.CEQUser}"
+                                  size="70"/>
+
+                    CEQ DB password :
+                    <h:inputText value="#{kiwiDatabseSetupAction.CEQPassword}"
+                                  size="70" />
+
+                    Connection with the database is successful :
+                    <h:outputText value="#{kiwiDatabseSetupAction.canConnectToDatabase}"
+                                  size="70"/>
+
+                    KiWi work dir :
+                    <h:inputText value="#{kiwiDatabseSetupAction.workDir}"
+                                 size="70"/>
+
+                    SOLR work dir :
+                    <h:inputText value="#{kiwiDatabseSetupAction.solrHome}"
+                                 size="70"/>
+
+                    Triples dir :
+                    <h:inputText value="#{kiwiDatabseSetupAction.triplestoreDir}"
+                                 size="70"/>
+
+
+                    Store actual configuration
+                    <h:commandButton  value="Store"
+                                      action="#{kiwiDatabseSetupAction.storeChages()}"
+                                      enable="false"/>
+                </h:panelGrid>
+            </h:form>
+        </rich:panel>
+
+
+        <p>KiWi application Information</p>
+        <p>The selected application will be active in KiWi, the rest (unselected) will be not installed.</p>
+        <rich:panel>
+            <h:form>
+                Select the kiwi applicaiton :
+                <h:selectManyCheckbox value="#{kiwiApplicationSetupAction.selectedItems}" layout="pageDirection">
+                    <s:selectItems value="#{kiwiApplicationSetupAction.applications}"
+                                   var="t"
+                                   label="#{t}" />
+                </h:selectManyCheckbox>
+                Store actual configuration
+                <h:commandButton  value="Store"
+                                  action="#{kiwiApplicationSetupAction.storeChages()}"/>
+                <h:commandButton  value="Restore default settings"
+                                  action="#{kiwiApplicationSetupAction.restoreDefault()}"/>
+
+
+            </h:form>
+        </rich:panel>
+
+        <p>General Information</p>
+        <rich:panel>
+            <h:form>
+                <h:panelGrid columns="2">
+                    Is KiWi install :
+                    <h:outputText value="#{generalSetupAction.isKiwiInstalled}" />
+
+                    The Server deploy path :
+                    <h:outputText value="#{generalSetupAction.earPath}" />
+
+                    KiWi install directory :
+                    <h:outputText value="#{generalSetupAction.kiwiDirPath}" />
+
+                     Install KiWi
+                    <h:commandButton  value="Install"
+                                      action="#{generalSetupAction.install()}"/>
+                </h:panelGrid>
+            </h:form>
+        </rich:panel>
+
+
+
+    </ui:define>
+
+</ui:composition>

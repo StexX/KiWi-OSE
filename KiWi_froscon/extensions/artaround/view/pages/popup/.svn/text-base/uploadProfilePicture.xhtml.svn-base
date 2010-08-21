@@ -1,0 +1,56 @@
+<!--
+	Copyright © Rolf Sint, Michael Schneider, Christian Osterrieder, 2010
+ */
+ -->
+
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+			 	xmlns:c="http://java.sun.com/jstl/core"
+                template="../../layout/box_template.xhtml">
+                	
+<ui:define name="box_header">
+		<h2>Hier kannst Du ein Profilbild hochladen</h2>
+</ui:define>
+
+<ui:define name="box_header_links">
+	<li>
+		<a:commandLink onclick="jQuery('#uploadProfilePicture').fadeOut('fast')" reRender = "profilePictureImg">
+			<img src="../../img/header_links/orange_dot.png" />
+		</a:commandLink>
+	</li>
+</ui:define>
+
+<ui:define name="box_content">
+
+		<h:form class="exposePopup">
+					<rich:fileUpload 
+						fileUploadListener="#{artaround.profilePictureAction.listener}"
+						immediateUpload="false"
+						maxFilesQuantity="1"
+						listHeight="200pt"
+						listWidth="auto"
+				        allowFlash="true"
+				        acceptedTypes="jpg, gif, png" 
+						addControlLabel="#{messages['artaround.addFile']}..." 
+						clearAllControlLabel="#{messages['artaround.clearAll']}" 
+						clearControlLabel="#{messages['artaround.clear']}"
+                        stopEntryControlLabel="#{messages['artaround.stopProcess']}" 
+						uploadControlLabel="#{messages['artaround.upload']}...">
+				        	
+			        <a:support event="onuploadcomplete" reRender="gal" />
+		            <f:facet name="label">
+		                <h:outputText value="#{messages['artaround.upload.state']}" />
+		        	</f:facet>					
+		   		</rich:fileUpload>					
+		</h:form>
+
+</ui:define>
+
+</ui:composition>

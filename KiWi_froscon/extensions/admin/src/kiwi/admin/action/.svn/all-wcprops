@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/admin/src/kiwi/admin/action
+END
+ActionType.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/admin/src/kiwi/admin/action/ActionType.java
+END
+KiWiApplicationConverter.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/admin/src/kiwi/admin/action/KiWiApplicationConverter.java
+END
+PerspectiveConfigurationAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/admin/src/kiwi/admin/action/PerspectiveConfigurationAction.java
+END
+IEConfigurationAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/admin/src/kiwi/admin/action/IEConfigurationAction.java
+END
+ImportSunSpaceDataAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/admin/src/kiwi/admin/action/ImportSunSpaceDataAction.java
+END
+CEQConfigurationAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/admin/src/kiwi/admin/action/CEQConfigurationAction.java
+END
+ApplicationConfigurationAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/admin/src/kiwi/admin/action/ApplicationConfigurationAction.java
+END
+ImportAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/admin/src/kiwi/admin/action/ImportAction.java
+END
+ImportSunSpaceDataWebService.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/admin/src/kiwi/admin/action/ImportSunSpaceDataWebService.java
+END
+SolrConfigurationAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/admin/src/kiwi/admin/action/SolrConfigurationAction.java
+END
+TagITConfigurationAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/admin/src/kiwi/admin/action/TagITConfigurationAction.java
+END
+XMLImportAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/admin/src/kiwi/admin/action/XMLImportAction.java
+END

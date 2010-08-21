@@ -1,0 +1,13 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<rdf:RDF 
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:kiwi="http://www.kiwi-project.eu/kiwi/core/"
+    xmlns:logica="http://www.logica.dk/core/">
+    <rdf:Description rdf:about="http://www.logica.dk/core/someTemplateInstance">
+        <foaf:name>Jamie W. Zawinski</foaf:name>
+        <foaf:mbox>jwz@jwz.org</foaf:mbox>
+        <foaf:gender>male</foaf:gender>
+    </rdf:Description>
+</rdf:RDF>

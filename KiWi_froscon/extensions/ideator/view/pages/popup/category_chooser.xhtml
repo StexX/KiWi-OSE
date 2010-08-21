@@ -1,0 +1,69 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+			 	xmlns:c="http://java.sun.com/jstl/core"
+                template="../../layout/box_template.xhtml">
+                	
+	<ui:define name="box_header">
+		<h2>#{messages['ideator.category.title']}</h2>
+	</ui:define>
+	
+	<ui:define name="box_header_links">
+		<li>
+			<a:commandLink onclick="jQuery('#category_chooser').fadeOut('fast');jQuery('#position_chooser_message').text('');" title="#{messages['ideator.btn.close']}" reRender="page_categories">
+				<img src="img/header_links/orange_dot.png" />
+			</a:commandLink>
+		</li>
+	</ui:define>
+	
+	<ui:define name="box_content">
+		<h:form>		
+		<center>
+			<p id="position_chooser_message" class="message popupmessage"></p>
+			<div class="line_box" style="width:540px;margin-top:20px;height:220px;">
+				<div class="popupInnerBox" style="top:55px;left:35px;width:200px;height:200px;overflow:auto;">
+
+					<rich:tree styleClass="positionTree" style="width:200px" switchType="ajax" nodeSelectListener="#{categoryAction.onNodeSelect}">
+            			<rich:recursiveTreeNodesAdaptor roots="#{categoryAction.treeRoots}" var="item" nodes="#{item.children}">
+            				<rich:treeNode>
+            					<h:outputText value="#{item.concept.preferredLabel}" />
+        					</rich:treeNode>
+						</rich:recursiveTreeNodesAdaptor>
+        			</rich:tree>
+				
+				</div>
+				<div style="position:absolute;top:130px;left:240px;width:75px;text-align:center">
+					<a:commandLink styleClass="button" style="width:80px;margin-left:12px;" reRender="popup_category_list" data="#{categoryAction.addChosenConcept()}" oncomplete="if(data==null)data='';jQuery('#position_chooser_message').text(data);">
+						<span>#{messages['ideator.btn.add']} &gt;&gt;</span>
+					</a:commandLink><br/><br/>
+					<a:commandLink styleClass="button" style="width:80px;margin-left:12px;" reRender="popup_category_list" data="#{categoryAction.removeChosenConcept()}" oncomplete="if(data==null)data='';jQuery('#position_chooser_message').text(data);">
+						<span>&lt;&lt; #{messages['ideator.btn.remove']}</span>
+					</a:commandLink>
+				</div>
+				<s:div styleClass="popupInnerBox" id="popup_category_list"  style="top:55px;left:359px;width:200px;height:200px;overflow:auto;">
+					<ui:repeat value="#{categoryAction.chosenConcepts}" var="pos">
+						<div class="selectedPositionBox">
+							<h3><a:commandLink action="#{categoryAction.setSelectedConcept(pos)}" onclick="jQuery('.selectedPositionBox').css('background-color','white');jQuery(this).parent().parent().css('background-color','lightgray')">
+								#{pos.preferredLabel}
+							</a:commandLink>
+							</h3>
+							<p>#{pos.definition}</p>
+						</div>
+					</ui:repeat>
+				</s:div>
+			</div>
+		</center>
+		<a:commandLink styleClass="button" onclick="jQuery('#category_chooser').fadeOut('fast');jQuery('#position_chooser_message').text('');" title="#{messages['ideator.btn.close']}" reRender="page_categories"  style="margin-top:20px;margin-left:247px;margin-bottom:10px;">
+			<span>#{messages['ideator.btn.close']}</span>
+		</a:commandLink>
+		</h:form>
+	</ui:define>
+
+</ui:composition>

@@ -1,0 +1,109 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:a="http://richfaces.org/a4j" 
+    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+    template="layout/template.xhtml">
+
+<ui:define name="content">
+
+    <ui:include src="dialogs/addtype.xhtml"/>
+    <ui:include src="dialogs/addlinkproperty.xhtml"/>
+    <ui:include src="dialogs/removelinkproperty.xhtml"/>
+        
+    <a:form>
+        <a:jsFunction name="setSelectedLinkToAnnotateAndShowAddLink" 
+            reRender="addlinkprop_selectproperty,addlinkprop_object"
+            oncomplete="#{rich:component('addlinkpropDialog')}.show()">
+            <a:actionparam name="ciUri" assignTo="#{annotateAction.annotationTargetId}"/>
+        </a:jsFunction>
+        <a:jsFunction name="setSelectedLinkToAnnotateAndShowRemoveLink" 
+            reRender="removelinkprop_selectproperty,removelinkprop_object"
+            oncomplete="#{rich:component('removelinkpropDialog')}.show()">
+            <a:actionparam name="ciUri" assignTo="#{annotateAction.annotationTargetId}"/>
+        </a:jsFunction>
+    </a:form>
+       
+       
+    <h:form id="formWikiContent">
+    
+	    <h1>#{currentContentItem.title}</h1>
+	    
+        <p style="margin-top: 20px; margin-left: 10px; margin-right: 10px;" class="help">
+          In the following, you can modify the types associated with the current page (represented 
+          as RDF type) and the relation types of links occurring in the text (represented as RDF 
+          triples). Note that you can only select the relations that are applicable to the link based
+          on the types of the two pages and the range and domain of the property. <em>For advanced users only!</em>
+        </p>
+
+        <rich:messages styleClass="message"/>
+
+	    <s:div id="pageTypes" style="padding-bottom: 5px; margin-top: 20px; border-bottom: 1px solid #ccc; margin-bottom: 10px;">
+	        <strong>Page Type(s): </strong> 
+	        <ui:repeat value="#{annotateAction.types}" var="type">
+                <s:link view="/home.xhtml" value="#{type.res.label} (#{type.res.namespacePrefix})" 
+                		rendered="#{not type.inferred}"
+                		style="font-weight: bold;"
+                		propagation="none">
+                    <f:param name="title"/>
+                    <f:param name="uri"/>
+                    <f:param name="id" />
+                    <f:param name="kiwiid" value="#{type.res.kiwiIdentifier}"/>
+                </s:link>
+                <s:link view="/home.xhtml" value="#{type.res.label} (#{type.res.namespacePrefix})"
+                		rendered="#{type.inferred}"
+                		style="font-weight: italic;"
+                		propagation="none">
+                    <f:param name="title"/>
+                    <f:param name="uri"/>
+                    <f:param name="id" />
+                    <f:param name="kiwiid" value="#{type.res.kiwiIdentifier}"/>
+                    <rich:toolTip attached="true" layout="block">
+			            <f:facet name="defaultContent">
+			                <strong>Please wait...</strong>
+			            </f:facet>
+                            
+						<h:dataTable value="#{explanationService.explainTripleTextually(type.tripleId,true)}" var="story">
+						  <h:column>
+		                	<h:outputText value="#{story.openingLine.body}" escape="false" style="font-weight:bold"/><h:outputText value=" #{story.openingLine.connective}" style="margin-left:5px"/>
+		                	<br/>
+						  	<h:dataTable value="#{story.body}" var="line">
+						  		<h:column>
+						  			<h:outputText value="#{line.body}"  escape="false" style="font-weight:bold; margin-left:15px"/> <h:outputText value=" #{line.connective}" style="margin-left:5px"/> <br/>
+						  		</h:column>
+						  	</h:dataTable>
+						  	<!-- <s:link view="/inspector/explanation.xhtml" value="Show me more">
+						  		<f:param name="tripleId" value="${item.tripleId}"/>
+						  	</s:link> -->										  	 
+						  	<br/> <br/>
+						  </h:column>
+						</h:dataTable>						                
+                    </rich:toolTip>                      
+                </s:link>
+	            <rich:spacer width="1px"/>
+	            <a:commandLink action="#{annotateAction.removeType(type.res)}" rendered="#{not type.inferred}" reRender="pageTypes,articlemeta">
+	                <h:graphicImage value="img/type_delete.png" style="border:0;padding:0 4px;"/>
+	            </a:commandLink>
+	            <rich:spacer width="5px"/>
+	        </ui:repeat>
+	
+	        <!-- Add Content type functionality -->
+	        <h:outputLink value="#" render="true">
+	            <h:graphicImage value="img/type_add.png" style="border:0;padding:0 4px;"/>
+	            <rich:componentControl for="addTypeDialog" operation="show" event="onclick"/>
+	        </h:outputLink>
+	    </s:div>
+	    
+	    
+	    <s:div>
+	        <f:verbatim>#{annotateAction.currentContentHtml}</f:verbatim>
+	    </s:div>
+    
+    </h:form>
+</ui:define>
+</ui:composition>

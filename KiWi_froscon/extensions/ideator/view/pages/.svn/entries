@@ -1,0 +1,40 @@
+10
+
+dir
+5584
+https://svn.salzburgresearch.at/svn/kiwi/KiWi/tags/froscon/extensions/ideator/view/pages
+https://svn.salzburgresearch.at/svn/kiwi
+
+
+
+2010-08-12T07:33:21.282668Z
+5520
+tkurz
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+df910b12-e4fe-467b-9c3d-147a02c1fe00
+
+box
+dir
+
+popup
+dir
+
+static
+dir
+
+templates
+dir
+

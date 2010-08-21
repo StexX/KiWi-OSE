@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pages xmlns="http://jboss.com/products/seam/pages"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://jboss.com/products/seam/pages http://jboss.com/products/seam/pages-2.0.xsd"
+	   login-view-id="/interedu/login.xhtml"
+       no-conversation-view-id="/home.xhtml">
+
+    <page view-id="/artaround/*">
+        <action execute="#{currentApplicationFactory.switchApplication('artaround')}"/>
+        <navigation>
+ 	       <rule if-outcome="login">
+                <redirect view-id="/artaround/pages/login/login.xhtml"/>
+        	</rule>
+        	<rule if-outcome="register">
+            	<redirect view-id="/artaround/pages/login/register.xhtml"/>
+        	</rule>
+        	<rule if-outcome="profil">
+            	<redirect view-id="/artaround/pages/profil/userprofile.xhtml"/>
+        	</rule>
+        	 <rule if-outcome="neuesKunstwerk">
+        	 <!--	<action execute="#{artWorkBean.clear}"/> -->
+            	<redirect view-id="/artaround/pages/artworks/neuesKunstwerk.xhtml"/>
+        	</rule>
+        	<rule if-outcome="myArtWorks">
+            	<redirect view-id="/artaround/pages/artworks/meineKunstwerke.xhtml"/>
+        	</rule>
+            <rule if-outcome="myBlog">
+            	<redirect view-id="/artaround/pages/blog/streamofactivities.xhtml"/>
+        	</rule>
+			<rule if-outcome="acontacts">
+            	<redirect view-id="/artaround/pages/contacts/acontacts.xhtml"/>
+        	</rule>
+        	<rule if-outcome="search">
+                <redirect view-id="/artaround/artaroundSearch.seam"/>
+            </rule>
+        </navigation>
+		
+		<navigation from-action="#{identityManagerService.logout}">
+			 <redirect view-id="/artaround/pages/login/artaroundLogout.xhtml"/>
+		</navigation>
+				
+		<navigation from-action="#{identity.login}">
+			<rule if="#{identity.loggedIn}">
+          <!--      <end-conversation before-redirect="true"/> -->
+				<redirect view-id="/artaround/pages/profil/meinProfil.xhtml"/>
+			</rule>
+		</navigation>
+		
+       </page>
+		<!-- <navigation from-action="#{identity.login}">
+			<rule if="#{identity.loggedIn}">
+                <end-conversation before-redirect="true"/>
+				<redirect view-id="/artaround/pages/profil/meinProfil.xhtml"/>
+			</rule>
+		</navigation> -->
+		
+	<!--	<page view-id="/artaround/home.xhtml">
+	    	<navigation from-action="#{loginAction.login}">   	    
+	    		<rule if-outcome="success">
+	                <redirect view-id="/artaround/pages/profil/meinProfil.xhtml"/>
+	    		</rule>
+	    	</navigation>
+    	</page> -->
+		
+
+		
+	<!--	
+		<navigation from-action="#{identity.logout}">
+			<rule>				
+                <redirect view-id="/artaround/pages/login/artaroundLogout.xhtml"/>
+ 			</rule>
+		</navigation> -->
+		
+		
+    
+    
+<!--     <page view-id="/artaround/pages/artworks/neuesKunstwerk.xhtml">-->
+<!--        <action execute="#{artWorkController.clear}"/>-->
+<!--    </page>-->
+
+		<!-- refresh the values in the artaroundcontroller each time a single artwork is displayed -->
+<!--	     <page view-id="/artaround/pages/artworks/imagesOfArtwork.xhtml">
+    	    <action execute="#{artWorkController.begin}"/>
+   		 </page> -->
+   		 
+<!--   		 <page view-id="/artaround/pages/frontend/artWorkDetails.xhtml">
+    	    <action execute="#{artWorkController.begin}"/>
+   		 </page> -->
+   		
+   		 <page view-id="/artaround/pages/artworks/neuesKunstwerk.xhtml">
+   			 <begin-conversation join="true"/>
+			  <!-- <action execute="#{artWorkBean.clear()}"/> -->
+   		 </page>
+
+
+    
+     <page view-id="/artaround/artaroundSearch.xhtml">
+        <action execute="#{searchAction.begin}"/>
+        <action execute="#{searchAction.runSearch}"/>
+        <param name="q" value="#{searchAction.searchQuery}" required="false"/>
+    </page>
+
+<!--	<page view-id="/interedu/home.xhtml" >-->
+<!--		<begin-conversation join="true"/>-->
+<!--   		<navigation>-->
+<!--     		<rule if-outcome="search">-->
+<!--        		<redirect view-id="/interedu/search.xhtml"/>-->
+<!--      		</rule>-->
+<!--    	</navigation>-->
+<!--	</page>-->
+		
+	<page view-id="/artaround/pages/login/register.xhtml">
+    	<navigation from-action="#{artaroundRegisterAction.register}">   	    
+    		<rule if-outcome="success">
+    			<redirect view-id="/artaround/pages/profil/meinProfil.xhtml"/> <!--  should rather try to restore the previous view -->
+    		</rule>
+    		<rule>
+    			<redirect view-id="/artaround/pages/login/register.xhtml"/>
+    		</rule>
+    	</navigation>
+    </page>
+    
+ <!--  <exception>
+        <redirect view-id="/artaround/error.xhtml">
+            <message>Unexpected error, please try again</message>
+        </redirect>
+    </exception> -->
+
+</pages>

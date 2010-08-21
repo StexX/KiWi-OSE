@@ -1,0 +1,1705 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="http://www.owl-ontologies.com/Logica.owl#"
+  xml:base="http://www.owl-ontologies.com/Logica.owl">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:ID="BaselineType">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >BaselineType</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class defines different sort of baseline on products during the life cycle in the project.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="MethodsAndTecniques">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class describes methods and techniques that can be applied in a project for a particular task.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >MethodsAndTecniques</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Issue">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Issue</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class describes the issue related to a work product, its priority, its current status, the date which was identified and resolved and associate with the project participant employed to solve it.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Improvement">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class defines the possible improvement to a given product. After formal inspection, a project participant can claim for improvements and justify his/her decision about it.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Improvement</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="FunctionalRequirement">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class defines the functional requirement to be tackled by the project. It also defines its complexity, the owner, the process area, the project plan, the associated risks and when it needs to be implemented.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Requirement"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >FunctionalRequirement</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="ProcessRule">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ProcessRule</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class defines how thee rules shuold be applied in a specific project.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Risk">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Risk</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class describes eventual risks during the project executions. It defines when the risk was identified, the earliest impact, the strategy for reducing the impact, the likelyhood reduction strategy, the project participant responsible to solve it and the risk remarks.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="GoalProjectPlan">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >GoalProjectPlan</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Goal"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class defines the major goals for a project plan.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="UserRequirement">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Requirement"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class describe the user requirement as functional or not, define its priority, complexity, relation to other requirements, degree of uncertainness, cost to implement it, possible risks, status, and pre-conditions for its instantiation.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >UserRequirement</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="ProjectParticipant">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ProjectParticipant</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class identify the member who is working in the project. Besides his/her identification, it states the initial and final date of the member in a given project planning as well as the working hours.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Baseline">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class states the baseline on products during the life cycle in the project. It also identify how approved the baseline and keep revision observations.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Baseline</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="GoalQAPlan">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Goal"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class defines the major goals for a quality and assurance plan.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >GoalQAPlan</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="LessonLearned">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class maintain the valuable information from previous projects. It specifies the utilized tools, techniques and methodologies, the main concerns and during the project and in which phase the successful or improper activities where undertaken.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >LessonLearned</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="ProcessMAPlan">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ProcessDefinition"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class defines the process to be adopted by the measurement and analysis plan.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ProcessMAPlan</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="NonFunctionalRequirement">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class define a list of non functional requirement that may be issued by the requirements such as performance, usability, testability, modularity.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Requirement"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NonFunctionalRequirement</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="GoalRQMPlan">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >GoalRQMPlan</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Goal"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class defines the major goals for the requirement and management plan.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Stakeholder">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class identifies a stakeholder related to a project, defines the role, the authority, tasks to be solved, the own requirements, the resources to be provided and which information he/her has to be informed about.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Stakeholder</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MetricCollectionPlan">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Metric"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class describes the measurement plan: which metric to be measured, who will collect, the date of collection, it defines the expected max value, and states the data analysis result.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >MetricCollectionPlan</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="ProjectPhaseDefinition">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class defines the purpose, the life cycle model, the phase sequence number and whether it is repeatable or not.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ProjectPhaseDefinition</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="CCB">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class defines the purpose, role, authority of the CCB and who are the project participant that will take part of it.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CCB</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="NonCompliance">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NonCompliance</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class states the non compliance in work products verified after formal inspections or test phase. Is defines also the corrective actions, the root cause and further documentation to assisting the stakeholder during the correction tasks.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Metric">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class describes the metric to be utilized during a project as well as the measurement objective. In addition, it details the information needs for collecting this metric and which project participant is responsible for it.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Metric</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Axiom_1">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#LessonLearned"/>
+          <owl:Class rdf:ID="SkillCatergory"/>
+        </owl:unionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="#Goal">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class defines the major goals of the projects and the metrics utilized to measure if the goal was achieved.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Goal</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="SkillPlan">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#SkillCatergory"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >SkillPlan</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class defines the plan the required level skill of a project participant, the actual level and the skill category.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Tool">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class keeps information about the tools which can be utilized during the project. It defines who is using it and describes how to use it.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tool</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#SkillCatergory">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >SkillCatergory</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class describes skill necessary for a given task. The project participants are associated with the skills based on their previous experiences. This class also details which techniques, methods and specific knowledge for a particular skill category.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="BaselineCMPlan">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class define a specific baseline for configuration management plan.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >BaselineCMPlan</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#BaselineType"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Axiom_3">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#LessonLearned"/>
+          <owl:Class rdf:about="#SkillCatergory"/>
+        </owl:unionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="ChangeRequest">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ChangeRequest</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class describes the change requests motivated for updates in the requirements. In addition it states who are the responsible for tackling the changes.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="ProcessQAPlan">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class defines the process to be adopted by the quanlity and assurance plan.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ProcessQAPlan</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ProcessDefinition"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ProjectPhase">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ProjectPhase</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class defines the phases existing in the projects. It defines the date of beginning and ending and associates it with a particular project plan.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="WorkProduct">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >WorkProduct</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class describes the artefact or deliverable under development. It defines who is the responsible for it, its size and complexity and its category (e.g. document, diagram, or code).</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="DefectType">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >DefectType</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class specifies a defect category.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="CorrectiveAction">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CorrectiveAction</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class describes the corrective actions to be undertaken in case a defect is identified.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="ProductReviwers">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class indentifies the project participant who is assigned to the revision task. It also describes the reviewer responsibilities and the personal conclusion remarks after concluding the revision task.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ProductReviwers</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Defect">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class describes the defects identified in a product. It also states the current version of the product, when the defect was identified, the possible cause, who is the project participant which will fix it and the solution which will be adopted.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Defect</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="ProjectRessource">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ProjectRessource</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class defines the resource utilized by a project and associate it to a project plan. In addition, it states when the resource was ordered and who the responsible for its usage.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Process">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class describe the process to be followed by the activities in the project.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Process</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Axiom_2">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:ID="QualityAssurancePlan"/>
+          <owl:Class rdf:ID="CMPlan"/>
+        </owl:unionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="WorkProductStandard">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >WorkProductStandard</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class describe a standard work project, points to a standard link and defines its owner.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#WorkProduct"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ProjectPlan">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ProjectPlan</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class defines the project scope, the project goal, the life cycle methodology model adopted, the estimation model utilized, the resources allocated, the skill necessary, the stakeholder involved, project tracking, and a complete tracking frequency for skills, budget and schedule.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Project"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="LifeCycleModel">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class describes the possible life cycle models which can be used by forthcoming projects. It also defines when to instantiate it and how to customize according to the project resources and needs.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >LifeCycleModel</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="GoalCMPlan">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class defines the major goals for the configuration management plan.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Goal"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >GoalCMPlan</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Task">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Task</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class defines the tasks to be executed during a given project phase. It states the start and ending date, the current status, and associates it with the project participant responsible for its realization.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Rule">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class describes a rule to be applied to a project and associates it with a process area.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Rule</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="DefectCause">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class describes the cause of an defect.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >DefectCause</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="EstimationModel">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class defines the estimation model utilized for estimating the resources needed to complete the project. In particular, it estimates the minimal and maximal hours for the realization of a given task.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >EstimationModel</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#ProcessDefinition">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class defines the process to be adopted by a project as well as its inputs and outputs. It also states the entry and exit criteria, the owner of the process and related area.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ProcessDefinition</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="TaskDefinition">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class describes the task to be executed during a given project phase. It states entry and exit criteria, the output description as well as the process definition on how the task should be carried out.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TaskDefinition</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="WorkProductTemplate">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >WorkProductTemplate</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#WorkProduct"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class describes a template for a work project,defines its owner and associates it with process area.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="SkillPlanActivity">
+    <rdfs:subClassOf rdf:resource="#SkillCatergory"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >SkillPlanActivity</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class associates the skill plan activity with a given task.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#QualityAssurancePlan">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >QualityAssurancePlan</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class describes the plan for quality assurance for a given project. It also states the purpose, the scope, and associate with the expected goals.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="WorkProductVersion">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >WorkProductVersion</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class defines the work product version, the responsible for the last version and associates it with an baseline.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#CMPlan">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CMPlan</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class describes the purpose, goals, scope and tools utilized during the configuration management of a project. In addition, it defines when audits must be performed and dates for the baselines.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="CheckList">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class comprises the list of riquirements of a project.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CheckList</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="ProjectRole">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class defines the responsibility and the degree of authority of each project participant.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ProjectRole</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#Requirement">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class defines the requirements</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Requirement</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MilestoneType">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class defines the milestones to be reached during the project. It describes the type of results expected, type of tasks to be completed and relates it to a particular project phase.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >MilestoneType</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#Project">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Project</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class describes the project.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="ProcessArea">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class specifies the process and its customization according to different areas such as project management, quality assurance and configuration management. It also defines the owner of the process and the adopted policies.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ProcessArea</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Review">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Review</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class defines the revision for products during its life cycle. It also describe how the review will process will take place, who is the responsible for this activity and the conclusion remarks after concluding the revision.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Measure">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class describes what will be measured during the project. It determines which the data source will be utilized, the storage process, the data analysis methods and the metric to be measured. It also defines which tools will be utilized to measure the activities of the project.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Measure</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MetricMAPlan">
+    <rdfs:subClassOf rdf:resource="#Metric"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >MetricMAPlan</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class defines the metric to be utilized in the measurement and analisis plan.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="ProcessCMPlan">
+    <rdfs:subClassOf rdf:resource="#ProcessDefinition"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class defines the process to be adopted by the configuration and management plan.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ProcessCMPlan</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="GoalMAPlan">
+    <rdfs:subClassOf rdf:resource="#Goal"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class defines the major goals for the measurement and analysis plan.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >GoalMAPlan</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="CMLevel">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This class defines the configuration management level adopted by a process.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CMLevel</rdfs:label>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="identifiedAt">
+    <rdfs:domain rdf:resource="#Defect"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property associates the defect with the work product where it was identified.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >identifiedAt</rdfs:label>
+    <rdfs:range rdf:resource="#WorkProduct"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isUnderResponsabilityOf">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >isUnderResponsabilityOf</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#WorkProductVersion"/>
+          <owl:Class rdf:about="#NonFunctionalRequirement"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the reponsible for the work product version.</rdfs:comment>
+    <rdfs:range rdf:resource="#ProjectParticipant"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasProjectParticipant">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasProjectParticipant</rdfs:label>
+    <rdfs:range rdf:resource="#ProjectParticipant"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property associates a project participant to an entity.</rdfs:comment>
+    <rdfs:domain rdf:resource="#SkillPlan"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="fromTask">
+    <rdfs:range rdf:resource="#Task"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >fromTask</rdfs:label>
+    <rdfs:domain rdf:resource="#LessonLearned"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines from which task a lesson was learned.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasRule">
+    <rdfs:range rdf:resource="#Rule"/>
+    <rdfs:domain rdf:resource="#ProcessRule"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the rule of a given project.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasRule</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasBaseline">
+    <rdfs:range rdf:resource="#Baseline"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasBaseline</rdfs:label>
+    <rdfs:domain rdf:resource="#WorkProductVersion"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the baseline from a work product version.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="identifiedBy">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >identifiedBy</rdfs:label>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ProjectParticipant"/>
+          <owl:Class rdf:about="#Stakeholder"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property identifies who fount out a defect.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Defect"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasTecniquesAndMethods">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#LessonLearned"/>
+          <owl:Class rdf:about="#SkillCatergory"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#MethodsAndTecniques"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the tecniques and methods used by entities.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasTecniquesAndMethods</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="belongsTo">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >belongsTo</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Baseline"/>
+          <owl:Class rdf:about="#Risk"/>
+          <owl:Class rdf:about="#ProjectPlan"/>
+          <owl:Class rdf:about="#EstimationModel"/>
+          <owl:Class rdf:about="#ProcessArea"/>
+          <owl:Class rdf:about="#Improvement"/>
+          <owl:Class rdf:about="#Defect"/>
+          <owl:Class rdf:about="#QualityAssurancePlan"/>
+          <owl:Class rdf:about="#CMPlan"/>
+          <owl:Class rdf:about="#MetricCollectionPlan"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property states which entities belong to a project.</rdfs:comment>
+    <rdfs:range rdf:resource="#Project"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasActualSkillLevel">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property ensures the actual skill level required by an entity.</rdfs:comment>
+    <rdfs:domain rdf:resource="#SkillPlan"/>
+    <rdfs:range rdf:resource="#SkillCatergory"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasActualSkillLevel</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSkillCategory">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property associates the skill category with other entities.</rdfs:comment>
+    <rdfs:range rdf:resource="#SkillCatergory"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasSkillCategory</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#SkillPlan"/>
+          <owl:Class rdf:about="#ProjectParticipant"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasProjectPlan">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Risk"/>
+          <owl:Class rdf:about="#ProjectPhase"/>
+          <owl:Class rdf:about="#ProjectParticipant"/>
+          <owl:Class rdf:about="#Goal"/>
+          <owl:Class rdf:about="#ProjectPhaseDefinition"/>
+          <owl:Class rdf:about="#SkillCatergory"/>
+          <owl:Class rdf:about="#FunctionalRequirement"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#ProjectPlan"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property associates the project plan with other entities.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasProjectPlan</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasDefectCause">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property establishes the cause of a given defect.</rdfs:comment>
+    <rdfs:range rdf:resource="#DefectCause"/>
+    <rdfs:domain rdf:resource="#Defect"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasDefectCause</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="indetifiedIn">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property states who project participant has a given skill category.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >indetifiedIn</rdfs:label>
+    <rdfs:domain rdf:resource="#SkillCatergory"/>
+    <rdfs:range rdf:resource="#ProjectParticipant"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="reportedBy">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property associates the project participant with other entities.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >reportedBy</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Issue"/>
+          <owl:Class rdf:about="#ChangeRequest"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#ProjectParticipant"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasProcess">
+    <rdfs:domain rdf:resource="#ProcessDefinition"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property associates the process definition with a given process.</rdfs:comment>
+    <rdfs:range rdf:resource="#Process"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasProcess</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasReviewer">
+    <rdfs:domain rdf:resource="#ProductReviwers"/>
+    <rdfs:range rdf:resource="#ProjectParticipant"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines which project participants are reviewers.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasReviewer</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="containsNonFunctionalRequirement">
+    <rdfs:domain rdf:resource="#CheckList"/>
+    <rdfs:range rdf:resource="#NonFunctionalRequirement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >containsNonFunctionalRequirement</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the non functional requirements contained in a check list.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="issuedBy">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >issuedBy</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines which project participants issued entities.</rdfs:comment>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Issue"/>
+          <owl:Class rdf:about="#Metric"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#ProjectParticipant"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasEntryCriteria">
+    <rdfs:range rdf:resource="#CheckList"/>
+    <rdfs:domain rdf:resource="#TaskDefinition"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property associates Task definition with a check list of requirements.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasEntryCriteria</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="utilizesTool">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines tools used by entities.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >utilizesTool</rdfs:label>
+    <rdfs:range rdf:resource="#Tool"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#LessonLearned"/>
+          <owl:Class rdf:about="#SkillCatergory"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasRole">
+    <rdfs:domain rdf:resource="#Stakeholder"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the project role of a stakeholder.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasRole</rdfs:label>
+    <rdfs:range rdf:resource="#ProjectRole"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasProcessArea">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property associates the process area with other entities.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasProcessArea</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Task"/>
+          <owl:Class rdf:about="#Rule"/>
+          <owl:Class rdf:about="#ProcessDefinition"/>
+          <owl:Class rdf:about="#CMPlan"/>
+          <owl:Class rdf:about="#CheckList"/>
+          <owl:Class rdf:about="#Metric"/>
+          <owl:Class rdf:about="#LessonLearned"/>
+          <owl:Class rdf:about="#FunctionalRequirement"/>
+          <owl:Class rdf:about="#NonFunctionalRequirement"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#ProcessArea"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasTask">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#SkillPlanActivity"/>
+          <owl:Class rdf:about="#Stakeholder"/>
+          <owl:Class rdf:about="#ProjectParticipant"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#Task"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasTask</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property associates a taks with other entities.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="wasBaselinedUppon">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >wasBaselinedUppon</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property states the baseline of a given work product version.</rdfs:comment>
+    <rdfs:domain rdf:resource="#WorkProductVersion"/>
+    <rdfs:range rdf:resource="#Baseline"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="containsUserRequirement">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the user requirements which a check list contains.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >containsUserRequirement</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasDefectType">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property specifies the type of a given defect.</rdfs:comment>
+    <rdfs:range rdf:resource="#DefectType"/>
+    <rdfs:domain rdf:resource="#Defect"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasDefectType</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasRequirementList">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasRequirementList</rdfs:comment>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property lists the requirements needed for a work product.</rdfs:comment>
+    <rdfs:domain rdf:resource="#WorkProduct"/>
+    <rdfs:range rdf:resource="#CheckList"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasRequiredLevelSkill">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property ensures the required skill level required by an entity.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasRequiredLevelSkill</rdfs:label>
+    <rdfs:domain rdf:resource="#SkillPlan"/>
+    <rdfs:range rdf:resource="#SkillCatergory"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasResponsibleProjectRole">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the projec role of a CCB.</rdfs:comment>
+    <rdfs:range rdf:resource="#ProjectRole"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasResponsibleProjectRole</rdfs:label>
+    <rdfs:domain rdf:resource="#CCB"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasTaskDefinition">
+    <rdfs:range rdf:resource="#TaskDefinition"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasTaskDefinition</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the task definition of an entity.</rdfs:comment>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Task"/>
+          <owl:Class rdf:about="#LessonLearned"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasMetric">
+    <rdfs:range rdf:resource="#Metric"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Measure"/>
+          <owl:Class rdf:about="#MetricCollectionPlan"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines a metric of a measure.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasMetric</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasLifeCycleModel">
+    <rdfs:range rdf:resource="#LifeCycleModel"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the life cycle model of a projec phase definition.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasLifeCycleModel</rdfs:label>
+    <rdfs:domain rdf:resource="#ProjectPhaseDefinition"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasRisk">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ChangeRequest"/>
+          <owl:Class rdf:about="#UserRequirement"/>
+          <owl:Class rdf:about="#FunctionalRequirement"/>
+          <owl:Class rdf:about="#NonFunctionalRequirement"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#Risk"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasRisk</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property assiactes a risk with other entities.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasProcessDefinition">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property assiactes a process definition with other entities.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasProcessDefinition</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ProcessRule"/>
+          <owl:Class rdf:about="#TaskDefinition"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#ProcessDefinition"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="reviewsProduct">
+    <rdfs:range rdf:resource="#WorkProduct"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the product reviewer of a given work product.</rdfs:comment>
+    <rdfs:domain rdf:resource="#ProductReviwers"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >reviewsProduct</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSkillPlan">
+    <rdfs:range rdf:resource="#SkillPlan"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasSkillPlan</rdfs:label>
+    <rdfs:domain rdf:resource="#SkillPlanActivity"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the skill plan of an skill plan activity.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="fixedBy">
+    <rdfs:domain rdf:resource="#Defect"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines who project participant fixed an give defect.</rdfs:comment>
+    <rdfs:range rdf:resource="#ProjectParticipant"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >fixedBy</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasWorkProduct">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasWorkProduct</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property associates the work product version to a product.</rdfs:comment>
+    <rdfs:domain rdf:resource="#WorkProductVersion"/>
+    <rdfs:range rdf:resource="#WorkProduct"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasProjectPhaseDefinition">
+    <rdfs:domain rdf:resource="#ProjectPhase"/>
+    <rdfs:range rdf:resource="#ProjectPhaseDefinition"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property associates the project phase with a project phase definition.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasProjectPhaseDefinition</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="injectedDuring">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >injectedDuring</rdfs:label>
+    <rdfs:domain rdf:resource="#Defect"/>
+    <rdfs:range rdf:resource="#Task"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property states in which task the defect was identified.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="submittedBy">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >submittedBy</rdfs:label>
+    <rdfs:range rdf:resource="#ProjectParticipant"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines who submitted an defect.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Defect"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasCMPlan">
+    <rdfs:domain rdf:resource="#CCB"/>
+    <rdfs:range rdf:resource="#CMPlan"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property associates CCB with CMPlan.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasCMPlan</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasEstimationModel">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasEstimationModel</rdfs:label>
+    <rdfs:domain rdf:resource="#ProjectPlan"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the estimation model of an project plan.</rdfs:comment>
+    <rdfs:range rdf:resource="#EstimationModel"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasOwner">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property associates a project participant with other entities.</rdfs:comment>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ProcessArea"/>
+          <owl:Class rdf:about="#ProcessDefinition"/>
+          <owl:Class rdf:about="#CheckList"/>
+          <owl:Class rdf:about="#Metric"/>
+          <owl:Class rdf:about="#FunctionalRequirement"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#ProjectParticipant"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasOwner</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasExitCriteria">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the exit criterias of taks definition and process definition.</rdfs:comment>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#TaskDefinition"/>
+          <owl:Class rdf:about="#ProcessDefinition"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#CheckList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasExitCriteria</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasResponsibleProjectParticipant">
+    <rdfs:domain rdf:resource="#CCB"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasResponsibleProjectParticipant</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property specifies which project participant takes part of a CCB.</rdfs:comment>
+    <rdfs:range rdf:resource="#ProjectParticipant"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="atProjectPhase">
+    <rdfs:domain rdf:resource="#Task"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property specifies the tasks of a given task.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >atProjectPhase</rdfs:label>
+    <rdfs:range rdf:resource="#ProjectPhase"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="baselinedBy">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#WorkProductVersion"/>
+          <owl:Class rdf:about="#Baseline"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >baselinedBy</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property identifies which project participant baselined a work product version or a baseline.</rdfs:comment>
+    <rdfs:range rdf:resource="#ProjectParticipant"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="hasResponsability">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasResponsability</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ProductReviwers"/>
+          <owl:Class rdf:about="#CCB"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the responsabilities of entities.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasPriority">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasPriority</rdfs:label>
+    <rdfs:domain rdf:resource="#UserRequirement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the priority of entities.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="needsInformation">
+    <rdfs:domain rdf:resource="#Metric"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >needsInformation</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines all information needed to collect a given metric.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasPolicy">
+    <rdfs:domain rdf:resource="#ProcessArea"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the policies of the process area.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasPolicy</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasImpact">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasImpact</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Risk"/>
+          <owl:Class rdf:about="#NonFunctionalRequirement"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property define the impact of a given risk.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasConclusionRemark">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property shows the conclusion remarks from the product reviewers.</rdfs:comment>
+    <rdfs:domain rdf:resource="#ProductReviwers"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasConclusionRemark</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasArea">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#CCB"/>
+          <owl:Class rdf:about="#FunctionalRequirement"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the areas of CCB.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasArea</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="audictAt">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >audictAt</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines when the CMPlan will be audicted.</rdfs:comment>
+    <rdfs:domain rdf:resource="#CMPlan"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="workHoursPerWeek">
+    <rdfs:domain rdf:resource="#ProjectParticipant"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the works hours per week of an given project participant.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >workHoursPerWeek</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="finishesAt">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >finishesAt</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines when an activity finishes.</rdfs:comment>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ProjectParticipant"/>
+          <owl:Class rdf:about="#Task"/>
+          <owl:Class rdf:about="#ProjectPhase"/>
+          <owl:Class rdf:about="#MetricCollectionPlan"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="concernsAbout">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#LessonLearned"/>
+          <owl:Class rdf:about="#MetricCollectionPlan"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property outlines the concerns from lessons learned.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >concernsAbout</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasDecision">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the decisions taken for the improvements.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasDecision</rdfs:label>
+    <rdfs:domain rdf:resource="#Improvement"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="isCustomizedAs">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >isCustomizedAs</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines how the life cycle model is customized.</rdfs:comment>
+    <rdfs:domain rdf:resource="#LifeCycleModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasDefinition">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the definition of entities.</rdfs:comment>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Task"/>
+          <owl:Class rdf:about="#FunctionalRequirement"/>
+          <owl:Class rdf:about="#NonFunctionalRequirement"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasDefinition</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasMeasurementObjective">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasMeasurementObjective</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the measurement objectives of an given metric.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Metric"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasInitials">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasInitials</rdfs:label>
+    <rdfs:domain rdf:resource="#ProjectParticipant"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the initials of a project participant.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasAnalysisTools">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the analysis tools of a measure.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Measure"/>
+          <owl:Class rdf:about="#MetricCollectionPlan"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasAnalysisTools</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasFullName">
+    <rdfs:domain rdf:resource="#ProjectParticipant"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasFullName</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the full name of a project participant.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasAuthority">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasAuthority</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the authority of entities.</rdfs:comment>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ProjectRole"/>
+          <owl:Class rdf:about="#Stakeholder"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasAnalysisMethods">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property outlines the methods used for analysing a measure.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasAnalysisMethods</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Measure"/>
+          <owl:Class rdf:about="#MetricCollectionPlan"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasVersion">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#CMPlan"/>
+          <owl:Class rdf:about="#WorkProductVersion"/>
+          <owl:Class rdf:about="#Defect"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the version of entities.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasVersion</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasMeasureType">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the type of a measure.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Measure"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasMeasureType</rdfs:label>
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Base</rdf:first>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Derived</rdf:first>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasComplexity">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasComplexity</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the complexity of entities.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#UserRequirement"/>
+          <owl:Class rdf:about="#WorkProduct"/>
+          <owl:Class rdf:about="#FunctionalRequirement"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasResposibleRole">
+    <rdfs:domain rdf:resource="#WorkProduct"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasResposibleRole</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the responsability role of an work product.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasAddress">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the address of an stakeholder.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasAddress</rdfs:label>
+    <rdfs:domain rdf:resource="#Stakeholder"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="toBeImplementedAt">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Improvement"/>
+          <owl:Class rdf:about="#FunctionalRequirement"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines when a improvement has to be implemented.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >toBeImplementedAt</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasScope">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the scope of a quality assurance plan.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasScope</rdfs:label>
+    <rdfs:domain rdf:resource="#QualityAssurancePlan"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="isRepeatable">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >isRepeatable</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property checks whether the project phase definition is repeated or not.</rdfs:comment>
+    <rdfs:domain rdf:resource="#ProjectPhaseDefinition"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="causedBy">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ProjectRessource"/>
+          <owl:Class rdf:about="#Improvement"/>
+          <owl:Class rdf:about="#Risk"/>
+          <owl:Class rdf:about="#Task"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines causes of happenings in entities.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >causedBy</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasDescription">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Baseline"/>
+          <owl:Class rdf:about="#Risk"/>
+          <owl:Class rdf:about="#ProjectRessource"/>
+          <owl:Class rdf:about="#ProjectPhase"/>
+          <owl:Class rdf:about="#EstimationModel"/>
+          <owl:Class rdf:about="#LifeCycleModel"/>
+          <owl:Class rdf:about="#Improvement"/>
+          <owl:Class rdf:about="#SkillCatergory"/>
+          <owl:Class rdf:about="#Project"/>
+          <owl:Class rdf:about="#Rule"/>
+          <owl:Class rdf:about="#Defect"/>
+          <owl:Class rdf:about="#QualityAssurancePlan"/>
+          <owl:Class rdf:about="#WorkProduct"/>
+          <owl:Class rdf:about="#Measure"/>
+          <owl:Class rdf:about="#CMPlan"/>
+          <owl:Class rdf:about="#CMLevel"/>
+          <owl:Class rdf:about="#ProjectRole"/>
+          <owl:Class rdf:about="#DefectType"/>
+          <owl:Class rdf:about="#CheckList"/>
+          <owl:Class rdf:about="#TaskDefinition"/>
+          <owl:Class rdf:about="#Metric"/>
+          <owl:Class rdf:about="#Process"/>
+          <owl:Class rdf:about="#Requirement"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property states the description of entities.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasDescription</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="wasItendifiedAt">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines when a risk was identified.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Risk"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >wasItendifiedAt</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasOutputDescription">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ProcessDefinition"/>
+          <owl:Class rdf:about="#TaskDefinition"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the output description of process definition and task definition.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasOutputDescription</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasConclusion">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasConclusion</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property concludes the product revisions.</rdfs:comment>
+    <rdfs:domain rdf:resource="#ProductReviwers"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasCost">
+    <rdfs:domain rdf:resource="#UserRequirement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the cost of an user requirement.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasCost</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasInputDescription">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasInputDescription</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#ProcessDefinition"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the input description of a process definition.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasUncertanitySize">
+    <rdfs:domain rdf:resource="#WorkProduct"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the uncertainty size of a work product.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasUncertanitySize</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="startsAt">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >startsAt</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ProjectParticipant"/>
+          <owl:Class rdf:about="#Task"/>
+          <owl:Class rdf:about="#ProjectPhase"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines when starts an task or project phase.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasPhaseSequenceNumber">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasPhaseSequenceNumber</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the phase sequence number of an project phase definition.</rdfs:comment>
+    <rdfs:domain rdf:resource="#ProjectPhaseDefinition"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasPhone">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the phone number of a stakeholder.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasPhone</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Stakeholder"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasSizeComment">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the size comment of a work product.</rdfs:comment>
+    <rdfs:domain rdf:resource="#WorkProduct"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasSizeComment</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="toBeUsedFrom">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >toBeUsedFrom</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines from where the project ressources have to be utilized..</rdfs:comment>
+    <rdfs:domain rdf:resource="#ProjectRessource"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasSize">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasSize</rdfs:label>
+    <rdfs:domain rdf:resource="#WorkProduct"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the size of work products.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasDataCollection">
+    <rdfs:domain rdf:resource="#Measure"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasDataCollection</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the data collection of a measure.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasPurpose">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#QualityAssurancePlan"/>
+          <owl:Class rdf:about="#BaselineCMPlan"/>
+          <owl:Class rdf:about="#CMPlan"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasPurpose</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the purposes of entities.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasSolution">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasSolution</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Issue"/>
+          <owl:Class rdf:about="#Defect"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the solution adopted to perform a issue or correct a defect.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasDate">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the date of an entity or event to happen.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ChangeRequest"/>
+          <owl:Class rdf:about="#ProjectRessource"/>
+          <owl:Class rdf:about="#Baseline"/>
+          <owl:Class rdf:about="#MetricCollectionPlan"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasDate</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasBaselineDate">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#WorkProductVersion"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the date of a work product version.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasBaselineDate</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasName">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasName</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the name of entities.</rdfs:comment>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Baseline"/>
+          <owl:Class rdf:about="#ProjectRessource"/>
+          <owl:Class rdf:about="#ProjectPhase"/>
+          <owl:Class rdf:about="#EstimationModel"/>
+          <owl:Class rdf:about="#LifeCycleModel"/>
+          <owl:Class rdf:about="#ProcessArea"/>
+          <owl:Class rdf:about="#SkillCatergory"/>
+          <owl:Class rdf:about="#Project"/>
+          <owl:Class rdf:about="#Task"/>
+          <owl:Class rdf:about="#Issue"/>
+          <owl:Class rdf:about="#Rule"/>
+          <owl:Class rdf:about="#QualityAssurancePlan"/>
+          <owl:Class rdf:about="#WorkProduct"/>
+          <owl:Class rdf:about="#Measure"/>
+          <owl:Class rdf:about="#ProcessDefinition"/>
+          <owl:Class rdf:about="#Tool"/>
+          <owl:Class rdf:about="#CCB"/>
+          <owl:Class rdf:about="#CMPlan"/>
+          <owl:Class rdf:about="#CMLevel"/>
+          <owl:Class rdf:about="#ProjectPhaseDefinition"/>
+          <owl:Class rdf:about="#ProjectRole"/>
+          <owl:Class rdf:about="#DefectCause"/>
+          <owl:Class rdf:about="#DefectType"/>
+          <owl:Class rdf:about="#CheckList"/>
+          <owl:Class rdf:about="#TaskDefinition"/>
+          <owl:Class rdf:about="#Metric"/>
+          <owl:Class rdf:about="#Process"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasOrganization">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasOrganization</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#QualityAssurancePlan"/>
+          <owl:Class rdf:about="#CMPlan"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the organization of entities.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasDataSource">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the data source used by a measure.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasDataSource</rdfs:label>
+    <rdfs:domain rdf:resource="#Measure"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasUncertaintyDegree">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#UserRequirement"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the uncertainty degree of a user requirement.</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasUncertaintyDegree</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasRevisionDescription">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the revision of a work product version.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#WorkProductVersion"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasRevisionDescription</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasNumber">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the number of a task.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:domain rdf:resource="#Task"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasNumber</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="wasResolvedAt">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >wasResolvedAt</rdfs:label>
+    <rdfs:domain rdf:resource="#Issue"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines when a issed was resolved.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasComment">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasComment</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Task"/>
+          <owl:Class rdf:about="#CCB"/>
+          <owl:Class rdf:about="#CMPlan"/>
+          <owl:Class rdf:about="#SkillPlan"/>
+          <owl:Class rdf:about="#FunctionalRequirement"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the comments of entities.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasAnalysisProgress">
+    <rdfs:domain rdf:resource="#Measure"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasAnalysisProgress</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines analysis progress of a measure.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasTitle">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasTitle</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the title of an given entity.</rdfs:comment>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ChangeRequest"/>
+          <owl:Class rdf:about="#Risk"/>
+          <owl:Class rdf:about="#Improvement"/>
+          <owl:Class rdf:about="#Requirement"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasEmail">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hasEmail</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This property defines the email of a stakeholder.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Stakeholder"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.3.1, Build 430)  http://protege.stanford.edu -->

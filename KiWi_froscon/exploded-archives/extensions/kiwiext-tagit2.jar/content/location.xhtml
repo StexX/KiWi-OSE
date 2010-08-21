@@ -1,0 +1,585 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+			    xmlns:a="http://richfaces.org/a4j" 
+			    xmlns:c="http://java.sun.com/jstl/core"
+			    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                xmlns:rich="http://richfaces.org/rich"
+ >
+
+<script type="text/javascript">
+	/* <![CDATA[ */
+	
+	var descFrame;
+	
+	function activateImageBox(){
+		//activate imageSlides
+		jQuery(".imagetabs").tabs(".images > div", {
+	        // enable "cross-fading" effect 
+	        effect: 'fade', 
+	        fadeOutSpeed: "slow", 
+	        // start from the beginning after the last tab 
+	        rotate: true
+	    // use the slideshow plugin. It accepts its own configuration 
+	    }).slideshow();
+
+		//activate mouseoverfunction
+		jQuery(".imagesDiv").mouseover(function(){
+			jQuery(".imageoverlay").show();
+		}).mouseout(function(){
+			jQuery(".imageoverlay").hide();
+		});
+
+	}
+	
+	/* ]]> */
+</script>
+
+<a:form>
+<div id="newsItemBox">
+	
+	<div id="pointContentBackground">
+	<div id="pointHeader">
+
+		<div id="pointHeaderTitle">
+			<!-- text image -->
+			<img src="img/location/ortBig.png" />
+			<!-- text title -->
+				<s:div id="pointHeaderTitleTextDiv" styleClass="pointHeaderTitleTextDivClass">		
+					<h:outputText value="#{tagit2.locationAction.title}" rendered="#{tagit2.locationAction.mode != 3}" styleClass="titleFix" />
+					<h:inputText value="#{tagit2.locationAction.title}" rendered="#{tagit2.locationAction.mode == 3}" styleClass="titleInput" />
+					
+				</s:div>
+		</div>
+		<div id="pointHeaderCloser" onclick="check();">
+		</div>
+		<div class="clear"></div>
+
+	</div>
+		<div id="newsItemContent">
+		
+		<!-- content -->
+		<ul class="tabs">
+			<li><a href="#">Beschreibung</a></li>
+			<li><a href="#">Bilder</a></li>
+			<li><a href="#">Kommentar</a></li>
+			<li><a href="#">Vorschl&#xE4;ge</a></li>
+			<li><a href="#">Karte</a></li>
+		</ul>
+		
+		<div class="panes">
+		
+			<!-- text -->
+			<div>
+				<s:div rendered="#{not identity.loggedIn}" styleClass="locationTextContent" >
+					<s:link action="login" styleClass="addCommentButton">
+						<img src="img/point/editText.png" title="Anmelden um den Text zu editieren" />
+					</s:link>
+					<div class="pointDate">
+						<b><h:outputText value="#{tagit2.locationAction.date}" /></b>
+					</div>
+					<div class="locationCats">
+						<b>Kategorie:</b><h:outputText value=" #{tagit2.locationAction.category} | " />
+						<b>Unterkategorie:</b><h:outputText value=" #{tagit2.locationAction.subCategory}" />
+						<s:div id="taglist">
+						<b>Tags:</b>
+						<c:forEach items="#{tagit2.tagCloudAction.tagCloud}" var="tag" status="status">
+							<a href="#" onclick="clickOnTag('#{tag.tag.title}');return false;"><h:outputText value=" #{tag.tag.title}" /></a>
+							<h:outputText value="," rendered="#{!status.last}" />
+						</c:forEach>
+						<s:link action="login" title="Einloggen, um Artikel zu taggen">
+							+
+						</s:link>
+						</s:div>
+					</div>
+					
+					<div class="locationText">
+						<h:outputText value="#{tagit2.locationAction.description}" escape="false" />
+					</div>
+				</s:div>
+				
+				<s:div rendered="#{identity.loggedIn}" styleClass="locationTextContent">
+					<s:div id="locationContentLoggedIn">
+						<s:fragment rendered="#{tagit2.locationAction.mode != 3}">
+							<a:commandLink action="#{tagit2.locationAction.startEdit()}" styleClass="addCommentButton" reRender="locationContentLoggedIn,pointHeaderTitleTextDiv" >
+								<img src="img/point/editText.png" title="Artikel editieren" />
+							</a:commandLink>
+							
+							<div class="locationCats">
+								<b>Kategorie:</b><h:outputText value=" #{tagit2.locationAction.category} | " />
+								<b>Unterkategorie:</b><h:outputText value=" #{tagit2.locationAction.subCategory}" />
+								<s:div id="taglist2">
+								<b>Tags:</b>
+								<c:forEach items="#{tagit2.tagCloudAction.tagCloud}" var="tag" status="status">
+									<a href="#" onclick="clickOnTag('#{tag.tag.title}');return false;"><h:outputText value=" #{tag.tag.title}" /></a>
+									<h:outputText value="," rendered="#{!status.last}" />
+								</c:forEach>
+									<a href="#" onclick="#{rich:component('taggingPanel')}.show();return false;">+</a>
+								</s:div>
+							</div>
+							
+							<div class="locationText">
+								<h:outputText value="#{tagit2.locationAction.description}" escape="false" />
+							</div>
+						</s:fragment>
+						<s:fragment rendered="#{tagit2.locationAction.mode == 3}">
+							
+							<div class="locationCatsEdit">
+								<table><tr>
+								<td><div style="margin-top:-7px;"><b>Kategorie:</b></div></td>
+								<td>
+									<rich:comboBox width="150" id="tag_category"  value="#{tagit2.locationAction.category}" defaultLabel="#{tagit2.locationAction.CAT_DEFAULT}" enableManualInput="false">
+        									<s:selectItems value="#{tagit2.locationAction.getCatgoryStrings()}" var="cat"/>
+        									<a:support event="onselect" reRender="tag_subcategory"/>
+    								</rich:comboBox>
+								</td>
+								<td width="300" align="right"><div style="margin-top:-7px;"><b>Unterkategorie:</b></div></td>
+								<td>
+									<rich:comboBox width="150" id="tag_subcategory"  value="#{tagit2.locationAction.subCategory}" defaultLabel="#{tagit2.locationAction.SUBCAT_DEFAULT}" enableManualInput="true">
+        									<s:selectItems value="#{tagit2.locationAction.getSubCategoryStrings()}" var="subcat"/>
+    								</rich:comboBox>
+								</td>
+								</tr>
+								</table>
+							</div>
+							<div class="locationTextEdit">
+								<rich:editor id="description_editor"
+		    						height="305"
+		    					 	width="670"
+		    						required="false"
+								 	theme="advanced"
+								 	configuration="tinymce-small"
+								 	plugins="safari,pagebreak,style,layer,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,visualchars,nonbreaking,xhtmlxtras"
+								 	value="#{tagit2.locationAction.editDescription}">
+								</rich:editor>
+								<ul class="contextButtons">
+									<li><a:commandLink action="#{tagit2.locationAction.cancelEdit()}" reRender="locationContentLoggedIn,pointHeaderTitleTextDiv">
+										<img src="img/point/cancel.png" title="Abbrechen"/>
+									</a:commandLink></li>
+									<li><a:commandLink action="#{tagit2.locationAction.saveEdit()}" reRender="locationContentLoggedIn,pointHeaderTitleTextDiv">
+										<img src="img/point/save.png" title="Speichern"/>
+									</a:commandLink></li>
+								</ul>
+							</div>
+						</s:fragment>
+					</s:div>
+				</s:div>
+					
+			</div>
+			
+			<!-- images -->
+			<div>
+				<s:div id="imageBox">
+				
+				<s:div styleClass="imagesDiv" rendered="#{tagit2.locationAction.mode != 1 and tagit2.locationAction.imageListSize != 0}">
+				<!-- "previous slide" button --> 
+				<a class="backward backwardButton imagebuttons imageoverlay">&lt;</a> 
+ 
+				<!-- container for the slides --> 
+				<div class="images"> 
+ 				<ui:repeat value="#{tagit2.locationAction.images}" var="img">
+ 					<div>
+    					<s:graphicImage rendered="#{img.mediaContent ne null}" value="#{img.mediaContent.data}">
+	        				<s:transformImageSize height="#{tagit2.imageSizeService.getImageHeight(img.mediaContent, 660, 370)}" maintainRatio="true"/>
+	        			</s:graphicImage>
+    				</div>
+ 				</ui:repeat>
+				</div> 
+ 
+				<!-- "next slide" button --> 
+				<a class="forward forwardButton imagebuttons imageoverlay">&gt;</a> 
+ 
+				<!-- the tabs --> 
+				<div class="imagetabs">
+					<c:forEach begin="1" end="#{tagit2.locationAction.imageListSize}">
+						<a href="#"></a> 
+					</c:forEach>
+				</div>
+				
+				<!-- add image button -->
+				<a:commandLink action="#{tagit2.locationAction.startImageUpload()}" styleClass="addImageButton" reRender="imageBox" rendered="#{identity.loggedIn}">
+					<img src="img/point/addImage.png" title="Bilder hochladen" />
+				</a:commandLink>
+				<s:link action="login" rendered="#{not identity.loggedIn}" styleClass="addImageButton" >
+					<img src="img/point/addImage.png" title="Anmelden um Bilder hochzuladen" />
+				</s:link>
+				<script type="text/javascript">
+					/* <![CDATA[ */
+					activateImageBox();
+					/* ]]> */
+				</script>
+				</s:div>
+				
+				<s:div rendered="#{tagit2.locationAction.mode != 1 and tagit2.locationAction.imageListSize == 0}">
+					<a:commandLink action="#{tagit2.locationAction.startImageUpload()}" styleClass="addImageButton" reRender="imageBox" rendered="#{identity.loggedIn}">
+						<img src="img/point/addImage.png" title="Bilder hochladen" />
+					</a:commandLink>
+					<s:link action="login" rendered="#{not identity.loggedIn}" styleClass="addImageButton" >
+						<img src="img/point/addImage.png" title="Anmelden um Bilder hochzuladen" />
+					</s:link>
+				</s:div>
+				
+				<!-- upload Box -->
+				<s:div styleClass="imageUploadBox" rendered="#{tagit2.locationAction.mode == 1}">
+					<h3>Bilddateien hochladen</h3>
+			      		<rich:fileUpload
+                       fileUploadListener="#{tagit2.locationAction.listener}"
+                       immediateUpload="true"
+                       listHeight="260"
+                       listWidth="670"
+                       maxFilesQuantity="3"
+                       allowFlash="true"
+                       >
+               			</rich:fileUpload>
+               		<ul class="contextButtons">
+						<li><a:commandLink action="#{tagit2.locationAction.cancelImageUpluad()}" reRender="imageBox">
+							<img src="img/point/cancel.png" title="Abbrechen"/>
+						</a:commandLink></li>
+						<li><a:commandLink action="#{tagit2.locationAction.saveImageUpload()}" reRender="imageBox">
+							<img src="img/point/save.png" title="Speichern"/>
+						</a:commandLink></li>
+					</ul>
+				</s:div>
+
+				</s:div>
+
+			</div>
+			
+			<!-- comments -->
+			<div>
+				<s:div id="commentBox">
+				<s:div styleClass="commentDiv overflow" rendered="#{tagit2.locationAction.mode != 2}">
+				<c:if test="#{tagit2.locationAction.allComments.isEmpty()}">
+					<s:div styleClass="comment">
+						<h2><h:outputText value="Keine Kommentare vorhanden"/></h2>
+					</s:div>
+				</c:if>
+				<ui:repeat value="#{tagit2.locationAction.allComments}" var="comment">
+				<div class="comment">
+					<h2><h:outputText value="#{comment.title}"/></h2>
+					<h3>
+						<h:outputText value="#{currentUser.firstName} #{currentUser.lastName} schrieb am " />
+						<h:outputText value="#{comment.created}" />
+					</h3>
+					<h:outputText value="#{comment.textContent.htmlContent}" escape="false" />
+				</div>
+				</ui:repeat>
+				
+				<a:commandLink action="#{tagit2.locationAction.startComment()}" styleClass="addCommentButton" reRender="commentBox" rendered="#{identity.loggedIn}" >
+					<img src="img/point/addText.png" title="Artikel kommentieren" />
+				</a:commandLink>
+				<s:link action="login" rendered="#{not identity.loggedIn}" styleClass="addCommentButton">
+					<img src="img/point/addText.png" title="Anmelden um Artikel zu kommentieren" />
+				</s:link>
+				</s:div>
+				
+				<s:div rendered="#{tagit2.locationAction.mode == 2}" styleClass="overflow">
+				<div class="comment">
+					<h2>Titel:</h2>
+					<h:inputText style="width:630px;" value="#{tagit2.locationAction.commenttitle}" />
+					<h2>Kommentar:</h2>
+		    		<rich:editor id="comment_editor"
+		    						height="140"
+		    					 	width="640"
+		    					 	style="margin-bottom:40px;"
+		    						required="false"
+								 	theme="advanced"
+								 	configuration="tinymce-small"
+								 	plugins="safari,pagebreak,style,layer,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,visualchars,nonbreaking,xhtmlxtras"
+								 	value="#{tagit2.locationAction.comment}">
+					</rich:editor>
+					<ul class="contextButtons" style="margin-top: -40px;width:640px;">
+						<li><a:commandLink action="#{tagit2.locationAction.cancelComment()}" reRender="commentBox">
+							<img src="img/point/cancel.png" title="Abbrechen"/>
+						</a:commandLink></li>
+						<li><a:commandLink action="#{tagit2.locationAction.saveComment()}" reRender="commentBox" >
+							<img src="img/point/save.png" title="Speichern"/>
+						</a:commandLink></li>
+					</ul>
+				</div>
+				<ui:repeat value="#{tagit2.locationAction.allComments}" var="comment">
+				<div class="comment">
+					<h2><h:outputText value="#{comment.title}"/></h2>
+					<h3>
+						<h:outputText value="#{currentUser.firstName} #{currentUser.lastName} schrieb am " />
+						<h:outputText value="#{comment.created}" />
+					</h3>
+					<h:outputText value="#{comment.textContent.htmlContent}" escape="false" />
+				</div>
+				</ui:repeat>
+					
+				</s:div>
+				</s:div>
+			</div>
+			
+			<!-- recommendations -->
+			<div>
+				<div id="recommendations">
+					
+				</div>
+			</div>
+			
+			<!-- map -->
+			<div>
+				<div id="innerMap_canvas"></div>
+				<s:div styleClass="innerMap_geocoder" rendered="#{identity.loggedIn}">
+					<input type="text" id="geocoder_input" value="#{tagit2.locationAction.adress}" />
+					<a style="left:660px;position:absolute;margin-top:-5px" href="#" onclick="setNewAdress(jQuery('#geocoder_input').val());">
+						<img style="border:none;padding:0;" src="img/point/geolocate.png" title="Neue Adresse zuweisen"/>
+					</a>
+				</s:div>
+				<s:div styleClass="innerMap_geocoder" style="text-align:right;margin-top:10px;" rendered="#{not identity.loggedIn}">
+					<s:link action="login" style="left:660px;position:absolute;margin-top:-5px" rendered="#{not identity.loggedIn}">
+						<img style="border:none;padding:0;" src="img/point/geolocate.png" title="Einloggen, um eine neue Adresse zuzuweisen"/>
+					</s:link>
+				</s:div>
+				<a href="#" id="saveGeoLocate" onclick="ajaxSaveLocation(innerMapCurPoint.lat(),innerMapCurPoint.lng(),newAdress)" style="top:80px;right:10px;position:absolute;display:none;">
+					<img src="img/point/save.png" style="border:none; padding:5px"/>
+				</a>
+			</div>
+		
+		</div>
+		
+		</div>
+	</div>
+	
+	<div id="messagePanel" class="panel">
+		<div id="messagePanelContent" class="messagePanelContent">
+		</div>
+		<div class="messagePanelButtons">
+			<table width="100%"><tr><td>
+			<a href="#" onclick="jQuery('#messagePanel').hide();ajaxCancelLocation();">Nicht Speichern</a>
+			</td><td align="right">
+			<a href="#" onclick="jQuery('#messagePanel').hide();ajaxSaveLocation();">Speichern</a>
+			</td></tr></table>
+		</div>
+	</div>
+	
+	<div id="errorPanel" class="panel">
+		<div id="errorPanelContent" class="messagePanelContent">
+		</div>
+		<div class="messagePanelButtons">
+			<table width="100%"><tr><td>
+			<a href="#" onclick="jQuery('#errorPanel').hide();ajaxCancelLocation();">Erstellen abbrechen</a>
+			</td><td align="right">
+			<a href="#" onclick="jQuery('#errorPanel').hide();">Fehler ausbessern</a>
+			</td></tr></table>
+		</div>
+	</div>
+	
+	<div id="back2" />
+	
+	<ui:include src="../dialogs/tagging.xhtml" />
+	
+
+		<a:jsFunction name="ajaxCancelLocation" action="#{tagit2.locationAction.cancel()}" oncomplete="closeInfoWindow();closePointOnLocation(null);"></a:jsFunction>
+		<a:jsFunction name="ajaxCancelLocationByTagClick" action="#{tagit2.locationAction.cancel()}" oncomplete="closePointByTagSearch(locationCurTag);"></a:jsFunction>
+		<a:jsFunction name="ajaxSaveLocation" action="#{tagit2.locationAction.save()}" oncomplete="closeInfoWindow();closePointOnLocation(innerMapCurPoint);"></a:jsFunction>
+								<!--jsFunction for check-->
+				<a:jsFunction name="ajaxCheckLocation" data="#{tagit2.locationAction.check(identity.loggedIn)}" oncomplete="afterCheck(data);">
+					<a:actionparam name="lat" assignTo="#{tagit2.locationAction.location.latitude}"/>
+					<a:actionparam name="lng" assignTo="#{tagit2.locationAction.location.longitude}"/>
+					<a:actionparam name="adress" assignTo="#{tagit2.locationAction.adress}"/>
+				</a:jsFunction>
+				<a:jsFunction name="ajaxSaveLocation" data="#{tagit2.locationAction.saveLocation()}" oncomplete="jQuery('#saveGeoLocate').hide();">
+					<a:actionparam name="lat" assignTo="#{tagit2.locationAction.location.latitude}"/>
+					<a:actionparam name="lng" assignTo="#{tagit2.locationAction.location.longitude}"/>
+					<a:actionparam name="adress" assignTo="#{tagit2.locationAction.adress}"/>
+				</a:jsFunction>
+	
+	<script type="text/javascript">
+	/* <![CDATA[ */
+	
+	//activate tabs
+	jQuery(".tabs").tabs(".panes > div", {
+		onClick: function(event, tabIndex) {
+						if(tabIndex == 4) {
+							loadInnerMap();
+						}}
+	});
+
+
+	function disableTabs() {
+		//TODO
+	}
+
+	function enableTabs() {
+		//TODO
+	}
+
+	var innerMapCurPoint = null;
+	var innerMap = null;
+	var m = null;
+	var newAdress = "";
+	
+	//load innerMap
+	function loadInnerMap() {
+
+		innerMap = new GMap2(document.getElementById("innerMap_canvas"));
+		innerMap.setUIToDefault();
+		
+		if( innerMapCurPoint == null ) {
+			if( curPoint!= null && curPoint.point != null  ) {
+				innerMapCurPoint = curPoint.point;
+				setInnerMap();
+			} else {
+				var l = GEvent.addListener(innerMap,"dblclick",function(o,point){
+					GEvent.removeListener(l);
+					innerMapCurPoint = point;
+					setInnerMap();
+				});
+				innerMap.setCenter(map.getCenter(),13);
+			}
+		} else {
+			setInnerMap();
+		}
+		if(loggedIn) {
+			newAdress = jQuery('#geocoder_input').val();
+		}
+	}
+
+	function setInnerMap() {
+		innerMap.setCenter(innerMapCurPoint,13);
+		if(loggedIn) {
+			m = new GMarker(innerMapCurPoint,{draggable:true});
+			GEvent.addListener(m,"dragend",function(p){
+				innerMapCurPoint = p;
+				jQuery('#geocoder_input').val("");
+				jQuery("#saveGeoLocate").show();
+				newAdress = "";
+			});
+		} else {
+			m = new GMarker(innerMapCurPoint);
+		}
+		innerMap.addOverlay(m);
+	}
+
+	function setNewAdress(address) {
+		geocoder = new GClientGeocoder();
+		geocoder.getLatLng(
+		          address,
+		          function(point) {
+		            if (!point) {
+		              alert(address + " nicht gefunden!");
+		            } else {
+		            	innerMapCurPoint = point;
+			          	if(m!=null) {
+			              	innerMap.removeOverlay(m);
+			            }
+			          	setInnerMap();
+		              	newAdress = address;
+						jQuery("#saveGeoLocate").show();
+		            }
+		          }
+		        );
+		
+	}
+
+    //--- this part is necessary for each point item
+	function openPointWindow() {
+		//load sematic vectors
+        jQuery('#recommendations').tagitRecommendations(
+                      { uri:           '#{currentContentItem.resource.uri}',
+                        user:          '#{currentUser.login}',
+                        mode:          'vectors',
+                        noRecLabel:    'keine Vorschl&#xE4;ge vorhanden',
+                        webServiceUrl: '#{facesContext.externalContext.requestContextPath}/seam/resource/services/widgets/recommendations'
+         }); 
+		
+        //load sematic vectors
+        jQuery('#recommendations').tagitRecommendations(
+                      { uri:           '#{currentContentItem.resource.uri}',
+                        user:          '#{currentUser.login}',
+                        mode:          'vectors',
+                        noRecLabel:    'keine Vorschl&#xE4;ge vorhanden',
+                        webServiceUrl: '#{facesContext.externalContext.requestContextPath}/seam/resource/services/widgets/recommendations'
+         });  
+		
+		//change background color
+		jQuery("#back").css("background-color","#aa0011");
+		jQuery("#back").css("background-image","url(img/location/location.png)");
+		//set images (css attributes)
+		jQuery('#pointHeaderCloser').css('background-image','url("img/location/close.png")');
+		jQuery("ul.tabs a").css('background-image','url("img/location/tabs.png")');
+		jQuery("#back").fadeIn("slow",function(){
+			jQuery("#point").fadeIn("slow");
+		});
+    }
+    
+    if(openByClick) {
+    	openByClick = false;
+    	openPointWindow();
+    }
+
+    function check() {
+		if(loggedIn) {
+
+		//check if location has changed
+		if( innerMapCurPoint != null ) {
+			ajaxCheckLocation(innerMapCurPoint.lat(),innerMapCurPoint.lng(),newAdress);
+		} else {
+			if(curPoint.point == null) {
+				ajaxCheckLocation(0,0,newAdress);
+			} else {
+				ajaxCheckLocation(-1,-1
+						,newAdress);
+			}
+		}
+		} else {
+			ajaxCancelLocation();
+		}
+    }
+
+    function afterCheck(data) {
+		if( data.type = 0 ) {
+			//is an error
+			openErrorWindow(data);
+		} else {
+			if( data.value != null ) {
+				openInfoWindow(data.value);
+			} else {
+				ajaxCancelLocation();
+			}
+		}
+    }
+
+	function openInfoWindow(data) {
+		jQuery('#messagePanelContent').html(data);
+		jQuery('#back2').show();
+		jQuery('#messagePanel').show();
+	}
+
+	function openErrorWindow(data) {
+		jQuery('#errorPanelContent').html(data);
+		jQuery('#back2').show();
+		jQuery('#messagePanel').show();
+	}
+
+	function closeInfoWindow() {
+		jQuery('.messagePanelContent').html("");
+		jQuery('#back2').hide();
+		jQuery('.panel').hide();
+	}
+
+	var locationCurTag = null;
+	
+	function clickOnTag(tag) {
+		locationCurTag = tag;
+		ajaxCancelLocationByTagClick();
+	}
+
+	function openArticle(id) {
+		alert(id);
+	}
+	
+    //----------------------------------------------
+	
+	/* ]]> */
+	</script>
+
+</div>
+</a:form>
+
+</ui:composition>

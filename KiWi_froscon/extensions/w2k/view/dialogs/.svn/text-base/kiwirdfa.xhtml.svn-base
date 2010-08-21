@@ -1,0 +1,70 @@
+<rich:modalPanel
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+   	  xmlns:rich="http://richfaces.org/rich"
+ 	  xmlns:a4j="http://richfaces.org/a4j"
+ 	  xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+ 	  width="400"
+ 	  height="250"
+      id="kiwirdfaPanel">
+        <f:facet name="header">
+            <h:panelGroup>
+                <h:outputText value="RDFa Properties Editor"></h:outputText>
+            </h:panelGroup>
+        </f:facet>
+        
+        <p style="margin-top: 20px; margin-left: 10px; margin-right: 10px;" class="help">
+        	Here you can set the RDF property the selected text should represent, e.g. foaf:firstName
+        </p>
+        
+       	<a4j:region renderRegionOnly="true">
+       	    
+       	    <h:form id="kiwirdfaForm">
+       	    	<rich:messages styleClass="message"/>
+       	    	<h:panelGrid columns="2" rowClasses="prop" columnClasses="name,value">
+		            
+		            <h:outputLabel for="rdfaProperty">Property</h:outputLabel>
+		            
+		            <h:selectOneMenu value="#{kiwirdfaAction.property}" id="rdfaProperty">
+						<s:selectItems value="#{kiwirdfaAction.possibleProperties}" var="property"
+							label="#{property.title} (#{property.resource.namespacePrefix})" noSelectionLabel="Please select ..." />
+						<kiwi:convertEntity />
+					</h:selectOneMenu>
+		            
+		            
+		        </h:panelGrid>
+		
+		        <div class="actionButtons center">
+		            <a4j:commandButton value="Create/Update" id="btnCreateRdfa" 
+		            	action="#{kiwirdfaAction.create}"
+		            	data="#{kiwirdfaAction.propertyKiwiId}"
+		            	oncomplete="kiwirdfaJSLib.onCreateOrUpdate(data)" />
+		            	
+		            <a4j:commandButton value="Delete" id="btnDeleteRdfa" 
+		            	action="#{kiwirdfaAction.delete}"
+		            	oncomplete="kiwirdfaJSLib.onDelete()" />
+		            	
+		            <a4j:commandButton value="Cancel" id="btnKiwirdfaCancel"
+		            	action="#{kiwirdfaAction.cancel}" 
+		            	oncomplete="kiwirdfaJSLib.onCancel()" />
+		            	
+		            <a4j:jsFunction name="kiwirdfaSetProperty" reRender="rdfaProperty">
+		        		<a4j:actionparam name="Param1" assignTo="#{kiwirdfaAction.propertyJS}"/>
+		        	</a4j:jsFunction>
+		        
+		        	<!-- <a4j:jsFunction name="kiwirdfaSetContext" reRender="rdfaProperty">
+		        		<a4j:actionparam name="Param1" assignTo="#{kiwirdfaAction.currentContextKiwiId}"/>
+		        	</a4j:jsFunction> -->
+		        	
+		        	<!--  <a4j:jsFunction name="onKiWiRDFaCreateOrUpdate"
+		            	data="#{kiwirdfaAction.property}" 
+	                	oncomplete="kiwirdfaJSLib.onCreateOrUpdate(data)" /> -->
+	                	
+		        </div>
+			</h:form>
+		</a4j:region>
+
+</rich:modalPanel>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="classes/model" path="src/model"/>
+	<classpathentry kind="src" output="classes/action" path="src/action"/>
+	<classpathentry kind="src" output="classes/test" path="src/test"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="bootstrap"/>
+	<classpathentry kind="lib" path="lib/hibernate-validator.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate-annotations.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate-commons-annotations.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate-entitymanager.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-seam.jar" sourcepath="lib/src/jboss-seam-sources.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-seam-debug.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-cache.jar"/>
+	<classpathentry kind="lib" path="lib/jbpm-jpdl.jar"/>
+	<classpathentry kind="lib" path="lib/antlr.jar"/>
+	<classpathentry kind="lib" path="lib/jgroups.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="lib/jstl.jar"/>
+	<classpathentry kind="lib" path="lib/jsf-api.jar"/>
+	<classpathentry kind="lib" path="lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="lib/testng.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-el.jar"/>
+	<classpathentry kind="lib" path="lib/el-api.jar"/>
+	<classpathentry kind="lib" path="lib/mvel14.jar"/>
+	<classpathentry kind="lib" path="lib/drools-core.jar"/>
+	<classpathentry kind="lib" path="lib/drools-compiler.jar"/>
+	<classpathentry kind="lib" path="lib/janino.jar"/>
+	<classpathentry kind="lib" path="lib/antlr-runtime.jar"/>
+	<classpathentry kind="lib" path="lib/mail.jar"/>
+	<classpathentry kind="lib" path="lib/persistence-api.jar"/>
+	<classpathentry kind="lib" path="lib/ejb-api.jar"/>
+	<classpathentry kind="lib" path="lib/jsr250-api.jar"/>
+	<classpathentry kind="lib" path="lib/jta.jar"/>
+	<classpathentry kind="lib" path="lib/core.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-embedded-api.jar"/>
+	<classpathentry kind="lib" path="lib/hsqldb.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate-search.jar" sourcepath="/Users/sschaffe/Downloads/hibernate-search-3.1.0.GA/src"/>
+	<classpathentry kind="lib" path="lib/lucene-core.jar"/>
+	<classpathentry kind="lib" path="lib/aduna-appbase-core-3.1.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/aduna-appbase-logging-api-3.1.jar"/>
+	<classpathentry kind="lib" path="lib/aduna-appbase-logging-file-3.1.jar"/>
+	<classpathentry kind="lib" path="lib/aduna-appbase-webapp-base-core-3.1.jar"/>
+	<classpathentry kind="lib" path="lib/aduna-commons-collections-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/aduna-commons-concurrent-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/aduna-commons-io-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/aduna-commons-iteration-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/aduna-commons-lang-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/aduna-commons-net-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/aduna-commons-platform-info-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/aduna-commons-text-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/aduna-commons-webapp-core-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/aduna-commons-xml-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-console-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-http-client-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-http-protocol-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-http-server-spring-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-http-webclient-spring-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-model-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-query-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-queryalgebra-evaluation-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-queryalgebra-model-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-queryparser-api-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-queryparser-serql-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-queryparser-sparql-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-queryresultio-api-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-queryresultio-binary-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-queryresultio-sparqljson-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-queryresultio-sparqlxml-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-queryresultio-text-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-repository-api-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-repository-dataset-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-repository-event-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-repository-http-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-repository-manager-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-repository-sail-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-rio-api-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-rio-n3-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-rio-ntriples-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-rio-rdfxml-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-rio-trig-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-rio-trix-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-rio-turtle-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-runtime-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-sail-api-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-sail-inferencer-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-sail-memory-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-sail-nativerdf-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/sesame-sail-rdbms-2.2-beta2.jar"/>
+	<classpathentry kind="lib" path="lib/xom-1.2b2.jar" sourcepath="/Users/sschaffe/Downloads/XOM/src"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-1.5.2.jar"/>
+	<classpathentry kind="lib" path="lib/test/thirdparty-all.jar"/>
+	<classpathentry kind="lib" path="lib/backport-util-concurrent.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-seam-ui.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-seam-remoting.jar"/>
+	<classpathentry kind="lib" path="lib/xmlunit-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/htmlcleaner2_1.jar"/>
+	<classpathentry kind="lib" path="lib/jdom.jar"/>
+	<classpathentry kind="lib" path="lib/nux.jar"/>
+	<classpathentry kind="lib" path="lib/commons-beanutils.jar"/>
+	<classpathentry kind="lib" path="lib/owlim-3.0.beta7.jar"/>
+	<classpathentry kind="lib" path="lib/trree-3.0.beta7.jar"/>
+	<classpathentry kind="lib" path="lib/commons-io-1.4.jar"/>
+	<classpathentry kind="lib" path="lib/jmimemagic-0.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/PDFBox-0.7.3.jar"/>
+	<classpathentry kind="lib" path="lib/poi-3.0.2-beta1-20071204.jar"/>
+	<classpathentry kind="lib" path="lib/poi-contrib-3.0.2-beta1-20071204.jar"/>
+	<classpathentry kind="lib" path="lib/poi-scratchpad-3.0.2-beta1-20071204.jar"/>
+	<classpathentry kind="lib" path="lib/metadata-extractor-2.3.1.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-seam-resteasy.jar"/>
+	<classpathentry kind="lib" path="lib/jaxws-api.jar"/>
+	<classpathentry kind="lib" path="lib/jaxrs-api.jar"/>
+	<classpathentry kind="lib" path="lib/geonames-1.0-kiwi.jar"/>
+	<classpathentry kind="lib" path="lib/h2-1.1.100.jar"/>
+	<classpathentry kind="lib" path="lib/postgresql-8.3dev-602.jdbc3.jar"/>
+	<classpathentry kind="lib" path="lib/richfaces-api-3.3.0.GA.jar"/>
+	<classpathentry kind="lib" path="lib/richfaces-impl-3.3.0.GA.jar"/>
+	<classpathentry kind="lib" path="lib/richfaces-ui-3.3.0.GA.jar"/>
+	<classpathentry kind="lib" path="lib/test/jboss-embedded-all.jar"/>
+	<classpathentry kind="lib" path="lib/oscache-2.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry exported="true" kind="con" path="GROOVY_SUPPORT"/>
+	<classpathentry kind="output" path="test-build"/>
+</classpath>

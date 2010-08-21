@@ -1,0 +1,202 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+<!ENTITY hgtags "http://www.holygoat.co.uk/owl/redwood/0.1/tags/">
+<!ENTITY sioc "http://rdfs.org/sioc/ns#">
+<!ENTITY foaf "http://xmlns.com/foaf/0.1/">
+<!ENTITY cont "http://www.w3.org/2000/10/swap/pim/contact#">
+<!ENTITY geo "http://www.w3.org/2003/01/geo/wgs84_pos#">
+<!ENTITY kiwi "http://www.kiwi-project.eu/kiwi/core/">
+<!ENTITY logica "http://www.kiwi-project.eu/kiwi/logica/">
+<!ENTITY ideator "http://www.ideator.at/">
+<!ENTITY skos "http://www.w3.org/2004/02/skos/core#">
+<!ENTITY dc "http://purl.org/dc/elements/1.1/">]>
+
+
+<rdf:RDF 
+	xmlns:rdf="&rdf;"
+	xmlns:rdfs="&rdfs;"
+	xmlns:owl="&owl;"
+	xmlns:dc="&dc;"
+	xmlns:foaf="&foaf;"
+	xmlns:kiwi="&kiwi;"
+	xmlns:geo="&geo;"
+	xmlns:cont="&cont;"
+	xmlns:hgtags="&hgtags;"
+	xmlns:sioc="&sioc;"
+	xmlns:ideator="&ideator;"
+	xmlns:skos="&skos;"
+	xml:base="http://users.fh-salzburg.ac.at/~fhs12575/ontology/">
+    
+    <!-- ideator root concept schema --> 
+   	<rdf:Description rdf:about="&ideator;IdeatorThesaurus">
+        <rdf:type rdf:resource="&skos;ConceptScheme"/>
+        <rdfs:label>Ideator Thesaurus</rdfs:label>
+        <skos:hasTopConcept rdf:resource="&ideator;companies"/>
+        <skos:hasTopConcept rdf:resource="&ideator;categories"/>
+    </rdf:Description>
+    
+    <!-- ideator company sample -->
+    <rdf:Description rdf:about="&ideator;companies">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="en">Ideator Company Thesaurus</skos:prefLabel>
+        <skos:definition xml:lang="en">This is a sample Thesaurus for ideator showcase</skos:definition>
+        <skos:narrower rdf:resource="&ideator;sint"/>
+        <skos:narrower rdf:resource="&ideator;kurz"/>
+    </rdf:Description>
+    
+        <!-- ideator categories -->
+    <rdf:Description rdf:about="&ideator;categories">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="en">Ideator Categories</skos:prefLabel>
+        <skos:definition xml:lang="en">This is a sample Thesaurus for ideator showcase</skos:definition>
+        <skos:narrower rdf:resource="&ideator;product"/>
+        <skos:narrower rdf:resource="&ideator;businessmodel"/>
+        <skos:narrower rdf:resource="&ideator;quality"/>
+        <skos:narrower rdf:resource="&ideator;security"/>
+    </rdf:Description>
+    
+    <!-- positions --> 
+    <rdf:Description rdf:about="&ideator;sint">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="en">SINT Technologies</skos:prefLabel>
+        <skos:definition xml:lang="en">Sample Company A</skos:definition>
+        <skos:broader rdf:resource="&ideator;companies"/>
+        <skos:narrower rdf:resource="&ideator;sint_research"/>
+        <skos:narrower rdf:resource="&ideator;sint_solutions"/>
+    </rdf:Description>
+    
+    <rdf:Description rdf:about="&ideator;sint_research">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="en">Research Center</skos:prefLabel>
+        <skos:definition xml:lang="en">Sample department in Company A</skos:definition>
+        <skos:broader rdf:resource="&ideator;sint"/>
+        <skos:narrower rdf:resource="&ideator;sint_research_chef"/>
+        <skos:narrower rdf:resource="&ideator;sint_research_researcher"/>
+    </rdf:Description>
+    
+   	<rdf:Description rdf:about="&ideator;sint_research_chef">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="en">Boss</skos:prefLabel>
+        <skos:definition xml:lang="en">Sample position in Company A</skos:definition>
+        <skos:broader rdf:resource="&ideator;sint_research"/>
+    </rdf:Description>
+    
+   	<rdf:Description rdf:about="&ideator;sint_research_researcher">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="en">Researcher</skos:prefLabel>
+        <skos:definition xml:lang="en">Sample position in Company A</skos:definition>
+        <skos:broader rdf:resource="&ideator;sint_research"/>
+    </rdf:Description>
+    
+   	<rdf:Description rdf:about="&ideator;sint_solutions">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="en">Solutions</skos:prefLabel>
+        <skos:definition xml:lang="en">Sample department in Company A</skos:definition>
+        <skos:broader rdf:resource="&ideator;sint"/>
+        <skos:narrower rdf:resource="&ideator;sint_solutions_chef"/>
+        <skos:narrower rdf:resource="&ideator;sint_solutions_programmer"/>
+    </rdf:Description>
+    
+       	<rdf:Description rdf:about="&ideator;sint_solutions_chef">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="en">Headmaster</skos:prefLabel>
+        <skos:definition xml:lang="en">Sample position in Company A</skos:definition>
+        <skos:broader rdf:resource="&ideator;sint_solutions"/>
+    </rdf:Description>
+    
+   	<rdf:Description rdf:about="&ideator;sint_solutions_programmer">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="en">Programmer</skos:prefLabel>
+        <skos:definition xml:lang="en">Sample position in Company A</skos:definition>
+        <skos:broader rdf:resource="&ideator;sint_solutions"/>
+    </rdf:Description>
+    
+    <rdf:Description rdf:about="&ideator;kurz">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="en">KURZ Holding AG</skos:prefLabel>
+        <skos:definition xml:lang="en">Sample Company B</skos:definition>
+        <skos:broader rdf:resource="&ideator;companies"/>
+        <skos:narrower rdf:resource="&ideator;kurz_development"/>
+    </rdf:Description>
+    
+    <rdf:Description rdf:about="&ideator;kurz_development">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="en">Masterminds</skos:prefLabel>
+        <skos:definition xml:lang="en">Sample department in Company B</skos:definition>
+        <skos:broader rdf:resource="&ideator;kurz"/>
+        <skos:narrower rdf:resource="&ideator;kurz_development_chef"/>
+        <skos:narrower rdf:resource="&ideator;kurz_development_a"/>
+        <skos:narrower rdf:resource="&ideator;kurz_development_b"/>
+    </rdf:Description>
+    
+   	<rdf:Description rdf:about="&ideator;kurz_development_chef">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="de">Boss</skos:prefLabel>
+        <skos:definition xml:lang="de">Sample position in Company B</skos:definition>
+        <skos:broader rdf:resource="&ideator;kurz_development"/>
+    </rdf:Description>
+    
+   	<rdf:Description rdf:about="&ideator;kurz_development_a">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="de">Marketing</skos:prefLabel>
+        <skos:definition xml:lang="de">Sample department in Company B</skos:definition>
+        <skos:broader rdf:resource="&ideator;kurz_development"/>
+    </rdf:Description>
+    
+   	<rdf:Description rdf:about="&ideator;kurz_development_b">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="de">Development</skos:prefLabel>
+        <skos:definition xml:lang="de">Sample department in Company B</skos:definition>
+        <skos:broader rdf:resource="&ideator;kurz_development"/>
+       	<skos:narrower rdf:resource="&ideator;kurz_development_b_chef"/>
+        <skos:narrower rdf:resource="&ideator;kurz_development_b_programmer"/>
+    </rdf:Description>
+    
+    <rdf:Description rdf:about="&ideator;kurz_development_b_chef">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="de">Headmaster</skos:prefLabel>
+        <skos:definition xml:lang="de">Sample position in Company B</skos:definition>
+        <skos:broader rdf:resource="&ideator;kurz_development_b"/>
+    </rdf:Description>
+    
+    <rdf:Description rdf:about="&ideator;kurz_development_b_programmer">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="de">Programmer</skos:prefLabel>
+        <skos:definition xml:lang="de">Sample position in Company B</skos:definition>
+        <skos:broader rdf:resource="&ideator;kurz_development_b"/>
+    </rdf:Description>
+    
+    <!-- categories -->
+    <rdf:Description rdf:about="&ideator;product">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="en">Product</skos:prefLabel>
+        <skos:definition xml:lang="en">Idea for a new product</skos:definition>
+        <skos:broader rdf:resource="&ideator;companies"/>
+    </rdf:Description>
+    
+    <rdf:Description rdf:about="&ideator;businessmodel">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="en">Business Model</skos:prefLabel>
+        <skos:definition xml:lang="en">Idea regarding a new business model</skos:definition>
+        <skos:broader rdf:resource="&ideator;companies"/>
+    </rdf:Description>
+    
+     <rdf:Description rdf:about="&ideator;quality">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="en">Quality Improvement</skos:prefLabel>
+        <skos:definition xml:lang="en">Idea regarding a quality improvement</skos:definition>
+        <skos:broader rdf:resource="&ideator;companies"/>
+    </rdf:Description>
+    
+     <rdf:Description rdf:about="&ideator;security">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:prefLabel xml:lang="en">Security</skos:prefLabel>
+        <skos:definition xml:lang="en">Security related idea</skos:definition>
+        <skos:broader rdf:resource="&ideator;companies"/>
+    </rdf:Description>    
+	
+</rdf:RDF>

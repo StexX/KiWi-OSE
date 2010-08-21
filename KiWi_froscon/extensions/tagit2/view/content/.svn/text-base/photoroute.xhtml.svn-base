@@ -1,0 +1,489 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+			    xmlns:a="http://richfaces.org/a4j" 
+			    xmlns:c="http://java.sun.com/jstl/core"
+			    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                xmlns:rich="http://richfaces.org/rich"
+ >
+ 
+<script type="text/javascript">
+	
+	/* <![CDATA[ */
+	var showUp = false;
+	var wpTabs;
+	
+	var curMarker = -1;
+	var allMarkers = [];
+		
+	//select cur WP
+	function selectFromMarker(id) {
+		if( allTabsIndex != 1 ) {
+			allTabs.click(1);
+		}
+		wpTabs.click("#"+id);
+	}
+	
+	function selectFromTab(event,tab) {
+		if( showUp ) {
+			setCurrentMarker();
+			mark(curMarker);
+		}
+	}
+	
+	//mark id, unmark others
+	function mark(id) {
+		for( var i = 0; i < allMarkers.length; i++ ) {
+			
+			if( allMarkers[i].id == id ) {
+				allMarkers[i].marker.setImage("image/icon16x16/wp_plus.png");
+			} else {
+				allMarkers[i].marker.setImage("image/icon16x16/wp.png");
+			}
+			
+		}
+
+	}
+	
+	function setCurrentMarker() {
+		curMarker = wpTabs.getCurrentTab().attr('id');
+	}
+
+	function activateWPBox(){
+		//activate imageSlides
+		jQuery(".wpTabs").tabs(".wpPanes > div", {
+	        // enable "cross-fading" effect 
+	        effect: 'fade', 
+	        fadeOutSpeed: "slow", 
+	        // start from the beginning after the last tab 
+	        rotate: true,
+			clickable:false,
+			//function if tab changes
+			onClick:selectFromTab
+	    // use the slideshow plugin. It accepts its own configuration 
+	    }).slideshow();
+		
+		wpTabs = jQuery(".wpTabs").tabs();
+
+		setCurrentMarker();
+	    
+	}
+
+	/* ]]> */
+</script>
+
+
+<a:form>
+<div id="RouteBox">
+	
+	<div id="pointContentBackground">
+	<div id="pointHeader" style="width:798px;">
+		<s:div id="pointHeaderTitle" style="color:#a91d1d">
+			<!-- text image -->
+			<img src="img/route/routeBig.png" />
+			<!-- text title -->
+			<span id="pointHeaderTitleText">
+				<h:outputText rendered="#{tagit2.routeAction.mode != 2}" value="#{tagit2.routeAction.title}" />
+				<h:inputText value="#{tagit2.routeAction.editTitle}" rendered="#{tagit2.routeAction.mode == 2}" styleClass="routeTitleInput" />
+			</span>
+		</s:div>
+		<div id="routeHeaderCloser" style="margin-left:782px;margin-top:-55px;" onclick="check();">
+		</div>
+		<div class="clear"></div>
+	</div>
+		<div id="RouteContent">
+		
+		<div class="routeContentLeft">
+
+			<ul class="routeTabs">
+				<li><a href="#">Beschreibung</a></li>
+				<li><a href="#">Kommentare</a></li>
+			</ul>
+
+			
+			<div class="routePanes">
+				<div>
+				<!-- description -->
+					<s:div styleClass="routeTextContent" id="rdescription">
+						<s:div rendered="#{tagit2.routeAction.mode != 2}">
+							<div style="margin-left:10px;width:238px">
+							<h:outputText value="#{tagit2.routeAction.description}" escape="false" />
+							<a:commandLink action="#{tagit2.routeAction.startEditDescription()}" reRender="rdescription,pointHeaderTitle" rendered="#{identity.loggedIn}" styleClass="routeEditLink">
+								<img src="img/route/pen.png" title="Beschreibung und Titel der Route editieren" style="border:none;" />
+							</a:commandLink>
+							<s:link action="login" rendered="#{not identity.loggedIn}" styleClass="routeEditLink">
+								<img src="img/route/pen.png" title="Anmelden um die Beschreibung und den Titel zu editieren" style="border:none;" />
+							</s:link>
+							</div>
+						</s:div>
+						<s:div rendered="#{tagit2.routeAction.mode == 2}">
+							<rich:editor id="description_editor"
+		    						height="240"
+		    					 	width="268"
+		    						required="false"
+								 	theme="advanced"
+								 	configuration="tinymce-small"
+								 	plugins="safari,pagebreak,style,layer,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,visualchars,nonbreaking,xhtmlxtras"
+								 	value="#{tagit2.routeAction.editDesc}">
+							</rich:editor>
+							<ul class="contextButtons" style="margin-right:3px;">
+								<li><a:commandLink action="#{tagit2.routeAction.cancelEditDescription()}" reRender="rdescription,pointHeaderTitle">
+										<img src="img/point/cancel.png" title="Abbrechen"/>
+									</a:commandLink></li>
+								<li><a:commandLink action="#{tagit2.routeAction.saveEditDescription()}" reRender="rdescription,pointHeaderTitle">
+										<img src="img/point/save.png" title="Speichern"/>
+									</a:commandLink></li>
+								</ul>
+						</s:div>
+					</s:div>
+					<div class="routeTextImage">
+					   	<s:link styleClass="routelbox" action="#{tagit2.downloadAction.download}">
+                        	<f:param name="contentItemId" value="#{currentContentItem.id}" /> 
+							<s:graphicImage rendered="#{tagit2.routeAction.profile ne null}" value="#{tagit2.routeAction.profile.data}" style="border:1px solid #666; padding:0;">
+	        					<s:transformImageSize height="#{tagit2.imageSizeService.getImageHeight(tagit2.routeAction.profile, 270, 90)}" maintainRatio="true"/>
+	        				</s:graphicImage>
+	        			</s:link>
+					</div>
+				</div>
+				<!-- waypoints -->
+				<div>
+				<s:div styleClass="routeWaypoints" id="wpCanvas">
+			
+				</s:div>
+				</div>
+			</div>
+
+		</div>
+		<div class="routeContentRight">
+			<div class="routeAdditionalInfo">
+				<table width="100%"><tr>
+				<td><b>Distanz:</b><i><h:outputText value=" #{tagit2.routeAction.distance} " />km</i></td>
+				<td align="right"><b>H&#xF6;he:</b><i><h:outputText value=" #{tagit2.routeAction.vertClimb} " />m</i></td>
+				</tr></table>
+			</div>
+			<div class="innerMapWrap" >
+				<div id="innerMapRoute_canvas" ></div> 
+			</div>
+			<s:fragment rendered="#{identity.loggedIn}">
+				<a id="startEditPolyLink" href="#" onclick="startEditPoly();">
+					<img src="img/route/pen.png" />
+				</a>
+				<a:commandLink styleClass="startEditPolyLink2" style="margin:0;" action="#{tagit2.routeAction.startImageUploadFake()}" oncomplete="Richfaces.showModalPanel('mmPanel')">
+					<img src="img/add_image.png" />
+				</a:commandLink>
+			</s:fragment>
+		</div>
+		
+		</div>
+	</div>
+</div>
+
+<a:jsFunction name="ajaxSaveWP" action="#{tagit2.routeAction.saveAddWaypoint()}" reRender="wpCanvas" oncomplete="ajaxGetWaypoints();">
+	<a:actionparam name="lat" assignTo="#{tagit2.routeAction.newWaypointLocation.latitude}"/>
+	<a:actionparam name="lng" assignTo="#{tagit2.routeAction.newWaypointLocation.longitude}"/>
+</a:jsFunction>
+
+</a:form>
+
+
+<rich:modalPanel id="mmPanel" width="400" height="300">
+     <f:facet name="header">Bilder hochladen</f:facet>
+	 <a:form>
+				<h3>Bilddateien hochladen</h3>
+			      		<rich:fileUpload
+                       fileUploadListener="#{tagit2.routeAction.listener}"
+                       immediateUpload="true"
+                       listHeight="140"
+                       listWidth="370"
+                       maxFilesQuantity="3"
+                       allowFlash="true"
+                       >
+               			</rich:fileUpload>
+               		<ul class="contextButtons">
+						<li><a:commandLink action="#{tagit2.routeAction.cancelImageUpload()}" reRender="imageUploadText,mmPanel" oncomplete="Richfaces.hideModalPanel('mmPanel');" >
+							<img src="img/point/cancel.png" title="Abbrechen"/>
+						</a:commandLink></li>
+						<li><a:commandLink data="#{tagit2.routeAction.saveImageUploadFake()}" reRender="imageUploadText,mmPanel" oncomplete="Richfaces.hideModalPanel('mmPanel');showImages(data);" >
+							<img src="img/point/save.png" title="Speichern"/>
+						</a:commandLink></li>
+					</ul>
+		
+	 </a:form>
+</rich:modalPanel>
+
+	<div id="messagePanel" class="panel">
+		<div id="messagePanelContent" class="messagePanelContent">
+			Du hast die Route veraendert. Willst du die Aenderungen speichern?
+		</div>
+		<div class="messagePanelButtons">
+			<table width="100%"><tr><td>
+			<a href="#" onclick="jQuery('#messagePanel').hide();ajaxCancelRoute();">Nicht Speichern</a>
+			</td><td align="right">
+			<a href="#" onclick="jQuery('#messagePanel').hide();ajaxSaveRoute(getPolyString());">Speichern</a>
+			</td></tr></table>
+		</div>
+	</div>
+
+<h:form>
+<a:jsFunction name="ajaxGetRoute" data="#{tagit2.routeAction.getTrackpoints()}" oncomplete="drawRoute(data);" />
+<a:jsFunction name="ajaxGetWaypoints" data="#{tagit2.routeAction.getWayPointLocations()}" oncomplete="drawWaypoints(data);" />
+<a:jsFunction name="ajaxCancelRoute" action="#{tagit2.routeAction.cancel()}" oncomplete="closeInfoWindow();closePoint();"></a:jsFunction>
+<a:jsFunction name="ajaxSaveRoute" action="#{tagit2.routeAction.save()}" oncomplete="closeInfoWindow();closePoint();">
+	<a:actionparam name="points" assignTo="#{tagit2.routeAction.points}"></a:actionparam>
+</a:jsFunction>
+</h:form>
+	
+	<script type="text/javascript">
+	/* <![CDATA[ */
+	var innerMap;
+	var poly;
+	
+	var allTabs;
+	var allTabsIndex = 0;
+	
+	//activate tabs
+	jQuery(".routeTabs").tabs(".routePanes > div", {
+		onClick: function(event, tabIndex) {
+			if (showUp) {
+				allTabsIndex = tabIndex;
+				if (tabIndex == 0) {
+					mark(-1);
+				} else {
+					mark(curMarker);
+				}
+			}
+		}
+	});
+	
+	allTabs = jQuery(".routeTabs").tabs();
+
+	//set map
+	function loadInnerMap() {
+		innerMap = new GMap2(document.getElementById("innerMapRoute_canvas"));
+		innerMap.setUIToDefault();
+		ajaxGetRoute();
+		
+	}
+	
+	var startPoint;
+	var endPoint;
+	var startEnd;
+	
+	var evt1;
+	var evt2;
+	
+	var poly_changed = false;
+	
+	function drawRoute(data) {
+		var latlngs = [data.length];
+		for(var i = 0; i < data.length; i++) {
+			latlngs[i] = new GLatLng(data[i].latitude,data[i].longitude);
+		}
+		
+		poly = new GPolyline(latlngs);
+
+		var bounds = poly.getBounds();
+		innerMap.setCenter(bounds.getCenter(),innerMap.getBoundsZoomLevel(bounds));
+		
+		innerMap.addOverlay(poly);
+		
+		if( latlngs[0].distanceFrom(latlngs[data.length-1]) < 100 ) {
+			//close Polyline
+			poly.insertVertex(data.length, latlngs[0]);
+			startEnd = new GMarker(latlngs[0],{icon:createIcon("route_startend.png")});
+			innerMap.addOverlay(startEnd);
+		} else {
+			startPoint = new GMarker(latlngs[0],{icon:createIcon("route_start.png")});
+			endPoint = new GMarker(latlngs[data.length-1],{icon:createIcon("route_end.png")});
+			innerMap.addOverlay(endPoint);
+			innerMap.addOverlay(startPoint);
+		}
+		//add waypoints
+		ajaxGetWaypoints();
+	}
+	
+	function drawWaypoints(data) {
+		//remove old waypoints
+		for( var i = 0; i < allMarkers.length;i++ ) {
+			innerMap.removeOverlay(allMarkers[i].marker);
+		}
+		allMarkers = [];
+		
+		//add new waypoints
+		for( var i = 0; i < data.length; i++ ) {
+			//if marker = curMrker set icon
+			var p = new GLatLng(data[i].latitude,data[i].longitude);
+			var m = new GMarker(p,{title:data[i].title,icon:icon_wp});
+			
+			//TODO push markers to waypoints
+			//jQuery("")
+			
+			allMarkers.push(new Waypoint(m,data[i].id));
+			innerMap.addOverlay(m);
+			
+			var al = function(marker,id) {
+				GEvent.addListener(marker,"click",function(){
+					selectFromMarker(id);
+				});
+			}
+			al(m,data[i].id);
+		}
+	}
+	
+	//create new WP
+	var newWP;
+	
+	function startNewWP() {
+		//unmark all others
+		mark(-1);
+		
+		newWP = new GMarker(innerMap.getCenter(),{icon:icon_wp_plus,draggable:true});
+		innerMap.addOverlay(newWP);
+	}
+	
+	function saveNewWP() {
+		innerMap.removeOverlay(newWP);
+		ajaxSaveWP( newWP.getLatLng().lat(),newWP.getLatLng().lng() );
+	}
+	
+	function cancelNewWP() {
+		innerMap.removeOverlay(newWP);
+	}
+	
+	//things for edit polyline
+	function startEditPoly() {
+		//check if startend != null
+		
+		if( startEnd != null ) {
+			innerMap.removeOverlay(startEnd);
+			startEnd = null;
+			//delete last vertex
+			poly.deleteVertex(poly.getVertexCount()-1);
+			//add start and endpoint
+			startPoint = new GMarker(poly.getVertex(0),{icon:createIcon("route_start.png")});
+			endPoint = new GMarker(poly.getVertex(poly.getVertexCount()-1),{icon:createIcon("route_end.png")});
+			innerMap.addOverlay(startPoint);
+			innerMap.addOverlay(endPoint);
+		}
+		
+		//set link
+		document.getElementById( "startEditPolyLink" ).onclick = endEditPoly;
+		jQuery('#startEditPolyLink').text('quit');
+		//enable drawing
+		poly.enableEditing({clickable :false});
+		evt1 = GEvent.addListener(poly,"click",function(point){
+			for( var i= 0; i < poly.getVertexCount() ;i++ ) {
+				if(poly.getVertex(i).equals(point)) {
+					poly.deleteVertex(i);
+					break;
+				}
+			}
+		});
+		evt2 = GEvent.addListener(poly,"lineupdated",function(){
+			checkStartEnd();
+			poly_changed = true;
+		});		
+	}
+	
+	function endEditPoly() {
+		//set link
+		document.getElementById( "startEditPolyLink" ).onclick = startEditPoly;
+		jQuery('#startEditPolyLink').text('edit');
+		//disable drawing
+		poly.disableEditing();
+		GEvent.removeListener(evt1);
+		GEvent.removeListener(evt2);		
+	}
+	
+	function checkStartEnd() {
+
+		if( !poly.getVertex(0).equals(startPoint.getLatLng()) ) {
+			startPoint.setLatLng(poly.getVertex(0))
+		} else if( !poly.getVertex(poly.getVertexCount()-1).equals( endPoint.getLatLng() ) ) {
+			endPoint.setLatLng(poly.getVertex(poly.getVertexCount()-1));
+		}
+	}
+	
+	function openPointWindow() {
+		//margin in
+		jQuery("#point").css('margin-left','-400px');
+
+		jQuery("#back").css("background-color","#B404AE");
+		jQuery("#back").css("background-image","url(img/route/route.png)");
+		//set images (css attributes)
+		jQuery("#back").fadeIn("slow",function(){
+			jQuery("#point").fadeIn("slow",function(){
+				showUp = true;
+				loadInnerMap();
+				jQuery('.routelbox').lightBox({
+					imageBtnPrev: '../js/jqueryplugins/jquery-lightbox-0.5/images/lightbox-btn-prev.gif',
+					imageBtnNext: '../js/jqueryplugins/jquery-lightbox-0.5/images/lightbox-btn-next.gif',
+					imageBtnClose: '../js/jqueryplugins/jquery-lightbox-0.5/images/lightbox-btn-close.gif',
+					imageLoading: '../js/jqueryplugins/jquery-lightbox-0.5/images/lightbox-ico-loading.gif'
+				});
+			});
+		});
+    }
+    
+    if(openByClick) {
+    	openByClick = false;
+    	openPointWindow();
+    }
+	
+	function getPolyString() {
+		var ps = [poly.getVertexCount()];
+		for( var i = 0; i < poly.getVertexCount();i++ ) {
+			ps[i] = poly.getVertex(i);
+		}
+		return ps.join(";");
+	}
+	
+	function writePoly() {
+		GLog.write(getPolyString());
+	}
+
+    function closeRoute() {
+    	closePoint();
+    }
+
+    function check() {
+		if (poly_changed) {
+			jQuery("#messagePanel").show();
+		}
+		else {
+			ajaxCancelRoute();
+		}
+	}
+
+
+	function closeInfoWindow() {
+		jQuery("#messagePanel").hide();
+	}
+	
+	function showImages(data) {
+		for( var i = 0; i < data.length; i++ ) {
+			buildImageMarker(data[i]);
+		}
+	}
+	
+	function buildImageMarker(d) {
+		var m = new GMarker(new GLatLng(d.latitude,d.longitude));
+		innerMap.addOverlay(m);
+		GEvent.addListener(m,"click",function(point){
+			openImageWindow(point,d.title,d.width,d.height);
+		});
+	}
+	
+	function openImageWindow(point,uri,width,height) {
+		var html = "<div style='width:100%;text-align:center'><img src='http://localhost:8080/KiWi/seam/resource/services/images/thumb?uri="+uri+"&maxHeight=200&maxWidth=200' style='width:"+width+"px; height:"+height+"px;' /></div>";
+		//var pic = document.createElement('img');
+		//pic.setAttribute("src",src);
+		//pic.setAttribute("style",'width:'+width+'px;height:'+height+'px;');
+		innerMap.openInfoWindow(point,html);
+	}
+	/* ]]> */
+	</script>
+ 
+ </ui:composition>

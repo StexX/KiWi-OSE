@@ -1,0 +1,83 @@
+10
+
+dir
+5584
+https://svn.salzburgresearch.at/svn/kiwi/KiWi/tags/froscon/extensions/artaround/view/cap-kom
+https://svn.salzburgresearch.at/svn/kiwi
+
+
+
+2010-02-28T15:42:55.414093Z
+4358
+coster
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+df910b12-e4fe-467b-9c3d-147a02c1fe00
+
+css
+dir
+
+images
+dir
+
+index.xhtml
+file
+
+
+
+
+2010-08-21T11:23:15.000000Z
+84c347ccd0579c6685a850b343448bca
+2009-11-28T18:25:21.821426Z
+3690
+coster
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1220
+
+js
+dir
+
+kunstwerke
+dir
+
+layout
+dir
+
+login
+dir
+
+profil
+dir
+

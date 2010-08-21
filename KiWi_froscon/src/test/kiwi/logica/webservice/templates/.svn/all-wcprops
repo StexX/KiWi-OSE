@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/logica/webservice/templates
+END
+template1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/logica/webservice/templates/template1.xml
+END
+template2.xml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/logica/webservice/templates/template2.xml
+END
+data4template1.rdf
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/logica/webservice/templates/data4template1.rdf
+END
+data4template2.rdf
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/logica/webservice/templates/data4template2.rdf
+END

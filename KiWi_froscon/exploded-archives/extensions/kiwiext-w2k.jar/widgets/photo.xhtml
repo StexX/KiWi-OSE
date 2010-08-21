@@ -1,0 +1,98 @@
+<!DOCTYPE div PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+      			xmlns:m="http://code.google.com/p/gmaps4jsf/"
+                xmlns:a="http://richfaces.org/a4j" 
+                xmlns:rich="http://richfaces.org/rich">
+	<s:div id="imageMetadataPanel">
+		<style type="text/css">
+			#form_right\:imageMetadata {
+				width: 135px;
+				overflow: none;
+			}
+			
+			#form_right\:pcalendarInputDate {
+				width: 110px;
+			}
+			
+			.exifHeader {
+				padding-top: 2px;
+				font-weight: bold;
+				margin-left: -5px;
+				border-bottom: 1px solid #222222;
+			}
+			
+			.inplace{
+            	border: none;
+        	}
+        	
+	        .hover {
+	            background-color: orange;
+	        }
+		</style>
+		<h:panelGrid columns="1" id="imageMetadata">
+
+			<s:div styleClass="exifHeader"><h:outputText value="Photographer: "/></s:div>
+            <rich:inplaceInput value="#{photoAction.photo.artist}" 
+            				   showControls="true" 
+            				   editEvent="ondblclick"
+            				   changedHoverClass="hover" viewHoverClass="hover"
+                        	   viewClass="inplace" changedClass="inplace"
+                        	   >
+            	<a:support event="onviewactivated" reRender="imageMetadata"/>
+            </rich:inplaceInput>
+
+			<s:div styleClass="exifHeader"><h:outputText value="Camera Model: "/></s:div>
+            <rich:inplaceInput value="#{photoAction.photo.cameraModel}"
+            				   showControls="true" 
+            				   editEvent="ondblclick"
+            				   changedHoverClass="hover" viewHoverClass="hover"
+                        	   viewClass="inplace" changedClass="inplace"
+                        	   >
+            	<a:support event="onviewactivated" reRender="imageMetadata"/>
+            </rich:inplaceInput>
+                        	   
+			<s:div styleClass="exifHeader"><h:outputText value="Date: "/></s:div>
+			<rich:calendar 	value="#{photoAction.photo.date}"
+                        	popup="true"
+                        	datePattern="yyyy:MM:dd HH:mm"
+                            showApplyButton="false" cellWidth="24px" cellHeight="22px" id="pcalendar">
+            	<a:support event="onviewactivated" reRender="imageMetadata"/>
+			</rich:calendar>
+			
+			<s:div styleClass="exifHeader"><h:outputText value="Shutter Speed: "/></s:div>
+            <rich:inplaceInput value="#{photoAction.photo.shutterSpeed}"
+            				   showControls="true" 
+            				   editEvent="ondblclick"
+            				   changedHoverClass="hover" viewHoverClass="hover"
+                        	   viewClass="inplace" changedClass="inplace"
+                        	   >
+            	<a:support event="onviewactivated" reRender="imageMetadata"/>
+            </rich:inplaceInput>
+                        	   
+			<s:div styleClass="exifHeader"><h:outputText value="Aperture: "/></s:div>
+            <rich:inplaceInput value="#{photoAction.photo.aperture}" 
+            				   showControls="true" 
+            				   editEvent="ondblclick"
+            				   changedHoverClass="hover" viewHoverClass="hover"
+                        	   viewClass="inplace" changedClass="inplace"
+                        	   >
+            	<a:support event="onviewactivated" reRender="imageMetadata"/>
+            </rich:inplaceInput>
+                        	   
+			<s:div styleClass="exifHeader"><h:outputText value="Exposure Bias: "/></s:div>
+            <rich:inplaceInput value="#{photoAction.photo.exposureBias}" 
+            				   showControls="true" 
+            				   editEvent="ondblclick"
+            				   changedHoverClass="hover" viewHoverClass="hover"
+                        	   viewClass="inplace" changedClass="inplace"
+                        	   >
+            	<a:support event="onviewactivated" reRender="imageMetadata"/>
+            </rich:inplaceInput>
+      	</h:panelGrid>
+	</s:div>
+</ui:composition>

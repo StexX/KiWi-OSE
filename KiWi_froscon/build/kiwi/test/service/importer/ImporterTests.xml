@@ -1,0 +1,41 @@
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+
+<suite name="ImporterTests" verbose="2" parallel="false">
+    <test name="ImportExportService" junit="false">
+        <classes>
+            <class name="kiwi.test.service.importer.ImportExportServiceTest"/>
+        </classes>
+    </test>
+    <test name="RDFImporter" junit="false">
+        <classes>
+            <class name="kiwi.test.service.importer.RDFImporterTest"/>
+        </classes>
+    </test>
+    <test name="RSSImporter" junit="false">
+        <classes>
+            <class name="kiwi.test.service.importer.RSSImporterTest"/>
+        </classes>
+    </test>
+    <!-- 
+    <test name="FlickrImporter" junit="false">
+        <classes>
+            <class name="kiwi.test.service.importer.FlickrImporterTest"/>
+        </classes>
+    </test>
+     -->
+    <test name="KurierRSSImporter" junit="false">
+        <classes>
+            <class name="kiwi.test.service.importer.KurierRSSImporterTest"/>
+        </classes>
+    </test>
+    <test name="SNImporter" junit="false">
+        <classes>
+            <class name="kiwi.test.service.importer.SNImporterTest"/>
+        </classes>
+    </test>
+    <test name="IkeWikiImporter" junit="false">
+        <classes>
+            <class name="kiwi.test.service.importer.IkeWikiImporterTest"/>
+        </classes>
+    </test>
+</suite>

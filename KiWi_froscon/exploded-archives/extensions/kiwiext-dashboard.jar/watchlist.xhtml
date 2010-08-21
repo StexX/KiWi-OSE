@@ -1,0 +1,59 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+                xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                template="/layout/template-2col.xhtml">
+
+
+    <ui:define name="header">
+       <a:loadScript src="resource://jquery.js"/>
+       
+       <link href="stylesheet/dashboard.css" rel="stylesheet" type="text/css" />
+    
+    </ui:define>
+
+    <ui:define name="navigation">
+        <ui:include src="layout/navigation.xhtml" />
+    </ui:define>
+
+           
+    <ui:define name="body">
+        <h2>Watched items</h2>
+        
+        
+        <a:outputPanel id="watchList" layout="block">
+            <ui:repeat var="ci" value="#{watchlist}">
+            
+                <div class="contentItem">
+                    <div class="ciPhoto">
+                        <img src="#{facesContext.externalContext.requestContextPath}/img/professor.png" />
+                    </div>
+                    
+                    <kiwi:link contentItem="#{ci}"/>
+                    <div class="ciTitle">
+                        <h:outputText value="#{ci.title}" />
+                    </div>
+                    
+                    <div class="ciActions">
+                        <h:form>
+                            <kiwi:watcher contentItem="#{ci}"/>
+                        </h:form>
+                    </div>
+                    
+                    <div style="clear: left;"/>
+                </div>
+            
+            </ui:repeat>
+        </a:outputPanel>
+        
+    </ui:define>       
+                
+ </ui:composition>

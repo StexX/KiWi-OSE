@@ -1,0 +1,724 @@
+
+/*
+ * style declarations for the nodes
+ */
+
+/* KQBNode specifies the style of a node */
+div.KQBNode 	{  position: absolute; top: 100px; left: 100px; width: 90px; height: 42px; margin: 5px; background-color: white; -moz-border-radius: 8px; -webkit-border-radius: 8px 8px; border-radius: 8px 8px; }
+/* the node's border when the node is displayed normal */
+div.KQBNodeContentShown { border: 1px solid black; }
+/* the node's border when the node's content is hidden */
+div.KQBNodeContentHidden { border: 1px solid black; } 
+
+/* styles to define different colors for different node types */
+div.KQBNodeVariable { background-color: #00DD00}
+div.KQBNodeResource { background-color: #BFE5BF}
+div.KQBNodeQualifier { background-color: #80CD80}
+div.KQBNodeOperator { background-color: #40A340}
+div.KQBNodeOther { background-color: #8BC53E} /* the green kiwi color: #8BC53E */
+
+/* color for highlighted variables */
+div.KQBHighlightVar { background-color: #00FFFF}
+
+/* node labels */
+div.KQBLabel 	{ color: blue; text-align: center; height: 20px; -moz-border-radius-topleft: 6px; -moz-border-radius-topright: 6px; -webkit-border-top-left-radius: 6px 6px; -webkit-border-top-right-radius: 6px 6px; border-top-left-radius: 6px 6px; border-top-right-radius: 6px 6px;  }
+/* border for node labels when the node is fully shown */
+div.KQBLabelContentShown { border-bottom: 1px solid black; }
+/* border for node labels when the node's content is hidden */
+div.KQBLabelContentHidden { border: none; -moz-border-radius: 6px; -webkit-border-radius: 6px 6px; border-radius: 6px 6px; }
+
+/* style for the separator line in RULE nodes */
+div.KQBSeparator { position: relative; left: 50%; height: 66%; width: 5px; background-color: #EE6523; }
+
+/* border styles for different highlights. these get used when a node is dragged over another node or a label
+ * there are three ways: HighlightRed is the color to use when dropping is not allowed,
+ * HighlightGreen when dropping is allowed, and HighlightOrange when dropping is allowed on the node but not
+ * on the current mouse position
+ */
+div.KQBHighlightRed { border: 1px solid red }
+div.KQBHighlightGreen { border: 1px solid green }
+div.KQBHighlightOrange { border: 1px solid orange }
+
+/* styles to use for nodes and labels when the node has an error or warning associated with it */
+div.KQBNodeError {}
+div.KQBNodeWarning {  }
+div.KQBLabelError { background-color: #DA1818; color: white;  }
+div.KQBLabelWarning { background-color: #FF9900;  }
+
+/* text style for node labels */
+.KQBLabelText {  font-size: 11pt;  text-decoration: none; cursor:pointer; }
+/* small text style for node labels, to fit longer node names into the label */
+.KQBLabelTextSmall {  font-size: 8pt; }
+/* style for the text in the expand box in the upper right of some nodes */
+.KQBExpandText { color: green; cursor:pointer; }
+/* style for the expand box in the upper right of some nodes */
+.KQBLabelResizeBox {  height:20px; padding: 0px; margin: 0px; width: 25px; border-left:1px solid black; text-align: center; color: green; cursor: pointer; background-image:url("arrow.gif"); background-position: 0px 3px; background-repeat: no-repeat; }
+/* style for textboxes within nodes */
+input.KQBTextBox { -moz-border-radius: 5px 5px; -webkit-border-radius: 5px 5px; border: 1px solid white; position: relative; left: 2px; top: 2px; height: 14px; width: 84px; margin:0px 0px 0px 0px; padding:0px 0px 1px 0px;  }
+
+/* styles for tooltips */
+div.KQBTooltipNormal { position: absolute; display: none; padding-top: 1px; padding-bottom: 1px; padding-left: 3px; padding-right: 3px; max-width: 200px; border: 1px solid black; background-color: green; color: white; z-index: 9999; }
+div.KQBTooltipError { position: absolute; display: none; padding-top: 1px; padding-bottom: 1px; padding-left: 3px; padding-right: 3px; max-width: 200px; border: 1px solid black; background-color: #DA1818; color: white; z-index: 9999; }
+div.KQBTooltipWarning { position: absolute; display: none; padding-top: 1px; padding-bottom: 1px; padding-left: 3px; padding-right: 3px; max-width: 200px; border: 1px solid black; background-color: orange; color: black; z-index: 9999; }
+
+
+
+
+/*
+ * style declarations for the editor page
+ */
+div#workspace 		{ width: 75%; height: 70%; background-color: rgb(220,255,220); }
+div#tooltippane		{ width: 75%; height: 40px; overflow: auto; background-color: rgb(220,255,220); }
+span#hintpane 		{ width: 100%; height: 35px; overflow: auto; background-color: rgb(220,255,255); color: #FF5500; float: left; }
+span#resizearea         { margin: 0px; padding: 0px; width: 35px; height: 35px; background-color: orange; float: right; cursor: move; background-image:url("movepointer.gif"); background-position: 6px 6px; background-repeat: no-repeat; }
+outputerror		{ color: red }
+
+table#outputtable	{ width: 75%; table-layout:fixed; }
+table#outputtable td.left { width: 50px; }
+
+table#outputtable td#outputpane 	{ background-color: rgb(220,255,220);  }
+table#outputtable .outputerror 		{ color:red; }
+table#outputtable td#debugpane		{ background-color: rgb(220,255,220) }
+
+
+/*
+ * the following is for the dropdown menu on the KQB page
+ */
+
+ 
+p a:link,
+p a:visited,
+p a:hover,
+p a:active
+	{ font-weight:bold; color:#ffffff; }
+
+ul#menulevel1
+	{ list-style:none;  height:20px; font:normal 11pt verdana, arial, helvetica; z-index: 1000; }
+ul#menulevel1 li
+	{  display:block; float:left; position:relative; width:140px;  z-index: 1000;}
+ul#menulevel1 li a:link,
+ul#menulevel1 li a:visited
+	{display:block; text-align:center; text-decoration:none; background:#009900; color:#ffffff; width:140px; height:20px;  z-index: 1000; }
+ul#menulevel1 li:hover a,
+ul#menulevel1 li a:hover,
+ul#menulevel1 li a:active
+	{ display:block; text-align:center; text-decoration:none; background:#00ff00; color:#ffffff; width:140px; height:20px;  z-index: 1000; }
+	
+ul#menulevel1 li ul.menulevel2
+	{ list-style:none; display:none; background:#ffffff; width:100px; position:absolute; top:20px; left:0px; z-index: 1000; }
+ul#menulevel1 li:hover ul.menulevel2
+	{ display:block; clear:both;  z-index: 1000;}
+ul#menulevel1 li ul.menulevel2 li
+	{ width:140px;  z-index: 1000;}
+
+ul#menulevel1 li ul.menulevel2 li a:link,
+ul#menulevel1 li ul.menulevel2 li a:visited
+	{ clear:both; background:#009900; width:140px; border:none; position:relative; z-index:1000; left: -40px;  z-index: 1000;}
+ul#menulevel1 li ul.menulevel2 li:hover a,
+ul#menulevel1 li ul.menulevel2 li a:active,
+ul#menulevel1 li ul.menulevel2 li a:hover
+	{ clear:both; background:#00ff00; width:140px; border:none; position:relative; z-index:1000; }
+
+ul#menulevel1 li ul.menulevel2 li ul.menulevel3
+	{ width: 100px; display:none; list-style:none; position:absolute; left:100px; top:0px; background:#ffffff; z-index:100; }
+ul#menulevel1 li ul.menulevel2 li:hover ul.menulevel3
+	{ display:block;  z-index: 100; }
+ul#menulevel1 li ul.menulevel2 li ul.menulevel3 li a:link,
+ul#menulevel1 li ul.menulevel2 li ul.menulevel3 li a:visited
+	{ background:#009900;  z-index: 100;}
+ul#menulevel1 li ul.menulevel2 li ul.menulevel3 li:hover a,
+ul#menulevel1 li ul.menulevel2 li ul.menulevel3 li a:hover,
+ul#menulevel1 li ul.menulevel2 li ul.menulevel3 li a:active
+	{ background:#00ff00;  z-index: 100;}
+ul#menulevel1 li ul.menulevel2 li a span
+	{ position:absolute; top:0px; left:120px; font-size:12pt; color:#ffffff;  z-index: 1000; }
+ul#menulevel1 li ul.menulevel2 li:hover a span,
+ul#menulevel1 li ul.menulevel2 li a:hover span
+	{ position:absolute; top:0px; left:120px; font-size:12pt; color:#ffffff;  z-index: 1000; }
+
+
+body {
+	margin:0;
+	padding:0;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+}
+
+#wrap {
+	width:100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+}
+
+/*  Header - Logo, ApplicationNaV & Search */
+#header {
+	width:100%;
+	background:#ccc;
+	height:80px;
+	background:url(../img/header_bg.jpg) repeat-x #75a841 ;
+}
+#logo {
+	position:absolute;
+	left:30px;
+	top:7px;
+}
+#logo img {
+	border:0;
+}
+
+#mainnav {
+	position:absolute;
+	left:200px;
+	top:10px;
+}
+#mainnav a {
+	color:white;
+	text-decoration:none;
+}
+#mainnav a:hover {
+	color:#F26421;
+	text-decoration:none;
+}
+
+#mainnav .active {
+	color:#F26421;
+	text-decoration:none;
+}
+
+#mainnav ul {
+	list-style-type:none
+}
+#mainnav ul li {
+	float:left;
+	margin:0 30px 0 0;
+	text-align: center;
+}
+.mainnav_title {
+	font-size:2em;
+	display:block;
+	font-weight:bold;
+}
+.mainnav_subtitle {
+	color:black;
+	font-size:0.9em;
+}
+#searchbox {
+	float:right;
+	margin:30px 10px 0 0;
+
+}
+#searchbox input {
+	vertical-align:top;
+	margin:0 0 0 5px;
+	border:1px solid #fff;
+}
+
+#reasoning {
+	float:right;
+	vertical-align:top;
+	margin:0 0 0 5px;
+}
+
+/*  Navigation Bar - History & User */
+#navbar {
+	border-top:1px solid #fff;
+	height:18px;
+	width:100%;
+	background:#000;
+	color:#ccc;
+	padding-top:3px;
+}
+#navbar a, #navbar a:visited {
+	color:#fff;
+	text-decoration:none;
+}
+#navbar a:hover {
+	color:#F26421;
+}
+#history {
+	position:absolute;
+	left:20px;
+}
+
+#user {
+	float:right;
+	margin:0 10px 0 0;
+}
+/*  Content - the Main Content Area Wrapper*/
+#content {
+	width:100%;
+	margin:20px 0 0 0;
+}
+
+/*  Content - the Main Content Area Wrapper*/
+body div#wrap div#content div#content_1column div#content_overlay span {
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+    color: #FFFFFF;
+    background: rgba(54,54,54,0.5);
+    font: 10px, sans-serif; text-align: center;
+	width:100%;
+	margin:0;
+	padding: 0;
+}
+
+body div#wrap div#content div#content_1column div#content_overlay span#transparent_grey_bg {
+	height: 100%;
+}
+
+body div#wrap div#content div#content_1column div#content_overlay span#popup {
+    display: block
+    position: fixed;
+    top: 40%;
+    left: 35%;
+    z-index: 200;
+    
+    -moz-border-radius:5px;
+    background-color:#FAFAFA;
+    border:1px solid #75A841;
+    color:#000;
+    padding:20px;
+    text-align:center;
+    width:360px;
+}
+
+.myhome {
+    background:url(../img/home.png) no-repeat center left;
+}
+.myhome:hover {
+    background:url(../img/home_hl.png) no-repeat center left;
+}
+
+.mydashboard {
+	background:url(../img/home.png) no-repeat center left;
+}
+.mydashboard:hover {
+	background:url(../img/home_hl.png) no-repeat center left;
+}
+.myprofile {
+	background:url(../img/home.png) no-repeat center left;
+}
+.myprofile:hover {
+	background:url(../img/home_hl.png) no-repeat center left;
+}
+.mycontacts {
+	background:url(../img/contacts.png) no-repeat center left;
+}
+.mycontacts:hover {
+	background:url(../img/contacts_hl.png) no-repeat center left;
+}
+.mygroups {
+	background:url(../img/contacts.png) no-repeat center left;
+}
+
+.mytags {
+	background:url(../img/contacts.png) no-repeat center left;
+}
+
+.mygroups:hover {
+	background:url(../img/contacts_hl.png) no-repeat center left;
+}
+
+.mycontributions {
+	background:url(../img/home.png) no-repeat center left;
+}
+.mycontributions:hover {
+	background:url(../img/home_hl.png) no-repeat center left;
+}
+.mywatchlist {
+	background:url(../img/home.png) no-repeat center left;
+}
+.mywatchlist:hover {
+	background:url(../img/home_hl.png) no-repeat center left;
+}
+
+.navload {
+    background:url(../img/contacts.png) no-repeat center left;
+}
+.navload:hover {
+    background:url(../img/contacts_hl.png) no-repeat center left;
+}
+
+#content_1column {
+	min-height:600px;
+	margin:0 20px 0 10px;
+	padding:10px;
+	background:#fafafa;
+}
+
+/*  Roundbox definitions  */
+.roundedBox {
+		border:1px solid #ccc;
+		-moz-border-radius: 15px;
+		-webkit-border-radius: 15px;
+}
+
+/*  Footer  */
+#footer {
+/*	width:100%; */
+	text-align:center;
+}
+
+/* Headings, Links, etc .. */
+
+h1 {
+	font-size:1.5em;
+}
+
+h2 {
+	font-size:1.3em;
+}
+
+h3 {
+	font-size:1.1em;
+}
+h4, h5, h6, h7 {
+	font-size:1em;
+	font-weight:bold;
+}
+
+a:hover {
+	color:#F26421;
+	text-decoration:none;
+}
+
+/* Search page stuff*/
+/*
+#content_1column h1 {
+	text-align:center;
+}
+*/
+#searchresults {
+	margin:5px 20px 0 0;
+	border:0;
+	border-top:1px solid #ccc;
+	width:100%;
+}
+
+#searchresults h3 {
+	margin:0;
+}
+
+#searchresults tr td { vertical-align:top; padding:5px 3px; border-bottom:1px 
+solid #ccc; } 
+
+#searchbar {
+	margin:10px auto 30px auto;	
+	text-align:center;
+}
+#search_numberofresults {
+	float:left;
+	font-size:1.1em;
+	font-weight:bold;
+}
+#search_view_sort {
+	float:right;
+}
+
+.tags, .user_date{
+	margin:2px 0 0 0;
+	font-size:0.8em;
+}
+.minimenu {
+	margin:0 0 0 0;
+	padding:1px 20px 1px 5px;
+	background:url(../img/minimenu.png) no-repeat bottom right;
+	border:1px solid #ccc;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+/* Images borders*/
+
+img {
+/*	border:1px solid #ccc;*/
+	padding:1px;
+}
+
+hr {
+	border:0;
+	border-top:1px solid #ccc;
+}
+
+.actionmenu {
+    float:right;
+    background:url(../img/actionmenu.png) top right no-repeat #ddd;
+    margin:20px 10px 0 0;
+    padding:2px 25px 2px 5px;
+    border:1px solid #ccc;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    text-align: center;
+    width: 100px;
+}
+.actionmenu-label {
+    font-weight: bold;
+}
+.actionmenu-items {
+    color: black;
+    text-align: left;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background-color: #ddd;
+    position: absolute;
+    z-index: 11;
+    width: 100px;
+    padding:6px 25px 6px 5px;
+    margin-left: -6px;
+    -moz-border-radius-bottomleft: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -webkit-border-radius-bottomleft: 5px;
+    -webkit-border-radius-bottomright: 5px;
+    
+}
+.actionmenu-items a {
+    display: block;
+    padding: 2px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    text-decoration: none;
+    width: 115px;
+}
+
+.actionmenu-items a:hover {
+     background-color: #F0F0F0;
+     border-top: 1px solid #FFFFFF;
+     border-bottom: 1px solid #FFFFFF;
+     
+}
+
+.actionButtons {
+	width: 100%;
+	text-align: center;
+}
+
+.right {
+	text-align: right;
+	white-space:nowrap;
+}
+.center {
+    text-align: center;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+}
+
+
+input[type='submit'],input[type='button'],input[type='reset'] {
+	-moz-border-radius-bottomleft:4px;
+	-moz-border-radius-bottomright:4px;
+	-moz-border-radius-topleft:4px;
+	-moz-border-radius-topright:4px;
+	-moz-outline-radius-bottomleft:4px;
+	-moz-outline-radius-bottomright:4px;
+	-moz-outline-radius-topleft:4px;
+	-moz-outline-radius-topright:4px;
+	background-color:#222222;
+	border:1px solid #FFFFFF;
+	color:#FFFFFF;
+	cursor:pointer;
+	font-size:11px;
+	height:24px;
+	outline-color:#999999;
+	outline-style:outset;
+	outline-width:1px;
+}
+
+input[type='submit']:disabled,input[type='button']:disabled {
+	background-color:#222222;
+	border:1px solid #dddddd;
+	color:#dddddd;
+	cursor:default;
+}
+
+/* search */
+input.searchRemoveTag,input.searchAddTag {
+	background-color: #ccc;
+	margin: 2px;
+	border: none;
+}
+
+input.searchRemoveTag {
+	background-color: #ccc;
+	color: black;
+}
+
+input.searchAddTag {
+	background-color: green;
+}
+
+.searchResults {
+	vertical-align: top;
+}
+
+.searchResultTitle {
+	font-size: 150%;
+	font-weight: bold;
+	padding: 15px 0;
+}
+
+.searchInput {
+	width: 150px;
+	vertical-align: top;
+}
+
+/* KiWi Header */
+.kiwiHeader {
+    width: 1000px;
+    background-color: #8BC53E; 
+    padding: 10px;
+}
+
+.kiwiHeader .kiwiHeaderBody {
+    padding: 0;
+}
+
+.kiwiHeader .kiwiHeaderTop {
+	padding: 10px;
+}
+
+.kiwiHeader .kiwiLogo {
+    width: 150px;
+    float: left;
+}	
+
+.kiwiHeader .kiwiAppList {
+	margin-left: 160px;
+	height: 35px;
+}
+
+.kiwiHeader .kiwiAppList td {
+    padding-right: 5px;
+}
+
+.kiwiHeader .kiwiAppList .kiwiApp {
+    display: inline;
+    text-align: center;
+    width: 90px;
+}
+
+
+.kiwiHeader .kiwiAppList .kiwiAppHeader {
+    display: block;
+    text-align: center;
+    font-size: 120%;
+    font-weight: bold;
+    color: #000000;
+}
+
+.kiwiHeader .kiwiAppActive .kiwiAppHeader {
+    color: #FFFFFF;
+}
+
+.kiwiHeader .kiwiAppList .kiwiAppDesc {
+    display: block;
+    text-align: center;
+    font-size: 90%;
+    color: #000000;
+}
+
+.kiwiHeader .kiwiAppActive .kiwiAppDesc {
+    display: block;
+    text-align: center;
+    font-size: 90%;
+    color: #FFFFFF;
+}
+
+.kiwiHeader .kiwiSearch {
+    float: right;
+    margin-right: -5px;
+    margin-top: 5px;
+}
+
+.kiwiHeader .kiwiHeaderToolbar {
+    background: #A0A0A0;
+    color: #FFFFFF;
+    -moz-border-radius-bottomleft: 5px;
+    -webkit-border-radius-bottomleft: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -webkit-border-radius-bottomright: 5px;
+	border: 0;
+	margin-left: -1px;
+	margin-bottom: -1px;
+	width: 1002px;
+	padding-top: 2px;
+	padding-bottom: 2px;    
+}
+
+.kiwiHeader .kiwiBreadcrumps {
+    font-weight: normal;
+}
+
+.kiwiHeader .kiwiHeaderToolbar a {
+    color: #000000;		
+}
+
+.kiwiHeader .kiwiHeaderToolbar a:hover {
+    color: #000000;     
+    text-decoration: underline;
+}
+
+/* KiWi Footer */
+.kiwiFooter {
+    text-align: center;
+    font-size: 10px;
+    width: 1000px;
+}
+
+
+/* KiWi Layout 1-column */
+.col1Main {
+    width: 1000px;
+}
+
+#content a {
+	text-decoration: none;
+	/* background: none; // conflicts with the stars jquery widget. */
+	color: #33F;
+}
+
+
+#content a:hover {
+	text-decoration: underline;
+}
+ 
+/* status indicator */
+#status {
+	float:right;
+	padding-left: 10px;
+	text-style: italics;
+	color: #000;
+}
+
+#globalStatusDiv {
+  position: fixed;
+  top: 101px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  left: 50%;
+  width: 110px;
+  margin-left: -50px;
+  height: 35px;
+  line-height: 25px;
+  background-color: #FFF;
+  padding: 2px 15px 2px 10px;
+  color: #000;
+  font-family: Verdana,Arial,Helvetica,sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 10000;
+  border: 1px solid #BBB;
+  border-top: none;
+}
+
+#globalStatusDiv img {
+  vertical-align: middle;
+}

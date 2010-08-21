@@ -1,0 +1,62 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+		    	xmlns:rich="http://richfaces.org/rich"
+		    	xmlns:a="http://richfaces.org/a4j"
+                template="layout/template-setup.xhtml">
+
+<ui:define name="body">
+    <h1>3. Load Initial Content</h1>
+    
+    <rich:messages styleClass="message"/>
+    
+	<a:form id="formSetup">
+		<h:panelGrid columns="2" columnClasses="form,help" styleClass="setupPanel">
+		    <s:div styleClass="dialog" style="width: 400px">
+		        <h3>Initialization Data</h3>
+		        
+		        <ul>
+		        	<li><h:selectBooleanCheckbox value="#{kiwi.setup.setupDataAction.loadHelp}" disabled="true" title="Load help content" /> <h:outputText value="Load content for help pages" /> </li>
+		        	<li><h:selectBooleanCheckbox value="#{kiwi.setup.setupDataAction.loadDemo}" disabled="true" title="Load demo content" /> <h:outputText value="Load content for KiWi demo setup" /> </li>
+
+
+		        </ul>
+		        
+		        
+		        <h3>Initialization Processes</h3>
+
+		        <ul>
+		        	<li><h:selectBooleanCheckbox value="#{kiwi.setup.setupDataAction.runSemVector}" title="Create Semantic Vector Index" /> <h:outputText value="Create Semantic Vector Index (for tag and content recommendations)" /> </li>
+		        	<li><h:selectBooleanCheckbox value="#{kiwi.setup.setupDataAction.changePersistence}" title="Change Persistence Configuration from 'create' to 'validate'" /> <h:outputText value="Change persistence configuration from 'create' to 'validate' (allows persistence across restarts)" /> </li>
+		        </ul>
+
+		     	<div class="setupActionButtons">
+			    	<h:commandButton value="Next" action="#{kiwi.setup.setupDataAction.loadData}"/>
+		     	</div>
+	         </s:div>
+	         
+	         
+	     
+		     <s:div styleClass="dialog">
+		     	<p>
+		     		Some KiWi components need preloaded data in addition to the core ontologies to work properly.
+		     		In this last setup step, you can select which data sets to preload in the KiWi system and which 
+		     		activities to carry out when the setup is complete.
+		     	</p>
+		     	<ul>
+		     		<li>Create Semantic Vector Index is required for parts of the recommendation system, e.g. tag recommendations or related
+		     		    pages; the Semantic Vector Index is otherwise rebuilt once a day; reindexing can also be triggered from the admin interface</li>
+		     	</ul>
+		     </s:div>
+	     
+     	</h:panelGrid>
+     	
+     </a:form>
+
+</ui:define> 
+</ui:composition>
+

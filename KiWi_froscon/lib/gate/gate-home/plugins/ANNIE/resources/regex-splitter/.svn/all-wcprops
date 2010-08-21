@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/ANNIE/resources/regex-splitter
+END
+non-split-patterns.txt
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/ANNIE/resources/regex-splitter/non-split-patterns.txt
+END
+internal-split-patterns.txt
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/ANNIE/resources/regex-splitter/internal-split-patterns.txt
+END
+external-split-patterns.txt
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/ANNIE/resources/regex-splitter/external-split-patterns.txt
+END

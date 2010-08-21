@@ -1,0 +1,23 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:c="http://java.sun.com/jstl/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    >
+    
+    <!--  possible parameters:
+          contentItem: the content item to render
+     -->
+
+    <!--
+        Here we go to a webservice (defined in RenderJSFWebService.java) to render the html in order the inline
+        queries are jsf-rendered as well.
+    -->
+    <ui:include src="#{configurationService.baseUri}/seam/resource/services/render/html/#{contentItem.id}/user/#{currentUser.id}"/>
+
+    <!-- This is not enough.
+	<h:outputText value="#{viewAction.currentContentHtml}"></h:outputText>
+	-->
+</ui:composition>

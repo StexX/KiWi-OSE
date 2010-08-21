@@ -1,0 +1,169 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+	template="layout/template.xhtml">
+	
+	<ui:define name="links">
+	    <link type="text/css" href="#{facesContext.externalContext.requestContextPath}/inspector/stylesheet/explanation-base.css" rel="stylesheet" />
+		<link type="text/css" href="#{facesContext.externalContext.requestContextPath}/inspector/stylesheet/explanation-Spacetree.css" rel="stylesheet" />
+	</ui:define>
+	
+	<ui:define name="header">
+       <a4j:loadScript src="resource://jquery.js"/>
+       <script type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/js/jquery-ui-1.7.2.min.js"></script>
+       <script type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/js/jqueryplugins/jquery.scrollTo/js/jquery.scrollTo.js"></script>
+       <script type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/widgets/explanation/json2.js"></script>
+       <script type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/widgets/explanation/jit.js"></script>       
+       <script type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/widgets/explanation/explanation.js"></script> 
+       <script type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/js/seam/remoting/remote.js"></script>
+       <!-- <script type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/seam/resource/remoting/interface.js?explanationAction"></script> -->
+		<script type="text/javascript">
+
+		//credits: http://www.visionfactory.com.au/blog/binding_to_the_body_onload_event_in_a_po.html
+		    var existingOnload = window.onload;
+
+		    function callJIT() {
+			    id = document.getElementById('tripleIdForm:asdf').value;
+				if (id != 0)
+					initJIT(id);
+				
+				return existingOnload;
+			}
+
+			window.onload = callJIT;
+
+            Seam.Remoting.getContext().setConversationId("#{conversation.id}");
+			
+		    //Account for the fact that in some browsers (IE6) event is passed in, in others (FireFox2.0) its an implicit object.
+		    //Simply declaring the below as function(event) will not work in both!
+		    //window.onload = function (oEvent) { if(!oEvent) { oEvent = event; } initJIT(); return existingOnload; }
+
+		</script>
+	</ui:define>
+		
+	<ui:define name="body">
+
+		<h2>Explanation</h2>
+		
+<div id="container">
+
+<div id="left-container">
+
+
+
+<div class="text">
+<h4>
+Triple "explanation"    
+</h4> 
+
+            A justification dependency tree is used as input for the animation.<br /><br />
+            Clicking on a node should move the tree and center that node.
+            If the node represents an inferred triple then its immediate justification subtree is loaded.<br /><br />
+            
+            Leaves color depend on the number of children they actually have.<br /><br />
+                  
+			<h:form id="tripleIdForm">				
+				<h:panelGrid columns="2" rowClasses="prop" columnClasses="name,value">
+					<h:outputLabel for="asdf">Triple id</h:outputLabel>
+					<h:inputText id="asdf" name="asdf" value="#{explanationAction.tripleIdToExplain}" size="8"/>
+				</h:panelGrid>
+				<h:commandButton value="Explain"  onclick="initJIT(document.getElementById('tripleIdForm:asdf').value)" type="button"/>
+						
+			</h:form>   
+</div>
+
+<div id="id-list"></div>
+
+       
+</div>
+
+<div id="center-container">		
+		<div id="infovis"></div>
+</div>
+		
+<div id="right-container">
+
+<h4>Textual explanation</h4>
+<div id="textual-explanation">
+
+	<s:remote include="explanationAction"/>
+	
+	<h:form id="textual-explanation-form">
+		<a4j:jsFunction name="addTripleScript" reRender="textual-explanation-form:textualExplanationTable"/>
+	
+			
+<!--    <h:dataTable value="#{explanationService.explainTripleTextually(explanationAction.tripleIdToExplain, true)}" var="story">  -->
+		<h:dataTable value="#{explanationAction.stories}" var="story" id="textualExplanationTable">
+		  <h:column>
+		  		<span id="#{story.justificationId}">
+              	<h:outputText value="#{story.openingLine.body}" escape="false" style="font-weight:bold"/><h:outputText value=" #{story.openingLine.connective}" style="margin-left:5px"/>
+              	<br/> <br/>
+		  	<h:dataTable value="#{story.body}" var="line">
+		  		<h:column>
+		  			<h:outputText value="#{line.body}"  escape="false" style="font-weight:bold; margin-left:15px"/> <h:outputText value=" #{line.connective}" style="margin-left:5px"/> <br/>
+		  		</h:column>
+		  	</h:dataTable>
+		  	<!-- <s:link view="/inspector/explanation.xhtml" value="Show me more">
+		  		<f:param name="tripleId" value="${item.tripleId}"/>
+		  	</s:link> -->
+		  	</span>										  	 
+		  	<br/> <br/>		  	
+		  </h:column>
+		</h:dataTable>						                
+	</h:form>
+</div>
+
+<!-- <h4>Change Tree Orientation</h4>
+<table>
+    <tr>
+        <td>
+            <label for="r-left">left </label>
+        </td>
+        <td>
+            <input type="radio" id="r-left" name="orientation" value="left" />
+        </td>
+    </tr>
+    <tr>
+         <td>
+            <label for="r-top">top </label>
+         </td>
+         <td>
+            <input type="radio" id="r-top" name="orientation" checked="checked" value="top" />
+         </td>
+    </tr>
+    <tr>
+         <td>
+            <label for="r-bottom">bottom </label>
+          </td>
+          <td>
+            <input type="radio" id="r-bottom" name="orientation" value="bottom" />
+          </td>
+    </tr>
+    <tr>
+          <td>
+            <label for="r-right">right </label>
+          </td> 
+          <td> 
+           <input type="radio" id="r-right" name="orientation" value="right" />
+          </td>
+    </tr>
+</table>
+ -->
+</div>
+		
+		<div id="log"></div>
+</div>		
+		<br/>
+		<div id="debug"></div>
+	</ui:define>
+</ui:composition>
+
+

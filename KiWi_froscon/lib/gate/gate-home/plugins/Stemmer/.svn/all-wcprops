@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/Stemmer
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/Stemmer/build.xml
+END
+creole.xml
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/Stemmer/creole.xml
+END
+stemmer.jar
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/lib/gate/gate-home/plugins/Stemmer/stemmer.jar
+END

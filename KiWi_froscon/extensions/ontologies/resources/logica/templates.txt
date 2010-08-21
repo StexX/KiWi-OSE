@@ -1,0 +1,133 @@
+Templates:
+
+[[Check List Template]]
+[[Employee Template]]
+[[Life Cycle Model Template]]
+[[Organizational Unit Template]]
+[[Process Area Template]]
+[[Process Definition Template]]
+[[Project Participant Template]]
+[[Project Phase Definition Template]]
+[[Project Phase Template]]
+[[Project Plan Template]]
+[[Project Template]]
+[[Requirement Template]]
+[[Risk Template]]
+[[Stakeholder Template]]
+[[SubTask Definition Template]]
+[[SubTask Template]]
+[[Task Definition Template]]
+[[Task Template]]
+[[Work Product Template]]
+
+
+
+
+=============================================
+The employee "NAME" (INITS, No. NO) works HRS hours per week and is in unit UNIT.
+
+=============================================
+The organizational unit "NAME" (No. NO) has the responsible manager MANAGER.
+
+=============================================
+The project "NAME" has the responsible manager EMPLOYEE and is part of the organizational unit UNIT.
+
+=============================================
+The requirement "TITLE" (id: ID) by STAKEHOLDER is of category CATEGORY and complexity COMPLEXITY. It is described like this: DESCRIPTION
+Motivation: MOTIVATION
+It is part of REQUIREMENT, has the priority PRIORITY, the cost COSTS and belings to the project PROJECT. The responsible project participant is PARTICIPANT and the uncertainty is leveled to UNCERTAINTY.
+The risk is leveled to RISK. Source: SOURCE
+The status is STATUS. Comment: STATUSCOMMENT
+
+=============================================
+The risk "NAME" from project plan PLAN and category CATEGORY is described as this: DESCRIPTION
+It was identified at IDENTIFIED_DATE with the last review at REVIEW_DATE. The responsible project participant is PARTICIPANT.
+The risk is on status STATUS and has a likelihood of LIKELIHOOD.
+Likelihood reduction strategy: LIKELIHOOD_RED_STRATEGY
+The impact is IMPACT with an earliest impact date at IMPACT_DATE and described as this: IMPACT_DESC
+Impact reduction stragegy: IMPACT_RED_STRATEGY
+Remarks: REMARKS
+Threshold for action: THRESHOLD
+
+=============================================
+The task "NAME" (Time Reg No: NO) belongs to project phase PHASE and work product PRODUCT. It is in status STATUS and starts at START_DATE and ends at END_DATE. The resource estimate is RES_EST with and earned value of VALUE.
+The task is described as: DESCR
+
+=============================================
+The work product "NAME" (id: ID) is of type TYPE and described as this: DESCR
+It is a decomposition of DECOMPOSITION at the level of LEVEL. The work product has a COMPLEXITY complexity, the size is SIZE SIZE_METRIC, SIZE_UNCERTAINTY % uncertainty. SIZE_COMMENT
+The responsible role here is RESP_ROLE, the person is PARTICIPANT.
+The product status is described as this: PROD_STATUS_DESCR
+
+=============================================
+The task definition "NAME" uses the process PROCESS and has the following purpose: PURPOSE
+The entry criteria check list is ENTRY, exit criteria check list is EXIT and the whole task definition is described as: DESCR
+Input: INPUT
+Output: OUTPUT
+
+=============================================
+The life cycle model "NAME" is described as followed: DESCR
+When to use: USE
+How to customize: CUSTOMIZE
+
+=============================================
+The project plan "NAME" (Version NO) belongs to the project PROJECT. It follows the estimation model EST_MOD and the life cycle model LIFE_C_MOD. It's target is the top level product TOP_PROD.
+Project goals: PROJ_GOALS
+Project scope: PROJ_SCOPE
+Risks description: RISK_DESC
+Planning considerations: PLAN_CONS 
+Planning parameters: PLAN_PARAM
+Project organization: PROJ_ORG
+Skills description: SKILLS_DESC
+Resources description: RES_DESC
+Stakeholders description: STAKEHOLDER_DESC
+Project tracking: TRACKING 
+
+=============================================
+The process definition "NAME" is owned by EMPLOYEE and belongs to the process area PROC_AREA. The entry criteria check list is ENTRY and the exit criteria check list is EXIT.
+Description: DESC
+Input description: INPUT
+Output description: OUTPUT
+
+=============================================
+The subtask "NAME" belongs to task TASK and is described as: DESCR
+It has the time registration number NO, the status is STATUS, it is starting at START_DATE and ending at END_DATE using the definition DEFINITION.
+
+=============================================
+The subtask definition "NAME" (Seq.-No. NO) uses the process PROCESS and is part of the task definition TASK_DEF.
+Description: DESCR 
+
+=============================================
+# Project Participant Template
+The employee EMPLOYEE is participating the project PROJECT with the plan PROJ_PLAN from START to END.
+COMMENT
+
+=============================================
+The project phase "NAME" (defined in DEFINITION) is part of the plan PROJ_PLAN. It starts at START and ends at END.
+
+=============================================
+The project phase definition "NAME" (Seq.-No. NO) belongs to the life cycle model MODEL.
+Purpose: PURPOSE
+Description: DESCR
+
+=============================================
+The check list "NAME" is part of the process area AREA and owned by EMPLOYEE.
+DESCRIPTION 
+
+=============================================
+The process area "NAME" is owned by EMPLOYEE.
+Policy: POLICY 
+
+=============================================
+The stakeholder "NAME" (External: EXT) has a significance for the project PROJECT and is part of the plan PROJECT_PLAN. Responsible for contact is PARTICIPANT.
+E-mail: MAIL
+Phone: PHONE
+Address: ADDRESS
+
+Role: ROLE 
+Authority: AUTHORITY
+Success criteria: SUCC_CRIT 
+Provides resources: PROVIDES
+Should be informed about: INFORMED
+Tasks to solve: SOLVER
+Relations to other stakeholders: RELATIONS

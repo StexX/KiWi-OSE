@@ -1,0 +1,398 @@
+/*
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+ * 
+ * Copyright (c) 2008-2009, The KiWi Project (http://www.kiwi-project.eu)
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without 
+ * modification, are permitted provided that the following conditions are met:
+ * - Redistributions of source code must retain the above copyright notice, 
+ *   this list of conditions and the following disclaimer.
+ * - Redistributions in binary form must reproduce the above copyright notice, 
+ *   this list of conditions and the following disclaimer in the documentation 
+ *   and/or other materials provided with the distribution.
+ * - Neither the name of the KiWi Project nor the names of its contributors 
+ *   may be used to endorse or promote products derived from this software 
+ *   without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
+ * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE 
+ * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
+ * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
+ * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
+ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
+ * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+ * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
+ * POSSIBILITY OF SUCH DAMAGE.
+ * 
+ * Contributor(s):
+ * 
+ * 
+ */
+ /** JavaCC parser of simple KWRL programs.
+ * 
+ * 
+ * @author Jakub Kotowski
+ *
+ */
+ // ($1 http://rdf.com/type $2), ($1 http://rdf.com/subclass $3) -> ($3 http://rdf.com/superclass http://zoo.org/animal)
+ // (http://www.seznam.cz/subj http://www.seznam.cz/prop http://www.seznam.cz/obj) -> (http://sign-o-matic.com/ont#subj http://sign-o-matic.com/ont#prop http://sign-o-matic.com/ont#obj)
+ //($1 http://ex.com/p $2), ($2 http://ex.com/p $1), ($1 http://ex.com/sc "ahoj kocko") -> ($4 $5 'a tady zkusime neco delsiho a hroznejsiho):""#$@%///...')
+ //($1 http://ex.com/p $2), ($2 http://ex.com/p $1), ($1 http://ex.com/sc "ahoj kocko") -> ($4 $5 "a tady zkusime neco delsiho a hroznejsiho):#$@%///..."^^http://example.com/type#string)
+ //($1 http://ex.com/p $2) -> (uri(http://ex.com/p) @ $3  $4  $5)
+ //($1 http://ex.com/p $2) -> (uri(http://ex.com/p) @ $3  $4  uri(http://www.kiwi-project.eu/core/tagging/) @ $5)
+
+ /**
+@prefix rdf: <http://w3c.org/rdf/>
+@prefix rdfs: <http://w3c.org/rdfs/pat/hayes/mt#>
+
+(($1 http://rdf.com/type $2) , ($1 http://rdf.com/subclass $3)) -> ($3 http://rdf.com/superclass http://zoo.org/animal)
+(($1 rdf:type $2) , ($1 rdf:subclass $3)) -> ($3 rdf:superclass xxx:animal)
+rdf-subclass-transitivity: (($c1 rdfs:subClassOf $c2) , ($c2 rdfs:subClassOf $c3)) -> ($c1 rdfs:subClassOf $c3),($3 rdf:superclass xxx:animal)
+(($1 rdf:type $1') , ($1' rdf:subclass $3)) -> ($3 rdf:superclass xxx:animal)
+
+(($1 rdf:type $1');($2 rdf:type $2')), not ($3 rdf:type $3') , 
+(($3 rdf:type $3'),not ($3 rdf:type $3'))
+									-> inconsistency
+ */
+ 
+options {
+  KEEP_LINE_COLUMN = false;
+}
+
+PARSER_BEGIN(SimpleKWRLProgramParser)
+package kiwi.service.reasoning.parser;
+
+import kiwi.service.reasoning.ast.*;
+
+
+public class SimpleKWRLProgramParser {
+  
+  public static void main(String args[]) throws ParseException {
+    SimpleKWRLProgramParser parser = new SimpleKWRLProgramParser(System.in);
+    System.out.println("Enter a simple KWRL program:");
+    try
+    {      
+		Program program = parser.Program();
+		
+		System.out.println(program.toString());
+	} catch (Exception e) {
+      System.out.println("Oops.");
+      System.out.println(e.getMessage());
+      e.printStackTrace();
+	}
+  }
+}
+PARSER_END(SimpleKWRLProgramParser)
+
+SKIP :
+{
+ 	" "
+|	"\r"
+|	"\t"
+|	"\n"
+}
+
+MORE:
+{
+ "\"" : WithinString
+}
+
+<WithinString> TOKEN:
+{
+  <STRLIT: "\""> : DEFAULT
+}
+
+<WithinString> MORE:
+{
+  <~["\n","\r"]>
+}
+
+TOKEN : /* OPERATORS */
+{
+	< AND: "," > |
+	< OR: ";" > |
+	< NOT: "not" > |
+  	< THEN: "->" > |
+  	< TYPE: "^^" > 
+}
+
+TOKEN :
+{
+  	< LEFTP: "(" > |
+  	< RIGHTP: ")" > |
+  	< INCONSISTENCY: "inconsistency" > |
+  	//URICHARS should oficially include "(" and ")", I excluded them because of resulting conflicts with the rule grammar  	  
+  	//< URICHARS: ["a"-"z","A"-"Z","0"-"9",";","/","?",":","@","&","=","+","$",".","-","_","!","~","*","'","%"] > |
+    // URI is oficially more general see the comment below
+    //TODO: parser now allows URIs ending with # so that the same URI token spec can be used for namespaces too                                                                    
+    < URI: ["a"-"z","A"-"Z"](["a"-"z","A"-"Z","0"-"9","+","-","."])* "://"  (["a"-"z","A"-"Z","0"-"9",";","/","?",":","@","&","=","+","$",".","-","_","!","~","*","'","%"])+ ("#" (["a"-"z","A"-"Z","0"-"9",";","/","?",":","@","&","=","+","$",".","-","_","!","~","*","'","%"])*)? | "#" (["a"-"z","A"-"Z","0"-"9",";","/","?",":","@","&","=","+","$",".","-","_","!","~","*","'","%"])+> |
+    < NS_URI: <IDENTIFIER> ":" (<URICHAR>)+ > | 
+    < VARIABLE: "$" <IDENTIFIER> > |
+    < URICONSTRUCTION: "uri" > |
+    < IDENTIFIER: ["a"-"z","A"-"Z","0"-"9","_"](["a"-"z","A"-"Z","0"-"9","_","'","-"])* > |
+    < #URICHAR: ["a"-"z","A"-"Z","0"-"9",";","/","?",":","@","&","=","+","$",".","-","_","!","~","*","'","%"] >
+}
+//https://javacc.dev.java.net/doc/javaccgrm.html
+//	If the label is preceded by a "#", then this regular expression may not be referred to from expansion units, but only from within other regular expressions. When the "#" is present, the regular expression is referred to as a "private regular expression". 
+//  If the "#" is omitted, the token manager will erroneously recognize a string like E123 as a legal token of kind EXPONENT (instead of IDENTIFIER in the Java grammar).
+ 
+// (([a-zA-Z][0-9a-zA-Z+\\-\\.]*:)?/{0,2}[0-9a-zA-Z;/?:@&=+$\\.\\-_!~*'()%]+)? (#[0-9a-zA-Z;/?:@&=+$\\.\\-_!~*'()%]+)?
+// http://aspn.activestate.com/ASPN/Mail/Message/xml-dev/754445
+
+Program Program() : {Program program = new Program(); int nullNameCount = 0; Namespace ns; Rule rule; Token name = null; }
+{
+  (
+    ns = NamespaceDeclaration() { program.addNamespace(ns); }
+  )*
+
+  (
+    (name = <IDENTIFIER> ":")? rule = Rule()
+    { 
+    if (name == null) {
+    	nullNameCount++;
+    	rule.setName(Rule.RULE_NAME_PREFIX + nullNameCount);
+    } else {
+    	rule.setName(name.image);
+    } 
+    
+    program.addRule(rule); name=null; //it's declared above, once set it doesn't get cleared
+    }
+  )+
+  <EOF>
+  {
+    return program;
+  }
+}
+
+Namespace NamespaceDeclaration(): {Namespace ns; Token prefix; Uri uri;}
+{
+  "@prefix" prefix = <IDENTIFIER> ":" "<" uri = Uri() ">"
+  {
+    return new Namespace(prefix.image, uri.getUri());
+  }
+}
+
+Rule Rule() : { Body body; Head head; }
+{
+  body = Body() <THEN> head = Head()
+  { return new Rule(body, head);  }
+}
+
+Body Body() : { Body body = new Body(); Formula formula; }
+{
+	( LOOKAHEAD(FormulaWOParenthesis()) formula = FormulaWOParenthesis() | formula = Formula() )
+  { body.setFormula(formula); return body;  }
+}
+
+Head Head() : { Head head = new Head(); Formula formula; }
+{
+	(
+	  <INCONSISTENCY> { head.setInconsistency(new Inconsistency()); }
+	|
+	LOOKAHEAD(HeadFormulaWOParenthesis())
+	  formula = HeadFormulaWOParenthesis() { head.setFormula(formula);  }
+	|
+	  formula = HeadFormula() { head.setFormula(formula); }
+	)
+	
+	{ return head; }
+}
+
+Formula FormulaWOParenthesis() : { Formula formula; }
+{ // we need a syntactic lookahead (an infinite lookahead) because both all disj, conj and neg. may start not ( not ( not ( ... ) and now either nothing follows or the disjunction operator or the conjunction operator
+	( LOOKAHEAD(Conjunction() | Disjunction()) ( LOOKAHEAD(Conjunction()) formula = Conjunction() | formula = Disjunction() )  | formula = Negation() | formula = BodyTriplePattern())
+	{ return formula; }
+}
+
+Formula Formula() : { Formula formula; }
+{ 
+	( LOOKAHEAD(2)
+	 formula = BodyTriplePattern() | "(" ( LOOKAHEAD(Conjunction()) formula = Conjunction() |	 (LOOKAHEAD(Disjunction())	   formula = Disjunction() | formula = Formula()	 )
+	 ) ")" | formula = Negation() 
+	 )
+	{ return formula; }  
+}
+
+Formula HeadFormula() : { Formula formula; }
+{
+  (
+     "(" formula = HeadConjunction() ")"  )  {
+    return formula;  }}
+
+Formula HeadFormulaWOParenthesis() : { Formula formula; }
+{
+  (
+     formula = HeadConjunction()
+  )
+  {
+    return formula;
+  }
+}
+
+Conjunction  Conjunction() : { Conjunction conjunction = new Conjunction(); Formula formula; }
+{
+  (   
+  formula = Formula() { conjunction.addFormula(formula);  } ( <AND> formula = Formula() { conjunction.addFormula(formula);  } )+
+  )
+  { return conjunction;  }
+}
+
+Disjunction  Disjunction() : { Disjunction disjunction = new Disjunction(); Formula formula; }
+{
+  (   
+  formula = Formula() { disjunction.addFormula(formula);  } ( <OR> formula = Formula() { disjunction.addFormula(formula);  } )+
+  )
+  { return disjunction;  }
+}
+
+Negation Negation() : {Formula formula; }
+{
+	( LOOKAHEAD(2) <NOT> formula = BodyTriplePattern() | <NOT> formula = Formula() )
+	{ return new Negation(formula); }
+}
+
+Conjunction  HeadConjunction() : { Conjunction conjunction = new Conjunction(); TriplePattern triplePattern; }
+{
+  (   
+  triplePattern = HeadTriplePattern() { conjunction.addFormula(triplePattern);  } ( <AND> triplePattern = HeadTriplePattern() { conjunction.addFormula(triplePattern); } )*
+  )
+  { return conjunction;  }
+}
+
+TriplePattern BodyTriplePattern() : {Term subject; Term property; Term object; }
+{
+	<LEFTP> subject = Subject() property = Property() object = Object() <RIGHTP>
+	{
+	  return new TriplePattern(subject, property, object);
+	}
+}
+
+TriplePattern HeadTriplePattern() : {Term subject; Term property; Term object; }
+{
+	<LEFTP> subject = HeadSubject() property = Property() object = HeadObject() <RIGHTP>
+	{
+	  return new TriplePattern(subject, property, object);
+	}
+}
+
+Term HeadSubject() : { Uri uri = null; Variable variable = null; }
+{
+(
+	uri = Uri() | variable = Variable() | variable = ConstructionVariable()
+)
+	{
+		if (uri != null) {
+			return uri;
+		}
+		
+		return variable;
+	}
+}
+
+Term Property() : { Uri uri = null; Variable variable = null; }
+{
+(
+	uri = Uri() | variable = Variable()
+)
+	{
+		if (uri != null)
+			return uri;
+			
+		return variable;
+	}	
+}
+
+Term HeadObject() : { Uri uri = null; Variable variable = null; Literal literal = null; }
+{
+	(
+	  uri = Uri() | variable = Variable() | variable = ConstructionVariable() | literal = Literal() 
+	)
+	{
+		if (uri != null)
+			return uri;
+			
+		if (variable != null)
+			return variable;
+			
+		return literal;
+	}	
+}
+
+Term Subject() : { Uri uri = null; Variable variable = null; }
+{
+(
+	uri = Uri() | variable = Variable()
+)
+	{
+		if (uri != null)
+			return uri;
+			
+		if (variable != null)
+			return variable;
+	}
+}
+
+Term Object() : { Uri uri = null; Variable variable = null; Literal literal = null; }
+{
+	(
+	  uri = Uri() | variable = Variable() | literal = Literal() 
+	)
+	{
+		if (uri != null)
+			return uri;
+			
+		if (variable != null)
+			return variable;
+			
+		return literal;
+	}	
+}
+
+Uri Uri() : { Token uri; }
+{
+	(
+	  uri = <URI> | uri = <NS_URI>
+	)
+	{
+	  return new Uri(uri.image);
+	} 
+}
+
+Variable Variable() : {Token t;}
+{
+    t = <VARIABLE>
+    {
+      return new Variable (t.image);
+    }
+}
+
+//TODO language tags
+Literal Literal() : {Token literal = null; Uri type = null;}
+{
+(
+   literal = <STRLIT>  (<TYPE> type = Uri())? | "\"\""
+){ //have to remove the leading " character first
+	if (type != null) {
+		return new TypedLiteral(literal.image.substring(1, literal.image.length()-1), type.getUri());
+	}
+	
+	return new Literal(literal.image.substring(1, literal.image.length()-1));
+  }
+
+}
+
+//http://www.engr.mun.ca/~theo/JavaCC-FAQ/javacc-faq-moz.htm 4.5, 4.6 lookahead, factoring the <VARIABLE> out in Object()
+ConstructionVariable ConstructionVariable() : { Token var = null; Uri uri = null; }
+{
+	<URICONSTRUCTION> "(" uri = Uri() ")"     
+       "@" var = <VARIABLE>
+     			//| <URICONSTRUCTION> "(" uri = Uri() ")"
+  { 
+	return new ConstructionVariable(var.image, uri.getUri());  
+  }
+}
+
+

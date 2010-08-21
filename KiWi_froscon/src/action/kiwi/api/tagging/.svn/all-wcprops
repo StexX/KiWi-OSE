@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/tagging
+END
+TagCloudServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/tagging/TagCloudServiceRemote.java
+END
+TaggingService.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/tagging/TaggingService.java
+END
+ExtendedTagCloudEntry.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/tagging/ExtendedTagCloudEntry.java
+END
+TaggingServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/tagging/TaggingServiceLocal.java
+END
+TagCloudService.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/tagging/TagCloudService.java
+END
+TagRecommendationServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/tagging/TagRecommendationServiceLocal.java
+END
+TagRecommendationServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/tagging/TagRecommendationServiceRemote.java
+END
+TagCloudEntry.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/tagging/TagCloudEntry.java
+END
+TaggingServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/tagging/TaggingServiceRemote.java
+END
+TagRecommendation.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/tagging/TagRecommendation.java
+END
+TagRecommendationService.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/tagging/TagRecommendationService.java
+END
+TagCloudServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/tagging/TagCloudServiceLocal.java
+END

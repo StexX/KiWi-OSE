@@ -1,0 +1,52 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a="http://richfaces.org/a4j"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+	template="layout/template.xhtml">
+
+	<ui:define name="body">
+
+
+		<h:form>
+			
+			<h2>Add a triple</h2>
+			
+				  <h:panelGrid columns="2" rowClasses="prop" columnClasses="name,value">
+					<h:outputLabel for="subject">Subject</h:outputLabel>
+					<h:inputText id="subject" value="#{inspectorAction.subject}" size="100" title="Absolute URI or anonymous node. I.e.: http://ex.com/s or _:exId"/>
+					<h:outputLabel for="property">Property</h:outputLabel>
+					<h:inputText id="property" value="#{inspectorAction.property}" size="100" title="Absolute URI. I.e.: http://ex.com/p"/>
+					<h:outputLabel for="object">Object</h:outputLabel>
+					<h:inputText id="object" value="#{inspectorAction.object}" size="100" title="Absolute URI or anonymous node or literal. I.e.: http://ex.com/o or _:exId. Anything which can't be parsed as absolute URI or anonymous node will be treated as string literal."/>
+				  </h:panelGrid>
+
+				  <h:commandButton value="Add triple" action="#{inspectorAction.addTriple()}" />				
+		</h:form>
+
+		<h:form>
+			<br/>
+			<br/>
+			<br/>
+			<h3>Alternatively write the whole triple on one line</h3>
+			
+				  <h:panelGrid columns="2" rowClasses="prop" columnClasses="name,value">
+					<h:outputLabel for="triple">Triple</h:outputLabel>
+					<h:inputText id="triple" value="#{inspectorAction.triple}" size="120" title="Space separated triple. E.g.: http://ex.com/s http://ex.com/p http://ex.com/o"/>
+				  </h:panelGrid>
+
+				  <h:commandButton value="Add triple" action="#{inspectorAction.addTriple()}" />
+				
+				<h:messages errorClass="errors" infoClass="message" globalOnly="true"/>				
+		</h:form>
+
+	</ui:define>
+</ui:composition>
+
+

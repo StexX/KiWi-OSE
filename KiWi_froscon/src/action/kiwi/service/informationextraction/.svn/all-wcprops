@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/informationextraction
+END
+DocumentTypeExtractlet.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/informationextraction/DocumentTypeExtractlet.java
+END
+InformationExtractionController.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/informationextraction/InformationExtractionController.java
+END
+TermRecognitionServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/informationextraction/TermRecognitionServiceImpl.java
+END
+FeatureStoreServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/informationextraction/FeatureStoreServiceImpl.java
+END
+NumberExtractlet.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/informationextraction/NumberExtractlet.java
+END
+ActionItemExtractlet.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/informationextraction/ActionItemExtractlet.java
+END
+InformationExtractionServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/informationextraction/InformationExtractionServiceImpl.java
+END
+LabelServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/informationextraction/LabelServiceImpl.java
+END
+DateInstanceExtractor.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/informationextraction/DateInstanceExtractor.java
+END
+DeutschGateEntityExtractlet.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/informationextraction/DeutschGateEntityExtractlet.java
+END
+AbstractExtractlet.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/informationextraction/AbstractExtractlet.java
+END
+NounPhraseInstanceExtractor.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/informationextraction/NounPhraseInstanceExtractor.java
+END
+AbstractMLExtractlet.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/informationextraction/AbstractMLExtractlet.java
+END
+KiWiGATEServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/informationextraction/KiWiGATEServiceImpl.java
+END
+DocumentTagExtractlet.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/informationextraction/DocumentTagExtractlet.java
+END
+EnglishGateEntityExtractlet.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/informationextraction/EnglishGateEntityExtractlet.java
+END
+DocumentInstanceExtractor.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/informationextraction/DocumentInstanceExtractor.java
+END
+GateEntityRecognizer.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/service/informationextraction/GateEntityRecognizer.java
+END

@@ -1,0 +1,20 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">		
+
+		ArtAround - CAP-KOM, (w) <a href="http://www.artaround.at/">www.artaround.at</a>,
+		<a href="http://cap-kom.utilo.eu/">cap-kom.utilo.eu</a>, (e) 
+		<script language="JavaScript">
+			<!--
+			var name = "info";
+			var domain = "artaround.at";
+			document.write('<a href=\"mailto:' + name + '@' + domain + '\">');
+			document.write(name + '@' + domain + '</a>');
+			// -->
+		</script> | Pictogramme Werbeagentur Arno Brandauer, <a href="http://www.arno-brandauer.at/">www.arno-brandauer.at</a> | <a href="">Impressum</a> | <a href="">Kontakt</a>
+	
+</ui:composition>

@@ -1,0 +1,14 @@
+<ui:composition
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:c="http://java.sun.com/jstl/core"
+    xmlns:a="http://richfaces.org/a4j">
+	<a:region>
+		<a:htmlCommandLink value="(Add as friend)"
+			rendered="#{!kiwi.dashboard.contactsAction.isFriend(user)}"
+			action="#{kiwi.dashboard.contactsAction.becomeFriend(user)}" />
+	</a:region>
+</ui:composition>

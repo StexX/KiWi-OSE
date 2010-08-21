@@ -1,0 +1,19 @@
+
+Das IntereduTool ist für das Serialisieren der Interedu Datenbank verantwortlich, dh. die relationale Struktur der Datenbank wird in ein xml File geschrieben. Das Tool ist auf folgenden Svn Server: https://secure.salzburgresearch.at/svn/snml-interedu-serializer zu finden.
+Die korrigierte Interedu Datenbank liegt im IntereduTool repository unter Meta-Inf/resources/interedu_repaired.sql
+
+Nachdem die Persistence Einstellungen des IntereduTools angepasst worden sind (Achtung: Da in der Datenbank bereits Inhalte vorhanden sind, unbedingt update und nicht create verwenden), kann die InterEdu Datenbnak serialisiert werden. Dies geschieht über die grafische Benutzeroberfläche des Tools.In den Properties.java kann eingestellt werden, wo lokal die serialiserten Dateien gespeichert werden und wieviele Artikel exportiert werden sollen. Vorsicht: Da die Datenbank sehr groß ist, kann das Serialisieren aller Artikel mehrere Stunden in Anspruch nehmen.
+
+Die von mir bereits serialisierte article.xml liegt im KiWi root Verzeichnis,  falls diese verwendet wird muss das InterEduTool nicht ausgeführt werden) 
+
+In Kiwi können sowohl der Kategorienbaum als auch alle Artikel importiert werden.
+Der Kategorienbaum wird wie alle anderen Ontologien über die setup Funktion importiert.
+
+(Hinweis (Kiwiversion von 18.2): Bevor die InterEdu Ontologie geladen wird, müssen die KiWiCore Ontology und die SKOS Core Ontologie geladen werden.
+Die Visualisierung des Importstatus funktioniert derzeit auch nicht zuverlässig, d.h. die Balkendarstellung läuft noch obwohl die Ontology fertig geladen ist. Dies sollte sich aber in den nächsten Tagen durch die nächsten KiWi BUG FIXES ändern.)
+
+Der SKOS Thesaurus ist bereits in der KiWi Verzeichnisstruktur vorhanden: extensions/ontologies/resources/interedu/kategorienbaum.rdf
+
+Nachdem der Kategorienbaum importiert wurde, können nun auch die zuvor serialisierten Artikel importiert werden. 
+Dazu muss nur der Detainame der zuvor serialisierten Datei auf folgender Seite innerhalb von KiWi angegeben werden:
+localhost.../KiWi/interedu/import.seam  

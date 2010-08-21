@@ -1,0 +1,37 @@
+K 10
+svn:ignore
+V 400
+.settings
+ContentItems
+Users
+bin
+bootstrap
+build
+build-dev.properties
+build-prod.properties
+build.properties
+dist
+dist
+editing.sql
+exploded-archives
+exploded-archives
+hibernate-console.properties
+patch.txt
+resources
+resources.tmpl
+temp-testng-customsuite.xml
+test-build
+test-output
+test.sql
+tomcat
+null.lobs.db
+reports
+newError
+classes
+docvectors.bin
+termvectors.bin
+kiwi.solr
+.clover
+.cloverhistory
+
+END

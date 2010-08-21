@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/user
+END
+UserServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/user/UserServiceRemote.java
+END
+FoafSslLoginServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/user/FoafSslLoginServiceRemote.java
+END
+CountryFacade.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/user/CountryFacade.java
+END
+PasswordGeneratorServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/user/PasswordGeneratorServiceLocal.java
+END
+MailServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/user/MailServiceLocal.java
+END
+ProfileService.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/user/ProfileService.java
+END
+UserService.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/user/UserService.java
+END
+FoafSslLoginService.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/user/FoafSslLoginService.java
+END
+CityFacade.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/user/CityFacade.java
+END
+MailServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/user/MailServiceRemote.java
+END
+PasswordGeneratorServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/user/PasswordGeneratorServiceRemote.java
+END
+UserServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/user/UserServiceLocal.java
+END
+FoafSslLoginServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/user/FoafSslLoginServiceLocal.java
+END
+ProfileServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/user/ProfileServiceLocal.java
+END
+MailService.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/user/MailService.java
+END
+PasswordGeneratorService.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/user/PasswordGeneratorService.java
+END
+KiWiProfileFacade.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/user/KiWiProfileFacade.java
+END
+ProfileServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/user/ProfileServiceRemote.java
+END

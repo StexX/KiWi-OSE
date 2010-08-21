@@ -1,0 +1,55 @@
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+                xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf">
+	<!-- include subComponents -->
+		<s:div styleClass="box box-selector" id="selector_box">
+			<h2 class="box-heading">
+				<img alt="Suche verfeinern" src="images/icon_article.png"/>
+				Gesammelte Artikel
+			</h2>
+			<div class="box-content" id="selector_box_content">
+				<s:fragment rendered="#{interedu.artikelCollector.articleCollectionEmpty}">
+					Es wurde noch keine Artikel ausgew&#xE4;hlt. Ziehen Sie die Artikel (Suche oder Einzelansicht) in dieses Feld, um sie der Sammlung hinzuzuf&#xFC;gen.
+				</s:fragment>
+				<s:fragment rendered="#{!interedu.artikelCollector.articleCollectionEmpty}">
+					<ul>
+					<ui:repeat value="#{interedu.artikelCollector.articleCollection}" var="art">
+						<li>
+						<h:commandLink  action="#{interedu.currentArticleSelector.selectArticle(art)}" value=" #{art.title }" />
+						<a:commandLink title="aus Liste entfernen" action="#{interedu.artikelCollector.unselect(art)}" reRender="content_middle_complete,selector_box">
+							<img src="images/icon_bin.png" alt="entfernen" style="border:none" />
+						</a:commandLink>
+						</li>
+					</ui:repeat>
+					</ul>
+					<h3>Operationen:</h3>
+					<ul class="right_actions">
+						<li><h:commandLink style="color:#DF7401;font-weight:bold;" action="#{interedu.artikelCollector.clearAll()}" value="alle l&#xF6;schen" /></li>
+						<s:fragment rendered="#{identity.loggedIn}">
+						<li><a:commandLink style="color:#DF7401;font-weight:bold;"  onclick="openEditPanel('multiTagging_panel');" value="alle Artikel taggen" /></li>
+						</s:fragment>
+						<!--<li><h:commandLink style="color:#DF7401;font-weight:bold;"  action="#{interedu.artikelCollector.clearAll()}" value="alle Artikel kategorisieren" /></li>-->
+					</ul>
+				</s:fragment>
+			</div>
+			<script type="text/javascript">
+				/* <![CDATA[ */
+				jQuery('#selector_box_content').droppable({drop: function (event, ui) {
+						var t = ui.draggable.find("input").val();
+						addToSelector(t);
+					},
+					tolerance: 'touch'
+				});
+		
+				/* ]]> */
+			</script>
+			<ui:include src="../panels/multiTaggingPanel.xhtml" />
+		</s:div>
+</ui:composition>

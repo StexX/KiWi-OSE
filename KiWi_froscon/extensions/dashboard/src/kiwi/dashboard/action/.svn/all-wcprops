@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/dashboard/src/kiwi/dashboard/action
+END
+UserHistoryAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/dashboard/src/kiwi/dashboard/action/UserHistoryAction.java
+END
+RuleBasedAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/dashboard/src/kiwi/dashboard/action/RuleBasedAction.java
+END
+IntegrationAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/dashboard/src/kiwi/dashboard/action/IntegrationAction.java
+END
+StreamOfActivitiesAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/dashboard/src/kiwi/dashboard/action/StreamOfActivitiesAction.java
+END
+ContactsAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/dashboard/src/kiwi/dashboard/action/ContactsAction.java
+END
+TweetAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/dashboard/src/kiwi/dashboard/action/TweetAction.java
+END
+CommentAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/dashboard/src/kiwi/dashboard/action/CommentAction.java
+END
+ActivityAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/dashboard/src/kiwi/dashboard/action/ActivityAction.java
+END
+GroupAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/dashboard/src/kiwi/dashboard/action/GroupAction.java
+END
+WatchlistAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/dashboard/src/kiwi/dashboard/action/WatchlistAction.java
+END
+PreferenceAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/dashboard/src/kiwi/dashboard/action/PreferenceAction.java
+END

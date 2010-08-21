@@ -1,0 +1,373 @@
+<html>
+<head>
+<style type="text/css">
+
+/***********  Positioning  **************/
+#center {
+    width:640px;
+    float:left;
+}
+
+#right {
+    width:300px;
+    float:right;
+    position:relative;
+    left:20px;
+}
+
+
+/************   SEARCH BAR   **************/
+
+#search_bar {
+    width:625px;
+    height:80px;
+    text-align:center;
+    background-image:url('img/bg.jpg');
+    background-repeat:no-repeat;
+    margin-left:5px;
+}
+
+#search_bar table {
+    position:relative;
+    width:585px;
+    top: 20px;
+    border-spacing:0;
+    border-bottom: 1px solid #700606;
+    border-right: 1px solid #700606; /* #e7e7e7 */
+    background-color:white;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+#search_button_td {
+    border-top: 1px solid #CCC;
+    border-right: 1px solid #999;
+    border-bottom: 1px solid #999;
+    border-left: 1px solid #CCC;
+    width:60px;
+}
+
+#search_field_td {
+    border-top: 1px solid #CCC;
+    border-bottom: 1px solid #999;
+    border-left: 1px solid #CCC;
+}
+
+#search_bar input {
+    border:none;
+    height:26px;
+    width:100%;
+}
+
+#search_field_input {   
+    font:18px arial,sans-serif;
+    padding-left:4px;
+}
+
+#search_button_input {
+    background: none repeat scroll 0 0 #EEEEEE;
+    font:16px arial,sans-serif;
+    cursor:pointer;
+}
+
+#search_menu {
+    font:12px arial,sans-serif;
+    text-align:right;
+    color:white;
+    list-style:none;
+    margin:3px 0 0;
+    padding-right: 23px;
+    position:relative;
+    top:23px;
+}
+
+#search_menu li {
+    display:inline;
+}
+
+#search_menu li a{
+    color:white;
+    text-decoration:none;
+}
+
+
+/*************  Type Tabs  ************/
+#type_tabs {
+    list-style:none;
+    margin: 20px 0 0 5px;
+    padding:0 0 0 9px;
+}
+
+#type_tabs li {
+    display: inline;
+    padding: 5px 5px 2px;
+}
+
+#type_tabs li a {
+    font:14px arial,sans-serif;
+    color: black;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+.type_tab_inactive {
+    background-color:white;
+    border: 2px solid #E2EAF5;
+    border-bottom:none;
+}
+
+.type_tab_active {
+    background-color:#E2EAF5;
+    border: 2px solid #bcc3cc;
+    border-bottom:none;
+}
+
+/***************  Search Results  **************/
+#search_results {
+    background-image: url('img/bg2.jpg');
+    background-repeat: no-repeat;
+    position:relative;
+    top:0;
+    padding:5px 15px 15px;
+}
+
+/***************  Placeholder  ****************/
+.placeholder {
+    margin: 10px 0;
+    width:610px;
+    background-color:white;
+    border: 1px solid lightgrey;
+}
+
+/************** Single Result  *****************/
+.single_result {
+    margin: 10px 0;
+    width:610px;
+    border: 1px dashed lightgrey;
+}
+
+.single_result h2 {
+    margin: 5px;
+    font:bold 20px arial,sans-serif;
+}
+
+.single_result h2 a {
+    color: black;
+}
+
+.single_result p.description {
+    margin: 10px 5px;
+    font:14px arial,sans-serif;
+}
+
+.single_result p.description a {
+    color: #c03025;
+    text-decoration:none;
+    font:bold 11px arial,sans-serif;
+}
+
+.single_result p.info {
+    margin: 10px 5px;
+    font:12px arial,sans-serif;
+    color: grey;
+}
+
+span.red {
+    color: #c03025;
+}
+
+/**************** Facets *********************/
+#selected_facets {
+    min-height: 119px;
+    margin-left:5px;
+}
+
+#selected_facets img {
+    border:none;
+}
+
+#selected_facets table {
+    width: 100%;
+    border-left: 2px solid #E2EAF5;
+}
+
+#selected_facets td.title {
+    font:bold 12px arial,sans-serif;
+}
+
+#selected_facets td.value {
+    font:12px arial,sans-serif;
+}
+
+#facets {
+    background-image:url('img/bg2-short.jpg');
+    background-repeat:no-repeat;
+    padding:5px 15px 15px;
+}
+
+.right_box {
+    background-color:white;
+    border: 1px solid lightgrey;
+    width:270px;
+    margin: 10px 0;
+}
+
+.right_box h3{
+    margin:3px;
+    font:bold 14px arial,sans-serif;
+}
+
+.right_box p {
+    margin:3px;
+    font:12px arial,sans-serif;
+}
+
+.right_box p a{
+    color: black;
+    text-decoration:none;
+}
+
+/*************   Paging  **************/
+#search_paging {
+    margin-top:40px;
+    padding-top:5px;
+    border-top:1px solid #E2EAF5;
+    text-align:center;
+    font:bold 12px arial,sans-serif;
+}
+
+#search_paging a {
+    margin:5px;
+}
+
+#search_paging a.active{
+    color: #c03025;
+}
+
+#search_paging a.inactive{
+    color: #5388af;
+}
+
+#search_paging a.text{
+    color: #5388af;
+}
+
+</style>
+<script type="text/javascript">
+
+</script>
+</head>
+<body>
+
+<div id="container" style="position:absolute;top:0;left:0;margin:20px;">
+    <form>
+    
+    <!-- right side -->
+    <div id="right">
+        <div id="selected_facets">
+            <table>
+                <tr>
+                    <td class="title">Suchtext:</td><td class="value">Hockenheim</td>
+                </tr><tr>
+                    <td class="title">Typ:</td><td class="value">Blog Eintrag <a href="#"><img src="img/delete.png"/></a></td>
+                </tr><tr>
+                    <td class="title">Tag:</td><td class="value">Formel 1 <a href="#"><img src="img/delete.png"/></a>, Schumacher <a href="#"><img src="img/delete.png"/></a></td>
+                </tr><tr>
+                    <td class="title">Kategorie:</td><td class="value">Rennsport <a href="#"><img src="img/delete.png"/></a></td>
+                </tr><tr>
+                    <td class="title">Zeit:</td><td class="value">seit gestern <a href="#"><img src="img/delete.png"/></a></td>
+                </tr>
+            </table>
+        </div>
+        <div id="facets">
+            <div class="right_box">
+                <h3>Tags:</h3>
+                <p><a href="#">Formel 1(20)</a>, <a href="#">Schumacher(18)</a>, <a href="#">Rennsport(16)</a>, <a href="#">Rennsport(16)</a>, <a href="#">Racing(16)</a>, <a href="#">Sport(16)</a>, <a href="#">Rennen(16)</a></p>
+            </div>
+            <div class="right_box">
+                <h3>Kategorien:</h3>
+                <p><a href="#">Formel 1(20)</a>, <a href="#">Schumacher(18)</a>, <a href="#">Rennsport(16)</a></p>
+            </div>
+            <div class="right_box">
+                <h3>Orte:</h3>
+                <p><a href="#">Hockenheim(20)</a>, <a href="#">Silverstone(10)</a>, <a href="#">Barcelona(2)</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- middle -->
+    <div id="center">
+    
+    <div id="search_bar">
+            <table>
+                <tr>
+                    <td id="search_field_td"><input type="text" id="search_field_input" value="Hockenheim"/></td>
+                    <td id="search_button_td"><input type="submit" onclick="document.getElementById('placeholder1').innerHTML = 'hallo';"
+                                                     id="search_button_input" value="Suche"/>
+                    </td>
+                </tr>
+            </table>
+        <ul id="search_menu">
+            <li><a href="http://www.123people.at/s/test" target="_blank">Personensuche im Internet |</a></li>
+            <li><a href="http://tagit2.salzburgresearch.at" target="_blank">Kartensuche</a></li>
+        </ul>
+    </div>
+    
+    <ul id="type_tabs">
+        <li class="type_tab_inactive"><a href="#">Alle (123599)</a></li>
+        <li class="type_tab_inactive"><a href="#">Artikel (123456)</a></li>
+        <li class="type_tab_active"><a href="#">Blogs (12)</a></li>
+        <li class="type_tab_inactive"><a href="#">Bilder (123)</a></li>
+        <li class="type_tab_inactive"><a href="#">Wiki (11)</a></li>
+        <li class="type_tab_inactive"><a href="#">Video (9)</a></li>
+    </ul>
+    
+    <div id="search_results">
+ 
+    <div id="placeholder1" class="placeholder" >
+        <img src="img/placeholder.jpg"/>
+    </div>
+    <div id="single_results">
+        <div class="single_result">
+            <h2><a href="#">Fiaker-Obmann beurteilt 'Pferdewindel'-Test negativ</a></h2>
+            <p class="description">
+            Dreieinhalb Wochen haben die Salzburger Fiaker-Stuten 'Sabrina' und 'Bella' tapfer Pferdewindeln getragen, nun ist der Testbetrieb beendet. Die Bilanz von Franz Winter, Sprecher der Fiaker, ist mit Skepsis beladen: Die Windeln w&uuml;rden nur 50 Prozent des Pferdemistes auffangen... <a href="#">[mehr]</a>  
+            </p>
+            <p class="info">
+            Aussen / 30.07.2010 / <span class="red">Online</span>
+            </p>
+        </div>
+        <div class="single_result">
+            <h2><a href="#">Gl&uuml;cksbringer helfen wirklich</a></h2>
+            <p class="description">
+            Getestet. K&ouml;lner Wissenschafter zeigen, dass positiver Aberglaube und gute W&uuml;nsche tats&auml;chlich die Leistungen steigern k&ouml;nnen. Wenn man daran glaubt... <a href="#">[mehr]</a>
+            </p>
+            <p class="info">
+            Wiss / 30.07.2010 / <span class="red">Print</span> 
+            </p>
+        </div>
+    </div>
+    <div id="placeholder2" class="placeholder">
+        <img src="img/placeholder.jpg"/>
+    </div>
+    
+    <div id="search_paging">
+        <a href="#" class="text">Zur&uuml;ck</a>
+        <a href="#" class="inactive">1</a>
+        <a href="#" class="inactive">2</a>
+        <a href="#" class="active">3</a>
+        <a href="#" class="inactive">4</a>
+        <a href="#" class="inactive">5</a>
+        <a href="#" class="text">Vorw&auml;rts</a>
+    </div>
+    
+    </div>
+    
+    </div>
+    <div style="clear:both;"></div>
+    </form>
+</div>
+
+</body>
+</html>

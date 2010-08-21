@@ -1,0 +1,106 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a="http://richfaces.org/a4j" template="../layout/template.xhtml">
+
+
+	<ui:define name="header">
+		<link href="../stylesheet/vmt-style.css" rel="stylesheet"
+			type="text/css" />
+	</ui:define>
+
+	<ui:define name="body">
+		
+		<a:outputPanel layout="block" id="messages">
+						<rich:messages styleClass="message" />
+		</a:outputPanel>
+		
+		<h3>Import Thesaurus</h3>
+        
+        <h:form id="importThesaurusForm">
+            <h:panelGrid columns="2">				
+                <h:panelGroup>
+                    <strong><h:outputText value="Thesaurus URL"/></strong>
+                </h:panelGroup>
+                <h:inputText value="#{thesaurusImporter.url_thesaurus}" size="80"/>
+				
+				<h:panelGroup>
+                    <strong><h:outputText value="URL to Concept"/></strong>
+                </h:panelGroup>
+                <h:inputText value="#{thesaurusImporter.url_concept}" size="80"/>
+				
+				 <h:panelGroup>
+                    <strong><h:outputText value="Concept Schema"/></strong>
+                </h:panelGroup>
+                <h:inputText value="#{thesaurusImporter.concept_schema}" size="80"/>
+				
+				<h:panelGroup>
+                    <strong><h:outputText value="Top Concept"/></strong>
+                </h:panelGroup>
+                <h:inputText value="#{thesaurusImporter.topconcept}" size="80"/>
+				
+<!--				<h:panelGroup>
+                    <strong><h:outputText value="Format"/></strong>
+                </h:panelGroup>
+                <h:inputText value="#{thesaurusImporter.format}" size="80"/> -->
+				
+				<h:panelGroup>
+                    <strong><h:outputText value="Format"/></strong>
+                </h:panelGroup>
+				 <h:selectOneMenu value="#{thesaurusImporter.format}">
+                    <s:selectItems var="format" value="#{thesaurusUpdater.formats}" label = "#{format}" noSelectionLabel="select format"/>
+                </h:selectOneMenu>
+				
+			<!--	<h:panelGroup>
+                    <strong><h:outputText value="Language"/></strong>
+                </h:panelGroup>
+                <h:inputText value="#{thesaurusImporter.language}" size="80"/>-->
+				
+				
+                <a:commandButton action="#{thesaurusImporter.importThesaurus}" value="Import!" />
+            </h:panelGrid>
+        </h:form>
+		
+		<h3>Update LOD Resources</h3>
+		
+		<h:form id="updateThesaurusForm">
+			 <h:panelGrid columns="2">	
+			 	
+				<h:panelGroup>
+                    <strong><h:outputText value="Update Ontology URI"/></strong>
+                </h:panelGroup>
+                <h:inputText value="#{thesaurusUpdater.updateUri}" size="80"/>
+               
+			   <h:panelGroup>
+                    <strong><h:outputText value="All Updates from Date: "/></strong>
+               </h:panelGroup>
+			   <a:outputPanel id="calendar" layout="block"> 
+		            	      <rich:calendar value="#{thesaurusUpdater.date}" cellWidth="24px" cellHeight="22px" style="width:200px" datePattern="dd/M/yy hh:mm a"/>
+				</a:outputPanel>
+				
+				<h:panelGroup>
+                    <strong><h:outputText value="Format"/></strong>
+                </h:panelGroup>
+				 <h:selectOneMenu value="#{thesaurusUpdater.format}">
+                    <s:selectItems var="format" value="#{thesaurusUpdater.formats}" label = "#{format}" noSelectionLabel="select format"/>
+                </h:selectOneMenu>
+				
+               <!-- <h:inputText value="#{thesaurusUpdater.format}" size="80"/> -->
+								
+				<h:panelGroup>
+                    <strong><h:outputText value="URL to Concept"/></strong>
+                </h:panelGroup>
+                <h:inputText value="#{thesaurusUpdater.url_concept}" size="80"/>
+				
+				 <a:commandButton action="#{thesaurusUpdater.updateThesaurus}" value="Update!" />
+				
+            </h:panelGrid>
+        </h:form>
+
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,124 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+                xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                template="/layout/template-2col.xhtml">
+
+
+    <ui:define name="header">
+       <a:loadScript src="resource://jquery.js"/>
+       
+       <link href="stylesheet/dashboard.css" rel="stylesheet" type="text/css" />
+    
+    </ui:define>
+
+    <ui:define name="navigation">
+        <ui:include src="layout/navigation.xhtml" />
+    </ui:define>
+
+           
+    <ui:define name="body">
+        <h2>Contacts</h2>
+        
+        
+        <a:outputPanel id="contactList" layout="block">
+        
+            <h:form id="addContactForm">
+            	<h:messages/>
+                <div id="addContact">
+                    <h4>Add a Friend</h4>
+                    <h:panelGrid columns="2">
+	                    <rich:comboBox defaultLabel="Enter user name" value="#{kiwi.dashboard.contactsAction.selectedUser}" style="width: 200px;">
+	                        <s:selectItems value="#{kiwi.dashboard.contactsAction.allUsers}" var="contact" label="#{contact}"/>
+	                     </rich:comboBox>
+	                    <a:commandButton action="#{kiwi.dashboard.contactsAction.addFriend}" value="Add" reRender="contactList"/>
+                    </h:panelGrid>
+                </div>
+                
+                
+                <!--
+                <div id="foafContact">
+                    <h4>FOAF Recommendations</h4>
+                    <h:panelGrid columns="2">
+		            <s:span id="recomFoaf" rendered="#{recommendationActionScope.foafRecommendations!=null and recommendationActionScope.foafRecommendations.size() &gt; 0}">
+		                <div><ul>
+		                    <ui:repeat var="user" value="#{recommendationActionScope.foafRecommendations}" >
+		                        <li>
+		                        <h:outputText value="#{user.firstName} "/>
+		                        <h:outputText value="#{user.lastName}"/>
+		                        <h:outputText value=" " /><kiwi:friendMaker user="#{user.login}" />
+		                        </li>
+		                    </ui:repeat>
+		                    </ul>
+		                </div>
+		                
+		            </s:span>
+		            <s:span id="nonFoafList" rendered="#{recommendationActionScope.foafRecommendations.size() &lt;= 0}">
+		                        <h:outputText value="No contact friend of a friend recommendations so far."/>
+		            </s:span>
+                    </h:panelGrid>
+                </div>-->
+                
+                
+                <div id="newContact">
+                    <h4>Recommended Contacts</h4>
+                    <h:panelGrid columns="2">
+		            <s:span id="recomlist" rendered="#{recommendationActionScope.contactListRecommendations.size() &gt; 0}">
+		                <div><ul>
+		                    <ui:repeat var="user" value="#{recommendationActionScope.contactListRecommendations}" >
+		                        <li>
+		                        <h:outputText value="#{user.firstName} "/>
+		                        <h:outputText value="#{user.lastName}"/>
+		                        <h:outputText value=" " /><kiwi:friendMaker user="#{user.login}" />
+		                        </li>
+		                    </ui:repeat>
+		                    </ul>
+		                </div>
+		                
+		            </s:span>
+		            <s:span id="norecomlist" rendered="#{recommendationActionScope.contactListRecommendations.size() &lt;= 0}">
+		                        <h:outputText value="No contact recommendations so far."/>
+		            </s:span>
+                    </h:panelGrid>
+                </div>
+            </h:form>
+        
+            <ui:repeat var="contact" value="#{kiwi.dashboard.contactsAction.friends}">
+            
+                <div class="contact">
+                    <div class="contactPhoto">
+                        <kiwi:mediaContent contentItem="#{contact.profilePhoto}">
+							<ui:define name="nomedia">
+								<img src="#{facesContext.externalContext.requestContextPath}/img/professor.png" />
+							</ui:define>
+                        	<s:transformImageSize width="180" maintainRatio="true" />
+                        </kiwi:mediaContent>
+                    </div>
+                    
+                    <div class="contactContent">
+                        <h:outputText value="#{contact.firstName} #{contact.lastName}" />
+                    </div>
+                    
+                    <div class="contactActions">
+                        <h:form>
+                            <a:commandLink action="#{kiwi.dashboard.contactsAction.removeFriend(contact)}" value="Remove" reRender="contactList"/>
+                        </h:form>
+                    </div>
+                    
+                    <div style="clear: left;"/>
+                </div>
+            
+            </ui:repeat>
+        </a:outputPanel>
+        
+    </ui:define>       
+                
+ </ui:composition>

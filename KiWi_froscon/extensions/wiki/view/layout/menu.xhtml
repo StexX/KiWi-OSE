@@ -1,0 +1,47 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+    xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+    xmlns:c="http://java.sun.com/jstl/core"
+    xmlns:a4j="http://richfaces.org/a4j">
+            <div class="actionmenu" >
+                <div class="actionmenu-label">
+                    <h:outputText value="#{messages['wiki.menu.actions']}"/>
+                </div>
+                <div class="actionmenu-items" style="display: none;">
+                    <h:form id="formWikiMenu">
+                       <s:link styleClass="actionmenu-item" value="#{messages['wiki.menu.view']}" action="/wiki/home.xhtml"/>
+                       <hr/>
+                       <s:link styleClass="actionmenu-item" value="#{messages['wiki.menu.edit_content']}" action="/wiki/edit.xhtml" rendered="#{permissionAction.hasPermission('write')}"/>
+                       <!-- TODO: change hasRole('admin') to hasPermission('editPermissions') -->
+                       <s:link styleClass="actionmenu-item" value="#{messages['wiki.menu.edit_individualPermission']}" action="/wiki/individualPermissions.xhtml" rendered="#{permissionAction.hasRole('admin') or permissionAction.hasPermission('editPermissions')}"/>
+                       <s:link styleClass="actionmenu-item" value="#{messages['wiki.menu.edit_media']}" action="/wiki/media.xhtml" rendered="#{permissionAction.hasPermission('write')}"/>
+                       <hr/>
+                       <a4j:commandLink reRender="taggingPanel" rendered="#{permissionAction.hasPermission('tag') or permissionAction.hasRole('write')}" styleClass="actionmenu-item" oncomplete="#{rich:component('taggingPanel')}.show();">#{messages['wiki.menu.edit_tags']}</a4j:commandLink>
+                       
+                       <s:link styleClass="actionmenu-item" value="#{messages['wiki.menu.information_extraction']}" action="/wiki/information_extraction.xhtml" rendered="#{permissionAction.hasPermission('annotate') or permissionAction.hasRole('write')}"/>
+                                              
+                       <s:link styleClass="actionmenu-item" value="#{messages['wiki.menu.edit_annotations']}" action="/wiki/annotate.xhtml" rendered="#{permissionAction.hasPermission('annotate') or permissionAction.hasRole('write')}"/>
+                       
+                       <s:link styleClass="actionmenu-item" value="#{messages['wiki.menu.edit_metadata']}" action="/wiki/metadata.xhtml" rendered="#{permissionAction.hasPermission('annotate') or permissionAction.hasRole('write')}"/>
+                       <hr/>
+                       <s:link styleClass="actionmenu-item" value="#{messages['wiki.menu.history']}" action="/wiki/history.xhtml" rendered="#{permissionAction.hasPermission('read')}"/>
+                       <hr/>         
+<!--                       <a4j:commandLink value="#{messages['wiki.menu.semForm']}" action = "#{sFormAction.getUri()}"/>-->
+<!--                       <s:link styleClass="actionmenu-item" value="#{messages['wiki.menu.semForm']}" action="/seam/resource/services/transform?uri=#{contentItem.uri}"/>-->
+                       <!--
+                       <s:link styleClass="actionmenu-item" value="#{messages['wiki.menu.barcodeexport']}" action="/wiki/barcodeexport.xhtml"/>
+                       -->
+                    </h:form>
+                </div>
+                <script type="text/javascript">
+                jQuery(".actionmenu").click(function() {
+                    jQuery(".actionmenu-items").slideToggle("fast");
+                });
+                </script>
+            </div>
+</ui:composition>

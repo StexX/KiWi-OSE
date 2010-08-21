@@ -1,0 +1,2092 @@
+<?xml version="1.0"?>
+<rdf:RDF	
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"	
+    xmlns="http://www.owl-ontologies.com/Logica.owl#"	
+    xmlns:owl="http://www.w3.org/2002/07/owl#"	
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"	
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"	
+  xml:base="http://www.owl-ontologies.com/Logica.owl">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:ID="CheckList">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CheckList</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="CheckListItem">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CheckListItem</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="ComplexityLevel">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ComplexityLevel</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="DecompositionLevel">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DecompositionLevel</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Delivery">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Delivery</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="DeliveryType">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DeliveryType</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Employee">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Employee</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="EmployeeCalendar">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EmployeeCalendar</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="EmployeeSkill">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EmployeeSkill</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="EstimationModel">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EstimationModel</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="EstimationModelIitem">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EstimationModelIitem</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Holidays">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Holidays</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="ImpactReductionTask">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ImpactReductionTask</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="LifeCycleModel">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LifeCycleModel</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="LikelihoodReductionTask">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LikelihoodReductionTask</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Milestone">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Milestone</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MilestoneStatus">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MilestoneStatus</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MilestoneType">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MilestoneType</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="OrganizationalUnit">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OrganizationalUnit</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="ProcessArea">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ProcessArea</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="ProcessDefinition">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ProcessDefinition</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="ProcessOutputWorkProductTypes">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ProcessOutputWorkProductTypes</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="ProductTypesInMilestoneType">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ProductTypesInMilestoneType</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Project">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Project</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="ProjectParticipant">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ProjectParticipant</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="ProjectParticipantAllocation">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ProjectParticipantAllocation</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="ProjectPhase">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ProjectPhase</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="ProjectPhaseDefinition">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ProjectPhaseDefinition</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="ProjectPlan">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ProjectPlan</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="ProjectResource">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ProjectResource</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="ProjectResourceStatus">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ProjectResourceStatus</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="ProjectRole">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ProjectRole</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="ProjectRoleAllocation">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ProjectRoleAllocation</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="ResourceCategory">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ResourceCategory</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="ResourceEstimate">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ResourceEstimate</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="ResourcesUsed">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ResourcesUsed</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Risk">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Risk</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="RiskCategory">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RiskCategory</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="RiskImpactRating">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RiskImpactRating</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="RiskLikelihoodRating">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RiskLikelihoodRating</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="RiskStatus">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RiskStatus</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="SignificanceLevel">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SignificanceLevel</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="SizeMetric">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SizeMetric</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="SkillCategory">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SkillCategory</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="SkillLevel">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SkillLevel</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="SkillPlan">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SkillPlan</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="SkillPlanActivity">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SkillPlanActivity</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Stakeholder">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stakeholder</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="StakeholderInvolvementActivityType">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">StakeholderInvolvementActivityType</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="StakeholderInvolvementPhase">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">StakeholderInvolvementPhase</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="SubTask">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SubTask</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="SubTaskAllocatedTo">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SubTaskAllocatedTo</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="SubTaskDefinition">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SubTaskDefinition</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Task">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Task</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="TaskAllocatedTo">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TaskAllocatedTo</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="TaskDefinition">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TaskDefinition</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="TaskDefinitionsInProcessDefinition">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TaskDefinitionsInProcessDefinition</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="TaskOutputWorkProducts">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TaskOutputWorkProducts</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="TaskStatus">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TaskStatus</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="TaskTypesInMilestoneType">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TaskTypesInMilestoneType</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="WorkProduct">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WorkProduct</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="WorkProductType">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WorkProductType</rdfs:label>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasItem">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasCheckList"/>
+    <rdfs:domain rdf:resource="#CheckList" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasItem</rdfs:label>
+    <rdfs:range rdf:resource="#CheckListItem" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasComplexity">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasWorkProduct"/>
+    <rdfs:domain rdf:resource="#WorkProduct" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasComplexity</rdfs:label>
+    <rdfs:range rdf:resource="#ComplexityLevel" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasDecompositionLevel">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasWorkProduct"/>
+    <rdfs:domain rdf:resource="#WorkProduct" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasDecompositionLevel</rdfs:label>
+    <rdfs:range rdf:resource="#DecompositionLevel" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="forDelivery">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasMilestone"/>
+    <rdfs:domain rdf:resource="#Milestone" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">forDelivery</rdfs:label>
+    <rdfs:range rdf:resource="#Delivery" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="ofDeliveryType">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasDelivery"/>
+    <rdfs:domain rdf:resource="#Delivery" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ofDeliveryType</rdfs:label>
+    <rdfs:range rdf:resource="#DeliveryType" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasEmployee">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#inOrganizationalUnit"/>
+    <rdfs:domain rdf:resource="#OrganizationalUnit" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasEmployee</rdfs:label>
+    <rdfs:range rdf:resource="#Employee" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasManager">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#managesProject"/>
+    <rdfs:domain rdf:resource="#Project" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasManager</rdfs:label>
+    <rdfs:range rdf:resource="#Employee" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasResponsibleManager">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#isResponsibleManagerForOrganizationalUnit"/>
+    <rdfs:domain rdf:resource="#OrganizationalUnit" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasResponsibleManager</rdfs:label>
+    <rdfs:range rdf:resource="#Employee" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isEmployee">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasProjectParticipant"/>
+    <rdfs:domain rdf:resource="#ProjectParticipant" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isEmployee</rdfs:label>
+    <rdfs:range rdf:resource="#Employee" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasCalendar">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#forEmployee"/>
+    <rdfs:domain rdf:resource="#Employee" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasCalendar</rdfs:label>
+    <rdfs:range rdf:resource="#EmployeeCalendar" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSkill">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#forEmployee"/>
+    <rdfs:domain rdf:resource="#Employee" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasSkill</rdfs:label>
+    <rdfs:range rdf:resource="#EmployeeSkill" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="ofEstimationModel">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasEstimationModelIitem"/>
+    <rdfs:domain rdf:resource="#EstimationModelIitem" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ofEstimationModel</rdfs:label>
+    <rdfs:range rdf:resource="#EstimationModel" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="ofMilestoneType">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasMilestone"/>
+    <rdfs:domain rdf:resource="#Milestone" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ofMilestoneType</rdfs:label>
+    <rdfs:range rdf:resource="#MilestoneType" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="belongsToUnit">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#isPartOfUnit"/>
+    <rdfs:domain rdf:resource="#OrganizationalUnit" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">belongsToUnit</rdfs:label>
+    <rdfs:range rdf:resource="#OrganizationalUnit" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isPartOfUnit">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#belongsToUnit"/>
+    <rdfs:domain rdf:resource="#OrganizationalUnit" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isPartOfUnit</rdfs:label>
+    <rdfs:range rdf:resource="#OrganizationalUnit" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isResponsibleManagerForOrganizationalUnit">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasResponsibleManager"/>
+    <rdfs:domain rdf:resource="#Employee" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isResponsibleManagerForOrganizationalUnit</rdfs:label>
+    <rdfs:range rdf:resource="#OrganizationalUnit" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasProcessArea">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasOwner"/>
+    <rdfs:domain rdf:resource="#Employee" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasProcessArea</rdfs:label>
+    <rdfs:range rdf:resource="#ProcessArea" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="forEntryCriteriaOfProcessDefinition">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasEntryCriteriaCheckList"/>
+    <rdfs:domain rdf:resource="#CheckList" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">forEntryCriteriaOfProcessDefinition</rdfs:label>
+    <rdfs:range rdf:resource="#ProcessDefinition" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="forExitCriteriaOfProcessDefinition">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasExitCriteriaCheckList"/>
+    <rdfs:domain rdf:resource="#CheckList" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">forExitCriteriaOfProcessDefinition</rdfs:label>
+    <rdfs:range rdf:resource="#ProcessDefinition" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasWorkProductProductionProcess">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasProductTypesInMilestoneType"/>
+    <rdfs:domain rdf:resource="#ProductTypesInMilestoneType" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasWorkProductProductionProcess</rdfs:label>
+    <rdfs:range rdf:resource="#ProcessDefinition" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="managesProject">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasManager"/>
+    <rdfs:domain rdf:resource="#Employee" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">managesProject</rdfs:label>
+    <rdfs:range rdf:resource="#Project" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasResponsibleForContact">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasStakeholder"/>
+    <rdfs:domain rdf:resource="#Stakeholder" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasResponsibleForContact</rdfs:label>
+    <rdfs:range rdf:resource="#ProjectParticipant" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasResponsiblePerson">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasWorkProduct"/>
+    <rdfs:domain rdf:resource="#WorkProduct" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasResponsiblePerson</rdfs:label>
+    <rdfs:range rdf:resource="#ProjectParticipant" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasProjectParticipantAllocation">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasProjectParticipant"/>
+    <rdfs:domain rdf:resource="#ProjectParticipant" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasProjectParticipantAllocation</rdfs:label>
+    <rdfs:range rdf:resource="#ProjectParticipantAllocation" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="forProjectPhase">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasProjectPhaseDefinition"/>
+    <rdfs:domain rdf:resource="#ProjectPhaseDefinition" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">forProjectPhase</rdfs:label>
+    <rdfs:range rdf:resource="#ProjectPhase" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="ofPhase">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasMilestoneType"/>
+    <rdfs:domain rdf:resource="#MilestoneType" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ofPhase</rdfs:label>
+    <rdfs:range rdf:resource="#ProjectPhase" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasProjectPhaseDefinition">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasStakeholderInvolvementPhase"/>
+    <rdfs:domain rdf:resource="#StakeholderInvolvementPhase" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasProjectPhaseDefinition</rdfs:label>
+    <rdfs:range rdf:resource="#ProjectPhaseDefinition" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="ofProjectPhaseDefinition">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasLifeCycleModel"/>
+    <rdfs:domain rdf:resource="#LifeCycleModel" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ofProjectPhaseDefinition</rdfs:label>
+    <rdfs:range rdf:resource="#ProjectPhaseDefinition" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="forProjectPlan">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasEstimationModel"/>
+    <rdfs:domain rdf:resource="#EstimationModel" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">forProjectPlan</rdfs:label>
+    <rdfs:range rdf:resource="#ProjectPlan" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="ofProjectPlan">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasLifeCycleModel"/>
+    <rdfs:domain rdf:resource="#LifeCycleModel" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ofProjectPlan</rdfs:label>
+    <rdfs:range rdf:resource="#ProjectPlan" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasResponsibleRole">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasWorkProduct"/>
+    <rdfs:domain rdf:resource="#WorkProduct" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasResponsibleRole</rdfs:label>
+    <rdfs:range rdf:resource="#ProjectRole" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasResourcesUsed">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTaskAllocatedTo"/>
+    <rdfs:domain rdf:resource="#TaskAllocatedTo" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasResourcesUsed</rdfs:label>
+    <rdfs:range rdf:resource="#ResourcesUsed" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="ofRisk">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasLikelihoodRating"/>
+    <rdfs:domain rdf:resource="#RiskLikelihoodRating" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ofRisk</rdfs:label>
+    <rdfs:range rdf:resource="#Risk" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasImpactRating">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasRisk"/>
+    <rdfs:domain rdf:resource="#Risk" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasImpactRating</rdfs:label>
+    <rdfs:range rdf:resource="#RiskImpactRating" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasLikelihoodRating">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#ofRisk"/>
+    <rdfs:domain rdf:resource="#Risk" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasLikelihoodRating</rdfs:label>
+    <rdfs:range rdf:resource="#RiskLikelihoodRating" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSignificanceForProject">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasStakeholder"/>
+    <rdfs:domain rdf:resource="#Stakeholder" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasSignificanceForProject</rdfs:label>
+    <rdfs:range rdf:resource="#SignificanceLevel" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSkillCategory">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#ofProcessArea"/>
+    <rdfs:domain rdf:resource="#ProcessArea" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasSkillCategory</rdfs:label>
+    <rdfs:range rdf:resource="#SkillCategory" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="ofSkillCategory">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#forProduct"/>
+    <rdfs:domain rdf:resource="#WorkProduct" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ofSkillCategory</rdfs:label>
+    <rdfs:range rdf:resource="#SkillCategory" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="withSkillCategory">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasSkillPlan"/>
+    <rdfs:domain rdf:resource="#SkillPlan" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">withSkillCategory</rdfs:label>
+    <rdfs:range rdf:resource="#SkillCategory" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasActualLevel">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#fromSkillPlan"/>
+    <rdfs:domain rdf:resource="#SkillPlan" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasActualLevel</rdfs:label>
+    <rdfs:range rdf:resource="#SkillLevel" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasLevel">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#forEmployeeSkill"/>
+    <rdfs:domain rdf:resource="#EmployeeSkill" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasLevel</rdfs:label>
+    <rdfs:range rdf:resource="#SkillLevel" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasRequiredLevel">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#forSkillPlan"/>
+    <rdfs:domain rdf:resource="#SkillPlan" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasRequiredLevel</rdfs:label>
+    <rdfs:range rdf:resource="#SkillLevel" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="fromSkillPlan">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasActualLevel"/>
+    <rdfs:domain rdf:resource="#SkillLevel" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fromSkillPlan</rdfs:label>
+    <rdfs:range rdf:resource="#SkillPlan" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasActivity">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#forSkillPlan"/>
+    <rdfs:domain rdf:resource="#SkillPlan" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasActivity</rdfs:label>
+    <rdfs:range rdf:resource="#SkillPlanActivity" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSkillPlanActivity">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTask"/>
+    <rdfs:domain rdf:resource="#Task" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasSkillPlanActivity</rdfs:label>
+    <rdfs:range rdf:resource="#SkillPlanActivity" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasProvider">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasProjectResource"/>
+    <rdfs:domain rdf:resource="#ProjectResource" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasProvider</rdfs:label>
+    <rdfs:range rdf:resource="#Stakeholder" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="forSubTask">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasSubTaskDefinition"/>
+    <rdfs:domain rdf:resource="#SubTaskDefinition" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">forSubTask</rdfs:label>
+    <rdfs:range rdf:resource="#SubTask" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="forTask">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasDefinition"/>
+    <rdfs:domain rdf:resource="#Task_defintion" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">forTask</rdfs:label>
+    <rdfs:range rdf:resource="#Task" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="forEntryCriteriaOfTaskDefinition">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasEntryCriteriaCheckList"/>
+    <rdfs:domain rdf:resource="#CheckList" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">forEntryCriteriaOfTaskDefinition</rdfs:label>
+    <rdfs:range rdf:resource="#TaskDefinition" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="forExitCriteriaOfTaskDefinition">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasExitCriteriaCheckList"/>
+    <rdfs:domain rdf:resource="#CheckList" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">forExitCriteriaOfTaskDefinition</rdfs:label>
+    <rdfs:range rdf:resource="#TaskDefinition" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasTaskDefinition">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTaskDefinitionsInProcessDefinition"/>
+    <rdfs:domain rdf:resource="#ProcessDefinition" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasTaskDefinition</rdfs:label>
+    <rdfs:range rdf:resource="#TaskDefinition" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasTaskDefinitionType">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTaskTypesInMilestoneType"/>
+    <rdfs:domain rdf:resource="#TaskTypesInMilestoneType" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasTaskDefinitionType</rdfs:label>
+    <rdfs:range rdf:resource="#TaskDefinition" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="forProduct">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#ofSkillCategory"/>
+    <rdfs:domain rdf:resource="#SkillCategory" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">forProduct</rdfs:label>
+    <rdfs:range rdf:resource="#WorkProduct" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasTopLevelWorkProduct">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasProjectPlan"/>
+    <rdfs:domain rdf:resource="#ProjectPlan" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasTopLevelWorkProduct</rdfs:label>
+    <rdfs:range rdf:resource="#WorkProduct" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isDecompositionOf">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasWorkProduct"/>
+    <rdfs:domain rdf:resource="#WorkProduct" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isDecompositionOf</rdfs:label>
+    <rdfs:range rdf:resource="#WorkProduct" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="forWorkProductType">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasEstimationModelIitem"/>
+    <rdfs:domain rdf:resource="#EstimationModelIitem" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">forWorkProductType</rdfs:label>
+    <rdfs:range rdf:resource="#WorkProductType" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasOriginalVersion">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#isOriginalVersionFor"/>
+    <rdfs:domain rdf:resource="#WorkProductType" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasOriginalVersion</rdfs:label>
+    <rdfs:range rdf:resource="#WorkProductType" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isOriginalVersionFor">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasOriginalVersion"/>
+    <rdfs:domain rdf:resource="#WorkProductType" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isOriginalVersionFor</rdfs:label>
+    <rdfs:range rdf:resource="#WorkProductType" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="achievedResults">
+    <rdfs:domain rdf:resource="#Milestone" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">achievedResults</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="achievedResultsOfType">
+    <rdfs:domain rdf:resource="#MilestoneType" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">achievedResultsOfType</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="completedTasks">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#isPartOfUnit"/>
+    <rdfs:domain rdf:resource="#Milestone" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">completedTasks</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="completedTasksOfType">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#isPartOfUnit"/>
+    <rdfs:domain rdf:resource="#MilestoneType" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">completedTasksOfType</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasActualLevelComment">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#fromSkillPlan"/>
+    <rdfs:domain rdf:resource="#SkillPlan" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasActualLevelComment</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasAddress">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#fromSkillPlan"/>
+    <rdfs:domain rdf:resource="#Stakeholder" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasAddress</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasCause">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#forEmployee"/>
+    <rdfs:domain rdf:resource="#EmployeeCalendar" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasCause</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasCharacteristics">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#forEmployee"/>
+    <rdfs:domain rdf:resource="#WorkProductType" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasCharacteristics</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasCreatedDate">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasWorkProduct"/>
+    <rdfs:domain rdf:resource="#WorkProductType" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasCreatedDate</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasEarliestImpactDate">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasProjectPlan"/>
+    <rdfs:domain rdf:resource="#Risk" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasEarliestImpactDate</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasEarnedValue">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasProjectPlan"/>
+    <rdfs:domain rdf:resource="#Task" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasEarnedValue</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasEmail">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasProjectPlan"/>
+    <rdfs:domain rdf:resource="#Stakeholder" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasEmail</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasEstimationDate">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#forEntryCriteriaOfTaskDefinition"/>
+    <rdfs:domain rdf:resource="#ResourceEstimate" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasEstimationDate</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasEstimationRationale">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#forWorkProductType"/>
+    <rdfs:domain rdf:resource="#ResourceEstimate" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasEstimationRationale</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasExternal">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#forExitCriteriaOfTaskDefinition"/>
+    <rdfs:domain rdf:resource="#Stakeholder" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasExternal</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasGoals">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#forExitCriteriaOfTaskDefinition"/>
+    <rdfs:domain rdf:resource="#ProjectPlan" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasGoals</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasHowToCustomize">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#forExitCriteriaOfTaskDefinition"/>
+    <rdfs:domain rdf:resource="#LifeCycleModel" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasHowToCustomize</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasIdentifiedDate">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#forExitCriteriaOfTaskDefinition"/>
+    <rdfs:domain rdf:resource="#Risk" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasIdentifiedDate</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasImpactDescription">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#forExitCriteriaOfTaskDefinition"/>
+    <rdfs:domain rdf:resource="#Risk" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasImpactDescription</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasImpactReductionStragegy">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasRisk"/>
+    <rdfs:domain rdf:resource="#Risk" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasImpactReductionStragegy</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasImprovementPlan">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTask"/>
+    <rdfs:domain rdf:resource="#SkillPlan" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasImprovementPlan</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasInitials">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTask"/>
+    <rdfs:domain rdf:resource="#Employee" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasInitials</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasInput">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTask"/>
+    <rdfs:domain rdf:resource="#TaskDefinition" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasInput</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasInputDescription">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTask"/>
+    <rdfs:domain rdf:resource="#ProcessDefinition" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasInputDescription</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasLastReviewDate">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasCheckList"/>
+    <rdfs:domain rdf:resource="#Risk" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasLastReviewDate</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasLikelihoodReductionStrategy">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#ofRisk"/>
+    <rdfs:domain rdf:resource="#Risk" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasLikelihoodReductionStrategy</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasMaxHoursPerSizeUnit">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#managesProject"/>
+    <rdfs:domain rdf:resource="#EstimationModelIitem" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasMaxHoursPerSizeUnit</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasMaximum">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#managesProject"/>
+    <rdfs:domain rdf:resource="#ResourceEstimate" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasMaximum</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasMinHoursPerSizeUnit">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTaskTypesInMilestoneType"/>
+    <rdfs:domain rdf:resource="#EstimationModelIitem" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasMinHoursPerSizeUnit</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasMinimum">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTaskTypesInMilestoneType"/>
+    <rdfs:domain rdf:resource="#ResourceEstimate" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasMinimum</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasMostLikely">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTaskTypesInMilestoneType"/>
+    <rdfs:domain rdf:resource="#ResourceEstimate" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasMostLikely</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasMostLikelyHoursPerSizeUnit">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTaskTypesInMilestoneType"/>
+    <rdfs:domain rdf:resource="#EstimationModelIitem" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasMostLikelyHoursPerSizeUnit</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasNumberOfHours">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTaskTypesInMilestoneType"/>
+    <rdfs:domain rdf:resource="#ResourcesUsed" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasNumberOfHours</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasNumberOfRessources">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTaskTypesInMilestoneType"/>
+    <rdfs:domain rdf:resource="#ProjectResource" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasNumberOfRessources</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasOrderDate">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTaskTypesInMilestoneType"/>
+    <rdfs:domain rdf:resource="#ProjectResource" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasOrderDate</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasOrganization">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTaskTypesInMilestoneType"/>
+    <rdfs:domain rdf:resource="#ProjectPlan" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasOrganization</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasOutput">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#isOriginalVersionFor"/>
+    <rdfs:domain rdf:resource="#TaskDefinition" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasOutput</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasOutputDescription">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#isOriginalVersionFor"/>
+    <rdfs:domain rdf:resource="#ProcessDefinition" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasOutputDescription</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasPhone">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasSizeMetric"/>
+    <rdfs:domain rdf:resource="#Stakeholder" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasPhone</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasPlannedDate">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasSizeMetric"/>
+    <rdfs:domain rdf:resource="#Milestone" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasPlannedDate</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasPlanningConsiderations">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasSizeMetric"/>
+    <rdfs:domain rdf:resource="#ProjectPlan" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasPlanningConsiderations</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasPlanningParameters">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasSizeMetric"/>
+    <rdfs:domain rdf:resource="#ProjectPlan" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasPlanningParameters</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasPlanVersionNumber">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasSizeMetric"/>
+    <rdfs:domain rdf:resource="#ProjectPlan" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasPlanVersionNumber</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasPolicy">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasSizeMetric"/>
+    <rdfs:domain rdf:resource="#ProcessArea" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasPolicy</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasProductStatusDescription">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasWorkProductType"/>
+    <rdfs:domain rdf:resource="#WorkProduct" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasProductStatusDescription</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasReachedDate">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasProjectResource"/>
+    <rdfs:domain rdf:resource="#Milestone" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasReachedDate</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasRelationsToOtherStakeholders">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasProjectResource"/>
+    <rdfs:domain rdf:resource="#Stakeholder" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasRelationsToOtherStakeholders</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasRemarks">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasProjectResource"/>
+    <rdfs:domain rdf:resource="#Risk" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasRemarks</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasRequiredLevelComment">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#forSkillPlan"/>
+    <rdfs:domain rdf:resource="#SkillPlan" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasRequiredLevelComment</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasResourcesDescription">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTask"/>
+    <rdfs:domain rdf:resource="#ProjectPlan" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasResourcesDescription</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasResponsibility">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTaskAllocatedTo"/>
+    <rdfs:domain rdf:resource="#ProjectRole" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasResponsibility</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasRiskDescription">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#forRisk"/>
+    <rdfs:domain rdf:resource="#ProjectPlan" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasRiskDescription</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasRole">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasRisk"/>
+    <rdfs:domain rdf:resource="#Stakeholder" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasRole</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasScope">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasRisk"/>
+    <rdfs:domain rdf:resource="#ProjectPlan" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasScope</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSize">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasStakeholder"/>
+    <rdfs:domain rdf:resource="#WorkProduct" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasSize</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSizeComment">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasStakeholder"/>
+    <rdfs:domain rdf:resource="#WorkProduct" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasSizeComment</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSkillsDescription">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTask"/>
+    <rdfs:domain rdf:resource="#ProjectPlan" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasSkillsDescription</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSpecificProject">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTask"/>
+    <rdfs:domain rdf:resource="#ProjectRole" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasSpecificProject</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasStakeholdersDescription">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasStakeholder"/>
+    <rdfs:domain rdf:resource="#ProjectPlan" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasStakeholdersDescription</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSuccessCriteria">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasDefinition"/>
+    <rdfs:domain rdf:resource="#Stakeholder" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasSuccessCriteria</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasTasksToSolve">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasWorkProduct"/>
+    <rdfs:domain rdf:resource="#Stakeholder" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasTasksToSolve</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasThresholdForAction">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTaskDefinitionType"/>
+    <rdfs:domain rdf:resource="#Risk" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasThresholdForAction</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasTracking">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasProjectPlan"/>
+    <rdfs:domain rdf:resource="#ProjectPlan" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasTracking</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasUsedHoursOnDate">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasProjectPlan"/>
+    <rdfs:domain rdf:resource="#ResourcesUsed" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasUsedHoursOnDate</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasWeightedAverage">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasProjectPlan"/>
+    <rdfs:domain rdf:resource="#ResourceEstimate" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasWeightedAverage</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasWeightedAverageHoursPerSizeUnit">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasProjectPlan"/>
+    <rdfs:domain rdf:resource="#EstimationModelIitem" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasWeightedAverageHoursPerSizeUnit</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="HasWhenToUse">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasProjectPlan"/>
+    <rdfs:domain rdf:resource="#LifeCycleModel" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HasWhenToUse</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasWorkHoursPerWeek">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasProjectPlan"/>
+    <rdfs:domain rdf:resource="#Employee" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasWorkHoursPerWeek</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasWorkHoursPerWeekOnProject">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasProjectPlan"/>
+    <rdfs:domain rdf:resource="#ProjectParticipantAllocation" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasWorkHoursPerWeekOnProject</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isAbsentFrom">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasProject"/>
+    <rdfs:domain rdf:resource="#EmployeeCalendar" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isAbsentFrom</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isAbsentTo">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasProject"/>
+    <rdfs:domain rdf:resource="#EmployeeCalendar" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isAbsentTo</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isCurrent">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasProject"/>
+    <rdfs:domain rdf:resource="#ResourceEstimate" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isCurrent</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isDelivered">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasWorkProduct"/>
+    <rdfs:domain rdf:resource="#Delivery" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isDelivered</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="producedWorkProducts">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasWorkProduct"/>
+    <rdfs:domain rdf:resource="#Milestone" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">producedWorkProducts</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="producedWorkProductsOfType">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasWorkProduct"/>
+    <rdfs:domain rdf:resource="#MilestoneType" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">producedWorkProductsOfType</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="providesResources">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasWorkProduct"/>
+    <rdfs:domain rdf:resource="#Stakeholder" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">providesResources</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="shouldBeInformedAbout">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasWorkProduct"/>
+    <rdfs:domain rdf:resource="#Stakeholder" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">shouldBeInformedAbout</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="sizeUncertainty_percent">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasWorkProduct"/>
+    <rdfs:domain rdf:resource="#WorkProduct" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sizeUncertainty_percent</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasMilestoneStatus">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasMilestone"/>
+    <rdfs:domain rdf:resource="#Milestone" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasMilestoneStatus</rdfs:label>
+    <rdfs:range rdf:resource="#MilestoneStatus" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasProjectResourceStatus">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasProjectResource"/>
+    <rdfs:domain rdf:resource="#ProjectResource" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasProjectResourceStatus</rdfs:label>
+    <rdfs:range rdf:resource="#ProjectResourceStatus" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasRiskStatus">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasRisk"/>
+    <rdfs:domain rdf:resource="#Risk" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasRiskStatus</rdfs:label>
+    <rdfs:range rdf:resource="#RiskStatus" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasProjectPhaseDefinition">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasStakeholderInvolvementPhase"/>
+    <rdfs:domain rdf:resource="#ProjectPhase" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasProjectPhaseDefinition</rdfs:label>
+    <rdfs:range rdf:resource="#ProjectPhaseDefinition" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSubTaskDefinition">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasDefinition"/>
+    <rdfs:domain rdf:resource="#SubTask" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasSubTaskDefinition</rdfs:label>
+    <rdfs:range rdf:resource="#SubTaskDefinition" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSkillCategory">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#ofProcessArea"/>
+    <rdfs:domain rdf:resource="#EmployeeSkill" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasSkillCategory</rdfs:label>
+    <rdfs:range rdf:resource="#SkillCategory" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasRessourceCategory">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasProjectResource"/>
+    <rdfs:domain rdf:resource="#ProjectResource" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasRessourceCategory</rdfs:label>
+    <rdfs:range rdf:resource="#RessourceCategory" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasRiskCategory">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#forRisk"/>
+    <rdfs:domain rdf:resource="#Risk" />
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasRiskCategory</rdfs:label>
+    <rdfs:range rdf:resource="#RiskCategory" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasStatus">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTask"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasStatus</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#SubTask"/>
+          <owl:Class rdf:about="#Task"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#TaskStatus"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasDefinition">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#forTask"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasDefinition</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#SubTaskDefinition"/>
+          <owl:Class rdf:about="#Task"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#TaskDefintion"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasDate">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasWorkProduct"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasDate</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Delivery"/>
+          <owl:Class rdf:about="#Holidays"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="forEmployee">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasSkill"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">forEmployee</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#EmployeeCalendar"/>
+          <owl:Class rdf:about="#EmployeeSkill"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#Employee"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="forEmployeeSkill">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasLevel"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">forEmployeeSkill</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#SkillCategory"/>
+          <owl:Class rdf:about="#SkillLevel"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#EmployeeSkill"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="forRisk">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasRiskCategory"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">forRisk</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ImpactReductionTask"/>
+          <owl:Class rdf:about="#RiskCategory"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#Risk"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="forSkillPlan">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasActivity"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">forSkillPlan</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#SkillPlanActivity"/>
+          <owl:Class rdf:about="#SkillLevel"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#SkillPlan"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasAuthority">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#fromSkillPlan"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasAuthority</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ProjectRole"/>
+          <owl:Class rdf:about="#Stakeholder"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasCheckList">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#ofProcessArea"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasCheckList</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#CheckListItem"/>
+          <owl:Class rdf:about="#Employee"/>
+          <owl:Class rdf:about="#ProcessArea"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#CheckList"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasComment">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#ofProcessArea"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasComment</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Employee"/>
+          <owl:Class rdf:about="#EmployeeSkill"/>
+          <owl:Class rdf:about="#ImpactReductionTask"/>
+          <owl:Class rdf:about="#LikelihoodReductionTask"/>
+          <owl:Class rdf:about="#ProductTypesInMilestoneType"/>
+          <owl:Class rdf:about="#ProjectParticipant"/>
+          <owl:Class rdf:about="#SubTask"/>
+          <owl:Class rdf:about="#Task"/>
+          <owl:Class rdf:about="#TaskTypesInMilestoneType"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasDelivery">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasProjectPlan"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasDelivery</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Project"/>
+          <owl:Class rdf:about="#ProjectPlan"/>
+          <owl:Class rdf:about="#DeliveryType"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#Delivery"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasDescription">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasProjectPlan"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasDescription</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#CheckList"/>
+          <owl:Class rdf:about="#CheckListItem"/>
+          <owl:Class rdf:about="#DecompositionLevel"/>
+          <owl:Class rdf:about="#Delivery"/>
+          <owl:Class rdf:about="#EstimationModel"/>
+          <owl:Class rdf:about="#EstimationModelIitem"/>
+          <owl:Class rdf:about="#LifeCycleModel"/>
+          <owl:Class rdf:about="#MilestoneType"/>
+          <owl:Class rdf:about="#ProcessDefinition"/>
+          <owl:Class rdf:about="#Project"/>
+          <owl:Class rdf:about="#ProjectPhaseDefinition"/>
+          <owl:Class rdf:about="#ProjectResource"/>
+          <owl:Class rdf:about="#ProjectRole"/>
+          <owl:Class rdf:about="#ResourceCategory"/>
+          <owl:Class rdf:about="#Risk"/>
+          <owl:Class rdf:about="#RiskCategory"/>
+          <owl:Class rdf:about="#SizeMetric"/>
+          <owl:Class rdf:about="#SkillCategory"/>
+          <owl:Class rdf:about="#SubTaskDefinition"/>
+          <owl:Class rdf:about="#TaskDefinition"/>
+          <owl:Class rdf:about="#WorkProduct"/>
+          <owl:Class rdf:about="#WorkProductType"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasEndDate">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#inOrganizationalUnit"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasEndDate</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ProjectParticipant"/>
+          <owl:Class rdf:about="#ProjectParticipantAllocation"/>
+          <owl:Class rdf:about="#ProjectPhase"/>
+          <owl:Class rdf:about="#ProjectResource"/>
+          <owl:Class rdf:about="#SubTask"/>
+          <owl:Class rdf:about="#Task"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasEntryCriteriaCheckList">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#forEntryCriteriaOfTaskDefinition"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasEntryCriteriaCheckList</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ProcessDefinition"/>
+          <owl:Class rdf:about="#TaskDefinition"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#CheckList"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasEstimatedHours">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#forEntryCriteriaOfTaskDefinition"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasEstimatedHours</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#SubTaskAllocatedTo"/>
+          <owl:Class rdf:about="#TaskAllocatedTo"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasEstimationModel">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#forProjectPlan"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasEstimationModel</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ProjectPlan"/>
+          <owl:Class rdf:about="#Project"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#EstimationModel"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasEstimationModelIitem">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#forWorkProductType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasEstimationModelIitem</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#WorkProductType"/>
+          <owl:Class rdf:about="#ProcessDefinition"/>
+          <owl:Class rdf:about="#SizeMetric"/>
+          <owl:Class rdf:about="#SubTaskDefinition"/>
+          <owl:Class rdf:about="#TaskDefinition"/>
+          <owl:Class rdf:about="#EstimationModel"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#EstimationModelIitem"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasExitCriteriaCheckList">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#forExitCriteriaOfTaskDefinition"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasExitCriteriaCheckList</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ProcessDefinition"/>
+          <owl:Class rdf:about="#TaskDefinition"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#CheckList"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasImpactReductionTask">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTask"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasImpactReductionTask</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Risk"/>
+          <owl:Class rdf:about="#Task"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#ImpactReductionTask"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasInvolvement">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTask"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasInvolvement</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#StakeholderInvolvementActivityType"/>
+          <owl:Class rdf:about="#StakeholderInvolvementPhase"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasLifeCycleModel">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#ofProjectPlan"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasLifeCycleModel</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ProjectPhaseDefinition"/>
+          <owl:Class rdf:about="#ProjectPlan"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#LifeCycleModel"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasMilestone">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasProjectPhase"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasMilestone</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Delivery"/>
+          <owl:Class rdf:about="#ProjectPhase"/>
+          <owl:Class rdf:about="#MilestoneStatus"/>
+          <owl:Class rdf:about="#MilestoneType"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#Milestone"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasMilestoneType">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTaskTypesInMilestoneType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasMilestoneType</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ProductTypesInMilestoneType"/>
+          <owl:Class rdf:about="#TaskTypesInMilestoneType"/>
+          <owl:Class rdf:about="#ProjectPhaseDefinition"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#MilestoneType"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasName">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTaskTypesInMilestoneType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasName</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#CheckList"/>
+          <owl:Class rdf:about="#ComplexityLevel"/>
+          <owl:Class rdf:about="#DecompositionLevel"/>
+          <owl:Class rdf:about="#Delivery"/>
+          <owl:Class rdf:about="#DeliveryType"/>
+          <owl:Class rdf:about="#Employee"/>
+          <owl:Class rdf:about="#EstimationModel"/>
+          <owl:Class rdf:about="#Holidays"/>
+          <owl:Class rdf:about="#LifeCycleModel"/>
+          <owl:Class rdf:about="#Milestone"/>
+          <owl:Class rdf:about="#MilestoneStatus"/>
+          <owl:Class rdf:about="#MilestoneType"/>
+          <owl:Class rdf:about="#OrganizationalUnit"/>
+          <owl:Class rdf:about="#ProcessArea"/>
+          <owl:Class rdf:about="#ProcessDefinition"/>
+          <owl:Class rdf:about="#Project"/>
+          <owl:Class rdf:about="#ProjectPhase"/>
+          <owl:Class rdf:about="#ProjectPhaseDefinition"/>
+          <owl:Class rdf:about="#ProjectPlan"/>
+          <owl:Class rdf:about="#ProjectResource"/>
+          <owl:Class rdf:about="#ProjectResourceStatus"/>
+          <owl:Class rdf:about="#ProjectRole"/>
+          <owl:Class rdf:about="#ResourceCategory"/>
+          <owl:Class rdf:about="#Risk"/>
+          <owl:Class rdf:about="#RiskCategory"/>
+          <owl:Class rdf:about="#RiskImpactRating"/>
+          <owl:Class rdf:about="#RiskLikelihoodRating"/>
+          <owl:Class rdf:about="#RiskStatus"/>
+          <owl:Class rdf:about="#SignificanceLevel"/>
+          <owl:Class rdf:about="#SizeMetric"/>
+          <owl:Class rdf:about="#SkillCategory"/>
+          <owl:Class rdf:about="#SkillLevel"/>
+          <owl:Class rdf:about="#Stakeholder"/>
+          <owl:Class rdf:about="#SubTask"/>
+          <owl:Class rdf:about="#SubTaskDefinition"/>
+          <owl:Class rdf:about="#Task"/>
+          <owl:Class rdf:about="#TaskDefinition"/>
+          <owl:Class rdf:about="#TaskStatus"/>
+          <owl:Class rdf:about="#WorkProduct"/>
+          <owl:Class rdf:about="#WorkProductType"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasNumber">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTaskTypesInMilestoneType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasNumber</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Employee"/>
+          <owl:Class rdf:about="#OrganizationalUnit"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasOwner">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasSizeMetric"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasOwner</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#CheckList"/>
+          <owl:Class rdf:about="#ProcessArea"/>
+          <owl:Class rdf:about="#ProcessDefinition"/>
+          <owl:Class rdf:about="#SizeMetric"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#Employee"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasProcessDefinition">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTaskDefinitionsInProcessDefinition"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasProcessDefinition</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#EstimationModelIitem"/>
+          <owl:Class rdf:about="#ProcessOutputWorkProductTypes"/>
+          <owl:Class rdf:about="#TaskDefinitionsInProcessDefinition"/>
+          <owl:Class rdf:about="#Employee"/>
+          <owl:Class rdf:about="#ProcessArea"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#ProcessDefinition"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasProcessOutputWorkProductTypes">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasWorkProductType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasProcessOutputWorkProductTypes</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ProcessDefinition"/>
+          <owl:Class rdf:about="#WorkProductType"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#ProcessOutputWorkProductTypes"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasProductTypesInMilestoneType">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#ofWorkProductType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasProductTypesInMilestoneType</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#MilestoneType"/>
+          <owl:Class rdf:about="#ProcessDefinition"/>
+          <owl:Class rdf:about="#WorkProductType"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#ProductTypesInMilestoneType"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasProject">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasProjectRole"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasProject</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Delivery"/>
+          <owl:Class rdf:about="#EstimationModel"/>
+          <owl:Class rdf:about="#ProjectParticipant"/>
+          <owl:Class rdf:about="#ProjectPlan"/>
+          <owl:Class rdf:about="#ProjectRole"/>
+          <owl:Class rdf:about="#OrganizationalUnit"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#Project"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasProjectParticipant">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTaskAllocatedTo"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasProjectParticipant</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ProjectParticipantAllocation"/>
+          <owl:Class rdf:about="#ProjectRoleAllocation"/>
+          <owl:Class rdf:about="#SkillPlan"/>
+          <owl:Class rdf:about="#SubTaskAllocatedTo"/>
+          <owl:Class rdf:about="#TaskAllocatedTo"/>
+          <owl:Class rdf:about="#Project"/>
+          <owl:Class rdf:about="#ProjectPlan"/>
+          <owl:Class rdf:about="#Employee"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#ProjectParticipant"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasProjectPhase">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTask"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasProjectPhase</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Milestone"/>
+          <owl:Class rdf:about="#Task"/>
+          <owl:Class rdf:about="#ProjectPlan"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#ProjectPhase"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasProjectPlan">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTopLevelWorkProduct"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasProjectPlan</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Delivery"/>
+          <owl:Class rdf:about="#ProjectParticipant"/>
+          <owl:Class rdf:about="#ProjectPhase"/>
+          <owl:Class rdf:about="#ProjectResource"/>
+          <owl:Class rdf:about="#Risk"/>
+          <owl:Class rdf:about="#SkillPlan"/>
+          <owl:Class rdf:about="#Stakeholder"/>
+          <owl:Class rdf:about="#Project"/>
+          <owl:Class rdf:about="#WorkProduct"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#ProjectPlan"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasProjectResource">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasProvider"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasProjectResource</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#RessourceCategory"/>
+          <owl:Class rdf:about="#ProjectPlan"/>
+          <owl:Class rdf:about="#Stakeholder"/>
+          <owl:Class rdf:about="#ProjectParticipant"/>
+          <owl:Class rdf:about="#ProjectResourceStatus"/>
+          <owl:Class rdf:about="#ProcessArea"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#ProjectResource"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasProjectRole">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasProjectRoleAllocation"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasProjectRole</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ProjectRoleAllocation"/>
+          <owl:Class rdf:about="#Project"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#ProjectRole"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasProjectRoleAllocation">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasProjectRole"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasProjectRoleAllocation</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ProjectParticipant"/>
+          <owl:Class rdf:about="#ProjectRole"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#ProjectRoleAllocation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasPurpose">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasProjectResource"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasPurpose</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ProjectPhaseDefinition"/>
+          <owl:Class rdf:about="#TaskDefinition"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasResourceEstimate">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTask"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasResourceEstimate</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#SubTask"/>
+          <owl:Class rdf:about="#Task"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#ResourceEstimate"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasResponsibleProjectParticipant">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasRisk"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasResponsibleProjectParticipant</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Risk"/>
+          <owl:Class rdf:about="#ProjectResource"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#ProjectParticipant"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasRisk">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasRiskStatus"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasRisk</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#LikelihoodReductionTask"/>
+          <owl:Class rdf:about="#RiskImpactRating"/>
+          <owl:Class rdf:about="#ProjectPlan"/>
+          <owl:Class rdf:about="#ProjectParticipant"/>
+          <owl:Class rdf:about="#RiskStatus"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#Risk"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSequenceNumber">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasRisk"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasSequenceNumber</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#MilestoneType"/>
+          <owl:Class rdf:about="#ProjectPhaseDefinition"/>
+          <owl:Class rdf:about="#SubTaskDefinition"/>
+          <owl:Class rdf:about="#TaskDefinitionsInProcessDefinition"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSizeMetric">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasWorkProductType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasSizeMetric</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#EstimationModelIitem"/>
+          <owl:Class rdf:about="#WorkProduct"/>
+          <owl:Class rdf:about="#WorkProductType"/>
+          <owl:Class rdf:about="#Employee"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#SizeMetric"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSkillPlan">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#withSkillCategory"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasSkillPlan</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ProjectParticipant"/>
+          <owl:Class rdf:about="#ProjectPlan"/>
+          <owl:Class rdf:about="#SkillCategory"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#SkillPlan"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasStakeholder">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTaskAllocatedTo"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasStakeholder</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#StakeholderInvolvementActivityType"/>
+          <owl:Class rdf:about="#StakeholderInvolvementPhase"/>
+          <owl:Class rdf:about="#SubTaskAllocatedTo"/>
+          <owl:Class rdf:about="#TaskAllocatedTo"/>
+          <owl:Class rdf:about="#ProjectPlan"/>
+          <owl:Class rdf:about="#ProjectParticipant"/>
+          <owl:Class rdf:about="#SignificanceLevel"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#Stakeholder"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasStakeholderInvolvementPhase">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasStakeholder"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasStakeholderInvolvementPhase</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ProjectPhaseDefinition"/>
+          <owl:Class rdf:about="#Stakeholder"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#StakeholderInvolvementPhase"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasStartDate">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasStakeholder"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasStartDate</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ProjectParticipant"/>
+          <owl:Class rdf:about="#ProjectParticipantAllocation"/>
+          <owl:Class rdf:about="#ProjectPhase"/>
+          <owl:Class rdf:about="#ProjectResource"/>
+          <owl:Class rdf:about="#SubTask"/>
+          <owl:Class rdf:about="#Task"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSubTask">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasStatus"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasSubTask</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#SubTaskAllocatedTo"/>
+          <owl:Class rdf:about="#ResourceEstimate"/>
+          <owl:Class rdf:about="#TaskStatus"/>
+          <owl:Class rdf:about="#Task"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#SubTask"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSubTaskAllocatedTo">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasSubTask"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasSubTaskAllocatedTo</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ProjectParticipant"/>
+          <owl:Class rdf:about="#Stakeholder"/>
+          <owl:Class rdf:about="#SubTask"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#SubTaskAllocatedTo"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSubTaskDefinition">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasDefinition"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasSubTaskDefinition</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#EstimationModelIitem"/>
+          <owl:Class rdf:about="#TaskDefinition"/>
+          <owl:Class rdf:about="#ProcessDefinition"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#SubTaskDefinition"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasTask">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasStatus"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasTask</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ImpactReductionTask"/>
+          <owl:Class rdf:about="#LikelihoodReductionTask"/>
+          <owl:Class rdf:about="#ResourceEstimate"/>
+          <owl:Class rdf:about="#SkillPlanActivity"/>
+          <owl:Class rdf:about="#SubTask"/>
+          <owl:Class rdf:about="#TaskAllocatedTo"/>
+          <owl:Class rdf:about="#TaskOutputWorkProducts"/>
+          <owl:Class rdf:about="#ProjectPhase"/>
+          <owl:Class rdf:about="#TaskStatus"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#Task"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasTaskAllocatedTo">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTask"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasTaskAllocatedTo</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ResourcesUsed"/>
+          <owl:Class rdf:about="#ProjectParticipant"/>
+          <owl:Class rdf:about="#Stakeholder"/>
+          <owl:Class rdf:about="#Task"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#TaskAllocatedTo"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasTaskDefinition">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTaskDefinitionsInProcessDefinition"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasTaskDefinition</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#EstimationModelIitem"/>
+          <owl:Class rdf:about="#StakeholderInvolvementActivityType"/>
+          <owl:Class rdf:about="#TaskDefinitionsInProcessDefinition"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#TaskDefinition"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasTaskDefinitionsInProcessDefinition">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTaskDefinition"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasTaskDefinitionsInProcessDefinition</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ProcessDefinition"/>
+          <owl:Class rdf:about="#TaskDefinition"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#TaskDefinitionsInProcessDefinition"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasTaskOutputWorkProducts">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasWorkProduct"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasTaskOutputWorkProducts</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Task"/>
+          <owl:Class rdf:about="#WorkProduct"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#TaskOutputWorkProducts"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasTaskTypesInMilestoneType">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTaskDefinitionType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasTaskTypesInMilestoneType</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#MilestoneType"/>
+          <owl:Class rdf:about="#TaskDefinition"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#TaskTypesInMilestoneType"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasTimeRegistrationNumber">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTaskDefinitionType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasTimeRegistrationNumber</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#SubTask"/>
+          <owl:Class rdf:about="#Task"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasValue">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasProjectPlan"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasValue</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#RiskImpactRating"/>
+          <owl:Class rdf:about="#RiskLikelihoodRating"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasWorkProduct">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#ofWorkProductType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasWorkProduct</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#TaskOutputWorkProducts"/>
+          <owl:Class rdf:about="#ComplexityLevel"/>
+          <owl:Class rdf:about="#DecompositionLevel"/>
+          <owl:Class rdf:about="#ProjectParticipant"/>
+          <owl:Class rdf:about="#ProjectRole"/>
+          <owl:Class rdf:about="#SizeMetric"/>
+          <owl:Class rdf:about="#WorkProduct"/>
+          <owl:Class rdf:about="#WorkProductType"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#WorkProduct"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasWorkProductType">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasSizeMetric"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasWorkProductType</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ProcessOutputWorkProductTypes"/>
+          <owl:Class rdf:about="#SizeMetric"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#WorkProductType"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="inOrganizationalUnit">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasProject"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inOrganizationalUnit</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Employee"/>
+          <owl:Class rdf:about="#Project"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#OrganizationalUnit"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="ofProcessArea">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasSkillCategory"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ofProcessArea</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#CheckList"/>
+          <owl:Class rdf:about="#ProcessDefinition"/>
+          <owl:Class rdf:about="#ProjectResource"/>
+          <owl:Class rdf:about="#SkillCategory"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#ProcessArea"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="ofWorkProductType">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasWorkProduct"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ofWorkProductType</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ProductTypesInMilestoneType"/>
+          <owl:Class rdf:about="#WorkProduct"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#WorkProductType"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="usesProcess">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTaskDefinition"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">usesProcess</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#SubTaskDefinition"/>
+          <owl:Class rdf:about="#TaskDefinition"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#ProcessDefinition"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="withOriginalIdentifier">
+    <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Logica.owl#hasTaskDefinition"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">withOriginalIdentifier</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#CheckList"/>
+          <owl:Class rdf:about="#CheckListItem"/>
+          <owl:Class rdf:about="#ComplexityLevel"/>
+          <owl:Class rdf:about="#DecompositionLevel"/>
+          <owl:Class rdf:about="#Delivery"/>
+          <owl:Class rdf:about="#DeliveryType"/>
+          <owl:Class rdf:about="#Employee"/>
+          <owl:Class rdf:about="#EmployeeCalendar"/>
+          <owl:Class rdf:about="#EmployeeSkill"/>
+          <owl:Class rdf:about="#EstimationModel"/>
+          <owl:Class rdf:about="#EstimationModelIitem"/>
+          <owl:Class rdf:about="#Holidays"/>
+          <owl:Class rdf:about="#ImpactReductionTask"/>
+          <owl:Class rdf:about="#LifeCycleModel"/>
+          <owl:Class rdf:about="#LikelihoodReductionTask"/>
+          <owl:Class rdf:about="#Milestone"/>
+          <owl:Class rdf:about="#MilestoneStatus"/>
+          <owl:Class rdf:about="#MilestoneType"/>
+          <owl:Class rdf:about="#OrganizationalUnit"/>
+          <owl:Class rdf:about="#ProcessArea"/>
+          <owl:Class rdf:about="#ProcessDefinition"/>
+          <owl:Class rdf:about="#ProductTypesInMilestoneType"/>
+          <owl:Class rdf:about="#Project"/>
+          <owl:Class rdf:about="#ProjectParticipant"/>
+          <owl:Class rdf:about="#ProjectParticipantAllocation"/>
+          <owl:Class rdf:about="#ProjectPhase"/>
+          <owl:Class rdf:about="#ProjectPhaseDefinition"/>
+          <owl:Class rdf:about="#ProjectPlan"/>
+          <owl:Class rdf:about="#ProjectResource"/>
+          <owl:Class rdf:about="#ProjectResourceStatus"/>
+          <owl:Class rdf:about="#ProjectRole"/>
+          <owl:Class rdf:about="#ResourceCategory"/>
+          <owl:Class rdf:about="#ResourceEstimate"/>
+          <owl:Class rdf:about="#ResourcesUsed"/>
+          <owl:Class rdf:about="#Risk"/>
+          <owl:Class rdf:about="#RiskCategory"/>
+          <owl:Class rdf:about="#RiskImpactRating"/>
+          <owl:Class rdf:about="#RiskLikelihoodRating"/>
+          <owl:Class rdf:about="#RiskStatus"/>
+          <owl:Class rdf:about="#SignificanceLevel"/>
+          <owl:Class rdf:about="#SizeMetric"/>
+          <owl:Class rdf:about="#SkillCategory"/>
+          <owl:Class rdf:about="#SkillLevel"/>
+          <owl:Class rdf:about="#SkillPlan"/>
+          <owl:Class rdf:about="#Stakeholder"/>
+          <owl:Class rdf:about="#StakeholderInvolvementActivityType"/>
+          <owl:Class rdf:about="#StakeholderInvolvementPhase"/>
+          <owl:Class rdf:about="#SubTask"/>
+          <owl:Class rdf:about="#SubTaskAllocatedTo"/>
+          <owl:Class rdf:about="#SubTaskDefinition"/>
+          <owl:Class rdf:about="#Task"/>
+          <owl:Class rdf:about="#TaskAllocatedTo"/>
+          <owl:Class rdf:about="#TaskDefinition"/>
+          <owl:Class rdf:about="#TaskDefinitionsInProcessDefinition"/>
+          <owl:Class rdf:about="#TaskStatus"/>
+          <owl:Class rdf:about="#TaskTypesInMilestoneType"/>
+          <owl:Class rdf:about="#WorkProduct"/>
+          <owl:Class rdf:about="#WorkProductType"/>
+          <owl:Class rdf:about="#WorkProduct"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:ObjectProperty>
+</rdf:RDF>

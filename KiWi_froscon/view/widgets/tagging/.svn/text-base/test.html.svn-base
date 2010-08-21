@@ -1,0 +1,132 @@
+<html>
+	<head>
+		<script src="../../js/jquery-1.3.2.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			
+			var url = "http://localhost:8080/KiWi/seam/resource/services/widgets/tagging/";
+			
+			function getTest() {
+				var kiwiUrl = jQuery("#kiwiUrl").val() + "/seam/resource/services/widgets/tagging/";
+				var itemUri = jQuery("#res").val();
+				var input = jQuery("#input").val();
+				
+				var getUrl = kiwiUrl + "listTags.json?resource=" + itemUri + "&" + input + "&jsonpCallback=?";
+				jQuery.getJSON(getUrl, function(data){
+					// jQuery("#result").html("\"" + data + "\"");
+					alert(data.items.length+" results for resource '"+data.resource+"'");
+				});
+			}
+			
+			function addTags(){
+				var kiwiUrl = jQuery("#kiwiUrl").val() + "/seam/resource/services/widgets/tagging/";
+				var res = jQuery("#res").val();
+				var input = jQuery("#tags").val();
+				var addUrl = kiwiUrl + "addTags?resource=" + res + "&" + input + "&jsonpCallback=?";
+				jQuery.getJSON(addUrl, 
+					function(data){
+						// jQuery("#result").html("\"" + data + "\"");
+						alert("success.");
+					},
+					function(xhr, textStatus, errorThrown){
+						// jQuery("#result").html("\"" + data + "\"");
+						alert('Error - ' + xhr.status + ":" + xhr.statusText);
+					});
+/*
+				$.ajax({
+                    type: "POST",
+                    url: url+"addTags",
+                    data: {"resource":res,"tags":tags},
+                    dataType: "json",
+                    success: function(response){
+                            alert("success.");
+                    },
+                    error: function(xhr, textStatus, errorThrown){
+                            alert('Error - ' + xhr.status + ":" + xhr.statusText);
+                    }
+            	});
+*/
+			}
+
+			function removeTags(){
+				var kiwiUrl = jQuery("#kiwiUrl").val() + "/seam/resource/services/widgets/tagging/";
+				var res = jQuery("#res").val();
+				var input = jQuery("#rTags").val();
+
+				var removeUrl = kiwiUrl + "removeTags?resource=" + res + "&" + input + "&jsonpCallback=?";
+				jQuery.getJSON(removeUrl, 
+					function(data){
+						// jQuery("#result").html("\"" + data + "\"");
+						alert("success.");
+					},
+					function(xhr, textStatus, errorThrown){
+						// jQuery("#result").html("\"" + data + "\"");
+						alert('Error - ' + xhr.status + ":" + xhr.statusText);
+					});
+/*				
+				$.ajax({
+                    type: "POST",
+                    url: url+"removeTags",
+                    data: {"resource":res,"tags":rTags},
+                    dataType: "json",
+                    success: function(response){
+                            alert("success.");
+                    },
+                    error: function(xhr, textStatus, errorThrown){
+                            alert('Error - ' + xhr.status + ":" + xhr.statusText);
+                    }
+            	});
+*/
+//				jQuery.post( url+"addTags.json", {"resource":"test"}, function(data){alert(data)},"application/json"); // , [ success(data, textStatus, XMLHttpRequest) ], [ dataType ] )
+			}
+		</script>
+	</head>
+	<body>
+		<h2>Tagging WebService</h2>
+		KiWi server Uri: <input value="http://localhost:8080/KiWi" type="text" id="kiwiUrl" style="width:300px"/><br/>
+		resource=<input value="http://localhost/content/FrontPage" type="text" id="res" style="width:300px"/>
+		
+		<h3>GetTags</h3>
+		<p>
+			<b>Possible parameters</b>
+			<ul>
+				<li><b>resource: (REQUIRED)</b> Content resource uri</li>
+				<li><b>order:</b> 'usage' or 'equity' or 'alpha'</li>
+				<li><b>reverse:</b> 'true' or 'false'</li>
+			</ul>
+		</p>
+		/KiWi/seam/resource/services/widgets/tagging/listTags.json?resource=&lt;see above&gt;&
+		<input value="" type="text" id="input" style="width:300px"/>
+		&jsonpCallback=?
+		<button onclick="getTest()">getTest</button>
+		<h3>Get result:</h3>
+		<div id="result"/>
+		<h3>AddTags</h3>
+		<p>
+			<b>Possible parameters</b>
+			<ul>
+				<li><b>resource: (REQUIRED)</b> Content resource uri</li>
+				<li><b>tags: (REQUIRED)</b> comma-separated list of tags</li>
+				
+			</ul>
+		</p>
+		/KiWi/seam/resource/services/widgets/tagging/addTags?resource=&lt;see above&gt;&
+		<input value="tags=bla1,bla2" type="text" id="tags" style="width:300px"/>
+		&jsonpCallback=?
+		<button onclick="addTags()">addTest</button>
+		
+		<h3>RemoveTags</h3>
+		<p>
+			<b>Possible parameters</b>
+			<ul>
+				<li><b>resource: (REQUIRED)</b> Content resource uri</li>
+				<li><b>tags: (REQUIRED)</b> comma-separated list of tag uris</li>
+				
+			</ul>
+		</p>
+		/KiWi/seam/resource/services/widgets/tagging/removeTags?resource=&lt;see above&gt;&
+		<input value="tags=<uriList>" type="text" id="rTags" style="width:300px"/>
+		&jsonpCallback=?
+		<button onclick="removeTags()">removeTest</button>
+		
+	</body>
+</html>

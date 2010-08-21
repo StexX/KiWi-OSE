@@ -1,0 +1,46 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a="http://richfaces.org/a4j"
+	xmlns:kiwi="http://www.kiwi-project.eu/jsf">
+
+	<!--  commenting functionality -->
+	<rich:togglePanel id="versionedMetadata" switchType="ajax"
+		stateOrder="closed,open">
+		<f:facet name="closed">
+			<rich:toggleControl>
+				<h2 class="commentsClosed">Metadata</h2>
+			</rich:toggleControl>
+		</f:facet>
+
+		<f:facet name="open">
+ 		<f:subview id="versionedMetadataPanel"> 
+			<rich:toggleControl>
+				<h2 class="commentsOpen">Metadata</h2>
+			</rich:toggleControl>
+			<h:panelGrid columns="2" columnClasses="name,inspector-value">
+				<s:div rendered="#{! empty kiwi.action.revision.previewAction.metadataUpdate.addedTriples}">
+			    	<strong>Metadata - Added Triples</strong>
+			    </s:div>
+			    <s:div id="previewAddedTriples" rendered="#{! empty kiwi.action.revision.previewAction.metadataUpdate.addedTriples}">
+			    	 <ui:repeat value="#{kiwi.action.revision.previewAction.metadataUpdate.addedTriples}" var="triple">
+			    	    <h:outputText style="font-family:monospace" value="#{triple.toRDFXML()}" /><br/><br/>
+			    	</ui:repeat>
+			    </s:div>
+			    <s:div rendered="#{! empty kiwi.action.revision.previewAction.metadataUpdate.removedTriples}">
+			    	<strong>Metadata - Removed Triples</strong>
+			    </s:div>
+			    <s:div id="previewRemovedTriples" rendered="#{! empty kiwi.action.revision.previewAction.metadataUpdate.removedTriples}">
+			    	 <ui:repeat value="#{kiwi.action.revision.previewAction.metadataUpdate.removedTriples}" var="triple">
+			    	    <h:outputText style="font-family:monospace" value="#{triple.toRDFXML()}" /><br/><br/>
+			    	</ui:repeat>
+			    </s:div>
+			</h:panelGrid>			
+ 		</f:subview>
+		</f:facet>
+	</rich:togglePanel>
+</ui:composition>

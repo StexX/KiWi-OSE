@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/tweet
+END
+TweetServiceRemote.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/tweet/TweetServiceRemote.java
+END
+TweetServiceLocal.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/tweet/TweetServiceLocal.java
+END
+TweetService.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/action/kiwi/api/tweet/TweetService.java
+END

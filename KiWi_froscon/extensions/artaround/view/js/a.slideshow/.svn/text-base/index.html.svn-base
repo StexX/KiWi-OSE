@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+<head>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>(a)SlideShow jQuery Plugin</title>		
+    <link href="js/jquery.aslideshow/shadow/styles.css" media="screen" rel="stylesheet" type="text/css" />	
+    <link href="style.css" media="screen" rel="stylesheet" type="text/css" />	
+	<script type="text/javascript" src="js/jquery.js"></script>	
+	<script type="text/javascript" src="js/jquery.aslideshow.pack.js"></script>
+
+    <script type="text/javascript" src="http://scripts.hohli.com/brush/shCore.js"></script>
+	<script type="text/javascript" src="http://scripts.hohli.com/brush/shBrushJScript.js"></script>
+	<script type="text/javascript" src="http://scripts.hohli.com/brush/shBrushXml.js"></script>
+	<link type="text/css" rel="stylesheet" href="http://scripts.hohli.com/brush/styles/shCore.css"/>
+	<link type="text/css" rel="stylesheet" href="http://scripts.hohli.com/brush/styles/shThemeDefault.css"/>
+	<script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = 'http://scripts.hohli.com/brush/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+</head>
+
+<body>
+<a name="top"></a>
+<div>
+    <p class="textcenter"><img src="http://slideshow.hohli.com/img/top-banner.jpg" alt="(a)Slideshow"/></p>
+</div>
+
+<h2>Introduction</h2>
+<div>
+    <p>This plugin allows you to create dynamic, controllable slideshows or presentations for your website.</p>
+    <p>Simply define a block of HTML to be a slideshow or presentation. You can use any tags like &lt;p&gt;, &lt;img&gt;, &lt;div&gt; etc.</p>
+    <p>Wordpress plugin is available: <a href="http://wordpress.org/extend/plugins/a-slideshow/" title="(a)Slideshow Wordpress Plugin">http://wordpress.org/extend/plugins/a-slideshow/</a></p>
+    <br/>
+    
+    
+    Requried:
+    <ul>
+        <li>jQuery 1.3+</li>
+    </ul>
+    
+    Test with following browsers:
+    <ul>
+        <li>Opera 9.65+</li>
+        <li>Mozilla Firefox 3.0+</li>
+        <li>Google Chrome 2.0.157</li>
+        <li>Safari 3.1+ (win)</li>
+        <li>Internet Explorer 6.0 (but consist some bugs with default theme)</li>
+        <li>Internet Explorer 7.0</li>
+        <li>Internet Explorer 8.0 b2</li>
+    </ul>
+    
+    Go to:
+    <ul>
+        <li><a href="#download">Download</a></li>
+        <li><a href="#install">Installation</a></li>
+        <li><a href="#methods">Methods</a></li>
+        <li><a href="#options">Options</a></li>
+        <li><a href="#demo">Demo</a></li>
+    </ul>
+</div>
+
+<a name="download"></a>
+<h2>Download</h2>
+<div>
+    Web Access:
+    <blockquote>
+    <p>
+        <a href="http://code.google.com/p/a-slideshow/downloads/list" title="Download (a)Slideshow from Google Code">http://code.google.com/p/a-slideshow/downloads/list</a><br/>
+        <a href="http://plugins.jquery.com/project/a-slideshow" title="Download (a)Slideshow from jQuery">http://plugins.jquery.com/project/a-slideshow</a>
+    </p>
+    </blockquote>
+	
+    SVN Command-Line Access:
+    <blockquote>
+    <p>svn checkout http://a-slideshow.googlecode.com/svn/trunk/ a-slideshow-read-only</p>
+    </blockquote>
+    
+    Aviable two version - source with comments (~18Kb w/o theme) and pack (~5Kb w/o theme)
+
+    <p><small>[<a href="#top">Top</a>]</small></p>
+</div>
+
+<a name="install"></a>
+<h2>Installation</h2>
+<div>
+    Include JavaScript library jQuery and (a)Slideshow plugin (with style):
+    <pre class="brush: xml;">
+&lt;link href=&quot;/js/jquery.aslideshow/simple/styles.css&quot; media=&quot;screen&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;/js/jquery.js?ver=1.3.2&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;/js/jquery.aslideshow.js&quot;&gt;&lt;/script&gt;
+    </pre>
+
+    Create any content:
+    <pre class="brush: xml;">
+&lt;div id=&quot;MySlideshow&quot;&gt;
+    &lt;p&gt;Some text... on slide one&lt;/p&gt;
+    &lt;img src=&quot;docs/img/image_0.jpg&quot; alt=&quot;It's slide number two&quot;/&gt;
+    &lt;img src=&quot;docs/img/image_1.jpg&quot; alt=&quot;It's slide number three&quot;/&gt;
+    &lt;p&gt;&lt;label&gt;Title&lt;/label&gt;Some text... on slide four&lt;/p&gt;
+    &lt;a href=&quot;docs/img/image_2.jpg&quot;&gt;It's slide number five&lt;/a&gt;
+    &lt;a href=&quot;example/info.html&quot;&gt;It's slide number six&lt;/a&gt;
+    &lt;a href=&quot;http://domain.com/example/info.html&quot;&gt;It's slide number seven&lt;/a&gt;
+&lt;/div&gt;
+    </pre>
+
+    Initialize slideshow:
+    <pre class="brush: jscript;">
+&lt;script type=&quot;text/javascript&quot;&gt;
+//&lt;![CDATA[
+$(document).ready(function(){
+    $('#MySlideshow').slideshow();
+});
+//]]&gt;
+&lt;/script&gt;
+    </pre>
+
+    Result:
+    <div id="MySlideshow">
+        <p>Some text... on slide one</p>
+        <img src="docs/img/image_0.jpg" alt="It's slide number two"/>
+        <img src="docs/img/image_1.jpg" alt="It's slide number three"/>
+        <p><label>Title</label>Some text... on slide four</p>
+        <a href="docs/img/image_2.jpg">It's slide number five</a>
+        <a href="example/info.html">It's slide number six</a>
+        <a href="http://domain.com/example/info.html">It's slide number seven</a>
+    </div>
+
+    <small>[<a href="#top">Top</a>]</small>
+</div>
+
+<a name="methods"></a>
+<h2>Methods</h2>
+<div>
+<p>This is function work only with one slideshow</p>
+
+<ul>
+    <li>playSlide - play slideshow</li>
+    <li>stopSlide - stop slideshow</li>
+    <li>nextSlide - next slide (or first)</li>
+    <li>prevSlide - previouse slide (or last)</li>
+    <li>goToSlide - go to slide number N</li>
+    <li>getTitle - return title of current slide</li>
+</ul>
+
+<small>[<a href="#top">Top</a>]</small>
+</div>
+
+<a name="options"></a>
+<h2>Options</h2>
+<div>
+<b>Frame Title</b>:
+<ul>
+    <li>Atribute "alt" of images</li>
+    <li>Atribute "title" of links</li>
+    <li>First tag "label" of any other tags</li>
+</ul>
+<br/>
+
+<b>Configuration options</b>:
+<pre class="brush: jscript;">
+&lt;script type=&quot;text/javascript&quot;&gt;
+//&lt;![CDATA[
+$(document).ready(function(){
+    $('selector').slideshow({
+        width:320,      // width in px
+        height:240,     // height in px
+        index:0,        // start from frame number N
+        time:3000,      // time out beetwen slides
+		history:false,  // change/check location hash 
+        title:true,     // show title
+        titleshow:false,// always show title
+        callback:null,  // callback function - call when slide changed - receive index and label
+        panel:true,     // show controls panel
+        play:false,     // play slideshow
+        loop:true,      // looping
+        effect:'fade',  // aviable fade, scrollUp/Down/Left/Right, zoom, zoomFade, growX, growY
+        effecttime:1000,// aviable fast,slow,normal and any valid fx speed value
+        filter:true,    // remove &lt;br/&gt;, empty &lt;div&gt;, &lt;p&gt; and other stuff
+        nextclick:false,      // bind content click next slide
+        playclick:false,      // bind content click play/stop
+        playhover:false,      // bind content hover play/stop
+        playhoverr:false,     // bind content hover stop/play (reverse of playhover)
+        playframe:true,       // show frame &quot;Play Now!&quot;
+        loadframe:true,       // show frame with "loading"
+        fullscreen:false,     // in full window size
+		
+        imgresize:false,      // resize image to slideshow window
+        imgzoom:true,         // zoom image to slideshow window (for smaller side)
+        imgcenter:true,       // set image to center
+        imgajax:true,         // load images from links
+        imglink:true,         // go to external link by click
+		
+        linkajax:false,       // load html from links
+        help:'Plugin homepage: &lt;a href=&quot;http://slideshow.hohli.com&quot;&gt;(a)Slideshow&lt;/a&gt;&lt;br/&gt;'+
+             'Author homepage: &lt;a href=&quot;http://anton.shevchuk.name&quot;&gt;Anton Shevchuk&lt;/a&gt;',
+
+        controls :{         // show/hide controls elements
+            'hide':true,    // show controls bar on mouse hover
+            'first':true,   // goto first frame
+            'prev':true,    // goto previouse frame (if it first go to last)
+            'play':true,    // play slideshow
+            'next':true,    // goto next frame (if it last go to first)
+            'last':true,    // goto last frame
+            'help':true,    // show help message
+            'counter':true  // show slide counter
+        }
+    });
+});
+//]]&gt;
+&lt;/script&gt;
+</pre>
+
+
+<small>[<a href="#top">Top</a>]</small>
+</div>
+
+<a name="demo"></a>
+<h2>Demo</h2>
+<div>
+<ul>
+    <li><a href="docs/demo00.html">Default configuration</a></li>
+    <li><a href="docs/demo01.html">Custom  configuration</a></li>
+    <li><a href="docs/demo02.html">Auto Play (for banners and etc)</a></li>
+    <li><a href="docs/demo03.html">Multi Slideshow with Auto Play</a></li>
+    <li><a href="docs/demo04.html">Multi Slideshow with Auto Play (It's really slow)</a></li>
+    <li><a href="docs/demo05.html">Start/Stop Slideshow on mouse click</a></li>
+    <li><a href="docs/demo06.html">Start/Stop Slideshow on mouse hover</a></li>
+    <li><a href="docs/demo07.html">12 visual effects for transition</a></li>
+    <li><a href="docs/demo08.html">Fullscreen</a></li>
+    <li><a href="docs/demo09.html">Use callback function</a></li>
+    <li><a href="docs/demo10.html">AJAX Slideshow</a></li>
+    <li><a href="docs/demo11.html">Use Links</a></li>
+</ul>
+
+<small>[<a href="#top">Top</a>]</small>
+</div>
+
+<h2>P.S</h2>
+<div>
+    <p>Images in slideshow under CC License. See more on <a href="http://photo.hohli.com">http://photo.hohli.com</a></p>
+    <p>Author Homepage: <a href="http://anton.shevchuk.name">http://anton.shevchuk.name</a></p>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function(){
+    $('#MySlideshow').slideshow();
+});
+//]]>
+</script>
+</body>
+</html>

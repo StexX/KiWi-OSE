@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                      	
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+   	  xmlns:rich="http://richfaces.org/rich"
+ 	  xmlns:a4j="http://richfaces.org/a4j"
+ 	  xmlns:c="http://java.sun.com/jsp/jstl/core"
+ 	  xmlns:kiwi="http://www.kiwi-project.eu/jsf">
+
+<ui:include src="htmlHead.xhtml" />
+
+<body class="yui-skin-sam">
+
+<div class="page_margins roundBorders capKomBorderProfil">
+  <div class="page">
+  
+    <div id="header" class="capKomBgProfil capKomHeaderProfil">
+      <div id="topnav">
+        <!-- start: skip link navigation -->
+        <a class="skip" href="#content" title="skip link">Skip to content</a><span class="hideme">.</span>
+        <!-- end: skip link navigation -->
+       </div>
+       <div id="logo">
+       		<a href="../index.html">
+       			<img src="../images/capcom_logo_60pxHeight.png" alt="CAP-KOM Logo" 
+       				border="0"/>
+       		</a>
+       </div>
+       <div id="headerText">
+       		<div class="simpleText">
+				#{messages['artaround.cap-kom.einfacheSprache.ueberMich']}
+			</div>	
+       </div>
+    </div>
+    <div id="nav_main">
+    	<div class="hlist mainNavProfil">
+  			<ui:insert name="navigation"/>
+		</div>
+    </div>
+
+    <!-- begin: content area #main -->
+    <div id="main">
+      <!-- begin: #col1 - first float column -->
+      <div id="col1">
+        <div id="col1_content" class="clearfix">
+        </div>
+      </div>
+      <!-- end: #col1 -->
+      <!-- begin: #col2 second float column -->
+      <div id="col2">
+        <div id="col2_content" class="clearfix">
+        </div>
+      </div>
+      <!-- end: #col2 -->
+      <!-- begin: #col3 static column -->
+      <div id="col3">
+        <div id="col3_content" class="clearfix">
+          <!-- skip anchor: content -->
+          <a id="content" name="content"></a>
+          <!-- begin: main content -->
+		  	<ui:insert name="body"/>
+     	  <!-- end: main content -->
+          </div>
+        <!-- IE column clearing -->
+        <div id="ie_clearing">&nbsp;</div>
+      </div>
+      <!-- end: #col3 -->
+    </div>
+    <!-- end: #main -->
+    <!-- begin: #footer -->
+    <div id="footer" class="capKomBgProfil">
+    	<ui:include src="footer.xhtml" />
+    </div>
+    <!-- end: #footer -->
+  </div>
+</div>
+</body>
+</html>

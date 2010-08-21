@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/bootstrap.tmpl/deploy
+END
+jms-ra.rar
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/bootstrap.tmpl/deploy/jms-ra.rar
+END
+ejb3-interceptors-aop.xml
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/bootstrap.tmpl/deploy/ejb3-interceptors-aop.xml
+END
+remoting-service.xml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/bootstrap.tmpl/deploy/remoting-service.xml
+END
+jboss-local-jdbc.rar
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/bootstrap.tmpl/deploy/jboss-local-jdbc.rar
+END
+jboss-xa-jdbc.rar
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/bootstrap.tmpl/deploy/jboss-xa-jdbc.rar
+END

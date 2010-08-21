@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/classes/META-INF
+END
+orm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/classes/META-INF/orm.xml
+END
+persistence.xml
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/resources/web.setup/kiwi.web.setup.war/WEB-INF/classes/META-INF/persistence.xml
+END

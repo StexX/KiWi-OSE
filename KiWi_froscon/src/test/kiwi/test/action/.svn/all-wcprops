@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/test/action
+END
+GroovyTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/test/action/GroovyTest.java
+END
+ActionTests.xml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/test/action/ActionTests.xml
+END
+MetadataActionTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/test/action/MetadataActionTest.java
+END
+RegisterTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/test/action/RegisterTest.java
+END
+EditContentTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/test/kiwi/test/action/EditContentTest.java
+END

@@ -1,0 +1,187 @@
+/******** main structure *******/
+#newsItemBox {
+	width: 700px;
+	height: 475px;
+}
+
+#newsItemContent {
+	width: 100%;
+	height: 440px;
+	background: white;
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-bottomright: 5px;
+	background: #FFFFFF url(../img/point/content.png) repeat-x scroll 0 0;
+	border: 1px solid #666;
+	border-top:none;
+}
+
+/*************text********/
+.newsItemTags {
+	margin-top:10px;
+	height:35px;
+	border-bottom:1px solid #aaa;
+	fomt-size:14px;
+	overflow:auto;
+	font-size:12px;
+	line-height:15px;
+}
+
+.newsItemText {
+	height:330px;
+	width: 670px;
+	overflow:auto;
+	padding-right:5px;
+}
+
+
+ /*************images************/
+.images div {
+	display: none;
+	position: absolute;
+	background-color: #666;
+	width: 670px;
+	height: 380px;
+	text-align: center;
+}
+
+.images div img {
+	margin-top: 5px;
+}
+
+.forwardButton {
+	top: 240px;
+	left: 656px;
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-topleft: 5px;
+	display: none;
+}
+
+.backwardButton {
+	top: 240px;
+	background-color: black;
+	-moz-border-radius-bottomright: 5px;
+	-moz-border-radius-topright: 5px;
+	z-index: 1;
+	display: none;
+}
+
+.imagebuttons {
+	width: 30px;
+	height: 25px;
+	position: absolute;
+	background-color: black;
+	opacity: 0.7;
+	color: white;
+	font-weight: bold;
+	padding-top: 5px;
+	text-align: center;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+a.addImageButton {
+	position: absolute;
+	top:35px;
+	left:660px;
+}
+
+a.addImageButton img {
+	border:none;
+	padding:0;
+	cursor: pointer;	
+}
+
+/**************comments*******************/
+.comment {
+	border-bottom: 1px solid #666;
+}
+
+.comment h2{
+	font-size: 16px;
+	margin:0;
+	padding-top:10px;
+	width:640px;
+}
+
+.comment h3{
+	font-weight: normal;
+	font-size: 11px;
+	margin: 0;
+	width:640px;
+}
+
+.comment p{
+	padding-left:10px;
+	padding-top:5px;
+	padding-bottom:10px;
+	margin:0;
+	font-size: 14px;
+	padding-right:10px;
+}
+
+a.addCommentButton {
+	position: absolute;
+	top:35px;
+	left:660px;
+}
+
+a.addCommentButton img{
+	border:none;
+	padding:0;
+	cursor: pointer;
+}
+
+/********** innerMap ************/
+#innerMap_canvas {
+	border:1px solid #666;
+	width:670px;
+	height:345px;
+}
+
+.innerMap_geocoder{
+	width: 670px;
+	margin-top:5px;
+}
+
+.innerMap_geocoder input {
+	padding:0;
+	margin0;
+	width: 630px;
+	margin-right: 5px;
+	height: 20px;
+	font-size: 14px;
+	font-style: italic;
+	padding-left:2px;
+}
+
+.overflow {
+overflow: auto;
+width: 100%;
+height: 380px;
+}
+
+/*recommendations*/
+#recommendations {
+	height:380px;
+	overflow:auto;
+}
+
+#recommendations ul {
+margin:0;
+padding:20px;
+}
+
+#recommendations ul li {
+margin:0;
+padding-bottom:10px;
+}
+
+.recomTitle {
+font-size:16px;
+font-weight:bold;
+}
+
+.recomPerson {
+font-size:12px;
+padding:20px;
+}

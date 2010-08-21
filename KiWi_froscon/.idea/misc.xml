@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DependencyValidationManager">
+    <option name="SKIP_IMPORT_STATEMENTS" value="false" />
+  </component>
+  <component name="IdProvider" IDEtalkID="2EBE4DE933A89F4779BE7D74B6D9E4E4" />
+  <component name="JavadocGenerationManager">
+    <option name="OUTPUT_DIRECTORY" />
+    <option name="OPTION_SCOPE" value="protected" />
+    <option name="OPTION_HIERARCHY" value="true" />
+    <option name="OPTION_NAVIGATOR" value="true" />
+    <option name="OPTION_INDEX" value="true" />
+    <option name="OPTION_SEPARATE_INDEX" value="true" />
+    <option name="OPTION_DOCUMENT_TAG_USE" value="false" />
+    <option name="OPTION_DOCUMENT_TAG_AUTHOR" value="false" />
+    <option name="OPTION_DOCUMENT_TAG_VERSION" value="false" />
+    <option name="OPTION_DOCUMENT_TAG_DEPRECATED" value="true" />
+    <option name="OPTION_DEPRECATED_LIST" value="true" />
+    <option name="OTHER_OPTIONS" value="" />
+    <option name="HEAP_SIZE" />
+    <option name="LOCALE" />
+    <option name="OPEN_IN_BROWSER" value="true" />
+  </component>
+  <component name="ProjectDetails">
+    <option name="projectName" value="KiWi" />
+  </component>
+  <component name="ProjectResources">
+    <resource url="http://richfaces.org/rich" location="" />
+    <resource url="http://jboss.com/products/seam/taglib" location="" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="SvnBranchConfigurationManager">
+    <option name="myConfigurationMap">
+      <map>
+        <entry key="$PROJECT_DIR$">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchMap">
+                <map>
+                  <entry key="https://svn.salzburgresearch.at/svn/kiwi/KiWi/branches">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                  <entry key="https://svn.salzburgresearch.at/svn/kiwi/KiWi/iKiwi">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                  <entry key="https://svn.salzburgresearch.at/svn/kiwi/KiWi/kiwi.db.import">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                  <entry key="https://svn.salzburgresearch.at/svn/kiwi/KiWi/kiwi.web.setup">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                  <entry key="https://svn.salzburgresearch.at/svn/kiwi/KiWi/model">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                  <entry key="https://svn.salzburgresearch.at/svn/kiwi/KiWi/releases">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                  <entry key="https://svn.salzburgresearch.at/svn/kiwi/KiWi/tags">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                  <entry key="https://svn.salzburgresearch.at/svn/kiwi/KiWi/trunk_1020">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                  <entry key="https://svn.salzburgresearch.at/svn/kiwi/KiWi/trunk_1797">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="branchUrls">
+                <list>
+                  <option value="https://svn.salzburgresearch.at/svn/kiwi/KiWi/branches" />
+                  <option value="https://svn.salzburgresearch.at/svn/kiwi/KiWi/iKiwi" />
+                  <option value="https://svn.salzburgresearch.at/svn/kiwi/KiWi/kiwi.db.import" />
+                  <option value="https://svn.salzburgresearch.at/svn/kiwi/KiWi/kiwi.web.setup" />
+                  <option value="https://svn.salzburgresearch.at/svn/kiwi/KiWi/model" />
+                  <option value="https://svn.salzburgresearch.at/svn/kiwi/KiWi/releases" />
+                  <option value="https://svn.salzburgresearch.at/svn/kiwi/KiWi/tags" />
+                  <option value="https://svn.salzburgresearch.at/svn/kiwi/KiWi/trunk_1020" />
+                  <option value="https://svn.salzburgresearch.at/svn/kiwi/KiWi/trunk_1797" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="https://svn.salzburgresearch.at/svn/kiwi/KiWi/trunk" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="mySupportsUserInfoFilter" value="true" />
+  </component>
+  <component name="WebServicesPlugin" addRequiredLibraries="true" />
+</project>
+

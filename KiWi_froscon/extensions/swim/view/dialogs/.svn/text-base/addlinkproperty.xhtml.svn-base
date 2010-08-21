@@ -1,0 +1,48 @@
+<rich:modalPanel 
+	  xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+   	  xmlns:rich="http://richfaces.org/rich"
+ 	  xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+	  id="addlinkpropDialog" minWidth="300" resizeable="true">
+	<f:facet name="header">
+		<h:panelGroup>
+			<h:outputText value="Add property"></h:outputText>
+		</h:panelGroup>
+	</f:facet>
+	<f:facet name="controls">
+		<h:panelGroup>
+			<h:outputLabel value="X" style="cursor:pointer" id="addlinkprop_hidelink" />
+			<rich:componentControl for="addlinkpropDialog" attachTo="addlinkprop_hidelink"
+				operation="hide" event="onclick" />
+		</h:panelGroup>
+	</f:facet>
+	<h:form>
+		<h:outputText value="Select property"></h:outputText>
+		<h:panelGrid columns="2" rowClasses="prop" columnClasses="name,value">
+			<h:outputLabel value="Subject"/>
+			<h:outputText id="addlinkprop_subject" value="#{currentContentItem.title}"/>
+		
+			<h:outputLabel value="Property"/>
+			<h:selectOneMenu 
+				id="addlinkprop_selectproperty"
+				value="#{annotateAction.selectedproperty}" required="true">
+				<s:selectItems value="#{annotateAction.possibleProperties}" var="prop"
+					label="#{prop.title} (#{annotateAction.getPrefixByKiwiId(prop.getResource().kiwiIdentifier)})" noSelectionLabel="Please select ..." />
+				<kiwi:convertEntity />
+			</h:selectOneMenu>
+
+			<h:outputLabel value="Object"/>
+			<h:outputText id="addlinkprop_object" value="#{annotateAction.annotationTarget.title}"/>
+		</h:panelGrid>
+		<div class="actionButtons">
+			<h:commandButton value="Add"
+				action="#{annotateAction.setProperty}">
+                <a4j:support event="onclick" reRender="formWikiContent,articleMeta"/>
+			</h:commandButton>
+		</div>
+	</h:form>
+</rich:modalPanel>

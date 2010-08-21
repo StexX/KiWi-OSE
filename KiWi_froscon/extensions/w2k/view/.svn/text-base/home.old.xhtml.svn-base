@@ -1,0 +1,44 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a="http://richfaces.org/a4j" template="layout/template.xhtml">
+
+<ui:define name="content">
+
+    <h:form id="formWikiMain">
+    <rich:tabPanel style="height: 100%" switchType="normal" 
+    	selectedTab="#{contentItemAction.selectedTab}" 
+    	id="uiTabSelector">
+        <rich:tab label="View" id="tab_view" action="#{viewAction.begin}" style="height: 100%">
+			<rich:messages styleClass="message" /> 
+		    <a:include viewId="view.xhtml"/>
+        </rich:tab>
+        <rich:tab label="Edit" id="tab_edit" action="#{editorAction.begin}">
+			<rich:messages styleClass="message" /> 
+			<!--  M.S. ajaxRendered breaks bookmarks TODO: investigate -->
+ 		    <a:include viewId="edit.xhtml" ajaxRendered="false"/>
+        </rich:tab>
+        <rich:tab label="Media" id="tab_media" action="#{mediaAction.begin}">
+			<rich:messages styleClass="message" /> 
+ 		    <a:include viewId="media.xhtml"/>
+        </rich:tab>
+        <rich:tab label="Metadata" id="tab_metadata" >
+			<rich:messages styleClass="message" /> 
+ 		    <a:include viewId="metadata.xhtml"/>
+        </rich:tab>
+        <rich:tab label="History" id="tab_history" action="#{viewRevisionAction.begin}">
+      	    <rich:messages styleClass="message" />
+      	    <a:include viewId="history.xhtml" rendered="#{viewRevisionAction.revisionSelected == 'false'}"/>
+       	    <a:include viewId="preview.xhtml" rendered="#{viewRevisionAction.revisionSelected == 'true'}"/>
+       	    <a:include viewId="revlegend.xhtml" rendered="#{viewRevisionAction.revisionSelected == 'true'}"/>
+        </rich:tab>
+    </rich:tabPanel>
+    </h:form>
+
+</ui:define>
+</ui:composition>

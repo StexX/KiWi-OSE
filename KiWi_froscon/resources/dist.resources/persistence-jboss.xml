@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Persistence deployment descriptor for dev profile -->
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" 
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd" 
+             version="1.0">
+             
+   <persistence-unit name="KiWi">
+      <provider>org.hibernate.ejb.HibernatePersistence</provider>
+      <jta-data-source>java:/KiWiDatasource</jta-data-source>
+      <properties>
+         <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+         
+         <!-- valid values are validate, update, create, create-drop -->
+         <property name="hibernate.hbm2ddl.auto" value="create"/>
+         <property name="hibernate.show_sql" value="false"/>
+         <property name="hibernate.format_sql" value="true"/>
+         <property name="jboss.entity.manager.factory.jndi.name" value="java:/KiWiEntityManagerFactory"/>
+		 <property name="hibernate.jdbc.batch_size" value="0"/>
+		 <property name="hibernate.default_batch_fetch_size" value="16" />
+ 		 <!-- use a file system based index -->
+      	 <property name="hibernate.search.default.directory_provider" 
+         	      value="org.hibernate.search.store.FSDirectoryProvider"/>
+
+         <!-- KiWi work directory; used as base for all other directories -->
+         <property name="kiwi.work.dir" value="kiwi"/>
+
+         <!-- directory where the Sesame TripleStore will be stored -->
+         <property name="kiwi.triplestore.dir" 
+                  value="kiwi/triples"/>
+
+      	 <!-- directory where the indexes will be stored -->
+     	 <property name="hibernate.search.default.indexBase" 
+         	      value="kiwi/indexes"/>
+         	      
+<!-- done automatically with hibernate annotations                
+      	 <property name="hibernate.ejb.event.post-insert" 
+                  value="org.hibernate.search.event.FullTextIndexEventListener"/>
+
+      	 <property name="hibernate.ejb.event.post-update" 
+                  value="org.hibernate.search.event.FullTextIndexEventListener"/>
+
+         <property name="hibernate.ejb.event.post-delete" 
+                  value="org.hibernate.search.event.FullTextIndexEventListener"/>
+-->                  
+          <property name="hibernate.search.default.optimizer.operation_limit.max"
+         		  value="1000"/>
+
+         <property name="hibernate.search.default.optimizer.transaction_limit.max"
+         		  value="100"/>
+
+<!--  caching -->
+         <property name="hibernate.cache.provider_class"
+                  value="net.sf.ehcache.hibernate.EhCacheProvider" />
+         <property name="hibernate.cache.use_query_cache" value="true" />
+         <property name="hibernate.cache.use_second_level_cache" value="@@second_level_cache@@"/>
+       </properties>
+   </persistence-unit>
+    
+</persistence>

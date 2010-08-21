@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/ideator/src/ideator/action/evaluation
+END
+Criteria.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/ideator/src/ideator/action/evaluation/Criteria.java
+END
+Paragraph.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/ideator/src/ideator/action/evaluation/Paragraph.java
+END
+Rating.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/ideator/src/ideator/action/evaluation/Rating.java
+END
+Evaluation.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/ideator/src/ideator/action/evaluation/Evaluation.java
+END
+EvaluationResource.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/ideator/src/ideator/action/evaluation/EvaluationResource.java
+END
+EvaluationAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/ideator/src/ideator/action/evaluation/EvaluationAction.java
+END
+XMLEvaluationService.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/extensions/ideator/src/ideator/action/evaluation/XMLEvaluationService.java
+END

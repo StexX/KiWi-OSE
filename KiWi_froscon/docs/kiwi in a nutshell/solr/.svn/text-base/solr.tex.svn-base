@@ -1,0 +1,42 @@
+\documentclass{article}
+\begin{document}
+
+\section{SORL}
+\subsection{What is SORL}
+\textbf{SORL} is the acronym for Searching On Lucene w/Replication and it is a stand alone enterprise search server which applications communicate with using XML and HTTP to index documents, or execute searches. Find more information about this theme on (\textit{http://lucene.apache.org/solr/}).
+
+\subsection{SORL and KiWi}
+
+The KiWi system uses \textit{SORL} in embedded mode, that means you need to install it(SOLR) fist. If you check up the KiWi project from from the svn then you will also get a SOLR distribution also, this is placed in : \textit{root/lib/solr} , where root is your project root. 
+You must copy this directory in a know location, because KiWi persistence layer will try to find this location and use it.
+You can copy it by hand or you can use one the  \textit{prepareSolr}  ant task to do this for you, this is the recommended way.
+
+The \textit{prepareSolr} requires a property named \textit{solr.home} in the build.properties file, this path is the path for your local \textit{SOLR}.
+You also need to configure your persistence unit (persistence-XXX.xml) properly, for this add a new property named \textit{kiwi.solr.home} with a proper value to the KiWi persistence unit. The XXX value  (persistence-XXX.xml) depends on which software life stage you are (dev for developing, test for testing etc). 
+
+Here is a rule to follow : the \textit{solr.home}  from the \textit{build.properties} file must point on the same path with the \textit{kiwi.solr.home}  from the \textit{persistence-dev.xml} file.
+
+Now you must redeploy the kiwi application and to restart the server.
+
+\subsection{Path and relative path}
+Please take care the path specified with the \textit{build.properties}'s \textit{solr.home} property is a absolute path, in the \textit{build.properties} file you can only define absolute paths. The \textit{kiwi.solr.home}  property from the \textit{persistence-dev.xml} file is more generous, here you can specified absolute and relative paths - the relative paths are relative to the jBoss bin directory (e.g. if you use the solr value for your kiwi.solr.home then the kiwi will search the solr in the JBoss/bin/solr directory).
+
+The way to define absolute or relative paths differ from an operating system to an other. E.g. under ms environment the absolute path starts with a drive letter followed by the double point char or under unix(linux and mac os) with the slash character. All other ways to define a paths are leading to relative paths.
+
+\subsection{Troubles with SORL}
+
+In most of the cases if the two paths previous described are not pointing to the same location then a run-time exception will raise, the exception will claim a certain SOLR XML specific file. 
+(e.g. "RuntimeException: Can't find resource 'solrconfig.xml' in classpath or ....").
+ In this case the path where kiwi search the \textit{SORL} is wrong. To solve this problem you need to prove if the property named \textit{kiwi.solr.home} from the deployed \textit{persitence.xml} (placed in the jBoss.home/server/default/deploy/KiWi.ear/KiWi.jar/META-INF) points to the right path (the path where the SOLR is installed). 
+ 
+ The directory where the SOLR is installed must look like :\\
+ ..\\
+  README.txt\\
+  bin\\
+  conf\\
+
+
+
+
+
+\end{document}

@@ -1,0 +1,67 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+		    	xmlns:a4j="http://richfaces.org/a4j"
+		    	template="layout/template.xhtml">
+
+<ui:define name="body">
+
+	<h1>KiWi Inspector - Current User</h1>
+	
+    <hr/>
+
+	<h:form>
+	<h:panelGrid columns="2" columnClasses="name,inspector-value" rendered="#{!inspectUserAction.editMode}">
+		<strong>Login</strong>
+		<s:div>#{currentUser.login}</s:div>
+		
+		<strong>First Name</strong>
+		<s:div>#{currentUser.firstName}</s:div>
+		
+		<strong>Last Name</strong>
+		<s:div>#{currentUser.lastName}</s:div>
+	
+		<strong>Created</strong>
+		<s:div>#{currentUser.created}</s:div>
+	
+		<strong>RDF</strong>
+		<s:div>
+		<pre>#{inspectUserAction.userRDF}</pre>
+		</s:div>
+	
+	</h:panelGrid>
+	
+	<h:commandButton rendered="#{!inspectUserAction.editMode}" value="edit" action="#{inspectUserAction.switchToEditMode}"/>
+	</h:form>
+	
+	<h:form>
+	<h:panelGrid columns="2" columnClasses="name,inspector-value" rendered="#{inspectUserAction.editMode}">
+		<strong>Login</strong>
+		<s:div>#{currentUser.login}</s:div>
+		
+		<strong>First Name</strong>
+		<s:div>#{currentUser.firstName}</s:div>
+		
+		<strong>Last Name</strong>
+		<s:div>#{currentUser.lastName}</s:div>
+	
+		<strong>Created</strong>
+		<s:div>#{currentUser.created}</s:div>
+	
+		<strong>RDF</strong>
+		<h:inputTextarea value="#{inspectUserAction.userRDF}"
+                        style="width:700px;" rows="20"/>
+	
+	</h:panelGrid>
+	
+	<h:commandButton rendered="#{inspectUserAction.editMode}" value="abort" action="#{inspectUserAction.switchToReadMode}"/>
+	<h:commandButton rendered="#{inspectUserAction.editMode}" value="store" action="#{inspectUserAction.store}"/>
+	</h:form>
+   
+</ui:define>     
+</ui:composition>

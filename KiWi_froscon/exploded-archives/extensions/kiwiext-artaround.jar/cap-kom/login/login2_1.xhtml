@@ -1,0 +1,45 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                             	
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+			 	xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                template="../layout/template-login.xhtml">   
+				
+  	<ui:define name="body">        
+		<!-- begin: Buttons: -->
+		<div id="registriert" class="loginCol">
+			<a href="login2_3.seam" title="#{messages['artaround.cap-kom.einfacheSprache.bereitsMitgemacht']}">
+				<!-- Symbol: "Ja ich bin bereits registriert" -->
+				<img src="../images/icons/ja_habe_schon_mitgemacht.gif" 
+					title="#{messages['artaround.cap-kom.einfacheSprache.bereitsMitgemacht']}" 
+					alt="#{messages['artaround.cap-kom.einfacheSprache.bereitsMitgemacht']}" 
+					width="150" height="150"/>
+				<div class="simpleText">
+					#{messages['artaround.cap-kom.einfacheSprache.bereitsMitgemacht']}
+				</div>							
+			</a>
+		</div>
+		<div id="nregistriert" class="loginCol">
+			<a href="login2_2.seam" title="#{messages['artaround.cap-kom.einfacheSprache.nochNichtMitgemacht']}">
+				<!-- Symbol: "Nein ich bin noch nicht registriert" -->
+				<img src="../images/icons/nein_habe_noch_nicht_mitgem.gif" 
+					title="#{messages['artaround.cap-kom.einfacheSprache.nochNichtMitgemacht']}" 
+					alt="#{messages['artaround.cap-kom.einfacheSprache.nochNichtMitgemacht']}" 
+					width="150" height="150"/>
+				<div class="simpleText">
+					#{messages['artaround.cap-kom.einfacheSprache.nochNichtMitgemacht']}
+				</div>							
+			</a>				
+		</div>
+		<!-- end: Buttons -->
+	</ui:define> 
+	 
+</ui:composition>

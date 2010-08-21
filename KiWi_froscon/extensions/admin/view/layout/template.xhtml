@@ -1,0 +1,42 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+                xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:kiwi="http://www.kiwi-project.eu/jsf"
+                template="/layout/template-2col.xhtml">
+
+    <ui:define name="navigation">
+
+
+       <ul>
+			<li><s:link view="/admin/applications.xhtml" styleClass="navload" value="Configure Applications" /></li>
+			<li><s:link view="/admin/perspectives.xhtml" styleClass="navload" value="Configure Perspectives" /></li>
+			<li><s:link view="/admin/solr.xhtml" styleClass="navload" value="Configure Search Index" /></li>
+			<li><s:link view="/admin/permissions.xhtml" styleClass="navload" value="Manage Permissions" /></li>
+			<li><a href="#">Manage Groups</a></li>
+			<li><s:link view="/admin/import.xhtml" styleClass="navload" value="Import Data"/></li>
+			<li><s:link view="/admin/ontology/select.xhtml" styleClass="navload" value="Load Ontologies"/></li>
+			<li><s:link view="/admin/vmt/vmt.xhtml" styleClass="navload" value="Vocabulary Management Tool"/></li>
+			<li><s:link view="/gwt/modules/kiwi.view.vmt.Vmt/vmt/index.html" styleClass="navload" value="Vocabulary Management Tool (GWT)"/></li>
+			<li><s:link view="/admin/lodImport/lodImport.xhtml" styleClass="navload" value="Import LOD Sources"/></li>
+			<li><s:link view="/admin/tagit.xhtml" styleClass="navload" value="Configure TagIT" /></li>
+			<li><s:link view="/admin/dbimport.xhtml" styleClass="navload" value="Import DB" /></li>
+			<li><s:link view="/admin/ie.xhtml" styleClass="navload" value="Configure Information Extraction" /></li>
+			<li><s:link view="/admin/reasoning.xhtml" styleClass="navload" value="Configure Reasoner" /></li>
+			<li><s:link view="/admin/ceq.xhtml" styleClass="navload" value="Configure CEQ"/></li>
+			<li><s:link view="/admin/sunspaceimport.xhtml" styleClass="navload" value="Import Sun Space"/></li>
+			<!--<li><s:link view="/admin/ceqControlPanel.xhtml" styleClass="navload" value="Configure CEQ" /></li>-->
+			<li><s:link view="/admin/userSkills.xhtml" styleClass="navload" value="Compute User Skills" /></li>
+			<li><s:link view="/admin/userInteraction.xhtml" styleClass="navload" value="Compute User Interactions" /></li>
+			<li><s:link view="/admin/semanticForms.xhtml" styleClass="navload" value="Semantic forms management" /></li>
+			<li><s:link view="/admin/statistics.xhtml" styleClass="navload" value="KiWi Statistics" /></li>
+       </ul>
+     </ui:define>
+</ui:composition>

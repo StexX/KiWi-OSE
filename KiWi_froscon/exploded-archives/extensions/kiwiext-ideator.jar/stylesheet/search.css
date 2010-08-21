@@ -1,0 +1,105 @@
+/********************** result list ****************************/
+#search_fulltext {
+	width:100%;
+	text-align: center;
+}
+
+#search_fulltext\:s2{
+	background: #ffffff url(images/form-field-bg.gif) no-repeat ;
+	height: 17px;
+	width: 60%;
+	margin: 10px 5px 10px 0;
+	padding: 3px 7px 2px 5px;
+	font-size:14px;
+	border: 1px solid black;
+}
+
+#search_order {
+	text-align:right;
+}
+
+.search_facets {
+	font-size: 14px;
+}
+
+.search_size {
+	height: 20px;
+	border-top:1px solid #14609E;
+}
+
+.search_size form {
+	text-align:right;
+	background-color: #F0F7F9;
+}
+
+.search_results {
+	min-height:100px;
+}
+
+.search_paging {
+	background-color:#F0F7F9;
+	border-top:1px solid #14609E;
+	text-align:center;
+	margin-top:20px;	
+}
+
+.search_paging a {
+	color:#14609E;
+}
+.search_paging span.selected a {
+	color: red;
+}
+
+.search_paging span.next a {
+	font-weight:bold;
+	padding-left:20px;
+}
+
+.search_paging span.back a {
+	font-weight:bold;
+	padding-right:20px;
+}
+
+/********************** facet box ******************************/
+.box_facets a {
+	color:#14609e;
+}
+
+.box_facets a:visited {
+	color:#207fb9;
+}
+
+.right_box {
+	margin-top:5px;
+	margin-bottom:5px;
+	padding:5px;
+}
+
+/********************** searchResultTemplates *************************/
+
+/********************** IDEA ************************************/
+
+.sr_idea a.sr_title {
+	font-size:18px;
+	color:#03387a;
+	font-weight:bold;
+}
+
+.sr_idea p.sr_tags {
+	font-weight:bold;
+	margin:0;
+	font-style:italic;
+}
+
+.sr_idea p.sr_tags a {
+	font-weight:normal;
+	color:#207FB9;
+}
+
+.sr_idea p.sr_whowhen {
+	margin:3px 0 0;
+}
+
+.sr_idea p.sr_preview {
+	margin:0;
+}

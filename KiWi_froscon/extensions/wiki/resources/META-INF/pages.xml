@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pages xmlns="http://jboss.com/products/seam/pages"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://jboss.com/products/seam/pages http://jboss.com/products/seam/pages-2.0.xsd"
+
+       no-conversation-view-id="/home.xhtml"
+       login-view-id="/login.xhtml">
+    
+    <page view-id="/wiki/*" >
+    	<action if="#{currentApplication.name != 'wiki'}" execute="#{currentApplicationFactory.switchApplication('wiki')}"/>
+        <!-- 
+        <param name="uri" value="#{currentContentItemFactory.currentItemUri}" required="false"/>
+        <param name="kiwiid" value="#{currentContentItemFactory.currentItemKiWiId}" required="false"/>
+        <param name="id" value="#{currentContentItemFactory.currentItemId}" required="false"/>
+        <param name="title" value="#{currentContentItemFactory.currentItemTitle}" required="false"/>
+        -->
+        
+        <begin-conversation join="true"/>
+
+        <!-- <action execute="#{viewAction.begin}"/> -->
+        
+        <!-- this should not happen all the time!
+        <action execute="#{currentContentItemFactory.refresh}"/>
+        -->
+        <navigation from-action="#{reasoning.runReasoner()}">
+            <rule if-outcome="success">
+                <redirect view-id="/wiki/reasoningFinished.xhtml"/>
+            </rule>
+            <rule>
+                <redirect view-id="/wiki/base.xhtml"/>
+            </rule>
+        </navigation>        
+    </page>
+    
+    <!--
+        This is the home(start) page for the mobile env.
+    -->
+    <page view-id="/wiki/home.mobile.xhtml" >
+        <begin-conversation join="true"/>
+        <action execute="#{viewAction.begin}"/>
+        <action execute="#{mobileConfiguration.enableMobileDevice}"/>
+    </page>
+    
+    <page view-id="/wiki/media.xhtml" >
+        <navigation from-action="#{mediaAction.storeContentItem}">
+            <redirect view-id="/wiki/home.xhtml"/>
+        </navigation>
+    </page>
+    
+    <page view-id="/wiki/history.xhtml" >
+        <action execute="#{kiwi.action.revision.viewRevisionsAction.begin}" />
+    </page>
+    
+<!--     <page view-id="/wiki/preview.xhtml" >
+        <action execute="#{kiwi.action.revision.previewAction.beginPreview}" />
+    </page>
+    -->
+    <page view-id="/wiki/edit.xhtml"> <!-- timeout="15000"> ???-->
+    	<restrict>#{permissionAction.hasPermission('write')}</restrict>
+
+        <action execute="#{editorAction.begin}"/>
+
+        <navigation from-action="#{editorAction.storeContentItem}">
+            <redirect view-id="/wiki/home.xhtml"/>
+        </navigation>
+    </page>
+
+    <page view-id="/wiki/metadata.xhtml">
+        <action execute="#{metadataAction.loadMetadata}"/>
+
+    </page>
+    
+    <page view-id="/wiki/information_extraction.xhtml">    	
+    	<navigation from-action="#{ie.informationExtractionAction.save}">
+            <redirect view-id="/wiki/home.xhtml"/>
+        </navigation>
+    </page>
+    
+    <page view-id="/wiki/activities.xhtml" action="#{activityAction.listActivities}">
+    </page>
+    
+    <page view-id="/wiki/annotate.xhtml" action="#{annotateAction.begin}">
+    </page>
+
+</pages>

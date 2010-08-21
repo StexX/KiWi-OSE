@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+<wb-module deploy-name="KiWi">
+<wb-resource deploy-path="/" source-path="/web"/>
+<wb-resource deploy-path="/WEB-INF/classes" source-path="/src/model"/>
+<wb-resource deploy-path="/WEB-INF/classes" source-path="/src/action"/>
+<wb-resource deploy-path="/" source-path="/build/gwtOutput/kiwi.view.gwt.TestModule"/>
+<wb-resource deploy-path="/" source-path="/web/gwt/kiwi.view.gwt.TestModule"/>
+<wb-resource deploy-path="/WEB-INF/classes" source-path="/test"/>
+<wb-resource deploy-path="/WEB-INF/classes" source-path="/src/view"/>
+<property name="java-output-path"/>
+<property name="context-root" value="KiWi"/>
+</wb-module>
+</project-modules>

@@ -1,0 +1,1 @@
+This folder contains the setup view of the KiWi system

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 1.6.4//EN" "http://google-web-toolkit.googlecode.com/svn/tags/1.6.4/distro-source/core/src/gwt-module.dtd">
+<module rename-to="referenceswidget">
+
+	<!-- Inherit the core Web Toolkit stuff.                  -->
+	<inherits name='com.google.gwt.user.User'/>
+    <inherits name="com.google.gwt.core.Core"/>
+    <inherits name="com.google.gwt.user.History"/>
+
+  	<inherits name="com.smartgwt.SmartGwt"/>
+<!-- 
+    <inherits name="com.smartgwt.SmartGwtNoScript"/>
+    <inherits name="com.smartgwt.tools.SmartGwtTools"/>
+ -->
+    
+    <inherits name="com.smartclient.theme.enterprise.EnterpriseResources"/>
+<!-- 
+    <inherits name="com.smartclient.theme.blackops.BlackOpsResources"/>
+    <inherits name="com.smartclient.theme.silverwave.SilverWaveResources"/>
+    <inherits name="com.smartclient.theme.treefrog.TreeFrogResources"/>
+    <inherits name="com.smartclient.theme.fleet.FleetResources"/>
+ -->
+
+	<!-- Specify the app entry point class.                   -->
+	<entry-point class='kiwi.view.widgets.references.client.ReferencesWidget'/>
+
+    <!-- english language, independent of country -->
+    <extend-property name="locale" values="en"/>
+  
+</module>

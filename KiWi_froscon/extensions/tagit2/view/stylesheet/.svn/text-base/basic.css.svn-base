@@ -1,0 +1,120 @@
+/* basic positioning */
+/* ################## */
+/* Basic page styling */
+html {
+	height:100%;
+	width: 100%;
+}
+
+body {
+	margin:0;
+	padding:0;
+	font-family:verdana;
+	font-size:12px;
+	height:100%;
+	width: 100%
+}
+
+#mapPanel {
+	z-index: 1;
+	position:absolute;
+	top:100px;
+	bottom:20px;
+	left:0;
+	right:0;
+}
+
+#hmtctl {
+	right: 0 !important;
+	left: 80px !important;
+}
+
+#sidebar {
+	position:absolute;	
+	z-index:100;
+	width:250px;
+	top:120px;
+}
+
+#footer {
+	font-size:80%;
+	z-index:1000;
+	position:absolute;
+	bottom:0; 
+	left:0;
+	background-color:#ddd;
+	padding:2px 0;
+	width:100%;
+}
+#footer a, #footer a:visited {
+	color:#333;
+}
+
+/* point for blow ups */
+#point {
+	position: absolute;
+	z-index: 50;
+	top:50px;
+	left:50%;
+	margin-left:-350px;
+	display: none;
+}
+
+#back {
+	position: absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-color:#F1F1F1;
+	display:block;
+	opacity:0.3;
+	z-index:49;
+	display: none;
+}
+
+#back2 {
+	position: absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-color:transparent;
+	display:block;
+	opacity:0.6;
+	z-index:199;
+	display: none;
+}
+
+.clear {
+	clear:left;
+}
+
+
+/*login and register buttons*/
+#user {
+	font-weight: bold;
+	font-size: 1.1em;
+	color: #00509F;
+	float: right;
+}
+
+#user a {
+	color: #00509F;
+}
+
+/*application links in footer*/
+
+#formFooterApplications {
+	text-align: left;
+	float: left;
+	font-weight: bold;
+	font-size: 1.1em;
+	color: #00509F;
+	position: absolute;
+	top:1px;
+}
+
+#formFooterApplications a {
+color: #00509F !important;
+}

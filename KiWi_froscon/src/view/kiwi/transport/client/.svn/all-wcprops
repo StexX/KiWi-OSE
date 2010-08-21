@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/view/kiwi/transport/client
+END
+KiWiSerializableException.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/view/kiwi/transport/client/KiWiSerializableException.java
+END
+TransportSkosDetails.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/view/kiwi/transport/client/TransportSkosDetails.java
+END
+WidgetConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/view/kiwi/transport/client/WidgetConfig.java
+END
+TransportSkosConcept.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/view/kiwi/transport/client/TransportSkosConcept.java
+END
+Properties.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/view/kiwi/transport/client/Properties.java
+END
+TransportTag.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/kiwi/!svn/ver/5584/KiWi/tags/froscon/src/view/kiwi/transport/client/TransportTag.java
+END

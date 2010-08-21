@@ -1,0 +1,148 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:m="http://code.google.com/p/gmaps4jsf/"
+			 	xmlns:c="http://java.sun.com/jstl/core"
+                template="layout/template_2col.xhtml">
+
+<ui:define name="html_head">
+<script type="text/javascript">
+
+	//<![CDATA[
+		var sellingChecked = false;
+
+		function changeShowFileUpload(){
+			
+			if (sellingChecked) {
+				jQuery("#newIdeaForm\\:fileUpload").slideUp('slow');
+				sellingChecked = false;
+			}
+			else{
+				jQuery("#newIdeaForm\\:fileUpload").slideDown('slow');
+				sellingChecked = true;
+			}
+		}
+		//]]>
+</script>
+<style type="text/css">
+	tr.prop td.name {
+		width:230px;
+	}
+</style>
+</ui:define>
+              
+<ui:define name="main_header">
+ 	<h2>Create new Idea</h2>
+</ui:define>
+
+<ui:define name="main_content">
+	<h:messages styleClass="message" />
+	<h:form styleClass="formBorderHighlight" id="newIdeaForm" name="newIdeaForm">
+				<s:validateAll>
+						  <br/>
+						  <h:panelGrid width="100%" columns="2" rowClasses="prop" columnClasses="name,value">
+
+						  	<h:outputLabel for="ideaName">#{messages['ideator.newIdeaForm.title']}:</h:outputLabel>
+						  	<h:inputText id="ideaName" style="width:100%;" value = "#{ideator.ideaBean.title}" required = "true"/>
+						  							  	
+						  	<h:outputLabel for="desc">#{messages['ideator.newIdeaForm.desc']}:</h:outputLabel>
+					        <h:inputTextarea style="width:100%;" rows="5" id="desc" value = "#{ideator.ideaBean.desc}" />
+						  	
+						  	<h:outputLabel for="isDesc">#{messages['ideator.newIdeaForm.isDesc']}:</h:outputLabel>
+					        <h:inputTextarea style="width:100%;" rows="5" id="isDesc" value = "#{ideator.ideaBean.isDesc}"/>
+						  	
+						  	<h:outputLabel for="shouldDesc">#{messages['ideator.newIdeaForm.shouldDesc']}:</h:outputLabel>
+					        <h:inputTextarea style="width:100%;" rows="5" id="shouldDesc" value = "#{ideator.ideaBean.shouldDesc}" />	
+						  	
+<!--						  	<h:outputLabel for="coAuthoren">Co-Authoren</h:outputLabel>-->
+<!--						  	<h:commandLink id="coAuthoren" action="#{ideator.ideaMasterData.coAuthorsPage()}" value="Co-Authoren hinzufuegen"/>-->
+
+						  	<h:outputLabel for="coauthors">Co-Authors</h:outputLabel>
+						  	<s:div id="coauthors" >
+							      <ul>
+									<ui:repeat value="#{ideator.ideaBean.coAuthors}" var="coauthor">
+											<li><h:outputText value="#{coauthor.login} (#{coauthor.coAuthorsFirstName} #{coauthor.coAuthorsLastName})" /></li>
+									</ui:repeat>
+								  </ul>							      
+							      <h:commandLink id="coAuthoren" action="#{ideator.ideaMasterData.coAuthorsPage()}" value="add co-authors"/>
+		       				</s:div>
+		       				
+		       			 	
+							<h:outputLabel for="page_categories">Categories</h:outputLabel> 
+							<s:div id="page_categories" >
+							<ul>
+							<ui:repeat value="#{categoryAction.chosenConcepts}" var="cat">
+								<li><h:outputText value="#{cat.preferredLabel}" /></li>
+							</ui:repeat>
+							</ul>
+		    				<a href="#" onclick="jQuery('#category_chooser').fadeIn('fast');">Edit</a>
+							</s:div>
+		       				
+						    <h:outputLabel for="anonymous">#{messages['ideator.newIdeaForm.anonymous']}</h:outputLabel>
+							<h:selectBooleanCheckbox id="anonymous" value = "#{ideator.ideaBean.anonymous}"/>
+						  	
+						  	<h:outputText value="#{messages['ideator.newIdeaForm.mediaContents']}" />
+						    
+						    <input type="checkbox"  id="attachments" onclick="changeShowFileUpload();"/>
+						  	
+						  	<h:outputText value="" />
+						  	<s:div id="fileUpload" name="attachbox" style="display:none;width:100%;">				
+						  	  <rich:fileUpload 
+								fileUploadListener="#{ideator.ideaMasterData.listener}"
+								immediateUpload="false"
+								maxFilesQuantity="#{ideator.ideaMasterData.uploadsAvailable}"
+								listHeight="150pt"
+								listWidth="auto"
+				        		allowFlash="true"
+				        		acceptedTypes="jpg, gif, png, doc, pdf, txt" 
+								addControlLabel="#{messages['artaround.addFile']}..." 
+								clearAllControlLabel="#{messages['artaround.clearAll']}" 
+								clearControlLabel="#{messages['artaround.clear']}"
+                        		stopEntryControlLabel="#{messages['artaround.stopProcess']}" 
+								uploadControlLabel="#{messages['artaround.upload']}...">
+
+		           			 	<f:facet name="label">
+		               			 <h:outputText value="#{messages['artaround.upload.state']}" />
+		        				</f:facet>					
+		   					</rich:fileUpload>
+						  	</s:div>
+						  	
+						  </h:panelGrid>
+						  <br/>
+						  	<ul class="buttons_center" style="width:181px;padding-bottom: 30px; margin-top:-10px;">
+								<li>
+									<h:commandLink id="cancel" action="#{ideator.ideaMasterData.cancel}" styleClass="button">
+										<span>#{messages['btn.cancel']}</span>
+									</h:commandLink>
+								</li>
+								<li>
+									<h:commandLink id="finnish" action="#{ideator.ideaMasterData.finnish()}" styleClass="button">
+										<s:defaultAction />
+										<span>#{messages['ideator.btn.finnish']}</span>
+									</h:commandLink>
+								</li>
+							</ul>
+		 </s:validateAll>						  
+	</h:form>
+</ui:define>
+
+<ui:define name="right_content">
+	<ui:include src="pages/box/sample.xhtml" />
+</ui:define>
+
+<ui:define name="popups">
+	<div id="category_chooser" style="display:none;">
+		<div class="background_hider" />
+		<div class="popup_600">
+			<ui:include src="pages/popup/category_chooser.xhtml" />
+		</div>
+	</div>
+</ui:define>
+
+</ui:composition>
